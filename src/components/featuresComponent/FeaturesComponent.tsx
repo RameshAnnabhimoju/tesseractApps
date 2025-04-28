@@ -1,7 +1,7 @@
 import "./FeaturesStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import leftArrow from "../../assets/blue arrow.png";
+import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
 import HumanResourceImage from "../../assets/folder_supervised.svg";
 import PayrollImage from "../../assets/payments.svg";
