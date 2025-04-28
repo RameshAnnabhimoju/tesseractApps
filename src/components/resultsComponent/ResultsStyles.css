@@ -1,0 +1,37 @@
+#results-container {
+  margin: 100px 0;
+}
+.results-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.results-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 80px;
+  margin: 75px 15%;
+}
+.results-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.results-card-title {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--color-text-dark-gray);
+  margin: 10px 0;
+}
+.results-card-text {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-text-gray);
+  max-width: 200px;
+  text-transform: uppercase;
+}
+.results-cards-text {
+  max-width: 500px !important;
+}

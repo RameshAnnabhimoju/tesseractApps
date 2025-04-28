@@ -1,0 +1,12 @@
+#trusted-clients-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+#trusted-clients-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-text-dark-gray);
+  margin-right: 50px;
+}

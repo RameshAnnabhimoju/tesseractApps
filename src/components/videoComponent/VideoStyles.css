@@ -1,0 +1,183 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.label-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.label {
+  position: absolute;
+  background: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2); /* bottom-right shadow */
+  font-weight: 500;
+  white-space: nowrap;
+  transition: opacity 0.5s ease;
+}
+
+/* Customize these positions based on where you want them */
+
+@keyframes fadeInLabel1 {
+  0% {
+    opacity: 0;
+    transform: translate(+50%, 0) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.label-1 {
+  opacity: 0;
+  top: 30%;
+  left: 15%;
+  animation: fadeInLabel1 0.8s ease-out forwards;
+}
+@keyframes fadeInLabel2 {
+  0% {
+    opacity: 0;
+    transform: translate(0, +50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+.label-2 {
+  opacity: 0;
+  top: 10%;
+  left: 30%;
+  animation: fadeInLabel2 0.8s ease-out forwards;
+}
+@keyframes fadeInLabel3 {
+  0% {
+    opacity: 0;
+    transform: translate(+50%, 0) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+.label-3 {
+  opacity: 0;
+  bottom: 35%;
+  left: 20%;
+  animation: fadeInLabel3 0.8s ease-out forwards;
+}
+@keyframes fadeInLabel4 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+.label-4 {
+  opacity: 0;
+  bottom: 38%;
+  right: 18%;
+  animation: fadeInLabel4 0.8s ease-out forwards;
+}
+@keyframes fadeInLabel5 {
+  0% {
+    opacity: 0;
+    transform: translate(+50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+.label-5 {
+  opacity: 0;
+  bottom: 10%;
+  left: 30%;
+  animation: fadeInLabel5 0.8s ease-out forwards;
+}
+@keyframes fadeInLabel6 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, +50%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+.label-6 {
+  opacity: 0;
+  top: 28%;
+  right: 25%;
+  animation: fadeInLabel6 0.8s ease-out forwards;
+}
+.overlay-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.label-spot1 {
+  position: absolute;
+  top: 45%;
+  left: 38%;
+}
+.label-spot2 {
+  position: absolute;
+  top: 28%;
+  left: 48%;
+}
+.label-spot3 {
+  position: absolute;
+  top: 55.5%;
+  left: 36%;
+}
+.label-spot4 {
+  position: absolute;
+  top: 68%;
+  left: 57%;
+}
+.label-spot5 {
+  position: absolute;
+  top: 70%;
+  left: 46%;
+}
+.label-spot6 {
+  position: absolute;
+  top: 35%;
+  left: 58%;
+}
+@keyframes stroke-dashoffset {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+.line {
+  animation: stroke-dashoffset 0.8s linear forwards;
+}

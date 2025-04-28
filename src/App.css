@@ -1,0 +1,36 @@
+:root {
+  min-height: 200vh;
+  --color-primary: #0c78ba;
+  --color-secondary: #002a52;
+  --color-background-gradient: linear-gradient(to right, #f5fdfe, #f0f7fe);
+  --color-text-gray: #676767;
+  --color-text-dark-gray: #343434;
+  --color-background-light-gray: #eaeaea;
+  .heading {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: center;
+    margin: 10px auto;
+  }
+  .subheading {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .text {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-text-gray);
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .dividerLine {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-text-gray);
+    margin: 20px 0;
+  }
+}
