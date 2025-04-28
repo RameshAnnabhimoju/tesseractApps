@@ -5,7 +5,7 @@ import image1 from "../../assets/image.png";
 import image2 from "../../assets/image1.png";
 import image3 from "../../assets/image2.png";
 import image4 from "../../assets/image3.png";
-import leftArrow from "../../assets/blue arrow.png";
+import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
 import authorImage from "../../assets/authorProfileImage.png";
 

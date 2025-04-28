@@ -2,7 +2,7 @@ import "./TestimonialStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import testimonialImage from "../../assets/testimonialImage.png";
-import leftArrow from "../../assets/blue arrow.png";
+import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
 import star from "../../assets/star.png";
 import blurImage from "../../assets/blurPinkImage.png";
