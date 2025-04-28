@@ -13,6 +13,7 @@ import { useState } from "react";
 const FeaturesComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  console.log(currentSlide, loaded);
   const [sliderRef, slider] = useKeenSlider(
     {
       mode: "snap",
@@ -173,7 +174,7 @@ const FeaturesComponent = () => {
           ))}
         </div>
       </div>
-      {loaded && slider.current && (
+      {/* {loaded && slider.current && (
         <div className="features-dots">
           {[
             ...Array(
@@ -189,7 +190,7 @@ const FeaturesComponent = () => {
             />
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };
