@@ -1,4 +1,7 @@
 #navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,4 +76,29 @@
   padding: 8px;
   border-radius: 50%;
   cursor: pointer;
+}
+#popup-nav-container {
+  padding: 5px;
+  border-radius: 10px;
+  background-image: var(--color-background-gradient);
+}
+.nav-inner-container {
+  padding: 10px;
+  cursor: pointer;
+}
+.nav-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.nav-sub-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-gray);
+}
+
+.nav-inner-container:hover .nav-title {
+  color: var(--color-primary);
+}
+.nav-inner-container:hover .nav-sub-title {
+  color: var(--color-secondary);
 }

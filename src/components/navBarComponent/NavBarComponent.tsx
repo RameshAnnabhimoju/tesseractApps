@@ -3,28 +3,102 @@ import search from "../../assets/search.svg";
 import plus from "../../assets/plus.svg";
 import profile from "../../assets/person.svg";
 import australia from "../../assets/australia.png";
+import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
 import { useState } from "react";
-const NavBarComponent = () => {
+import { RefObject } from "react";
+import { useNavigate } from "react-router-dom";
+import { navBarDummyData } from "../../utils/DummyData";
+interface PopupPosition {
+  top: number;
+  left: number;
+}
+
+const NavBarComponent = ({
+  portalContainerRef,
+}: {
+  portalContainerRef: RefObject<HTMLDivElement | null>;
+}) => {
+  const navigate = useNavigate();
   const [showSearch, setShowSearch] = useState(false);
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [selectedLink, setSelectedLink] = useState<
+    keyof typeof navBarDummyData | ""
+  >("");
+  const [popupPosition, setPopupPosition] = useState<PopupPosition | null>(
+    null
+  );
+
   const handleSearchIcon = () => {
     setShowSearch(!showSearch);
   };
+  const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const name = event.currentTarget.id;
+    console.log("name :", name);
+    if (name && name == "Case Studies") {
+      navigate("/blogs");
+    }
+  };
+  const handleNavLinkClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    // const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+
+    // 🎯 Calculate CENTER of the nav link
+    const centerX = rect.left + rect.width / 2;
+
+    setPopupPosition({
+      top: rect.bottom + scrollTop + 10, // right below nav-link
+      left: centerX, // center X position
+    });
+    setPopupOpen(true);
+    const name = event.currentTarget.id;
+    setSelectedLink(name as keyof typeof navBarDummyData | "");
+  };
+
+  const closePopup = () => {
+    setPopupOpen(false);
+    setPopupPosition(null);
+  };
+
   return (
-    <div id="navbar-container">
-      <div id="navbar-logo">
+    <nav id="navbar-container">
+      <div id="navbar-logo" onClick={() => navigate("/")}>
         <img src={logo_small} alt="tesseract logo" />
         Tesseract Apps
       </div>
+
       <div id="navbar-links">
-        <div className="nav-link">About</div>
-        <div className="nav-link">Product</div>
-        <div className="nav-link">Services</div>
-        <div className="nav-link">Case Studies</div>
-        <div className="nav-link">Pricing</div>
-        <div className="nav-link">Resources</div>
-        <div className="nav-link">Contact Us</div>
+        {[
+          "About",
+          "Product",
+          "Services",
+          "Case Studies",
+          "Pricing",
+          "Resources",
+          "Contact Us",
+        ].map((label) => {
+          const shouldHavePopup = [
+            "About",
+            "Product",
+            "Services",
+            "Resources",
+            "Contact Us",
+          ].includes(label);
+
+          return (
+            <div
+              key={label}
+              id={label}
+              className="nav-link"
+              onClick={shouldHavePopup ? handleNavLinkClick : handleNavClick}
+            >
+              {label}
+            </div>
+          );
+        })}
       </div>
+
       <div id="nav-icons-container">
         <div id="navbar-search">
           {!showSearch ? (
@@ -38,7 +112,8 @@ const NavBarComponent = () => {
             <input type="text" placeholder="Search..." />
           )}
         </div>
-        <div id="navbar-requestDemo">
+
+        <div id="navbar-requestDemo" onClick={() => navigate("/requestDemo")}>
           Request a Demo{" "}
           <img
             src={plus}
@@ -46,6 +121,7 @@ const NavBarComponent = () => {
             id="navbar-requestDemo-icon"
           />
         </div>
+
         <img src={profile} alt="navbar-profile-icon" id="navbar-profile-icon" />
         <img
           src={australia}
@@ -53,7 +129,44 @@ const NavBarComponent = () => {
           id="navbar-country-icon"
         />
       </div>
-    </div>
+
+      <Popup
+        isOpen={isPopupOpen}
+        onClose={closePopup}
+        containerRef={portalContainerRef}
+        position={popupPosition}
+      >
+        <div id="popup-nav-container">
+          {selectedLink &&
+            selectedLink != "Services" &&
+            Array.isArray(navBarDummyData[selectedLink]) &&
+            navBarDummyData[selectedLink].map((value) => (
+              <div key={value.title} className="nav-inner-container">
+                <div className="nav-title">{value.title}</div>
+                <div className="nav-sub-title">{value.subTitle}</div>
+              </div>
+            ))}
+          {selectedLink &&
+            selectedLink == "Services" &&
+            Array.isArray(navBarDummyData[selectedLink]["BY INDUSTRY"]) &&
+            navBarDummyData[selectedLink]["BY INDUSTRY"].map((value) => (
+              <div key={value.title} className="nav-inner-container">
+                <div className="nav-title">{value.title}</div>
+                <div className="nav-sub-title">{value.subTitle}</div>
+              </div>
+            ))}
+          {selectedLink &&
+            selectedLink == "Services" &&
+            Array.isArray(navBarDummyData[selectedLink]["BY ROLE"]) &&
+            navBarDummyData[selectedLink]["BY ROLE"].map((value) => (
+              <div key={value.title} className="nav-inner-container">
+                <div className="nav-title">{value.title}</div>
+                <div className="nav-sub-title">{value.subTitle}</div>
+              </div>
+            ))}
+        </div>
+      </Popup>
+    </nav>
   );
 };
 

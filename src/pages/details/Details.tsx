@@ -1,0 +1,23 @@
+import DetailsHeroComponent from "../../components/detailsHeroComponent/DetailsHeroComponent";
+import DownloadAppComponent from "../../components/donloadAppComponent/DownloadAppComponent";
+import FaqComponent from "../../components/faqComponent/FaqComponent";
+import TestimonialComponent from "../../components/testimonialComponent/TestimonialComponent";
+import selectedTool from "../../assets/about selected tool.png";
+import "./DetailsStyles.css";
+const Details = () => {
+  return (
+    <div id="details-container">
+      <DetailsHeroComponent />
+      <img
+        id="details-selecetd-tool"
+        src={selectedTool}
+        alt="details-selecetd-tool"
+      />
+      <TestimonialComponent />
+      <DownloadAppComponent />
+      <FaqComponent />
+    </div>
+  );
+};
+
+export default Details;
