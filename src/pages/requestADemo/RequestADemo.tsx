@@ -35,19 +35,34 @@ const RequestADemo = () => {
               className="request-demo-form-element"
             >
               <label htmlFor="firstName">First Name*</label>
-              <input type="text" id="firstName" placeholder="First name" />
+              <input
+                type="text"
+                id="firstName"
+                placeholder="First name"
+                className="request-demo-input"
+              />
             </div>
             <div
               id="request-demo-last-name"
               className="request-demo-form-element"
             >
               <label htmlFor="lastName">Last name*</label>
-              <input type="text" id="lastName" placeholder="Last name" />
+              <input
+                type="text"
+                id="lastName"
+                placeholder="Last name"
+                className="request-demo-input"
+              />
             </div>
           </div>
           <div id="request-demo-email" className="request-demo-form-element">
             <label htmlFor="email">Work email*</label>
-            <input type="text" id="email" placeholder="Work email" />
+            <input
+              type="text"
+              id="email"
+              placeholder="Work email"
+              className="request-demo-input"
+            />
           </div>
           <div id="request-demo-occupation">
             <div
@@ -55,8 +70,8 @@ const RequestADemo = () => {
               className="request-demo-form-element"
             >
               <label htmlFor="companySize">Company Size*</label>
-              <select>
-                <option>Company Size</option>
+              <select className="request-demo-select" required>
+                <option value="">Company Size</option>
                 <option>10</option>
                 <option>20</option>
               </select>
@@ -66,8 +81,8 @@ const RequestADemo = () => {
               className="request-demo-form-element"
             >
               <label htmlFor="industry">Industry*</label>
-              <select>
-                <option>Your company industry</option>
+              <select className="request-demo-select" required>
+                <option value="">Your company industry</option>
                 <option>Medical</option>
                 <option>Software</option>
               </select>
@@ -77,8 +92,8 @@ const RequestADemo = () => {
             <label htmlFor="primaryChallenge">
               Primary challenge which want to solve with HR software*
             </label>
-            <select>
-              <option>Select</option>
+            <select className="request-demo-select" required>
+              <option value="">Select</option>
               <option>Medical</option>
               <option>Software</option>
             </select>
@@ -87,8 +102,8 @@ const RequestADemo = () => {
             <label htmlFor="whenRollOut">
               When do yoy want to roll out an HR System*
             </label>
-            <select>
-              <option>Select</option>
+            <select className="request-demo-select" required>
+              <option value="">Select</option>
               <option>Medical</option>
               <option>Software</option>
             </select>

@@ -1,7 +1,7 @@
 #navbar-container {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 2000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,4 +101,14 @@
 }
 .nav-inner-container:hover .nav-sub-title {
   color: var(--color-secondary);
+}
+#popup-nav-services-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.services-heading {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 20px 10px;
+  color: var(--color-text-gray);
 }

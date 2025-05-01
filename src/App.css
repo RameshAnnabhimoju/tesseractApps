@@ -1,4 +1,5 @@
 :root {
+  overflow-x: hidden;
   min-height: 200vh;
   --color-primary: #0c78ba;
   --color-secondary: #002a52;

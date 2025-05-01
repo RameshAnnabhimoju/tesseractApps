@@ -6,7 +6,9 @@ import howItWorksImage4 from "../../assets/howItWorks4.png";
 import howItWorksImage5 from "../../assets/howItWorks5.png";
 import howItWorksImage6 from "../../assets/howItWorks6.png";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const HowItWorksComponent = () => {
+  const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const howItWorksDummyData = [
     {
@@ -69,6 +71,7 @@ const HowItWorksComponent = () => {
                 key={data.id + index}
                 className="howItWorks-card"
                 onMouseEnter={() => setHoveredIndex(index)}
+                onClick={() => navigate("/details")}
               >
                 <div className="howItWorks-card-title-number">{data.id}</div>
                 <div className="howItWorks-card-title">{data.title}</div>

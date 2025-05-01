@@ -1,0 +1,52 @@
+#selected-tool-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-bottom: 20px;
+}
+#selected-tool-subheading {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 20px;
+}
+#selected-tool-text {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  max-width: 1000px;
+  color: var(--color-text-gray);
+  margin-bottom: 50px;
+}
+#selected-tool-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 120px 0;
+}
+
+#selected-tool-data-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0%;
+  gap: 10px;
+}
+
+.selected-tool-data {
+  max-width: 450px;
+  padding: 10px 60px;
+}
+.selected-tool-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.selected-tool-description {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--color-text-gray);
+}

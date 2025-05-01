@@ -9,8 +9,10 @@ import IncidentReport from "../../assets/siren_check.svg";
 import AccountManagement from "../../assets/checkbook.svg";
 import TSign from "../../assets/stylus_note.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturesComponent = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   console.log(currentSlide, loaded);
@@ -160,7 +162,11 @@ const FeaturesComponent = () => {
       <div className="features-slider">
         <div ref={sliderRef} className="keen-slider">
           {featuresDummyData.map((feature) => (
-            <div key={feature.id} className="keen-slider__slide features-card">
+            <div
+              key={feature.id}
+              className="keen-slider__slide features-card"
+              onClick={() => navigate("/details")}
+            >
               <img
                 className="features-card-image"
                 src={feature.image}

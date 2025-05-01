@@ -48,12 +48,34 @@ const PopupComponent = ({
     backgroundColor: "white",
     padding: "15px",
     borderRadius: "8px",
-    boxShadow: "0px 4px 8px rgba(0,0,0,0.2)",
-    zIndex: 1000,
+    boxShadow: "0px 8px 8px rgba(0,0,0,0.1)",
+    zIndex: 3000,
+  };
+  const popupTriangle: React.CSSProperties = {
+    position: "absolute",
+    top: -10, // Position it above the popup
+    left: "50%", // Center it horizontally
+    transform: "translateX(-50%)", // Center it exactly
+    zIndex: 3000,
   };
 
   return ReactDOM.createPortal(
     <div ref={popupRef} style={popupStyle}>
+      <div style={popupTriangle}>
+        <svg viewBox="0 0 20 15" width="20px" height="15px">
+          <path
+            d="M10 2
+         A1.2 1.2 0 0 1 11.2 2.7
+         L17.5 10
+         A1.2 1.2 0 0 1 16.9 11.7
+         L3.1 11.7
+         A1.2 1.2 0 0 1 2.5 10
+         L8.8 2.7
+         A1.2 1.2 0 0 1 10 2"
+            fill="white"
+          />
+        </svg>
+      </div>
       {children}
     </div>,
     containerRef.current
