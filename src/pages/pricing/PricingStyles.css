@@ -1,0 +1,209 @@
+#pricing-container {
+  padding: 80px 0;
+}
+#pricing-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+  margin: 50px 0;
+}
+.pricing-card {
+  padding: 25px;
+}
+.pricing-card-title,
+.pricing-card-title-selected {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.pricing-card-sub-title,
+.pricing-card-sub-title-selected,
+.pricing-card-time-period,
+.pricing-card-time-period-selected {
+  font-size: 15px;
+  color: var(--color-text-gray-light);
+  font-weight: 600;
+}
+.pricing-card-pricing,
+.pricing-card-pricing-selected {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+.pricing-card-sub-title,
+.pricing-card-sub-title-selected {
+  margin-bottom: 30px;
+}
+.pricing-card-time-period,
+.pricing-card-time-period-selected {
+  margin-bottom: 20px;
+}
+.pricing-button-secondary {
+  background-color: white;
+  border: solid 1px lightgray;
+  color: var(--color-text-gray-light);
+}
+.pricing-feature-data,
+.pricing-feature-data-selected {
+  color: var(--color-text-gray);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.pricing-button-primary {
+  background-color: var(--color-primary);
+  border: 0;
+  color: white;
+}
+.pricing-button-secondary,
+.pricing-button-primary {
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.pricing-tick-data-container {
+  display: flex;
+  gap: 10px;
+}
+.pricing-tick-icon {
+  width: 18px;
+}
+.MuiSlider-thumb {
+  height: 24;
+  width: 24;
+  color: var(--color-primary);
+  border: 5px solid white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+#pricing-slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  margin-top: 120px;
+}
+#pricing-slider {
+  width: 1000px;
+}
+.pricing-card-selected {
+  background-color: var(--color-primary);
+  padding: 25px;
+  border-radius: 20px;
+}
+.pricing-card-title-selected,
+.pricing-card-pricing-selected {
+  color: white;
+}
+.pricing-card-time-period-selected,
+.pricing-card-sub-title-selected,
+.pricing-feature-data-selected {
+  color: lightgray;
+}
+.pricing-button-selected {
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border: 0;
+  background-color: white;
+  font-size: 14px;
+}
+.pricing-data {
+  padding: 0 40px;
+}
+.pricing-data-data {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 50px auto;
+  justify-content: center; /* Centers the grid items as a group */
+  max-width: 1700px; /* Optional: Limit total grid width */
+}
+.pricing-divider-line {
+  height: 0;
+  border: 0.5px solid lightgray;
+}
+.pricing-data-heading {
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+.pricing-data-subtitle {
+  color: var(--color-text-gray-light);
+  margin-top: 10px;
+}
+.pricing-data-title {
+  font-weight: 600;
+}
+.pricing-data-tick {
+  background-color: var(--color-background-light-gray);
+  border-radius: 15px;
+}
+.pricing-divider-line-header {
+  width: 500px;
+  text-align: center;
+  margin: 20px auto;
+}
+.pricing-subheading {
+  width: 400px;
+}
+.pricing-textt {
+  max-width: 600px !important;
+}
+#pricing-help-card {
+  background-color: var(--color-secondary);
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  margin: 20px auto;
+  width: 90%;
+  border-radius: 10px;
+}
+#pricing-help-title {
+  font-size: 26px;
+  color: white;
+}
+#pricing-help-subtitle {
+  color: rgba(255, 255, 255, 0.699);
+  font-size: 18px;
+}
+#pricing-help-links {
+  display: flex;
+  gap: 100px;
+}
+.pricing-links-container {
+  display: flex;
+  width: 200px;
+  align-items: center;
+}
+.pricing-links-image {
+  width: 25px;
+  height: 25px;
+  background-color: #ffffff33;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 0 10px;
+}
+.pricing-links-data {
+  color: white;
+}
+.pricing-links-data-subtext {
+  font-size: 14px;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.699);
+}
+#pricing-help-chat-button {
+  border: 0;
+  border-radius: 8px;
+  height: 45px;
+  width: 180px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}

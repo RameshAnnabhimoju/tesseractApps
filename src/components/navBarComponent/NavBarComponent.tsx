@@ -34,9 +34,12 @@ const NavBarComponent = ({
   };
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
-    console.log("name :", name);
+    // console.log("name :", name);
     if (name && name == "Case Studies") {
       navigate("/blogs");
+    }
+    if (name && name == "Pricing") {
+      navigate("/pricing");
     }
   };
   const handleNavLinkClick = (event: React.MouseEvent<HTMLDivElement>) => {

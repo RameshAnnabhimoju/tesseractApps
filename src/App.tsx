@@ -8,6 +8,7 @@ import Blog from "./pages/blog/Blog";
 import Article from "./pages/article/Article";
 import Details from "./pages/details/Details";
 import RequestADemo from "./pages/requestADemo/RequestADemo";
+import Pricing from "./pages/pricing/Pricing";
 
 function App() {
   const portalContainerRef = useRef<HTMLDivElement>(null);
@@ -21,6 +22,7 @@ function App() {
         <Route path="/article" element={<Article />} />
         <Route path="/details" element={<Details />} />
         <Route path="/requestDemo" element={<RequestADemo />} />
+        <Route path="/pricing" element={<Pricing />} />
       </Routes>
       <FooterComponent />
     </BrowserRouter>

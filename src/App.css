@@ -5,6 +5,7 @@
   --color-secondary: #002a52;
   --color-background-gradient: linear-gradient(to right, #f5fdfe, #f0f7fe);
   --color-text-gray: #676767;
+  --color-text-gray-light: #616161b4;
   --color-text-dark-gray: #343434;
   --color-background-light-gray: #eaeaea;
   .heading {
