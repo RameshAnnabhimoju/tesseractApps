@@ -1,68 +1,12 @@
 import "./TestimonialStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import testimonialImage from "../../assets/testimonialImage.png";
+import { testimonialDummyData } from "../../utils/DummyData";
 import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
 import star from "../../assets/star.png";
 import blurImage from "../../assets/blurPinkImage.png";
 const TestimonialComponent = () => {
-  const testimonialDummyData = [
-    {
-      id: 1,
-      rating: 5,
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam quos, eveniet ipsam molestiae nobis pariatur sint optio qui sed cupiditate? Neque pariatur mollitia similique aliquid in odio laboriosam earum reprehenderit minima at.",
-      authorImage: testimonialImage,
-      author: "John Doe",
-      authorTitle: "Digital Marketing specialist",
-    },
-    {
-      id: 2,
-      rating: 5,
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam quos, eveniet ipsam molestiae nobis pariatur sint optio qui sed cupiditate? Neque pariatur mollitia similique aliquid in odio laboriosam earum reprehenderit minima at.",
-      authorImage: testimonialImage,
-      author: "John Doe",
-      authorTitle: "Digital Marketing specialist",
-    },
-    {
-      id: 3,
-      rating: 4,
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam quos, eveniet ipsam molestiae nobis pariatur sint optio qui sed cupiditate? Neque pariatur mollitia similique aliquid in odio laboriosam earum reprehenderit minima at.",
-      authorImage: testimonialImage,
-      author: "John Doe",
-      authorTitle: "Digital Marketing specialist",
-    },
-    {
-      id: 4,
-      rating: 5,
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam quos, eveniet ipsam molestiae nobis pariatur sint optio qui sed cupiditate? Neque pariatur mollitia similique aliquid in odio laboriosam earum reprehenderit minima at.",
-      authorImage: testimonialImage,
-      author: "John Doe",
-      authorTitle: "Digital Marketing specialist",
-    },
-    {
-      id: 5,
-      rating: 5,
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam quos, eveniet ipsam molestiae nobis pariatur sint optio qui sed cupiditate? Neque pariatur mollitia similique aliquid in odio laboriosam earum reprehenderit minima at.",
-      authorImage: testimonialImage,
-      author: "John Doe",
-      authorTitle: "Digital Marketing specialist",
-    },
-    {
-      id: 6,
-      rating: 4,
-      testimonial:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aliquam quos, eveniet ipsam molestiae nobis pariatur sint optio qui sed cupiditate? Neque pariatur mollitia similique aliquid in odio laboriosam earum reprehenderit minima at.",
-      authorImage: testimonialImage,
-      author: "John Doe",
-      authorTitle: "Digital Marketing specialist",
-    },
-  ];
   const [sliderRef, slider] = useKeenSlider(
     {
       mode: "snap",
@@ -85,10 +29,10 @@ const TestimonialComponent = () => {
       <div className="subheading">
         We've build trust with reviews from real users
       </div>
-      <div className="text testimonial-heading-text">
+      {/* <div className="text testimonial-heading-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa labore
         eaque in explicabo ea mollitia reprehenderit?
-      </div>
+      </div> */}
       <div id="testimonial-carousel-container">
         <img src={blurImage} alt="blurImage" id="blur-image" />
         <div id="testimonial-carousel" ref={sliderRef} className="keen-slider">

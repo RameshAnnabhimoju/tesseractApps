@@ -21,7 +21,7 @@
 }
 #howItWorks-content-text {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   max-width: 930px; /* 3 x 200px + gaps */
   gap: 100px;
 }
@@ -43,6 +43,7 @@
   font-size: 20px;
   font-weight: 400;
   color: var(--color-text-gray);
+  /* text-align: justify; */
 }
 .howItWorks-card:hover .howItWorks-card-title {
   color: var(--color-primary);

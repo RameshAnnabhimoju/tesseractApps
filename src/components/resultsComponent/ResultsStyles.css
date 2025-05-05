@@ -10,7 +10,7 @@
 }
 .results-cards-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 80px;
   margin: 75px 15%;
 }
@@ -33,5 +33,9 @@
   text-transform: uppercase;
 }
 .results-cards-text {
-  max-width: 500px !important;
+  max-width: 600px !important;
+  margin-bottom: 50px !important;
+}
+.results-cards-text2 {
+  max-width: 800px !important;
 }

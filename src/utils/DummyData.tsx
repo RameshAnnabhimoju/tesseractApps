@@ -327,3 +327,169 @@ export const pricingDummyData = [
     ],
   },
 ];
+import HumanResourceImage from "../assets/folder_supervised.svg";
+import PayrollImage from "../assets/payments.svg";
+import IncidentReport from "../assets/siren_check.svg";
+import AccountManagement from "../assets/checkbook.svg";
+import TSign from "../assets/stylus_note.svg";
+export const featuresDummyData = [
+  {
+    id: 1,
+    title: "Human Resources",
+    description:
+      "Effortlessly manage hiring, onboarding, training, leave, and performance—all in one intuitive dashboard. Keep your team supported, compliant, and ready to deliver quality care.",
+    image: HumanResourceImage,
+  },
+  {
+    id: 2,
+    title: "Payroll Management",
+    description:
+      "Automate timesheets, allowances, reimbursements, and payslips with ease. Reduce administrative overhead and ensure your staff are paid accurately and on time.",
+    image: PayrollImage,
+  },
+  {
+    id: 3,
+    title: "Incident Reporting",
+    description:
+      "Log and track incidents in real time. Stay audit-ready, meet sector compliance standards, and promote safer service delivery.",
+    image: IncidentReport,
+  },
+  {
+    id: 4,
+    title: "Account Management",
+    description:
+      "Define user roles, manage access levels, and monitor system activity securely. Protect sensitive data while keeping operations seamless and controlled.",
+    image: AccountManagement,
+  },
+  {
+    id: 5,
+    title: "T-Sign",
+    description:
+      "Accelerate approvals with secure, compliant e-signatures. No printing, no delays—just streamlined, trackable document workflows.",
+    image: TSign,
+  },
+];
+export const howItWorksDummyData = [
+  {
+    id: 1,
+    title: "NDIS operations",
+    description:
+      "Manage participant care, funding, and compliance with ease. Track incidents, simplify billing, and ensure smooth reimbursements—while staying aligned with NDIS guidelines.",
+  },
+  {
+    id: 2,
+    title: "Payroll",
+    description:
+      "Automate payroll processing, including timesheets, reimbursements, and payslips. Minimise errors, reduce admin time, and ensure staff are paid accurately and on time, every time.",
+  },
+  {
+    id: 3,
+    title: "Marketing",
+    description:
+      "Reach more clients with tools designed for digital marketing, client communication, and referral management. Boost your visibility, grow your network, and expand your services.",
+  },
+  {
+    id: 4,
+    title: "Support",
+    description:
+      "Receive 24/7 support through integrated chat, calls, and notifications. Our dedicated team is always available to resolve issues and answer any questions you may have.",
+  },
+  {
+    id: 5,
+    title: "HR Operations",
+    description:
+      "Simplify HR management with features to track staff onboarding, scheduling, training, leave, and performance. Ensure your team is compliant and motivated to deliver the best care.",
+  },
+  {
+    id: 6,
+    title: "24/7 Protection",
+    description:
+      "Your data is safe with us. Enjoy continuous protection with advanced security protocols, secure access controls, and constant compliance monitoring.",
+  },
+];
+import howItWorksImage1 from "../assets/howItWorks1.png";
+import howItWorksImage2 from "../assets/howItWorks2.png";
+import howItWorksImage3 from "../assets/howItWorks3.png";
+import howItWorksImage4 from "../assets/howItWorks4.png";
+import howItWorksImage5 from "../assets/howItWorks5.png";
+import howItWorksImage6 from "../assets/howItWorks6.png";
+export const howItWorksImages = [
+  howItWorksImage1,
+  howItWorksImage2,
+  howItWorksImage3,
+  howItWorksImage4,
+  howItWorksImage5,
+  howItWorksImage6,
+];
+import testimonialImage from "../assets/testimonialImage.png";
+export const testimonialDummyData = [
+  {
+    id: 1,
+    rating: 5,
+    testimonial:
+      "Before using TesseractApps, managing payroll, compliance, and participant care was overwhelming. Now, everything is streamlined, and we’ve saved countless hours. The support team is always there when we need them!",
+    authorImage: testimonialImage,
+    author: "John Doe",
+    authorTitle: "NDIS Provider",
+  },
+  {
+    id: 2,
+    rating: 5,
+    testimonial:
+      "We needed an all-in-one system to handle HR, billing, and service management. TesseractApps delivered exactly that. The automation features have reduced admin work by nearly 50%, allowing us to focus more on care.",
+    authorImage: testimonialImage,
+    author: "John Doe",
+    authorTitle: "Disability Support Coordinator",
+  },
+  {
+    id: 3,
+    rating: 4,
+    testimonial:
+      "TesseractApps makes compliance and reporting so much easier. Payroll runs smoothly, and our staff love the simple, user-friendly interface. It’s the best decision we’ve made for our business.",
+    authorImage: testimonialImage,
+    author: "John Doe",
+    authorTitle: "Care Services Manager",
+  },
+];
+export const accordiaDummyData = [
+  {
+    id: 1,
+    question: "What is incident register?",
+    answer:
+      "An Incident Register is a tool for recording, tracking, and managing workplace incidents such as accidents, injuries, or compliance breaches. It helps businesses meet safety regulations, prevent risks, and ensure staff and participant safety.",
+  },
+  {
+    id: 2,
+    question: "What Can an Admin Do on the Dashboard?",
+    answer: `TesseractApps is built specifically for NDIS businesses, offering features such as: 
+    NDIS-compliant invoicing and claims management, 
+    Automated payroll and HR tools, 
+    Incident reporting and compliance tracking and
+    Real-time support and secure data storage. 
+`,
+  },
+  {
+    id: 3,
+    question: "Is TesseractApps NDIS-Compliant?",
+    answer:
+      "Yes! TesseractApps is designed to align with NDIS guidelines, ensuring that all financial transactions, compliance records, and reporting meet industry standards.",
+  },
+  {
+    id: 4,
+    question: "Can I Customize the Modules I Use?",
+    answer:
+      "Absolutely! TesseractApps offers flexible plans where you can choose the features and modules that best fit your business needs.",
+  },
+  {
+    id: 5,
+    question: "How Secure is My Data on TesseractApps?",
+    answer:
+      "Security is a top priority. TesseractApps uses advanced encryption and secure cloud storage to protect all user data. We also provide access control settings so businesses can manage who sees what.",
+  },
+  {
+    id: 6,
+    question: "How Can I Get Started with TesseractApps?",
+    answer:
+      "Getting started is easy! Simply sign up for a free trial or contact our team for a demo. Our onboarding process is quick, and we offer training and 24/7 support to help you transition smoothly",
+  },
+];

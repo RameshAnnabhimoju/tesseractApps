@@ -3,14 +3,9 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
-import HumanResourceImage from "../../assets/folder_supervised.svg";
-import PayrollImage from "../../assets/payments.svg";
-import IncidentReport from "../../assets/siren_check.svg";
-import AccountManagement from "../../assets/checkbook.svg";
-import TSign from "../../assets/stylus_note.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { featuresDummyData } from "../../utils/DummyData";
 const FeaturesComponent = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -67,78 +62,7 @@ const FeaturesComponent = () => {
     slider.on("animationEnded", nextTimeout);
     slider.on("updated", nextTimeout);
   }
-  const featuresDummyData = [
-    {
-      id: 1,
-      title: "Human Resources",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: HumanResourceImage,
-    },
-    {
-      id: 2,
-      title: "Payroll Management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: PayrollImage,
-    },
-    {
-      id: 3,
-      title: "Incident Reporting",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: IncidentReport,
-    },
-    {
-      id: 4,
-      title: "Account Management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: AccountManagement,
-    },
-    {
-      id: 5,
-      title: "T-Sign",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: TSign,
-    },
-    {
-      id: 6,
-      title: "Human Resources",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: HumanResourceImage,
-    },
-    {
-      id: 7,
-      title: "Payroll Management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: PayrollImage,
-    },
-    {
-      id: 8,
-      title: "Incident Reporting",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: IncidentReport,
-    },
-    {
-      id: 9,
-      title: "Account Management",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: AccountManagement,
-    },
-    {
-      id: 10,
-      title: "T-Sign",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image: TSign,
-    },
-  ];
+
   return (
     <div id="features-container">
       <div className="heading">FEATURES</div>

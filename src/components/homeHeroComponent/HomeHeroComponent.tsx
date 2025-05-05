@@ -15,8 +15,10 @@ const HomeHeroComponent = () => {
           One Tool For <br /> Doing It All Together
         </div>
         <div id="home-text-subText">
-          "Efficiency meets simplicity - your all-in-one NDIS solution for
-          managing care, rostering, invoicing, and compliance seamlessly."
+          "Efficiency meets simplicity with a powerful platform built for care
+          and service providers. From participant management and rostering to
+          invoicing, HR, and compliance—TesseractApps helps you run your
+          organisation seamlessly, securely, and in one place."
         </div>
         <div id="home-store-links-container">
           <img

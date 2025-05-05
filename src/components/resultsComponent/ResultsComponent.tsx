@@ -6,42 +6,68 @@ const ResultsComponent = () => {
       <div className="heading">OUR RESULTS</div>
       <div className="subheading">Our best results for the year</div>
       <div className="text results-cards-text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere vitae
-        tenetur impedit? Voluptatem hic ut nam.
+        Empowering Providers. Simplifying Care. Driving Real Outcomes.
+      </div>
+      <div className="text results-cards-text2">
+        At TesseractApps, we take pride in supporting care providers with smart,
+        secure, and scalable tools. Here’s a snapshot of our platform’s impact:
       </div>
       <div className="results-cards-container">
         <div className="results-card">
           <div className="results-card-title">No. 1</div>
-          <div className="results-card-text">CREDIT RATING</div>
+          <div className="results-card-text">
+            Client Satisfaction among integrated NDIS and care platforms
+          </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">0.95%</div>
-          <div className="results-card-text">CLASSIFIED LOAN PORTFOLIO</div>
+          <div className="results-card-title">98%</div>
+          <div className="results-card-text">
+            Positive Feedback from customers on usability, performance, and
+            support
+          </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">388.5%</div>
-          <div className="results-card-text">CLASSIFIED LOAN COVERAGE</div>
+          <div className="results-card-title">50,000+</div>
+          <div className="results-card-text">
+            Payroll Transactions processed accurately and on time
+          </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">50.4 bn</div>
-          <div className="results-card-text">DEPPOSIT</div>
+          <div className="results-card-title">2,500+</div>
+          <div className="results-card-text">
+            Active Users managing participants, staff, and compliance daily
+          </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">8.5 bn</div>
-          <div className="results-card-text">Market Capitalization</div>
-        </div>
-        <div />
-        <div className="results-card">
-          <div className="results-card-title">6.1 bn</div>
-          <div className="results-card-text">Shareholders equity</div>
+          <div className="results-card-title">350+</div>
+          <div className="results-card-text">
+            NDIS Providers Onboarded and operating more efficiently
+          </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">18.51%</div>
-          <div className="results-card-text">Capital Adequacy Ratio</div>
+          <div className="results-card-title">12,000+</div>
+          <div className="results-card-text">
+            Digital Signatures completed through T-Sign
+          </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">8.5 bn</div>
-          <div className="results-card-text">Market Capitalization</div>
+          <div className="results-card-title">$20M+</div>
+          <div className="results-card-text">
+            in Claims Processed with reduced delays and errors
+          </div>
+        </div>
+        <div className="results-card">
+          <div className="results-card-title">40%</div>
+          <div className="results-card-text">
+            Faster Incident Reporting, improving compliance response times
+          </div>
+        </div>
+        <div className="results-card">
+          <div className="results-card-title">99.9%</div>
+          <div className="results-card-text">
+            Platform Uptime, ensuring always-on access for teams across
+            Australia
+          </div>
         </div>
       </div>
     </div>
