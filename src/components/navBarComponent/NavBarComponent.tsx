@@ -76,18 +76,18 @@ const NavBarComponent = ({
 
       <div id="navbar-links">
         {[
+          "About",
           "Platform",
           "Solutions",
           "Pricing",
           "Resources",
-          "About",
           "Get Started",
         ].map((label) => {
           const shouldHavePopup = [
+            "About",
             "Platform",
             "Solutions",
             "Resources",
-            "About",
             "Get Started",
           ].includes(label);
 
