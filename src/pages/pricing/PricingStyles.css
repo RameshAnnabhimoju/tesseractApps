@@ -68,6 +68,7 @@
 .pricing-tick-data-container {
   display: flex;
   gap: 10px;
+  max-width: 300px;
 }
 .pricing-tick-icon {
   width: 18px;

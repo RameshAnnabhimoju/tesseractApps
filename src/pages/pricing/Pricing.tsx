@@ -24,7 +24,7 @@ const Pricing = () => {
           defaultValue={50}
           valueLabelDisplay="auto"
           shiftStep={50}
-          step={50}
+          step={100}
           marks
           min={0}
           max={500}
@@ -200,7 +200,7 @@ const Pricing = () => {
                         />
                       )}
                     </div>
-                    <div className="pricing-data-data4">
+                    {/* <div className="pricing-data-data4">
                       {typeof dataItem.data4 != "boolean" ? (
                         dataItem.data4
                       ) : (
@@ -210,7 +210,7 @@ const Pricing = () => {
                           className="pricing-data-tick"
                         />
                       )}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               ))}
