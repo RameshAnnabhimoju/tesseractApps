@@ -76,20 +76,19 @@ const NavBarComponent = ({
 
       <div id="navbar-links">
         {[
-          "About",
-          "Product",
-          "Services",
-          "Case Studies",
+          "Platform",
+          "Solutions",
           "Pricing",
           "Resources",
-          "Contact Us",
+          "About",
+          "Get Started",
         ].map((label) => {
           const shouldHavePopup = [
-            "About",
-            "Product",
-            "Services",
+            "Platform",
+            "Solutions",
             "Resources",
-            "Contact Us",
+            "About",
+            "Get Started",
           ].includes(label);
 
           return (
@@ -144,7 +143,7 @@ const NavBarComponent = ({
       >
         <div id="popup-nav-container">
           {selectedLink &&
-            selectedLink != "Services" &&
+            selectedLink != "Solutions" &&
             Array.isArray(navBarDummyData[selectedLink]) &&
             navBarDummyData[selectedLink].map((value) => (
               <div
@@ -156,7 +155,7 @@ const NavBarComponent = ({
                 <div className="nav-sub-title">{value.subTitle}</div>
               </div>
             ))}
-          {selectedLink && selectedLink == "Services" && (
+          {selectedLink && selectedLink == "Solutions" && (
             <div id="popup-nav-services-container">
               <div>
                 <div className="services-heading">BY INDUSTRY</div>

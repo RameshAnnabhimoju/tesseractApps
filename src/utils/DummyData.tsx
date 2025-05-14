@@ -71,35 +71,20 @@ export const blogDummyData = [
 ];
 
 export const navBarDummyData = {
-  About: [
-    { title: "Our Mission", subTitle: "Learn about your users" },
-    { title: "Team", subTitle: "Learn about your users" },
-    { title: "Careers", subTitle: "Learn about your users" },
-    { title: "Contact Information", subTitle: "Learn about your users" },
+  Platform: [
+    { title: "Scheduling & Rostering", subTitle: "Learn about your users" },
+    { title: "Time & Attendance", subTitle: "Learn about your users" },
+    { title: "HR & Incident Register", subTitle: "Learn about your users" },
+    { title: "Communication & Alerts", subTitle: "Learn about your users" },
+    { title: "Compliance & Safeguards", subTitle: "Learn about your users" },
+    { title: "Document Management", subTitle: "Learn about your users" },
+    { title: "Accounting", subTitle: "Learn about your users" },
+    { title: "Tsign (E-Signature)", subTitle: "Learn about your users" },
+    { title: "Participants Management", subTitle: "Learn about your users" },
   ],
-  Product: [
-    { title: "Scheduling", subTitle: "Learn about your users" },
-    { title: "Time Management", subTitle: "Learn about your users" },
-    { title: "HR Management", subTitle: "Learn about your users" },
-    { title: "Communications", subTitle: "Learn about your users" },
-  ],
-  "Contact Us": [
-    { title: "Additional Features", subTitle: "Learn about your users" },
-    { title: "One to One Demo Request", subTitle: "Learn about your users" },
-    { title: "Free Trial Sign-Up", subTitle: "Learn about your users" },
-    { title: "Integrations", subTitle: "Learn about your users" },
-  ],
-  Resources: [
-    { title: "Retail", subTitle: "Learn about your users" },
-    { title: "Hospitality", subTitle: "Learn about your users" },
-    { title: "Healthcare", subTitle: "Learn about your users" },
-    { title: "Construction", subTitle: "Learn about your users" },
-    { title: "Manufacturing", subTitle: "Learn about your users" },
-    { title: "More Industries", subTitle: "Learn about your users" },
-  ],
-  Services: {
+  Solutions: {
     "BY INDUSTRY": [
-      { title: "Retail", subTitle: "Learn about your users" },
+      { title: "NDIS Providers", subTitle: "Learn about your users" },
       { title: "Hospitality", subTitle: "Learn about your users" },
       { title: "Healthcare", subTitle: "Learn about your users" },
       { title: "Construction", subTitle: "Learn about your users" },
@@ -125,6 +110,25 @@ export const navBarDummyData = {
       { title: "Cost Optimisation", subTitle: "Learn about your users" },
     ],
   },
+  "Get Started": [
+    { title: "Book a Demo", subTitle: "Learn about your users" },
+    { title: "Free Trial", subTitle: "Learn about your users" },
+    { title: "Integration Partners", subTitle: "Learn about your users" },
+    { title: "Onboarding", subTitle: "Learn about your users" },
+  ],
+  Resources: [
+    { title: "Blog", subTitle: "Learn about your users" },
+    { title: "Case Studies", subTitle: "Learn about your users" },
+    { title: "Webinars", subTitle: "Learn about your users" },
+    { title: "FAQs", subTitle: "Learn about your users" },
+    { title: "Help Centre", subTitle: "Learn about your users" },
+  ],
+  About: [
+    { title: "Our Mission", subTitle: "Learn about your users" },
+    { title: "Our Team", subTitle: "Learn about your users" },
+    { title: "Careers", subTitle: "Learn about your users" },
+    { title: "Contact", subTitle: "Learn about your users" },
+  ],
 };
 
 export const aboutSelectedToolDummyData = [
@@ -172,8 +176,8 @@ export const pricingCardsDummyData = [
     title: "Tier One:",
     subTitle: "I Want to Choose What I Want",
     Pricing: 9.99,
-    timePeriod: "/month",
-    currentPlan: true,
+    timePeriod: "/user",
+    currentPlan: false,
     userLimitRange: [1, 140],
     features: [
       "Staff Register",
@@ -203,7 +207,7 @@ export const pricingCardsDummyData = [
     subTitle: "Serious About Business",
     Pricing: 19.99,
     userLimitRange: [150, 200],
-    timePeriod: "/month",
+    timePeriod: "/user",
     currentPlan: false,
     features: [
       "Everything in Tier One, Plus",
@@ -233,7 +237,7 @@ export const pricingCardsDummyData = [
     subTitle: "End to End",
     Pricing: 39.99,
     userLimitRange: [250, 500],
-    timePeriod: "/month",
+    timePeriod: "/user",
     currentPlan: false,
     features: [
       "Everything in Tier Two, Plus",
