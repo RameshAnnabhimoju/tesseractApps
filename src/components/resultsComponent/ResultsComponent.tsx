@@ -9,54 +9,64 @@ const ResultsComponent = () => {
         Empowering Providers. Simplifying Care. Driving Real Outcomes.
       </div>
       <div className="text results-cards-text2">
-        At TesseractApps, we take pride in supporting care providers with smart,
-        secure, and scalable tools. Here’s a snapshot of our platform’s impact:
+        At TesseractApps, we are committed to helping NDIS and care providers
+        operate with greater clarity, compliance, and confidence. Here’s a
+        snapshot of our platform’s measurable impact across Australia.
       </div>
       <div className="results-cards-container">
         <div className="results-card">
-          <div className="results-card-title">No. 1</div>
+          <div className="results-card-title">#1 in Client Satisfaction</div>
           <div className="results-card-text">
-            Client Satisfaction among integrated NDIS and care platforms
+            Among integrated NDIS and workforce platforms — thanks to intuitive
+            design, fast support, and continuous improvement.
           </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">98%</div>
+          <div className="results-card-title">98% Positive Feedback</div>
           <div className="results-card-text">
-            Positive Feedback from customers on usability, performance, and
-            support
+            From users who value our seamless user experience, performance, and
+            automation across HR, payroll, and compliance
           </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">50,000+</div>
+          <div className="results-card-title">2,000+ Active Users</div>
           <div className="results-card-text">
-            Payroll Transactions processed accurately and on time
+            Supporting thousands of workers, participants, and managers daily —
+            streamlining operations at every level.
           </div>
         </div>
-        <div className="results-card">
+        {/* <div className="results-card">
           <div className="results-card-title">2,500+</div>
           <div className="results-card-text">
             Active Users managing participants, staff, and compliance daily
           </div>
-        </div>
+        </div> */}
         <div className="results-card">
-          <div className="results-card-title">350+</div>
+          <div className="results-card-title">
+            350+ NDIS Providers Onboarded
+          </div>
           <div className="results-card-text">
-            NDIS Providers Onboarded and operating more efficiently
+            From small teams to large care organisations, TesseractApps scales
+            with your business as you grow.
           </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">12,000+</div>
+          <div className="results-card-title">
+            40% Faster Incident Reporting
+          </div>
           <div className="results-card-text">
-            Digital Signatures completed through T-Sign
+            Thanks to real-time mobile logs, auto-alerts, and compliance
+            dashboards — improving oversight and response times.
           </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">$20M+</div>
+          <div className="results-card-title">99.9% Platform Uptime</div>
           <div className="results-card-text">
-            in Claims Processed with reduced delays and errors
+            Reliability you can count on. Always-on access across desktop and
+            mobile — built on Salesforce infrastructure
           </div>
         </div>
-        <div className="results-card">
+        {/* <div className="results-card">
           <div className="results-card-title">40%</div>
           <div className="results-card-text">
             Faster Incident Reporting, improving compliance response times
@@ -68,7 +78,7 @@ const ResultsComponent = () => {
             Platform Uptime, ensuring always-on access for teams across
             Australia
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

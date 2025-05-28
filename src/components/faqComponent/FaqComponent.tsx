@@ -24,8 +24,7 @@ const FaqComponent = () => {
       <div className="heading">FAQ's</div>
       <div className="subheading">Frequently Asked Questions</div>
       <div className="text" id="faq-text">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex optio
-        magnam voluptates nulla!
+        Have a question about TesseractApps? We’re here to help.
       </div>
       <div id="accordian-container">
         {accordiaDummyData.map((data, index) => {

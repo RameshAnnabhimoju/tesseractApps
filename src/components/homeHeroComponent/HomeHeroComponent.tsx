@@ -12,13 +12,12 @@ const HomeHeroComponent = () => {
       <VideoComponent />
       <div id="home-text-container">
         <div id="home-text-heading">
-          One Tool For <br /> Doing It All Together
+          All-in-One Tools for Smarter Workforce Management.
         </div>
         <div id="home-text-subText">
-          "Efficiency meets simplicity with a powerful platform built for care
-          and service providers. From participant management and rostering to
-          invoicing, HR, and compliance—TesseractApps helps you run your
-          organisation seamlessly, securely, and in one place."
+          "TesseractApps helps providers streamline compliance, manage teams
+          with ease, and deliver higher-quality care—through one secure,
+          scalable platform designed for the evolving needs of the care sector."
         </div>
         <div id="home-store-links-container">
           <img

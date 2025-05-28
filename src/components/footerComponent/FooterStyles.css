@@ -78,3 +78,9 @@
   width: 25px;
   cursor: pointer;
 }
+#footer-bottom {
+  grid-column-start: 1;
+  grid-column-end: 8;
+  text-align: center;
+  color: var(--color-text-gray);
+}

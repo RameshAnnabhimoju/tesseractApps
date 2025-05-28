@@ -27,7 +27,7 @@ const TestimonialComponent = () => {
     <div id="testimonial-container">
       <div className="heading">TESTIMONIAL</div>
       <div className="subheading">
-        We've build trust with reviews from real users
+        Real Stories. Real Results. Trusted by Leading NDIS Providers.
       </div>
       {/* <div className="text testimonial-heading-text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa labore

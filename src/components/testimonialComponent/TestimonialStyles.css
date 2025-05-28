@@ -7,6 +7,14 @@
   margin: 20px 0;
   color: var(--color-text-gray);
   line-height: 27px;
+  max-height: 160px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
 }
 .testimonial-author-details {
   display: flex;

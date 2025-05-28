@@ -60,6 +60,9 @@ const Blog = () => {
         >
           App
         </div>
+        <div id="add-blog-button" onClick={() => navigate("/addBlog")}>
+          New Blog
+        </div>
       </div>
       <div id="blog-card-container">
         {blogsData.map((blog, index) => (

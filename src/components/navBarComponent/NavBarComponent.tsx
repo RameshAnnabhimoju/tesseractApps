@@ -34,15 +34,12 @@ const NavBarComponent = ({
   };
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
-    // console.log("name :", name);
-    if (name && name == "Case Studies") {
-      navigate("/blogs");
-    }
+
     if (name && name == "Pricing") {
       navigate("/pricing");
     }
   };
-  const handleNavLinkClick = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleNavPopupClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     // const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
@@ -63,9 +60,13 @@ const NavBarComponent = ({
     setPopupOpen(false);
     setPopupPosition(null);
   };
-  const popupLinkClickHandler = () => {
+  const popupLinkClickHandler = (name: string) => {
     closePopup();
-    navigate("/details");
+    if (name == "Blog") {
+      navigate("/blogs");
+    } else {
+      navigate("/details");
+    }
   };
   return (
     <nav id="navbar-container">
@@ -77,18 +78,18 @@ const NavBarComponent = ({
       <div id="navbar-links">
         {[
           "About",
-          "Platform",
+          "Product",
           "Solutions",
           "Pricing",
           "Resources",
-          "Get Started",
+          "Additional Features",
         ].map((label) => {
           const shouldHavePopup = [
             "About",
-            "Platform",
+            "Product",
             "Solutions",
             "Resources",
-            "Get Started",
+            "Additional Features",
           ].includes(label);
 
           return (
@@ -96,7 +97,7 @@ const NavBarComponent = ({
               key={label}
               id={label}
               className="nav-link"
-              onClick={shouldHavePopup ? handleNavLinkClick : handleNavClick}
+              onClick={shouldHavePopup ? handleNavPopupClick : handleNavClick}
             >
               {label}
             </div>
@@ -149,7 +150,7 @@ const NavBarComponent = ({
               <div
                 key={value.title}
                 className="nav-inner-container"
-                onClick={popupLinkClickHandler}
+                onClick={() => popupLinkClickHandler(value.title)}
               >
                 <div className="nav-title">{value.title}</div>
                 <div className="nav-sub-title">{value.subTitle}</div>
@@ -164,7 +165,7 @@ const NavBarComponent = ({
                     <div
                       key={value.title}
                       className="nav-inner-container"
-                      onClick={popupLinkClickHandler}
+                      onClick={() => popupLinkClickHandler(value.title)}
                     >
                       <div className="nav-title">{value.title}</div>
                       <div className="nav-sub-title">{value.subTitle}</div>
@@ -178,7 +179,7 @@ const NavBarComponent = ({
                     <div
                       key={value.title}
                       className="nav-inner-container"
-                      onClick={popupLinkClickHandler}
+                      onClick={() => popupLinkClickHandler(value.title)}
                     >
                       <div className="nav-title">{value.title}</div>
                       <div className="nav-sub-title">{value.subTitle}</div>
@@ -195,7 +196,7 @@ const NavBarComponent = ({
                       <div
                         key={value.title}
                         className="nav-inner-container"
-                        onClick={popupLinkClickHandler}
+                        onClick={() => popupLinkClickHandler(value.title)}
                       >
                         <div className="nav-title">{value.title}</div>
                         <div className="nav-sub-title">{value.subTitle}</div>
@@ -213,7 +214,7 @@ const NavBarComponent = ({
                       <div
                         key={value.title}
                         className="nav-inner-container"
-                        onClick={popupLinkClickHandler}
+                        onClick={() => popupLinkClickHandler(value.title)}
                       >
                         <div className="nav-title">{value.title}</div>
                         <div className="nav-sub-title">{value.subTitle}</div>

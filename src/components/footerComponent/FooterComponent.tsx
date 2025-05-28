@@ -12,6 +12,8 @@ const FooterComponent = () => {
           At TesseractApps, we provide tailored solutions that simplify care
           management, payroll, compliance, and HR, helping care providers run
           their operations efficiently and stay compliant.
+          <br></br>
+          Phone: 1300 252 808<br></br>Email: enquiries@tesseractapps.com
         </div>
         <div id="footer-social-links">
           <img
@@ -85,6 +87,16 @@ const FooterComponent = () => {
           />
           <button id="footer-newsletter-button">SUBSCRIBE</button>
         </div>
+      </div>
+      <div id="footer-bottom">
+        <br />
+        <br />
+        <br />
+        TesseractApps would like to acknowledge the Traditional Custodians of
+        the land on which we operate, and pay our respects to their Elders past
+        and present.
+        <br />
+        <br /> TesseractApps 2025 © CareMaster. All rights reserved.
       </div>
     </div>
   );

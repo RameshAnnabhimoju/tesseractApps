@@ -71,63 +71,64 @@ export const blogDummyData = [
 ];
 
 export const navBarDummyData = {
-  Platform: [
-    { title: "Scheduling & Rostering", subTitle: "Learn about your users" },
-    { title: "Time & Attendance", subTitle: "Learn about your users" },
-    { title: "HR & Incident Register", subTitle: "Learn about your users" },
-    { title: "Communication & Alerts", subTitle: "Learn about your users" },
-    { title: "Compliance & Safeguards", subTitle: "Learn about your users" },
-    { title: "Document Management", subTitle: "Learn about your users" },
-    { title: "Accounting", subTitle: "Learn about your users" },
-    { title: "Tsign (E-Signature)", subTitle: "Learn about your users" },
-    { title: "Participants Management", subTitle: "Learn about your users" },
+  Product: [
+    { title: "Scheduling", subTitle: "" },
+    { title: "Time Management", subTitle: "" },
+    { title: "HR Management", subTitle: "" },
+    { title: "Communication", subTitle: "" },
+    // { title: "Compliance & Safeguards", subTitle: "" },
+    // { title: "Document Management", subTitle: "" },
+    // { title: "Accounting", subTitle: "" },
+    // { title: "Tsign (E-Signature)", subTitle: "" },
+    // { title: "Participants Management", subTitle: "" },
   ],
   Solutions: {
     "BY INDUSTRY": [
-      { title: "NDIS Providers", subTitle: "Learn about your users" },
-      { title: "Hospitality", subTitle: "Learn about your users" },
-      { title: "Healthcare", subTitle: "Learn about your users" },
-      { title: "Construction", subTitle: "Learn about your users" },
-      { title: "Manufacturing", subTitle: "Learn about your users" },
-      { title: "More Industries", subTitle: "Learn about your users" },
+      { title: "NDIS Providers", subTitle: "" },
+      { title: "Retail & Hospitality", subTitle: "" },
+      { title: "Multi-site Businesses", subTitle: "" },
+      { title: "Construction", subTitle: "" },
+      { title: "Manufacturing", subTitle: "" },
+      { title: "More Industries", subTitle: "" },
     ],
     "BY ROLE": [
-      { title: "HR Managers", subTitle: "Learn about your users" },
-      { title: "Team Leaders", subTitle: "Learn about your users" },
-      { title: "Employees", subTitle: "Learn about your users" },
-      { title: "Executives", subTitle: "Learn about your users" },
+      { title: "HR Managers", subTitle: "" },
+      { title: "Team Leaders", subTitle: "" },
+      { title: "Employees", subTitle: "" },
+      { title: "Executives", subTitle: "" },
     ],
     "BY BUSINESS TYPE": [
-      { title: "Small Businesses", subTitle: "Learn about your users" },
-      { title: "Enterprise", subTitle: "Learn about your users" },
-      { title: "Franchises", subTitle: "Learn about your users" },
-      { title: "Startups", subTitle: "Learn about your users" },
+      { title: "Small Businesses", subTitle: "" },
+      { title: "Enterprise", subTitle: "" },
+      { title: "Franchises", subTitle: "" },
+      { title: "Startups", subTitle: "" },
     ],
     "BY BUSINESS PROBLEM": [
-      { title: "Compliance", subTitle: "Learn about your users" },
-      { title: "Employee Engagemanet", subTitle: "Learn about your users" },
-      { title: "Time Efficiency", subTitle: "Learn about your users" },
-      { title: "Cost Optimisation", subTitle: "Learn about your users" },
+      { title: "Compliance", subTitle: "" },
+      { title: "Employee Engagement", subTitle: "" },
+      { title: "Time Efficiency", subTitle: "" },
+      { title: "Cost Optimisation", subTitle: "" },
     ],
   },
-  "Get Started": [
-    { title: "Book a Demo", subTitle: "Learn about your users" },
-    { title: "Free Trial", subTitle: "Learn about your users" },
-    { title: "Integration Partners", subTitle: "Learn about your users" },
-    { title: "Onboarding", subTitle: "Learn about your users" },
+  "Additional Features": [
+    { title: "Demo Request", subTitle: "" },
+    { title: "Free Trial Sign-Up", subTitle: "" },
+    { title: "Integration", subTitle: "" },
   ],
   Resources: [
-    { title: "Blog", subTitle: "Learn about your users" },
-    { title: "Case Studies", subTitle: "Learn about your users" },
-    { title: "Webinars", subTitle: "Learn about your users" },
-    { title: "FAQs", subTitle: "Learn about your users" },
-    { title: "Help Centre", subTitle: "Learn about your users" },
+    { title: "Blog", subTitle: "" },
+    { title: "Case Studies", subTitle: "" },
+    { title: "Whitepapers", subTitle: "" },
+    { title: "FAQs", subTitle: "" },
+    { title: "Support Documentation", subTitle: "" },
   ],
   About: [
-    { title: "Our Mission", subTitle: "Learn about your users" },
-    { title: "Our Team", subTitle: "Learn about your users" },
-    { title: "Careers", subTitle: "Learn about your users" },
-    { title: "Contact", subTitle: "Learn about your users" },
+    { title: "Our story", subTitle: "" },
+    { title: "Our Mission", subTitle: "" },
+    { title: "Our Vision", subTitle: "" },
+    { title: "Team", subTitle: "" },
+    { title: "Careers", subTitle: "" },
+    { title: "Contact Information", subTitle: "" },
   ],
 };
 
@@ -729,76 +730,97 @@ import TSign from "../assets/stylus_note.svg";
 export const featuresDummyData = [
   {
     id: 1,
-    title: "Human Resources",
+    title: "Scheduling & Rostering",
     description:
-      "Effortlessly manage hiring, onboarding, training, leave, and performance—all in one intuitive dashboard. Keep your team supported, compliant, and ready to deliver quality care.",
+      "Plan, assign, and manage shifts effortlessly. Avoid roster conflicts, reduce fatigue, and fill gaps in real time.",
     image: HumanResourceImage,
   },
   {
     id: 2,
-    title: "Payroll Management",
+    title: "Time & Attendance",
     description:
-      "Automate timesheets, allowances, reimbursements, and payslips with ease. Reduce administrative overhead and ensure your staff are paid accurately and on time.",
+      "Enable accurate timesheets, location-based clock-ins, and attendance tracking with audit-ready logs.",
     image: PayrollImage,
   },
   {
     id: 3,
-    title: "Incident Reporting",
+    title: "HR & Incident Register",
     description:
-      "Log and track incidents in real time. Stay audit-ready, meet sector compliance standards, and promote safer service delivery.",
+      "Centralise HR workflows — from onboarding to compliance reporting. Log incidents with automatic alerts and escalation paths.",
     image: IncidentReport,
   },
   {
     id: 4,
-    title: "Account Management",
+    title: "Communication & Alerts",
     description:
-      "Define user roles, manage access levels, and monitor system activity securely. Protect sensitive data while keeping operations seamless and controlled.",
+      "Keep your team informed with in-app messaging, mobile alerts, and real-time updates — all securely recorded.",
     image: AccountManagement,
   },
   {
     id: 5,
-    title: "T-Sign",
+    title: "Compliance & Safeguards",
     description:
-      "Accelerate approvals with secure, compliant e-signatures. No printing, no delays—just streamlined, trackable document workflows.",
+      "Meet NDIS standards with built-in checks, automated documentation, and policy-aligned workflows.",
+    image: TSign,
+  },
+  {
+    id: 6,
+    title: "Document Management",
+    description:
+      "Securely store and manage staff and participant files with role-based access and digital signatures.",
+    image: TSign,
+  },
+  {
+    id: 7,
+    title: "Accounting",
+    description:
+      "Automate payroll, invoicing, reimbursements, and NDIS claims. Seamless integration with accounting platforms.",
+    image: TSign,
+  },
+  {
+    id: 8,
+    title: "Participant Management",
+    description:
+      "Track progress, log notes, monitor goals, and stay on top of participant needs — all in one place.",
     image: TSign,
   },
 ];
 export const howItWorksDummyData = [
   {
     id: 1,
-    title: "NDIS operations",
+    title: "Centralise",
     description:
-      "Manage participant care, funding, and compliance with ease. Track incidents, simplify billing, and ensure smooth reimbursements—while staying aligned with NDIS guidelines.",
+      "Unify all operational workflows—client data, funding, scheduling, and compliance—into one intuitive platform. From progress tracking and outcome reporting to templated invoicing, everything is structured, streamlined, and audit-ready.",
   },
   {
     id: 2,
-    title: "Payroll",
+    title: "Automate",
     description:
-      "Automate payroll processing, including timesheets, reimbursements, and payslips. Minimise errors, reduce admin time, and ensure staff are paid accurately and on time, every time.",
+      "Eliminate manual admin with integrated payroll and time tracking. Automatically calculate wages, link timesheets to payroll, and generate compliant payslips—ensuring accurate, on-time payments every cycle",
   },
   {
     id: 3,
-    title: "Marketing",
+    title: "Simplify",
     description:
-      "Reach more clients with tools designed for digital marketing, client communication, and referral management. Boost your visibility, grow your network, and expand your services.",
+      "Optimise HR and workforce management from hire to retire. Digitally onboard staff, manage leave and training, conduct performance reviews, and maintain a secure incident register with built-in escalation workflows.",
   },
   {
     id: 4,
-    title: "Support",
+    title: "Comply",
     description:
-      "Receive 24/7 support through integrated chat, calls, and notifications. Our dedicated team is always available to resolve issues and answer any questions you may have.",
+      "Stay compliant across industry regulations with built-in safeguards. Use preconfigured forms, risk registers, document version control, and real-time alerts to remain audit-ready and confident.",
   },
   {
     id: 5,
-    title: "HR Operations",
+    title: "Connect",
     description:
-      "Simplify HR management with features to track staff onboarding, scheduling, training, leave, and performance. Ensure your team is compliant and motivated to deliver the best care.",
+      "Enable seamless communication across teams and locations. Send shift updates, mobile alerts, and targeted announcements—all with secure, role-based access and compliant messaging logs",
   },
   {
     id: 6,
-    title: "24/7 Protection",
+    title: "Protect",
     description:
-      "Your data is safe with us. Enjoy continuous protection with advanced security protocols, secure access controls, and constant compliance monitoring.",
+      "Rely on always-on support and enterprise-grade security. With 24/7 expert assistance, data encryption, access controls, and continuous platform enhancements, your organisation stays protected and future-ready.",
   },
 ];
 import howItWorksImage1 from "../assets/howItWorks1.png";
@@ -820,70 +842,83 @@ export const testimonialDummyData = [
   {
     id: 1,
     rating: 5,
-    testimonial:
-      "Before using TesseractApps, managing payroll, compliance, and participant care was overwhelming. Now, everything is streamlined, and we’ve saved countless hours. The support team is always there when we need them!",
+    testimonial: `“ We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.
+Tesseract brings all of these functions together in one easy-to-use platform. It’s streamlined our operations, improved our workflow, and made it much easier to stay on top of everything. The team behind it, especially Kranthi and Rev, have been incredibly supportive — always responsive, open to feedback, and committed to helping us get the most out of the system.
+ If you're an NDIS provider looking to simplify your processes, reduce costs, and avoid the stress of managing multiple tools, I highly recommend Tesseract. It’s been a game-changer for our team and our business. ”
+`,
     authorImage: testimonialImage,
-    author: "John Doe",
-    authorTitle: "NDIS Provider",
+    author: "Seed",
+    authorTitle: "",
   },
   {
     id: 2,
     rating: 5,
-    testimonial:
-      "We needed an all-in-one system to handle HR, billing, and service management. TesseractApps delivered exactly that. The automation features have reduced admin work by nearly 50%, allowing us to focus more on care.",
+    testimonial: `“User-friendly, efficient, and built for care teams. Our staff love the simplicity of the interface, and compliance reporting has never been easier. Payroll is on time, every time. Choosing Tesseract was the best tech decision we made.”`,
     authorImage: testimonialImage,
-    author: "John Doe",
-    authorTitle: "Disability Support Coordinator",
+    author: "Care Services Manager",
+    authorTitle: "",
   },
   {
     id: 3,
     rating: 4,
-    testimonial:
-      "TesseractApps makes compliance and reporting so much easier. Payroll runs smoothly, and our staff love the simple, user-friendly interface. It’s the best decision we’ve made for our business.",
+    testimonial: `“An essential tool for Support Coordinators. It’s not just a platform; it’s a strategic partner. I can track notes, manage participant goals, schedule supports, and handle billing in one place. It has saved me hours every week.”`,
     authorImage: testimonialImage,
-    author: "John Doe",
-    authorTitle: "Care Services Manager",
+    author: "Emalee Rose Bayliss",
+    authorTitle: "Specialist Senior Support Coordinator",
   },
 ];
 export const accordiaDummyData = [
   {
     id: 1,
-    question: "What is incident register?",
+    question: "Is TesseractApps NDIS-compliant?",
     answer:
-      "An Incident Register is a tool for recording, tracking, and managing workplace incidents such as accidents, injuries, or compliance breaches. It helps businesses meet safety regulations, prevent risks, and ensure staff and participant safety.",
+      "Yes. TesseractApps is purpose-built to align with NDIS regulations. Our platform supports invoicing, claims, participant management, and incident reporting in line with the NDIS Practice Standards.",
   },
   {
     id: 2,
-    question: "What Can an Admin Do on the Dashboard?",
-    answer: `TesseractApps is built specifically for NDIS businesses, offering features such as: 
-    NDIS-compliant invoicing and claims management, 
-    Automated payroll and HR tools, 
-    Incident reporting and compliance tracking and
-    Real-time support and secure data storage. 
+    question: "What can an admin do on the dashboard?",
+    answer: `Admins have full visibility and control, including: 
+    •	Managing rosters and shifts 
+    •	Accessing compliance and payroll tools
+    •	Overseeing incident reporting
+    •	Generating reports
+    •	Customising staff access and permissions
 `,
   },
   {
     id: 3,
-    question: "Is TesseractApps NDIS-Compliant?",
+    question: "What is the Incident Register feature?",
     answer:
-      "Yes! TesseractApps is designed to align with NDIS guidelines, ensuring that all financial transactions, compliance records, and reporting meet industry standards.",
+      "Our Incident Register allows you to record, manage, and track incidents like accidents or compliance breaches. It helps ensure staff and participant safety, meet regulatory obligations, and build a culture of transparency.",
   },
   {
     id: 4,
     question: "Can I Customize the Modules I Use?",
     answer:
-      "Absolutely! TesseractApps offers flexible plans where you can choose the features and modules that best fit your business needs.",
+      "Absolutely. TesseractApps offers flexible, modular plans so you can choose only the features your organisation needs — from HR to scheduling to compliance.",
   },
   {
     id: 5,
-    question: "How Secure is My Data on TesseractApps?",
+    question: "Is the platform secure?",
     answer:
-      "Security is a top priority. TesseractApps uses advanced encryption and secure cloud storage to protect all user data. We also provide access control settings so businesses can manage who sees what.",
+      "Yes. Built on Salesforce, our platform follows ISO 27001-aligned practices, with encryption, access control, audit logs, and continuous security monitoring to keep your data protected.",
   },
   {
     id: 6,
-    question: "How Can I Get Started with TesseractApps?",
+    question: "Do you provide onboarding and support?",
     answer:
-      "Getting started is easy! Simply sign up for a free trial or contact our team for a demo. Our onboarding process is quick, and we offer training and 24/7 support to help you transition smoothly",
+      "Yes. We offer step-by-step onboarding, training sessions, and 24/7 Premium Support (available on select plans) to ensure a smooth transition and ongoing success.",
+  },
+  {
+    id: 7,
+    question: "Can support workers use TesseractApps on mobile?",
+    answer:
+      "Yes. TesseractApps is mobile-friendly. Support workers can log notes, check rosters, and receive alerts in real time — from any device, anywhere.",
+  },
+  {
+    id: 8,
+    question: "How do I get started with TesseractApps?",
+    answer:
+      "You can begin with a Free Trial or Book a Demo. Our team will guide you through the setup and ensure the platform is tailored to your organisation's needs.",
   },
 ];
