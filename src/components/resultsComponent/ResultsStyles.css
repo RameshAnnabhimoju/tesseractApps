@@ -20,7 +20,7 @@
   justify-content: center;
 }
 .results-card-title {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 400;
   color: var(--color-text-dark-gray);
   margin: 10px 0;
@@ -30,7 +30,6 @@
   font-weight: 400;
   color: var(--color-text-gray);
   max-width: 300px;
-  text-transform: uppercase;
 }
 .results-cards-text {
   max-width: 600px !important;

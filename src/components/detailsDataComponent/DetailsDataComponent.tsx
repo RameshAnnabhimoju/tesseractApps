@@ -2,7 +2,16 @@ import "./DetailsDataStyles.css";
 import detailsImage1 from "../../assets/detailImage1.png";
 import detailsImage2 from "../../assets/detailImage2.png";
 import detailsImage3 from "../../assets/detailImage3.png";
-const DetailsDataComponent = () => {
+const DetailsDataComponent = ({
+  data = {
+    title: " One Lorem ipsum dolor sit amet, consectetur Lorem ipsum",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam, dapibus
+          mattis adipiscing elit. Diam, dapibus mattis Lorem ipsum dolor sit
+          amet, onsectetur adipiscing elit. Diam, dapibus mattis`,
+  },
+}: {
+  data?: { title: string; description: string };
+}) => {
   return (
     <div id="details-data-container">
       <div id="details-data-image-collage">
@@ -13,14 +22,8 @@ const DetailsDataComponent = () => {
         </div>
       </div>
       <div id="details-data-text">
-        <div id="details-data-text-title">
-          One Lorem ipsum dolor sit amet, consectetur Lorem ipsum{" "}
-        </div>
-        <div id="details-data-text-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam, dapibus
-          mattis adipiscing elit. Diam, dapibus mattis Lorem ipsum dolor sit
-          amet, onsectetur adipiscing elit. Diam, dapibus mattis
-        </div>
+        <div id="details-data-text-title"> {data.title} </div>
+        <div id="details-data-text-description">{data.description}</div>
       </div>
     </div>
   );

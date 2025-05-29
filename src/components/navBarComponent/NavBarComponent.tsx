@@ -8,7 +8,7 @@ import "./NavBarStyles.css";
 import { useState } from "react";
 import { RefObject } from "react";
 import { useNavigate } from "react-router-dom";
-import { navBarDummyData } from "../../utils/DummyData";
+import { navBarDummyData, SubPagesDummyData } from "../../utils/DummyData";
 interface PopupPosition {
   top: number;
   left: number;
@@ -35,8 +35,14 @@ const NavBarComponent = ({
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
 
-    if (name && name == "Pricing") {
-      navigate("/pricing");
+    if (name) {
+      switch (name) {
+        case "Pricing":
+          navigate("/pricing");
+          break;
+        default:
+          break;
+      }
     }
   };
   const handleNavPopupClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -62,17 +68,48 @@ const NavBarComponent = ({
   };
   const popupLinkClickHandler = (name: string) => {
     closePopup();
-    if (name == "Blog") {
-      navigate("/blogs");
-    } else {
-      navigate("/details");
+    if (name) {
+      console.log(name);
+      switch (name) {
+        case "Blog":
+          navigate("/blogs");
+          break;
+        case "Product":
+          navigate("/product", {
+            state: { data: SubPagesDummyData["Product"] },
+          });
+          break;
+        case "Scheduling":
+          navigate("/scheduling", {
+            state: { data: SubPagesDummyData["Scheduling"] },
+          });
+          break;
+        case "Time Management":
+          navigate("/time-management", {
+            state: { data: SubPagesDummyData["Time Management"] },
+          });
+          break;
+        case "HR Management":
+          navigate("/hr-management", {
+            state: { data: SubPagesDummyData["HR Management"] },
+          });
+          break;
+        case "Communication":
+          navigate("/communication", {
+            state: { data: SubPagesDummyData["Communication"] },
+          });
+          break;
+        default:
+          navigate("/details");
+          break;
+      }
     }
   };
   return (
     <nav id="navbar-container">
       <div id="navbar-logo" onClick={() => navigate("/")}>
         <img src={logo_small} alt="tesseract logo" />
-        Tesseract Apps
+        TesseractApps
       </div>
 
       <div id="navbar-links">
@@ -97,7 +134,9 @@ const NavBarComponent = ({
               key={label}
               id={label}
               className="nav-link"
-              onClick={shouldHavePopup ? handleNavPopupClick : handleNavClick}
+              onClick={shouldHavePopup ? undefined : handleNavClick}
+              onMouseEnter={shouldHavePopup ? handleNavPopupClick : undefined}
+              // onMouseLeave={shouldHavePopup ? closePopup : undefined}
             >
               {label}
             </div>
@@ -141,6 +180,7 @@ const NavBarComponent = ({
         onClose={closePopup}
         containerRef={portalContainerRef}
         position={popupPosition}
+        onMouseLeave={closePopup}
       >
         <div id="popup-nav-container">
           {selectedLink &&
@@ -162,6 +202,20 @@ const NavBarComponent = ({
                 <div className="services-heading">BY INDUSTRY</div>
                 {Array.isArray(navBarDummyData[selectedLink]["BY INDUSTRY"]) &&
                   navBarDummyData[selectedLink]["BY INDUSTRY"].map((value) => (
+                    <div
+                      key={value.title}
+                      className="nav-inner-container"
+                      onClick={() => popupLinkClickHandler(value.title)}
+                    >
+                      <div className="nav-title">{value.title}</div>
+                      <div className="nav-sub-title">{value.subTitle}</div>
+                    </div>
+                  ))}
+              </div>
+              <div>
+                <div className="services-heading">BY CARE</div>
+                {Array.isArray(navBarDummyData[selectedLink]["BY CARE"]) &&
+                  navBarDummyData[selectedLink]["BY CARE"].map((value) => (
                     <div
                       key={value.title}
                       className="nav-inner-container"

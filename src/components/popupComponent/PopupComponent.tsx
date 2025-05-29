@@ -8,6 +8,7 @@ interface PopupProps {
   containerRef: React.RefObject<HTMLDivElement | null>;
   position?: { top: number; left: number } | null;
   children: React.ReactNode;
+  onMouseLeave?: () => void;
 }
 
 const PopupComponent = ({
@@ -16,6 +17,7 @@ const PopupComponent = ({
   containerRef,
   position,
   children,
+  onMouseLeave,
 }: PopupProps) => {
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -60,7 +62,7 @@ const PopupComponent = ({
   };
 
   return ReactDOM.createPortal(
-    <div ref={popupRef} style={popupStyle}>
+    <div ref={popupRef} style={popupStyle} onMouseLeave={onMouseLeave}>
       <div style={popupTriangle}>
         <svg viewBox="0 0 20 15" width="20px" height="15px">
           <path

@@ -6,6 +6,7 @@ import Details from "../pages/details/Details";
 import Pricing from "../pages/pricing/Pricing";
 import RequestADemo from "../pages/requestADemo/RequestADemo";
 import AddBlog from "../pages/addBlog/AddBlog";
+import SubPage from "../pages/SubPage/SubPage";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,11 @@ const AppRoutes = () => {
       <Route path="/requestDemo" element={<RequestADemo />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/addBlog" element={<AddBlog />} />
+      <Route path="/product" element={<SubPage />} />
+      <Route path="/scheduling" element={<SubPage />} />
+      <Route path="/time-management" element={<SubPage />} />
+      <Route path="/hr-management" element={<SubPage />} />
+      <Route path="/communication" element={<SubPage />} />
     </Routes>
   );
 };

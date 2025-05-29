@@ -72,10 +72,10 @@ export const blogDummyData = [
 
 export const navBarDummyData = {
   Product: [
-    { title: "Scheduling", subTitle: "" },
-    { title: "Time Management", subTitle: "" },
-    { title: "HR Management", subTitle: "" },
-    { title: "Communication", subTitle: "" },
+    { title: "Scheduling", subTitle: "Learn More" },
+    { title: "Time Management", subTitle: "Learn More" },
+    { title: "HR Management", subTitle: "Learn More" },
+    { title: "Communication", subTitle: "Learn More" },
     // { title: "Compliance & Safeguards", subTitle: "" },
     // { title: "Document Management", subTitle: "" },
     // { title: "Accounting", subTitle: "" },
@@ -84,51 +84,58 @@ export const navBarDummyData = {
   ],
   Solutions: {
     "BY INDUSTRY": [
-      { title: "NDIS Providers", subTitle: "" },
-      { title: "Retail & Hospitality", subTitle: "" },
-      { title: "Multi-site Businesses", subTitle: "" },
-      { title: "Construction", subTitle: "" },
-      { title: "Manufacturing", subTitle: "" },
-      { title: "More Industries", subTitle: "" },
+      { title: "Retail & Hospitality", subTitle: "Learn More" },
+      { title: "Multi-site Businesses", subTitle: "Learn More" },
+      { title: "Construction", subTitle: "Learn More" },
+      { title: "Manufacturing", subTitle: "Learn More" },
+      { title: "More Industries", subTitle: "Learn More" },
     ],
     "BY ROLE": [
-      { title: "HR Managers", subTitle: "" },
-      { title: "Team Leaders", subTitle: "" },
-      { title: "Employees", subTitle: "" },
-      { title: "Executives", subTitle: "" },
+      { title: "HR Managers", subTitle: "Learn More" },
+      { title: "Team Leaders", subTitle: "Learn More" },
+      { title: "Employees", subTitle: "Learn More" },
+      { title: "Executives", subTitle: "Learn More" },
     ],
     "BY BUSINESS TYPE": [
-      { title: "Small Businesses", subTitle: "" },
-      { title: "Enterprise", subTitle: "" },
-      { title: "Franchises", subTitle: "" },
-      { title: "Startups", subTitle: "" },
+      { title: "Small Businesses", subTitle: "Learn More" },
+      { title: "Enterprise", subTitle: "Learn More" },
+      { title: "Franchises", subTitle: "Learn More" },
+      { title: "Startups", subTitle: "Learn More" },
     ],
     "BY BUSINESS PROBLEM": [
-      { title: "Compliance", subTitle: "" },
-      { title: "Employee Engagement", subTitle: "" },
-      { title: "Time Efficiency", subTitle: "" },
-      { title: "Cost Optimisation", subTitle: "" },
+      { title: "Compliance", subTitle: "Learn More" },
+      { title: "Employee Engagement", subTitle: "Learn More" },
+      { title: "Time Efficiency", subTitle: "Learn More" },
+      { title: "Cost Optimisation", subTitle: "Learn More" },
+    ],
+    "BY CARE": [
+      { title: "Disability Support (NDIS Providers)", subTitle: "Learn More" },
+      { title: "Aged Care Services", subTitle: "Learn More" },
+      { title: "Childcare Centres", subTitle: "Learn More" },
+      { title: "Allied Health Practices", subTitle: "Learn More" },
+      { title: "Home & Community Care", subTitle: "Learn More" },
+      { title: "Training Providers", subTitle: "Learn More" },
     ],
   },
   "Additional Features": [
-    { title: "Demo Request", subTitle: "" },
-    { title: "Free Trial Sign-Up", subTitle: "" },
-    { title: "Integration", subTitle: "" },
+    { title: "Demo Request", subTitle: "Learn More" },
+    { title: "Free Trial Sign-Up", subTitle: "Learn More" },
+    { title: "Integration", subTitle: "Learn More" },
   ],
   Resources: [
-    { title: "Blog", subTitle: "" },
-    { title: "Case Studies", subTitle: "" },
-    { title: "Whitepapers", subTitle: "" },
-    { title: "FAQs", subTitle: "" },
-    { title: "Support Documentation", subTitle: "" },
+    { title: "Blog", subTitle: "Learn More" },
+    { title: "Case Studies", subTitle: "Learn More" },
+    { title: "Whitepapers", subTitle: "Learn More" },
+    { title: "FAQs", subTitle: "Learn More" },
+    { title: "Support Documentation", subTitle: "Learn More" },
   ],
   About: [
-    { title: "Our story", subTitle: "" },
-    { title: "Our Mission", subTitle: "" },
-    { title: "Our Vision", subTitle: "" },
-    { title: "Team", subTitle: "" },
-    { title: "Careers", subTitle: "" },
-    { title: "Contact Information", subTitle: "" },
+    { title: "Our story", subTitle: "Learn More" },
+    { title: "Our Mission", subTitle: "Learn More" },
+    { title: "Our Vision", subTitle: "Learn More" },
+    { title: "Team", subTitle: "Learn More" },
+    { title: "Careers", subTitle: "Learn More" },
+    { title: "Contact Information", subTitle: "Learn More" },
   ],
 };
 
@@ -922,3 +929,239 @@ export const accordiaDummyData = [
       "You can begin with a Free Trial or Book a Demo. Our team will guide you through the setup and ensure the platform is tailored to your organisation's needs.",
   },
 ];
+export const dots = {
+  dot1: { outer: "#E6EEFF", middle: "#B4CCFF", inner: "#2563EB" },
+  dot2: { outer: "#FFE3E3", middle: "#FEB4B4", inner: "#FC4343" },
+  dot3: { outer: "#DBF2E8", middle: "#9DD9C2", inner: "#08A965" },
+  dot4: { outer: "#DBE8EF", middle: "#9DC2D1", inner: "#3B7793" },
+  dot5: { outer: "#F7ECD9", middle: "#E8C9A5", inner: "#D77E1B" },
+  dot6: { outer: "#EBE2FE", middle: "#C7ADFC", inner: "#932EFA" },
+};
+export const SubPagesDummyData = {
+  Product: {
+    page: "Product",
+    section1: {
+      sectionTitle1: "Built for the Way You Work",
+      sectionDescription1:
+        "Whether you’re coordinating complex shift schedules, tracking mobile workforce hours, managing staff onboarding, or facilitating internal communication, TesseractApps empowers your team with real-time, cloud-based tools designed specifically for the care sector.",
+    },
+    section2: {
+      sectionTitle2: "Modules at a Glance",
+      sectionDescription2:
+        "Each module connects seamlessly with others to improve operational efficiency and ensure NDIS compliance—whether you're managing a small team or a multi-site enterprise.",
+      sectionPoints2: [
+        {
+          dot: dots.dot1,
+          title: "Scheduling",
+          description:
+            "Smart rostering with real-time tracking and staff availability",
+        },
+        {
+          dot: dots.dot2,
+          title: "Time Management",
+          description:
+            "Accurate time capture, clock-ins, location-based sign-ins",
+        },
+        {
+          dot: dots.dot3,
+          title: "HR Management",
+          description:
+            "Full employee lifecycle support, from onboarding to performance",
+        },
+        {
+          dot: dots.dot4,
+          title: "Communication",
+          description:
+            "Built-in tools for team chats, polls, and secure messaging",
+        },
+      ],
+    },
+    section3: {
+      sectionTitle3: "Seamless Integration, Unified Experience",
+      sectionDescription3:
+        "Each module works together to deliver a streamlined user experience. No more switching between systems—TesseractApps provides.",
+      sectionPoints3: [
+        "A single source of truth for your workforce and participant data",
+        "End-to-end visibility across care delivery, HR, finance, and operations",
+        "Time-saving automation and configurable compliance checks",
+      ],
+      sectionTitle4: "Get Started Today",
+      sectionDescription4:
+        "•	Discover how TesseractApps can simplify your operations and improve outcomes for participants.",
+    },
+  },
+  Scheduling: {
+    page: "Scheduling",
+    section1: {
+      sectionTitle1: "Smarter Rostering Made Simple",
+      sectionDescription1:
+        "Build and manage staff schedules with ease using TesseractApps’ intuitive Scheduling module. Designed for flexibility and compliance, it supports recurring shifts, EOI rosters, and drag-and-drop functionality across multiple locations and services.",
+    },
+    section2: {
+      sectionTitle2: "Key Features",
+      sectionDescription2:
+        "Whether you're managing a residential facility, community program, or in-home support team, our scheduling tools ensure you have the right person in the right place—every time.",
+      sectionPoints2: [
+        {
+          dot: dots.dot1,
+          title: "",
+          description: "Group rostering & automated shift assignment",
+        },
+        {
+          dot: dots.dot2,
+          title: "",
+          description: "Staff availability & extended shift support",
+        },
+        {
+          dot: dots.dot3,
+          title: "",
+          description: "Drag-and-drop interface with real-time notifications",
+        },
+        {
+          dot: dots.dot4,
+          title: "",
+          description: "Shift compliance ratings, checklists, and approvals",
+        },
+        {
+          dot: dots.dot5,
+          title: "",
+          description: "Location tracking (on/off), late clock-in alerts",
+        },
+        {
+          dot: dots.dot6,
+          title: "",
+          description:
+            "Sleepover, extended sleepover, and risk index visibility",
+        },
+      ],
+    },
+  },
+
+  "Time Management": {
+    page: "Time Management",
+    section1: {
+      sectionTitle1: "Real-Time Accuracy & Accountability",
+      sectionDescription1:
+        "Ensure every shift is tracked, approved, and reported with confidence. TesseractApps’ Time Management module allows teams to clock in and out using mobile devices, location-based verification, and digital signatures.",
+    },
+    section2: {
+      sectionTitle2: "Key Features",
+      sectionDescription2:
+        "Designed to minimise errors and streamline approvals, this module supports compliance while saving valuable admin time.",
+      sectionPoints2: [
+        {
+          dot: dots.dot1,
+          title: "",
+          description: "Clock-in/out with location tracking",
+        },
+        {
+          dot: dots.dot2,
+          title: "",
+          description: "Real-time shift notifications",
+        },
+        {
+          dot: dots.dot3,
+          title: "",
+          description: "Sign-in/out with client or supervisor signatures",
+        },
+        {
+          dot: dots.dot4,
+          title: "",
+          description: "Timestamp accuracy with auto-rounding",
+        },
+        {
+          dot: dots.dot5,
+          title: "",
+          description: "Extended time and instant schedule search",
+        },
+        {
+          dot: dots.dot6,
+          title: "",
+          description: "Mobile access for flexibility in the field",
+        },
+      ],
+    },
+  },
+
+  "HR Management": {
+    page: "HR Management",
+    section1: {
+      sectionTitle1: "Centralised Employee Lifecycle Management",
+      sectionDescription1:
+        "From recruitment to performance reviews, manage your entire workforce in one secure place. TesseractApps offers an integrated HR Management system built specifically for care sector teams and NDIS providers.",
+    },
+    section2: {
+      sectionTitle2: "Key Features",
+      sectionDescription2:
+        "Connect your HR data directly with payroll, time management, and scheduling tools to simplify operations and strengthen workforce engagement.",
+      sectionPoints2: [
+        {
+          dot: dots.dot1,
+          title: "",
+          description: "Recruitment and onboarding workflows",
+        },
+        {
+          dot: dots.dot2,
+          title: "",
+          description: "Applicant tracking system (ATS)",
+        },
+        {
+          dot: dots.dot3,
+          title: "",
+          description: "Employee awards and recognition",
+        },
+        {
+          dot: dots.dot4,
+          title: "",
+          description: "Leave and training management",
+        },
+        {
+          dot: dots.dot5,
+          title: "",
+          description: "Job boards and performance evaluations",
+        },
+        {
+          dot: dots.dot6,
+          title: "",
+          description: "Compliance-ready personnel records",
+        },
+      ],
+    },
+  },
+
+  Communication: {
+    page: "Communication",
+    section1: {
+      sectionTitle1: "Keep Your Team Connected Anywhere",
+      sectionDescription1:
+        "Empower your frontline and back-office teams with built-in communication tools designed for mobile, secure environments. Whether coordinating a shift or sharing policy updates, our Communications module keeps everyone informed and aligned.",
+    },
+    section2: {
+      sectionTitle2: "Key Features",
+      sectionDescription2:
+        "With centralised communication tools, managers can reduce missed messages and improve team responsiveness—without relying on third-party apps.",
+      sectionPoints2: [
+        {
+          dot: dots.dot1,
+          title: "",
+          description: "Secure group chats and one-on-one messaging",
+        },
+        {
+          dot: dots.dot2,
+          title: "",
+          description: "Polls and staff feedback collection",
+        },
+        {
+          dot: dots.dot3,
+          title: "",
+          description: "Real-time updates for shift changes or incidents",
+        },
+        {
+          dot: dots.dot4,
+          title: "",
+          description: "Seamless integration with other modules",
+        },
+      ],
+    },
+  },
+};

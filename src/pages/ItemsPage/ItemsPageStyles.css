@@ -1,39 +1,39 @@
-#blog-heading {
+#items-page-heading {
   margin-top: 70px;
   margin-bottom: 70px;
 }
-#blog-category-filters {
+#items-page-category-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin: 20px 18%;
 }
-#blog-card-container {
+#items-page-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 35px;
   margin: 80px 18%;
 }
-.blog-card {
+.items-card {
   cursor: pointer;
 }
-.blog-image {
+.items-card-image {
   border-radius: 20px;
   margin-bottom: 20px;
 }
-.blog-title {
+.items-card-title {
   font-size: 28px;
   font-weight: 500;
   margin-bottom: 10px;
 }
-.blog-description {
+.items-card-description {
   font-size: 16px;
   font-weight: 500;
   line-height: 25px;
   color: var(--color-text-dark-gray);
 }
 
-.blog-card:hover .blog-title {
+.items-card:hover .items-card-title {
   color: var(--color-primary);
 }
 
@@ -51,7 +51,7 @@
   color: var(--color-text-dark-gray);
   transition: all 0.3s ease;
 }
-.blog-categories {
+.items-card-categories {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -61,7 +61,7 @@
   background-color: var(--color-primary);
   color: white;
 }
-#add-blog-button {
+#add-items-button {
   background-color: var(--color-secondary);
   color: white;
   padding-top: 5px;
@@ -71,12 +71,12 @@
   cursor: pointer;
   font-size: 14px;
 }
-#blog-heading {
+#items-page-heading {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 50px;
 }
-#blog-text {
+#items-page-text {
   font-size: 20px;
   max-width: 600px;
   margin-bottom: 100px;

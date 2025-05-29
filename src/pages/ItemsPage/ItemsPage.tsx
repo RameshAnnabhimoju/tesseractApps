@@ -1,8 +1,8 @@
-import "./BlogStyles.css";
+import "./ItemsPageStyles.css";
 import { blogDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-const Blog = () => {
+const ItemsPage = () => {
   const navigate = useNavigate();
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [blogsData, setBlogsData] = useState(blogDummyData);
@@ -16,20 +16,19 @@ const Blog = () => {
     );
     setBlogsData(filteredData);
   }, [categoryFilter]); //
-
   return (
-    <div id="blog-container">
-      <div className="heading" id="blog-heading">
+    <div id="items-page-container">
+      <div className="heading" id="items-page-heading">
         Blog
       </div>
-      <div className="subheading" id="blog-sub-heading">
+      <div className="subheading" id="items-page-sub-heading">
         Insights, industry updates, and practical tips.
       </div>
-      <div className="text" id="blog-text">
+      <div className="text" id="items-page-text">
         Stay informed with expert articles on NDIS compliance, workforce
         management, digital transformation, and care sector innovation.
       </div>
-      <div id="blog-category-filters">
+      <div id="items-page-category-filters">
         <div id="category-text">Category</div>
         <div
           className={
@@ -67,23 +66,23 @@ const Blog = () => {
         >
           App
         </div>
-        <div id="add-blog-button" onClick={() => navigate("/addBlog")}>
+        <div id="add-items-button" onClick={() => navigate("/addBlog")}>
           New Blog
         </div>
       </div>
-      <div id="blog-card-container">
+      <div id="items-page-card-container">
         {blogsData.map((blog, index) => (
           <div
             onClick={() => {
               navigate("/article");
             }}
-            className="blog-card"
+            className="items-page-card"
             key={index}
           >
-            <img src={blog.image} alt="Blog" className="blog-image" />
-            <div className="blog-title">{blog.title}</div>
-            <div className="blog-description">{blog.description}</div>
-            <div className="blog-categories">
+            <img src={blog.image} alt="items" className="items-card-image" />
+            <div className="items-card-title">{blog.title}</div>
+            <div className="items-card-description">{blog.description}</div>
+            <div className="items-card-categories">
               {blog.categories.map((category, index) => (
                 <span className="category-filter" key={index}>
                   {category}
@@ -97,4 +96,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default ItemsPage;
