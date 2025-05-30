@@ -7,6 +7,13 @@ import Pricing from "../pages/pricing/Pricing";
 import RequestADemo from "../pages/requestADemo/RequestADemo";
 import AddBlog from "../pages/addBlog/AddBlog";
 import SubPage from "../pages/SubPage/SubPage";
+import ItemsPage from "../pages/ItemsPage/ItemsPage";
+import FAQ from "../pages/faq/FAQ";
+import AboutUsSubPage from "../pages/AboutUsSubPages/AboutUsSubPage";
+import Teams from "../pages/teams/Teams";
+import Careers from "../pages/careers/Careers";
+import ContactInformation from "../pages/contactInformation/ContactInformation";
+import Blogpost from "../pages/blogPost/Blogpost";
 
 const AppRoutes = () => {
   return (
@@ -23,6 +30,18 @@ const AppRoutes = () => {
       <Route path="/time-management" element={<SubPage />} />
       <Route path="/hr-management" element={<SubPage />} />
       <Route path="/communication" element={<SubPage />} />
+      <Route path="/blogs" element={<ItemsPage />} />
+      <Route path="/case-studies" element={<ItemsPage />} />
+      <Route path="/whitepapers" element={<ItemsPage />} />
+      <Route path="/support-documentation" element={<ItemsPage />} />
+      <Route path="/our-story" element={<AboutUsSubPage />} />
+      <Route path="/our-mission" element={<AboutUsSubPage />} />
+      <Route path="/our-vision" element={<AboutUsSubPage />} />
+      <Route path="/faq" element={<FAQ />} />
+      <Route path="/team" element={<Teams />} />
+      <Route path="/careers" element={<Careers />} />
+      <Route path="/contact-information" element={<ContactInformation />} />
+      <Route path="/blogPost" element={<Blogpost />} />
     </Routes>
   );
 };

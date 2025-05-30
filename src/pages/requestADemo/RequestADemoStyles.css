@@ -14,20 +14,21 @@
 .request-demo-form-element {
   display: flex;
   flex-direction: column;
+  min-width: 150px;
 }
-#request-demo-name,
-#request-demo-occupation {
+.request-demo-input-group {
   display: flex;
+  flex-direction: row;
   gap: 20px;
   justify-content: space-between;
 }
 #request-demo-form {
-  padding: 20px;
+  padding: 30px;
   border: 1px solid lightgray;
   border-radius: 25px;
 }
 .request-demo-input {
-  height: 30px;
+  height: 45px;
   border-radius: 5px;
   border: 1px solid lightgray;
   margin: 20px 0;
@@ -75,20 +76,19 @@
   gap: 30px;
   margin-bottom: 100px;
 }
-#request-demo-quote {
-  line-height: 28px;
-  font-weight: 600;
-  margin-bottom: 20px;
+
+#request-demo-form-subtext {
+  font-size: 14px;
+  color: var(--color-text-gray);
 }
-#request-demo-quote-author {
-  font-size: 15px;
+.request-demo-title {
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
 }
-#request-demo-quote-author-position {
+.request-demo-description {
   color: var(--color-text-gray);
-}
-#request-demo-text-bottom {
-  font-size: 14px;
-  color: var(--color-text-gray);
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 30px;
 }

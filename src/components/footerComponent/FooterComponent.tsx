@@ -3,6 +3,8 @@ import facebook from "../../assets/facebook.png";
 import instagram from "../../assets/instagram.png";
 import linkedin from "../../assets/linkedin.png";
 import youtube from "../../assets/youtube.png";
+import flagsImag1 from "../../assets/flagImage1.jpg";
+import flagsImag2 from "../../assets/flagImage2.jpg";
 const FooterComponent = () => {
   return (
     <div id="footer-container">
@@ -96,7 +98,9 @@ const FooterComponent = () => {
         the land on which we operate, and pay our respects to their Elders past
         and present.
         <br />
-        <br /> TesseractApps 2025 © CareMaster. All rights reserved.
+        <img src={flagsImag1} alt="Flag Image 1" />
+        <img src={flagsImag2} alt="Flag Image 2" />
+        <br /> TesseractApps 2025 ©. All rights reserved.
       </div>
     </div>
   );

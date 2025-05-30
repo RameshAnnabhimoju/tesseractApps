@@ -5,10 +5,15 @@ import profile from "../../assets/person.svg";
 import australia from "../../assets/australia.png";
 import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RefObject } from "react";
-import { useNavigate } from "react-router-dom";
-import { navBarDummyData, SubPagesDummyData } from "../../utils/DummyData";
+import { useLocation, useNavigate } from "react-router-dom";
+import {
+  navBarDummyData,
+  SubPagesDummyData,
+  itemsPageDummyData,
+  aboutUsPageData,
+} from "../../utils/DummyData";
 interface PopupPosition {
   top: number;
   left: number;
@@ -19,6 +24,10 @@ const NavBarComponent = ({
 }: {
   portalContainerRef: RefObject<HTMLDivElement | null>;
 }) => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
   const navigate = useNavigate();
   const [showSearch, setShowSearch] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
@@ -72,7 +81,24 @@ const NavBarComponent = ({
       console.log(name);
       switch (name) {
         case "Blog":
-          navigate("/blogs");
+          navigate("/blogs", {
+            state: { data: itemsPageDummyData["Blog"] },
+          });
+          break;
+        case "Case Studies":
+          navigate("/case-studies", {
+            state: { data: itemsPageDummyData["Case Studies"] },
+          });
+          break;
+        case "Whitepapers":
+          navigate("/whitepapers", {
+            state: { data: itemsPageDummyData["Whitepapers"] },
+          });
+          break;
+        case "Support Documentation":
+          navigate("/support-documentation", {
+            state: { data: itemsPageDummyData["Support Documentation"] },
+          });
           break;
         case "Product":
           navigate("/product", {
@@ -98,6 +124,33 @@ const NavBarComponent = ({
           navigate("/communication", {
             state: { data: SubPagesDummyData["Communication"] },
           });
+          break;
+        case "FAQs":
+          navigate("/faq");
+          break;
+        case "Team":
+          navigate("/team");
+          break;
+        case "Our story":
+          navigate("/our-story", {
+            state: { data: aboutUsPageData["Our Story"] },
+          });
+          break;
+        case "Our Mission":
+          navigate("/our-mission", {
+            state: { data: aboutUsPageData["Our mission"] },
+          });
+          break;
+        case "Our Vision":
+          navigate("/our-vision", {
+            state: { data: aboutUsPageData["Our Vision"] },
+          });
+          break;
+        case "Careers":
+          navigate("/careers");
+          break;
+        case "Contact Information":
+          navigate("/contact-information");
           break;
         default:
           navigate("/details");

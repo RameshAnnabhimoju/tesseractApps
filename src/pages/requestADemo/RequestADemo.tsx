@@ -3,112 +3,135 @@ const RequestADemo = () => {
   return (
     <div id="request-demo-container">
       <div className="subheading" id="request-demo-heading">
-        Shedule a free demo
+        Request Your Demo
       </div>
       <div className="text" id="request-demo-text">
-        How can HRLink make your HR headaches disappear? Schedule a free demo
-        and get your questions answered.
+        Please complete the form below to get started. Our team will be in touch
+        within one business day.
       </div>
       <div id="request-demo-content">
         <div id="request-demo-texts">
-          <div>
-            <div id="request-demo-quote">
-              "Our favorite things about HRLink are the ewasy-to-use UI and its
-              well-fit recruitment features. Their team is also always available
-              to help we are in need of support."
+          <div id="request-demo-upper">
+            <div className="request-demo-title">Head Office:</div>
+            <div className="request-demo-description">
+              TesseractApps <br />
+              Canberra, ACT, Australia
             </div>
-            <div id="request-demo-quote-author">Jerome Bell</div>
-            <div id="request-demo-quote-author-position">
-              HR Executiove - PayUp
+            <div className="request-demo-title">Phone:</div>
+            <div className="request-demo-description">
+              1300 252 808 <br />
+              02 6133 2800
+            </div>
+            <div className="request-demo-title">Email:</div>
+            <div className="request-demo-description">
+              enquiries@tesseractapps.com
             </div>
           </div>
-          <div id="request-demo-text-bottom">
-            HRLink isn't just an HR software; it's a realm of possibilities.
-            Explore our extensive features, including recruitment, onboarding,
-            HR analytics, and more, tailored to meet your unique needs.
+          <div id="request-demo-lower">
+            <div className="request-demo-title">Not Ready to Talk Yet?</div>
+            <div className="request-demo-description">
+              You can start a free trial or get in touch with our team for more
+              information.
+            </div>
           </div>
         </div>
         <div id="request-demo-form">
-          <div id="request-demo-name">
+          <form className="request-demo-form">
             <div
-              id="request-demo-first-name"
+              id="request-demo-full-name"
               className="request-demo-form-element"
             >
-              <label htmlFor="firstName">First Name*</label>
+              <label htmlFor="fullName">Full Name*</label>
               <input
                 type="text"
-                id="firstName"
-                placeholder="First name"
+                id="fullName"
+                placeholder="Full name"
                 className="request-demo-input"
               />
             </div>
+            <div className="request-demo-input-group">
+              <div
+                id="request-demo-email"
+                className="request-demo-form-element"
+              >
+                <label htmlFor="email">Email Address*</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email address"
+                  className="request-demo-input"
+                />
+              </div>
+
+              <div
+                id="request-demo-phone"
+                className="request-demo-form-element"
+              >
+                <label htmlFor="phone">Phone Number*</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Phone number"
+                  className="request-demo-input"
+                />
+              </div>
+            </div>
             <div
-              id="request-demo-last-name"
+              id="request-demo-organisation"
               className="request-demo-form-element"
             >
-              <label htmlFor="lastName">Last name*</label>
+              <label htmlFor="organisation">Organisation*</label>
               <input
                 type="text"
-                id="lastName"
-                placeholder="Last name"
+                id="organisation"
+                placeholder="Organisation"
                 className="request-demo-input"
               />
             </div>
-          </div>
-          <div id="request-demo-email" className="request-demo-form-element">
-            <label htmlFor="email">Work email*</label>
-            <input
-              type="text"
-              id="email"
-              placeholder="Work email"
-              className="request-demo-input"
-            />
-          </div>
-          <div id="request-demo-occupation">
-            <div
-              id="request-demo-comapnySize"
-              className="request-demo-form-element"
-            >
-              <label htmlFor="companySize">Company Size*</label>
-              <select className="request-demo-select" required>
-                <option value="">Company Size</option>
-                <option>10</option>
-                <option>20</option>
-              </select>
+            <div id="request-demo-role" className="request-demo-form-element">
+              <label htmlFor="role">Your Role*</label>
+              <input
+                type="text"
+                id="role"
+                placeholder="Your role"
+                className="request-demo-input"
+              />
             </div>
-            <div
-              id="request-demo-industry"
-              className="request-demo-form-element"
-            >
-              <label htmlFor="industry">Industry*</label>
-              <select className="request-demo-select" required>
-                <option value="">Your company industry</option>
-                <option>Medical</option>
-                <option>Software</option>
-              </select>
+            <div className="request-demo-input-group">
+              <div
+                id="request-demo-areas"
+                className="request-demo-form-element"
+              >
+                <label htmlFor="areas">Areas You’re Interested In*</label>
+                <select id="areas" className="request-demo-input">
+                  <option value="">-- Select an option --</option>
+                  <option value="scheduling">Scheduling</option>
+                  <option value="payroll">Payroll</option>
+                  <option value="hr">HR</option>
+                  <option value="ndis">NDIS Features</option>
+                </select>
+              </div>
+
+              <div
+                id="request-demo-preferred-time"
+                className="request-demo-form-element"
+              >
+                <label htmlFor="preferredTime">Preferred Demo Time*</label>
+                <input
+                  type="time"
+                  id="preferredTime"
+                  placeholder="e.g. Monday 10 AM"
+                  className="request-demo-input"
+                />
+              </div>
             </div>
-          </div>
-          <div id="primaryChallenge" className="request-demo-form-element">
-            <label htmlFor="primaryChallenge">
-              Primary challenge which want to solve with HR software*
-            </label>
-            <select className="request-demo-select" required>
-              <option value="">Select</option>
-              <option>Medical</option>
-              <option>Software</option>
-            </select>
-          </div>
-          <div id="whenRollOut" className="request-demo-form-element">
-            <label htmlFor="whenRollOut">
-              When do yoy want to roll out an HR System*
-            </label>
-            <select className="request-demo-select" required>
-              <option value="">Select</option>
-              <option>Medical</option>
-              <option>Software</option>
-            </select>
-          </div>
-          <button id="request-demo-button">Get Free Demo</button>
+            <button id="request-demo-button" type="submit">
+              Submit Request
+            </button>
+            <p id="request-demo-form-subtext">
+              By signing up you agree to our Privacy Policy
+            </p>
+          </form>
         </div>
       </div>
     </div>

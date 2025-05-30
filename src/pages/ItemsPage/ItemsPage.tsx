@@ -1,9 +1,11 @@
 import "./ItemsPageStyles.css";
 import { blogDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 const ItemsPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { data } = location.state || {};
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [blogsData, setBlogsData] = useState(blogDummyData);
   const handleCategoryFilter = (category: string) => {
@@ -19,57 +21,59 @@ const ItemsPage = () => {
   return (
     <div id="items-page-container">
       <div className="heading" id="items-page-heading">
-        Blog
+        {data?.heading || "Items Page"}
       </div>
       <div className="subheading" id="items-page-sub-heading">
-        Insights, industry updates, and practical tips.
+        {data?.subHeading || "Insights, industry updates, and practical tips."}
       </div>
       <div className="text" id="items-page-text">
-        Stay informed with expert articles on NDIS compliance, workforce
-        management, digital transformation, and care sector innovation.
+        {data?.text ||
+          "Stay informed with expert articles on NDIS compliance, workforce management, digital transformation, and care sector innovation."}
       </div>
-      <div id="items-page-category-filters">
-        <div id="category-text">Category</div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "All" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("All")}
-        >
-          All
+      {data?.heading == "Blog" && (
+        <div id="items-page-category-filters">
+          <div id="category-text">Category</div>
+          <div
+            className={
+              "category-filter " +
+              (categoryFilter == "All" ? "active-filter" : "")
+            }
+            onClick={() => handleCategoryFilter("All")}
+          >
+            All
+          </div>
+          <div
+            className={
+              "category-filter " +
+              (categoryFilter == "Product" ? "active-filter" : "")
+            }
+            onClick={() => handleCategoryFilter("Product")}
+          >
+            Product
+          </div>
+          <div
+            className={
+              "category-filter " +
+              (categoryFilter == "Technology" ? "active-filter" : "")
+            }
+            onClick={() => handleCategoryFilter("Technology")}
+          >
+            Technology
+          </div>
+          <div
+            className={
+              "category-filter " +
+              (categoryFilter == "App" ? "active-filter" : "")
+            }
+            onClick={() => handleCategoryFilter("App")}
+          >
+            App
+          </div>
+          <div id="add-items-button" onClick={() => navigate("/addBlog")}>
+            New Blog
+          </div>
         </div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "Product" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("Product")}
-        >
-          Product
-        </div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "Technology" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("Technology")}
-        >
-          Technology
-        </div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "App" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("App")}
-        >
-          App
-        </div>
-        <div id="add-items-button" onClick={() => navigate("/addBlog")}>
-          New Blog
-        </div>
-      </div>
+      )}
       <div id="items-page-card-container">
         {blogsData.map((blog, index) => (
           <div
