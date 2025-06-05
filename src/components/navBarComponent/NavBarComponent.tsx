@@ -13,6 +13,8 @@ import {
   SubPagesDummyData,
   itemsPageDummyData,
   aboutUsPageData,
+  byRoleData,
+  byIndustryData,
 } from "../../utils/DummyData";
 interface PopupPosition {
   top: number;
@@ -48,6 +50,11 @@ const NavBarComponent = ({
       switch (name) {
         case "Pricing":
           navigate("/pricing");
+          break;
+        case "Product":
+          navigate("/product", {
+            state: { data: SubPagesDummyData["Product"] },
+          });
           break;
         default:
           break;
@@ -100,11 +107,6 @@ const NavBarComponent = ({
             state: { data: itemsPageDummyData["Support Documentation"] },
           });
           break;
-        case "Product":
-          navigate("/product", {
-            state: { data: SubPagesDummyData["Product"] },
-          });
-          break;
         case "Scheduling":
           navigate("/scheduling", {
             state: { data: SubPagesDummyData["Scheduling"] },
@@ -152,8 +154,48 @@ const NavBarComponent = ({
         case "Contact Information":
           navigate("/contact-information");
           break;
+        case "Administrator":
+          navigate("/administrator", {
+            state: { data: byRoleData["Administrator"] },
+          });
+          break;
+        case "Participant":
+          navigate("/participant", {
+            state: { data: byRoleData["Participant"] },
+          });
+          break;
+        case "Roster Manager":
+          navigate("/roster-manager", {
+            state: { data: byRoleData["Roster Manager"] },
+          });
+          break;
+        case "NDIS Staff":
+          navigate("/ndis-staff", {
+            state: { data: byRoleData["NDIS Staff"] },
+          });
+          break;
+        case "HR Manager":
+          navigate("/hr-manager", {
+            state: { data: byRoleData["HR Manager"] },
+          });
+          break;
+        case "Accountant":
+          navigate("/accountant", {
+            state: { data: byRoleData["Accountant"] },
+          });
+          break;
+        case "NDIS Industry":
+          navigate("/ndis-industry", {
+            state: { data: byIndustryData["NDIS Industry"] },
+          });
+          break;
+        case "ICT Industry":
+          navigate("/ict-industry", {
+            state: { data: byIndustryData["ICT Industry"] },
+          });
+          break;
         default:
-          navigate("/details");
+          // navigate("/details");
           break;
       }
     }
@@ -187,7 +229,7 @@ const NavBarComponent = ({
               key={label}
               id={label}
               className="nav-link"
-              onClick={shouldHavePopup ? undefined : handleNavClick}
+              onClick={handleNavClick}
               onMouseEnter={shouldHavePopup ? handleNavPopupClick : undefined}
               // onMouseLeave={shouldHavePopup ? closePopup : undefined}
             >

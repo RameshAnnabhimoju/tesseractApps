@@ -14,6 +14,9 @@ import Teams from "../pages/teams/Teams";
 import Careers from "../pages/careers/Careers";
 import ContactInformation from "../pages/contactInformation/ContactInformation";
 import Blogpost from "../pages/blogPost/Blogpost";
+import ByRole from "../pages/byRole/ByRole";
+import ByIndustry from "../pages/byIndustry/ByIndustry";
+import ProductDetails from "../pages/productDetails/ProductDetails";
 
 const AppRoutes = () => {
   return (
@@ -42,6 +45,32 @@ const AppRoutes = () => {
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact-information" element={<ContactInformation />} />
       <Route path="/blogPost" element={<Blogpost />} />
+
+      <Route path="/administrator" element={<ByRole />} />
+      <Route path="/roster-manager" element={<ByRole />} />
+      <Route path="/ndis-staff" element={<ByRole />} />
+      <Route path="/hr-manager" element={<ByRole />} />
+      <Route path="/accountant" element={<ByRole />} />
+      <Route path="/participant" element={<ByRole />} />
+
+      <Route path="/ndis-industry" element={<ByIndustry />} />
+      <Route path="/ict-industry" element={<ByIndustry />} />
+
+      <Route path="/roster-management" element={<ProductDetails />} />
+      <Route path="/timesheet" element={<ProductDetails />} />
+      <Route path="/admin-console" element={<ProductDetails />} />
+      <Route path="/access-control-panel" element={<ProductDetails />} />
+      <Route path="/hr-operations" element={<ProductDetails />} />
+      <Route path="/t-sign" element={<ProductDetails />} />
+      <Route path="/clock-in-and-clock-out" element={<ProductDetails />} />
+      <Route path="/participant-management" element={<ProductDetails />} />
+      <Route path="/incident-management" element={<ProductDetails />} />
+      <Route path="/role-based-dashboard" element={<ProductDetails />} />
+      <Route path="/chat" element={<ProductDetails />} />
+      <Route path="/my-profile" element={<ProductDetails />} />
+      <Route path="/forms" element={<ProductDetails />} />
+      <Route path="/accounting" element={<ProductDetails />} />
+      <Route path="/t-learning-hub" element={<ProductDetails />} />
     </Routes>
   );
 };

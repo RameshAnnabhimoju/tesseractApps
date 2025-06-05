@@ -18,7 +18,7 @@
   gap: 25px;
 }
 #details-data-text-title {
-  font-size: 64px;
+  font-size: 40px;
   font-weight: 600;
   margin-bottom: 30px;
 }
@@ -26,4 +26,12 @@
   font-size: 20px;
   color: var(--color-text-gray);
   line-height: 28px;
+}
+#details-data-text-points {
+  margin: 25px 0;
+  font-size: 20px;
+  color: var(--color-text-gray);
+}
+#details-data-text {
+  max-width: 550px;
 }

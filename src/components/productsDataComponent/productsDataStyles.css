@@ -1,0 +1,33 @@
+#product-data-title {
+  font-size: 28px;
+}
+#product-data-description {
+  max-width: 1000px;
+}
+#product-data-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 50px; /* spacing between items */
+  margin: 50px 15%;
+  justify-items: center; /* optional, centers each grid item */
+}
+.product-data-card {
+  max-width: 500px;
+  padding: 20px 50px;
+  text-align: center;
+  filter: grayscale();
+  cursor: pointer;
+}
+.product-data-card:hover {
+  filter: none;
+  transform: scale(1.05);
+}
+.product-data-card-title {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+.product-data-card-description {
+  color: var(--color-text-gray);
+  font-size: 16px;
+}

@@ -2,11 +2,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin: 150px 0;
 }
 #trusted-clients-header {
-  font-size: 18px;
-  font-weight: bold;
-  color: var(--color-text-dark-gray);
-  margin-right: 50px;
+  font-size: 22px;
+  font-weight: 600;
+  width: 200px;
+}
+#trusted-clients-header {
+  display: flex;
+}
+.client-logo {
+  width: 160px;
 }

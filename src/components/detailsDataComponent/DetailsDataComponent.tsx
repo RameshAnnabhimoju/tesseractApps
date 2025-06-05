@@ -1,30 +1,66 @@
 import "./DetailsDataStyles.css";
-import detailsImage1 from "../../assets/detailImage1.png";
-import detailsImage2 from "../../assets/detailImage2.png";
-import detailsImage3 from "../../assets/detailImage3.png";
+interface detailsDataType {
+  data?: {
+    title: string;
+    description: string;
+    images: string[];
+    points?: string[];
+  };
+  componentType?: number;
+}
 const DetailsDataComponent = ({
   data = {
     title: " One Lorem ipsum dolor sit amet, consectetur Lorem ipsum",
     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam, dapibus
           mattis adipiscing elit. Diam, dapibus mattis Lorem ipsum dolor sit
           amet, onsectetur adipiscing elit. Diam, dapibus mattis`,
+    images: [],
+    points: [],
   },
-}: {
-  data?: { title: string; description: string };
-}) => {
+  componentType,
+}: detailsDataType) => {
+  // console.log(data.images);
   return (
     <div id="details-data-container">
-      <div id="details-data-image-collage">
-        <img src={detailsImage1} alt="details image 1" />
-        <div id="details-data-image-collage-item">
-          <img src={detailsImage2} alt="details image 2" />
-          <img src={detailsImage3} alt="details image 3" />
+      {componentType == 1 && data.images && data.images.length > 1 && (
+        <div id="details-data-image-collage">
+          <img src={data.images[0]} alt="details image 1" />
+          <div id="details-data-image-collage-item">
+            <img src={data.images[1]} alt="details image 2" />
+            <img src={data.images[2]} alt="details image 3" />
+          </div>
         </div>
-      </div>
+      )}
+      {componentType == 1 && data.images && data.images.length == 1 && (
+        <div id="details-data-image-collage">
+          <img src={data.images[0]} alt="details image 1" />
+        </div>
+      )}
+
       <div id="details-data-text">
         <div id="details-data-text-title"> {data.title} </div>
         <div id="details-data-text-description">{data.description}</div>
+        {data.points &&
+          data.points.map((point, index) => (
+            <div id="details-data-text-points" key={index}>
+              &#10687; {point}
+            </div>
+          ))}
       </div>
+      {componentType == 2 && data.images && data.images.length > 1 && (
+        <div id="details-data-image-collage">
+          <img src={data.images[0]} alt="details image 1" />
+          <div id="details-data-image-collage-item">
+            <img src={data.images[1]} alt="details image 2" />
+            <img src={data.images[2]} alt="details image 3" />
+          </div>
+        </div>
+      )}
+      {componentType == 2 && data.images && data.images.length == 1 && (
+        <div id="details-data-image-collage">
+          <img src={data.images[0]} alt="details image 1" />
+        </div>
+      )}
     </div>
   );
 };
