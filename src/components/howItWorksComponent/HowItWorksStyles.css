@@ -78,4 +78,7 @@
   .howItWorks-card-title {
     color: var(--color-primary);
   }
+  #howItWorks-image {
+    max-width: 380px;
+  }
 }

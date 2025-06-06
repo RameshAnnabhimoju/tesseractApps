@@ -79,7 +79,7 @@ const HowItWorksComponent = () => {
             })}
           </div>
         )}
-        <div id="howItWorks-image">
+        <div id="howItWorks-image-container">
           <img
             src={howItWorksImages[hoveredIndex]}
             alt="How It Works"
