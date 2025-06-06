@@ -6,13 +6,20 @@ import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
 import star from "../../assets/star.png";
 import blurImage from "../../assets/blurPinkImage.png";
+import { useEffect, useState } from "react";
 const TestimonialComponent = () => {
+  const [perView, setPerView] = useState(3);
+  useEffect(() => {
+    if (window.screen.width <= 425) {
+      setPerView(1);
+    }
+  }, []);
   const [sliderRef, slider] = useKeenSlider(
     {
-      mode: "snap",
+      initial: 0,
       rubberband: true,
       slides: {
-        perView: 3,
+        perView: perView,
         spacing: 30,
       },
       slideChanged(slide) {
@@ -47,17 +54,17 @@ const TestimonialComponent = () => {
                     className="star-image"
                   />
                 ))}
-                <div className="testimonial-text">{item.testimonial}</div>
-                <div className="testimonial-author-details">
-                  <img
-                    src={item.authorImage}
-                    alt="author"
-                    className="author-image"
-                  />
-                  <div className="author-details">
-                    <div className="author-name">{item.author}</div>
-                    <div className="author-title">{item.authorTitle}</div>
-                  </div>
+              </div>
+              <div className="testimonial-text">{item.testimonial}</div>
+              <div className="testimonial-author-details">
+                <img
+                  src={item.authorImage}
+                  alt="author"
+                  className="author-image"
+                />
+                <div className="author-details">
+                  <div className="author-name">{item.author}</div>
+                  <div className="author-title">{item.authorTitle}</div>
                 </div>
               </div>
             </div>

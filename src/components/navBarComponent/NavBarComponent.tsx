@@ -16,6 +16,8 @@ import {
   byRoleData,
   byIndustryData,
 } from "../../utils/DummyData";
+// import { Drawer } from "@mui/material";
+import menuIcon from "../../assets/menu.png";
 interface PopupPosition {
   top: number;
   left: number;
@@ -200,13 +202,22 @@ const NavBarComponent = ({
       }
     }
   };
+  const [toggleDrawer, setToggleDrawer] = useState(false);
   return (
     <nav id="navbar-container">
       <div id="navbar-logo" onClick={() => navigate("/")}>
         <img src={logo_small} alt="tesseract logo" />
         TesseractApps
       </div>
-
+      <img
+        src={menuIcon}
+        alt="menu"
+        id="nav-menu-icon"
+        onClick={() => {
+          setToggleDrawer(!toggleDrawer);
+        }}
+      />
+      {/* <Drawer anchor="right" open={toggleDrawer}></Drawer> */}
       <div id="navbar-links">
         {[
           "About",

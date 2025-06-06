@@ -39,3 +39,13 @@
   margin-top: 2rem;
   cursor: pointer;
 }
+
+@media (max-width: 425px) {
+  #home-hero-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #home-text-heading {
+    font-size: 40px;
+  }
+}

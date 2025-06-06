@@ -16,7 +16,6 @@
   justify-content: center;
   align-items: center;
   gap: 150px;
-  flex-wrap: wrap;
   margin: 100px 0;
 }
 #howItWorks-content-text {
@@ -51,4 +50,32 @@
 
 .howItWorks-card:hover .howItWorks-card-title-number {
   color: var(--color-primary);
+}
+@media (max-width: 425px) {
+  #howItWorks-container {
+    /* display: none; */
+    /* overflow-x: hidden; */
+  }
+  .subheading-howItWorks {
+    max-width: 400px;
+    min-width: 400px;
+  }
+  .howItWorks-card-description {
+    min-width: 400px;
+    max-width: 400px;
+  }
+
+  #howItWorks-content {
+    margin: 0;
+    flex-wrap: wrap;
+  }
+  #howItWorks-content-text-carousel {
+    min-width: 300px;
+    max-width: 380px;
+    padding: 30px 0%;
+  }
+  .howItWorks-card-title-number,
+  .howItWorks-card-title {
+    color: var(--color-primary);
+  }
 }

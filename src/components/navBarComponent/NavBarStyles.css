@@ -115,3 +115,19 @@
   padding: 20px 10px;
   color: var(--color-text-gray);
 }
+#nav-menu-icon {
+  display: none;
+}
+@media (max-width: 425px) {
+  #navbar-links,
+  #nav-icons-container {
+    display: none;
+  }
+  #nav-menu-icon {
+    display: inline;
+    background-color: var(--color-primary);
+    padding: 5px;
+    border-radius: 25px;
+    transform: scale(1.1);
+  }
+}

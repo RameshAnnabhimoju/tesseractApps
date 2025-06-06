@@ -38,3 +38,9 @@
 .results-cards-text2 {
   max-width: 800px !important;
 }
+
+@media (max-width: 425px) {
+  #results-container {
+    margin: 100px 3%;
+  }
+}

@@ -3,7 +3,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { featuresDummyData } from "../../utils/DummyData";
 const FeaturesComponent = () => {
@@ -11,12 +11,18 @@ const FeaturesComponent = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   console.log(currentSlide, loaded);
+  const [perView, setPerView] = useState(5);
+  useEffect(() => {
+    if (window.screen.width <= 425) {
+      setPerView(1);
+    }
+  }, []);
   const [sliderRef, slider] = useKeenSlider(
     {
       mode: "snap",
       rubberband: true,
       slides: {
-        perView: 5,
+        perView: perView,
         spacing: 30,
       },
 

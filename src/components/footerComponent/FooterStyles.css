@@ -84,3 +84,19 @@
   text-align: center;
   color: var(--color-text-gray);
 }
+
+@media (max-width: 425px) {
+  #footer-container {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    justify-content: space-between;
+  }
+  #foooter-column-5 {
+    margin: 0;
+  }
+  #footer-newsletter-input {
+    width: 160px;
+  }
+}

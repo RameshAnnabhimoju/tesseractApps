@@ -60,3 +60,14 @@
   width: 40px;
   border-radius: 25px;
 }
+@media (max-width: 425px) {
+  #testimonial-container {
+    /* display: none; */
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+  #blur-image {
+    display: none;
+  }
+}

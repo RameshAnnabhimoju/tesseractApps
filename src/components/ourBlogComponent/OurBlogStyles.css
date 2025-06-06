@@ -80,3 +80,14 @@
   font-weight: 600;
   color: white;
 }
+
+@media (max-width: 425px) {
+  .ourBlog-card {
+    min-width: 225px; /* or whatever width you want */
+    max-width: 100%;
+  }
+  .ourBlog-image {
+    max-width: 380px;
+    object-fit: contain;
+  }
+}
