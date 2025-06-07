@@ -132,9 +132,9 @@ const NavBarComponent = ({
         case "FAQs":
           navigate("/faq");
           break;
-        case "Team":
-          navigate("/team");
-          break;
+        // case "Team":
+        //   navigate("/team");
+        //   break;
         case "Our story":
           navigate("/our-story", {
             state: { data: aboutUsPageData["Our Story"] },
