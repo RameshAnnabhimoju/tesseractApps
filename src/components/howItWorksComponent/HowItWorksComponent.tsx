@@ -8,7 +8,7 @@ import { useKeenSlider } from "keen-slider/react";
 const HowItWorksComponent = () => {
   const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(0);
-  const [perView, setPerView] = useState(1);
+  const [perView, setPerView] = useState(3);
   useEffect(() => {
     if (window.screen.width <= 425) {
       setPerView(1);
