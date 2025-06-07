@@ -8,8 +8,9 @@ import { useKeenSlider } from "keen-slider/react";
 const HowItWorksComponent = () => {
   const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(0);
-  const [perView, setPerView] = useState(3);
+  const [perView, setPerView] = useState(window.screen.width <= 425 ? 1 : 3);
   useEffect(() => {
+    // console.log(window.screen.width);
     if (window.screen.width <= 425) {
       setPerView(1);
     }
@@ -27,6 +28,7 @@ const HowItWorksComponent = () => {
       setHoveredIndex(s.track.details.rel); // update active slide index
     },
   });
+
   return (
     <div id="howItWorks-container">
       <div className="heading heading-howItWorks">HOW IT WORKS</div>
