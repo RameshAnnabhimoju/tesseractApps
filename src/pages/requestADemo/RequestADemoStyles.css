@@ -92,3 +92,11 @@
   margin-bottom: 10px;
   line-height: 30px;
 }
+@media (max-width: 450px) {
+  #request-demo-content {
+    flex-wrap: wrap;
+  }
+  #request-demo-form {
+    transform: scale(0.8);
+  }
+}
