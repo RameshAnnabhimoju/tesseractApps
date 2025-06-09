@@ -15,6 +15,7 @@ import {
   aboutUsPageData,
   byRoleData,
   byIndustryData,
+  productsDetailsData,
 } from "../../utils/DummyData";
 import { Drawer } from "@mui/material";
 import menuIcon from "../../assets/menu.png";
@@ -200,6 +201,97 @@ const NavBarComponent = ({
         case "ICT Industry":
           navigate("/ict-industry", {
             state: { data: byIndustryData["ICT Industry"] },
+          });
+          break;
+        case "Roster Management":
+          navigate("/roster-management", {
+            state: { data: productsDetailsData["Roster Management"] },
+          });
+          break;
+
+        case "Timesheet":
+          navigate("/timesheet", {
+            state: { data: productsDetailsData["Timesheet"] },
+          });
+          break;
+
+        case "Admin Console":
+          navigate("/admin-console", {
+            state: { data: productsDetailsData["Admin Console"] },
+          });
+          break;
+
+        case "Access Control Panel":
+          navigate("/access-control-panel", {
+            state: { data: productsDetailsData["Access Control Panel"] },
+          });
+          break;
+
+        case "HR Operations":
+          navigate("/hr-operations", {
+            state: { data: productsDetailsData["HR Operations"] },
+          });
+          break;
+
+        case "T-sign":
+          navigate("/t-sign", {
+            state: { data: productsDetailsData["T-sign"] },
+          });
+          break;
+
+        case "Clock In & Clock Out":
+          navigate("/clock-in-and-clock-out", {
+            state: { data: productsDetailsData["Clock In & Clock Out"] },
+          });
+          break;
+
+        case "Participant Management":
+          navigate("/participant-management", {
+            state: { data: productsDetailsData["Participant Management"] },
+          });
+          break;
+
+        case "Incident Management":
+          navigate("/incident-management", {
+            state: { data: productsDetailsData["Incident Management"] },
+          });
+          break;
+
+        case "Role based Dashboards":
+          navigate("/role-based-dashboard", {
+            state: { data: productsDetailsData["Role Based Dashboard"] },
+          });
+          break;
+
+        case "ChaT - Secure Internal Messaging":
+          navigate("/chat", {
+            state: {
+              data: productsDetailsData["ChaT - Secure Internal Messaging"],
+            },
+          });
+          break;
+
+        case "My Profile":
+          navigate("/my-profile", {
+            state: { data: productsDetailsData["My Profile"] },
+          });
+          break;
+
+        case "Forms":
+          navigate("/forms", {
+            state: { data: productsDetailsData["Forms"] },
+          });
+          break;
+
+        case "Accounting":
+          navigate("/accounting", {
+            state: { data: productsDetailsData["Accounting"] },
+          });
+          break;
+
+        case "T Learning Hub":
+          navigate("/t-learning-hub", {
+            state: { data: productsDetailsData["T Learning Hub"] },
           });
           break;
         default:
@@ -626,6 +718,7 @@ const NavBarComponent = ({
         <div id="popup-nav-container">
           {selectedLink &&
             selectedLink != "Solutions" &&
+            selectedLink != "Product" &&
             Array.isArray(navBarDummyData[selectedLink]) &&
             navBarDummyData[selectedLink].map((value) => (
               <div
@@ -637,6 +730,23 @@ const NavBarComponent = ({
                 <div className="nav-sub-title">{value.subTitle}</div>
               </div>
             ))}
+          {selectedLink &&
+            selectedLink == "Product" &&
+            Array.isArray(navBarDummyData[selectedLink]) && (
+              <div id="popup-nav-peoduct-container">
+                {navBarDummyData[selectedLink].map((value) => (
+                  <div
+                    key={value.title}
+                    className="nav-inner-container"
+                    onClick={() => popupLinkClickHandler(value.title)}
+                  >
+                    <div className="nav-title">{value.title}</div>
+                    <div className="nav-sub-title">{value.subTitle}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+
           {selectedLink && selectedLink == "Solutions" && (
             <div id="popup-nav-services-container">
               <div>

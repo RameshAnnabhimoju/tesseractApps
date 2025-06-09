@@ -84,6 +84,7 @@
   padding: 5px;
   border-radius: 10px;
   background-image: var(--color-background-gradient);
+  max-height: 470px;
 }
 .nav-inner-container {
   padding: 10px;
@@ -117,6 +118,12 @@
 }
 #nav-menu-icon {
   display: none;
+}
+#popup-nav-peoduct-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 480px;
 }
 @media (max-width: 450px) {
   #navbar-links,
