@@ -35,3 +35,12 @@
 #details-data-text {
   max-width: 550px;
 }
+@media (max-width: 450px) {
+  #details-data-container {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+  }
+  #details-data-image-collage {
+    transform: scale(0.6);
+  }
+}

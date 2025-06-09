@@ -81,3 +81,14 @@
   max-width: 600px;
   margin-bottom: 100px;
 }
+@media (max-width: 450px) {
+  #items-page-card-container {
+    margin: 80px 2%;
+  }
+  .items-card-image {
+    transform: scale(0.9);
+  }
+  #items-page-container {
+    overflow-x: hidden;
+  }
+}

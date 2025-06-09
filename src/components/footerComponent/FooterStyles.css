@@ -85,7 +85,7 @@
   color: var(--color-text-gray);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   #footer-container {
     display: flex;
     /* flex-direction: column; */

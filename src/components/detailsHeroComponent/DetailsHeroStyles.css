@@ -38,3 +38,18 @@
 #details-hero-image {
   width: 700px;
 }
+@media (max-width: 450px) {
+  #details-hero-contents {
+    padding: 30px;
+  }
+  #details-hero-image {
+    max-width: 380px;
+    transform: scale(1.1);
+  }
+  #details-hero-container {
+    flex-wrap: wrap;
+  }
+  #details-hero-container {
+    overflow: hidden;
+  }
+}

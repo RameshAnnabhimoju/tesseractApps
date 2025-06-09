@@ -81,7 +81,7 @@
   color: white;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   .ourBlog-card {
     min-width: 225px; /* or whatever width you want */
     max-width: 100%;

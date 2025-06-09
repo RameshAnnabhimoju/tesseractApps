@@ -39,7 +39,7 @@
   max-width: 800px !important;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   #results-container {
     margin: 100px 3%;
   }

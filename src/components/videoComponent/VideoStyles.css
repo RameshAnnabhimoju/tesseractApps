@@ -181,7 +181,7 @@ video {
 .line {
   animation: stroke-dashoffset 0.8s linear forwards;
 }
-@media (max-width: 425px) {
+@media (max-width: 450px) {
   .video-container {
     margin: 0;
     overflow-x: hidden;

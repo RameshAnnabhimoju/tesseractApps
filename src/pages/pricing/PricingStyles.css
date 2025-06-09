@@ -159,6 +159,7 @@
 #pricing-help-card {
   background-color: var(--color-secondary);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 30px;
   margin: 20px auto;
@@ -176,6 +177,7 @@
 #pricing-help-links {
   display: flex;
   gap: 100px;
+  flex-wrap: wrap;
 }
 .pricing-links-container {
   display: flex;
@@ -207,4 +209,22 @@
   color: white;
   font-size: 16px;
   cursor: pointer;
+}
+.pricing-data-tick-container {
+  display: flex;
+  gap: 30%;
+}
+@media (max-width: 450px) {
+  #pricing-help-links {
+    max-width: 380px;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  #pricing-slider,
+  .pricing-divider-line-header {
+    width: 380px;
+  }
+  .pricing-subheading {
+    max-width: 380px;
+  }
 }

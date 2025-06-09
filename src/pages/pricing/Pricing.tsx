@@ -167,38 +167,40 @@ const Pricing = () => {
                         {dataItem.subTitle}
                       </div>
                     </div>
-                    <div className="pricing-data-data1">
-                      {typeof dataItem.data1 != "boolean" ? (
-                        dataItem.data1
-                      ) : (
-                        <img
-                          src={tick}
-                          alt="tick"
-                          className="pricing-data-tick"
-                        />
-                      )}
-                    </div>
-                    <div className="pricing-data-data2">
-                      {typeof dataItem.data2 != "boolean" ? (
-                        dataItem.data2
-                      ) : (
-                        <img
-                          src={tick}
-                          alt="tick"
-                          className="pricing-data-tick"
-                        />
-                      )}
-                    </div>
-                    <div className="pricing-data-data3">
-                      {typeof dataItem.data3 != "boolean" ? (
-                        dataItem.data3
-                      ) : (
-                        <img
-                          src={tick}
-                          alt="tick"
-                          className="pricing-data-tick"
-                        />
-                      )}
+                    <div className="pricing-data-tick-container">
+                      <div className="pricing-data-data1">
+                        {typeof dataItem.data1 != "boolean" ? (
+                          dataItem.data1
+                        ) : (
+                          <img
+                            src={tick}
+                            alt="tick"
+                            className="pricing-data-tick"
+                          />
+                        )}
+                      </div>
+                      <div className="pricing-data-data2">
+                        {typeof dataItem.data2 != "boolean" ? (
+                          dataItem.data2
+                        ) : (
+                          <img
+                            src={tick}
+                            alt="tick"
+                            className="pricing-data-tick"
+                          />
+                        )}
+                      </div>
+                      <div className="pricing-data-data3">
+                        {typeof dataItem.data3 != "boolean" ? (
+                          dataItem.data3
+                        ) : (
+                          <img
+                            src={tick}
+                            alt="tick"
+                            className="pricing-data-tick"
+                          />
+                        )}
+                      </div>
                     </div>
                     {/* <div className="pricing-data-data4">
                       {typeof dataItem.data4 != "boolean" ? (
