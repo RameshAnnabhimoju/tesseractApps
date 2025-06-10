@@ -5,6 +5,8 @@ interface detailsDataType {
     description: string;
     images: string[];
     points?: string[];
+    conclusion?: string;
+    discriptionsPoints?: string[];
   };
   componentType?: number;
 }
@@ -46,6 +48,15 @@ const DetailsDataComponent = ({
               &#10687; {point}
             </div>
           ))}
+        {data.discriptionsPoints &&
+          data.discriptionsPoints.map((point, index) => (
+            <div id="details-data-text-points" key={index}>
+              {point}
+            </div>
+          ))}
+        {data.conclusion && (
+          <div id="details-data-text-description">{data.conclusion}</div>
+        )}
       </div>
       {componentType == 2 && data.images && data.images.length > 1 && (
         <div id="details-data-image-collage">

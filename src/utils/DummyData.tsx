@@ -1917,7 +1917,7 @@ export const faqPageDummyData = [
           {
             question: "How are public holidays handled in shifts?",
             answer:
-              "Public holiday rates apply automatically during manual shift creation and Auto-scheduling engine execution as well.",
+              "",
             points: [
               "Public holiday rates apply automatically during manual shift creation and Auto-scheduling engine execution as well",
               "A built-in public holiday calendar is used for reference.",
@@ -2121,7 +2121,9 @@ export const faqPageDummyData = [
           {
             question: "Where can I complete my training?",
             answer:
-              "All required training can be accessed directly through your profile once you're logged onto the platform. The training experience is fully online, allowing you to complete modules at your own pace, anytime, and from anywhere. You'll be notified when new training is assigned, and your progress is tracked to ensure completion and compliance with organisational standards. This streamlined process helps you stay current with certifications, policies, and role-specific learning—all within a secure and user-friendly environment.",
+              "All required training can be accessed directly through your profile once you're logged onto the platform. The training experience is fully online, allowing you to complete modules at your own pace, anytime, and from anywhere.",
+            conclusion:
+              "You'll be notified when new training is assigned, and your progress is tracked to ensure completion and compliance with organisational standards. This streamlined process helps you stay current with certifications, policies, and role-specific learning—all within a secure and user-friendly environment.",
           },
           {
             question:
@@ -2416,7 +2418,7 @@ export const blogsData = [
     blogTitle:
       "Protecting Participant Data: Why Security Matters for NDIS and Care Providers",
     blogIntro:
-      "Every day, disability support and aged care providers collect sensitive information — including health records, personal details, and care plans — that participants trust us to protect. Strong data security isn’t a luxury; it’s essential for compliance, service continuity, and, most importantly, client trust.",
+      "Every day, disability support and aged care providers collect sensitive information — including health records, personal details, and care plans — that participants trust us to protect. Strong data security isn’t a luxury, it’s essential for compliance, service continuity, and, most importantly, client trust.",
     blogText: [
       "Cyberattacks targeting the healthcare and disability sectors are rising. In July 2024, for example, a ransomware attack on prescription service MediSecure exposed the health and personal data of approximately 12.9 million Australians. Alarming figures show that 41% of Australian healthcare organisations experienced a cyberattack in 2023. These breaches can compromise privacy, disrupt care delivery, and result in serious regulatory and reputational consequences.",
     ],
@@ -2478,7 +2480,10 @@ export const byRoleData = {
     "details-2": {
       images: [detailsImage3],
       title: "",
-      description: `To ensure smooth deployment, optimal performance, and continued support, our technical team requires a few specific permissions. These access rights are module-specific and strictly limited to what is necessary for monitoring, configuration, and maintenance tasks. All access is governed by robust security protocols to protect your data and privacy.\nBy granting appropriate access during setup, you will help us provide you with a secure, reliable, and fully optimised experience.`,
+      description: `To ensure smooth deployment, optimal performance, and continued support, our technical team requires a few specific permissions. These access rights are module-specific and strictly limited to what is necessary for monitoring, configuration, and maintenance tasks. All access is governed by robust security protocols to protect your data and privacy.`,
+
+      conclusion:
+        "By granting appropriate access during setup, you will help us provide you with a secure, reliable, and fully optimised experience.",
     },
   },
   "Roster Manager": {
@@ -2491,7 +2496,10 @@ export const byRoleData = {
     "details-1": {
       images: [detailsImage2],
       title: "",
-      description: `With integrated data from User Management and Communication modules, Roster Managers benefit from streamlined workflows and a unified view of staff schedules. This helps reduce conflicts, improve resource planning, and enhance operational efficiency.\nAll access is governed by strict security policies, ensuring the protection of sensitive data while allowing the Roster Manager to perform their role effectively.`,
+      description: `With integrated data from User Management and Communication modules, Roster Managers benefit from streamlined workflows and a unified view of staff schedules. This helps reduce conflicts, improve resource planning, and enhance operational efficiency.`,
+
+      conclusion:
+        "All access is governed by strict security policies, ensuring the protection of sensitive data while allowing the Roster Manager to perform their role effectively.",
     },
     "details-2": {
       images: [detailsImage3],
@@ -2570,7 +2578,10 @@ export const byRoleData = {
     "details-1": {
       images: [detailsImage2],
       title: "",
-      description: `Their access also enables coordination with modules such as Roster Management and Reporting to ensure workforce alignment with organisational needs and legal obligations.\nAll HR data is protected through strict access controls and encryption protocols, ensuring confidentiality and compliance with applicable workforce regulations.`,
+      description: `Their access also enables coordination with modules such as Roster Management and Reporting to ensure workforce alignment with organisational needs and legal obligations.`,
+
+      conclusion:
+        "All HR data is protected through strict access controls and encryption protocols, ensuring confidentiality and compliance with applicable workforce regulations.",
     },
     "details-2": {
       images: [detailsImage3],
@@ -2596,7 +2607,9 @@ export const byRoleData = {
     "details-1": {
       images: [detailsImage2],
       title: "",
-      description: `This role is designed for ease of use, accessibility, and privacy. Participants can communicate with their care team, track their progress and provide feedback - all within a user-friendly interface.\nAccess is carefully scoped to individual records only, with privacy settings and security measures to safeguard personal data.`,
+      description: `This role is designed for ease of use, accessibility, and privacy. Participants can communicate with their care team, track their progress and provide feedback - all within a user-friendly interface.`,
+      conclusion:
+        "Access is carefully scoped to individual records only, with privacy settings and security measures to safeguard personal data.",
     },
     "details-2": {
       images: [detailsImage3],
@@ -2625,8 +2638,10 @@ export const byIndustryData = {
     details: [
       {
         title: "Roster Management",
-        description: `Automate complex NDIS-compliant rostering across locations, shifts, and groups. Match staff shifts by skill and risk, apply correct wage rules, track expenses, and use geo-tracking for clock-ins. Gain real-time visibility and robust reporting to optimise workforce efficiency and compliance.\n\nNDIS-ready timesheets with geo-verified sign-ins, seamless shift tracking (including sleepovers), and smart approvals. Ensure precise payroll calculations, compliance, and operational efficiency with built-in NDIS-specific rules.`,
+        description: `Automate complex NDIS-compliant rostering across locations, shifts, and groups. Match staff shifts by skill and risk, apply correct wage rules, track expenses, and use geo-tracking for clock-ins. Gain real-time visibility and robust reporting to optimise workforce efficiency and compliance.`,
         images: [detailsImage2],
+        conclusion:
+          "NDIS-ready timesheets with geo-verified sign-ins, seamless shift tracking (including sleepovers), and smart approvals. Ensure precise payroll calculations, compliance, and operational efficiency with built-in NDIS-specific rules.",
       },
       {
         title: "Admin Console",
@@ -2711,8 +2726,14 @@ export const byIndustryData = {
     details: [
       {
         title: "Timesheet",
-        description: `Effortless Time Tracking and Management\n\nSimplify timesheet submission and approval with an intuitive system designed. Easily draft, submit, and approve timesheets with features like cloning previous entries, status tracking, and PDF export.\n\nIntegrated invoice syncing and real-time notifications keep payroll and billing accurate and efficient.\n\nSave time, reduce errors, and improve transparency with Timesheet - your streamlined solution for time and invoice management.`,
+        description: ``,
         images: [detailsImage3],
+        discriptionsPoints: [
+          "Effortless Time Tracking and Management",
+          "Simplify timesheet submission and approval with an intuitive system designed. Easily draft, submit, and approve timesheets with features like cloning previous entries, status tracking, and PDF export.",
+          "Integrated invoice syncing and real-time notifications keep payroll and billing accurate and efficient.",
+          "Save time, reduce errors, and improve transparency with Timesheet - your streamlined solution for time and invoice management.",
+        ],
       },
       {
         title: "Admin Console",
@@ -2766,12 +2787,16 @@ export const byIndustryData = {
       },
       {
         title: "Accounting",
-        description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.\n\nCustomise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.`,
+        description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.`,
+        conclusion:
+          "Customise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.",
         images: [detailsImage2],
       },
       {
         title: "T Learning Hub",
-        description: `On-Demand, Role-Based Training\n\nEmpower your workforce with personalised, mobile-friendly training to each role. Access step-by-step video tutorials and keep skills current with continuous content updates.`,
+        description: `On-Demand, Role-Based Training\nempowers your workforce with personalised, mobile-friendly training to each role. Access step-by-step video tutorials and keep skills current with continuous content updates.`,
+        conclusion:
+          "Tesseract empowers NDIS providers with integrated, user-friendly tools to manage workforce and participant care efficiently, securely, and in full compliance with NDIS standards.",
         images: [detailsImage3],
       },
     ],

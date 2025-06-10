@@ -13,6 +13,8 @@ interface byroleTypes {
       title: string;
       description: string;
       images: string[];
+      conclusion?: string;
+      discriptionsPoints?: string[];
     }[];
   };
 }

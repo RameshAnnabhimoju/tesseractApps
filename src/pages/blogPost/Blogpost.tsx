@@ -15,7 +15,7 @@ const Blogpost = () => {
             Every day, disability support and aged care providers collect
             sensitive information — including health records, personal details,
             and care plans — that participants trust us to protect. Strong data
-            security isn't a luxury; it's essential for compliance, service
+            security isn't a luxury, it's essential for compliance, service
             continuity, and, most importantly, client trust.
           </p>
 
@@ -87,7 +87,7 @@ const Blogpost = () => {
             <p>
               At <strong>TesseractApps</strong>, we understand the critical
               importance of safeguarding participant data. Built on the{" "}
-              <strong>Salesforce platform</strong>, our software inherits
+              <strong>Salesforce platform</strong>, our software inherits and{" "}
               <strong>
                 enterprise-grade, globally recognised security measures
               </strong>
@@ -103,12 +103,12 @@ const Blogpost = () => {
                 <ul>
                   <li>
                     <strong>In transit</strong> via HTTPS using SSL/TLS
-                    protocols
+                    protocols.
                   </li>
                   <li>
                     <strong>At rest</strong> with strong AES-256 encryption,
                     making stored information unreadable even in the event of
-                    unauthorised access
+                    unauthorised access.
                   </li>
                 </ul>
               </div>
@@ -122,10 +122,10 @@ const Blogpost = () => {
                 <ul>
                   <li>
                     Every login, change, or access to participant records is
-                    traceable
+                    traceable.
                   </li>
                   <li>
-                    You gain full visibility into who accessed what, and when
+                    You gain full visibility into who accessed what, and when.
                   </li>
                 </ul>
               </div>
@@ -139,11 +139,11 @@ const Blogpost = () => {
                 <ul>
                   <li>
                     Staff only access the information necessary for their
-                    responsibilities
+                    responsibilities.
                   </li>
                   <li>
                     <strong>Multi-factor authentication (MFA)</strong> adds
-                    another layer of defence
+                    another layer of defence.
                   </li>
                 </ul>
               </div>
@@ -155,18 +155,18 @@ const Blogpost = () => {
                 <p>
                   Your data remains securely hosted on{" "}
                   <strong>
-                    Salesforce Hyperforce data centres in Australia
+                    Salesforce Hyperforce data centres in Australia.
                   </strong>
                   :
                 </p>
                 <ul>
                   <li>
-                    Governed by <strong>local privacy laws</strong>
+                    Governed by <strong>local privacy laws.</strong>
                   </li>
                   <li>
                     Built on <strong>ISO 27001-certified</strong> infrastructure
                     that complies with international information security
-                    standards
+                    standards.
                   </li>
                 </ul>
               </div>
@@ -182,7 +182,7 @@ const Blogpost = () => {
               compliance issue under the NDIS Practice Standards, but a moral
               obligation. At TesseractApps, we combine the convenience of the
               cloud with the rigour of enterprise-level security to give
-              providers peace of mind and help them focus on what matters most:
+              providers peace of mind and help them focus on what matters most,
               delivering quality care.
             </p>
           </section>

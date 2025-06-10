@@ -38,51 +38,76 @@ const FAQ = () => {
                     <div key={index + subindex * 3}>
                       <div className="faq-title">{subData.title}</div>
                       <div id="faq-accordian-container">
-                        {subData.faq.map((faqdata, faqindex) => {
-                          return (
-                            <Accordion
-                              key={subindex + faqindex}
-                              className="faq-page-accordian"
-                              elevation={0}
-                              square
-                              // expanded={expanded === index}
-                              // onChange={() => handleExpansion(index)}
+                        {subData.faq.map(
+                          (
+                            faqdata: {
+                              question: string;
+                              answer: string;
+                              points?: string[];
+                              conclusion?: string;
+                            },
+                            faqindex
+                          ) => {
+                            return (
+                              <Accordion
+                                key={subindex + faqindex}
+                                className="faq-page-accordian"
+                                elevation={0}
+                                square
+                                // expanded={expanded === index}
+                                // onChange={() => handleExpansion(index)}
 
-                              sx={{
-                                backgroundColor: "#eaeaea",
-                                marginBottom: "5px",
-                              }}
-                            >
-                              <AccordionSummary
-                                expandIcon={<img src={ArrowDown} alt="arrow" />}
+                                sx={{
+                                  backgroundColor: "#eaeaea",
+                                  marginBottom: "5px",
+                                }}
                               >
-                                <Typography
-                                  sx={{ fontSize: "26px", fontWeight: 600 }}
-                                  component="span"
+                                <AccordionSummary
+                                  expandIcon={
+                                    <img src={ArrowDown} alt="arrow" />
+                                  }
                                 >
-                                  {faqdata.question}
-                                </Typography>
-                              </AccordionSummary>
-                              <AccordionDetails>
-                                <Typography
-                                  sx={{ fontSize: "18px", fontWeight: 400 }}
-                                >
-                                  {faqdata.answer}
-                                  {faqdata.points &&
-                                    faqdata.points.map(
-                                      (pointsData, pointsindex) => {
-                                        return (
-                                          <ul key={pointsindex}>
-                                            <li>{pointsData}</li>
-                                          </ul>
-                                        );
-                                      }
-                                    )}
-                                </Typography>
-                              </AccordionDetails>
-                            </Accordion>
-                          );
-                        })}
+                                  <Typography
+                                    sx={{ fontSize: "26px", fontWeight: 600 }}
+                                    component="span"
+                                  >
+                                    {faqdata.question}
+                                  </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                  <Typography
+                                    sx={{ fontSize: "18px", fontWeight: 400 }}
+                                  >
+                                    {faqdata.answer}
+                                  </Typography>
+                                  <Typography
+                                    sx={{ fontSize: "18px", fontWeight: 400 }}
+                                  >
+                                    {faqdata.points &&
+                                      faqdata.points.map(
+                                        (pointsData, pointsindex) => {
+                                          return (
+                                            <ul key={pointsindex}>
+                                              <li>{pointsData}</li>
+                                            </ul>
+                                          );
+                                        }
+                                      )}
+                                  </Typography>
+                                  <Typography
+                                    sx={{
+                                      fontSize: "18px",
+                                      fontWeight: 400,
+                                      marginTop: "10px",
+                                    }}
+                                  >
+                                    {faqdata.conclusion}
+                                  </Typography>
+                                </AccordionDetails>
+                              </Accordion>
+                            );
+                          }
+                        )}
                       </div>
                     </div>
                   );
