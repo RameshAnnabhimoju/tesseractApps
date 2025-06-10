@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   background-image: var(--color-background-gradient);
+  padding: 0 5%;
 }
 .subheading-howItWorks {
   max-width: 60%;
@@ -15,14 +16,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 150px;
+  gap: 50px;
   margin: 100px 0;
 }
 #howItWorks-content-text {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   max-width: 930px; /* 3 x 200px + gaps */
-  gap: 100px;
+  gap: 80px;
 }
 .howItWorks-card {
   cursor: pointer;

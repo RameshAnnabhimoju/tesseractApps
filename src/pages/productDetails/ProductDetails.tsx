@@ -10,6 +10,8 @@ interface productDetailsTypes {
       title: string;
       description: string;
       image: string;
+      descriptionPoints?: string[];
+      points?: string[];
     };
     section2: {
       title: string;
@@ -32,6 +34,7 @@ interface productDetailsTypes {
         question: string;
         answer: string;
         points?: string[];
+        conclusion?: string;
       }[];
     };
   };

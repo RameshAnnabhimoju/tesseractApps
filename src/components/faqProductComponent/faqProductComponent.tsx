@@ -10,6 +10,7 @@ interface faqProductionTypes {
     question: string;
     answer: string;
     points?: string[];
+    conclusion?: string;
   }[];
 }
 const FaqProductComponent = ({ data }: faqProductionTypes) => {
@@ -51,6 +52,25 @@ const FaqProductComponent = ({ data }: faqProductionTypes) => {
             <AccordionDetails>
               <Typography sx={{ fontSize: "14px", fontWeight: 400 }}>
                 {data.answer}
+              </Typography>
+              <Typography sx={{ fontSize: "14px", fontWeight: 400 }}>
+                {data.points &&
+                  data.points.map((pointsData, pointsindex) => {
+                    return (
+                      <ul key={pointsindex}>
+                        <li>{pointsData}</li>
+                      </ul>
+                    );
+                  })}
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                  fontWeight: 400,
+                  marginTop: "10px",
+                }}
+              >
+                {data.conclusion}
               </Typography>
             </AccordionDetails>
           </Accordion>

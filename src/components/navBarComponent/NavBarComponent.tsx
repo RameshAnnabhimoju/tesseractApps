@@ -65,6 +65,7 @@ const NavBarComponent = ({
           });
           break;
         default:
+          navigate("/coming-soon");
           break;
       }
     }
@@ -101,21 +102,21 @@ const NavBarComponent = ({
             state: { data: itemsPageDummyData["Blog"] },
           });
           break;
-        case "Case Studies":
-          navigate("/case-studies", {
-            state: { data: itemsPageDummyData["Case Studies"] },
-          });
-          break;
-        case "Whitepapers":
-          navigate("/whitepapers", {
-            state: { data: itemsPageDummyData["Whitepapers"] },
-          });
-          break;
-        case "Support Documentation":
-          navigate("/support-documentation", {
-            state: { data: itemsPageDummyData["Support Documentation"] },
-          });
-          break;
+        // case "Case Studies":
+        //   navigate("/case-studies", {
+        //     state: { data: itemsPageDummyData["Case Studies"] },
+        //   });
+        //   break;
+        // case "Whitepapers":
+        //   navigate("/whitepapers", {
+        //     state: { data: itemsPageDummyData["Whitepapers"] },
+        //   });
+        //   break;
+        // case "Support Documentation":
+        //   navigate("/support-documentation", {
+        //     state: { data: itemsPageDummyData["Support Documentation"] },
+        //   });
+        //   break;
         case "Scheduling":
           navigate("/scheduling", {
             state: { data: SubPagesDummyData["Scheduling"] },
@@ -139,9 +140,9 @@ const NavBarComponent = ({
         case "FAQs":
           navigate("/faq");
           break;
-        // case "Team":
-        //   navigate("/team");
-        //   break;
+        case "Team":
+          navigate("/team");
+          break;
         case "Our Story":
           navigate("/our-story", {
             state: { data: aboutUsPageData["Our Story"] },
@@ -295,7 +296,7 @@ const NavBarComponent = ({
           });
           break;
         default:
-          // navigate("/details");
+          navigate("/coming-soon");
           break;
       }
     }

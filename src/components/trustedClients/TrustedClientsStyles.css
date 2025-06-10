@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
-  margin: 150px 0;
+  margin: 150px 15%;
 }
 #trusted-clients-header {
   font-size: 22px;
@@ -16,4 +16,9 @@
 }
 .client-logo {
   width: 160px;
+}
+#client-logo-PV {
+  font-size: 26px;
+  font-weight: 600;
+  max-width: 200px;
 }

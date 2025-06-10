@@ -17,6 +17,7 @@ import Blogpost from "../pages/blogPost/Blogpost";
 import ByRole from "../pages/byRole/ByRole";
 import ByIndustry from "../pages/byIndustry/ByIndustry";
 import ProductDetails from "../pages/productDetails/ProductDetails";
+import ComingSoon from "../pages/comingSoon/ComingSoon";
 
 const AppRoutes = () => {
   return (
@@ -71,6 +72,8 @@ const AppRoutes = () => {
       <Route path="/forms" element={<ProductDetails />} />
       <Route path="/accounting" element={<ProductDetails />} />
       <Route path="/t-learning-hub" element={<ProductDetails />} />
+
+      <Route path="/coming-soon" element={<ComingSoon />} />
     </Routes>
   );
 };

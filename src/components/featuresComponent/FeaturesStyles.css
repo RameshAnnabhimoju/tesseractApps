@@ -37,12 +37,12 @@
   height: 55px;
 }
 .features-card-title {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 600;
   margin: 10px 0;
 }
 .features-card-description {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--color-text-gray);
   margin: 10px 0;

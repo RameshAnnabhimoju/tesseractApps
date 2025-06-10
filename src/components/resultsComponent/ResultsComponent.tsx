@@ -27,6 +27,7 @@ const ResultsComponent = () => {
             From users who value our seamless user experience, performance, and
             automation across HR, payroll, and compliance
           </div>
+          x
         </div>
         <div className="results-card">
           <div className="results-card-title">500+ Active Users</div>
@@ -41,13 +42,20 @@ const ResultsComponent = () => {
             Active Users managing participants, staff, and compliance daily
           </div>
         </div> */}
-        <div className="results-card">
+        {/* <div className="results-card">
           <div className="results-card-title">
             350+ NDIS Providers Onboarded
           </div>
           <div className="results-card-text">
             From small teams to large care organisations, TesseractApps scales
             with your business as you grow.
+          </div>
+        </div> */}
+        <div className="results-card">
+          <div className="results-card-title">Support in Under 30s</div>
+          <div className="results-card-text">
+            By a responsive support team that understands your urgency,
+            delivering fast help.
           </div>
         </div>
         <div className="results-card">

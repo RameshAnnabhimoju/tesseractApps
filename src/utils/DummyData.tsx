@@ -72,10 +72,10 @@ export const blogDummyData = [
 
 export const navBarDummyData = {
   Product: [
-    { title: "Scheduling", subTitle: " " },
-    { title: "Time Management", subTitle: " " },
-    { title: "HR Management", subTitle: " " },
-    { title: "Communication", subTitle: " " },
+    // { title: "Scheduling", subTitle: " " },
+    // { title: "Time Management", subTitle: " " },
+    // { title: "HR Management", subTitle: " " },
+    // { title: "Communication", subTitle: " " },
     { title: "Roster Management", subTitle: " " },
     { title: "Timesheet", subTitle: " " },
     { title: "Admin Console", subTitle: " " },
@@ -1303,8 +1303,21 @@ export const howItWorksImages = [
 ];
 import testimonialImage from "../assets/avatar-mid-alt.png";
 export const testimonialDummyData = [
+  // {
+  //   id: 1,
+  //   rating: 5,
+  //   testimonial: "",
+  //   testimonialPoints: [
+  //     "Tesseract Apps has been an intuitive and reliable platform that’s streamlined our workflow and boosted team productivity. It integrated seamlessly into our operations, saving time and reducing manual tasks.",
+  //     "The user interface is clean and easy to navigate, making adoption effortless across the team. In a short time, the Tesseract Apps team delivered two key improvements—a powerful reporting dashboard and a streamlined task management feature—both of which have had a direct, positive impact on our efficiency.",
+  //     "Support has also been excellent: responsive, proactive, and always open to feedback. Tesseract Apps has quickly become an indispensable tool for our organisation, and I highly recommend it to any team seeking a smart, scalable solution.",
+  //   ],
+  //   authorImage: testimonialImage,
+  //   author: "Nathan Chakanetsa",
+  //   authorTitle: "Seed Disability Services Pty Ltd",
+  // },
   {
-    id: 1,
+    id: 2,
     rating: 5,
     testimonial: `“We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.
 Tesseract brings all of these functions together in one easy-to-use platform. It’s streamlined our operations, improved our workflow, and made it much easier to stay on top of everything. The team behind it, especially Kranthi and Rev, have been incredibly supportive — always responsive, open to feedback, and committed to helping us get the most out of the system.
@@ -1315,7 +1328,7 @@ Tesseract brings all of these functions together in one easy-to-use platform. It
     authorTitle: "",
   },
   {
-    id: 2,
+    id: 3,
     rating: 5,
     testimonial: `“User-friendly, efficient, and built for care teams. Our staff love the simplicity of the interface, and compliance reporting has never been easier. Payroll is on time, every time. Choosing Tesseract was the best tech decision we made.”`,
     authorImage: testimonialImage,
@@ -1323,7 +1336,7 @@ Tesseract brings all of these functions together in one easy-to-use platform. It
     authorTitle: "",
   },
   {
-    id: 3,
+    id: 4,
     rating: 4,
     testimonial: `“An essential tool for Support Coordinators. It’s not just a platform; it’s a strategic partner. I can track notes, manage participant goals, schedule supports, and handle billing in one place. It has saved me hours every week.”`,
     authorImage: testimonialImage,
@@ -1916,8 +1929,7 @@ export const faqPageDummyData = [
           },
           {
             question: "How are public holidays handled in shifts?",
-            answer:
-              "",
+            answer: "",
             points: [
               "Public holiday rates apply automatically during manual shift creation and Auto-scheduling engine execution as well",
               "A built-in public holiday calendar is used for reference.",
@@ -2245,6 +2257,8 @@ export const faqPageDummyData = [
     ],
   },
 ];
+import ourMissionImage from "../assets/our-mission-image.png";
+import ourVisionImage from "../assets/our-vision-image.png";
 export const aboutUsPageData = {
   "Our Story": {
     title: "Our Story",
@@ -2257,10 +2271,12 @@ export const aboutUsPageData = {
     ],
   },
   "Our mission": {
+    image: ourMissionImage,
     title: "Our Mission",
     data: "To empower businesses worldwide with innovative, role-specific people management software that is accessible across industries, enabling streamlined operations and enhanced productivity.",
   },
   "Our Vision": {
+    image: ourVisionImage,
     title: "Our Vision",
     data: "To revolutionise the future of business management, fostering collaboration, efficiency, and growth through technology that adapts to the ever-changing needs of industries and their people.",
   },
@@ -3139,7 +3155,9 @@ export const productsDetailsData = {
       title:
         "Streamlined Workforce Oversight. Efficient Administration. Thriving Workplace Culture.",
       description:
-        "Tesseract's HR Management simplifies every stage of the employee lifecycle - from recruitment to retention - ensuring efficient administration, seamless integration, and a thriving workplace culture. The HR module ensures seamless workforce oversight, automated processes, and effortless compliance, fostering a dynamic, engaged, and high-performing team.",
+        "Tesseract's HR Management simplifies every stage of the employee lifecycle - from recruitment to retention - ensuring efficient administration, seamless integration, and a thriving workplace culture.",
+      conclusion:
+        "The HR module ensures seamless workforce oversight, automated processes, and effortless compliance, fostering a dynamic, engaged, and high-performing team.",
       image: detailsHero, // Replace with actual image import
     },
     section3: [
@@ -3156,13 +3174,17 @@ export const productsDetailsData = {
       {
         title: "Performance Management",
         description:
-          "Streamline goal-setting, performance assessments, and structured reviews. Effortlessly create and manage workforce goals with intuitive tools, aligning them to your business objectives. Customise performance tracking with flexible priorities, timelines, and automated weightage calculations, ensuring accurate evaluations. Mid-year and milestone reviews are simplified, enabling continuous feedback and improvement.",
+          "Performance Management system empowers organisations to streamline goal-setting, performance assessments, and structured reviews. Effortlessly create and manage workforce goals with intuitive tools, aligning them to your business objectives.",
+        conclusion:
+          "Customise performance tracking with flexible priorities, timelines, and automated weightage calculations, ensuring accurate evaluations. Mid-year and milestone reviews are simplified, enabling continuous feedback and improvement.",
         images: [detailsImage2],
       },
       {
         title: "Advanced Reporting & Analytics",
         description:
-          "Advanced reporting tools provide clear insights into staff roles, review outcomes, and performance metrics, ensuring that every team member's professional growth is supported and managed effectively. Get comprehensive visibility into your workforce data and make informed decisions.",
+          "Advanced reporting tools provide clear insights into staff roles, review outcomes, and performance metrics, ensuring that every team member's professional growth is supported and managed effectively.",
+        conclusion:
+          "Get comprehensive visibility into your workforce data and make informed decisions.",
         images: [detailsImage1],
       },
     ],
@@ -3220,7 +3242,7 @@ export const productsDetailsData = {
       {
         title: "Digital Signature Management",
         description:
-          "T-signs eliminate the hassle of physical paperwork, giving you a faster, smarter way to manage signatures. Every document is digitally signed, securely stored and instantly accessible - all while staying fully compliant. Fast, paperless approvals from anywhere and any device, well no hassle, no hold-ups.",
+          "T-signs eliminate the hassle of physical paperwork, giving you a faster, smarter way to manage signatures. Every document is digitally signed, securely stored and instantly accessible - all while staying fully compliant.",
         images: [detailsImage1],
       },
     ],
@@ -3314,7 +3336,7 @@ export const productsDetailsData = {
     hero: {
       title: "Comprehensive Care Management Made Simple",
       description:
-        "Our Participant's Module is designed to give admins complete control over participant care, enabling efficient, personalised, and transparent management across every touchpoint. Whether it's managing support plans, tracking progress, or handling services, everything you need is in one place. Manage participant care with clarity, consistency, and compassion—powered by our robust Participants Module.",
+        "Our Participant's Module is designed to give admins complete control over participant care, enabling efficient, personalised, and transparent management across every touchpoint. Whether it's managing support plans, tracking progress, or handling services, everything you need is in one place.",
       image: detailsHero, // Replace with actual image import
     },
     section2: {
@@ -3348,12 +3370,18 @@ export const productsDetailsData = {
         },
         {
           dot: dots.dot5,
-          title: "Document & Form Management",
+          title: "Document Management",
           description:
-            "Upload and manage important documents such as assessments, medical reports, or consent forms. Set expiry dates to receive timely notifications for renewals. Digitally fill and store essential participant forms - like bowel movement logs and other clinical documentation - keeping everything organised and accessible.",
+            "Upload and manage important documents such as assessments, medical reports, or consent forms. Set expiry dates to receive timely notifications for renewals.",
         },
         {
           dot: dots.dot6,
+          title: "Form Management",
+          description:
+            "Digitally fill and store essential participant forms - like bowel movement logs and other clinical documentation - keeping everything organised and accessible.",
+        },
+        {
+          dot: dots.dot1,
           title: "Feedback & Quality Management",
           description:
             "Share feedback about staff or services, helping you improve quality of care and build stronger trust.",
@@ -3364,7 +3392,15 @@ export const productsDetailsData = {
       {
         title: "Risk Assessment & Management",
         description:
-          "Stay proactive and keep participants safe with built-in risk assessment and management tools. Within the Participant Module, your team can conduct Risk Assessments to identify potential risks for each participant, from health concerns to environmental factors. Create and Manage Risk Plans by developing clear action plans to mitigate risks, assign responsibilities, and outline response strategies. Track and Update by regularly reviewing and updating risk assessments and plans to reflect any changes in participant circumstances. Ensure Compliance by maintaining a clear record of risk management actions aligned with NDIS and quality standards. Empower your team to manage participant risks effectively and promote a safer, more responsive care environment.",
+          "Stay proactive and keep participants safe with built-in risk assessment and management tools. Within the Participant Module, your team can:",
+        points: [
+          "Conduct Risk Assessments: Identify potential risks for each participant, from health concerns to environmental factors.",
+          "Create and Manage Risk Plans: Develop clear action plans to mitigate risks, assign responsibilities, and outline response strategies.",
+          "Track and Update: Regularly review and update risk assessments and plans to reflect any changes in participant circumstances.",
+          "Ensure Compliance: Maintain a clear record of risk management actions aligned with NDIS and quality standards.",
+        ],
+        conclusion:
+          "Empower your team to manage participant risks effectively and promote a safer, more responsive care environment",
         images: [detailsImage1],
       },
       {
@@ -3407,17 +3443,20 @@ export const productsDetailsData = {
   "Incident Management": {
     hero: {
       title: "Streamlined Reporting. Safer Workplaces. Smarter Compliance.",
-      description:
-        "The Incident Management feature helps your team securely log, manage, and track all incidents within your organisation. From the initial report to resolution, every detail is captured for transparency, safety, and NDIS compliance. Monitor incidents across facilities and participants effortlessly. Search, view, and track real-time updates, ensuring nothing is overlooked. Our guided reporting process simplifies data entry, saving time while capturing essential details. Real-time status tracking and intuitive controls make it easy for your team to stay on top of incident management. Your frontline tool for safety, accountability, and compliance. The Incident Register keeps your team prepared, protected, and proactive.",
+      description: "",
+      descriptionPoints: [
+        "The Incident Management feature helps your team securely log, manage, and track all incidents within your organisation. From the initial report to resolution, every detail is captured for transparency, safety, and NDIS compliance.",
+        "Monitor incidents across facilities and participants effortlessly. Search, view, and track real-time updates, ensuring nothing is overlooked.",
+        "Our guided reporting process simplifies data entry, saving time while capturing essential details. Real-time status tracking and intuitive controls make it easy for your team to stay on top of incident management.",
+        "With smart access controls, only unresolved incidents remain editable. Once resolved, records are locked to preserve data integrity and provide a clear audit trail.",
+      ],
+      points: [
+        "Create and Track Incidents with Ease",
+        "Secure Access & Edit Control",
+      ],
       image: detailsHero, // Replace with actual image import
     },
     section3: [
-      {
-        title: "Create and Track Incidents with Ease",
-        description:
-          "With smart access controls, only unresolved incidents remain editable. Once resolved, records are locked to preserve data integrity and provide a clear audit trail. Guided, multi-step incident reporting with smart field logic based on priority ensures comprehensive documentation.",
-        images: [detailsImage1],
-      },
       {
         title: "Key Highlights",
         points: [
@@ -3586,7 +3625,7 @@ export const productsDetailsData = {
       title:
         "Your go-to hub for instant messages - keeping teams connected, conversations flowing, and work moving faster than your morning coffee!",
       description:
-        "Chat is your organisation's private, real-time communication tool - designed to keep staff, coordinators, and managers connected quickly and securely. Think of it as your workplace's own fast, reliable messaging hub that makes teamwork easy and efficient. ChaT keeps your team chatting smart, staying on point, and ticking all the compliance boxes - no fuss, all focus!",
+        "Chat is your organisation's private, real-time communication tool - designed to keep staff, coordinators, and managers connected quickly and securely. Think of it as your workplace's own fast, reliable messaging hub that makes teamwork easy and efficient.  ",
       image: detailsHero, // Replace with actual image import
     },
     section3: [
@@ -3667,12 +3706,48 @@ export const productsDetailsData = {
     },
   },
   "My Profile": {
-    hero: {
-      title:
-        "My Profile — Your Premier Hub for Workforce Management & Career Progression!",
+    section2: {
+      title: "My Profile",
       description:
-        "Effortlessly maintain up-to-date demographic, emergency, and payroll information. Confidently plan and manage leave. Submit requests, track approvals, and access all designated leave entitlements, ensuring seamless scheduling. Celebrate milestones, embrace recognition, and engage in structured learning pathways for career advancement. Securely access payroll records, timesheets, and critical reports, ensuring transparency and financial oversight. Establish career objectives, monitor progress, and prepare evaluations with precision. Declare work preferences for optimised rostering, enabling seamless workforce coordination and balance.",
-      image: detailsHero, // Replace with actual image import
+        "Your Premier Hub for Workforce Management & Career Progression!",
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Personal Details ",
+          description:
+            "Effortlessly maintain up-to-date demographic, emergency, and payroll information.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Leave Management",
+          description:
+            "Confidently plan and manage leave. Submit requests, track approvals, and access all designated leave entitlements, ensuring seamless scheduling.",
+        },
+        {
+          dot: dots.dot3,
+          title: "Awards & Professional Development ",
+          description:
+            "Celebrate milestones, embrace recognition, and engage in structured learning pathways for career advancement.",
+        },
+        {
+          dot: dots.dot4,
+          title: "Reports & Payslips",
+          description:
+            "Securely access payroll records, timesheets, and critical reports, ensuring transparency and financial oversight.",
+        },
+        {
+          dot: dots.dot5,
+          title: "Performance Insights",
+          description:
+            "Establish career objectives, monitor progress, and prepare evaluations with precision.",
+        },
+        {
+          dot: dots.dot6,
+          title: "Availability & Scheduling",
+          description:
+            "Declare work preferences for optimised rostering, enabling seamless workforce coordination and balance.",
+        },
+      ],
     },
     section3: [
       {
@@ -3732,9 +3807,17 @@ export const productsDetailsData = {
         },
         {
           question:
-            "2. How can I prepare for and succeed in my performance review?",
+            "How can I prepare for and succeed in my performance review?",
           answer:
-            "Performance reviews within our platform are designed to support personal development and align individual goals with organisational expectations. These reviews are initiated by your organisation's administrators and follow a structured process. To succeed in your performance review: Stay engaged with your responsibilities and objectives throughout the review period. Access and complete your self-assessment through your profile when notified. Be honest and reflective in your responses, highlighting achievements and identifying areas for growth. Use feedback constructively, as the final review includes input from designated reviewers or approvers who provide valuable insights. The performance review process is transparent, fair, and supportive of your professional development, ensuring both you and your organisation grow together.",
+            "Performance reviews within our platform are designed to support personal development and align individual goals with organisational expectations. These reviews are initiated by your organisation's administrators and follow a structured process. To succeed in your performance review:",
+          points: [
+            "Stay engaged with your responsibilities and objectives throughout the review period.",
+            "Access and complete your self-assessment through your profile when notified.",
+            "Be honest and reflective in your responses, highlighting achievements and identifying areas for growth.",
+            "Use feedback constructively, as the final review includes input from designated reviewers or approvers who provide valuable insights.",
+          ],
+          conclusion:
+            "The performance review process is transparent, fair, and supportive of your professional development, ensuring both you and your organisation grow together.",
         },
         {
           question: "3. How do I request leave?",
