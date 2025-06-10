@@ -12,7 +12,7 @@ const Careers = () => {
         user-centered technology.
       </div>
       <div id="careers-current-openings">
-        <div id="current-openings-title">Current openings :</div>
+        <div id="current-openings-title">Current openings : None</div>
       </div>
       <div id="careers-bottom-text">
         Don’t see the right role right now? We’d still love to hear from

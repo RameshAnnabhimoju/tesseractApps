@@ -95,12 +95,12 @@ const FooterComponent = () => {
         <br />
         <br />
         TesseractApps would like to acknowledge the Traditional Custodians of
-        the land on which we operate, and pay our respects to their Elders past
+        the land on which we operate, and pay our respects to their elders past
         and present.
         <br />
         <img src={flagsImag1} alt="Flag Image 1" />
         <img src={flagsImag2} alt="Flag Image 2" />
-        <br /> TesseractApps 2025 ©. All rights reserved.
+        <br /> © 2025 Tesseract Apps. All rights reserved.
       </div>
     </div>
   );

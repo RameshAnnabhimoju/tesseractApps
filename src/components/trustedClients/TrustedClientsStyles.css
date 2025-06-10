@@ -16,8 +16,4 @@
 }
 .client-logo {
   width: 160px;
-  filter: grayscale();
-}
-.client-logo:hover {
-  filter: none;
 }

@@ -10,7 +10,6 @@
   color: var(--color-text-dark-gray);
 }
 .footer-text {
-  text-align: justify;
   font-size: 14px;
   line-height: 20px;
   padding: 0 50px 20px 0;

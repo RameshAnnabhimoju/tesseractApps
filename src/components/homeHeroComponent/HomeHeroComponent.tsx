@@ -12,7 +12,7 @@ const HomeHeroComponent = () => {
       <VideoComponent />
       <div id="home-text-container">
         <div id="home-text-heading">
-          All-in-One Tools for Smarter Workforce Management.
+          All-in-One Tools for Smarter Workforce Management
         </div>
         <div id="home-text-subText">
           "TesseractApps helps providers streamline compliance, manage teams

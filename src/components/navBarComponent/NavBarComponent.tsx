@@ -49,7 +49,7 @@ const NavBarComponent = ({
   );
 
   const handleSearchIcon = () => {
-    setShowSearch(!showSearch);
+    setShowSearch(false);
   };
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
@@ -142,7 +142,7 @@ const NavBarComponent = ({
         // case "Team":
         //   navigate("/team");
         //   break;
-        case "Our story":
+        case "Our Story":
           navigate("/our-story", {
             state: { data: aboutUsPageData["Our Story"] },
           });
@@ -352,7 +352,7 @@ const NavBarComponent = ({
               id="navbar-requestDemo"
               onClick={() => navigate("/requestDemo")}
             >
-              Request a Demo{" "}
+              Book a Demo{" "}
               <img
                 src={plus}
                 alt="navbar-plus-image"
@@ -692,7 +692,7 @@ const NavBarComponent = ({
         </div>
 
         <div id="navbar-requestDemo" onClick={() => navigate("/requestDemo")}>
-          Request a Demo{" "}
+          Book a Demo{" "}
           <img
             src={plus}
             alt="navbar-plus-image"

@@ -3,7 +3,7 @@ import { teamsPageData } from "../../utils/DummyData";
 const Teams = () => {
   return (
     <div id="teams-container">
-      <div className="heading">Team</div>
+      <div className="heading">TEAM</div>
       <div className="subheading">The people behind the platform.</div>
       <div className="text" id="team-text">
         TesseractApps is led by a diverse team of technologists, product

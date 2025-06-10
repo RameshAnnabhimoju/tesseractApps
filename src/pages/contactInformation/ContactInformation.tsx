@@ -22,7 +22,7 @@ const ContactInformation = () => {
         </div>
         <div className="contact-info-headingh">Email:</div>
         <div className="contact-info-text">enquiries@tesseractapps.com</div>
-        <button id="contact-info-button">BOOK A DEMO</button>
+        <button id="contact-info-button">Book a Demo</button>
       </div>
     </div>
   );

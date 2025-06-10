@@ -72,85 +72,85 @@ export const blogDummyData = [
 
 export const navBarDummyData = {
   Product: [
-    { title: "Scheduling", subTitle: "Learn More" },
-    { title: "Time Management", subTitle: "Learn More" },
-    { title: "HR Management", subTitle: "Learn More" },
-    { title: "Communication", subTitle: "Learn More" },
-    { title: "Roster Management", subTitle: "Learn More" },
-    { title: "Timesheet", subTitle: "Learn More" },
-    { title: "Admin Console", subTitle: "Learn More" },
-    { title: "Access Control Panel", subTitle: "Learn More" },
-    { title: "HR Operations", subTitle: "Learn More" },
-    { title: "T-sign", subTitle: "Learn More" },
-    { title: "Clock In & Clock Out", subTitle: "Learn More" },
-    { title: "Participant Management", subTitle: "Learn More" },
-    { title: "Incident Management", subTitle: "Learn More" },
-    { title: "Repository", subTitle: "Learn More" },
-    { title: "Role based Dashboard", subTitle: "Learn More" },
-    { title: "ChaT - Secure Internal Messaging", subTitle: "Learn More" },
-    { title: "My Profile", subTitle: "Learn More" },
-    { title: "Forms", subTitle: "Learn More" },
-    { title: "Accounting", subTitle: "Learn More" },
-    { title: "T Learning Hub", subTitle: "Learn More" },
+    { title: "Scheduling", subTitle: " " },
+    { title: "Time Management", subTitle: " " },
+    { title: "HR Management", subTitle: " " },
+    { title: "Communication", subTitle: " " },
+    { title: "Roster Management", subTitle: " " },
+    { title: "Timesheet", subTitle: " " },
+    { title: "Admin Console", subTitle: " " },
+    { title: "Access Control Panel", subTitle: " " },
+    { title: "HR Operations", subTitle: " " },
+    { title: "T-sign", subTitle: " " },
+    { title: "Clock In & Clock Out", subTitle: " " },
+    { title: "Participant Management", subTitle: " " },
+    { title: "Incident Management", subTitle: " " },
+    { title: "Repository", subTitle: " " },
+    { title: "Role based Dashboard", subTitle: " " },
+    { title: "ChaT - Secure Internal Messaging", subTitle: " " },
+    { title: "My Profile", subTitle: " " },
+    { title: "Forms", subTitle: " " },
+    { title: "Accounting", subTitle: " " },
+    { title: "T Learning Hub", subTitle: " " },
   ],
   Solutions: {
     "BY INDUSTRY": [
-      { title: "NDIS Industry", subTitle: "Learn More" },
-      { title: "ICT Industry", subTitle: "Learn More" },
-      { title: "Retail & Hospitality", subTitle: "Learn More" },
-      { title: "Multi-site Businesses", subTitle: "Learn More" },
-      { title: "Construction", subTitle: "Learn More" },
-      { title: "Manufacturing", subTitle: "Learn More" },
-      { title: "More Industries", subTitle: "Learn More" },
+      { title: "NDIS Industry", subTitle: " " },
+      { title: "ICT Industry", subTitle: " " },
+      { title: "Retail & Hospitality", subTitle: " " },
+      { title: "Multi-site Businesses", subTitle: " " },
+      { title: "Construction", subTitle: " " },
+      { title: "Manufacturing", subTitle: " " },
+      { title: "More Industries", subTitle: " " },
     ],
     "BY ROLE": [
-      { title: "Administrator", subTitle: "Learn More" },
-      { title: "Roster Manager", subTitle: "Learn More" },
-      { title: "NDIS Staff", subTitle: "Learn More" },
-      { title: "HR Manager", subTitle: "Learn More" },
-      { title: "Accountant", subTitle: "Learn More" },
-      { title: "Participant", subTitle: "Learn More" },
+      { title: "Administrator", subTitle: " " },
+      { title: "Roster Manager", subTitle: " " },
+      { title: "NDIS Staff", subTitle: " " },
+      { title: "HR Manager", subTitle: " " },
+      { title: "Accountant", subTitle: " " },
+      { title: "Participant", subTitle: " " },
     ],
     "BY BUSINESS TYPE": [
-      { title: "Small Businesses", subTitle: "Learn More" },
-      { title: "Enterprise", subTitle: "Learn More" },
-      { title: "Franchises", subTitle: "Learn More" },
-      { title: "Startups", subTitle: "Learn More" },
+      { title: "Small Businesses", subTitle: " " },
+      { title: "Enterprise", subTitle: " " },
+      { title: "Franchises", subTitle: " " },
+      { title: "Startups", subTitle: " " },
     ],
     "BY BUSINESS PROBLEM": [
-      { title: "Compliance", subTitle: "Learn More" },
-      { title: "Employee Engagement", subTitle: "Learn More" },
-      { title: "Time Efficiency", subTitle: "Learn More" },
-      { title: "Cost Optimisation", subTitle: "Learn More" },
+      { title: "Compliance", subTitle: " " },
+      { title: "Employee Engagement", subTitle: " " },
+      { title: "Time Efficiency", subTitle: " " },
+      { title: "Cost Optimisation", subTitle: " " },
     ],
     "BY CARE": [
-      { title: "Disability Support (NDIS Providers)", subTitle: "Learn More" },
-      { title: "Aged Care Services", subTitle: "Learn More" },
-      { title: "Childcare Centres", subTitle: "Learn More" },
-      { title: "Allied Health Practices", subTitle: "Learn More" },
-      { title: "Home & Community Care", subTitle: "Learn More" },
-      { title: "Training Providers", subTitle: "Learn More" },
+      { title: "Disability Support (NDIS Providers)", subTitle: " " },
+      { title: "Aged Care Services", subTitle: " " },
+      { title: "Childcare Centres", subTitle: " " },
+      { title: "Allied Health Practices", subTitle: " " },
+      { title: "Home & Community Care", subTitle: " " },
+      { title: "Training Providers", subTitle: " " },
     ],
   },
   "Additional Features": [
-    { title: "Demo Request", subTitle: "Learn More" },
-    { title: "Free Trial Sign-Up", subTitle: "Learn More" },
-    { title: "Integration", subTitle: "Learn More" },
+    { title: "Demo Request", subTitle: " " },
+    { title: "Free Trial Sign-Up", subTitle: " " },
+    { title: "Integration", subTitle: " " },
   ],
   Resources: [
-    { title: "Blog", subTitle: "Learn More" },
-    { title: "Case Studies", subTitle: "Learn More" },
-    { title: "Whitepapers", subTitle: "Learn More" },
-    { title: "FAQs", subTitle: "Learn More" },
-    { title: "Support Documentation", subTitle: "Learn More" },
+    { title: "Blog", subTitle: " " },
+    { title: "Case Studies", subTitle: " " },
+    { title: "Whitepapers", subTitle: " " },
+    { title: "FAQs", subTitle: " " },
+    { title: "Support Documentation", subTitle: " " },
   ],
   About: [
-    { title: "Our story", subTitle: "Learn More" },
-    { title: "Our Mission", subTitle: "Learn More" },
-    { title: "Our Vision", subTitle: "Learn More" },
-    { title: "Team", subTitle: "Learn More" },
-    { title: "Careers", subTitle: "Learn More" },
-    { title: "Contact Information", subTitle: "Learn More" },
+    { title: "Our Story", subTitle: " " },
+    { title: "Our Mission", subTitle: " " },
+    { title: "Our Vision", subTitle: " " },
+    { title: "Team", subTitle: " " },
+    { title: "Careers", subTitle: " " },
+    { title: "Contact Information", subTitle: " " },
   ],
 };
 
@@ -199,12 +199,12 @@ export const pricingCardsDummyData = [
     title: "Tier One:",
     subTitle: "I Want to Choose What I Want",
     Pricing: 9.99,
-    timePeriod: "/user",
+    timePeriod: "per user",
     currentPlan: false,
     userLimitRange: [1, 140],
     features: [
       "Staff Register",
-      "Referee Checks",
+      "Reference Checks",
       "Interview Evaluation",
       "Paperless Onboarding",
       "Payroll Management",
@@ -216,7 +216,7 @@ export const pricingCardsDummyData = [
       "Timesheets",
       "Leave Management",
       "Funds Tracking",
-      "Invoice Generation",
+      "Generating Invoices",
       "Goal Setting & Progress Tracking",
       "Basic NDIS compliance support",
       "Quick-start onboarding",
@@ -230,7 +230,7 @@ export const pricingCardsDummyData = [
     subTitle: "Serious About Business",
     Pricing: 19.99,
     userLimitRange: [150, 200],
-    timePeriod: "/user",
+    timePeriod: "per user",
     currentPlan: false,
     features: [
       "Everything in Tier One, Plus",
@@ -240,7 +240,7 @@ export const pricingCardsDummyData = [
       "Awards & Recognition",
       "Unlimited Document Storage",
       "Expense Tracking",
-      "Invoice Generation",
+      "Generating Invoices",
       "SMS & Email Notifications",
       "Reporting & Forecasting",
       "Dashboards",
@@ -260,7 +260,7 @@ export const pricingCardsDummyData = [
     subTitle: "End to End",
     Pricing: 39.99,
     userLimitRange: [250, 500],
-    timePeriod: "/user",
+    timePeriod: "per user",
     currentPlan: false,
     features: [
       "Everything in Tier Two, Plus",
@@ -275,7 +275,7 @@ export const pricingCardsDummyData = [
       "Advanced Document Storage & Notifications",
       "Complete Incident and Audit Compliance",
       "Full Evidence Tracking & NDIS Alignment",
-      "Integrated with Internal HR, Payroll, and Service Systems",
+      "Integrated with Internal HR, Payroll and Service Systems",
       "Multi-phase onboarding",
       "Fully Customisable Implementation",
       "Deep Payroll Integration with Award Interpretation",
@@ -518,7 +518,7 @@ export const pricingDummyData = [
         data3: true,
       },
       {
-        title: "Reimbursements Requests",
+        title: "Reimbursement Requests",
         subTitle: "",
         data1: true,
         data2: true,
@@ -595,7 +595,7 @@ export const pricingDummyData = [
         data3: true,
       },
       {
-        title: "Services Management",
+        title: "Service Management",
         subTitle: "",
         data1: true,
         data2: true,
@@ -870,7 +870,7 @@ export const pricingDummyData = [
     heading: "Incident Management",
     data: [
       {
-        title: "Create, Track Incidents",
+        title: "Create and Track Incidents",
         subTitle: "",
         data1: true,
         data2: true,
@@ -1066,7 +1066,7 @@ export const pricingDummyData = [
         data3: true,
       },
       {
-        title: "Sales & Purchase",
+        title: "Sales & Purchases",
         subTitle: "",
         data1: true,
         data2: true,
@@ -1114,7 +1114,7 @@ export const pricingDummyData = [
         data3: true,
       },
       {
-        title: "Group Chat - Web",
+        title: "Group ChaT - Web",
         subTitle: "",
         data1: true,
         data2: true,
@@ -1174,7 +1174,7 @@ export const featuresDummyData = [
   },
   {
     id: 6,
-    title: "Chat & Notifications",
+    title: "ChaT & Notifications",
     description:
       "Keep your team informed with in-app messaging, mobile alerts, and real-time updates — all securely recorded.",
     image: TSign,
@@ -1236,20 +1236,13 @@ export const featuresDummyData = [
   },
   {
     id: 15,
-    title: "Chat",
-    description:
-      "Enhance collaboration with integrated chat support for real-time communication during signing.",
-    image: TSign,
-  },
-  {
-    id: 16,
     title: "My Profile",
     description:
       "Manage your personal information, settings, and preferences all in one place. Keep your profile up-to-date to ensure seamless access and personalised experience.",
     image: TSign,
   },
   {
-    id: 17,
+    id: 16,
     title: "Role-Based Dashboard",
     description:
       "Role-based dashboards provide personalised access to key tools and insights, helping users to track relevant information, manage tasks, schedules, and performance efficiently.",
@@ -1313,9 +1306,9 @@ export const testimonialDummyData = [
   {
     id: 1,
     rating: 5,
-    testimonial: `“ We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.
+    testimonial: `“We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.
 Tesseract brings all of these functions together in one easy-to-use platform. It’s streamlined our operations, improved our workflow, and made it much easier to stay on top of everything. The team behind it, especially Kranthi and Rev, have been incredibly supportive — always responsive, open to feedback, and committed to helping us get the most out of the system.
- If you're an NDIS provider looking to simplify your processes, reduce costs, and avoid the stress of managing multiple tools, I highly recommend Tesseract. It’s been a game-changer for our team and our business. ”
+ If you're an NDIS provider looking to simplify your processes, reduce costs, and avoid the stress of managing multiple tools, I highly recommend Tesseract. It’s been a game-changer for our team and our business.”
 `,
     authorImage: testimonialImage,
     author: "Seed",
@@ -1348,25 +1341,26 @@ export const accordiaDummyData = [
   {
     id: 2,
     question: "What can an admin do on the dashboard?",
-    answer: `Admins have full visibility and control, including: 
-    •	Managing rosters and shifts 
-    •	Accessing compliance and payroll tools
-    •	Overseeing incident reporting
-    •	Generating reports
-    •	Customising staff access and permissions
-`,
+    answer: "Admins have full visibility and control, including:",
+    points: [
+      "Managing rosters and shifts",
+      "Accessing compliance and payroll tools",
+      "Overseeing incident reporting",
+      "Generating reports",
+      "Customising staff access and permissions",
+    ],
   },
   {
     id: 3,
-    question: "What is the Incident Register feature?",
+    question: "What is the Incident Management feature?",
     answer:
-      "Our Incident Register allows you to record, manage, and track incidents like accidents or compliance breaches. It helps ensure staff and participant safety, meet regulatory obligations, and build a culture of transparency.",
+      "Our Incident Management allows you to record, manage, and track incidents like accidents or compliance breaches. It helps ensure staff and participant safety, meet regulatory obligations, and build a culture of transparency.",
   },
   {
     id: 4,
     question: "Can I Customize the Modules I Use?",
     answer:
-      "Absolutely. TesseractApps offers flexible, modular plans so you can choose only the features your organisation needs — from HR to scheduling to compliance.",
+      "Absolutely. TesseractApps offers flexible, modular plans so you can choose only the features your organisation needs, from HR to scheduling to compliance.",
   },
   {
     id: 5,
@@ -1390,7 +1384,7 @@ export const accordiaDummyData = [
     id: 8,
     question: "How do I get started with TesseractApps?",
     answer:
-      "You can begin with a Free Trial or Book a Demo. Our team will guide you through the setup and ensure the platform is tailored to your organisation's needs.",
+      "You can start by selecting the Request a Demo option. Our team will guide you through the setup and ensure the platform is tailored to your organisation's specific needs.",
   },
 ];
 export const dots = {
@@ -2105,12 +2099,12 @@ export const faqPageDummyData = [
         title: "ChaT",
         faq: [
           {
-            question: "Is the internal chat secure?",
+            question: "Is the internal ChaT secure?",
             answer:
               "Yes, communication is fully secured and restricted to verified users within your organisation. It is not linked to any external messaging platforms, ensuring privacy and data protection.",
           },
           {
-            question: "Can I share files in chat?",
+            question: "Can I share files in ChaT?",
             answer:
               "Yes, you can securely share documents such as PDFs, images, and notes in both group chats and private messages, supporting seamless collaboration.",
           },
@@ -2140,6 +2134,8 @@ export const faqPageDummyData = [
               "Be honest and reflective in your responses, highlighting achievements and identifying areas for growth.",
               "Use feedback constructively, as the final review includes input from designated reviewers or approvers who provide valuable insights.",
             ],
+            conclusion:
+              "The performance review process is transparent, fair, and supportive of your professional development, ensuring both you and your organisation grow together.",
           },
           {
             question: "How do I request leave?",
@@ -2259,7 +2255,7 @@ export const aboutUsPageData = {
     ],
   },
   "Our mission": {
-    title: "Our mission",
+    title: "Our Mission",
     data: "To empower businesses worldwide with innovative, role-specific people management software that is accessible across industries, enabling streamlined operations and enhanced productivity.",
   },
   "Our Vision": {
@@ -2295,7 +2291,7 @@ import DarshanImage from "../assets/DARSHAN M SHELAT - SOLUTIONS CONSULTANT.jpg"
 export const teamsPageData = [
   {
     name: "REVANTH",
-    designation: "CO FOUNDER",
+    designation: "FOUNDER",
     image: RevanthImage,
   },
   {
@@ -2585,7 +2581,7 @@ export const byRoleData = {
         "Drive staff development and performance management",
         "Manage recruitment and leave efficiently",
         "Control user access within the system",
-        "Ensure data security and compliance with organizational policies",
+        "Ensure data security and compliance with organisational policies",
       ],
       conclusion: "",
     },
@@ -3518,7 +3514,7 @@ export const productsDetailsData = {
       {
         title: "Powerful Control Center",
         description:
-          "A powerful control center offering a bird's-eye view across the entire organization. Easily monitor shift schedules with the Roster Schedule Tracker, which visually displays shifts by status. Keep up to date with staff activity and instantly access participant status through the Participant Log.",
+          "A powerful control center offering a bird's-eye view across the entire organisation. Easily monitor shift schedules with the Roster Schedule Tracker, which visually displays shifts by status. Keep up to date with staff activity and instantly access participant status through the Participant Log.",
         images: [detailsImage1],
       },
       {
@@ -3572,7 +3568,7 @@ export const productsDetailsData = {
       {
         title: "Internal-Only Communication",
         points: [
-          "Organization-wide chat",
+          "Organisation-wide chat",
           "Only verified users from within your company can access",
           "No external contacts, no distractions, no data leakage",
         ],
@@ -3582,7 +3578,7 @@ export const productsDetailsData = {
         title: "1:1 and Group Conversations",
         points: [
           "Direct messages for quick check-ins",
-          "Create chat groups by team, region, or shift",
+          "Create chaT groups by team, region, or shift",
         ],
         images: [detailsImage2],
       },
@@ -3628,14 +3624,14 @@ export const productsDetailsData = {
       title: "ChaT FAQs",
       faqData: [
         {
-          question: "1. Is the internal chat secure?",
+          question: "1. Is the internal ChaT secure?",
           answer:
             "Yes, communication is fully secured and restricted to verified users within your organisation. It is not linked to any external messaging platforms, ensuring privacy and data protection.",
         },
         {
-          question: "2. Can I share files in chat?",
+          question: "2. Can I share files in ChaT?",
           answer:
-            "Yes, you can securely share documents such as PDFs, images, and notes in both group chats and private messages, supporting seamless collaboration.",
+            "Yes, you can securely share documents such as PDFs, images, and notes in both group ChaTs and private messages, supporting seamless collaboration.",
         },
         {
           question: "3. Can I search for previous messages?",
@@ -3811,7 +3807,7 @@ export const productsDetailsData = {
       {
         title: "Chart of Accounts",
         description:
-          "Maintain a structured, flexible chart of accounts tailored to your organization's financial reporting needs. Easily categorize income, expenses, assets, and liabilities.",
+          "Maintain a structured, flexible chart of accounts tailored to your organisation's financial reporting needs. Easily categorize income, expenses, assets, and liabilities.",
         images: [detailsImage2],
       },
       {
@@ -3881,7 +3877,7 @@ export const productsDetailsData = {
       title:
         "T Learning Hub — Role-Based Training, On-Demand. Simplified Learning for Every Team Member!",
       description:
-        "Empower your team with the right knowledge, at the right time. T Learning Hub is your organization's centralized training hub, delivering personalized content tailored to each user's role and responsibilities.",
+        "Empower your team with the right knowledge, at the right time. T Learning Hub is your organisation's centralized training hub, delivering personalized content tailored to each user's role and responsibilities.",
       image: detailsHero, // Replace with actual image import
     },
     section3: [

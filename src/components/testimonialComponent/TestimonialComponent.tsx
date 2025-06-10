@@ -1,38 +1,38 @@
 import "./TestimonialStyles.css";
 import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
+// import { useKeenSlider } from "keen-slider/react";
 import { testimonialDummyData } from "../../utils/DummyData";
-import leftArrow from "../../assets/Blue arrow.png";
-import rightArrow from "../../assets/white arrow.png";
+// import leftArrow from "../../assets/Blue arrow.png";
+// import rightArrow from "../../assets/white arrow.png";
 import star from "../../assets/star.png";
 import blurImage from "../../assets/blurPinkImage.png";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 const TestimonialComponent = () => {
-  const [perView, setPerView] = useState(3);
-  useEffect(() => {
-    if (window.screen.width <= 425) {
-      setPerView(1);
-    }
-  }, []);
-  const [sliderRef, slider] = useKeenSlider(
-    {
-      initial: 0,
-      rubberband: true,
-      slides: {
-        perView: perView,
-        spacing: 30,
-      },
-      slideChanged(slide) {
-        console.log(slide.track.details.rel);
-      },
-    },
-    [
-      // add plugins here
-    ]
-  );
+  // const [perView, setPerView] = useState(3);
+  // useEffect(() => {
+  //   if (window.screen.width <= 425) {
+  //     setPerView(1);
+  //   }
+  // }, []);
+  // const [sliderRef, slider] = useKeenSlider(
+  //   {
+  //     initial: 0,
+  //     rubberband: true,
+  //     slides: {
+  //       perView: perView,
+  //       spacing: 30,
+  //     },
+  //     slideChanged(slide) {
+  //       console.log(slide.track.details.rel);
+  //     },
+  //   },
+  //   [
+  //     // add plugins here
+  //   ]
+  // );
   return (
     <div id="testimonial-container">
-      <div className="heading">TESTIMONIAL</div>
+      <div className="heading">TESTIMONIALS</div>
       <div className="subheading">
         Real Stories. Real Results. Trusted by Leading NDIS Providers.
       </div>
@@ -42,9 +42,11 @@ const TestimonialComponent = () => {
       </div> */}
       <div id="testimonial-carousel-container">
         <img src={blurImage} alt="blurImage" id="blur-image" />
-        <div id="testimonial-carousel" ref={sliderRef} className="keen-slider">
+        {/* <div id="testimonial-carousel" ref={sliderRef} className="keen-slider"> */}
+        <div id="testimonial-carousel">
           {testimonialDummyData.map((item) => (
-            <div key={item.id} className="keen-slider__slide testimonial-card">
+            // <div key={item.id} className="keen-slider__slide testimonial-card">
+            <div key={item.id} className="testimonial-card">
               <div className="testimonial-rating-container">
                 {Array.from({ length: item.rating }, (_, index) => (
                   <img
@@ -70,7 +72,7 @@ const TestimonialComponent = () => {
             </div>
           ))}
         </div>
-        <div className="testimonial-buttons">
+        {/* <div className="testimonial-buttons">
           <img
             className="testimonial-button"
             src={leftArrow}
@@ -83,7 +85,7 @@ const TestimonialComponent = () => {
             alt="right arrow"
             onClick={() => slider.current?.next()}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

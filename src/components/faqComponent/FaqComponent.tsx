@@ -22,9 +22,9 @@ const FaqComponent = () => {
   return (
     <div id="faq-container">
       <div className="heading">FAQ's</div>
-      <div className="subheading">Frequently Asked Questions</div>
+      <div className="subheading">Have a question about TesseractApps?</div>
       <div className="text" id="faq-text">
-        Have a question about TesseractApps? We’re here to help.
+        We’re here to help.
       </div>
       <div id="accordian-container">
         {accordiaDummyData.map((data, index) => {
@@ -54,6 +54,14 @@ const FaqComponent = () => {
               <AccordionDetails>
                 <Typography sx={{ fontSize: "18px", fontWeight: 400 }}>
                   {data.answer}
+                  {data.points &&
+                    data.points.map((pointsData, pointsindex) => {
+                      return (
+                        <ul key={pointsindex}>
+                          <li>{pointsData}</li>
+                        </ul>
+                      );
+                    })}
                 </Typography>
               </AccordionDetails>
             </Accordion>

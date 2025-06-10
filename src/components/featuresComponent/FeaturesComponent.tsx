@@ -73,7 +73,7 @@ const FeaturesComponent = () => {
     <div id="features-container">
       <div className="heading">FEATURES</div>
       <div className="subheading features-subheading">
-        Why Choose TesseractApps for your organization ?
+        Why Choose TesseractApps for your organisation ?
       </div>
       <div className="features-buttons">
         <img

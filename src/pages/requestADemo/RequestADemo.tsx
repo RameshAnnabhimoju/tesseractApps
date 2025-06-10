@@ -3,7 +3,7 @@ const RequestADemo = () => {
   return (
     <div id="request-demo-container">
       <div className="subheading" id="request-demo-heading">
-        Request Your Demo
+        Book Your Demo
       </div>
       <div className="text" id="request-demo-text">
         Please complete the form below to get started. Our team will be in touch
@@ -125,7 +125,7 @@ const RequestADemo = () => {
                 />
               </div>
             </div>
-            <button id="request-demo-button" type="submit">
+            <button id="request-demo-button" type="button">
               Submit Request
             </button>
             <p id="request-demo-form-subtext">

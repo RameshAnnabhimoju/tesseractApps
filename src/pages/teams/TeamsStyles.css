@@ -6,13 +6,11 @@
 }
 #team-images-container {
   display: flex;
-  column-gap: 180px;
-  row-gap: 100px;
-  margin-left: 15%;
-  margin-right: 15%;
+  column-gap: 50px;
+  row-gap: 80px;
+  justify-content: center;
   flex-wrap: wrap;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin: 5% 8%;
 }
 .team-image {
   width: 300px;

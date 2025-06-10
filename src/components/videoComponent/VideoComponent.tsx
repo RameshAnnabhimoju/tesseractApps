@@ -123,7 +123,7 @@ const VideoComponent = () => {
               src={FlagCheck}
               alt="Performance Management icon"
             />{" "}
-            Performance Management
+            Rostering & Scheduling
           </div>
           <Line
             startX={49}
@@ -138,7 +138,7 @@ const VideoComponent = () => {
           </div>
           <div className="label label-3">
             <img className="overlay-icon" src={Payments} alt="Payroll icon" />{" "}
-            Payroll
+            Care Management
           </div>
           <Line
             startX={37}
@@ -157,7 +157,7 @@ const VideoComponent = () => {
               src={Checkbook}
               alt="Account Management icon"
             />
-            Account Management
+            Accounting
           </div>
           <Line
             startX={60.5}
@@ -176,7 +176,7 @@ const VideoComponent = () => {
               src={SirenCheck}
               alt="Incident Register icon"
             />{" "}
-            Incident Register
+            Incident Management
           </div>
           <Line
             startX={47}

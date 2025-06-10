@@ -4,14 +4,14 @@ const ResultsComponent = () => {
   return (
     <div id="results-container">
       <div className="heading">OUR RESULTS</div>
-      <div className="subheading">Our best results for the year</div>
+      <div className="subheading">Our best results for the year!</div>
       <div className="text results-cards-text">
         Empowering Providers. Simplifying Care. Driving Real Outcomes.
       </div>
       <div className="text results-cards-text2">
-        At TesseractApps, we are committed to helping NDIS and care providers
-        operate with greater clarity, compliance, and confidence. Here’s a
-        snapshot of our platform’s measurable impact across Australia.
+        At Tesseract Apps, we are committed to helping NDIS care providers and
+        IT businesses operate with greater clarity, compliance, and confidence.
+        Here’s a snapshot of our platform’s measurable impact across Australia.
       </div>
       <div className="results-cards-container">
         <div className="results-card">
@@ -29,7 +29,7 @@ const ResultsComponent = () => {
           </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">2,000+ Active Users</div>
+          <div className="results-card-title">500+ Active Users</div>
           <div className="results-card-text">
             Supporting thousands of workers, participants, and managers daily —
             streamlining operations at every level.

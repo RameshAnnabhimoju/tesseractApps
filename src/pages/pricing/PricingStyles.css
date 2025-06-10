@@ -124,6 +124,7 @@
   margin: 50px auto;
   justify-content: center; /* Centers the grid items as a group */
   max-width: 1700px; /* Optional: Limit total grid width */
+  padding-left: 35px;
 }
 .pricing-divider-line {
   height: 0;
