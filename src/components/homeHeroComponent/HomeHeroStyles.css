@@ -12,13 +12,13 @@
   padding: 2rem;
 }
 #home-text-heading {
-  font-size: 54px;
+  font-size: 38px;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: black;
 }
 #home-text-subText {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 2rem;
   max-width: 700px;

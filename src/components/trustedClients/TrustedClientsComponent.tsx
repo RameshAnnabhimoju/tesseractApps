@@ -4,7 +4,7 @@ import company2 from "../../assets/company-2.png";
 import company3 from "../../assets/company-3.png";
 import company4 from "../../assets/company-4.png";
 import company5 from "../../assets/company-5.png";
-import company6 from "../../assets/company-6.png";
+// import company6 from "../../assets/company-6.png";
 import company7 from "../../assets/company-7.png";
 const TrustedClientsComponent = () => {
   const companiesImages = [
@@ -13,7 +13,6 @@ const TrustedClientsComponent = () => {
     company3,
     company4,
     company5,
-    company6,
     company7,
   ];
   return (

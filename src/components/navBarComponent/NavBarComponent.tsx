@@ -65,7 +65,6 @@ const NavBarComponent = ({
           });
           break;
         default:
-          navigate("/coming-soon");
           break;
       }
     }
@@ -667,7 +666,10 @@ const NavBarComponent = ({
             <div
               key={label}
               id={label}
-              className="nav-link"
+              className={
+                "nav-link" +
+                (isPopupOpen && selectedLink == label ? " nav-link-active" : "")
+              }
               onClick={handleNavClick}
               onMouseEnter={shouldHavePopup ? handleNavPopupClick : undefined}
               // onMouseLeave={shouldHavePopup ? closePopup : undefined}

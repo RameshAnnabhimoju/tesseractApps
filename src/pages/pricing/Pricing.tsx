@@ -229,18 +229,20 @@ const Pricing = () => {
           <div className="pricing-links-container">
             <img src={call} alt="" className="pricing-links-image" />
             <div className="pricing-links-data-container">
-              <div className="pricing-links-data">+91 176 123 456</div>
+              <div className="pricing-links-data">+61 1300 252 808</div>
               <div className="pricing-links-data-subtext">Support Hotline</div>
             </div>
           </div>
           <div className="pricing-links-container">
             <img src={mark_email} alt="" className="pricing-links-image" />
             <div className="pricing-links-data-container">
-              <div className="pricing-links-data">help@Tesseract.com</div>
+              <div className="pricing-links-data">
+                enquiries@tesseractapps.com
+              </div>
               <div className="pricing-links-data-subtext">Support Email</div>
             </div>
           </div>
-          <button id="pricing-help-chat-button"> Chat with us</button>
+          <button id="pricing-help-chat-button"> Book a Demo</button>
         </div>
       </div>
     </div>

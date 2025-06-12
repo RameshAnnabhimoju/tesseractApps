@@ -8,25 +8,27 @@
   gap: 1rem;
   margin: 20px 18%;
 }
-#blog-card-container {
+#blog-page-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 35px;
-  margin: 80px 18%;
+  gap: 20px;
+  margin: 80px 15%;
 }
-.blog-card {
+.blog-page-card {
   cursor: pointer;
+  max-width: 400px;
 }
-.blog-image {
+.blog-page-image {
   border-radius: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
-.blog-title {
-  font-size: 28px;
-  font-weight: 500;
+.blog-page-title {
+  font-size: 26px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
-.blog-description {
+.blog-page-description {
   font-size: 16px;
   font-weight: 500;
   line-height: 25px;
@@ -51,7 +53,7 @@
   color: var(--color-text-dark-gray);
   transition: all 0.3s ease;
 }
-.blog-categories {
+.blog-page-categories {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

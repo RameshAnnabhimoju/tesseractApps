@@ -69,29 +69,64 @@ export const blogDummyData = [
     image: blogImage6,
   },
 ];
-
+import image1 from "../assets/image.png";
+import image2 from "../assets/image1.png";
+import authorImage from "../assets/authorProfileImage.png";
+export const ourBlogDummyData = [
+  {
+    id: 1,
+    title:
+      "Protecting Participant Data: Why Security Matters for NDIS and Care Providers",
+    description: ` Every day, disability support and aged care providers collect
+            sensitive information — including health records, personal details,
+            and care plans — that participants trust us to protect. Strong data
+            security isn't a luxury; it's essential for compliance, service
+            continuity, and, most importantly, client trust.`,
+    image: image1,
+    date: "2025-06-01",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["App", "Technology"],
+  },
+  {
+    id: 2,
+    title:
+      "Future-Proofing Disability Services: Why NDIS Providers Need Smarter Systems Now",
+    description: `Australia’s NDIS (National Disability Insurance Scheme) is evolving at pace. By March 2025, the scheme supported over 717,000 active participants — a 3.5% increase in just one quarter. This rapid expansion creates significant operational, compliance, and workforce challenges for NDIS providers.`,
+    image: image2,
+    date: "2025-06-12",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["App", "Technology"],
+  },
+];
 export const navBarDummyData = {
   Product: [
     // { title: "Scheduling", subTitle: " " },
     // { title: "Time Management", subTitle: " " },
     // { title: "HR Management", subTitle: " " },
     // { title: "Communication", subTitle: " " },
-    { title: "Roster Management", subTitle: " " },
-    { title: "Timesheet", subTitle: " " },
-    { title: "Admin Console", subTitle: " " },
-    { title: "Access Control Panel", subTitle: " " },
-    { title: "HR Operations", subTitle: " " },
-    { title: "T-sign", subTitle: " " },
-    { title: "Clock In & Clock Out", subTitle: " " },
-    { title: "Participant Management", subTitle: " " },
-    { title: "Incident Management", subTitle: " " },
-    { title: "Repository", subTitle: " " },
-    { title: "Role based Dashboard", subTitle: " " },
-    { title: "ChaT - Secure Internal Messaging", subTitle: " " },
-    { title: "My Profile", subTitle: " " },
-    { title: "Forms", subTitle: " " },
-    { title: "Accounting", subTitle: " " },
-    { title: "T Learning Hub", subTitle: " " },
+    { title: "Roster Management", subTitle: "Auto Scheduling" },
+    { title: "Timesheet", subTitle: "Time Tracking" },
+    { title: "Admin Console", subTitle: "System Oversight" },
+    { title: "Access Control Panel", subTitle: "Access Rights" },
+    { title: "HR Operations", subTitle: "HR Suite" },
+    { title: "T-sign", subTitle: "Digital Signatures" },
+    { title: "Clock In & Clock Out", subTitle: "Attendence" },
+    { title: "Participant Management", subTitle: "Participant Care" },
+    { title: "Incident Management", subTitle: "Incident Reporting" },
+    { title: "Repository", subTitle: "Document Hub" },
+    { title: "Role based Dashboard", subTitle: "Smart Dashboards" },
+    {
+      title: "ChaT - Secure Internal Messaging",
+      subTitle: "Secure Communication",
+    },
+    { title: "My Profile", subTitle: "My Account" },
+    { title: "Forms", subTitle: "Custom Forms" },
+    { title: "Accounting", subTitle: "Finance" },
+    { title: "T Learning Hub", subTitle: "Learning Hub" },
   ],
   Solutions: {
     "BY INDUSTRY": [
@@ -1303,26 +1338,31 @@ export const howItWorksImages = [
 ];
 import testimonialImage from "../assets/avatar-mid-alt.png";
 export const testimonialDummyData = [
-  // {
-  //   id: 1,
-  //   rating: 5,
-  //   testimonial: "",
-  //   testimonialPoints: [
-  //     "Tesseract Apps has been an intuitive and reliable platform that’s streamlined our workflow and boosted team productivity. It integrated seamlessly into our operations, saving time and reducing manual tasks.",
-  //     "The user interface is clean and easy to navigate, making adoption effortless across the team. In a short time, the Tesseract Apps team delivered two key improvements—a powerful reporting dashboard and a streamlined task management feature—both of which have had a direct, positive impact on our efficiency.",
-  //     "Support has also been excellent: responsive, proactive, and always open to feedback. Tesseract Apps has quickly become an indispensable tool for our organisation, and I highly recommend it to any team seeking a smart, scalable solution.",
-  //   ],
-  //   authorImage: testimonialImage,
-  //   author: "Nathan Chakanetsa",
-  //   authorTitle: "Seed Disability Services Pty Ltd",
-  // },
+  {
+    id: 1,
+    rating: 5,
+    testimonial: "",
+    testimonialPoints: [
+      "Tesseract Apps has been an intuitive and reliable platform that’s streamlined our workflow and boosted team productivity. It integrated seamlessly into our operations, saving time and reducing manual tasks.",
+      "The user interface is clean and easy to navigate, making adoption effortless across the team. In a short time, the Tesseract Apps team delivered two key improvements—a powerful reporting dashboard and a streamlined task management feature—both of which have had a direct, positive impact on our efficiency.",
+      "Support has also been excellent: responsive, proactive, and always open to feedback. Tesseract Apps has quickly become an indispensable tool for our organisation, and I highly recommend it to any team seeking a smart, scalable solution.",
+    ],
+    authorImage: testimonialImage,
+    author: "Nathan Chakanetsa",
+    authorTitle: "Seed Disability Services Pty Ltd",
+  },
   {
     id: 2,
     rating: 5,
-    testimonial: `“We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.
-Tesseract brings all of these functions together in one easy-to-use platform. It’s streamlined our operations, improved our workflow, and made it much easier to stay on top of everything. The team behind it, especially Kranthi and Rev, have been incredibly supportive — always responsive, open to feedback, and committed to helping us get the most out of the system.
- If you're an NDIS provider looking to simplify your processes, reduce costs, and avoid the stress of managing multiple tools, I highly recommend Tesseract. It’s been a game-changer for our team and our business.”
+    testimonial: `
+
+ 
 `,
+    testimonialPoints: [
+      "“We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.",
+      "Tesseract brings all of these functions together in one easy-to-use platform. It’s streamlined our operations, improved our workflow, and made it much easier to stay on top of everything. The team behind it, especially Kranthi and Rev, have been incredibly supportive — always responsive, open to feedback, and committed to helping us get the most out of the system.",
+      "If you're an NDIS provider looking to simplify your processes, reduce costs, and avoid the stress of managing multiple tools, I highly recommend Tesseract. It’s been a game-changer for our team and our business.”",
+    ],
     authorImage: testimonialImage,
     author: "Seed",
     authorTitle: "",

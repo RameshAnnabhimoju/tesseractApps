@@ -1,13 +1,12 @@
 import "./OurBlogStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import image1 from "../../assets/image.png";
-// import image2 from "../../assets/image1.png";
+
 // import image3 from "../../assets/image2.png";
 // import image4 from "../../assets/image3.png";
 import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
-import authorImage from "../../assets/authorProfileImage.png";
+import { ourBlogDummyData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 
 const OurBlogComponent = () => {
@@ -27,111 +26,7 @@ const OurBlogComponent = () => {
       // add plugins here
     ]
   );
-  const ourBlogDummyData = [
-    {
-      id: 1,
-      title:
-        "Protecting Participant Data: Why Security Matters for NDIS and Care Providers",
-      description: ` Every day, disability support and aged care providers collect
-            sensitive information — including health records, personal details,
-            and care plans — that participants trust us to protect. Strong data
-            security isn't a luxury; it's essential for compliance, service
-            continuity, and, most importantly, client trust.`,
-      image: image1,
-      date: "2025-06-01",
-      author: "Belle Bai",
-      authorImage: authorImage,
-      comments: 0,
-    },
-    // {
-    //   id: 2,
-    //   title: "Oldage",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image2,
-    //   date: "2024-12-05",
-    //   author: "Jane Doe",
-    //   authorImage: authorImage,
-    //   comments: 150,
-    // },
-    // {
-    //   id: 3,
-    //   title: "Health care In Australia",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image3,
-    //   date: "2023-10-01",
-    //   author: "John Doe",
-    //   authorImage: authorImage,
-    //   comments: 253,
-    // },
-    // {
-    //   id: 4,
-    //   title: "Health care In Australia",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image4,
-    //   date: "2023-10-01",
-    //   author: "John Doe",
-    //   authorImage: authorImage,
-    //   comments: 253,
-    // },
-    // {
-    //   id: 5,
-    //   title: "Health care In Australia",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image3,
-    //   date: "2023-10-01",
-    //   author: "John Doe",
-    //   authorImage: authorImage,
-    //   comments: 253,
-    // },
-    // {
-    //   id: 6,
-    //   title: "Health care In Australia",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image2,
-    //   date: "2023-10-01",
-    //   author: "John Doe",
-    //   authorImage: authorImage,
-    //   comments: 253,
-    // },
-    // {
-    //   id: 7,
-    //   title: "Health care In Australia",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image2,
-    //   date: "2023-10-01",
-    //   author: "John Doe",
-    //   authorImage: authorImage,
-    //   comments: 253,
-    // },
-    // {
-    //   id: 8,
-    //   title: "Health care In Australia",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image2,
-    //   date: "2023-10-01",
-    //   author: "John Doe",
-    //   authorImage: authorImage,
-    //   comments: 253,
-    // },
-    // {
-    //   id: 9,
-    //   title: "Health care In Australia",
-    //   description:
-    //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    //   image: image2,
-    //   date: "2023-10-01",
-    //   author: "John Doe",
-    //   authorImage: authorImage,
-    //   comments: 253,
-    // },
-  ];
+
   const navigate = useNavigate();
   return (
     <div id="ourBlog-container">
@@ -177,7 +72,13 @@ const OurBlogComponent = () => {
                 <div className="read-more-container">
                   <div
                     className="ourBlog-read-more"
-                    onClick={() => navigate("/blogpost")}
+                    onClick={() => {
+                      if (data.id == 1) {
+                        navigate("/blogpost");
+                      } else {
+                        navigate("/blogpost2");
+                      }
+                    }}
                   >
                     Read More
                   </div>

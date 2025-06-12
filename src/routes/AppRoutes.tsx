@@ -18,6 +18,7 @@ import ByRole from "../pages/byRole/ByRole";
 import ByIndustry from "../pages/byIndustry/ByIndustry";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import ComingSoon from "../pages/comingSoon/ComingSoon";
+import FutureProofingBlog from "../pages/blogPost/FutureProofingBlog";
 
 const AppRoutes = () => {
   return (
@@ -46,6 +47,7 @@ const AppRoutes = () => {
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact-information" element={<ContactInformation />} />
       <Route path="/blogPost" element={<Blogpost />} />
+      <Route path="/blogPost2" element={<FutureProofingBlog />} />
 
       <Route path="/administrator" element={<ByRole />} />
       <Route path="/roster-manager" element={<ByRole />} />

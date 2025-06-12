@@ -8,44 +8,17 @@ import star from "../../assets/star.png";
 import blurImage from "../../assets/blurPinkImage.png";
 // import { useEffect, useState } from "react";
 const TestimonialComponent = () => {
-  // const [perView, setPerView] = useState(3);
-  // useEffect(() => {
-  //   if (window.screen.width <= 425) {
-  //     setPerView(1);
-  //   }
-  // }, []);
-  // const [sliderRef, slider] = useKeenSlider(
-  //   {
-  //     initial: 0,
-  //     rubberband: true,
-  //     slides: {
-  //       perView: perView,
-  //       spacing: 30,
-  //     },
-  //     slideChanged(slide) {
-  //       console.log(slide.track.details.rel);
-  //     },
-  //   },
-  //   [
-  //     // add plugins here
-  //   ]
-  // );
   return (
     <div id="testimonial-container">
       <div className="heading">TESTIMONIALS</div>
       <div className="subheading">
         Real Stories. Real Results. Trusted by Leading NDIS Providers.
       </div>
-      {/* <div className="text testimonial-heading-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa labore
-        eaque in explicabo ea mollitia reprehenderit?
-      </div> */}
       <div id="testimonial-carousel-container">
         <img src={blurImage} alt="blurImage" id="blur-image" />
-        {/* <div id="testimonial-carousel" ref={sliderRef} className="keen-slider"> */}
+
         <div id="testimonial-carousel">
           {testimonialDummyData.map((item) => (
-            // <div key={item.id} className="keen-slider__slide testimonial-card">
             <div key={item.id} className="testimonial-card">
               <div className="testimonial-rating-container">
                 {Array.from({ length: item.rating }, (_, index) => (
@@ -57,11 +30,14 @@ const TestimonialComponent = () => {
                   />
                 ))}
               </div>
-              <div className="testimonial-text">{item.testimonial}</div>
-              {/* {item?.testimonialPoints &&
-                item.testimonialPoints.map((point) => {
-                  return <div className="testimonial-text">{point}</div>;
-                })} */}
+              <div className="testimonial-text-container">
+                <div className="testimonial-text">{item.testimonial}</div>
+
+                {item?.testimonialPoints &&
+                  item.testimonialPoints.map((point) => {
+                    return <div className="testimonial-text">{point}</div>;
+                  })}
+              </div>
 
               <div className="testimonial-author-details">
                 <img
@@ -77,20 +53,6 @@ const TestimonialComponent = () => {
             </div>
           ))}
         </div>
-        {/* <div className="testimonial-buttons">
-          <img
-            className="testimonial-button"
-            src={leftArrow}
-            alt="left arrow"
-            onClick={() => slider.current?.prev()}
-          />
-          <img
-            className="testimonial-button"
-            src={rightArrow}
-            alt="right arrow"
-            onClick={() => slider.current?.next()}
-          />
-        </div> */}
       </div>
     </div>
   );

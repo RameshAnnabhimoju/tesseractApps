@@ -1,16 +1,16 @@
 import "./BlogStyles.css";
-import { blogDummyData } from "../../utils/DummyData";
+import { ourBlogDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Blog = () => {
   const navigate = useNavigate();
   const [categoryFilter, setCategoryFilter] = useState("All");
-  const [blogsData, setBlogsData] = useState(blogDummyData);
+  const [blogsData, setBlogsData] = useState(ourBlogDummyData);
   const handleCategoryFilter = (category: string) => {
     setCategoryFilter(category);
   };
   useEffect(() => {
-    const filteredData = blogDummyData.filter(
+    const filteredData = ourBlogDummyData.filter(
       (blog) =>
         blog?.categories?.includes(categoryFilter) || categoryFilter === "All"
     );
@@ -71,19 +71,23 @@ const Blog = () => {
           New Blog
         </div>
       </div>
-      <div id="blog-card-container">
+      <div id="blog-page-card-container">
         {blogsData.map((blog, index) => (
           <div
             onClick={() => {
-              navigate("/article");
+              if (blog.id == 1) {
+                navigate("/blogpost");
+              } else {
+                navigate("/blogpost2");
+              }
             }}
-            className="blog-card"
+            className="blog-page-card"
             key={index}
           >
-            <img src={blog.image} alt="Blog" className="blog-image" />
-            <div className="blog-title">{blog.title}</div>
-            <div className="blog-description">{blog.description}</div>
-            <div className="blog-categories">
+            <img src={blog.image} alt="Blog" className="blog-page-image" />
+            <div className="blog-page-title">{blog.title}</div>
+            <div className="blog-page-description">{blog.description}</div>
+            <div className="blog-page-categories">
               {blog.categories.map((category, index) => (
                 <span className="category-filter" key={index}>
                   {category}

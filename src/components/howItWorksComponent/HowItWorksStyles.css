@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   max-width: 930px; /* 3 x 200px + gaps */
-  gap: 80px;
+  gap: 30px;
 }
 .howItWorks-card {
   cursor: pointer;
@@ -37,10 +37,10 @@
 .howItWorks-card-title {
   font-size: 24px;
   font-weight: 700;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
 .howItWorks-card-description {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--color-text-gray);
   /* text-align: justify; */
