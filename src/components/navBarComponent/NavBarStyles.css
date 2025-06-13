@@ -8,6 +8,7 @@
   padding: 10px;
   background-image: var(--color-background-gradient);
   padding: 20px 50px;
+  min-width: max-content;
 }
 #navbar-logo {
   font-size: 24px;
@@ -30,10 +31,10 @@
   color: var(--color-secondary);
   font-size: 20px;
   cursor: pointer;
-  font-weight: 600;
 }
 .nav-link:hover {
   color: var(--color-primary);
+  font-weight: 600;
 }
 #nav-icons-container {
   display: flex;
@@ -129,6 +130,7 @@
 }
 .nav-link-active {
   color: var(--color-primary);
+  font-weight: 600;
 }
 @media (max-width: 1300px) {
   #navbar-links,

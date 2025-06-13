@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, NavigateFunction } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Article from "../pages/article/Article";
 import Blog from "../pages/blog/Blog";
@@ -19,6 +19,15 @@ import ByIndustry from "../pages/byIndustry/ByIndustry";
 import ProductDetails from "../pages/productDetails/ProductDetails";
 import ComingSoon from "../pages/comingSoon/ComingSoon";
 import FutureProofingBlog from "../pages/blogPost/FutureProofingBlog";
+import {
+  aboutUsPageData,
+  byIndustryData,
+  byRoleData,
+  itemsPageDummyData,
+  productsDetailsData,
+  SubPagesDummyData,
+} from "../utils/DummyData";
+import OutStory from "../pages/ourStory/OutStory";
 
 const AppRoutes = () => {
   return (
@@ -39,7 +48,7 @@ const AppRoutes = () => {
       <Route path="/case-studies" element={<ItemsPage />} />
       <Route path="/whitepapers" element={<ItemsPage />} />
       <Route path="/support-documentation" element={<ItemsPage />} />
-      <Route path="/our-story" element={<AboutUsSubPage />} />
+      <Route path="/our-story" element={<OutStory />} />
       <Route path="/our-mission" element={<AboutUsSubPage />} />
       <Route path="/our-vision" element={<AboutUsSubPage />} />
       <Route path="/faq" element={<FAQ />} />
@@ -81,3 +90,229 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const appNavigate = (
+  navigate: NavigateFunction,
+  route: string,
+  defalut = true
+) => {
+  switch (route) {
+    // case "Case Studies":
+    //   navigate("/case-studies", {
+    //     state: { data: itemsPageDummyData["Case Studies"] },
+    //   });
+    //   break;
+    // case "Whitepapers":
+    //   navigate("/whitepapers", {
+    //     state: { data: itemsPageDummyData["Whitepapers"] },
+    //   });
+    //   break;
+    // case "Support Documentation":
+    //   navigate("/support-documentation", {
+    //     state: { data: itemsPageDummyData["Support Documentation"] },
+    //   });
+    //   break;
+    case "Pricing":
+      navigate("/pricing");
+      break;
+    case "Blog":
+      navigate("/blogs", {
+        state: { data: itemsPageDummyData["Blog"] },
+      });
+      break;
+    case "Product":
+      navigate("/product", {
+        state: { data: SubPagesDummyData["Product"] },
+      });
+      break;
+    case "Scheduling":
+      navigate("/scheduling", {
+        state: { data: SubPagesDummyData["Scheduling"] },
+      });
+      break;
+    case "Time Management":
+      navigate("/time-management", {
+        state: { data: SubPagesDummyData["Time Management"] },
+      });
+      break;
+    case "HR Management":
+      navigate("/hr-management", {
+        state: { data: SubPagesDummyData["HR Management"] },
+      });
+      break;
+    case "Communication":
+      navigate("/communication", {
+        state: { data: SubPagesDummyData["Communication"] },
+      });
+      break;
+    case "FAQs":
+      navigate("/faq");
+      break;
+    case "Team":
+      navigate("/team");
+      break;
+    case "Our Story":
+      navigate("/our-story", {
+        state: { data: aboutUsPageData["Our Story"] },
+      });
+      break;
+    case "Our Mission":
+      navigate("/our-mission", {
+        state: { data: aboutUsPageData["Our mission"] },
+      });
+      break;
+    case "Our Vision":
+      navigate("/our-vision", {
+        state: { data: aboutUsPageData["Our Vision"] },
+      });
+      break;
+    case "Careers":
+      navigate("/careers");
+      break;
+    case "Contact Information":
+      navigate("/contact-information");
+      break;
+    case "Administrator":
+      navigate("/administrator", {
+        state: { data: byRoleData["Administrator"] },
+      });
+      break;
+    case "Participant":
+      navigate("/participant", {
+        state: { data: byRoleData["Participant"] },
+      });
+      break;
+    case "Roster Manager":
+      navigate("/roster-manager", {
+        state: { data: byRoleData["Roster Manager"] },
+      });
+      break;
+    case "NDIS Staff":
+      navigate("/ndis-staff", {
+        state: { data: byRoleData["NDIS Staff"] },
+      });
+      break;
+    case "HR Manager":
+      navigate("/hr-manager", {
+        state: { data: byRoleData["HR Manager"] },
+      });
+      break;
+    case "Accountant":
+      navigate("/accountant", {
+        state: { data: byRoleData["Accountant"] },
+      });
+      break;
+    case "NDIS Industry":
+      navigate("/ndis-industry", {
+        state: { data: byIndustryData["NDIS Industry"] },
+      });
+      break;
+    case "ICT Industry":
+      navigate("/ict-industry", {
+        state: { data: byIndustryData["ICT Industry"] },
+      });
+      break;
+    case "Roster Management":
+      navigate("/roster-management", {
+        state: { data: productsDetailsData["Roster Management"] },
+      });
+      break;
+
+    case "Timesheet":
+      navigate("/timesheet", {
+        state: { data: productsDetailsData["Timesheet"] },
+      });
+      break;
+
+    case "Admin Console":
+      navigate("/admin-console", {
+        state: { data: productsDetailsData["Admin Console"] },
+      });
+      break;
+
+    case "Access Control Panel":
+      navigate("/access-control-panel", {
+        state: { data: productsDetailsData["Access Control Panel"] },
+      });
+      break;
+
+    case "HR Operations":
+      navigate("/hr-operations", {
+        state: { data: productsDetailsData["HR Operations"] },
+      });
+      break;
+
+    case "T-sign":
+      navigate("/t-sign", {
+        state: { data: productsDetailsData["T-sign"] },
+      });
+      break;
+
+    case "Clock In & Clock Out":
+      navigate("/clock-in-and-clock-out", {
+        state: { data: productsDetailsData["Clock In & Clock Out"] },
+      });
+      break;
+
+    case "Participant Management":
+      navigate("/participant-management", {
+        state: { data: productsDetailsData["Participant Management"] },
+      });
+      break;
+
+    case "Incident Management":
+      navigate("/incident-management", {
+        state: { data: productsDetailsData["Incident Management"] },
+      });
+      break;
+
+    case "Role based Dashboards":
+      navigate("/role-based-dashboard", {
+        state: { data: productsDetailsData["Role Based Dashboard"] },
+      });
+      break;
+
+    case "ChaT - Secure Internal Messaging":
+      navigate("/chat", {
+        state: {
+          data: productsDetailsData["ChaT - Secure Internal Messaging"],
+        },
+      });
+      break;
+    case "ChaT & Notifications":
+      navigate("/chat", {
+        state: {
+          data: productsDetailsData["ChaT - Secure Internal Messaging"],
+        },
+      });
+      break;
+
+    case "My Profile":
+      navigate("/my-profile", {
+        state: { data: productsDetailsData["My Profile"] },
+      });
+      break;
+
+    case "Forms":
+      navigate("/forms", {
+        state: { data: productsDetailsData["Forms"] },
+      });
+      break;
+
+    case "Accounting":
+      navigate("/accounting", {
+        state: { data: productsDetailsData["Accounting"] },
+      });
+      break;
+
+    case "T Learning Hub":
+      navigate("/t-learning-hub", {
+        state: { data: productsDetailsData["T Learning Hub"] },
+      });
+      break;
+    default:
+      if (defalut) navigate("/coming-soon");
+      break;
+  }
+};

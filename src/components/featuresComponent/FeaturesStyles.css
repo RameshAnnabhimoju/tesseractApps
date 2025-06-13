@@ -1,5 +1,5 @@
 #features-container {
-  margin: 80px 0;
+  margin: 25px 0;
 }
 .features-subheading {
   max-width: 650px !important;
@@ -33,7 +33,7 @@
   color: var(--color-primary);
 }
 .features-card-image {
-  width: 55px;
+  width: 65px;
   height: 55px;
 }
 .features-card-title {

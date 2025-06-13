@@ -6,6 +6,7 @@ import rightArrow from "../../assets/white arrow.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { featuresDummyData } from "../../utils/DummyData";
+import { appNavigate } from "../../routes/AppRoutes";
 const FeaturesComponent = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -68,7 +69,9 @@ const FeaturesComponent = () => {
     slider.on("animationEnded", nextTimeout);
     slider.on("updated", nextTimeout);
   }
-
+  const clickHandler = (name: string) => {
+    appNavigate(navigate, name);
+  };
   return (
     <div id="features-container">
       <div className="heading">FEATURES</div>
@@ -95,7 +98,7 @@ const FeaturesComponent = () => {
             <div
               key={feature.id}
               className="keen-slider__slide features-card"
-              onClick={() => navigate("/details")}
+              onClick={() => clickHandler(feature.title)}
             >
               <img
                 className="features-card-image"
@@ -110,23 +113,6 @@ const FeaturesComponent = () => {
           ))}
         </div>
       </div>
-      {/* {loaded && slider.current && (
-        <div className="features-dots">
-          {[
-            ...Array(
-              slider.current.track.details.slides.length -
-                (slider.current.options.slides?.perView || 5) +
-                1
-            ),
-          ].map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => slider.current?.moveToIdx(idx)}
-              className={`dot ${currentSlide === idx ? "active" : ""}`}
-            />
-          ))}
-        </div>
-      )} */}
     </div>
   );
 };

@@ -47,8 +47,8 @@ video {
 
 .label-1 {
   opacity: 0;
-  top: 30%;
-  left: 15%;
+  top: 10%;
+  left: 5%;
   animation: fadeInLabel1 0.8s ease-out forwards;
 }
 @keyframes fadeInLabel2 {
@@ -63,7 +63,7 @@ video {
 }
 .label-2 {
   opacity: 0;
-  top: 10%;
+  top: -10%;
   left: 30%;
   animation: fadeInLabel2 0.8s ease-out forwards;
 }
@@ -79,8 +79,8 @@ video {
 }
 .label-3 {
   opacity: 0;
-  bottom: 35%;
-  left: 20%;
+  bottom: 45%;
+  left: 5%;
   animation: fadeInLabel3 0.8s ease-out forwards;
 }
 @keyframes fadeInLabel4 {
@@ -95,7 +95,7 @@ video {
 }
 .label-4 {
   opacity: 0;
-  bottom: 38%;
+  bottom: 45%;
   right: 18%;
   animation: fadeInLabel4 0.8s ease-out forwards;
 }
@@ -111,7 +111,7 @@ video {
 }
 .label-5 {
   opacity: 0;
-  bottom: 10%;
+  bottom: 5%;
   left: 30%;
   animation: fadeInLabel5 0.8s ease-out forwards;
 }
@@ -127,7 +127,7 @@ video {
 }
 .label-6 {
   opacity: 0;
-  top: 28%;
+  top: 15%;
   right: 25%;
   animation: fadeInLabel6 0.8s ease-out forwards;
 }
@@ -140,33 +140,38 @@ video {
 
 .label-spot1 {
   position: absolute;
-  top: 45%;
-  left: 38%;
+  top: 29%;
+  left: 29%;
 }
 .label-spot2 {
   position: absolute;
-  top: 28%;
-  left: 48%;
+  top: 13%;
+  left: 43%;
 }
 .label-spot3 {
   position: absolute;
-  top: 55.5%;
-  left: 36%;
+  top: 62%;
+  left: 29%;
 }
 .label-spot4 {
   position: absolute;
-  top: 68%;
+  top: 61%;
   left: 57%;
 }
 .label-spot5 {
   position: absolute;
-  top: 70%;
-  left: 46%;
+  top: 77%;
+  left: 43%;
 }
 .label-spot6 {
   position: absolute;
-  top: 35%;
-  left: 58%;
+  top: 30%;
+  left: 57%;
+}
+#video-image {
+  max-width: 30vw;
+  padding: 60px 0;
+  padding-left: 30%;
 }
 @keyframes stroke-dashoffset {
   0% {
@@ -193,21 +198,27 @@ video {
   video {
     transform: scale(1.5);
   }
+  #video-image {
+    padding: 50px 0;
+    transform: scale(0.8);
+    transform: translateX(75px);
+    max-width: 250px;
+  }
 
   .label-overlay {
     transform: scale(0.7);
     /* display: none; */
   }
   .label-1 {
-    top: 20%;
+    top: 8%;
     left: -15%;
   }
   .label-2 {
-    top: -15%;
-    left: 0%;
+    top: -18%;
+    left: 15%;
   }
   .label-3 {
-    bottom: 25%;
+    bottom: 33%;
     left: -10%;
   }
   .label-4 {
@@ -215,36 +226,36 @@ video {
     right: -15%;
   }
   .label-5 {
-    bottom: -10%;
-    left: 50%;
+    bottom: -18%;
+    left: 30%;
   }
   .label-6 {
     top: 5%;
-    right: -5%;
+    right: -15%;
   }
 
   .label-spot1 {
-    top: 40%;
-    left: 25%;
+    top: 20%;
+    left: 5%;
   }
   .label-spot2 {
-    top: 18%;
-    left: 38%;
+    top: -4%;
+    left: 51%;
   }
   .label-spot3 {
-    top: 65%;
-    left: 26%;
+    top: 70%;
+    left: 6%;
   }
   .label-spot4 {
-    top: 75%;
-    left: 67%;
+    top: 71%;
+    left: 96%;
   }
   .label-spot5 {
-    top: 90%;
-    left: 40%;
+    top: 95%;
+    left: 51%;
   }
   .label-spot6 {
     top: 20%;
-    left: 70%;
+    left: 97%;
   }
 }

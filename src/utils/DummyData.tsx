@@ -1166,105 +1166,116 @@ export const pricingDummyData = [
   },
 ];
 
-import HumanResourceImage from "../assets/folder_supervised.svg";
-import PayrollImage from "../assets/payments.svg";
-import IncidentReport from "../assets/siren_check.svg";
-import AccountManagement from "../assets/checkbook.svg";
-import TSign from "../assets/stylus_note.svg";
+import RosterManagementImage from "../assets/Roster Management.png";
+import TimesheetImage from "../assets/Time sheet.png";
+import AdminConsoleImage from "../assets/Admin.png";
+import HRImage from "../assets/HR.png";
+import ParticipantsImage from "../assets/Participants Management.png";
+import ChatImage from "../assets/Chart and notifications.png";
+import RepoImage from "../assets/Repository.png";
+import AccountingImage from "../assets/accounting.png";
+import IncidentImage from "../assets/Incident Management.png";
+import ClockImage from "../assets/clock in clock out.png";
+import ComplianceImage from "../assets/complaince and safe guard.png";
+import AccessImage from "../assets/Access control panel.png";
+import Forms from "../assets/Form.png";
+import TSign from "../assets/T sign.png";
+import Profile from "../assets/My profile.png";
+import Role from "../assets/Role base dashboard.png";
 export const featuresDummyData = [
   {
     id: 1,
     title: "Roster Management",
     description:
       "Plan, assign, and manage shifts effortlessly. Avoid roster conflicts, reduce fatigue, and fill gaps in real time.",
-    image: HumanResourceImage,
+    image: RosterManagementImage,
   },
   {
     id: 2,
     title: "Timesheet",
     description:
       "Timesheet simplifies time tracking and payroll with intuitive, streamlined workflows, real-time updates, and seamless invoice integration, keeping your operations accurate and efficient.",
-    image: PayrollImage,
+    image: TimesheetImage,
   },
   {
     id: 3,
     title: "Admin Console",
     description:
       "The Admin Console is your all-in-one control hub, simplifying the management of organisational details, user access, facilities, rostering, and staff for smooth, secure operations.",
-    image: IncidentReport,
+    image: AdminConsoleImage,
   },
   {
     id: 4,
     title: "HR Operations",
     description:
       "Centralise HR workflows - from onboarding to compliance reporting.",
-    image: AccountManagement,
+    image: HRImage,
   },
   {
     id: 5,
     title: "Participant Management",
     description:
       "Track progress, log notes, monitor goals, and stay on top of participant needs - all in one place.",
-    image: TSign,
+    image: ParticipantsImage,
   },
   {
     id: 6,
     title: "ChaT & Notifications",
     description:
       "Keep your team informed with in-app messaging, mobile alerts, and real-time updates — all securely recorded.",
-    image: TSign,
+    image: ChatImage,
   },
   {
     id: 7,
     title: "Repository",
     description:
       "Securely store and manage staff and participant files with role-based access and digital signatures.",
-    image: TSign,
+    image: RepoImage,
   },
   {
     id: 8,
     title: "Accounting",
     description:
       "Automate payroll, invoicing, reimbursements, and NDIS claims. Seamless integration with accounting platforms.",
-    image: TSign,
+    image: AccountingImage,
   },
   {
     id: 9,
     title: "Incident Management",
     description: "Log incidents with automatic alerts and escalation paths.",
-    image: TSign,
+    image: IncidentImage,
   },
   {
     id: 10,
-    title: "Clock in & Clock Out",
+    title: "Clock In & Clock Out",
     description:
       "Use Clock In & Clock Out to accurately track employee hours- because precise time logging drives productivity, accountability, and better payroll management.",
-    image: TSign,
+    image: ClockImage,
   },
   {
     id: 11,
     title: "Compliance & Safeguards",
     description:
       "Meet NDIS standards with built-in checks, automated documentation, and policy-aligned workflows.",
-    image: TSign,
+    image: ComplianceImage,
   },
   {
     id: 12,
-    title: "Access control Panel",
+    title: "Access Control Panel",
     description:
       "The Access Control Panel streamlines user management by allowing administrators to assign, monitor, and revoke access rights in real time, ensuring secure and flexible control over entry permissions.",
-    image: TSign,
+    image: AccessImage,
   },
   {
     id: 13,
     title: "Forms",
     description:
       "Create and manage customised forms to your workflow needs. Easily publish forms to collect, organise, and track user-submitted data in real time.",
-    image: TSign,
+    image: Forms,
   },
   {
     id: 14,
-    title: "T Sign",
+    title: "T-sign",
     description:
       "Securely sign documents with T Sign E-Signatures, supporting PDF and Word formats.",
     image: TSign,
@@ -1274,14 +1285,14 @@ export const featuresDummyData = [
     title: "My Profile",
     description:
       "Manage your personal information, settings, and preferences all in one place. Keep your profile up-to-date to ensure seamless access and personalised experience.",
-    image: TSign,
+    image: Profile,
   },
   {
     id: 16,
-    title: "Role-Based Dashboard",
+    title: "Role based Dashboards",
     description:
       "Role-based dashboards provide personalised access to key tools and insights, helping users to track relevant information, manage tasks, schedules, and performance efficiently.",
-    image: TSign,
+    image: Role,
   },
 ];
 export const howItWorksDummyData = [
@@ -1322,12 +1333,12 @@ export const howItWorksDummyData = [
       "Rely on always-on support and enterprise-grade security. With 24/7 expert assistance, data encryption, access controls, and continuous platform enhancements, your organisation stays protected and future-ready.",
   },
 ];
-import howItWorksImage1 from "../assets/howItWorks1.png";
-import howItWorksImage2 from "../assets/howItWorks2.png";
-import howItWorksImage3 from "../assets/howItWorks3.png";
-import howItWorksImage4 from "../assets/howItWorks4.png";
-import howItWorksImage5 from "../assets/howItWorks5.png";
-import howItWorksImage6 from "../assets/howItWorks6.png";
+import howItWorksImage1 from "../assets/Centralise.jpg";
+import howItWorksImage2 from "../assets/automate.jpg";
+import howItWorksImage3 from "../assets/Simplify .jpg";
+import howItWorksImage4 from "../assets/comply.jpg";
+import howItWorksImage5 from "../assets/connect.jpg";
+import howItWorksImage6 from "../assets/protect.jpg";
 export const howItWorksImages = [
   howItWorksImage1,
   howItWorksImage2,
@@ -1452,6 +1463,7 @@ import detailsHero from "../assets/heroDetails1.png";
 import detailsImage1 from "../assets/detailImage1.png";
 import detailsImage2 from "../assets/detailImage2.png";
 import detailsImage3 from "../assets/detailImage3.png";
+import tesseractApsImage from "../assets/Tesseract Apps.png";
 export const SubPagesDummyData = {
   Product: {
     page: "Product",
@@ -1509,90 +1521,90 @@ export const SubPagesDummyData = {
         "Discover how TesseractApps can simplify your operations and improve outcomes for participants.",
       productsData: [
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Roster Management",
           description: "Precision Scheduling for Disability Support Providers",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Timesheet",
           description:
             "Accurate Tracking. Seamless Approvals. Effortless Payroll.",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Admin Console",
           description:
             "Unified Settings. Smarter Facilities. Complete Admin Control.",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Access Control Panel",
           description: "Secure, Centralised User Control",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "HR Operations",
           description: "Streamlined Workforce Oversight",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "T-sign",
           description: "Secure, Instant Digital Signatures -  Built Right In",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Clock In & Clock Out",
           description:
             "Effortless Shift Clock In. Accurate Records. Seamless Approvals.",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Participant Management",
           description: "Comprehensive Care Management Made Simple",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Incident Management",
           description:
             "Streamlined Reporting. Safer Workplaces. Smarter Compliance.",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Repository",
           description:
             "Repository — Where Documents Hang Out and Get Stuff Done!",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Role based Dashboard",
           description: "Intelligent Dashboards Tailored to Every Role",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "ChaT - Secure Internal Messaging",
           description:
             "Your go-to hub for instant messages - keeping teams connected, conversations flowing, and work moving faster than your morning coffee!",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "My Profile",
           description:
             "Your Premier Hub for Workforce Management & Career Progression",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Forms",
           description:
             "Streamline documentation with powerful, role-based form creation and management.",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "Accounting",
           description: "Smart, Seamless & Scalable Financial Management",
         },
         {
-          image: detailsImage3,
+          image: tesseractApsImage,
           title: "T Learning Hub",
           description:
             "Role-Based Training, On-Demand. Simplified Learning for Every Team Member.",

@@ -49,7 +49,16 @@ const OurBlogComponent = () => {
       <div ref={sliderRef} className="keen-slider">
         {ourBlogDummyData.map((data) => {
           return (
-            <div className="keen-slider__slide ourBlog-card">
+            <div
+              className="keen-slider__slide ourBlog-card"
+              onClick={() => {
+                if (data.id == 1) {
+                  navigate("/blogpost");
+                } else {
+                  navigate("/blogpost2");
+                }
+              }}
+            >
               <img
                 className="ourBlog-image"
                 src={data.image}
@@ -70,18 +79,7 @@ const OurBlogComponent = () => {
                   <div className="ourBlog-author-name">{data?.author}</div>
                 </div>
                 <div className="read-more-container">
-                  <div
-                    className="ourBlog-read-more"
-                    onClick={() => {
-                      if (data.id == 1) {
-                        navigate("/blogpost");
-                      } else {
-                        navigate("/blogpost2");
-                      }
-                    }}
-                  >
-                    Read More
-                  </div>
+                  <div className="ourBlog-read-more">Read More</div>
                   <img
                     className="ourBlog-right-arrow"
                     src={rightArrow}

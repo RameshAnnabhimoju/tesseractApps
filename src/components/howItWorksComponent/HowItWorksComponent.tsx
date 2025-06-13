@@ -1,12 +1,12 @@
 import "./HowItWorksStyles.css";
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 import { howItWorksDummyData, howItWorksImages } from "../../utils/DummyData";
 import { useKeenSlider } from "keen-slider/react";
 const HowItWorksComponent = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const [perView, setPerView] = useState(window.screen.width <= 425 ? 1 : 3);
   useEffect(() => {
@@ -45,7 +45,7 @@ const HowItWorksComponent = () => {
                   key={data.id + index}
                   className="howItWorks-card"
                   onMouseEnter={() => setHoveredIndex(index)}
-                  onClick={() => navigate("/details")}
+                  // onClick={() => navigate("/details")}
                 >
                   <div className="howItWorks-card-title-number">{data.id}</div>
                   <div className="howItWorks-card-title">{data.title}</div>
@@ -69,7 +69,7 @@ const HowItWorksComponent = () => {
                   key={data.id + index}
                   className="keen-slider__slide howItWorks-card"
                   // onMouseEnter={() => setHoveredIndex(index)}
-                  onClick={() => navigate("/details")}
+                  // onClick={() => navigate("/details")}
                 >
                   <div className="howItWorks-card-title-number">{data.id}</div>
                   <div className="howItWorks-card-title">{data.title}</div>
