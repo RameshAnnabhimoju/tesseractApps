@@ -92,7 +92,9 @@ const NavBarComponent = ({
       }
     });
   };
-
+  const loginHandler = () => {
+    window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
+  };
   return (
     <nav id="navbar-container">
       <div id="navbar-logo" onClick={() => navigate("/")}>
@@ -489,7 +491,12 @@ const NavBarComponent = ({
           />
         </div>
 
-        <img src={profile} alt="navbar-profile-icon" id="navbar-profile-icon" />
+        <img
+          src={profile}
+          alt="navbar-profile-icon"
+          id="navbar-profile-icon"
+          onClick={loginHandler}
+        />
         <img
           src={australia}
           alt="navbar-country-icon"
