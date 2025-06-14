@@ -1,13 +1,19 @@
+import { useNavigate } from "react-router-dom";
+import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
 
 const FutureProofingBlog = () => {
+  const navigate = useNavigate();
+  function handleClick(name: string) {
+    appNavigate(name, navigate);
+  }
   return (
     <div className="blog-container">
       <article className="blog-post">
         <header className="blog-header">
           <h1 className="blog-title">
             Future-Proofing Disability Services: Why NDIS Providers Need Smarter
-            Systems Now
+            Systems Now?
           </h1>
         </header>
 
@@ -58,7 +64,7 @@ const FutureProofingBlog = () => {
                 <p>
                   Manual methods, such as spreadsheets or paper-based records,
                   often result in costly delays and gaps. In contrast, NDIS
-                  management platforms like TesseractApps offer:
+                  management platforms like Tesseract Apps offer:
                 </p>
                 <ul>
                   <li>Automatic time-stamped logs</li>
@@ -96,10 +102,10 @@ const FutureProofingBlog = () => {
 
           <section className="section highlight-section">
             <h2 className="section-title">
-              How TesseractApps Helps NDIS Providers Thrive
+              How Tesseract Apps Helps NDIS Providers Thrive
             </h2>
             <p>
-              At TesseractApps, we specialise in scalable, integrated NDIS
+              At Tesseract Apps, we specialise in scalable, integrated NDIS
               provider software built on Salesforce, tailored to the needs of
               Australian disability service organisations.
             </p>
@@ -168,13 +174,18 @@ const FutureProofingBlog = () => {
             </h2>
             <p>
               With the NDIS set to exceed 800,000 participants by 2026, there’s
-              never been a better time to upgrade your systems. TesseractApps
+              never been a better time to upgrade your systems. Tesseract Apps
               gives you the tools to scale sustainably, reduce admin costs, and
               exceed compliance expectations.
             </p>
             <p>
-              <strong>Book a Demo</strong> to see how we can support your growth
-              as an NDIS provider.
+              <strong
+                id="blog-book-a-demo"
+                onClick={() => handleClick("Book a Demo")}
+              >
+                Book a Demo
+              </strong>{" "}
+              to see how we can support your growth as an NDIS provider.
             </p>
           </section>
 

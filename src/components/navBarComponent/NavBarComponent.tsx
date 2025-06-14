@@ -48,7 +48,7 @@ const NavBarComponent = ({
     const name = event.currentTarget.id;
     setToggleDrawer(false);
     if (name) {
-      appNavigate(navigate, name, false);
+      appNavigate(name, navigate, false);
     }
   };
   const handleNavPopupClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -76,7 +76,7 @@ const NavBarComponent = ({
     closePopup();
     setToggleDrawer(false);
     if (name) {
-      appNavigate(navigate, name);
+      appNavigate(name, navigate);
     }
   };
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -92,6 +92,7 @@ const NavBarComponent = ({
       }
     });
   };
+
   return (
     <nav id="navbar-container">
       <div id="navbar-logo" onClick={() => navigate("/")}>
@@ -450,7 +451,13 @@ const NavBarComponent = ({
                 (isPopupOpen && selectedLink == label ? " nav-link-active" : "")
               }
               onClick={handleNavClick}
-              onMouseEnter={shouldHavePopup ? handleNavPopupClick : undefined}
+              onMouseEnter={(event) => {
+                if (label == "Pricing") closePopup();
+                if (shouldHavePopup) handleNavPopupClick(event);
+              }}
+              onMouseLeave={() => {
+                if (label == "Pricing") closePopup();
+              }}
               // onMouseLeave={shouldHavePopup ? closePopup : undefined}
             >
               {label}

@@ -3,7 +3,7 @@
 }
 .ourBlog-card {
   min-width: 380px; /* or whatever width you want */
-  max-width: 500px;
+  max-width: 450px;
   cursor: pointer;
 }
 .ourBlog-attributes-container {
@@ -34,6 +34,9 @@
   font-size: 22px;
   font-weight: 600;
   margin: 15px 0;
+  max-height: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .ourBlog-title:hover {
   color: var(--color-primary);

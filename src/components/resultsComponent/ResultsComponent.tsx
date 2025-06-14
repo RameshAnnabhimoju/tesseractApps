@@ -36,21 +36,6 @@ const ResultsComponent = () => {
             streamlining operations at every level.
           </div>
         </div>
-        {/* <div className="results-card">
-          <div className="results-card-title">2,500+</div>
-          <div className="results-card-text">
-            Active Users managing participants, staff, and compliance daily
-          </div>
-        </div> */}
-        {/* <div className="results-card">
-          <div className="results-card-title">
-            350+ NDIS Providers Onboarded
-          </div>
-          <div className="results-card-text">
-            From small teams to large care organisations, TesseractApps scales
-            with your business as you grow.
-          </div>
-        </div> */}
         <div className="results-card">
           <div className="results-card-title">Support in Under 30s</div>
           <div className="results-card-text">

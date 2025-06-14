@@ -106,7 +106,7 @@ const RequestADemo = () => {
                 <select id="areas" className="request-demo-input">
                   <option value="">-- Select an option --</option>
                   <option value="scheduling">Scheduling</option>
-                  <option value="payroll">Payroll</option>
+                  <option value="payroll">Accounting</option>
                   <option value="hr">HR</option>
                   <option value="ndis">NDIS Features</option>
                 </select>
@@ -128,9 +128,14 @@ const RequestADemo = () => {
             <button id="request-demo-button" type="button">
               Submit Request
             </button>
-            <p id="request-demo-form-subtext">
-              By signing up you agree to our Privacy Policy
-            </p>
+            <div id="request-demo-form-subtext">
+              <input
+                type="checkbox"
+                name="agree-checkbox"
+                id="request-demo-agree-checkbox"
+              />
+              <p>By signing up you agree to our Privacy Policy</p>
+            </div>
           </form>
         </div>
       </div>

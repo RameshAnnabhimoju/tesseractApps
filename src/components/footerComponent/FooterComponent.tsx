@@ -10,11 +10,36 @@ import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 const FooterComponent = () => {
   const navigate = useNavigate();
+  function handleFooterActions(name: string) {
+    if (name === "phone") {
+      window.location.href = "tel:1300252808";
+    }
+
+    if (name === "email") {
+      const mailto = "mailto:enquiries@tesseractapps.com?subject=Inquiry";
+      const link = document.createElement("a");
+      link.href = mailto;
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setTimeout(() => {
+        if (document.hasFocus()) {
+          alert(
+            "If your email client didn't open, please email us at: enquiries@tesseractapps.com"
+          );
+        }
+      }, 1000);
+    }
+  }
+
+  function HandleSocialLinksClick(name: string) {
+    if (name) appNavigate(name);
+  }
   function handleProductDataClick(name: string) {
     // console.log(name);
-    if (name) {
-      appNavigate(navigate, name);
-    }
+    if (name) appNavigate(name, navigate);
   }
   const productLinks = navBarDummyData["Product"];
   return (
@@ -23,28 +48,48 @@ const FooterComponent = () => {
         <div className="footer-heading">About the company</div>
         <div className="footer-text footer-about-text">
           At TesseractApps, we provide tailored solutions that simplify care
-          management, payroll, compliance, and HR, helping care providers run
+          management, accounting, compliance and HR helping care providers run
           their operations efficiently and stay compliant.
           <br></br>
-          Phone: 1300 252 808<br></br>Email: enquiries@tesseractapps.com
+          <span
+            className="footer-about-actions"
+            onClick={() => handleFooterActions("phone")}
+          >
+            Phone: 1300 252 808
+          </span>
+          <br></br>
+          <span
+            className="footer-about-actions"
+            onClick={() => handleFooterActions("email")}
+          >
+            Email: enquiries@tesseractapps.com
+          </span>
         </div>
         <div id="footer-social-links">
           <img
             src={facebook}
             alt="Facebook"
             className="footer-social-icon"
+            onClick={() => HandleSocialLinksClick("facebook")}
           ></img>
           <img
             src={instagram}
             alt="Instagram"
             className="footer-social-icon"
+            onClick={() => HandleSocialLinksClick("instagram")}
           ></img>
           <img
             src={linkedin}
             alt="LinkedIn"
             className="footer-social-icon"
+            onClick={() => HandleSocialLinksClick("linkedin")}
           ></img>
-          <img src={youtube} alt="YouTube" className="footer-social-icon"></img>
+          <img
+            src={youtube}
+            alt="YouTube"
+            className="footer-social-icon"
+            onClick={() => HandleSocialLinksClick("youtube")}
+          ></img>
         </div>
       </div>
       <div className="footer-links-texts">
@@ -53,7 +98,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Sign Up");
             }}
           >
             Sign Up
@@ -61,7 +106,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Learn More");
             }}
           >
             Learn More
@@ -69,7 +114,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Contact Us");
             }}
           >
             Contact Us
@@ -80,7 +125,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Features");
             }}
           >
             Features
@@ -88,7 +133,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Pricing");
             }}
           >
             Pricing
@@ -96,7 +141,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Resources");
             }}
           >
             Resources
@@ -104,7 +149,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Blog");
             }}
           >
             Blog
@@ -112,7 +157,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Contact");
             }}
           >
             Contact
@@ -123,7 +168,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("About");
             }}
           >
             About
@@ -131,7 +176,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Careers");
             }}
           >
             Careers
@@ -139,7 +184,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Partners");
             }}
           >
             Partners
@@ -147,7 +192,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Terms & Conditions");
             }}
           >
             Terms & Conditions
@@ -155,7 +200,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Privacy Policy");
             }}
           >
             Privacy Policy
@@ -166,7 +211,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Help Centre");
             }}
           >
             Help Centre
@@ -174,7 +219,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("FAQs");
             }}
           >
             FAQs
@@ -182,7 +227,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Book a Demo");
             }}
           >
             Book a Demo
@@ -190,7 +235,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("Submit a Ticket");
             }}
           >
             Submit a Ticket
@@ -198,7 +243,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("/coming-soon");
+              handleProductDataClick("24/7 Live Chat");
             }}
           >
             24/7 Live Chat
@@ -244,13 +289,13 @@ const FooterComponent = () => {
         <br />
         <br />
         <br />
-        TesseractApps would like to acknowledge the Traditional Custodians of
+        Tesseract Apps would like to acknowledge the Traditional Custodians of
         the land on which we operate, and pay our respects to their elders past
         and present.
         <br />
         <img src={flagsImag1} alt="Flag Image 1" />
         <img src={flagsImag2} alt="Flag Image 2" />
-        <br /> © 2025 Tesseract Apps. All rights reserved.
+        <br /> © 2023 Tesseract Apps. All rights reserved.
       </div>
     </div>
   );

@@ -9,6 +9,7 @@
   line-height: 27px;
 }
 .testimonial-author-details {
+  margin-top: 20px;
   display: flex;
   align-items: center;
   gap: 10px;

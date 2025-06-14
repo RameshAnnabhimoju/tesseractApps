@@ -80,7 +80,7 @@ const PopupComponent = ({
       </div>
       {children}
     </div>,
-    containerRef.current
+    document.body
   );
 };
 

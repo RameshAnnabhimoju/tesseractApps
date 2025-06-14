@@ -6,7 +6,7 @@ const Teams = () => {
       <div className="heading">TEAM</div>
       <div className="subheading">The people behind the platform.</div>
       <div className="text" id="team-text">
-        TesseractApps is led by a diverse team of technologists, product
+        Tesseract Apps is led by a diverse team of technologists, product
         specialists, and industry experts committed to solving real-world
         challenges. Their collective experience in workforce management,
         compliance, and innovative technology ensures that our solutions stay

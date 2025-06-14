@@ -70,13 +70,13 @@ const FeaturesComponent = () => {
     slider.on("updated", nextTimeout);
   }
   const clickHandler = (name: string) => {
-    appNavigate(navigate, name);
+    appNavigate(name, navigate);
   };
   return (
     <div id="features-container">
       <div className="heading">FEATURES</div>
       <div className="subheading features-subheading">
-        Why Choose TesseractApps for your organisation ?
+        Why Choose Tesseract Apps for your organisation ?
       </div>
       <div className="features-buttons">
         <img

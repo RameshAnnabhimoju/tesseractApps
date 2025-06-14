@@ -191,7 +191,12 @@ p {
   margin-bottom: 20px;
   text-align: justify;
 }
-
+#blog-book-a-demo {
+  cursor: pointer;
+}
+#blog-book-a-demo:hover {
+  color: var(--color-primary);
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .blog-container {

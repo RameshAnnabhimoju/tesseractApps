@@ -14,7 +14,7 @@ const OurStory = () => {
   useEffect(() => {
     if (window.innerWidth > 800 && imageRef.current) {
       const imageBottom =
-        imageRef.current.offsetTop + imageRef.current.offsetHeight;
+        imageRef.current.offsetTop + imageRef.current.offsetHeight - 500;
       window.scrollTo({ top: imageBottom, behavior: "smooth" });
     }
   }, []);

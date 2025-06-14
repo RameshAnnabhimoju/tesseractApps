@@ -85,6 +85,10 @@
 }
 .footer-about-text:hover {
   color: var(--color-text-gray);
+  cursor: default;
+}
+.footer-about-actions {
+  cursor: pointer;
 }
 .footer-products-text-container {
   display: grid;

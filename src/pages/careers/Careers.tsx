@@ -7,7 +7,7 @@ const Careers = () => {
         Join Us in Shaping the Future of Care and Workforce Technology
       </div>
       <div className="text" id="careers-text">
-        TesseractApps is growing fast, and we’re looking for passionate, driven
+        Tesseract Apps is growing fast, and we’re looking for passionate, driven
         individuals who want to make a real impact through innovation and
         user-centered technology.
       </div>

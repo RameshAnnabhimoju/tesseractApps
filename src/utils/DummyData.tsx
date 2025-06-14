@@ -119,14 +119,14 @@ export const navBarDummyData = {
     { title: "Incident Management", subTitle: "Incident Reporting" },
     { title: "Repository", subTitle: "Document Hub" },
     { title: "Role based Dashboard", subTitle: "Smart Dashboards" },
-    {
-      title: "ChaT - Secure Internal Messaging",
-      subTitle: "Secure Communication",
-    },
     { title: "My Profile", subTitle: "My Account" },
     { title: "Forms", subTitle: "Custom Forms" },
     { title: "Accounting", subTitle: "Finance" },
     { title: "T Learning Hub", subTitle: "Learning Hub" },
+    {
+      title: "ChaT",
+      subTitle: "Secure Communication",
+    },
   ],
   Solutions: {
     "BY INDUSTRY": [
@@ -168,7 +168,7 @@ export const navBarDummyData = {
     ],
   },
   "Additional Features": [
-    { title: "Demo Request", subTitle: " " },
+    { title: "Book a Demo", subTitle: " " },
     { title: "Free Trial Sign-Up", subTitle: " " },
     { title: "Integration", subTitle: " " },
   ],
@@ -769,7 +769,7 @@ export const pricingDummyData = [
         data3: true,
       },
       {
-        title: "Reimbursements Requests",
+        title: "Reimbursement Requests",
         subTitle: "",
         data1: true,
         data2: true,
@@ -1171,9 +1171,9 @@ import TimesheetImage from "../assets/Time sheet.png";
 import AdminConsoleImage from "../assets/Admin.png";
 import HRImage from "../assets/HR.png";
 import ParticipantsImage from "../assets/Participants Management.png";
-import ChatImage from "../assets/Chart and notifications.png";
+import ChatImage from "../assets/Chat and Notification.png";
 import RepoImage from "../assets/Repository.png";
-import AccountingImage from "../assets/accounting.png";
+import AccountingImage from "../assets/Accounting.png";
 import IncidentImage from "../assets/Incident Management.png";
 import ClockImage from "../assets/clock in clock out.png";
 import ComplianceImage from "../assets/complaince and safe guard.png";
@@ -1362,22 +1362,19 @@ export const testimonialDummyData = [
     author: "Nathan Chakanetsa",
     authorTitle: "Seed Disability Services Pty Ltd",
   },
-  {
-    id: 2,
-    rating: 5,
-    testimonial: `
-
- 
-`,
-    testimonialPoints: [
-      "“We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.",
-      "Tesseract brings all of these functions together in one easy-to-use platform. It’s streamlined our operations, improved our workflow, and made it much easier to stay on top of everything. The team behind it, especially Kranthi and Rev, have been incredibly supportive — always responsive, open to feedback, and committed to helping us get the most out of the system.",
-      "If you're an NDIS provider looking to simplify your processes, reduce costs, and avoid the stress of managing multiple tools, I highly recommend Tesseract. It’s been a game-changer for our team and our business.”",
-    ],
-    authorImage: testimonialImage,
-    author: "Seed",
-    authorTitle: "",
-  },
+  // {
+  //   id: 2,
+  //   rating: 5,
+  //   testimonial: "",
+  //   testimonialPoints: [
+  //     "“We’ve been using TesseractApp for over a year now, and it’s completely transformed the way we manage our NDIS business. Before Tesseract, we were juggling multiple systems just to handle rostering, billing, compliance, and staff training. It was time-consuming, costly, and inefficient.",
+  //     "Tesseract brings all of these functions together in one easy-to-use platform. It’s streamlined our operations, improved our workflow, and made it much easier to stay on top of everything. The team behind it, especially Kranthi and Rev, have been incredibly supportive — always responsive, open to feedback, and committed to helping us get the most out of the system.",
+  //     "If you're an NDIS provider looking to simplify your processes, reduce costs, and avoid the stress of managing multiple tools, I highly recommend Tesseract. It’s been a game-changer for our team and our business.”",
+  //   ],
+  //   authorImage: testimonialImage,
+  //   author: "Seed",
+  //   authorTitle: "",
+  // },
   {
     id: 3,
     rating: 5,
@@ -1398,9 +1395,9 @@ export const testimonialDummyData = [
 export const accordiaDummyData = [
   {
     id: 1,
-    question: "Is TesseractApps NDIS-compliant?",
+    question: "Is Tesseract Apps NDIS-compliant?",
     answer:
-      "Yes. TesseractApps is purpose-built to align with NDIS regulations. Our platform supports invoicing, claims, participant management, and incident reporting in line with the NDIS Practice Standards.",
+      "Yes. Tesseract Apps is purpose-built to align with NDIS regulations. Our platform supports invoicing, claims, participant management, and incident reporting in line with the NDIS Practice Standards.",
   },
   {
     id: 2,
@@ -1424,7 +1421,7 @@ export const accordiaDummyData = [
     id: 4,
     question: "Can I Customize the Modules I Use?",
     answer:
-      "Absolutely. TesseractApps offers flexible, modular plans so you can choose only the features your organisation needs, from HR to scheduling to compliance.",
+      "Absolutely. Tesseract Apps offers flexible, modular plans so you can choose only the features your organisation needs, from HR to scheduling to compliance.",
   },
   {
     id: 5,
@@ -1440,13 +1437,13 @@ export const accordiaDummyData = [
   },
   {
     id: 7,
-    question: "Can support workers use TesseractApps on mobile?",
+    question: "Can support workers use Tesseract Apps on mobile?",
     answer:
-      "Yes. TesseractApps is mobile-friendly. Support workers can log notes, check rosters, and receive alerts in real time — from any device, anywhere.",
+      "Yes. Tesseract Apps is mobile-friendly. Support workers can log notes, check rosters, and receive alerts in real time — from any device, anywhere.",
   },
   {
     id: 8,
-    question: "How do I get started with TesseractApps?",
+    question: "How do I get started with Tesseract Apps?",
     answer:
       "You can start by selecting the Request a Demo option. Our team will guide you through the setup and ensure the platform is tailored to your organisation's specific needs.",
   },
@@ -1470,45 +1467,45 @@ export const SubPagesDummyData = {
     section1: {
       title: "Built for the Way You Work",
       description:
-        "Whether you’re coordinating complex shift schedules, tracking mobile workforce hours, managing staff onboarding, or facilitating internal communication, TesseractApps empowers your team with real-time, cloud-based tools designed specifically for the care sector.",
+        "Whether you’re coordinating complex shift schedules, tracking mobile workforce hours, managing staff onboarding, or facilitating internal communication, Tesseract Apps empowers your team with real-time, cloud-based tools designed specifically for the care sector.",
       image: detailsHero,
     },
-    section2: {
-      title: "Modules at a Glance",
-      description:
-        "Each module connects seamlessly with others to improve operational efficiency and ensure NDIS compliance—whether you're managing a small team or a multi-site enterprise.",
-      points: [
-        {
-          dot: dots.dot1,
-          title: "Scheduling",
-          description:
-            "Smart rostering with real-time tracking and staff availability",
-        },
-        {
-          dot: dots.dot2,
-          title: "Time Management",
-          description:
-            "Accurate time capture, clock-ins, location-based sign-ins",
-        },
-        {
-          dot: dots.dot3,
-          title: "HR Management",
-          description:
-            "Full employee lifecycle support, from onboarding to performance",
-        },
-        {
-          dot: dots.dot4,
-          title: "Communication",
-          description:
-            "Built-in tools for team chats, polls, and secure messaging",
-        },
-      ],
-    },
+    // section2: {
+    //   title: "Modules at a Glance",
+    //   description:
+    //     "Each module connects seamlessly with others to improve operational efficiency and ensure NDIS compliance—whether you're managing a small team or a multi-site enterprise.",
+    //   points: [
+    //     {
+    //       dot: dots.dot1,
+    //       title: "Scheduling",
+    //       description:
+    //         "Smart rostering with real-time tracking and staff availability",
+    //     },
+    //     {
+    //       dot: dots.dot2,
+    //       title: "Time Management",
+    //       description:
+    //         "Accurate time capture, clock-ins, location-based sign-ins",
+    //     },
+    //     {
+    //       dot: dots.dot3,
+    //       title: "HR Management",
+    //       description:
+    //         "Full employee lifecycle support, from onboarding to performance",
+    //     },
+    //     {
+    //       dot: dots.dot4,
+    //       title: "Communication",
+    //       description:
+    //         "Built-in tools for team chats, polls, and secure messaging",
+    //     },
+    //   ],
+    // },
     section3: {
       images: [detailsImage1, detailsImage2, detailsImage3],
       title: "Seamless Integration, Unified Experience",
       description:
-        "Each module works together to deliver a streamlined user experience. No more switching between systems—TesseractApps provides.",
+        "Each module works together to deliver a streamlined user experience. No more switching between systems—Tesseract Apps provides.",
       points: [
         "A single source of truth for your workforce and participant data",
         "End-to-end visibility across care delivery, HR, finance, and operations",
@@ -1518,7 +1515,7 @@ export const SubPagesDummyData = {
     products: {
       title: "Get Started Today",
       description:
-        "Discover how TesseractApps can simplify your operations and improve outcomes for participants.",
+        "Discover how Tesseract Apps can simplify your operations and improve outcomes for participants.",
       productsData: [
         {
           image: tesseractApsImage,
@@ -1561,7 +1558,7 @@ export const SubPagesDummyData = {
         {
           image: tesseractApsImage,
           title: "Participant Management",
-          description: "Comprehensive Care Management Made Simple",
+          description: "Comprehensive Participant Management Made Simple",
         },
         {
           image: tesseractApsImage,
@@ -1618,7 +1615,7 @@ export const SubPagesDummyData = {
       image: detailsHero,
       title: "Smarter Rostering Made Simple",
       description:
-        "Build and manage staff schedules with ease using TesseractApps’ intuitive Scheduling module. Designed for flexibility and compliance, it supports recurring shifts, EOI rosters, and drag-and-drop functionality across multiple locations and services.",
+        "Build and manage staff schedules with ease using Tesseract Apps’ intuitive Scheduling module. Designed for flexibility and compliance, it supports recurring shifts, EOI rosters, and drag-and-drop functionality across multiple locations and services.",
     },
     section2: {
       title: "Key Features",
@@ -1666,7 +1663,7 @@ export const SubPagesDummyData = {
       image: detailsHero,
       title: "Real-Time Accuracy & Accountability",
       description:
-        "Ensure every shift is tracked, approved, and reported with confidence. TesseractApps’ Time Management module allows teams to clock in and out using mobile devices, location-based verification, and digital signatures.",
+        "Ensure every shift is tracked, approved, and reported with confidence. Tesseract Apps’ Time Management module allows teams to clock in and out using mobile devices, location-based verification, and digital signatures.",
     },
     section2: {
       title: "Key Features",
@@ -1713,7 +1710,7 @@ export const SubPagesDummyData = {
       image: detailsHero,
       title: "Centralised Employee Lifecycle Management",
       description:
-        "From recruitment to performance reviews, manage your entire workforce in one secure place. TesseractApps offers an integrated HR Management system built specifically for care sector teams and NDIS providers.",
+        "From recruitment to performance reviews, manage your entire workforce in one secure place. Tesseract Apps offers an integrated HR Management system built specifically for care sector teams and NDIS providers.",
     },
     section2: {
       title: "Key Features",
@@ -1800,7 +1797,7 @@ export const itemsPageDummyData = {
   },
   "Case Studies": {
     heading: "Case Studies",
-    subHeading: "Real results from care providers using TesseractApps.",
+    subHeading: "Real results from care providers using Tesseract Apps.",
     text: "Learn how organisations across the NDIS, aged care, and allied health sectors improved their workflows and compliance using our platform.",
   },
   Whitepapers: {
@@ -2315,11 +2312,11 @@ export const aboutUsPageData = {
   "Our Story": {
     title: "Our Story",
     data: [
-      "TesseractApps was born from a simple yet impactful conversation during a local cricket match in 2022—an exchange that sparked the vision for a smarter, more connected way to support care and NDIS providers.",
+      "Tesseract Apps was born from a simple yet impactful conversation during a local cricket match in 2022—an exchange that sparked the vision for a smarter, more connected way to support care and NDIS providers.",
       "In 2023, we built our foundation with a Human-Centred Design approach, grounded in empathy, user research, and real-world collaboration. Through rapid prototyping, iterative development, and continuous feedback from care professionals, we ensured every feature addressed real operational challenges.",
       "By mid-2024, we launched the beta version of our first product, T-NDIS, and onboarded over 10 providers whose practical insights were instrumental in refining the platform.",
-      "In January 2025, TesseractApps officially went live—delivering a fully operational, market-ready solution that integrates everything we learned from our early adopters.",
-      "Today, TesseractApps stands as a powerful, Salesforce-based platform purpose-built for the Australian care sector. We help organisations navigate NDIS compliance, simplify operations, and ultimately deliver better outcomes for participants and staff alike.",
+      "In January 2025, Tesseract Apps officially went live—delivering a fully operational, market-ready solution that integrates everything we learned from our early adopters.",
+      "Today, Tesseract Apps stands as a powerful, Salesforce-based platform purpose-built for the Australian care sector. We help organisations navigate NDIS compliance, simplify operations, and ultimately deliver better outcomes for participants and staff alike.",
     ],
   },
   "Our mission": {
@@ -2700,8 +2697,7 @@ export const byIndustryData = {
     hero: {
       image: detailsHero,
       title: "NDIS Industry",
-      description:
-        "Tesseract empowers NDIS providers with integrated, user-friendly tools to manage workforce and participant care efficiently, securely, and in full compliance with NDIS standards.",
+      description: "",
     },
     details: [
       {
@@ -2773,13 +2769,21 @@ export const byIndustryData = {
       },
       {
         title: "Accounting",
-        description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.\n\nCustomise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.`,
+        description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.`,
+        discriptionsPoints: [
+          "Customise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.",
+        ],
         images: [detailsImage3],
       },
       {
         title: "T Learning Hub",
         description: `On-Demand, Role-Based Training\n\nProvide personalised, mobile-friendly training tailored to each team member’s role. From onboarding to ongoing skill-building, ensure your workforce stays knowledgeable and confident.`,
         images: [detailsImage2],
+      },
+      {
+        title: "",
+        description: `Tesseract empowers NDIS providers with integrated, user-friendly tools to manage workforce and participant care efficiently, securely, and in full compliance with NDIS standards.`,
+        images: [detailsImage3],
       },
     ],
   },
@@ -2788,8 +2792,7 @@ export const byIndustryData = {
     hero: {
       image: detailsHero,
       title: "ICT Industry",
-      description:
-        "Tesseract empowers ICT providers with integrated, user-friendly tools to manage the workforce efficiently, securely, and in full compliance with ICT standards.",
+      description: "",
     },
     details: [
       {
@@ -2862,9 +2865,12 @@ export const byIndustryData = {
       },
       {
         title: "T Learning Hub",
-        description: `On-Demand, Role-Based Training\nempowers your workforce with personalised, mobile-friendly training to each role. Access step-by-step video tutorials and keep skills current with continuous content updates.`,
-        conclusion:
-          "Tesseract empowers NDIS providers with integrated, user-friendly tools to manage workforce and participant care efficiently, securely, and in full compliance with NDIS standards.",
+        description: `On-Demand, Role-Based Training empowers your workforce with personalised, mobile-friendly training to each role. Access step-by-step video tutorials and keep skills current with continuous content updates.`,
+        images: [detailsImage3],
+      },
+      {
+        title: "",
+        description: `Tesseract empowers ICT providers with integrated, user-friendly tools to manage the workforce efficiently, securely, and in full compliance with ICT standards. `,
         images: [detailsImage3],
       },
     ],
@@ -3039,37 +3045,37 @@ export const productsDetailsData = {
       {
         title: "Smart Approvals with Confidence",
         description:
-          "Flexible approval workflows allow for automatic or manual approval of timesheets—by staff, by shift, or in bulk—with real-time adjustments. Complex pay scenarios like sleepovers and extended shifts are automatically calculated.",
+          "Whether you prefer automatic approvals or manual review, Tesseract offers flexible approval workflow. Approved by staff, shift, or bulk review, while making real-time adjustments when needed. Complex pay scenarios, including sleepovers and extended shifts, are calculated automatically to ensure accuracy and fairness.",
         images: [detailsImage2],
       },
       {
         title: "Payroll-Ready Integration",
         description:
-          "Seamlessly integrate approved timesheets into payroll with correct pay rates, overtime, weekend and public holiday loadings, and allowances calculated automatically—minimizing errors and delays.",
+          "Timesheets flow seamlessly into payroll with correct pay rates applied automatically. Weekend, public holiday, overtime, and allowance calculations are handled effortlessly, reducing manual errors and ensuring staff are compensated correctly and on time.",
         images: [detailsImage1],
       },
       {
         title: "Real-Time Attendance Monitoring",
         description:
-          "Enable secure, geo-verified sign-ins and sign-outs. Geo-tracking reduces fraud and ensures staff are present where and when they are needed.",
+          "Empower your team with location-verified sign-ins and sign-outs. Geo-tracking supports compliance, minimizes time of fraud, and ensures staff are present where they’re needed, when they’re needed.",
         images: [detailsImage2],
       },
       {
         title: "Comprehensive Shift Records",
         description:
-          "Every shift is documented with attendance logs, shift notes, incident reports, leave records, and reimbursements—providing a transparent and auditable shift history.",
+          "Maintain a complete and accurate record of every shift. Link attendance with relevant documentation such as shift notes, incident reports, leave, or reimbursements. Every shift tells a full story, supporting transparency and compliance.",
         images: [detailsImage1],
       },
       {
         title: "Powerful Reporting & Insights",
         description:
-          "Generate comprehensive reports for audits, payroll, and compliance. Visual indicators highlight incomplete or missing data, helping you manage attendance, punctuality, and overtime trends.",
+          "Generate detailed reports for audits, payroll, and compliance. Visual indicators highlight incomplete or missing timesheets, and comprehensive tracking of attendance, punctuality, and overtime helps you optimize workforce management. ",
         images: [detailsImage2],
       },
       {
         title: "Compliant & Future-Ready",
         description:
-          "Purpose-built for NDIS and ICT providers, Tesseract’s timesheet system supports regulatory compliance, improves payroll accuracy, and reduces admin through one integrated dashboard.",
+          "Built with the unique needs of NDIS providers & ICT organisations in mind, Tesseract ensures every hour is accounted for and every process aligns with industry standards. Stay compliant, reduce administrative workload, and improve payroll accuracy – all from one central dashboard.",
         images: [detailsImage1],
       },
     ],
@@ -3206,10 +3212,7 @@ export const productsDetailsData = {
     hero: {
       title:
         "Streamlined Workforce Oversight. Efficient Administration. Thriving Workplace Culture.",
-      description:
-        "Tesseract's HR Management simplifies every stage of the employee lifecycle - from recruitment to retention - ensuring efficient administration, seamless integration, and a thriving workplace culture.",
-      conclusion:
-        "The HR module ensures seamless workforce oversight, automated processes, and effortless compliance, fostering a dynamic, engaged, and high-performing team.",
+
       image: detailsHero, // Replace with actual image import
     },
     section3: [
@@ -3235,9 +3238,14 @@ export const productsDetailsData = {
         title: "Advanced Reporting & Analytics",
         description:
           "Advanced reporting tools provide clear insights into staff roles, review outcomes, and performance metrics, ensuring that every team member's professional growth is supported and managed effectively.",
-        conclusion:
-          "Get comprehensive visibility into your workforce data and make informed decisions.",
+
         images: [detailsImage1],
+      },
+      {
+        title: "Optimised for Efficiency & Engagement",
+        description:
+          "Tesseract’s HR module ensures seamless workforce oversight, automated processes, and effortless compliance, fostering a dynamic, engaged, and high-performing team. ",
+        images: [detailsImage3],
       },
     ],
     faqSection: {
@@ -3323,7 +3331,7 @@ export const productsDetailsData = {
     hero: {
       title: "Effortless Shift Clock In. Accurate Records. Seamless Approvals.",
       description:
-        "Empowers your team to start, manage, and complete shifts with ease - directly from their mobile or desktop app. Designed for simplicity and compliance, this feature ensures every shift is accurately tracked, approved, and documented in real time. From sign-in to sign-out, every aspect of a shift is managed, documented, and submitted in-app. This reduces paperwork, speeds up admin processes, and gives providers the data they need for audits, billing, and compliance.",
+        "Empowers your team to start, manage, and complete shifts with ease - directly from their mobile or desktop app. Designed for simplicity and compliance, this feature ensures every shift is accurately tracked, approved, and documented in real time.",
       image: detailsHero, // Replace with actual image import
     },
     section3: [
@@ -3357,6 +3365,12 @@ export const productsDetailsData = {
           "To complete the shift, users can capture a supervisor's digital signature - ensuring all tasks and logs are verified and approved before clocking out.",
         images: [detailsImage1],
       },
+      {
+        title: "Full Shift Lifecycle in One Place.",
+        description:
+          "From sign-in to sign-out, every aspect of a shift is managed, documented, and submitted in-app. This reduces paperwork, speeds up admin processes, and gives providers the data they need for audits, billing, and compliance.",
+        images: [detailsImage3],
+      },
     ],
     faqSection: {
       title: "Clock In & Clock Out FAQs",
@@ -3386,55 +3400,54 @@ export const productsDetailsData = {
   },
   "Participant Management": {
     hero: {
-      title: "Comprehensive Care Management Made Simple",
+      title: "Comprehensive Participant Management Made Simple",
       description:
         "Our Participant's Module is designed to give admins complete control over participant care, enabling efficient, personalised, and transparent management across every touchpoint. Whether it's managing support plans, tracking progress, or handling services, everything you need is in one place.",
       image: detailsHero, // Replace with actual image import
     },
     section2: {
       title: "Core Features",
-      description:
-        "Complete participant management system with comprehensive care records, funding tracking, and risk assessment tools. Everything you need to deliver personalised, compliant, and transparent care support.",
+      description: "",
       points: [
         {
           dot: dots.dot1,
-          title: "Participant Profile Management",
+          title: "",
           description:
             "Easily create and manage participant profiles with all the essential details - laying the foundation for personalised care and support.",
         },
         {
           dot: dots.dot2,
-          title: "Comprehensive Care Journal",
+          title: "",
           description:
             "Maintain a comprehensive record of participant care with the Journal feature. Admins can add notes on care updates, progress, incidents, or special instructions - ensuring continuity and transparency in support.",
         },
         {
           dot: dots.dot3,
-          title: "Funding & Budget Tracking",
+          title: "",
           description:
             "Track participant funding with precision. Allocate and monitor budgets for various services, helping you stay compliant and efficient.",
         },
         {
           dot: dots.dot4,
-          title: "Service Agreement Management",
+          title: "",
           description:
             "Add and manage support services along with detailed service agreements - ensuring clarity for both participants and providers.",
         },
         {
           dot: dots.dot5,
-          title: "Document Management",
+          title: "",
           description:
             "Upload and manage important documents such as assessments, medical reports, or consent forms. Set expiry dates to receive timely notifications for renewals.",
         },
         {
           dot: dots.dot6,
-          title: "Form Management",
+          title: "",
           description:
             "Digitally fill and store essential participant forms - like bowel movement logs and other clinical documentation - keeping everything organised and accessible.",
         },
         {
           dot: dots.dot1,
-          title: "Feedback & Quality Management",
+          title: "",
           description:
             "Share feedback about staff or services, helping you improve quality of care and build stronger trust.",
         },
@@ -3524,9 +3537,19 @@ export const productsDetailsData = {
       },
       {
         title: "Why It Matters",
-        description:
-          "Accurate, timely incident logging is essential to ensure safety for participants and staff, support accountability and continuous improvement, and stay compliant with NDIS and audit requirements.",
+        description: "Accurate, timely incident logging is essential to :",
+        points: [
+          "Ensure safety for participants and staff",
+          "Support accountability and continuous improvement",
+          "Stay compliant with NDIS and audit requirements",
+        ],
         images: [detailsImage1],
+      },
+      {
+        title: "",
+        description:
+          "Your frontline tool for safety, accountability, and compliance. The Incident Register keeps your team prepared, protected, and proactive.",
+        images: [detailsImage2],
       },
       {
         title: "Why Choose Incident Management?",
@@ -3537,7 +3560,7 @@ export const productsDetailsData = {
           "Reduces risk through structured reporting and review",
           "Secures sensitive data with robust role-based access controls",
         ],
-        images: [detailsImage2],
+        images: [detailsImage3],
       },
     ],
     faqSection: {
@@ -3565,14 +3588,16 @@ export const productsDetailsData = {
     hero: {
       title: "Repository — Where Documents Hang Out and Get Stuff Done!",
       description:
-        "The Repository Module serves as your secure digital filing cabinet - designed to store, organise, and manage all important attachments and documents in one place. The Repository Module brings order, security, and simplicity to your document management - making collaboration and compliance effortless.",
+        "The Repository Module serves as your secure digital filing cabinet - designed to store, organise, and manage all important attachments and documents in one place.",
       image: detailsHero, // Replace with actual image import
     },
     section3: [
       {
         title: "Secure Storage & Access Control",
         description:
-          "Store all essential documents in one central, secure location - whether related to staff, participants, operations, or compliance. This ensures that important files are always safely preserved and easily accessible when needed. Uploading attachments is simple and supports various file formats, allowing your team to keep all necessary documentation organised in one place.",
+          "Store all essential documents in one central, secure location - whether related to staff, participants, operations, or compliance. This ensures that important files are always safely preserved and easily accessible when needed. ",
+        conclusion:
+          "Uploading attachments is simple and supports various file formats, allowing your team to keep all necessary documentation organised in one place.",
         images: [detailsImage1],
       },
       {
@@ -3595,6 +3620,12 @@ export const productsDetailsData = {
           "Transparency: Clear control over document visibility and actions.",
         ],
         images: [detailsImage2],
+      },
+      {
+        title: "",
+        description:
+          "The Repository Module brings order, security, and simplicity to your document management - making collaboration and compliance effortless.",
+        images: [detailsImage3],
       },
     ],
     faqSection: {
@@ -3623,27 +3654,35 @@ export const productsDetailsData = {
       title:
         "Role-Based Dashboards — Intelligent Dashboards Tailored to Every Role!",
       description:
-        "Our platform offers dynamic, role-specific dashboards designed to surface the most relevant information for Admins, Roster Managers, Accountants and Staff etc - delivering clarity, control, and convenience at a glance.",
+        "Our platform offers dynamic, role-specific dashboards designed to surface the most relevant information for Admins, Roster Managers, Accountants and Staff etc - delivering clarity, control, and convenience at a glance. ",
       image: detailsHero, // Replace with actual image import
     },
     section3: [
       {
-        title: "Powerful Control Center",
-        description:
-          "A powerful control center offering a bird's-eye view across the entire organisation. Easily monitor shift schedules with the Roster Schedule Tracker, which visually displays shifts by status. Keep up to date with staff activity and instantly access participant status through the Participant Log.",
-        images: [detailsImage1],
+        title: "",
+        discriptionsPoints: [
+          "A powerful control center offering a bird’s-eye view across the entire organization.",
+          "Easily monitor shift schedules with the Roster Schedule Tracker, which visually displays shifts by status.",
+        ],
+        images: [detailsImage3],
       },
       {
-        title: "Real-Time Insights & Task Management",
+        title: "",
         description:
-          "The Sign-In Snapshot offers real-time insights into shift sign-ins for quick oversight. TaskBridge helps you stay on top of pending tasks such as leave requests, letters, approvals, and incident updates.",
+          "Keep up to date with staff activity and instantly access participant status through the Participant Log. The Sign-In Snapshot offers real-time insights into shift sign-ins for quick oversight. TaskBridge helps you stay on top of pending tasks such as leave requests, letters, approvals, and incident updates.",
         images: [detailsImage2],
       },
       {
-        title: "HR Insights & Workforce Management",
+        title: "",
         description:
-          "HR Insights allows you to track recruitment progress, awards, and training metrics, while the Incident Directory enables efficient filtering of incidents by status. Stay informed on workforce availability with the Leave Tracker, manage finances through Invoice Management, and oversee employee development by tracking progress and approvals within performance cycles.",
+          "HR Insights allows you to track recruitment progress, awards, and training metrics, while the Incident Directory enables efficient filtering of incidents by status. Stay informed on workforce availability with the Leave Tracker, manage finances through Invoice Management, and oversee employee development by tracking progress and approvals within performance cycles.  ",
         images: [detailsImage1],
+      },
+      {
+        title: "",
+        description:
+          "Together, these dashboards deliver clear, actionable data tailored to every role, helping improve decision-making and operational control. ",
+        images: [detailsImage3],
       },
       {
         title: "Why It Matters",
@@ -3735,6 +3774,12 @@ export const productsDetailsData = {
         ],
         images: [detailsImage2],
       },
+      {
+        title: "",
+        description:
+          "Why wing it when you can use TesseractApps it? Helping NDIS teams stay sharp, sane, and totally on top of things!",
+        images: [],
+      },
     ],
     faqSection: {
       title: "ChaT FAQs",
@@ -3803,42 +3848,6 @@ export const productsDetailsData = {
     },
     section3: [
       {
-        title: "Personal Details",
-        description:
-          "Effortlessly maintain up-to-date demographic, emergency, and payroll information.",
-        images: [detailsImage1],
-      },
-      {
-        title: "Leave Management",
-        description:
-          "Confidently plan and manage leave. Submit requests, track approvals, and access all designated leave entitlements, ensuring seamless scheduling.",
-        images: [detailsImage2],
-      },
-      {
-        title: "Awards & Professional Development",
-        description:
-          "Celebrate milestones, embrace recognition, and engage in structured learning pathways for career advancement.",
-        images: [detailsImage1],
-      },
-      {
-        title: "Reports & Payslips",
-        description:
-          "Securely access payroll records, timesheets, and critical reports, ensuring transparency and financial oversight.",
-        images: [detailsImage2],
-      },
-      {
-        title: "Performance Insights",
-        description:
-          "Establish career objectives, monitor progress, and prepare evaluations with precision.",
-        images: [detailsImage1],
-      },
-      {
-        title: "Availability & Scheduling",
-        description:
-          "Declare work preferences for optimised rostering, enabling seamless workforce coordination and balance.",
-        images: [detailsImage2],
-      },
-      {
         title: "Why My Profile?",
         points: [
           "Unified Access – A streamlined platform consolidating all workforce essentials.",
@@ -3859,7 +3868,7 @@ export const productsDetailsData = {
         },
         {
           question:
-            "How can I prepare for and succeed in my performance review?",
+            "2. How can I prepare for and succeed in my performance review?",
           answer:
             "Performance reviews within our platform are designed to support personal development and align individual goals with organisational expectations. These reviews are initiated by your organisation's administrators and follow a structured process. To succeed in your performance review:",
           points: [

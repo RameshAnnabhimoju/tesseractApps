@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-image: var(--color-background-gradient);
-  padding-top: 100px;
+  /* padding-top: 100px; */
 }
 #home-text-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 #home-text-heading {
   font-size: 38px;

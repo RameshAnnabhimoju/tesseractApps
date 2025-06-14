@@ -93,226 +93,309 @@ export default AppRoutes;
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const appNavigate = (
-  navigate: NavigateFunction,
   route: string,
+  navigate?: NavigateFunction,
   defalut = true
 ) => {
   switch (route) {
     // case "Case Studies":
-    //   navigate("/case-studies", {
+    //  if(navigate != undefined )navigate("/case-studies", {
     //     state: { data: itemsPageDummyData["Case Studies"] },
     //   });
     //   break;
     // case "Whitepapers":
-    //   navigate("/whitepapers", {
+    //  if(navigate != undefined )navigate("/whitepapers", {
     //     state: { data: itemsPageDummyData["Whitepapers"] },
     //   });
     //   break;
     // case "Support Documentation":
-    //   navigate("/support-documentation", {
+    //  if(navigate != undefined )navigate("/support-documentation", {
     //     state: { data: itemsPageDummyData["Support Documentation"] },
     //   });
     //   break;
+    case "android":
+      window.open(
+        "https://play.google.com/store/apps/details?id=com.compinacle&hl=en&pli=1",
+        "_blank"
+      );
+      break;
+    case "ios":
+      window.open(
+        " https://apps.apple.com/al/app/tesseract-apps/id6476831276",
+        "_blank"
+      );
+      break;
+    case "linkedin":
+      window.open("https://www.linkedin.com/company/tesseractapps", "_blank");
+      break;
+    case "facebook":
+      window.open(
+        "https://www.facebook.com/people/TesseractApps/61573872703468/",
+        "_blank"
+      );
+      break;
+    case "instagram":
+      window.open("https://www.instagram.com/tesseract_apps", "_blank");
+      break;
+    case "youtube":
+      window.open("https://www.youtube.com/@TesseractApps", "_blank");
+      break;
     case "Pricing":
-      navigate("/pricing");
+      if (navigate != undefined)
+        if (navigate != undefined) navigate("/pricing");
+      break;
+    case "Book a Demo":
+      if (navigate != undefined) navigate("/requestDemo");
       break;
     case "Blog":
-      navigate("/blogs", {
-        state: { data: itemsPageDummyData["Blog"] },
-      });
+      if (navigate != undefined)
+        navigate("/blogs", {
+          state: { data: itemsPageDummyData["Blog"] },
+        });
       break;
     case "Product":
-      navigate("/product", {
-        state: { data: SubPagesDummyData["Product"] },
-      });
+      if (navigate != undefined)
+        navigate("/product", {
+          state: { data: SubPagesDummyData["Product"] },
+        });
       break;
     case "Scheduling":
-      navigate("/scheduling", {
-        state: { data: SubPagesDummyData["Scheduling"] },
-      });
+      if (navigate != undefined)
+        navigate("/scheduling", {
+          state: { data: SubPagesDummyData["Scheduling"] },
+        });
       break;
     case "Time Management":
-      navigate("/time-management", {
-        state: { data: SubPagesDummyData["Time Management"] },
-      });
+      if (navigate != undefined)
+        navigate("/time-management", {
+          state: { data: SubPagesDummyData["Time Management"] },
+        });
       break;
     case "HR Management":
-      navigate("/hr-management", {
-        state: { data: SubPagesDummyData["HR Management"] },
-      });
+      if (navigate != undefined)
+        navigate("/hr-management", {
+          state: { data: SubPagesDummyData["HR Management"] },
+        });
       break;
     case "Communication":
-      navigate("/communication", {
-        state: { data: SubPagesDummyData["Communication"] },
-      });
+      if (navigate != undefined)
+        navigate("/communication", {
+          state: { data: SubPagesDummyData["Communication"] },
+        });
       break;
     case "FAQs":
-      navigate("/faq");
+      if (navigate != undefined) navigate("/faq");
       break;
     case "Team":
-      navigate("/team");
+      if (navigate != undefined) navigate("/team");
       break;
     case "Our Story":
-      navigate("/our-story", {
-        state: { data: aboutUsPageData["Our Story"] },
-      });
+      if (navigate != undefined)
+        navigate("/our-story", {
+          state: { data: aboutUsPageData["Our Story"] },
+        });
       break;
     case "Our Mission":
-      navigate("/our-mission", {
-        state: { data: aboutUsPageData["Our mission"] },
-      });
+      if (navigate != undefined)
+        navigate("/our-mission", {
+          state: { data: aboutUsPageData["Our mission"] },
+        });
       break;
     case "Our Vision":
-      navigate("/our-vision", {
-        state: { data: aboutUsPageData["Our Vision"] },
-      });
+      if (navigate != undefined)
+        navigate("/our-vision", {
+          state: { data: aboutUsPageData["Our Vision"] },
+        });
       break;
     case "Careers":
-      navigate("/careers");
+      if (navigate != undefined) navigate("/careers");
       break;
     case "Contact Information":
-      navigate("/contact-information");
+      if (navigate != undefined) navigate("/contact-information");
       break;
     case "Administrator":
-      navigate("/administrator", {
-        state: { data: byRoleData["Administrator"] },
-      });
+      if (navigate != undefined)
+        navigate("/administrator", {
+          state: { data: byRoleData["Administrator"] },
+        });
       break;
     case "Participant":
-      navigate("/participant", {
-        state: { data: byRoleData["Participant"] },
-      });
+      if (navigate != undefined)
+        navigate("/participant", {
+          state: { data: byRoleData["Participant"] },
+        });
       break;
     case "Roster Manager":
-      navigate("/roster-manager", {
-        state: { data: byRoleData["Roster Manager"] },
-      });
+      if (navigate != undefined)
+        navigate("/roster-manager", {
+          state: { data: byRoleData["Roster Manager"] },
+        });
       break;
     case "NDIS Staff":
-      navigate("/ndis-staff", {
-        state: { data: byRoleData["NDIS Staff"] },
-      });
+      if (navigate != undefined)
+        navigate("/ndis-staff", {
+          state: { data: byRoleData["NDIS Staff"] },
+        });
       break;
     case "HR Manager":
-      navigate("/hr-manager", {
-        state: { data: byRoleData["HR Manager"] },
-      });
+      if (navigate != undefined)
+        navigate("/hr-manager", {
+          state: { data: byRoleData["HR Manager"] },
+        });
       break;
     case "Accountant":
-      navigate("/accountant", {
-        state: { data: byRoleData["Accountant"] },
-      });
+      if (navigate != undefined)
+        navigate("/accountant", {
+          state: { data: byRoleData["Accountant"] },
+        });
       break;
     case "NDIS Industry":
-      navigate("/ndis-industry", {
-        state: { data: byIndustryData["NDIS Industry"] },
-      });
+      if (navigate != undefined)
+        navigate("/ndis-industry", {
+          state: { data: byIndustryData["NDIS Industry"] },
+        });
       break;
     case "ICT Industry":
-      navigate("/ict-industry", {
-        state: { data: byIndustryData["ICT Industry"] },
-      });
+      if (navigate != undefined)
+        navigate("/ict-industry", {
+          state: { data: byIndustryData["ICT Industry"] },
+        });
       break;
     case "Roster Management":
-      navigate("/roster-management", {
-        state: { data: productsDetailsData["Roster Management"] },
-      });
+      if (navigate != undefined)
+        navigate("/roster-management", {
+          state: { data: productsDetailsData["Roster Management"] },
+        });
       break;
 
     case "Timesheet":
-      navigate("/timesheet", {
-        state: { data: productsDetailsData["Timesheet"] },
-      });
+      if (navigate != undefined)
+        navigate("/timesheet", {
+          state: { data: productsDetailsData["Timesheet"] },
+        });
       break;
 
     case "Admin Console":
-      navigate("/admin-console", {
-        state: { data: productsDetailsData["Admin Console"] },
-      });
+      if (navigate != undefined)
+        navigate("/admin-console", {
+          state: { data: productsDetailsData["Admin Console"] },
+        });
       break;
 
     case "Access Control Panel":
-      navigate("/access-control-panel", {
-        state: { data: productsDetailsData["Access Control Panel"] },
-      });
+      if (navigate != undefined)
+        navigate("/access-control-panel", {
+          state: { data: productsDetailsData["Access Control Panel"] },
+        });
       break;
 
     case "HR Operations":
-      navigate("/hr-operations", {
-        state: { data: productsDetailsData["HR Operations"] },
-      });
+      if (navigate != undefined)
+        navigate("/hr-operations", {
+          state: { data: productsDetailsData["HR Operations"] },
+        });
       break;
 
     case "T-sign":
-      navigate("/t-sign", {
-        state: { data: productsDetailsData["T-sign"] },
-      });
+      if (navigate != undefined)
+        navigate("/t-sign", {
+          state: { data: productsDetailsData["T-sign"] },
+        });
       break;
 
     case "Clock In & Clock Out":
-      navigate("/clock-in-and-clock-out", {
-        state: { data: productsDetailsData["Clock In & Clock Out"] },
-      });
+      if (navigate != undefined)
+        navigate("/clock-in-and-clock-out", {
+          state: { data: productsDetailsData["Clock In & Clock Out"] },
+        });
       break;
 
     case "Participant Management":
-      navigate("/participant-management", {
-        state: { data: productsDetailsData["Participant Management"] },
-      });
+      if (navigate != undefined)
+        navigate("/participant-management", {
+          state: { data: productsDetailsData["Participant Management"] },
+        });
       break;
 
     case "Incident Management":
-      navigate("/incident-management", {
-        state: { data: productsDetailsData["Incident Management"] },
-      });
+      if (navigate != undefined)
+        navigate("/incident-management", {
+          state: { data: productsDetailsData["Incident Management"] },
+        });
+      break;
+    case "Repository":
+      if (navigate != undefined)
+        navigate("/incident-management", {
+          state: { data: productsDetailsData["Repository"] },
+        });
       break;
 
     case "Role based Dashboards":
-      navigate("/role-based-dashboard", {
-        state: { data: productsDetailsData["Role Based Dashboard"] },
-      });
+      if (navigate != undefined)
+        navigate("/role-based-dashboard", {
+          state: { data: productsDetailsData["Role Based Dashboard"] },
+        });
       break;
-
+    case "Role based Dashboard":
+      if (navigate != undefined)
+        navigate("/role-based-dashboard", {
+          state: { data: productsDetailsData["Role Based Dashboard"] },
+        });
+      break;
+    case "ChaT":
+      if (navigate != undefined)
+        navigate("/chat", {
+          state: {
+            data: productsDetailsData["ChaT - Secure Internal Messaging"],
+          },
+        });
+      break;
     case "ChaT - Secure Internal Messaging":
-      navigate("/chat", {
-        state: {
-          data: productsDetailsData["ChaT - Secure Internal Messaging"],
-        },
-      });
+      if (navigate != undefined)
+        navigate("/chat", {
+          state: {
+            data: productsDetailsData["ChaT - Secure Internal Messaging"],
+          },
+        });
       break;
     case "ChaT & Notifications":
-      navigate("/chat", {
-        state: {
-          data: productsDetailsData["ChaT - Secure Internal Messaging"],
-        },
-      });
+      if (navigate != undefined)
+        navigate("/chat", {
+          state: {
+            data: productsDetailsData["ChaT - Secure Internal Messaging"],
+          },
+        });
       break;
 
     case "My Profile":
-      navigate("/my-profile", {
-        state: { data: productsDetailsData["My Profile"] },
-      });
+      if (navigate != undefined)
+        navigate("/my-profile", {
+          state: { data: productsDetailsData["My Profile"] },
+        });
       break;
 
     case "Forms":
-      navigate("/forms", {
-        state: { data: productsDetailsData["Forms"] },
-      });
+      if (navigate != undefined)
+        navigate("/forms", {
+          state: { data: productsDetailsData["Forms"] },
+        });
       break;
 
     case "Accounting":
-      navigate("/accounting", {
-        state: { data: productsDetailsData["Accounting"] },
-      });
+      if (navigate != undefined)
+        navigate("/accounting", {
+          state: { data: productsDetailsData["Accounting"] },
+        });
       break;
 
     case "T Learning Hub":
-      navigate("/t-learning-hub", {
-        state: { data: productsDetailsData["T Learning Hub"] },
-      });
+      if (navigate != undefined)
+        navigate("/t-learning-hub", {
+          state: { data: productsDetailsData["T Learning Hub"] },
+        });
       break;
     default:
-      if (defalut) navigate("/coming-soon");
+      if (defalut && navigate != undefined) navigate("/coming-soon");
       break;
   }
 };

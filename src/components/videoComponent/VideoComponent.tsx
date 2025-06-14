@@ -5,7 +5,8 @@ import {
 } from "react";
 import "./VideoStyles.css";
 // import video from "../../assets/Hero_Video_HD_Preview.mp4";
-import heroImage from "../../assets/videoImage.jpg";
+// import heroImage from "../../assets/videoImage.jpg";
+import cubeImage from "../../assets/Cube.svg";
 import Checkbook from "../../assets/checkbook.svg";
 import FlagCheck from "../../assets/flag_check.svg";
 import FolderSupervised from "../../assets/folder_supervised.svg";
@@ -98,7 +99,7 @@ const VideoComponent = () => {
   //   };
   // }, []);
   const clickHandler = (name: string) => {
-    appNavigate(navigate, name);
+    appNavigate(name, navigate);
   };
   return (
     <div className="video-container">
@@ -106,7 +107,7 @@ const VideoComponent = () => {
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video> */}
-      <img src={heroImage} alt="" id="video-image" />
+      <img src={cubeImage} alt="" id="video-image" />
       {showOverlay && (
         <div className="label-overlay">
           <div
@@ -143,10 +144,10 @@ const VideoComponent = () => {
             Rostering & Scheduling
           </div>
           <Line
-            startX={45}
+            startX={48}
             startY={15}
-            length={13}
-            angle={240}
+            length={8}
+            angle={290}
             id="line2"
             className="line"
           />
@@ -159,7 +160,7 @@ const VideoComponent = () => {
           </div>
           <Line
             startX={29}
-            startY={65}
+            startY={70}
             length={15}
             angle={215}
             id="line3"
@@ -180,9 +181,9 @@ const VideoComponent = () => {
             Accounting
           </div>
           <Line
-            startX={60.5}
+            startX={68}
             startY={32}
-            length={5}
+            length={12}
             angle={315}
             id="line4"
             className="line"
@@ -201,14 +202,14 @@ const VideoComponent = () => {
             />{" "}
             Incident Management
           </div>
-          {/* <Line
-            startX={47}
-            startY={73.5}
+          <Line
+            startX={51}
+            startY={81}
             length={8}
-            angle={135}
+            angle={140}
             id="line5"
             className="line"
-          /> */}
+          />
           <div className="label-spot5">
             <img src={LabelSpot} alt="Label Spot" className="label-spot-img" />
           </div>
@@ -217,7 +218,7 @@ const VideoComponent = () => {
             T Sign
           </div>
           <Line
-            startX={61}
+            startX={68}
             startY={64}
             length={12}
             angle={325}

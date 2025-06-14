@@ -50,7 +50,7 @@ const DetailsDataComponent = ({
           ))}
         {data.discriptionsPoints &&
           data.discriptionsPoints.map((point, index) => (
-            <div id="details-data-text-points" key={index}>
+            <div id="details-data-text-description" key={index}>
               {point}
             </div>
           ))}

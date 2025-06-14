@@ -20,7 +20,7 @@ const FAQ = () => {
   // };
   return (
     <div id="faq-page-container">
-      <div className="heading">FAQ</div>
+      <div className="heading">FAQs</div>
       <div className="subheading">Answers to your most common questions.</div>
       <div className="text" id="faq-page-text">
         From onboarding to integrations and billing, we’ve compiled clear

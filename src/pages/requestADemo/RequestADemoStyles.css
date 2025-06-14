@@ -78,6 +78,8 @@
 }
 
 #request-demo-form-subtext {
+  display: flex;
+  align-items: center;
   font-size: 14px;
   color: var(--color-text-gray);
 }
@@ -91,6 +93,10 @@
   font-size: 18px;
   margin-bottom: 10px;
   line-height: 30px;
+}
+#request-demo-agree-checkbox {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 @media (max-width: 450px) {
   #request-demo-content {

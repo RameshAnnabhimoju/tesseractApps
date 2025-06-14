@@ -17,7 +17,7 @@ const Pricing = () => {
       <div className="pricing-divider-line pricing-divider-line-header" />
       <div className="text pricing-textt">
         "Efficiency meets simplicity-your all-in-one NDIS solution for managing
-        care, rostering, invoicing, and compliance seamlessly."
+        care, rostering, invoicing and compliance seamlessly."
       </div>
       <div id="pricing-slider-container">
         <Slider
@@ -154,11 +154,13 @@ const Pricing = () => {
       <div id="pricing-data-container">
         {pricingDummyData.map((data) => (
           <div className="pricing-data" key={data.heading}>
+            {/* <div className="pricing-divider-line" /> */}
+
             <div className="pricing-data-heading">{data.heading}</div>
             <div className="pricing-data-data-container">
-              {data.data.map((dataItem) => (
+              {data.data.map((dataItem, index) => (
                 <div key={dataItem.title}>
-                  <div className="pricing-divider-line" />
+                  {index != 0 && <div className="pricing-divider-line" />}
 
                   <div className="pricing-data-data">
                     <div>
