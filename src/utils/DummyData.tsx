@@ -1173,7 +1173,7 @@ import HRImage from "../assets/HR.png";
 import ParticipantsImage from "../assets/Participants Management.png";
 import ChatImage from "../assets/Chat and Notification.png";
 import RepoImage from "../assets/Repository.png";
-import AccountingImage from "../assets/Accounting.png";
+import AccountingImage from "../assets/accounting.png";
 import IncidentImage from "../assets/Incident Management.png";
 import ClockImage from "../assets/clock in clock out.png";
 import ComplianceImage from "../assets/complaince and safe guard.png";
