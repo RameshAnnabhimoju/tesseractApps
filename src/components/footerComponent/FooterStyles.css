@@ -22,6 +22,7 @@
 .footer-column {
   display: flex;
   flex-direction: column;
+  min-width: 180px;
 }
 
 #foooter-column-5 {
@@ -92,8 +93,8 @@
 }
 .footer-products-text-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  width: 50%;
 }
 .footer-products-column {
   width: 100%;
@@ -102,6 +103,11 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 25px;
+}
+@media (min-width: 1940px) {
+  .results-cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
 }
 @media (max-width: 450px) {
   #footer-container {

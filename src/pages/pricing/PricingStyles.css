@@ -120,11 +120,9 @@
 }
 .pricing-data-data {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin: 50px auto;
-  justify-content: center; /* Centers the grid items as a group */
-  max-width: 1700px; /* Optional: Limit total grid width */
-  padding-left: 35px;
+  grid-template-columns: 500px auto;
+  padding-left: 25px;
+  margin: 10px 0;
 }
 .pricing-divider-line {
   height: 0;
@@ -143,6 +141,9 @@
 }
 .pricing-data-title {
   font-weight: 500;
+}
+.pricing-data-title-container {
+  max-width: 300px;
 }
 .pricing-data-tick {
   background-color: var(--color-background-light-gray);
@@ -215,7 +216,21 @@
 }
 .pricing-data-tick-container {
   display: flex;
-  gap: 30%;
+  gap: 26%;
+  justify-content: stretch;
+}
+.pricing-links-data-container {
+  cursor: pointer;
+}
+#pricing-sticky-header {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 80px;
+  position: sticky;
+  top: 100px;
+  background-color: white;
+  padding: 20px 20%;
+  max-height: 180px;
 }
 @media (max-width: 450px) {
   #pricing-help-links {

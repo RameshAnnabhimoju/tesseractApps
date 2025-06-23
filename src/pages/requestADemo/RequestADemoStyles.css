@@ -98,6 +98,12 @@
   cursor: pointer;
   transform: scale(1.2);
 }
+.error {
+  border-color: red;
+}
+.error::placeholder {
+  color: red;
+}
 @media (max-width: 450px) {
   #request-demo-content {
     flex-wrap: wrap;

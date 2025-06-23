@@ -1348,6 +1348,7 @@ export const howItWorksImages = [
   howItWorksImage6,
 ];
 import testimonialImage from "../assets/avatar-mid-alt.png";
+import busineessWomanInage from "../assets/businesswoman.png";
 export const testimonialDummyData = [
   {
     id: 1,
@@ -1387,7 +1388,7 @@ export const testimonialDummyData = [
     id: 4,
     rating: 4,
     testimonial: `“An essential tool for Support Coordinators. It’s not just a platform; it’s a strategic partner. I can track notes, manage participant goals, schedule supports, and handle billing in one place. It has saved me hours every week.”`,
-    authorImage: testimonialImage,
+    authorImage: busineessWomanInage,
     author: "Emalee Rose Bayliss",
     authorTitle: "Specialist Senior Support Coordinator",
   },
@@ -1421,7 +1422,7 @@ export const accordiaDummyData = [
     id: 4,
     question: "Can I Customize the Modules I Use?",
     answer:
-      "Absolutely. Tesseract Apps offers flexible, modular plans so you can choose only the features your organisation needs, from HR to scheduling to compliance.",
+      "Absolutely! Tesseract Apps offers flexible, modular plans so you can choose only the features your organisation needs, from HR to scheduling to compliance.",
   },
   {
     id: 5,
@@ -1836,7 +1837,7 @@ export const faqPageDummyData = [
       {
         question: "Can I access the platform on mobile devices?",
         answer:
-          "Absolutely. The platform is fully responsive and optimized for use on phones and tablets, allowing you to check schedules, complete shift tasks, and more on the go.",
+          "Absolutely! The platform is fully responsive and optimized for use on phones and tablets, allowing you to check schedules, complete shift tasks, and more on the go.",
       },
       {
         question: "How secure is the platform?",
@@ -2591,7 +2592,9 @@ export const byRoleData = {
     "details-1": {
       images: [detailsImage2],
       title: "",
-      description: `Thanks to seamless integration with other modules (such as User Management and Service Delivery), financial data flows efficiently across the system, reducing manual entry and improving financial oversight.\nPermissions are scoped strictly to financial operations, and all actions are logged and monitored under our robust data protection and auditing protocols.`,
+      description: `Thanks to seamless integration with other modules (such as User Management and Service Delivery), financial data flows efficiently across the system, reducing manual entry and improving financial oversight.`,
+      conclusion:
+        "Permissions are scoped strictly to financial operations, and all actions are logged and monitored under our robust data protection and auditing protocols.",
     },
     "details-2": {
       images: [detailsImage3],
@@ -3096,7 +3099,7 @@ export const productsDetailsData = {
         {
           question: "3. Is there support for approval of the timesheet?",
           answer:
-            "Yes, timesheets follow a customisable approval flow. Approvers can review, comment, and take action based on role permissions and business rules.",
+            "Yes, timesheets follow approval flow. Approvers can review, comment, and take action based on role permissions and business rules.",
         },
       ],
     },
@@ -3212,7 +3215,8 @@ export const productsDetailsData = {
     hero: {
       title:
         "Streamlined Workforce Oversight. Efficient Administration. Thriving Workplace Culture.",
-
+      description:
+        "Tesseract’s HR Management simplifies every stage of the employee lifecycle - from recruitment to retention - ensuring efficient administration, seamless integration, and a thriving workplace culture.",
       image: detailsHero, // Replace with actual image import
     },
     section3: [

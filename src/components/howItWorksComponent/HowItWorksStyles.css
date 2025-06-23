@@ -57,7 +57,7 @@
   width: 400px;
   object-fit: cover;
 }
-@media (max-width: 450px) {
+@media (max-width: 1100px) {
   #howItWorks-container {
     /* display: none; */
     /* overflow-x: hidden; */

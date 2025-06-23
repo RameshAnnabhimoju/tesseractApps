@@ -14,6 +14,9 @@ const FeaturesComponent = () => {
   console.log(currentSlide, loaded);
   const [perView, setPerView] = useState(5);
   useEffect(() => {
+    if (window.screen.width <= 1100) {
+      setPerView(3);
+    }
     if (window.screen.width <= 425) {
       setPerView(1);
     }
@@ -76,7 +79,7 @@ const FeaturesComponent = () => {
     <div id="features-container">
       <div className="heading">FEATURES</div>
       <div className="subheading features-subheading">
-        Why Choose Tesseract Apps for your organisation ?
+        Why Tesseract Apps is the trusted choice for modern organisations?
       </div>
       <div className="features-buttons">
         <img

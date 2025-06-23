@@ -14,8 +14,6 @@
 .product-data-card {
   max-width: 500px;
   padding: 20px 50px;
-  text-align: center;
-  filter: grayscale();
   cursor: pointer;
 }
 .product-data-card:hover {
@@ -25,6 +23,8 @@
 .product-data-card-title {
   font-size: 26px;
   font-weight: 500;
+}
+.product-data-card-title:hover {
   color: var(--color-primary);
 }
 .product-data-card-description {

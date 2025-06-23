@@ -39,3 +39,23 @@
     border-left: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
+
+/* XS: Extra Small (<360px) */
+@media (max-width: 359px) {
+}
+
+/* SM: Small Phones (360px – 599px) */
+@media (min-width: 360px) and (max-width: 599px) {
+}
+
+/* MD: Tablets (600px – 899px) */
+@media (min-width: 600px) and (max-width: 899px) {
+}
+
+/* LG: Tablets & Small Laptops (900px – 1279px) */
+@media (min-width: 900px) and (max-width: 1279px) {
+}
+
+/* XL: Laptops & Desktops (1280px – 1919px) */
+@media (min-width: 1280px) and (max-width: 1919px) {
+}

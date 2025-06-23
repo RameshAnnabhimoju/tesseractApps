@@ -5,7 +5,7 @@ import { testimonialDummyData } from "../../utils/DummyData";
 // import leftArrow from "../../assets/Blue arrow.png";
 // import rightArrow from "../../assets/white arrow.png";
 import star from "../../assets/star.png";
-import blurImage from "../../assets/blurPinkImage.png";
+// import blurImage from "../../assets/blurPinkImage.png";
 // import { useEffect, useState } from "react";
 const TestimonialComponent = () => {
   return (
@@ -15,7 +15,7 @@ const TestimonialComponent = () => {
         Real Stories. Real Results. Trusted by Leading NDIS Providers.
       </div>
       <div id="testimonial-carousel-container">
-        <img src={blurImage} alt="blurImage" id="blur-image" />
+        {/* <img src={blurImage} alt="blurImage" id="blur-image" /> */}
 
         <div id="testimonial-carousel">
           {testimonialDummyData.map((item) => (

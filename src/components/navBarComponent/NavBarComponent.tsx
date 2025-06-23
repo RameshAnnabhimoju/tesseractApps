@@ -34,6 +34,74 @@ const NavBarComponent = ({
   const navigate = useNavigate();
   const [showSearch, setShowSearch] = useState(false);
   const [isPopupOpen, setPopupOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState<
+    | "About"
+    | "Product"
+    | "Solutions"
+    | "Pricing"
+    | "Resources"
+    | "Additional Features"
+    | ""
+  >("");
+  useEffect(() => {
+    const currentPath = pathname.split("/")[1];
+    // console.log("Current Path:", currentPath);
+    if (currentPath == "" || currentPath == "coming-soon") {
+      setActiveLink("");
+    }
+    if (
+      currentPath == "our-story" ||
+      currentPath == "our-mission" ||
+      currentPath == "our-vision" ||
+      currentPath == "team" ||
+      currentPath == "careers" ||
+      currentPath == "contact-information"
+    ) {
+      setActiveLink("About");
+    }
+    if (
+      currentPath == "product" ||
+      currentPath == "roster-management" ||
+      currentPath == "clock-in-and-clock-out" ||
+      currentPath == "forms" ||
+      currentPath == "timesheet" ||
+      currentPath == "participant-management" ||
+      currentPath == "accounting" ||
+      currentPath == "admin-console" ||
+      currentPath == "incident-management" ||
+      currentPath == "t-learning-hub" ||
+      currentPath == "access-control-panel" ||
+      currentPath == "incident-management" ||
+      currentPath == "chat" ||
+      currentPath == "hr-operations" ||
+      currentPath == "role-based-dashboard" ||
+      currentPath == "t-sign" ||
+      currentPath == "my-profile"
+    ) {
+      setActiveLink("Product");
+    }
+    if (
+      currentPath == "ndis-industry" ||
+      currentPath == "ict-industry" ||
+      currentPath == "administrator" ||
+      currentPath == "roster-manager" ||
+      currentPath == "ndis-staff" ||
+      currentPath == "hr-manager" ||
+      currentPath == "accountant" ||
+      currentPath == "participant"
+    ) {
+      setActiveLink("Solutions");
+    }
+    if (currentPath == "pricing") {
+      setActiveLink("Pricing");
+    }
+    if (currentPath == "blogs" || currentPath == "faq") {
+      setActiveLink("Resources");
+    }
+    if (currentPath == "requestDemo") {
+      setActiveLink("Additional Features");
+    }
+  }, [pathname]);
   const [selectedLink, setSelectedLink] = useState<
     keyof typeof navBarDummyData | ""
   >("");
@@ -450,7 +518,9 @@ const NavBarComponent = ({
               id={label}
               className={
                 "nav-link" +
-                (isPopupOpen && selectedLink == label ? " nav-link-active" : "")
+                (activeLink == label || (isPopupOpen && selectedLink == label)
+                  ? " nav-link-active"
+                  : "")
               }
               onClick={handleNavClick}
               onMouseEnter={(event) => {

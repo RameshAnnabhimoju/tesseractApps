@@ -1,0 +1,72 @@
+<div class="card">
+        <div class="card-body">
+            <table id="tblDataTable" border='1' class="table table-hover table-bordered">
+                <tr><td colspan="20" align="center"><b>COASTAL AQUA PRIVATE LIMITED</b></td></tr>
+                <tr><td colspan="20" align="center">PATHARLAGADDA, KAKINADA</td></tr>
+                <tr><td colspan="20" align="center"><b>DEHEADING CHECKLIST</b></td></tr>
+                <tr>
+                    <td colspan="10">Batch No: 3134</td>
+                    <td colspan="10" style="text-align:right">Date: 2025-06-13</td>
+
+                </tr>
+                
+                </tr>
+            <thead class="thead-light">
+                <tr>
+                    <th>S.No</th>
+
+                    <th>Batch Code</th>
+                    <th>Variety</th>
+                    <th>Count</th>
+                    <th>Receiving Quantity</th>
+                    <th>Receiving Time</th>
+                    <th>General Appearance</th>
+                    <th>Colour</th>
+                    <th>Freshness</th>
+                    <th>Odour</th>
+                    <th>Texture</th>
+                    <th>Temperature</th>
+                    <th>Deterioration</th>
+                    <th>Discolouration</th>
+                    <th>BlackSpots</th>
+                    <th>SoftShell</th>
+                    <th>BrokenDamaged</th>
+                    <th>ForeignMeterial</th>
+                    <th>SendingQuantity</th>
+                     <th>SendingTime</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>1</td>
+                    <td class="tdBatchCode" data-value="3134">25F2146</td>
+                    <td class="tdVariety">HON-HL</td>
+                    <td class="tdCount">55.400</td>
+                    <td class="tdReceivingQuantity">123</td>
+                    <td class="tdReceivingTime">00:00:00</td>
+                    <td class="tdGeneralAppearance">Good</td>
+                    <td class="tdColour">Light</td>
+                    <td class="tdFreshness">S</td>
+                    <td class="tdOdour">Fresh</td>
+                    <td class="tdTexture">Firm</td>
+                    <td class="tdTemperature">100</td>
+                    <td class="tdDeterioration">nil</td>
+                    <td class="tdDiscolouration">nil</td>
+                    <td class="tdBlackSpots">nil</td>
+                    <td class="tdSoftShell">nil</td>
+                    <td class="tdBrokenDamaged"></td>
+                    <td class="tdForeignMeterial">Grass</td>
+                    <td class="tdSendingQuantity">120</td>
+                     <td class="tdSendingTime">12:50:00</td>
+                </tr></tbody></table></div></div>
+    <br><br>
+    <table style="width:100%; font-family:Arial, sans-serif; font-size:12px; border-collapse:collapse;">
+        <tr>
+            <td style="border:none; width:50%;"><b>Inspected By: </b> </td>
+            
+            
+           <tr></tr>
+            <td style="border:none; width:50%;"><b>Verified By:</b></td>
+        </tr>
+    </table>

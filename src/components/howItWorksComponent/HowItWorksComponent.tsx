@@ -11,6 +11,9 @@ const HowItWorksComponent = () => {
   const [perView, setPerView] = useState(window.screen.width <= 425 ? 1 : 3);
   useEffect(() => {
     // console.log(window.screen.width);
+    if (window.screen.width <= 1100) {
+      setPerView(1);
+    }
     if (window.screen.width <= 425) {
       setPerView(1);
     }

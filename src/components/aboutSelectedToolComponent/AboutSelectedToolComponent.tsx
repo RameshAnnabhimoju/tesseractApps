@@ -32,15 +32,7 @@ const AboutSelectedToolComponent = ({
         {data.points &&
           data.points?.map((subdata, index) => {
             return (
-              <div
-                key={index}
-                className={
-                  "selected-tool-data" +
-                  (index > 0 && index < data.points.length
-                    ? " vertical-fade"
-                    : "")
-                }
-              >
+              <div key={index} className={"selected-tool-data"}>
                 <svg viewBox="0 0 40 40" width="40" height="40">
                   <circle cx="20" cy="20" r="16" fill={subdata.dot.outer} />
                   <circle cx="20" cy="20" r="11" fill={subdata.dot.middle} />

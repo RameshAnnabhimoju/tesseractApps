@@ -1,16 +1,77 @@
 import "./PricingStyles.css";
 import { pricingCardsDummyData, pricingDummyData } from "../../utils/DummyData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import tick from "../../assets/tick.svg";
 import tick_white from "../../assets/tick_white.svg";
 import call from "../../assets/call.svg";
 import mark_email from "../../assets/mark_email.svg";
 import Slider from "@mui/material/Slider";
+import { useNavigate } from "react-router-dom";
 const Pricing = () => {
+  const navigate = useNavigate();
+  const handleBookADemoClick = () => {
+    navigate("/requestdemo");
+  };
   const [userCount, setUserCount] = useState(0);
+  function handleFooterActions(name: string) {
+    if (name === "phone") {
+      window.location.href = "tel:1300252808";
+    }
 
+    if (name === "email") {
+      const mailto = "mailto:enquiries@tesseractapps.com?subject=Inquiry";
+      const link = document.createElement("a");
+      link.href = mailto;
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setTimeout(() => {
+        if (document.hasFocus()) {
+          alert(
+            "If your email client didn't open, please email us at: enquiries@tesseractapps.com"
+          );
+        }
+      }, 1000);
+    }
+  }
+  const [showStickyHeader, setShowStickyHeader] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 500; // <-- Adjust this value as needed
+      if (window.scrollY > scrollThreshold) {
+        setShowStickyHeader(true);
+      } else {
+        setShowStickyHeader(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div id="pricing-container">
+      {showStickyHeader && (
+        <div id="pricing-sticky-header">
+          {pricingCardsDummyData.map((data) => {
+            return (
+              <div>
+                <div className="pricing-card-title">{data.title}</div>
+                <div className="pricing-card-sub-title">{data.subTitle}</div>
+                <div className={"pricing-card-pricing"}>
+                  {typeof data.Pricing == "number"
+                    ? "$" + data.Pricing
+                    : data.Pricing}
+                </div>
+                <div className={"pricing-card-time-period"}>
+                  {data.timePeriod}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
       <div className="subheading pricing-subheading">
         Compare Our Plans And Find Yours
       </div>
@@ -163,7 +224,7 @@ const Pricing = () => {
                   {index != 0 && <div className="pricing-divider-line" />}
 
                   <div className="pricing-data-data">
-                    <div>
+                    <div className="pricing-data-title-container">
                       <div className="pricing-data-title">{dataItem.title}</div>
                       <div className="pricing-data-subtitle">
                         {dataItem.subTitle}
@@ -230,21 +291,30 @@ const Pricing = () => {
         <div id="pricing-help-links">
           <div className="pricing-links-container">
             <img src={call} alt="" className="pricing-links-image" />
-            <div className="pricing-links-data-container">
+            <div
+              className="pricing-links-data-container"
+              onClick={() => handleFooterActions("phone")}
+            >
               <div className="pricing-links-data">+61 1300 252 808</div>
               <div className="pricing-links-data-subtext">Support Hotline</div>
             </div>
           </div>
           <div className="pricing-links-container">
             <img src={mark_email} alt="" className="pricing-links-image" />
-            <div className="pricing-links-data-container">
+            <div
+              className="pricing-links-data-container"
+              onClick={() => handleFooterActions("email")}
+            >
               <div className="pricing-links-data">
                 enquiries@tesseractapps.com
               </div>
               <div className="pricing-links-data-subtext">Support Email</div>
             </div>
           </div>
-          <button id="pricing-help-chat-button"> Book a Demo</button>
+          <button id="pricing-help-chat-button" onClick={handleBookADemoClick}>
+            {" "}
+            Book a Demo
+          </button>
         </div>
       </div>
     </div>

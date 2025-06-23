@@ -16,6 +16,7 @@
   font-weight: 600;
   margin-bottom: 1rem;
   color: black;
+  max-width: 800px;
 }
 #home-text-subText {
   font-size: 20px;

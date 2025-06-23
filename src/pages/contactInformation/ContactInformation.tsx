@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import "./ContactInformationStyles.css";
 
 const ContactInformation = () => {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/requestDemo");
+  };
   return (
     <div id="contact-info-container">
       <div className="heading">CONTACT INFORMATION</div>
@@ -22,7 +27,9 @@ const ContactInformation = () => {
         </div>
         <div className="contact-info-headingh">Email:</div>
         <div className="contact-info-text">enquiries@tesseractapps.com</div>
-        <button id="contact-info-button">Book a Demo</button>
+        <button id="contact-info-button" onClick={handleButtonClick}>
+          Book a Demo
+        </button>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import company4 from "../../assets/company-4.png";
 import company5 from "../../assets/company-5.png";
 // import company6 from "../../assets/company-6.png";
 import company7 from "../../assets/company-7.png";
+import company8 from "../../assets/ANA Logo.jpg";
 const TrustedClientsComponent = () => {
   const companiesImages = [
     company1,
@@ -14,16 +15,19 @@ const TrustedClientsComponent = () => {
     company4,
     company5,
     company7,
+    company8,
   ];
   return (
     <div id="trusted-clients-container">
       <div id="trusted-clients-header">
         Our Most <br /> Trusted Clients
       </div>
-      {companiesImages?.map((image, index) => (
-        <img key={index} src={image} alt="Client 1" className="client-logo" />
-      ))}
-      <div id="client-logo-PV">Framily Ventures Pty Ltd</div>
+      <div id="trusted-clients-images-container">
+        {companiesImages?.map((image, index) => (
+          <img key={index} src={image} alt="Client 1" className="client-logo" />
+        ))}
+        <div id="client-logo-PV">Framily Ventures Pty Ltd</div>
+      </div>
     </div>
   );
 };
