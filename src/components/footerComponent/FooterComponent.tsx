@@ -8,8 +8,20 @@ import flagsImag2 from "../../assets/flagImage2.jpg";
 import { navBarDummyData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
+import { useState } from "react";
 const FooterComponent = () => {
   const navigate = useNavigate();
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const handleNewsletterSubscribe = () => {
+    if (newsletterEmail) {
+      // Here you can add the logic to handle the newsletter subscription
+      console.log("Subscribed with email:", newsletterEmail);
+      setNewsletterEmail(""); // Clear the input after subscribing
+      alert("Thank you for subscribing to our newsletter!");
+    } else {
+      alert("Please enter a valid email address.");
+    }
+  };
   function handleFooterActions(name: string) {
     if (name === "phone") {
       window.location.href = "tel:1300252808";
@@ -281,8 +293,15 @@ const FooterComponent = () => {
             type="text"
             id="footer-newsletter-input"
             placeholder="Enter your email"
+            value={newsletterEmail}
+            onChange={(e) => setNewsletterEmail(e.target.value)}
           />
-          <button id="footer-newsletter-button">SUBSCRIBE</button>
+          <button
+            id="footer-newsletter-button"
+            onClick={handleNewsletterSubscribe}
+          >
+            SUBSCRIBE
+          </button>
         </div>
       </div>
       <div id="footer-bottom">

@@ -27,7 +27,6 @@ const ResultsComponent = () => {
             From users who value our seamless user experience, performance, and
             automation across HR, payroll, and compliance
           </div>
-          x
         </div>
         <div className="results-card">
           <div className="results-card-title">500+ Active Users</div>

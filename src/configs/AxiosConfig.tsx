@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosConfig = axios.create({
-  baseURL: "/api", // Replace with your actual base URL
+  baseURL: "https://tesseract-apps-server-bltm.vercel.app/", // Replace with your actual base URL
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST,PATCH, PUT, DELETE",

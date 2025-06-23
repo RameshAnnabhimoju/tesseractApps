@@ -1580,9 +1580,9 @@ export const SubPagesDummyData = {
         },
         {
           image: tesseractApsImage,
-          title: "ChaT - Secure Internal Messaging",
+          title: "ChaT",
           description:
-            "Your go-to hub for instant messages - keeping teams connected, conversations flowing, and work moving faster than your morning coffee!",
+            "Stay connected, keep conversations flowing, and get work done faster than your morning coffee!",
         },
         {
           image: tesseractApsImage,
@@ -2854,11 +2854,11 @@ export const byIndustryData = {
         description: `Empower employees to manage their personal information, view schedules, track leave balances, and update preferences - all in one personalised portal.`,
         images: [detailsImage2],
       },
-      {
-        title: "Forms",
-        description: `Replace paper with easy drag-and-drop digital forms for all operational needs. Create, assign, and manage forms securely with role-based access control. Mobile-optimised submissions linked directly to records streamline workflows and improve compliance.`,
-        images: [detailsImage3],
-      },
+      // {
+      //   title: "Forms",
+      //   description: `Replace paper with easy drag-and-drop digital forms for all operational needs. Create, assign, and manage forms securely with role-based access control. Mobile-optimised submissions linked directly to records streamline workflows and improve compliance.`,
+      //   images: [detailsImage3],
+      // },
       {
         title: "Accounting",
         description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.`,

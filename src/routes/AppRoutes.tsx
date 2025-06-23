@@ -28,6 +28,7 @@ import {
   SubPagesDummyData,
 } from "../utils/DummyData";
 import OutStory from "../pages/ourStory/OutStory";
+import Whitepapers from "../pages/whitepapers/Whitepapers";
 
 const AppRoutes = () => {
   return (
@@ -46,7 +47,7 @@ const AppRoutes = () => {
       <Route path="/communication" element={<SubPage />} />
       <Route path="/blogs" element={<ItemsPage />} />
       <Route path="/case-studies" element={<ItemsPage />} />
-      <Route path="/whitepapers" element={<ItemsPage />} />
+      <Route path="/whitepapers" element={<Whitepapers />} />
       <Route path="/support-documentation" element={<ItemsPage />} />
       <Route path="/our-story" element={<OutStory />} />
       <Route path="/our-mission" element={<AboutUsSubPage />} />
@@ -103,11 +104,12 @@ export const appNavigate = (
     //     state: { data: itemsPageDummyData["Case Studies"] },
     //   });
     //   break;
-    // case "Whitepapers":
-    //  if(navigate != undefined )navigate("/whitepapers", {
-    //     state: { data: itemsPageDummyData["Whitepapers"] },
-    //   });
-    //   break;
+    case "Whitepapers":
+      if (navigate != undefined)
+        navigate("/whitepapers", {
+          state: { data: itemsPageDummyData["Whitepapers"] },
+        });
+      break;
     // case "Support Documentation":
     //  if(navigate != undefined )navigate("/support-documentation", {
     //     state: { data: itemsPageDummyData["Support Documentation"] },

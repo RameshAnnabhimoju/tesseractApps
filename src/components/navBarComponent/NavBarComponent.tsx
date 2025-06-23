@@ -21,6 +21,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ArrowDown from "../../assets/arrow_down.svg";
+import BackArrow from "../../assets/white arrow.png";
 import { appNavigate } from "../../routes/AppRoutes";
 const NavBarComponent = ({
   portalContainerRef,
@@ -165,6 +166,14 @@ const NavBarComponent = ({
   };
   return (
     <nav id="navbar-container">
+      {pathname.split("/")[1] && (
+        <img
+          id="nav-back"
+          src={BackArrow}
+          alt="nav-back"
+          onClick={() => navigate(-1)}
+        />
+      )}
       <div id="navbar-logo" onClick={() => navigate("/")}>
         <img src={logo_small} alt="tesseract logo" />
         TesseractApps
