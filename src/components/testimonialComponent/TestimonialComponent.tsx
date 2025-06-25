@@ -34,8 +34,12 @@ const TestimonialComponent = () => {
                 <div className="testimonial-text">{item.testimonial}</div>
 
                 {item?.testimonialPoints &&
-                  item.testimonialPoints.map((point) => {
-                    return <div className="testimonial-text">{point}</div>;
+                  item.testimonialPoints.map((point, index) => {
+                    return (
+                      <div key={index} className="testimonial-text">
+                        {point}
+                      </div>
+                    );
                   })}
               </div>
 

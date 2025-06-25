@@ -52,7 +52,7 @@ const FaqComponent = () => {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography sx={{ fontSize: "18px", fontWeight: 400 }}>
+                <div id="accordian-text-details">
                   {data.answer}
                   {data.points &&
                     data.points.map((pointsData, pointsindex) => {
@@ -62,7 +62,7 @@ const FaqComponent = () => {
                         </ul>
                       );
                     })}
-                </Typography>
+                </div>
               </AccordionDetails>
             </Accordion>
           );

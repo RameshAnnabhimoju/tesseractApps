@@ -5,7 +5,7 @@ import linkedin from "../../assets/linkedin.png";
 import youtube from "../../assets/youtube.png";
 import flagsImag1 from "../../assets/flagImage1.jpg";
 import flagsImag2 from "../../assets/flagImage2.jpg";
-import { navBarDummyData } from "../../utils/DummyData";
+import { footerProductsData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import { useState } from "react";
@@ -53,7 +53,7 @@ const FooterComponent = () => {
     // console.log(name);
     if (name) appNavigate(name, navigate);
   }
-  const productLinks = navBarDummyData["Product"];
+  const productLinks = footerProductsData;
   return (
     <div id="footer-container">
       <div id="footer-column-1">
@@ -102,6 +102,27 @@ const FooterComponent = () => {
             className="footer-social-icon"
             onClick={() => HandleSocialLinksClick("youtube")}
           ></img>
+        </div>
+      </div>
+      <div id="foooter-column-5">
+        <div id="footer-newsletter-heading">Newsletter</div>
+        <div id="footer-newsletter-text">
+          Get the Latest Insights, Updates, and Tips Straight to Your Inbox.
+        </div>
+        <div id="footer-newsletter-input-container">
+          <input
+            type="text"
+            id="footer-newsletter-input"
+            placeholder="Enter your email"
+            value={newsletterEmail}
+            onChange={(e) => setNewsletterEmail(e.target.value)}
+          />
+          <button
+            id="footer-newsletter-button"
+            onClick={handleNewsletterSubscribe}
+          >
+            SUBSCRIBE
+          </button>
         </div>
       </div>
       <div className="footer-links-texts">
@@ -262,48 +283,60 @@ const FooterComponent = () => {
           </div>
         </div>
         <div
-          id="footer-column-2"
+          id="footer-column-4"
           className="footer-column footer-products-column"
         >
           <div className="footer-heading">Products</div>
-          <div className="footer-products-text-container">
-            {productLinks.map((link, index) => {
-              return (
-                <div
-                  className="footer-text"
-                  key={index}
-                  onClick={() => {
-                    handleProductDataClick(link.title);
-                  }}
-                >
-                  {link.title}
-                </div>
-              );
-            })}
+          <div id="footer-products-text-container-container">
+            <div className="footer-products-text-container">
+              {productLinks[0].map((link, index) => {
+                return (
+                  <div
+                    className="footer-text"
+                    key={index}
+                    onClick={() => {
+                      handleProductDataClick(link);
+                    }}
+                  >
+                    {link}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="footer-products-text-container">
+              {productLinks[1].map((link, index) => {
+                return (
+                  <div
+                    className="footer-text"
+                    key={index}
+                    onClick={() => {
+                      handleProductDataClick(link);
+                    }}
+                  >
+                    {link}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="footer-products-text-container">
+              {productLinks[2].map((link, index) => {
+                return (
+                  <div
+                    className="footer-text"
+                    key={index}
+                    onClick={() => {
+                      handleProductDataClick(link);
+                    }}
+                  >
+                    {link}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-      <div id="foooter-column-5">
-        <div id="footer-newsletter-heading">Newsletter</div>
-        <div id="footer-newsletter-text">
-          Get the Latest Insights, Updates, and Tips Straight to Your Inbox.
-        </div>
-        <div id="footer-newsletter-input-container">
-          <input
-            type="text"
-            id="footer-newsletter-input"
-            placeholder="Enter your email"
-            value={newsletterEmail}
-            onChange={(e) => setNewsletterEmail(e.target.value)}
-          />
-          <button
-            id="footer-newsletter-button"
-            onClick={handleNewsletterSubscribe}
-          >
-            SUBSCRIBE
-          </button>
-        </div>
-      </div>
+
       <div id="footer-bottom">
         <br />
         <br />

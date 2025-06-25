@@ -39,7 +39,13 @@ const Pricing = () => {
   const [showStickyHeader, setShowStickyHeader] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThreshold = 500; // <-- Adjust this value as needed
+      let scrollThreshold = 500; // <-- Adjust this value as needed
+      if (window.screen.width < 1100) {
+        scrollThreshold = 2200;
+      }
+      if (window.screen.width < 500) {
+        scrollThreshold = 4200;
+      }
       if (window.scrollY > scrollThreshold) {
         setShowStickyHeader(true);
       } else {
@@ -54,9 +60,9 @@ const Pricing = () => {
     <div id="pricing-container">
       {showStickyHeader && (
         <div id="pricing-sticky-header">
-          {pricingCardsDummyData.map((data) => {
+          {pricingCardsDummyData.map((data, index) => {
             return (
-              <div>
+              <div key={index + data.title} className="pricing-sticky-card">
                 <div className="pricing-card-title">{data.title}</div>
                 <div className="pricing-card-sub-title">{data.subTitle}</div>
                 <div className={"pricing-card-pricing"}>

@@ -21,7 +21,7 @@ const FeaturesComponent = () => {
       setPerView(1);
     }
   }, []);
-  const [sliderRef, slider] = useKeenSlider(
+  const [sliderFeaturesRef, featuresSlider] = useKeenSlider(
     {
       mode: "snap",
       rubberband: true,
@@ -86,17 +86,17 @@ const FeaturesComponent = () => {
           className="features-button"
           src={leftArrow}
           alt="left arrow"
-          onClick={() => slider.current?.prev()}
+          onClick={() => featuresSlider.current?.prev()}
         />
         <img
           className="features-button"
           src={rightArrow}
           alt="right arrow"
-          onClick={() => slider.current?.next()}
+          onClick={() => featuresSlider.current?.next()}
         />
       </div>
       <div className="features-slider">
-        <div ref={sliderRef} className="keen-slider">
+        <div ref={sliderFeaturesRef} className="keen-slider">
           {featuresDummyData.map((feature) => (
             <div
               key={feature.id}

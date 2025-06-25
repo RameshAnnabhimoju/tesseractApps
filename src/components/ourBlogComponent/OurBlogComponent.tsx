@@ -47,9 +47,10 @@ const OurBlogComponent = () => {
         />
       </div>
       <div ref={sliderRef} className="keen-slider">
-        {ourBlogDummyData.map((data) => {
+        {ourBlogDummyData.map((data, index) => {
           return (
             <div
+              key={index}
               className="keen-slider__slide ourBlog-card"
               onClick={() => {
                 if (data.id == 1) {

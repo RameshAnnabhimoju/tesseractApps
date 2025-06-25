@@ -122,14 +122,14 @@ const NavBarComponent = ({
   };
   const handleNavPopupClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    // const scrollTop = window.scrollY || document.documentElement.scrollTop;
     // const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
 
     // 🎯 Calculate CENTER of the nav link
     const centerX = rect.left + rect.width / 2;
 
     setPopupPosition({
-      top: rect.bottom + scrollTop + 10, // right below nav-link
+      top: 80, // right below nav-link
       left: centerX, // center X position
     });
     setPopupOpen(true);

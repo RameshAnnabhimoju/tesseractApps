@@ -102,6 +102,30 @@ export const ourBlogDummyData = [
     categories: ["App", "Technology"],
   },
 ];
+export const footerProductsData = {
+  0: [
+    "Roster Management",
+    "Timesheet",
+    "Admin Console",
+    "Access Control Panel",
+    "HR Operations",
+  ],
+  1: [
+    "T-sign",
+    "Clock In & Clock Out",
+    "Participant Management",
+    "Incident Management",
+    "Repository",
+  ],
+  2: [
+    "Role based Dashboard",
+    "My Profile",
+    "Forms",
+    "Accounting",
+    "T Learning Hub",
+    "ChaT",
+  ],
+};
 export const navBarDummyData = {
   Product: [
     // { title: "Scheduling", subTitle: " " },

@@ -52,6 +52,9 @@
 .howItWorks-card:hover .howItWorks-card-title-number {
   color: var(--color-primary);
 }
+.howItWorks-hide {
+  display: none;
+}
 #howItWorks-image {
   height: 600px;
   width: 400px;

@@ -145,8 +145,8 @@ const VideoComponent = () => {
           </div>
           <Line
             startX={48}
-            startY={15}
-            length={8}
+            startY={8}
+            length={3}
             angle={290}
             id="line2"
             className="line"

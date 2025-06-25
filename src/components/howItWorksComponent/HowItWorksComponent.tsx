@@ -8,7 +8,7 @@ import { useKeenSlider } from "keen-slider/react";
 const HowItWorksComponent = () => {
   // const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(0);
-  const [perView, setPerView] = useState(window.screen.width <= 425 ? 1 : 3);
+  const [perView, setPerView] = useState(window.screen.width <= 1100 ? 1 : 4);
   useEffect(() => {
     // console.log(window.screen.width);
     if (window.screen.width <= 1100) {
@@ -84,13 +84,23 @@ const HowItWorksComponent = () => {
             })}
           </div>
         )}
-        <div id="howItWorks-image-container">
+        {/* <div id="howItWorks-image-container">
           <img
             src={howItWorksImages[hoveredIndex]}
             alt="How It Works"
             id="howItWorks-image"
           />
-        </div>
+        </div> */}
+        {howItWorksImages.map((image, index) => {
+          return (
+            <div
+              id="howItWorks-image-container"
+              className={hoveredIndex == index ? "" : "howItWorks-hide"}
+            >
+              <img src={image} alt="How It Works" id="howItWorks-image" />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

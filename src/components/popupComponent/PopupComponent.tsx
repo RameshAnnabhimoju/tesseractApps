@@ -43,7 +43,7 @@ const PopupComponent = ({
   if (!isOpen || !containerRef.current) return null;
 
   const popupStyle: React.CSSProperties = {
-    position: "absolute",
+    position: "fixed",
     top: position?.top || 0,
     left: position?.left || 0,
     transform: "translateX(-50%)",
@@ -54,7 +54,7 @@ const PopupComponent = ({
     zIndex: 3000,
   };
   const popupTriangle: React.CSSProperties = {
-    position: "absolute",
+    position: "fixed",
     top: -10, // Position it above the popup
     left: "50%", // Center it horizontally
     transform: "translateX(-50%)", // Center it exactly
