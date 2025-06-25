@@ -44,7 +44,7 @@ const Pricing = () => {
         scrollThreshold = 2200;
       }
       if (window.screen.width < 500) {
-        scrollThreshold = 4200;
+        scrollThreshold = 2600;
       }
       if (window.scrollY > scrollThreshold) {
         setShowStickyHeader(true);
