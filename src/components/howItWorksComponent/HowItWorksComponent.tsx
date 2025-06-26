@@ -36,8 +36,8 @@ const HowItWorksComponent = () => {
     <div id="howItWorks-container">
       <div className="heading heading-howItWorks">HOW IT WORKS</div>
       <div className="subheading subheading-howItWorks">
-        A comprehensive, user-friendly platform designed to streamline every
-        aspect of care and service delivery.
+        From onboarding to compliance — TesseractApps simplifies every step of
+        care delivery and operations.
       </div>
       <div id="howItWorks-content" onMouseLeave={() => setHoveredIndex(0)}>
         {perView > 1 && (
@@ -93,12 +93,15 @@ const HowItWorksComponent = () => {
         </div> */}
         {howItWorksImages.map((image, index) => {
           return (
-            <div
-              id="howItWorks-image-container"
-              className={hoveredIndex == index ? "" : "howItWorks-hide"}
-            >
-              <img src={image} alt="How It Works" id="howItWorks-image" />
-            </div>
+            hoveredIndex == index && (
+              <div
+                id="howItWorks-image-container"
+                // className={hoveredIndex == index ? "" : "howItWorks-hide"}
+                key={image + index}
+              >
+                <img src={image} alt="How It Works" id="howItWorks-image" />
+              </div>
+            )
           );
         })}
       </div>

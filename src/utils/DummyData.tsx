@@ -1322,39 +1322,39 @@ export const featuresDummyData = [
 export const howItWorksDummyData = [
   {
     id: 1,
-    title: "Centralise",
+    title: "Book a Demo",
     description:
-      "Unify all operational workflows—client data, funding, scheduling, and compliance—into one intuitive platform. From progress tracking and outcome reporting to templated invoicing, everything is structured, streamlined, and audit-ready.",
+      "See the platform in action. We'll show you how TesseractApps fits your service type and team needs.",
   },
   {
     id: 2,
-    title: "Automate",
+    title: "Sign In and Get Started",
     description:
-      "Eliminate manual admin with integrated payroll and time tracking. Automatically calculate wages, link timesheets to payroll, and generate compliant payslips—ensuring accurate, on-time payments every cycle",
+      "Once you're set up, log in to your dashboard—on desktop or mobile. Everything you need is ready to go.",
   },
   {
     id: 3,
-    title: "Simplify",
+    title: "Add Your Team and Participants",
     description:
-      "Optimise HR and workforce management from hire to retire. Digitally onboard staff, manage leave and training, conduct performance reviews, and maintain a secure incident register with built-in escalation workflows.",
+      "Easily add staff, link NDIS participants, upload documents, and assign roles—all in one place.",
   },
   {
     id: 4,
-    title: "Comply",
+    title: "Manage Rosters, Services & Notes",
     description:
-      "Stay compliant across industry regulations with built-in safeguards. Use preconfigured forms, risk registers, document version control, and real-time alerts to remain audit-ready and confident.",
+      "Create rosters, log progress notes, track time, and deliver services—your daily tasks, simplified.",
   },
   {
     id: 5,
-    title: "Connect",
+    title: "Claim & Pay with Confidence",
     description:
-      "Enable seamless communication across teams and locations. Send shift updates, mobile alerts, and targeted announcements—all with secure, role-based access and compliant messaging logs",
+      "Generate NDIS claims, run payroll, and send invoices in just a few clicks. No errors. No delays.",
   },
   {
     id: 6,
-    title: "Protect",
+    title: "Stay Compliant & In Control",
     description:
-      "Rely on always-on support and enterprise-grade security. With 24/7 expert assistance, data encryption, access controls, and continuous platform enhancements, your organisation stays protected and future-ready.",
+      "Track compliance, training, budgets, and reports in real time. Stay audit-ready, always.",
   },
 ];
 import howItWorksImage1 from "../assets/Centralise.jpg";
