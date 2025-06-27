@@ -6,7 +6,7 @@
 }
 #about-us-page-container {
   display: flex;
-  margin: 0 10%;
+  margin: 80px 10%;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;

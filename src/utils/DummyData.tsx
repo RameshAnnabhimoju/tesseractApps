@@ -364,7 +364,7 @@ export const pricingDummyData = [
     heading: "Role-based Dashboard",
     data: [
       {
-        title: "User-Specific/Based Dashboards",
+        title: "User Based Dashboards",
         subTitle: "",
         data1: true,
         data2: true,
@@ -514,7 +514,7 @@ export const pricingDummyData = [
         data3: true,
       },
       {
-        title: "Customisable Shifts/Customised Shifts",
+        title: "Customised Shifts",
         subTitle: "",
         data1: true,
         data2: true,
@@ -682,7 +682,7 @@ export const pricingDummyData = [
         data3: true,
       },
       {
-        title: "Clock In & Clock Out/Sign In & Sign Out",
+        title: "Clock In & Clock Out",
         subTitle: "",
         data1: true,
         data2: true,
@@ -2384,6 +2384,16 @@ export const teamsPageData = [
   {
     name: "REVANTH",
     designation: "FOUNDER",
+    image: RevanthImage,
+  },
+  {
+    name: "SUMANTH",
+    designation: "CO FOUNDER",
+    image: RevanthImage,
+  },
+  {
+    name: "SURESH",
+    designation: "CO FOUNDER",
     image: RevanthImage,
   },
   {

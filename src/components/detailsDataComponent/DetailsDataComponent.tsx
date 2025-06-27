@@ -23,7 +23,13 @@ const DetailsDataComponent = ({
 }: detailsDataType) => {
   // console.log(data.images);
   return (
-    <div id="details-data-container">
+    <div
+      id={
+        componentType == 2
+          ? "details-data-container"
+          : "details-data-container-wrap-reverse"
+      }
+    >
       {componentType == 1 && data.images && data.images.length > 1 && (
         <div id="details-data-image-collage">
           <img src={data.images[0]} alt="details image 1" />
@@ -34,7 +40,7 @@ const DetailsDataComponent = ({
         </div>
       )}
       {componentType == 1 && data.images && data.images.length == 1 && (
-        <div id="details-data-image-collage">
+        <div id="details-data-image">
           <img src={data.images[0]} alt="details image 1" />
         </div>
       )}
@@ -68,7 +74,7 @@ const DetailsDataComponent = ({
         </div>
       )}
       {componentType == 2 && data.images && data.images.length == 1 && (
-        <div id="details-data-image-collage">
+        <div id="details-data-image">
           <img src={data.images[0]} alt="details image 1" />
         </div>
       )}

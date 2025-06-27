@@ -5,7 +5,8 @@
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
-  margin: 150px 15%;
+  margin: 0px 15%;
+  margin-bottom: 150px;
 }
 #trusted-clients-header {
   font-size: 20px;
@@ -28,6 +29,7 @@
 }
 #trusted-clients-images-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 100px;
 }

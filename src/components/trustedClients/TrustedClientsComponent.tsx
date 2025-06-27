@@ -19,7 +19,7 @@ const TrustedClientsComponent = () => {
   ];
   return (
     <div id="trusted-clients-container">
-      <div id="trusted-clients-header">
+      <div className="heading">
         Our Most <br /> Trusted Clients
       </div>
       <div id="trusted-clients-images-container">

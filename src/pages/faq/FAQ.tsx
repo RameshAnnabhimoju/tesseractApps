@@ -76,12 +76,20 @@ const FAQ = () => {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                   <Typography
-                                    sx={{ fontSize: "18px", fontWeight: 400 }}
+                                    sx={{
+                                      fontSize: "18px",
+                                      fontWeight: 400,
+                                      textAlign: "left",
+                                    }}
                                   >
                                     {faqdata.answer}
                                   </Typography>
                                   <Typography
-                                    sx={{ fontSize: "18px", fontWeight: 400 }}
+                                    sx={{
+                                      fontSize: "18px",
+                                      fontWeight: 400,
+                                      textAlign: "left",
+                                    }}
                                   >
                                     {faqdata.points &&
                                       faqdata.points.map(
@@ -99,6 +107,7 @@ const FAQ = () => {
                                       fontSize: "18px",
                                       fontWeight: 400,
                                       marginTop: "10px",
+                                      textAlign: "left",
                                     }}
                                   >
                                     {faqdata.conclusion}
@@ -138,7 +147,13 @@ const FAQ = () => {
                         </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Typography sx={{ fontSize: "18px", fontWeight: 400 }}>
+                        <Typography
+                          sx={{
+                            fontSize: "18px",
+                            fontWeight: 400,
+                            textAlign: "left",
+                          }}
+                        >
                           {faqdata.answer}
                         </Typography>
                       </AccordionDetails>

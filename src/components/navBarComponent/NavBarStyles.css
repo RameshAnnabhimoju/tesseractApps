@@ -184,3 +184,9 @@
     margin: 18px 15px;
   }
 }
+@media (max-width: 500px) {
+  #nav-back {
+    top: 25px;
+    left: 3px;
+  }
+}

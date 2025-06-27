@@ -10,7 +10,7 @@ import SubPage from "../pages/SubPage/SubPage";
 import ItemsPage from "../pages/ItemsPage/ItemsPage";
 import FAQ from "../pages/faq/FAQ";
 import AboutUsSubPage from "../pages/AboutUsSubPages/AboutUsSubPage";
-import Teams from "../pages/teams/Teams";
+// import Teams from "../pages/teams/Teams";
 import Careers from "../pages/careers/Careers";
 import ContactInformation from "../pages/contactInformation/ContactInformation";
 import Blogpost from "../pages/blogPost/Blogpost";
@@ -53,7 +53,7 @@ const AppRoutes = () => {
       <Route path="/our-mission" element={<AboutUsSubPage />} />
       <Route path="/our-vision" element={<AboutUsSubPage />} />
       <Route path="/faq" element={<FAQ />} />
-      <Route path="/team" element={<Teams />} />
+      <Route path="/team" element={<ComingSoon />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact-information" element={<ContactInformation />} />
       <Route path="/blogPost" element={<Blogpost />} />
@@ -148,6 +148,9 @@ export const appNavigate = (
       break;
     case "Book a Demo":
       if (navigate != undefined) navigate("/requestDemo");
+      break;
+    case "Features":
+      if (navigate != undefined) navigate("/#features-container");
       break;
     case "Blog":
       if (navigate != undefined)

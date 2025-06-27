@@ -4,7 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { featuresDummyData } from "../../utils/DummyData";
 import { appNavigate } from "../../routes/AppRoutes";
 const FeaturesComponent = () => {
@@ -75,6 +75,17 @@ const FeaturesComponent = () => {
   const clickHandler = (name: string) => {
     appNavigate(name, navigate);
   };
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace("#", "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "end" });
+      }
+    }
+  }, [location]);
   return (
     <div id="features-container">
       <div className="heading">FEATURES</div>

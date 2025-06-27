@@ -1,5 +1,5 @@
 #pricing-container {
-  padding: 80px 0;
+  padding-bottom: 80px;
 }
 #pricing-cards-container {
   display: flex;
@@ -277,7 +277,6 @@
     padding: 0;
     gap: 0px;
     padding-left: 0px;
-    padding-top: 80px;
     max-height: 200px;
   }
   .pricing-sticky-card {

@@ -19,9 +19,7 @@ const Blog = () => {
 
   return (
     <div id="blog-container">
-      <div className="heading" id="blog-heading">
-        Blog
-      </div>
+      <div className="heading">BLOG</div>
       <div className="subheading" id="blog-sub-heading">
         Insights, industry updates, and practical tips.
       </div>
@@ -67,9 +65,9 @@ const Blog = () => {
         >
           App
         </div>
-        <div id="add-blog-button" onClick={() => navigate("/addBlog")}>
+        {/* <div id="add-blog-button" onClick={() => navigate("/addBlog")}>
           New Blog
-        </div>
+        </div> */}
       </div>
       <div id="blog-page-card-container">
         {blogsData.map((blog, index) => (

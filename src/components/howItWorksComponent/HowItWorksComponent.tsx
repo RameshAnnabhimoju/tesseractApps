@@ -34,7 +34,7 @@ const HowItWorksComponent = () => {
 
   return (
     <div id="howItWorks-container">
-      <div className="heading heading-howItWorks">HOW IT WORKS</div>
+      <div className="heading ">HOW IT WORKS</div>
       <div className="subheading subheading-howItWorks">
         From onboarding to compliance — TesseractApps simplifies every step of
         care delivery and operations.

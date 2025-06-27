@@ -78,6 +78,7 @@ const Pricing = () => {
           })}
         </div>
       )}
+      <div className="heading">PRICING</div>
       <div className="subheading pricing-subheading">
         Compare Our Plans And Find Yours
       </div>

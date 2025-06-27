@@ -66,7 +66,7 @@
     /* overflow-x: hidden; */
   }
   .subheading-howItWorks {
-    max-width: 380px;
+    max-width: 680px;
     min-width: 300px;
   }
   .howItWorks-card-description {
@@ -89,5 +89,18 @@
   }
   #howItWorks-image {
     max-width: 380px;
+  }
+}
+@media (max-width: 500px) {
+  .howItWorks-card {
+    padding: 0 5px;
+  }
+  .subheading-howItWorks {
+    max-width: 380px;
+    min-width: 300px;
+  }
+  .howItWorks-card-description {
+    min-width: 370px;
+    max-width: 370px;
   }
 }

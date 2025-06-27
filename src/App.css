@@ -9,11 +9,13 @@
   --color-text-dark-gray: #343434;
   --color-background-light-gray: #eaeaea;
   .heading {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: var(--color-primary);
     text-align: center;
-    margin: 10px auto;
+    margin: 50px auto;
+    text-transform: uppercase;
+    /* margin-top: 50px; */
   }
   .subheading {
     font-size: 32px;

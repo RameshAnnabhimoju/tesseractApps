@@ -11,9 +11,7 @@ const Whitepapers = () => {
   };
   return (
     <div id="whitepapers-page-container">
-      <div id="whitepapers-heading" className="heading">
-        {data?.heading}
-      </div>
+      <div className="heading">{data?.heading}</div>
       <div id="whitepapers-subheading" className="subheading">
         {data?.subHeading}
       </div>

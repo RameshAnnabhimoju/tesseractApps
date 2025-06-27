@@ -147,7 +147,7 @@ const FooterComponent = () => {
           <div
             className="footer-text"
             onClick={() => {
-              handleProductDataClick("Contact Us");
+              handleProductDataClick("Contact Information");
             }}
           >
             Contact Us
@@ -171,14 +171,7 @@ const FooterComponent = () => {
           >
             Pricing
           </div>
-          <div
-            className="footer-text"
-            onClick={() => {
-              handleProductDataClick("Resources");
-            }}
-          >
-            Resources
-          </div>
+
           <div
             className="footer-text"
             onClick={() => {
@@ -186,14 +179,6 @@ const FooterComponent = () => {
             }}
           >
             Blog
-          </div>
-          <div
-            className="footer-text"
-            onClick={() => {
-              handleProductDataClick("Contact");
-            }}
-          >
-            Contact
           </div>
         </div>
         <div id="footer-column-4" className="footer-column">

@@ -209,7 +209,7 @@ const NavBarComponent = ({
             <div
               className="nav-menu-header-request"
               id="navbar-requestDemo"
-              onClick={() => navigate("/requestDemo")}
+              onClick={() => popupLinkClickHandler("Book a Demo")}
             >
               Book a Demo{" "}
               <img
@@ -495,6 +495,7 @@ const NavBarComponent = ({
               src={profile}
               alt="navbar-profile-icon"
               id="navbar-profile-icon"
+              onClick={loginHandler}
             />
             <img
               src={australia}
