@@ -1,6 +1,6 @@
 import "./PricingStyles.css";
 import { pricingCardsDummyData, pricingDummyData } from "../../utils/DummyData";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import tick from "../../assets/tick.svg";
 import tick_white from "../../assets/tick_white.svg";
 import call from "../../assets/call.svg";
@@ -13,6 +13,18 @@ const Pricing = () => {
     navigate("/requestdemo");
   };
   const [userCount, setUserCount] = useState(0);
+  const [readMore, setReadMore] = useState([
+    { tier: false },
+    { tier: false },
+    { tier: false },
+  ]);
+  const handleReadMore = (index: number) => {
+    setReadMore((prev) =>
+      prev.map((each, rIndex) =>
+        rIndex === index ? { ...each, tier: !readMore[index].tier } : each
+      )
+    );
+  };
   function handleFooterActions(name: string) {
     if (name === "phone") {
       window.location.href = "tel:1300252808";
@@ -36,25 +48,33 @@ const Pricing = () => {
       }, 1000);
     }
   }
+  const targetRef = useRef(null);
   const [showStickyHeader, setShowStickyHeader] = useState(false);
+
   useEffect(() => {
-    const handleScroll = () => {
-      let scrollThreshold = 500; // <-- Adjust this value as needed
-      if (window.screen.width < 1100) {
-        scrollThreshold = 2200;
+    const isMobile = window.innerWidth < 500;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log("showStickyHeader ", entry.isIntersecting);
+        setShowStickyHeader(entry.isIntersecting);
+      },
+      {
+        root: null, // viewport
+        threshold: isMobile ? 0 : 0.1, // triggers as soon as any part is visible
       }
-      if (window.screen.width < 500) {
-        scrollThreshold = 2600;
-      }
-      if (window.scrollY > scrollThreshold) {
-        setShowStickyHeader(true);
-      } else {
-        setShowStickyHeader(false);
+    );
+
+    const currentTarget = targetRef.current;
+
+    if (currentTarget) {
+      observer.observe(currentTarget);
+    }
+
+    return () => {
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
     <div id="pricing-container">
@@ -186,40 +206,81 @@ const Pricing = () => {
                   {data.title == "Enterprise" ? "Contact Us" : "Try for free"}
                 </button>
               )}
-              {data.features.map((feature, fIndex) => {
-                return (
-                  <div key={fIndex} className="pricing-tick-data-container">
-                    <div className="pricing-tick-icon-container">
-                      <img
-                        src={
-                          userCount >= data.userLimitRange[0] &&
+              <div
+                className={
+                  "features-container " +
+                  (readMore[index].tier ? "expanded" : "collapsed")
+                }
+              >
+                {data.features.map((feature, fIndex) => {
+                  return readMore[index].tier ? (
+                    <div key={fIndex} className="pricing-tick-data-container">
+                      <div className="pricing-tick-icon-container">
+                        <img
+                          src={
+                            userCount >= data.userLimitRange[0] &&
+                            userCount <= data.userLimitRange[1]
+                              ? tick_white
+                              : tick
+                          }
+                          alt="pricing-tick-icon"
+                          className="pricing-tick-icon"
+                        />
+                      </div>
+                      <div
+                        className={
+                          "pricing-feature-data" +
+                          (userCount >= data.userLimitRange[0] &&
                           userCount <= data.userLimitRange[1]
-                            ? tick_white
-                            : tick
+                            ? "-selected"
+                            : "")
                         }
-                        alt="pricing-tick-icon"
-                        className="pricing-tick-icon"
-                      />
+                      >
+                        {feature}
+                      </div>
                     </div>
-                    <div
-                      className={
-                        "pricing-feature-data" +
-                        (userCount >= data.userLimitRange[0] &&
-                        userCount <= data.userLimitRange[1]
-                          ? "-selected"
-                          : "")
-                      }
-                    >
-                      {feature}
-                    </div>
-                  </div>
-                );
-              })}
+                  ) : (
+                    fIndex < 6 && (
+                      <div key={fIndex} className="pricing-tick-data-container">
+                        <div className="pricing-tick-icon-container">
+                          <img
+                            src={
+                              userCount >= data.userLimitRange[0] &&
+                              userCount <= data.userLimitRange[1]
+                                ? tick_white
+                                : tick
+                            }
+                            alt="pricing-tick-icon"
+                            className="pricing-tick-icon"
+                          />
+                        </div>
+                        <div
+                          className={
+                            "pricing-feature-data" +
+                            (userCount >= data.userLimitRange[0] &&
+                            userCount <= data.userLimitRange[1]
+                              ? "-selected"
+                              : "")
+                          }
+                        >
+                          {feature}
+                        </div>
+                      </div>
+                    )
+                  );
+                })}
+              </div>
+              <div
+                className="readMoreButton"
+                onClick={() => handleReadMore(index)}
+              >
+                {readMore[index].tier ? "Read Less" : "Read More"}
+              </div>
             </div>
           );
         })}
       </div>
-      <div id="pricing-data-container">
+      <div ref={targetRef} id="pricing-data-container">
         {pricingDummyData.map((data) => (
           <div className="pricing-data" key={data.heading}>
             {/* <div className="pricing-divider-line" /> */}

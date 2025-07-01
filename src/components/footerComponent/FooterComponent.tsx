@@ -8,14 +8,23 @@ import flagsImag2 from "../../assets/flagImage2.jpg";
 import { footerProductsData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const FooterComponent = () => {
   const navigate = useNavigate();
   const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [toggleNewsLetter, setToggleNewsLetter] = useState(false);
+  useEffect(() => {
+    const width = window.screen.width;
+    if (width > 1370) {
+      setToggleNewsLetter(true);
+    } else {
+      setToggleNewsLetter(false);
+    }
+  }, []);
   const handleNewsletterSubscribe = () => {
     if (newsletterEmail) {
       // Here you can add the logic to handle the newsletter subscription
-      console.log("Subscribed with email:", newsletterEmail);
+      // console.log("Subscribed with email:", newsletterEmail);
       setNewsletterEmail(""); // Clear the input after subscribing
       alert("Thank you for subscribing to our newsletter!");
     } else {
@@ -104,27 +113,29 @@ const FooterComponent = () => {
           ></img>
         </div>
       </div>
-      <div id="foooter-column-5">
-        <div id="footer-newsletter-heading">Newsletter</div>
-        <div id="footer-newsletter-text">
-          Get the Latest Insights, Updates, and Tips Straight to Your Inbox.
+      {!toggleNewsLetter && (
+        <div id="foooter-column-5">
+          <div id="footer-newsletter-heading">Newsletter</div>
+          <div id="footer-newsletter-text">
+            Get the Latest Insights, Updates, and Tips Straight to Your Inbox.
+          </div>
+          <div id="footer-newsletter-input-container">
+            <input
+              type="text"
+              id="footer-newsletter-input"
+              placeholder="Enter your email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+            />
+            <button
+              id="footer-newsletter-button"
+              onClick={handleNewsletterSubscribe}
+            >
+              SUBSCRIBE
+            </button>
+          </div>
         </div>
-        <div id="footer-newsletter-input-container">
-          <input
-            type="text"
-            id="footer-newsletter-input"
-            placeholder="Enter your email"
-            value={newsletterEmail}
-            onChange={(e) => setNewsletterEmail(e.target.value)}
-          />
-          <button
-            id="footer-newsletter-button"
-            onClick={handleNewsletterSubscribe}
-          >
-            SUBSCRIBE
-          </button>
-        </div>
-      </div>
+      )}
       <div className="footer-links-texts">
         <div id="footer-column-3" className="footer-column">
           <div className="footer-heading">Get Started</div>
@@ -321,7 +332,29 @@ const FooterComponent = () => {
           </div>
         </div>
       </div>
-
+      {toggleNewsLetter && (
+        <div id="foooter-column-5">
+          <div id="footer-newsletter-heading">Newsletter</div>
+          <div id="footer-newsletter-text">
+            Get the Latest Insights, Updates, and Tips Straight to Your Inbox.
+          </div>
+          <div id="footer-newsletter-input-container">
+            <input
+              type="text"
+              id="footer-newsletter-input"
+              placeholder="Enter your email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+            />
+            <button
+              id="footer-newsletter-button"
+              onClick={handleNewsletterSubscribe}
+            >
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+      )}
       <div id="footer-bottom">
         <br />
         <br />

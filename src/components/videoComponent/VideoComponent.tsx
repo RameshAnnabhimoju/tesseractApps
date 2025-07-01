@@ -21,11 +21,19 @@ import { appNavigate } from "../../routes/AppRoutes";
 import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
+// const lineDataInitialvalues = {
+//   line1: { x: 0, y: 0, length: 0, angle: 0 },
+//   line2: { x: 0, y: 0, length: 0, angle: 0 },
+//   line3: { x: 0, y: 0, length: 0, angle: 0 },
+//   line4: { x: 0, y: 0, length: 0, angle: 0 },
+//   line5: { x: 0, y: 0, length: 0, angle: 0 },
+//   line6: { x: 0, y: 0, length: 0, angle: 0 },
+// };
 const VideoComponent = () => {
   const navigate = useNavigate();
   // const videoRef = useRef<HTMLVideoElement | null>(null);
   const [showOverlay, setShowOverlay] = useState(false);
-
+  // const [lineData, setLineData] = useState(lineDataInitialvalues);
   useEffect(() => {
     setShowOverlay(true);
     // const videoEl = videoRef.current;
