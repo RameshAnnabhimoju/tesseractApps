@@ -8,6 +8,7 @@ interface byroleTypes {
       image: string;
       title: string;
       description: string;
+      page: string;
     };
     "details-1": {
       images: string[];
