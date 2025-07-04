@@ -21,8 +21,10 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ArrowDown from "../../assets/arrow_down.svg";
-import BackArrow from "../../assets/white arrow.png";
+// import BackArrow from "../../assets/white arrow.png";
 import { appNavigate } from "../../routes/AppRoutes";
+import ArrowLeft from "../arrows/ArrowLeft";
+import ArrowUp from "../arrows/ArrowUp";
 const NavBarComponent = ({
   portalContainerRef,
 }: {
@@ -164,15 +166,42 @@ const NavBarComponent = ({
   const loginHandler = () => {
     window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
   };
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY > 1000);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <nav id="navbar-container">
       {pathname.split("/")[1] && (
-        <img
+        // <img
+        //   id="nav-back"
+        //   src={BackArrow}
+        //   alt="nav-back"
+        //   onClick={() => navigate(-1)}
+        // />
+
+        <div
+          className="arrow-container"
           id="nav-back"
-          src={BackArrow}
-          alt="nav-back"
           onClick={() => navigate(-1)}
-        />
+        >
+          <ArrowLeft />
+        </div>
+      )}
+      {showScroll && (
+        <div
+          className="arrow-container"
+          id="scroll-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <ArrowUp />
+        </div>
       )}
       <div id="navbar-logo" onClick={() => navigate("/")}>
         <img src={logo_small} alt="tesseract logo" />

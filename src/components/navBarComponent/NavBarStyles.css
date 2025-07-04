@@ -11,10 +11,6 @@
   min-width: max-content;
 }
 #nav-back {
-  transform: rotate(180deg);
-  cursor: pointer;
-  border: 1px solid var(--color-primary);
-  border-radius: 50%;
   position: fixed;
   top: 120px;
 }
@@ -139,6 +135,11 @@
 .nav-link-active {
   color: var(--color-primary);
   font-weight: 600;
+}
+#scroll-to-top {
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
 }
 @media (max-width: 1300px) {
   #navbar-links,

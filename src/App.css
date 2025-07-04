@@ -8,6 +8,7 @@
   --color-text-gray-light: #616161b4;
   --color-text-dark-gray: #343434;
   --color-background-light-gray: #eaeaea;
+  --color-background-light-gray2: rgb(236, 236, 236);
   .heading {
     font-size: 22px;
     font-weight: 600;
@@ -39,6 +40,20 @@
   }
   .vertical-fade {
     border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .arrow-container {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 6px;
+    background-color: rgb(236, 236, 236);
+    max-height: 42px;
+    max-width: 42px;
+  }
+  .arrow-container:hover {
+    background-color: var(--color-secondary);
+  }
+  .arrow-container:hover .arrow {
+    fill: white;
   }
 }
 

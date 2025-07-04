@@ -119,10 +119,8 @@ const RequestADemo = () => {
   }
   return (
     <div id="request-demo-container">
-      <div className="subheading" id="request-demo-heading">
-        Book a Demo
-      </div>
-      <div className="text" id="request-demo-text">
+      <div className="heading">Book a Demo</div>
+      <div className="subheading" id="request-demo-text">
         Please complete the form below to get started. Our team will be in touch
         within one business day.
       </div>

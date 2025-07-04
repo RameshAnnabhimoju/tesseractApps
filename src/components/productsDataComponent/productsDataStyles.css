@@ -34,12 +34,12 @@
 .product-data-card-image {
   max-width: 325px;
 }
+.product-data-card-title {
+  min-width: 300px;
+}
 @media (max-width: 450px) {
   .product-data-card {
     max-width: 380px;
     padding: 20px 0;
-  }
-  .product-data-card-title {
-    min-width: 300px;
   }
 }

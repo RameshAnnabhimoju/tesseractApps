@@ -6,6 +6,7 @@ import AboutSelectedToolComponent from "../../components/aboutSelectedToolCompon
 import FaqProductComponent from "../../components/faqProductComponent/faqProductComponent";
 interface productDetailsTypes {
   data: {
+    page: string;
     hero: {
       title: string;
       description: string;
@@ -44,7 +45,9 @@ const ProductDetails = () => {
   const { data }: productDetailsTypes = location.state || {};
   return (
     <div id="product-details-container">
-      {data.hero && <DetailsHeroComponent data={data.hero} />}
+      {data.hero && (
+        <DetailsHeroComponent data={{ ...data.hero, page: data.page }} />
+      )}
       {data.section2 && <AboutSelectedToolComponent data={data.section2} />}
       {data.section3 &&
         data.section3.map((item, index) => {

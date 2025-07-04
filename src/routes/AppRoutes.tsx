@@ -29,6 +29,7 @@ import {
 } from "../utils/DummyData";
 import OutStory from "../pages/ourStory/OutStory";
 import Whitepapers from "../pages/whitepapers/Whitepapers";
+import SalesPage from "../pages/salesPage/SalesPage";
 
 const AppRoutes = () => {
   return (
@@ -38,6 +39,7 @@ const AppRoutes = () => {
       <Route path="/article" element={<Article />} />
       <Route path="/details" element={<Details />} />
       <Route path="/requestDemo" element={<RequestADemo />} />
+      <Route path="/salesPage" element={<SalesPage />} />
       <Route path="/pricing" element={<Pricing />} />
       <Route path="/addBlog" element={<AddBlog />} />
       <Route path="/product" element={<SubPage />} />

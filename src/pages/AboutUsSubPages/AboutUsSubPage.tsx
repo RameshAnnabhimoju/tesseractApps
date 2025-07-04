@@ -6,7 +6,7 @@ const AboutUsSubPage = () => {
   const { data } = location.state;
   return (
     <div id="about-us-page-container">
-      {data.image && (
+      {data.image && data.title != "Our Vision" && (
         <img src={data.image} alt="image-alt" id="about-us-page-image" />
       )}
       <div id="about-us-page-data-container">
@@ -25,6 +25,9 @@ const AboutUsSubPage = () => {
           </div>
         )}
       </div>
+      {data.image && data.title == "Our Vision" && (
+        <img src={data.image} alt="image-alt" id="about-us-page-image" />
+      )}
     </div>
   );
 };

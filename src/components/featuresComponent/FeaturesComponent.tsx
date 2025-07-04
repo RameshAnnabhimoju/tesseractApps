@@ -1,12 +1,12 @@
 import "./FeaturesStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import leftArrow from "../../assets/Blue arrow.png";
-import rightArrow from "../../assets/white arrow.png";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { featuresDummyData } from "../../utils/DummyData";
 import { appNavigate } from "../../routes/AppRoutes";
+import ArrowLeft from "../arrows/ArrowLeft";
+import ArrowRight from "../arrows/ArrowRight";
 const FeaturesComponent = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -93,18 +93,20 @@ const FeaturesComponent = () => {
         Why Tesseract Apps is the trusted choice for modern organisations?
       </div>
       <div className="features-buttons">
-        <img
-          className="features-button"
-          src={leftArrow}
-          alt="left arrow"
+        <div
+          className="arrow-container"
+          id="features-prev"
           onClick={() => featuresSlider.current?.prev()}
-        />
-        <img
-          className="features-button"
-          src={rightArrow}
-          alt="right arrow"
+        >
+          <ArrowLeft />
+        </div>
+        <div
+          className="arrow-container"
+          id="features-next"
           onClick={() => featuresSlider.current?.next()}
-        />
+        >
+          <ArrowRight />
+        </div>
       </div>
       <div className="features-slider">
         <div ref={sliderFeaturesRef} className="keen-slider">

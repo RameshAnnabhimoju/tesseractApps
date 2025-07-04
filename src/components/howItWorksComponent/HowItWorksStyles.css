@@ -55,7 +55,7 @@
 .howItWorks-hide {
   display: none;
 }
-#howItWorks-image {
+.howItWorks-image {
   height: 600px;
   width: 400px;
   object-fit: cover;

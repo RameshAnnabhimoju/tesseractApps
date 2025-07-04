@@ -61,6 +61,7 @@ const Pricing = () => {
       {
         root: null, // viewport
         threshold: isMobile ? 0 : 0.1, // triggers as soon as any part is visible
+        rootMargin: isMobile ? "0px 0px 0px 0px" : "400px 0px 0px 0px",
       }
     );
 
@@ -202,6 +203,7 @@ const Pricing = () => {
                       ? "pricing-button-selected"
                       : "pricing-button-primary"
                   }
+                  onClick={() => navigate("/salesPage")}
                 >
                   {data.title == "Enterprise" ? "Contact Us" : "Try for free"}
                 </button>

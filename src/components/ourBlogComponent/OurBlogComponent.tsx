@@ -4,10 +4,12 @@ import { useKeenSlider } from "keen-slider/react";
 
 // import image3 from "../../assets/image2.png";
 // import image4 from "../../assets/image3.png";
-import leftArrow from "../../assets/Blue arrow.png";
+// import leftArrow from "../../assets/Blue arrow.png";
 import rightArrow from "../../assets/white arrow.png";
 import { ourBlogDummyData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
+import ArrowLeft from "../arrows/ArrowLeft";
+import ArrowRight from "../arrows/ArrowRight";
 
 const OurBlogComponent = () => {
   const [sliderRef, slider] = useKeenSlider(
@@ -33,18 +35,18 @@ const OurBlogComponent = () => {
       <div className="heading">OUR BLOG</div>
       <div className="subheading">Most Recent Updates and Research</div>
       <div className="ourBlog-buttons">
-        <img
-          className="ourBlog-button"
-          src={leftArrow}
-          alt="left arrow"
+        <div
+          className="arrow-container ourBlog-button"
           onClick={() => slider.current?.prev()}
-        />
-        <img
-          className="ourBlog-button"
-          src={rightArrow}
-          alt="right arrow"
+        >
+          <ArrowLeft />
+        </div>
+        <div
+          className="arrow-container ourBlog-button"
           onClick={() => slider.current?.next()}
-        />
+        >
+          <ArrowRight />
+        </div>
       </div>
       <div ref={sliderRef} className="keen-slider">
         {ourBlogDummyData.map((data, index) => {

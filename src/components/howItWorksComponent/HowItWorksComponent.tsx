@@ -93,15 +93,15 @@ const HowItWorksComponent = () => {
         </div> */}
         {howItWorksImages.map((image, index) => {
           return (
-            hoveredIndex == index && (
-              <div
-                id="howItWorks-image-container"
-                // className={hoveredIndex == index ? "" : "howItWorks-hide"}
-                key={image + index}
-              >
-                <img src={image} alt="How It Works" id="howItWorks-image" />
-              </div>
-            )
+            <img
+              key={image + index}
+              src={image}
+              alt="How It Works"
+              className={
+                "howItWorks-image" +
+                (hoveredIndex == index ? "" : " howItWorks-hide")
+              }
+            />
           );
         })}
       </div>

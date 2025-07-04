@@ -8,6 +8,9 @@ interface aboutSelectedToolType {
       dot: { outer: string; middle: string; inner: string };
       title: string;
       description: string;
+      conclusion?: string;
+      descriptionPoints?: string[];
+      pointsData?: string[];
     }[];
   };
 }
@@ -41,6 +44,25 @@ const AboutSelectedToolComponent = ({
                 <div className="selected-tool-title">{subdata.title}</div>
                 <div className="selected-tool-description">
                   {subdata.description}
+                </div>
+                {subdata.descriptionPoints &&
+                  subdata.descriptionPoints.map((point, index) => {
+                    return (
+                      <div className="selected-tool-description" key={index}>
+                        {point}
+                      </div>
+                    );
+                  })}
+                {subdata.pointsData &&
+                  subdata.pointsData.map((point, index) => {
+                    return (
+                      <div className="selected-tool-description" key={index}>
+                        &#10687;{point}
+                      </div>
+                    );
+                  })}
+                <div className="selected-tool-description">
+                  {subdata.conclusion}
                 </div>
               </div>
             );
