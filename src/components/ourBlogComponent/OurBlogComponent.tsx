@@ -10,14 +10,23 @@ import { ourBlogDummyData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowRight from "../arrows/ArrowRight";
+import { useEffect, useState } from "react";
 
 const OurBlogComponent = () => {
+  const [perView, setPerView] = useState(3);
+  useEffect(() => {
+    if (window.innerWidth <= 1100) {
+      setPerView(3);
+    }
+    if (window.innerWidth <= 425) {
+      setPerView(1);
+    }
+  }, []);
   const [sliderRef, slider] = useKeenSlider(
     {
       mode: "free-snap",
-      rubberband: true,
       slides: {
-        perView: "auto",
+        perView: perView,
         spacing: 50,
       },
       slideChanged(slide) {
@@ -57,8 +66,10 @@ const OurBlogComponent = () => {
               onClick={() => {
                 if (data.id == 1) {
                   navigate("/blogpost");
-                } else {
+                } else if (data.id == 2) {
                   navigate("/blogpost2");
+                } else {
+                  navigate("/blogpost3");
                 }
               }}
             >

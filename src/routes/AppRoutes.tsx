@@ -30,6 +30,7 @@ import {
 import OutStory from "../pages/ourStory/OutStory";
 import Whitepapers from "../pages/whitepapers/Whitepapers";
 import SalesPage from "../pages/salesPage/SalesPage";
+import ManualRosteringBlog from "../pages/blogPost/ManualRosteringBlog";
 
 const AppRoutes = () => {
   return (
@@ -52,14 +53,14 @@ const AppRoutes = () => {
       <Route path="/whitepapers" element={<Whitepapers />} />
       <Route path="/support-documentation" element={<ItemsPage />} />
       <Route path="/our-story" element={<OutStory />} />
-      <Route path="/our-mission" element={<AboutUsSubPage />} />
-      <Route path="/our-vision" element={<AboutUsSubPage />} />
+      <Route path="/our-mission-and-vision" element={<AboutUsSubPage />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/team" element={<ComingSoon />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact-information" element={<ContactInformation />} />
       <Route path="/blogPost" element={<Blogpost />} />
       <Route path="/blogPost2" element={<FutureProofingBlog />} />
+      <Route path="/blogPost3" element={<ManualRosteringBlog />} />
 
       <Route path="/administrator" element={<ByRole />} />
       <Route path="/roster-manager" element={<ByRole />} />
@@ -202,16 +203,10 @@ export const appNavigate = (
           state: { data: aboutUsPageData["Our Story"] },
         });
       break;
-    case "Our Mission":
+    case "Our Mission & Vision":
       if (navigate != undefined)
-        navigate("/our-mission", {
-          state: { data: aboutUsPageData["Our mission"] },
-        });
-      break;
-    case "Our Vision":
-      if (navigate != undefined)
-        navigate("/our-vision", {
-          state: { data: aboutUsPageData["Our Vision"] },
+        navigate("/our-mission-and-vision", {
+          state: { data: aboutUsPageData["Our Mission & Vision"] },
         });
       break;
     case "Careers":

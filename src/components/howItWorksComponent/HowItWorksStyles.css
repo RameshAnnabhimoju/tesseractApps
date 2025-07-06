@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: var(--color-background-gradient);
   padding: 0 5%;
 }
 .subheading-howItWorks {
@@ -13,20 +12,12 @@
   margin: 30px 0 !important;
 }
 #howItWorks-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
   margin: 100px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
 }
 #howItWorks-content-text {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  max-width: 930px; /* 3 x 200px + gaps */
-  gap: 30px;
-}
-.howItWorks-card {
-  /* cursor: pointer; */
 }
 .howItWorks-card-title-number {
   font-size: 80px;
@@ -52,55 +43,46 @@
 .howItWorks-card:hover .howItWorks-card-title-number {
   color: var(--color-primary);
 }
-.howItWorks-hide {
-  display: none;
+.howItWorks-card {
+  display: flex;
+  max-width: 500px;
+  column-gap: 20px;
 }
-.howItWorks-image {
-  height: 600px;
-  width: 400px;
-  object-fit: cover;
+.howItWorks-card-image {
+  width: 180px;
+  height: 180px;
+  align-self: flex-end;
 }
-@media (max-width: 1100px) {
-  #howItWorks-container {
-    /* display: none; */
-    /* overflow-x: hidden; */
+
+@media (max-width: 1480px) {
+  #howItWorks-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 1000px) {
+  #howItWorks-content {
+    grid-template-columns: 1fr;
+  }
+  .howItWorks-dividerLine {
+    display: none;
   }
   .subheading-howItWorks {
-    max-width: 680px;
-    min-width: 300px;
+    max-width: 90%;
   }
-  .howItWorks-card-description {
-    min-width: 400px;
-    max-width: 400px;
-  }
-
-  #howItWorks-content {
-    margin: 0;
+}
+@media (max-width: 480px) {
+  .howItWorks-card {
+    display: flex;
     flex-wrap: wrap;
   }
-  #howItWorks-content-text-carousel {
-    min-width: 300px;
-    max-width: 380px;
-    padding: 30px 0%;
-  }
-  .howItWorks-card-title-number,
-  .howItWorks-card-title {
-    color: var(--color-primary);
-  }
-  #howItWorks-image {
-    max-width: 380px;
-  }
-}
-@media (max-width: 500px) {
-  .howItWorks-card {
-    padding: 0 5px;
+  .howItWorks-card-image {
+    width: 90%;
+    object-fit: contain;
   }
   .subheading-howItWorks {
-    max-width: 380px;
-    min-width: 300px;
+    max-width: 100%;
   }
-  .howItWorks-card-description {
-    min-width: 370px;
-    max-width: 370px;
+  .howItWorks-card-title-number {
+    text-align: center;
   }
 }

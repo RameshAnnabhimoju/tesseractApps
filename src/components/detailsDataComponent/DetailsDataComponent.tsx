@@ -48,12 +48,15 @@ const DetailsDataComponent = ({
       <div id="details-data-text">
         <div id="details-data-text-title"> {data.title} </div>
         <div id="details-data-text-description">{data.description}</div>
-        {data.points &&
-          data.points.map((point, index) => (
-            <div id="details-data-text-points" key={index}>
-              &#10687; {point}
-            </div>
-          ))}
+        {data.points && (
+          <ul>
+            {data.points.map((point, index) => (
+              <li id="details-data-text-points" key={index}>
+                {point}
+              </li>
+            ))}
+          </ul>
+        )}
         {data.discriptionsPoints &&
           data.discriptionsPoints.map((point, index) => (
             <div id="details-data-text-description" key={index}>

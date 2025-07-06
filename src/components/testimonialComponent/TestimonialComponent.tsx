@@ -10,8 +10,8 @@ import star from "../../assets/star.png";
 const TestimonialComponent = () => {
   return (
     <div id="testimonial-container">
-      <div className="heading">TESTIMONIALS</div>
-      <div className="subheading">
+      <div className="heading testimonials-heading">TESTIMONIALS</div>
+      <div className="subheading testimonials-subheading">
         Real Stories. Real Results. Trusted by Leading NDIS Providers.
       </div>
       <div id="testimonial-carousel-container">

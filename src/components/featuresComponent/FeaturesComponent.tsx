@@ -14,10 +14,10 @@ const FeaturesComponent = () => {
   console.log(currentSlide, loaded);
   const [perView, setPerView] = useState(5);
   useEffect(() => {
-    if (window.screen.width <= 1100) {
+    if (window.innerWidth <= 1100) {
       setPerView(3);
     }
-    if (window.screen.width <= 425) {
+    if (window.innerWidth <= 425) {
       setPerView(1);
     }
   }, []);
@@ -41,37 +41,37 @@ const FeaturesComponent = () => {
     [AutoplayPlugin]
   );
   function AutoplayPlugin(slider: import("keen-slider").KeenSliderInstance) {
-    let timeout: number;
+    let timeout: ReturnType<typeof setTimeout>;
     let mouseOver = false;
 
-    function clearNextTimeout() {
-      clearTimeout(timeout);
-    }
+    const clearTimeoutFn = () => clearTimeout(timeout);
 
-    function nextTimeout() {
+    const startTimeout = () => {
       clearTimeout(timeout);
-      if (mouseOver) return;
-      timeout = setTimeout(() => {
-        slider.next();
-      }, 2000); // 2 seconds delay (you can change)
-    }
+      if (!mouseOver) {
+        timeout = setTimeout(() => slider.next(), 2000);
+      }
+    };
 
     slider.on("created", () => {
       slider.container.addEventListener("mouseover", () => {
         mouseOver = true;
-        clearNextTimeout();
+        clearTimeoutFn();
       });
+
       slider.container.addEventListener("mouseout", () => {
         mouseOver = false;
-        nextTimeout();
+        startTimeout();
       });
-      nextTimeout();
+
+      startTimeout();
     });
 
-    slider.on("dragStarted", clearNextTimeout);
-    slider.on("animationEnded", nextTimeout);
-    slider.on("updated", nextTimeout);
+    slider.on("dragStarted", clearTimeoutFn);
+    slider.on("animationEnded", startTimeout);
+    slider.on("updated", startTimeout);
   }
+
   const clickHandler = (name: string) => {
     appNavigate(name, navigate);
   };

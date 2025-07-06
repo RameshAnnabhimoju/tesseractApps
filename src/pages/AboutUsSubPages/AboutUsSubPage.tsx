@@ -6,27 +6,41 @@ const AboutUsSubPage = () => {
   const { data } = location.state;
   return (
     <div id="about-us-page-container">
-      {data.image && data.title != "Our Vision" && (
-        <img src={data.image} alt="image-alt" id="about-us-page-image" />
-      )}
-      <div id="about-us-page-data-container">
-        <div id="about-us-page-title" className="subheading">
-          {data.title}
-        </div>
-        {Array.isArray(data.data) ? (
-          data.data.map((paragraph: string, idx: number) => (
-            <div id="about-us-page-data" className="text" key={idx}>
-              {paragraph}
+      {data.map(
+        (
+          item: {
+            image: string;
+            title: string;
+            data: string;
+          },
+          index: number
+        ) => {
+          return (
+            <div key={index} className="about-us-page-data">
+              {item.image && item.title != "Our Vision" && (
+                <img
+                  src={item.image}
+                  alt="image-alt"
+                  className="about-us-page-image"
+                />
+              )}
+              <div className="about-us-page-data-container">
+                <div className="subheading about-us-page-title">
+                  {item.title}
+                </div>
+                <div className="text about-us-page-text">{item.data}</div>
+              </div>
+              <br></br>
+              {item.image && item.title == "Our Vision" && (
+                <img
+                  src={item.image}
+                  alt="image-alt"
+                  className="about-us-page-image"
+                />
+              )}
             </div>
-          ))
-        ) : (
-          <div id="about-us-page-data" className="text">
-            {data.data}
-          </div>
-        )}
-      </div>
-      {data.image && data.title == "Our Vision" && (
-        <img src={data.image} alt="image-alt" id="about-us-page-image" />
+          );
+        }
       )}
     </div>
   );

@@ -75,8 +75,10 @@ const Blog = () => {
             onClick={() => {
               if (blog.id == 1) {
                 navigate("/blogpost");
-              } else {
+              } else if (blog.id == 2) {
                 navigate("/blogpost2");
+              } else {
+                navigate("/blogpost3");
               }
             }}
             className="blog-page-card"

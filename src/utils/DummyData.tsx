@@ -71,6 +71,7 @@ export const blogDummyData = [
 ];
 import image1 from "../assets/image.png";
 import image2 from "../assets/image1.png";
+import image3 from "../assets/image2.png";
 import authorImage from "../assets/authorProfileImage.png";
 export const ourBlogDummyData = [
   {
@@ -100,6 +101,22 @@ export const ourBlogDummyData = [
     authorImage: authorImage,
     comments: 0,
     categories: ["App", "Technology"],
+  },
+  {
+    id: 3,
+    title: "Why Manual Rostering Is Costing You More Than You Think",
+    description: `Many NDIS providers still build rosters by hand — using
+            spreadsheets, whiteboards or group chats. It feels simple and
+            "free". But the hidden costs add up fast. Every week, managers lose
+            hours fixing mistakes. Shifts get double-booked. Overtime blows out
+            budgets. Simple slip-ups mean under-claimed hours or overpayments.
+            `,
+    image: image3,
+    date: "2025-07-06",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
   },
 ];
 export const footerProductsData = {
@@ -205,8 +222,8 @@ export const navBarDummyData = {
   ],
   About: [
     { title: "Our Story", subTitle: " " },
-    { title: "Our Mission", subTitle: " " },
-    { title: "Our Vision", subTitle: " " },
+    { title: "Our Mission & Vision", subTitle: " " },
+    // { title: "Our Vision", subTitle: " " },
     { title: "Team", subTitle: " " },
     { title: "Careers", subTitle: " " },
     { title: "Contact Information", subTitle: " " },
@@ -1319,58 +1336,57 @@ export const featuresDummyData = [
     image: Role,
   },
 ];
+import howItWorksImage1 from "../assets/howItWorks1.png";
+import howItWorksImage2 from "../assets/howItWorks2.png";
+import howItWorksImage3 from "../assets/howItWorks3.png";
+import howItWorksImage4 from "../assets/howItWorks4.png";
+import howItWorksImage5 from "../assets/howItWorks5.png";
+import howItWorksImage6 from "../assets/howItWorks6.png";
 export const howItWorksDummyData = [
   {
     id: 1,
     title: "Book a Demo",
+    image: howItWorksImage1,
     description:
       "See the platform in action. We'll show you how TesseractApps fits your service type and team needs.",
   },
   {
     id: 2,
     title: "Sign In and Get Started",
+    image: howItWorksImage2,
     description:
       "Once you're set up, log in to your dashboard—on desktop or mobile. Everything you need is ready to go.",
   },
   {
     id: 3,
     title: "Add Your Team and Participants",
+    image: howItWorksImage3,
     description:
       "Easily add staff, link NDIS participants, upload documents, and assign roles—all in one place.",
   },
   {
     id: 4,
     title: "Manage Rosters, Services & Notes",
+    image: howItWorksImage4,
     description:
       "Create rosters, log progress notes, track time, and deliver services—your daily tasks, simplified.",
   },
   {
     id: 5,
     title: "Claim & Pay with Confidence",
+    image: howItWorksImage5,
     description:
       "Generate NDIS claims, run payroll, and send invoices in just a few clicks. No errors. No delays.",
   },
   {
     id: 6,
     title: "Stay Compliant & In Control",
+    image: howItWorksImage6,
     description:
       "Track compliance, training, budgets, and reports in real time. Stay audit-ready, always.",
   },
 ];
-import howItWorksImage1 from "../assets/howItWorks1.jpg";
-import howItWorksImage2 from "../assets/howItWorks2.jpg";
-import howItWorksImage3 from "../assets/howItWorks3.jpg";
-import howItWorksImage4 from "../assets/howItWorks4.jpg";
-import howItWorksImage5 from "../assets/howItWorks5.jpg";
-import howItWorksImage6 from "../assets/howItWorks6.jpg";
-export const howItWorksImages = [
-  howItWorksImage1,
-  howItWorksImage2,
-  howItWorksImage3,
-  howItWorksImage4,
-  howItWorksImage5,
-  howItWorksImage6,
-];
+
 import testimonialImage from "../assets/avatar-mid-alt.png";
 import busineessWomanInage from "../assets/businesswoman.png";
 export const testimonialDummyData = [
@@ -1483,9 +1499,9 @@ export const dots = {
 };
 import detailsHero from "../assets/heroDetails1.png";
 import productsHero from "../assets/Product page Hero screen copy.jpg";
-import detailsImage1 from "../assets/detailImage1.png";
-import detailsImage2 from "../assets/detailImage2.png";
-import detailsImage3 from "../assets/detailImage3.png";
+// import detailsImage1 from "../assets/detailImage1.png";
+// import detailsImage2 from "../assets/detailImage2.png";
+// import detailsImage3 from "../assets/detailImage3.png";
 import tesseractApsImage from "../assets/Tesseract Apps.png";
 export const SubPagesDummyData = {
   Product: {
@@ -1529,7 +1545,7 @@ export const SubPagesDummyData = {
     //   ],
     // },
     section3: {
-      images: [detailsImage1, detailsImage2, detailsImage3],
+      images: [],
       title: "Seamless Integration, Unified Experience",
       description:
         "Each module works together to deliver a streamlined user experience. No more switching between systems—Tesseract Apps provides.",
@@ -2346,16 +2362,18 @@ export const aboutUsPageData = {
       "Today, Tesseract Apps stands as a powerful, Salesforce-based platform purpose-built for the Australian care sector. We help organisations navigate NDIS compliance, simplify operations, and ultimately deliver better outcomes for participants and staff alike.",
     ],
   },
-  "Our mission": {
-    image: ourMissionImage,
-    title: "Our Mission",
-    data: "To empower businesses worldwide with innovative, role-specific people management software that is accessible across industries, enabling streamlined operations and enhanced productivity.",
-  },
-  "Our Vision": {
-    image: ourVisionImage,
-    title: "Our Vision",
-    data: "To revolutionise the future of business management, fostering collaboration, efficiency, and growth through technology that adapts to the ever-changing needs of industries and their people.",
-  },
+  "Our Mission & Vision": [
+    {
+      image: ourMissionImage,
+      title: "Our Mission",
+      data: "To empower businesses worldwide with innovative, role-specific people management software that is accessible across industries, enabling streamlined operations and enhanced productivity.",
+    },
+    {
+      image: ourVisionImage,
+      title: "Our Vision",
+      data: "To revolutionise the future of business management, fostering collaboration, efficiency, and growth through technology that adapts to the ever-changing needs of industries and their people.",
+    },
+  ],
 };
 import MaheshwariImage from "../assets/MAHESWARI ADABALA - OPERATIONS MANAGER.jpg";
 import ManimalaImImage from "../assets/MANIMALA JEEBU - SOFTWARE ENGINEER.jpg";
@@ -2565,12 +2583,12 @@ export const blogsData = [
     ],
   },
 ];
-import adminImage from "../assets/ADMIN-SOLUTIONS-ROLE.jpg";
-import rosterManager from "../assets/ROSTERMANAGEMENT-ROLE.jpg";
-import ndisStaff from "../assets/NDIS-STAFF-ROLE.jpg";
-import hr from "../assets/HR-ROLE.jpg";
-import accountingImage from "../assets/ACCOUNTING-ROLE.jpg";
-import participantsImage from "../assets/PARTICIPANT-ROLE.jpg";
+import adminImage from "../assets/Role Administrator.png";
+import rosterManager from "../assets/Product Roster management.png";
+import ndisStaff from "../assets/Role NDIS staff.png";
+import hr from "../assets/Role HR manager.png";
+import accountingImage from "../assets/Role Accounting.png";
+import participantsImage from "../assets/Role Participants.png";
 export const byRoleData = {
   Administrator: {
     hero: {
@@ -2580,19 +2598,23 @@ export const byRoleData = {
       description:
         "Organisation administrators are granted full access to the application, empowering them to manage users, configure settings, and oversee all functional modules within the platform. This centralised control simplifies administration and enhances visibility across the entire system.",
     },
-    "details-1": {
-      images: [detailsImage2],
-      title: "",
-      description:
-        "Our platform is designed with a modular architecture - each feature-rich module (such as User Management, Reporting, Analytics, Communication, etc.) is seamlessly integrated into one unified system. This allows for streamlined workflows, consistent user experiences, and efficient data sharing between modules.",
-    },
-    "details-2": {
-      images: [detailsImage3],
-      title: "",
-      description: `To ensure smooth deployment, optimal performance, and continued support, our technical team requires a few specific permissions. These access rights are module-specific and strictly limited to what is necessary for monitoring, configuration, and maintenance tasks. All access is governed by robust security protocols to protect your data and privacy.`,
+    details: {
+      points: [
+        {
+          dot: dots.dot1,
+          title: "",
+          description:
+            "Our platform is designed with a modular architecture - each feature-rich module (such as User Management, Reporting, Analytics, Communication, etc.) is seamlessly integrated into one unified system. This allows for streamlined workflows, consistent user experiences, and efficient data sharing between modules.",
+        },
+        {
+          dot: dots.dot2,
+          title: "",
+          description: `To ensure smooth deployment, optimal performance, and continued support, our technical team requires a few specific permissions. These access rights are module-specific and strictly limited to what is necessary for monitoring, configuration, and maintenance tasks. All access is governed by robust security protocols to protect your data and privacy.`,
 
-      conclusion:
-        "By granting appropriate access during setup, you will help us provide you with a secure, reliable, and fully optimised experience.",
+          conclusion:
+            "By granting appropriate access during setup, you will help us provide you with a secure, reliable, and fully optimised experience.",
+        },
+      ],
     },
   },
   "Roster Manager": {
@@ -2603,27 +2625,31 @@ export const byRoleData = {
       description:
         "Roster Managers are granted access to scheduling and workforce coordination modules within the application. This enables them to efficiently create, update, and manage staff rosters, ensuring adequate coverage and alignment with organisational requirements. Their permissions also support real-time monitoring of availability, shift allocations, and compliance with NDIS standards.",
     },
-    "details-1": {
-      images: [detailsImage2],
-      title: "",
-      description: `With integrated data from User Management and Communication modules, Roster Managers benefit from streamlined workflows and a unified view of staff schedules. This helps reduce conflicts, improve resource planning, and enhance operational efficiency.`,
-
-      conclusion:
-        "All access is governed by strict security policies, ensuring the protection of sensitive data while allowing the Roster Manager to perform their role effectively.",
-    },
-    "details-2": {
-      images: [detailsImage3],
-      title: "Role Purpose",
-      description:
-        "This role is purpose-built to give managers the tools they need to:",
+    details: {
       points: [
-        "Maintain accurate, compliant rosters",
-        "Ensure adequate shift coverage",
-        "Align staff assignments with participant needs",
-        "Coordinate effectively across teams",
+        {
+          dot: dots.dot1,
+          title: "",
+          description: `With integrated data from User Management and Communication modules, Roster Managers benefit from streamlined workflows and a unified view of staff schedules. This helps reduce conflicts, improve resource planning, and enhance operational efficiency.`,
+
+          conclusion:
+            "All access is governed by strict security policies, ensuring the protection of sensitive data while allowing the Roster Manager to perform their role effectively.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Role Purpose",
+          description:
+            "This role is purpose-built to give managers the tools they need to:",
+          descriptionPoints: [
+            "Maintain accurate, compliant rosters",
+            "Ensure adequate shift coverage",
+            "Align staff assignments with participant needs",
+            "Coordinate effectively across teams",
+          ],
+          conclusion:
+            "By limiting access to only the relevant modules, the Roster Manager role upholds both operational efficiency and data security within the organisation.",
+        },
       ],
-      conclusion:
-        "By limiting access to only the relevant modules, the Roster Manager role upholds both operational efficiency and data security within the organisation.",
     },
   },
   Accountant: {
@@ -2634,25 +2660,29 @@ export const byRoleData = {
       description:
         "The Accountant Admin is provided with secure access to finance-related modules, including Billing, Invoicing, Claims, and Financial Reporting. This access supports accurate transaction processing, reconciliation and regulatory compliance - particularly in alignment with NDIS requirements.",
     },
-    "details-1": {
-      images: [detailsImage2],
-      title: "",
-      description: `Thanks to seamless integration with other modules (such as User Management and Service Delivery), financial data flows efficiently across the system, reducing manual entry and improving financial oversight.`,
-      conclusion:
-        "Permissions are scoped strictly to financial operations, and all actions are logged and monitored under our robust data protection and auditing protocols.",
-    },
-    "details-2": {
-      images: [detailsImage3],
-      title: "Role Purpose",
-      description: "The Accountant role is designed to:",
+    details: {
       points: [
-        "Oversee payroll processing and compliance",
-        "Manage salary-related financial transactions",
-        "Ensure reconciliation with banking and accounting records",
-        "Support financial audits and transparent reporting",
+        {
+          dot: dots.dot1,
+          title: "",
+          description: `Thanks to seamless integration with other modules (such as User Management and Service Delivery), financial data flows efficiently across the system, reducing manual entry and improving financial oversight.`,
+          conclusion:
+            "Permissions are scoped strictly to financial operations, and all actions are logged and monitored under our robust data protection and auditing protocols.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Role Purpose",
+          description: "The Accountant role is designed to:",
+          descriptionPoints: [
+            "Oversee payroll processing and compliance",
+            "Manage salary-related financial transactions",
+            "Ensure reconciliation with banking and accounting records",
+            "Support financial audits and transparent reporting",
+          ],
+          conclusion:
+            "By focusing access on critical financial modules, this role upholds both data security and operational efficiency, ensuring payroll is processed smoothly while protecting sensitive system-wide data.",
+        },
       ],
-      conclusion:
-        "By focusing access on critical financial modules, this role upholds both data security and operational efficiency, ensuring payroll is processed smoothly while protecting sensitive system-wide data.",
     },
   },
   "NDIS Staff": {
@@ -2663,23 +2693,27 @@ export const byRoleData = {
       description:
         "NDIS Staff are assigned access based on their roles in service coordination, plan management, and compliance with the NDIS framework. They can view and manage participant plans, track goals, record service delivery and ensure alignment with funded supports.",
     },
-    "details-1": {
-      images: [detailsImage2],
-      title: "",
-      description: `Their access is restricted to modules relevant to participant outcomes and compliance management, with visibility designed to ensure privacy and role-based boundaries.\nIntegration across modules allows NDIS staff to work more effectively with other teams, while our platform's security architecture ensures sensitive health and personal data remain protected at all times.`,
-    },
-    "details-2": {
-      images: [detailsImage3],
-      title: "Role Purpose",
-      description: "The NDIS Staff role is designed to:",
+    details: {
       points: [
-        "Enable support workers to deliver high-quality participant care",
-        "Provide access to relevant and up-to-date information",
-        "Ensure secure and efficient communication within the team",
-        "Maintain compliance with documentation and incident reporting",
+        {
+          dot: dots.dot1,
+          title: "",
+          description: `Their access is restricted to modules relevant to participant outcomes and compliance management, with visibility designed to ensure privacy and role-based boundaries.\nIntegration across modules allows NDIS staff to work more effectively with other teams, while our platform's security architecture ensures sensitive health and personal data remain protected at all times.`,
+        },
+        {
+          dot: dots.dot2,
+          title: "Role Purpose",
+          description: "The NDIS Staff role is designed to:",
+          descriptionPoints: [
+            "Enable support workers to deliver high-quality participant care",
+            "Provide access to relevant and up-to-date information",
+            "Ensure secure and efficient communication within the team",
+            "Maintain compliance with documentation and incident reporting",
+          ],
+          conclusion:
+            "With carefully scoped access, NDIS Staff can confidently perform their duties while protecting participant privacy and organisational integrity.",
+        },
       ],
-      conclusion:
-        "With carefully scoped access, NDIS Staff can confidently perform their duties while protecting participant privacy and organisational integrity.",
     },
   },
   "HR Manager": {
@@ -2690,26 +2724,30 @@ export const byRoleData = {
       description:
         "HR Managers are granted access to employee lifecycle management tools, including recruitment, onboarding, leave management, training compliance, and personnel records. This supports holistic HR functions, from maintaining workforce data to tracking certifications and handling internal communications.",
     },
-    "details-1": {
-      images: [detailsImage2],
-      title: "",
-      description: `Their access also enables coordination with modules such as Roster Management and Reporting to ensure workforce alignment with organisational needs and legal obligations.`,
-
-      conclusion:
-        "All HR data is protected through strict access controls and encryption protocols, ensuring confidentiality and compliance with applicable workforce regulations.",
-    },
-    "details-2": {
-      images: [detailsImage3],
-      title: "Role Purpose",
-      description: "The HR Admin role empowers HR teams to:",
+    details: {
       points: [
-        "Maintain accurate employee records",
-        "Drive staff development and performance management",
-        "Manage recruitment and leave efficiently",
-        "Control user access within the system",
-        "Ensure data security and compliance with organisational policies",
+        {
+          dot: dots.dot1,
+          title: "",
+          description: `Their access also enables coordination with modules such as Roster Management and Reporting to ensure workforce alignment with organisational needs and legal obligations.`,
+
+          conclusion:
+            "All HR data is protected through strict access controls and encryption protocols, ensuring confidentiality and compliance with applicable workforce regulations.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Role Purpose",
+          description: "The HR Admin role empowers HR teams to:",
+          descriptionPoints: [
+            "Maintain accurate employee records",
+            "Drive staff development and performance management",
+            "Manage recruitment and leave efficiently",
+            "Control user access within the system",
+            "Ensure data security and compliance with organisational policies",
+          ],
+          conclusion: "",
+        },
       ],
-      conclusion: "",
     },
   },
   Participant: {
@@ -2720,29 +2758,34 @@ export const byRoleData = {
       description:
         "Participants have secure, limited access to features that support transparency and engagement in their own care journey. This includes viewing their personal information, support plans, schedules, communications, and service history.",
     },
-    "details-1": {
-      images: [detailsImage2],
-      title: "",
-      description: `This role is designed for ease of use, accessibility, and privacy. Participants can communicate with their care team, track their progress and provide feedback - all within a user-friendly interface.`,
-      conclusion:
-        "Access is carefully scoped to individual records only, with privacy settings and security measures to safeguard personal data.",
-    },
-    "details-2": {
-      images: [detailsImage3],
-      title: "Role Purpose",
-      description: "The Participant Login role is designed to:",
+    details: {
       points: [
-        "Promote participant inclusion and transparency",
-        "Reduce administrative overhead for providers",
-        "Improve communication and record accuracy",
-        "Build trust through shared access to support data",
+        {
+          dot: dots.dot1,
+          title: "",
+          description: `This role is designed for ease of use, accessibility, and privacy. Participants can communicate with their care team, track their progress and provide feedback - all within a user-friendly interface.`,
+          conclusion:
+            "Access is carefully scoped to individual records only, with privacy settings and security measures to safeguard personal data.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Role Purpose",
+          description: "The Participant Login role is designed to:",
+          descriptionPoints: [
+            "Promote participant inclusion and transparency",
+            "Reduce administrative overhead for providers",
+            "Improve communication and record accuracy",
+            "Build trust through shared access to support data",
+          ],
+          conclusion:
+            "This role enables NDIS organisations to offer a client-focused, digital experience while maintaining control and oversight of sensitive information.",
+        },
       ],
-      conclusion:
-        "This role enables NDIS organisations to offer a client-focused, digital experience while maintaining control and oversight of sensitive information.",
     },
   },
 };
-import ndisIndustry from "../assets/ndis-industry.jpg";
+import ndisIndustry from "../assets/NDIS Industry.png";
+import ictIndustry from "../assets/ICT Industry.png";
 export const byIndustryData = {
   "NDIS Industry": {
     hero: {
@@ -2751,198 +2794,205 @@ export const byIndustryData = {
       description: "",
       page: "NDIS Industry",
     },
-    details: [
-      {
-        title: "Roster Management",
-        description: `Automate complex NDIS-compliant rostering across locations, shifts, and groups. Match staff shifts by skill and risk, apply correct wage rules, track expenses, and use geo-tracking for clock-ins. Gain real-time visibility and robust reporting to optimise workforce efficiency and compliance.`,
-        images: [detailsImage2],
-        conclusion:
-          "NDIS-ready timesheets with geo-verified sign-ins, seamless shift tracking (including sleepovers), and smart approvals. Ensure precise payroll calculations, compliance, and operational efficiency with built-in NDIS-specific rules.",
-      },
-      {
-        title: "Admin Console",
-        description: `Full control over organisational settings, staff and participant management, facility configurations, and shift rules. Built for NDIS providers to maintain compliance, streamline workflows, and ensure secure, accurate operations.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "Access Control Panel",
-        description: `Easily onboard staff, assign roles, and control access with role-based permissions and full audit trails. Ensure data security and seamless user management across your organisation.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "HR Operations",
-        description: `Manage staff records, qualifications, leave, training, recruitment, and performance reviews from one platform. Boost engagement with recognition features and support continuous development aligned with NDIS workforce needs.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "T-sign",
-        description: `NDIS-compliant digital signatures for quick, paperless approvals. Supports contracts, agreements, and internal documents with multi-signer workflows and full encryption.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "Clock In & Clock Out",
-        description: `Enable your support staff to quickly sign in/out from any device with geo-verified, time-stamped accuracy. Manage shift tasks, record participant notes, submit reimbursements, and capture extended hours or sleepovers - all within one secure app. Supervisor digital sign-off ensures every shift meets NDIS compliance and audit requirements.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "Participant Management",
-        description: `Keep all participant profiles, support plans, funding details, progress journals, and clinical documents in one secure place. Use built-in risk assessments and feedback tools to deliver personalised, safe, and coordinated support aligned with NDIS standards.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "Incident Management",
-        description: `Stay compliant with NDIS standards by securely logging, managing, and tracking incidents across participants and facilities. Guided reporting ensures accuracy, while real-time updates and secure access controls protect data integrity.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "Repository",
-        description: `Your central document hub for storing essential NDIS records - participant data, compliance documents, and operational files. Role-based access ensures security and transparency.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "Role-Specific Dashboards",
-        description: `Give every user a clear, tailored view of key information - rosters, participant status, tasks, HR metrics, incidents, and more - enabling smarter decisions and smoother operations.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "ChaT",
-        description: `Keep NDIS teams connected with internal-only messaging, real-time updates, and secure file sharing. Ideal for shift coordination, incident alerts, and operational communication.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "My Profile",
-        description: `Manage staff profiles, career development, payroll records, and availability in one place. Supports leave management, training milestones, and compliance tracking to NDIS operations.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "Forms",
-        description: `Replace paperwork with easy-to-build digital forms for participant care and incident reporting. Secure, mobile-optimised, and compliant with NDIS documentation requirements.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "Accounting",
-        description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.`,
-        discriptionsPoints: [
-          "Customise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.",
-        ],
-        images: [detailsImage3],
-      },
-      {
-        title: "T Learning Hub",
-        description: `On-Demand, Role-Based Training\n\nProvide personalised, mobile-friendly training tailored to each team member’s role. From onboarding to ongoing skill-building, ensure your workforce stays knowledgeable and confident.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "",
-        description: `Tesseract empowers NDIS providers with integrated, user-friendly tools to manage workforce and participant care efficiently, securely, and in full compliance with NDIS standards.`,
-        images: [detailsImage3],
-      },
-    ],
+    details: {
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Roster Management",
+          description: `Automate complex NDIS-compliant rostering across locations, shifts, and groups. Match staff shifts by skill and risk, apply correct wage rules, track expenses, and use geo-tracking for clock-ins. Gain real-time visibility and robust reporting to optimise workforce efficiency and compliance.`,
+
+          conclusion:
+            "NDIS-ready timesheets with geo-verified sign-ins, seamless shift tracking (including sleepovers), and smart approvals. Ensure precise payroll calculations, compliance, and operational efficiency with built-in NDIS-specific rules.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Admin Console",
+          description: `Full control over organisational settings, staff and participant management, facility configurations, and shift rules. Built for NDIS providers to maintain compliance, streamline workflows, and ensure secure, accurate operations.`,
+        },
+        {
+          dot: dots.dot3,
+          title: "Access Control Panel",
+          description: `Easily onboard staff, assign roles, and control access with role-based permissions and full audit trails. Ensure data security and seamless user management across your organisation.`,
+        },
+        {
+          dot: dots.dot4,
+          title: "HR Operations",
+          description: `Manage staff records, qualifications, leave, training, recruitment, and performance reviews from one platform. Boost engagement with recognition features and support continuous development aligned with NDIS workforce needs.`,
+        },
+        {
+          dot: dots.dot5,
+          title: "T-sign",
+          description: `NDIS-compliant digital signatures for quick, paperless approvals. Supports contracts, agreements, and internal documents with multi-signer workflows and full encryption.`,
+        },
+        {
+          dot: dots.dot6,
+          title: "Clock In & Clock Out",
+          description: `Enable your support staff to quickly sign in/out from any device with geo-verified, time-stamped accuracy. Manage shift tasks, record participant notes, submit reimbursements, and capture extended hours or sleepovers - all within one secure app. Supervisor digital sign-off ensures every shift meets NDIS compliance and audit requirements.`,
+        },
+        {
+          dot: dots.dot1,
+          title: "Participant Management",
+          description: `Keep all participant profiles, support plans, funding details, progress journals, and clinical documents in one secure place. Use built-in risk assessments and feedback tools to deliver personalised, safe, and coordinated support aligned with NDIS standards.`,
+        },
+        {
+          dot: dots.dot2,
+          title: "Incident Management",
+          description: `Stay compliant with NDIS standards by securely logging, managing, and tracking incidents across participants and facilities. Guided reporting ensures accuracy, while real-time updates and secure access controls protect data integrity.`,
+        },
+        {
+          dot: dots.dot3,
+          title: "Repository",
+          description: `Your central document hub for storing essential NDIS records - participant data, compliance documents, and operational files. Role-based access ensures security and transparency.`,
+        },
+        {
+          dot: dots.dot4,
+          title: "Role-Specific Dashboards",
+          description: `Give every user a clear, tailored view of key information - rosters, participant status, tasks, HR metrics, incidents, and more - enabling smarter decisions and smoother operations.`,
+        },
+        {
+          dot: dots.dot5,
+          title: "ChaT",
+          description: `Keep NDIS teams connected with internal-only messaging, real-time updates, and secure file sharing. Ideal for shift coordination, incident alerts, and operational communication.`,
+        },
+        {
+          dot: dots.dot6,
+          title: "My Profile",
+          description: `Manage staff profiles, career development, payroll records, and availability in one place. Supports leave management, training milestones, and compliance tracking to NDIS operations.`,
+        },
+        {
+          dot: dots.dot1,
+          title: "Forms",
+          description: `Replace paperwork with easy-to-build digital forms for participant care and incident reporting. Secure, mobile-optimised, and compliant with NDIS documentation requirements.`,
+        },
+        {
+          dot: dots.dot2,
+          title: "Accounting",
+          description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.`,
+          discriptionsPoints: [
+            "Customise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.",
+          ],
+        },
+        {
+          dot: dots.dot3,
+          title: "T Learning Hub",
+          description: `On-Demand, Role-Based Training\n\nProvide personalised, mobile-friendly training tailored to each team member’s role. From onboarding to ongoing skill-building, ensure your workforce stays knowledgeable and confident.`,
+        },
+        {
+          dot: dots.dot4,
+          title: "",
+          description: `Tesseract empowers NDIS providers with integrated, user-friendly tools to manage workforce and participant care efficiently, securely, and in full compliance with NDIS standards.`,
+        },
+      ],
+    },
   },
 
   "ICT Industry": {
     hero: {
-      image: detailsHero,
+      image: ictIndustry,
       title: "ICT Industry",
       description: "",
+      page: "ICT Industry",
     },
-    details: [
-      {
-        title: "Timesheet",
-        description: ``,
-        images: [detailsImage3],
-        discriptionsPoints: [
-          "Effortless Time Tracking and Management",
-          "Simplify timesheet submission and approval with an intuitive system designed. Easily draft, submit, and approve timesheets with features like cloning previous entries, status tracking, and PDF export.",
-          "Integrated invoice syncing and real-time notifications keep payroll and billing accurate and efficient.",
-          "Save time, reduce errors, and improve transparency with Timesheet - your streamlined solution for time and invoice management.",
-        ],
-      },
-      {
-        title: "Admin Console",
-        description: `Centralise your organisation’s management with easy access to company settings, user oversight, and operational controls to keep your ICT business running smoothly.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "Access Control Panel",
-        description: `Streamline onboarding with instant user creation and role assignment. Manage access permissions centrally with role-based controls, bulk uploads, and real-time activity reporting. Protect sensitive data with robust security and comprehensive audit trails.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "HR Operations",
-        description: `Manage the entire employee lifecycle from recruitment to retention. Maintain detailed staff profiles, track qualifications, leave, and performance. Boost engagement with awards and recognition, integrated training progress tracking, and seamless recruitment integration.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "Performance Management",
-        description: `Simplify goal setting, progress tracking, and performance reviews with an intuitive platform. Enable continuous feedback through milestone reviews, automated reporting, and transparent development processes - driving team success and productivity.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "T Sign",
-        description: `Digitally capture approvals, signatures, and authorisations on documents and workflows with a secure, compliant e-signature solution built for ICT environments.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "Repository",
-        description: `Securely store and organise all your critical documents and files in one centralised digital repository with controlled access for peace of mind and quick retrieval.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "Role-Based Dashboards",
-        description: `Provide tailored dashboards that deliver real-time visibility into shift statuses, staff activity, pending tasks, HR metrics, and performance tracking. Empower managers with actionable data for smarter decisions and efficient operations.`,
-        images: [detailsImage2],
-      },
-      {
-        title: "ChaT",
-        description: `Enhance team collaboration with a built-in, secure chat platform enabling instant communication, file sharing, and real-time updates - keeping your ICT teams connected and productive.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "My Profile",
-        description: `Empower employees to manage their personal information, view schedules, track leave balances, and update preferences - all in one personalised portal.`,
-        images: [detailsImage2],
-      },
-      // {
-      //   title: "Forms",
-      //   description: `Replace paper with easy drag-and-drop digital forms for all operational needs. Create, assign, and manage forms securely with role-based access control. Mobile-optimised submissions linked directly to records streamline workflows and improve compliance.`,
-      //   images: [detailsImage3],
-      // },
-      {
-        title: "Accounting",
-        description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.`,
-        conclusion:
-          "Customise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.",
-        images: [detailsImage2],
-      },
-      {
-        title: "T Learning Hub",
-        description: `On-Demand, Role-Based Training empowers your workforce with personalised, mobile-friendly training to each role. Access step-by-step video tutorials and keep skills current with continuous content updates.`,
-        images: [detailsImage3],
-      },
-      {
-        title: "",
-        description: `Tesseract empowers ICT providers with integrated, user-friendly tools to manage the workforce efficiently, securely, and in full compliance with ICT standards. `,
-        images: [detailsImage3],
-      },
-    ],
+    details: {
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Timesheet",
+          description: ``,
+
+          descriptionPoints: [
+            "Effortless Time Tracking and Management",
+            "Simplify timesheet submission and approval with an intuitive system designed. Easily draft, submit, and approve timesheets with features like cloning previous entries, status tracking, and PDF export.",
+            "Integrated invoice syncing and real-time notifications keep payroll and billing accurate and efficient.",
+            "Save time, reduce errors, and improve transparency with Timesheet - your streamlined solution for time and invoice management.",
+          ],
+        },
+        {
+          dot: dots.dot2,
+          title: "Admin Console",
+          description: `Centralise your organisation’s management with easy access to company settings, user oversight, and operational controls to keep your ICT business running smoothly.`,
+        },
+        {
+          dot: dots.dot3,
+          title: "Access Control Panel",
+          description: `Streamline onboarding with instant user creation and role assignment. Manage access permissions centrally with role-based controls, bulk uploads, and real-time activity reporting. Protect sensitive data with robust security and comprehensive audit trails.`,
+        },
+        {
+          dot: dots.dot4,
+          title: "HR Operations",
+          description: `Manage the entire employee lifecycle from recruitment to retention. Maintain detailed staff profiles, track qualifications, leave, and performance. Boost engagement with awards and recognition, integrated training progress tracking, and seamless recruitment integration.`,
+        },
+        {
+          dot: dots.dot5,
+          title: "Performance Management",
+          description: `Simplify goal setting, progress tracking, and performance reviews with an intuitive platform. Enable continuous feedback through milestone reviews, automated reporting, and transparent development processes - driving team success and productivity.`,
+        },
+        {
+          dot: dots.dot6,
+          title: "T Sign",
+          description: `Digitally capture approvals, signatures, and authorisations on documents and workflows with a secure, compliant e-signature solution built for ICT environments.`,
+        },
+        {
+          dot: dots.dot1,
+          title: "Repository",
+          description: `Securely store and organise all your critical documents and files in one centralised digital repository with controlled access for peace of mind and quick retrieval.`,
+        },
+        {
+          dot: dots.dot2,
+          title: "Role-Based Dashboards",
+          description: `Provide tailored dashboards that deliver real-time visibility into shift statuses, staff activity, pending tasks, HR metrics, and performance tracking. Empower managers with actionable data for smarter decisions and efficient operations.`,
+        },
+        {
+          dot: dots.dot3,
+          title: "ChaT",
+          description: `Enhance team collaboration with a built-in, secure chat platform enabling instant communication, file sharing, and real-time updates - keeping your ICT teams connected and productive.`,
+        },
+        {
+          dot: dots.dot4,
+          title: "My Profile",
+          description: `Empower employees to manage their personal information, view schedules, track leave balances, and update preferences - all in one personalised portal.`,
+        },
+        // {
+        //   title: "Forms",
+        //   description: `Replace paper with easy drag-and-drop digital forms for all operational needs. Create, assign, and manage forms securely with role-based access control. Mobile-optimised submissions linked directly to records streamline workflows and improve compliance.`,
+        //   images: [detailsImage3],
+        // },
+        {
+          dot: dots.dot5,
+          title: "Accounting",
+          description: `Take full control of your finances with our smart, seamless, and scalable accounting feature. From automated payroll and invoicing to real-time bank feeds and financial reports, it simplifies every aspect of financial management.`,
+          conclusion:
+            "Customise workflows, ensure compliance, and eliminate manual data entry with a fully integrated system. Designed to adapt to your processes, not the other way around. Perfect for businesses looking to streamline operations and make confident, data-driven decisions.",
+        },
+        {
+          dot: dots.dot6,
+          title: "T Learning Hub",
+          description: `On-Demand, Role-Based Training empowers your workforce with personalised, mobile-friendly training to each role. Access step-by-step video tutorials and keep skills current with continuous content updates.`,
+        },
+        {
+          dot: dots.dot1,
+          title: "",
+          description: `Tesseract empowers ICT providers with integrated, user-friendly tools to manage the workforce efficiently, securely, and in full compliance with ICT standards. `,
+        },
+      ],
+    },
   },
 };
-import resterManagement from "../assets/Roster management.jpg";
-import adminConsole from "../assets/Admin concol.jpg";
-import timesheets from "../assets/Timesheet.jpg";
-import accessControl from "../assets/Access Control Panel.jpg";
-import hrOperations from "../assets/HR Management.jpg";
-import tsign from "../assets/T Sign.jpg";
-import clockInAndOut from "../assets/Sign in Sign out.jpg";
-import participantManagement from "../assets/Participant Management.jpg";
-import incidentManagement from "../assets/Incident Management.jpg";
-import repository from "../assets/Repository.jpg";
-import roleBasedDashboard from "../assets/RB dashboard.jpg";
-import forms from "../assets/Forms.jpg";
-import accounting from "../assets/Accounting.jpg";
-import tLearingHub from "../assets/T Learning.jpg";
-import chat from "../assets/chat.jpg";
+import resterManagement from "../assets/Product Roster management.png";
+import adminConsole from "../assets/Product Admin con.png";
+import timesheets from "../assets/Product Time sheet.png";
+import accessControl from "../assets/Product Access control.png";
+import hrOperations from "../assets/Product HR.png";
+import tsign from "../assets/Product Sign.png";
+import clockInAndOut from "../assets/Product Sign in.png";
+import participantManagement from "../assets/Product Participent management.png";
+import incidentManagement from "../assets/Product incident management.png";
+import repository from "../assets/Product Repository.png";
+import roleBasedDashboard from "../assets/Product Rolebase dashboard.png";
+import forms from "../assets/Product Forms.png";
+import accounting from "../assets/Product Accounting.png";
+import tLearingHub from "../assets/Product Learning.png";
+import chat from "../assets/Product Chat.png";
 export const productsDetailsData = {
   "Roster Management": {
     page: "Roster Management",
@@ -2996,7 +3046,7 @@ export const productsDetailsData = {
           "Streamlined Workforce Coordination with Full Compliance",
           "The Tesseract Roster Management system is expertly designed to harmonise NDIS-compliant rostering complexities with effortless administrative functionality. Seamlessly interfacing with payroll, compliance, HR, and timesheet modules, it ensures an intuitive, regulation-ready workforce solution, maximising operational efficiency while safeguarding employment integrity.",
         ],
-        images: [detailsImage1],
+        images: [],
       },
     ],
     faqSection: {
@@ -3565,7 +3615,7 @@ export const productsDetailsData = {
         ],
         conclusion:
           "Empower your team to manage participant risks effectively and promote a safer, more responsive care environment",
-        images: [detailsImage1],
+        images: [],
       },
       {
         title: "Why Use the Participants Module?",
@@ -3575,7 +3625,7 @@ export const productsDetailsData = {
           "Improved Coordination - Streamline communication between teams by documenting key information in real time.",
           "More Personalised Support - Tailor care delivery using up-to-date journals, risk profiles, and participant feedback.",
         ],
-        images: [detailsImage2],
+        images: [],
       },
     ],
     faqSection: {
@@ -3975,7 +4025,7 @@ export const productsDetailsData = {
           "Strategic Career Advancement – Leverage structured tools to drive growth and progression.",
           "Tailored Workflow – Maintain preferences for a personalised and optimised experience.",
         ],
-        images: [detailsImage1],
+        images: [],
       },
     ],
     faqSection: {

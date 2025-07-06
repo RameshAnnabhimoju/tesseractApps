@@ -64,3 +64,16 @@
     max-width: 300px;
   }
 }
+@media (max-width: 500px) {
+  .selected-tool-data {
+    padding: 10px 0;
+    margin: 0 80px;
+    overflow-x: hidden;
+  }
+  .selected-tool-description {
+    max-width: 100%;
+  }
+  #selected-tool-container {
+    overflow-x: hidden;
+  }
+}

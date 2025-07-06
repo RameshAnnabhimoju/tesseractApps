@@ -1,6 +1,7 @@
 :root {
   overflow-x: hidden;
   min-height: 100vh;
+  max-width: 1920px;
   --color-primary: #0c78ba;
   --color-secondary: #002a52;
   --color-background-gradient: linear-gradient(to right, #f5fdfe, #f0f7fe);
@@ -14,12 +15,13 @@
     font-weight: 600;
     color: var(--color-primary);
     text-align: center;
-    margin: 50px auto;
+    margin-top: 25px;
+    margin-bottom: 10px;
     text-transform: uppercase;
     /* margin-top: 50px; */
   }
   .subheading {
-    font-size: 32px;
+    font-size: 22px;
     font-weight: 700;
     text-align: center;
     margin: 10px auto;
@@ -74,5 +76,8 @@
 }
 
 /* XL: Laptops & Desktops (1280px – 1919px) */
-@media (min-width: 1280px) and (max-width: 1919px) {
+@media (min-width: 2000px) {
+  :root {
+    margin: 0 auto;
+  }
 }

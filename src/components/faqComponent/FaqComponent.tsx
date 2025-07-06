@@ -45,7 +45,7 @@ const FaqComponent = () => {
                 expandIcon={<img src={ArrowDown} alt="arrow" />}
               >
                 <Typography
-                  sx={{ fontSize: "26px", fontWeight: 600 }}
+                  sx={{ fontSize: "22px", fontWeight: 600 }}
                   component="span"
                 >
                   {data.question}

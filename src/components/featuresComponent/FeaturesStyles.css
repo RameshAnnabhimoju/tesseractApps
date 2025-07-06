@@ -50,7 +50,8 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  top: 190px;
+  top: 120px;
+  z-index: 100;
 }
 
 #features-prev,
@@ -62,4 +63,9 @@
 }
 .features-slider {
   padding: 30px 5%;
+}
+@media (max-width: 450px) {
+  .features-buttons {
+    top: 300px;
+  }
 }

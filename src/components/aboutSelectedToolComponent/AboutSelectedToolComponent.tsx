@@ -53,14 +53,17 @@ const AboutSelectedToolComponent = ({
                       </div>
                     );
                   })}
-                {subdata.pointsData &&
-                  subdata.pointsData.map((point, index) => {
-                    return (
-                      <div className="selected-tool-description" key={index}>
-                        &#10687;{point}
-                      </div>
-                    );
-                  })}
+                {subdata.pointsData && (
+                  <ul>
+                    {subdata.pointsData.map((point, index) => {
+                      return (
+                        <li className="selected-tool-description" key={index}>
+                          {point}
+                        </li>
+                      );
+                    })}{" "}
+                  </ul>
+                )}
                 <div className="selected-tool-description">
                   {subdata.conclusion}
                 </div>

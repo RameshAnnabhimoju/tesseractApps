@@ -1,6 +1,6 @@
 #footer-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   padding: 80px 100px;
   background-image: var(--color-background-gradient);
 }
@@ -21,20 +21,19 @@
 .footer-column {
   display: flex;
   flex-direction: column;
-  min-width: 180px;
+  width: 150px;
 }
 #footer-column-1 {
-  max-width: 500px;
+  max-width: 600px;
+  flex-grow: 1; /* Item can grow */
+  flex-shrink: 1; /* Item can shrink */
+  flex-basis: 400px;
 }
 #foooter-column-5 {
   display: flex;
   flex-direction: column;
   gap: 25px;
   margin: 50px 0;
-  margin-left: 20px;
-  /* justify-content: center; */
-  align-items: center;
-  text-align: center;
 }
 #footer-newsletter-heading {
   font-size: 36px;
@@ -48,7 +47,6 @@
 }
 #footer-newsletter-input-container {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 #footer-newsletter-input {
@@ -81,10 +79,13 @@
   cursor: pointer;
 }
 #footer-bottom {
-  grid-column-start: 1;
-  grid-column-end: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: var(--color-text-gray);
+  width: 100%;
 }
 .footer-about-text:hover {
   color: var(--color-text-gray);
@@ -93,98 +94,75 @@
 .footer-about-actions {
   cursor: pointer;
 }
-.footer-products-text-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-}
-.footer-products-column {
-  width: 100%;
-}
 .footer-links-texts {
   display: flex;
   flex-wrap: wrap;
   column-gap: 25px;
+  row-gap: 25px;
+  flex-grow: 15; /* Item can grow */
+  flex-shrink: 15; /* Item can shrink */
+  flex-basis: 1000px;
 }
-#footer-products-text-container-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+#footer-bottom-images {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
 }
-@media (min-width: 1940px) {
-  .results-cards-container {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  }
+#footer-top {
+  display: flex;
 }
-@media (min-width: 1500px) {
-  #footer-container {
-    display: grid;
-    grid-template-columns: 300px 2fr 1fr;
-  }
-}
-@media (max-width: 1370px) {
-  #footer-column-1 {
-    max-width: 500px;
-  }
-  #foooter-column-5 {
-    max-width: 600px;
-    margin: 50px 0;
-  }
-  #footer-container {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-@media (max-width: 1100px) {
-  #footer-column-1 {
-    max-width: 280px;
-  }
-  #foooter-column-5 {
-    max-width: 300px;
-    margin: 50px 0;
-  }
-  #footer-container {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-@media (max-width: 790px) {
-  #footer-column-1 {
-    max-width: 280px;
-  }
-  #foooter-column-5 {
-    max-width: 270px;
-    margin: 50px 0;
-  }
-}
-@media (max-width: 715px) {
-  #footer-column-1 {
-    max-width: 250px;
-  }
-  #foooter-column-5 {
-    max-width: 230px;
-    margin: 50px 0;
-  }
-  .footer-links-texts {
-    display: flex;
+
+@media (max-width: 1300px) {
+  #footer-top {
     flex-wrap: wrap;
-    column-gap: 65px;
-  }
-}
-@media (max-width: 500px) {
-  #footer-container {
-    display: flex;
-    /* flex-direction: column; */
-    flex-wrap: wrap;
-    padding: 30px 20px;
-    justify-content: center;
   }
   #footer-column-1 {
-    max-width: 300px;
+    display: flex;
   }
-  #foooter-column-5 {
-    margin: 30px 0;
-    min-width: 300px;
+  #footer-column1-item {
+    min-width: 500px;
+    flex-grow: 1; /* Item can grow */
+    flex-shrink: 1; /* Item can shrink */
+    flex-basis: 500px;
+  }
+}
+@media (max-width: 1050px) {
+  #footer-column-1 {
+    flex-wrap: wrap;
+  }
+  #footer-column1-item {
+    min-width: 500px;
+    flex-grow: 1; /* Item can grow */
+    flex-shrink: 1; /* Item can shrink */
+    flex-basis: 500px;
+  }
+}
+@media (max-width: 700px) {
+  #footer-column-1 {
+    flex-wrap: wrap;
+  }
+  #footer-column1-item {
+    min-width: 200px;
+    flex-grow: 1; /* Item can grow */
+    flex-shrink: 1; /* Item can shrink */
+    flex-basis: 500px;
+  }
+  #footer-container {
+    padding: 80px 50px;
+  }
+}
+@media (max-width: 700px) {
+  #footer-container {
+    padding: 80px 10px;
+  }
+}
+
+@media (max-width: 450px) {
+  #footer-container {
+    padding: 80px 10px;
   }
   #footer-newsletter-input {
-    width: 160px;
+    width: 80%;
+    padding: 10px;
   }
 }

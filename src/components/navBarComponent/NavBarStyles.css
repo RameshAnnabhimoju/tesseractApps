@@ -190,4 +190,7 @@
     top: 25px;
     left: 3px;
   }
+  #navbar-container {
+    padding: 20px 35px;
+  }
 }

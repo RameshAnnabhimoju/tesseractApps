@@ -1,37 +1,26 @@
 import "./HowItWorksStyles.css";
-
+import { howItWorksDummyData } from "../../utils/DummyData";
+import dividerLine from "../../assets/divider_line.jpg";
 import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-
-import { howItWorksDummyData, howItWorksImages } from "../../utils/DummyData";
-import { useKeenSlider } from "keen-slider/react";
 const HowItWorksComponent = () => {
-  // const navigate = useNavigate();
-  const [hoveredIndex, setHoveredIndex] = useState(0);
-  const [perView, setPerView] = useState(window.screen.width <= 1100 ? 1 : 4);
+  const divderRowsInitialValues = [2, 3, 5, 6];
+  const [dividerRows, setDividerRows] = useState(divderRowsInitialValues);
   useEffect(() => {
-    // console.log(window.screen.width);
-    if (window.screen.width <= 1100) {
-      setPerView(1);
-    }
-    if (window.screen.width <= 425) {
-      setPerView(1);
-    }
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      if (windowWidth < 1480) {
+        setDividerRows([2, 4, 6]);
+      } else {
+        setDividerRows(divderRowsInitialValues);
+      }
+    };
+
+    handleResize(); // Run initially on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const [sliderRef] = useKeenSlider({
-    mode: "snap",
-    rubberband: true,
-    slides: {
-      perView: perView,
-      spacing: 30,
-    },
-
-    initial: 0,
-    slideChanged(s) {
-      setHoveredIndex(s.track.details.rel); // update active slide index
-    },
-  });
-
   return (
     <div id="howItWorks-container">
       <div className="heading ">HOW IT WORKS</div>
@@ -39,69 +28,30 @@ const HowItWorksComponent = () => {
         From onboarding to compliance — TesseractApps simplifies every step of
         care delivery and operations.
       </div>
-      <div id="howItWorks-content" onMouseLeave={() => setHoveredIndex(0)}>
-        {perView > 1 && (
-          <div id="howItWorks-content-text">
-            {howItWorksDummyData.map((data, index) => {
-              return (
-                <div
-                  key={data.id + index}
-                  className="howItWorks-card"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  // onClick={() => navigate("/details")}
-                >
-                  <div className="howItWorks-card-title-number">{data.id}</div>
-                  <div className="howItWorks-card-title">{data.title}</div>
-                  <div className="howItWorks-card-description">
-                    {data.description}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
-        {perView == 1 && (
-          <div
-            ref={sliderRef}
-            className="keen-slider"
-            id="howItWorks-content-text-carousel"
-          >
-            {howItWorksDummyData.map((data, index) => {
-              return (
-                <div
-                  key={data.id + index}
-                  className="keen-slider__slide howItWorks-card"
-                  // onMouseEnter={() => setHoveredIndex(index)}
-                  // onClick={() => navigate("/details")}
-                >
-                  <div className="howItWorks-card-title-number">{data.id}</div>
-                  <div className="howItWorks-card-title">{data.title}</div>
-                  <div className="howItWorks-card-description">
-                    {data.description}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        )}
-        {/* <div id="howItWorks-image-container">
-          <img
-            src={howItWorksImages[hoveredIndex]}
-            alt="How It Works"
-            id="howItWorks-image"
-          />
-        </div> */}
-        {howItWorksImages.map((image, index) => {
+      <div id="howItWorks-content">
+        {howItWorksDummyData.map((data, index) => {
           return (
-            <img
-              key={image + index}
-              src={image}
-              alt="How It Works"
-              className={
-                "howItWorks-image" +
-                (hoveredIndex == index ? "" : " howItWorks-hide")
-              }
-            />
+            <div key={data.id + index} className="howItWorks-card">
+              {dividerRows.includes(data.id) && (
+                <img
+                  src={dividerLine}
+                  alt="dividerLine"
+                  className="howItWorks-dividerLine"
+                />
+              )}
+              <img
+                src={data.image}
+                alt="howItWorks-card-image"
+                className="howItWorks-card-image"
+              />
+              <div className="howItWorks-card-data">
+                <div className="howItWorks-card-title-number">0{data.id}</div>
+                <div className="howItWorks-card-title">{data.title}</div>
+                <div className="howItWorks-card-description">
+                  {data.description}
+                </div>
+              </div>
+            </div>
           );
         })}
       </div>

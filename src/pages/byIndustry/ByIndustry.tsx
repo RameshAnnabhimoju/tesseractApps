@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import "./ByIndustryStyles.css";
 import DetailsHeroComponent from "../../components/detailsHeroComponent/DetailsHeroComponent";
-import DetailsDataComponent from "../../components/detailsDataComponent/DetailsDataComponent";
+import AboutSelectedToolComponent from "../../components/aboutSelectedToolComponent/AboutSelectedToolComponent";
 interface byroleTypes {
   data: {
     hero: {
@@ -13,10 +13,15 @@ interface byroleTypes {
     details: {
       title: string;
       description: string;
-      images: string[];
-      conclusion?: string;
-      discriptionsPoints?: string[];
-    }[];
+      points: {
+        dot: { outer: string; middle: string; inner: string };
+        title: string;
+        description: string;
+        conclusion?: string;
+        descriptionPoints?: string[];
+        pointsData?: string[];
+      }[];
+    };
   };
 }
 const ByIndustry = () => {
@@ -25,15 +30,7 @@ const ByIndustry = () => {
   return (
     <div id="byindustry-container">
       {data.hero && <DetailsHeroComponent data={data.hero} />}
-      {data.details &&
-        data.details.map((item, index) => {
-          return (
-            <DetailsDataComponent
-              data={item}
-              componentType={index % 2 == 0 ? 1 : 2}
-            />
-          );
-        })}
+      {data.details && <AboutSelectedToolComponent data={data.details} />}
     </div>
   );
 };
