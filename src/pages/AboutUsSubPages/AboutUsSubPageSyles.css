@@ -31,9 +31,13 @@
 .about-us-page-image {
   max-height: 300px;
 }
-@media (max-width: 450px) {
-  .about-us-page-container {
-    margin: 80px 0;
+.about-us-page-data {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  #about-us-page-container {
+    margin: 80px 2%;
   }
   .about-us-page-image {
     max-width: 380px;
