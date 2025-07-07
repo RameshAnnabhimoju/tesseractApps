@@ -129,7 +129,7 @@ const SalesPage = () => {
               Call us:: ‪+61261332818‬ <br />
               Available: Mon - Fri, 9:00 AM to 5:30 PM
             </div>
-            <div className="request-demo-title">Or Email:</div>
+            <div className="request-demo-title">Email:</div>
             <div className="request-demo-description">
               sales@tesseractapps.com
             </div>

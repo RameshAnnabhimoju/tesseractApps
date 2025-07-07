@@ -44,6 +44,8 @@
   font-size: 18px;
   font-weight: 400;
   color: var(--color-text-gray);
+  max-height: 125px;
+  text-overflow: ellipsis;
 }
 .ourBlog-footer {
   display: flex;
@@ -83,6 +85,10 @@
 .ourBlog-image {
   width: 100%;
   max-height: 230px;
+}
+.ourBlog-author-image {
+  width: 35px;
+  border-radius: 50%;
 }
 @media (max-width: 450px) {
   .ourBlog-card {

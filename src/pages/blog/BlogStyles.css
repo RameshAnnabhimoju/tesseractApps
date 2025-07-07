@@ -84,7 +84,15 @@
   max-width: 600px;
   margin-bottom: 100px;
 }
-@media (max-width: 450px) {
+@media (max-width: 1044px) {
+  #blog-page-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 500px) {
   #blog-category-filters {
     gap: 1rem;
     margin: 20px 10%;
@@ -97,5 +105,8 @@
   }
   #blog-container {
     overflow-x: hidden;
+  }
+  #blog-page-card-container {
+    margin: 80px 5%;
   }
 }

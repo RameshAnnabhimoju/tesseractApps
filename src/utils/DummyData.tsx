@@ -72,7 +72,7 @@ export const blogDummyData = [
 import image1 from "../assets/image.png";
 import image2 from "../assets/image1.png";
 import image3 from "../assets/image2.png";
-import authorImage from "../assets/authorProfileImage.png";
+import authorImage from "../assets/businesswoman.png";
 export const ourBlogDummyData = [
   {
     id: 1,

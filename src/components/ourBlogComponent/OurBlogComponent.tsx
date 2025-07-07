@@ -89,7 +89,11 @@ const OurBlogComponent = () => {
               <div className="dividerLine" />
               <div className="ourBlog-footer">
                 <div className="ourBlog-author">
-                  <img src={data.authorImage} alt="author Image" />
+                  <img
+                    src={data.authorImage}
+                    alt="author Image"
+                    className="ourBlog-author-image"
+                  />
                   <div className="ourBlog-author-name">{data?.author}</div>
                 </div>
                 <div className="read-more-container">

@@ -5,7 +5,7 @@
   align-items: center;
   margin-bottom: 50px;
 }
-#contact-info {
+.contact-info {
   margin: 30px 0;
   border: 1px solid var(--color-text-gray-light);
   padding: 15px 40px;
@@ -30,4 +30,12 @@
   font-size: 16px;
   cursor: pointer;
   margin: 15px 0;
+}
+#contact-info-text-container {
+  display: flex;
+  column-gap: 20px;
+}
+#contact-info-sales {
+  max-width: 300px;
+  background-color: var(--color-background-light-gray);
 }
