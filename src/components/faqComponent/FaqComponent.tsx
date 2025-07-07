@@ -45,24 +45,29 @@ const FaqComponent = () => {
                 expandIcon={<img src={ArrowDown} alt="arrow" />}
               >
                 <Typography
-                  sx={{ fontSize: "22px", fontWeight: 600 }}
+                  sx={{ fontSize: "22px", fontWeight: 600, textAlign: "left" }}
                   component="span"
                 >
                   {data.question}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <div id="accordian-text-details">
-                  {data.answer}
-                  {data.points &&
-                    data.points.map((pointsData, pointsindex) => {
-                      return (
-                        <ul key={pointsindex}>
-                          <li>{pointsData}</li>
-                        </ul>
-                      );
-                    })}
-                </div>
+                <Typography
+                  sx={{ fontSize: "22px", fontWeight: 600, textAlign: "left" }}
+                  component="span"
+                >
+                  <div id="accordian-text-details">
+                    {data.answer}
+                    {data.points &&
+                      data.points.map((pointsData, pointsindex) => {
+                        return (
+                          <ul key={pointsindex}>
+                            <li>{pointsData}</li>
+                          </ul>
+                        );
+                      })}
+                  </div>
+                </Typography>
               </AccordionDetails>
             </Accordion>
           );

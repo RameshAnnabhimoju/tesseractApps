@@ -8,7 +8,7 @@ const ContactInformation = () => {
   };
   return (
     <div id="contact-info-container">
-      <div className="heading">CONTACT INFORMATION</div>
+      <div className="heading">CONTACT US</div>
       <div className="subheading">We're ready to connect.</div>
       <div className="text">
         Whether you're exploring our platform or looking for tailored support,

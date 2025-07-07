@@ -97,6 +97,8 @@
 #request-demo-agree-checkbox {
   cursor: pointer;
   transform: scale(1.2);
+  position: relative;
+  top: -3px;
 }
 .error {
   border-color: red;

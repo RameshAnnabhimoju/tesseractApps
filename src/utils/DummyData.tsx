@@ -226,7 +226,7 @@ export const navBarDummyData = {
     // { title: "Our Vision", subTitle: " " },
     { title: "Team", subTitle: " " },
     { title: "Careers", subTitle: " " },
-    { title: "Contact Information", subTitle: " " },
+    { title: "Contact Us", subTitle: " " },
   ],
 };
 
@@ -864,6 +864,13 @@ export const pricingDummyData = [
         data2: true,
         data3: true,
       },
+      {
+        title: "Performance Management",
+        subTitle: "",
+        data1: true,
+        data2: true,
+        data3: true,
+      },
     ],
   },
   {
@@ -1027,25 +1034,25 @@ export const pricingDummyData = [
       },
     ],
   },
-  {
-    heading: "Performance Management System",
-    data: [
-      {
-        title: "Manage Library Goal",
-        subTitle: "",
-        data1: true,
-        data2: true,
-        data3: true,
-      },
-      {
-        title: "Set Goal",
-        subTitle: "",
-        data1: true,
-        data2: true,
-        data3: true,
-      },
-    ],
-  },
+  // {
+  //   heading: "Performance Management System",
+  //   data: [
+  //     {
+  //       title: "Manage Library Goal",
+  //       subTitle: "",
+  //       data1: true,
+  //       data2: true,
+  //       data3: true,
+  //     },
+  //     {
+  //       title: "Set Goal",
+  //       subTitle: "",
+  //       data1: true,
+  //       data2: true,
+  //       data3: true,
+  //     },
+  //   ],
+  // },
   {
     heading: "Access Control Panel",
     data: [
@@ -1109,14 +1116,14 @@ export const pricingDummyData = [
     heading: "Forms",
     data: [
       {
-        title: "Customized forms",
+        title: "Customised Forms",
         subTitle: "",
         data1: true,
         data2: true,
         data3: true,
       },
       {
-        title: "Publish customized forms",
+        title: "Publish Customised Forms",
         subTitle: "",
         data1: true,
         data2: true,

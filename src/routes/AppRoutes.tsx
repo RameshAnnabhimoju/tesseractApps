@@ -57,7 +57,7 @@ const AppRoutes = () => {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/team" element={<ComingSoon />} />
       <Route path="/careers" element={<Careers />} />
-      <Route path="/contact-information" element={<ContactInformation />} />
+      <Route path="/contact-us" element={<ContactInformation />} />
       <Route path="/blogPost" element={<Blogpost />} />
       <Route path="/blogPost2" element={<FutureProofingBlog />} />
       <Route path="/blogPost3" element={<ManualRosteringBlog />} />
@@ -212,8 +212,8 @@ export const appNavigate = (
     case "Careers":
       if (navigate != undefined) navigate("/careers");
       break;
-    case "Contact Information":
-      if (navigate != undefined) navigate("/contact-information");
+    case "Contact Us":
+      if (navigate != undefined) navigate("/contact-us");
       break;
     case "Administrator":
       if (navigate != undefined)
