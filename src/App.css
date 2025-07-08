@@ -1,6 +1,6 @@
 :root {
   overflow-x: hidden;
-  min-height: 100vh;
+  min-height: 1080px;
   max-width: 1920px;
   --color-primary: #0c78ba;
   --color-secondary: #002a52;

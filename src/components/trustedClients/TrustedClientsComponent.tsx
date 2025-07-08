@@ -10,6 +10,7 @@ import company8 from "../../assets/ANA Logo.jpg";
 import company9 from "../../assets/LOGO1.png";
 import company10 from "../../assets/LOGO2.png";
 import company13 from "../../assets/logo13.png";
+import company14 from "../../assets/logo14.png";
 const TrustedClientsComponent = () => {
   const companiesImages = [
     company1,
@@ -21,6 +22,7 @@ const TrustedClientsComponent = () => {
     company7,
     company8,
     company9,
+    company14,
   ];
   return (
     <div id="trusted-clients-container">

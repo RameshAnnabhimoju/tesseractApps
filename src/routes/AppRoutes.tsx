@@ -31,6 +31,8 @@ import OutStory from "../pages/ourStory/OutStory";
 import Whitepapers from "../pages/whitepapers/Whitepapers";
 import SalesPage from "../pages/salesPage/SalesPage";
 import ManualRosteringBlog from "../pages/blogPost/ManualRosteringBlog";
+import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
+import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
 
 const AppRoutes = () => {
   return (
@@ -61,6 +63,8 @@ const AppRoutes = () => {
       <Route path="/blogPost" element={<Blogpost />} />
       <Route path="/blogPost2" element={<FutureProofingBlog />} />
       <Route path="/blogPost3" element={<ManualRosteringBlog />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
 
       <Route path="/administrator" element={<ByRole />} />
       <Route path="/roster-manager" element={<ByRole />} />
@@ -196,6 +200,12 @@ export const appNavigate = (
       break;
     case "Team":
       if (navigate != undefined) navigate("/team");
+      break;
+    case "Privacy Policy":
+      if (navigate != undefined) navigate("/privacy-policy");
+      break;
+    case "Terms & Conditions":
+      if (navigate != undefined) navigate("/terms-and-Conditions");
       break;
     case "Our Story":
       if (navigate != undefined)

@@ -126,7 +126,7 @@ const SalesPage = () => {
           <div id="request-demo-upper">
             <div className="request-demo-title">Contact Sales:</div>
             <div className="request-demo-description">
-              Call us:: ‪+61261332818‬ <br />
+              Call us: ‪+61261332818‬ <br />
               Available: Mon - Fri, 9:00 AM to 5:30 PM
             </div>
             <div className="request-demo-title">Email:</div>
