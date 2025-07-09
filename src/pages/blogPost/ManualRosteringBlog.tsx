@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
-
+import blogImage from "../../assets/Blog Rostering.jpg";
 const ManualRosteringBlog = () => {
   const navigate = useNavigate();
 
@@ -11,6 +11,11 @@ const ManualRosteringBlog = () => {
 
   return (
     <div className="blog-container">
+      <img
+        src={blogImage}
+        alt="Protecting Participant Data Image"
+        className="blog-image"
+      />
       <article className="blog-post">
         <header className="blog-header">
           <h1 className="blog-title">

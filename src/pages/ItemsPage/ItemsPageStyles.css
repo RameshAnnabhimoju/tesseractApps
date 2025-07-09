@@ -20,6 +20,7 @@
 .items-card-image {
   border-radius: 20px;
   margin-bottom: 20px;
+  object-fit: contain;
 }
 .items-card-title {
   font-size: 28px;

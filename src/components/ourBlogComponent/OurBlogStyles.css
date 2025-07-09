@@ -2,8 +2,6 @@
   margin: 50px 3%;
 }
 .ourBlog-card {
-  min-width: 380px; /* or whatever width you want */
-  max-width: 450px;
   cursor: pointer;
 }
 .ourBlog-attributes-container {
@@ -44,8 +42,10 @@
   font-size: 18px;
   font-weight: 400;
   color: var(--color-text-gray);
-  max-height: 125px;
+  min-height: 125px;
+  max-height: 225px;
   text-overflow: ellipsis;
+  overflow-y: hidden;
 }
 .ourBlog-footer {
   display: flex;
@@ -85,6 +85,7 @@
 .ourBlog-image {
   width: 100%;
   max-height: 230px;
+  object-fit: cover;
 }
 .ourBlog-author-image {
   width: 35px;

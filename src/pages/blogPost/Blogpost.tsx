@@ -1,7 +1,13 @@
 import "./BlogPostStyles.css";
+import blogImage from "../../assets/Blog Protecting Participant Data.jpg";
 const Blogpost = () => {
   return (
     <div className="blog-container">
+      <img
+        src={blogImage}
+        alt="Protecting Participant Data Image"
+        className="blog-image"
+      />
       <article className="blog-post">
         <header className="blog-header">
           <h1 className="blog-title">

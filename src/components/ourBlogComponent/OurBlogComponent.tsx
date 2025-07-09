@@ -18,7 +18,10 @@ const OurBlogComponent = () => {
     if (window.innerWidth <= 1100) {
       setPerView(3);
     }
-    if (window.innerWidth <= 425) {
+    if (window.innerWidth <= 1000) {
+      setPerView(2);
+    }
+    if (window.innerWidth <= 570) {
       setPerView(1);
     }
   }, []);

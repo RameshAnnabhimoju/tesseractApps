@@ -1,5 +1,5 @@
 import "./ItemsPageStyles.css";
-import { blogDummyData } from "../../utils/DummyData";
+import { ourBlogDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 const ItemsPage = () => {
@@ -7,12 +7,12 @@ const ItemsPage = () => {
   const location = useLocation();
   const { data } = location.state || {};
   const [categoryFilter, setCategoryFilter] = useState("All");
-  const [blogsData, setBlogsData] = useState(blogDummyData);
+  const [blogsData, setBlogsData] = useState(ourBlogDummyData);
   const handleCategoryFilter = (category: string) => {
     setCategoryFilter(category);
   };
   useEffect(() => {
-    const filteredData = blogDummyData.filter(
+    const filteredData = ourBlogDummyData.filter(
       (blog) =>
         blog?.categories?.includes(categoryFilter) || categoryFilter === "All"
     );
@@ -83,7 +83,11 @@ const ItemsPage = () => {
             className="items-page-card"
             key={index}
           >
-            <img src={blog.image} alt="items" className="items-card-image" />
+            <img
+              src={blog.image}
+              alt="blog-image"
+              className="items-card-image"
+            />
             <div className="items-card-title">{blog.title}</div>
             <div className="items-card-description">{blog.description}</div>
             <div className="items-card-categories">

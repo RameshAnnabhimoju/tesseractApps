@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
-
+import blogImage from "../../assets/Blog Disability Services.jpg";
 const FutureProofingBlog = () => {
   const navigate = useNavigate();
   function handleClick(name: string) {
@@ -9,6 +9,11 @@ const FutureProofingBlog = () => {
   }
   return (
     <div className="blog-container">
+      <img
+        src={blogImage}
+        alt="Protecting Participant Data Image"
+        className="blog-image"
+      />
       <article className="blog-post">
         <header className="blog-header">
           <h1 className="blog-title">
