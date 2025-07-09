@@ -92,6 +92,10 @@
   border-radius: 10px;
   background-image: var(--color-background-gradient);
   max-height: 470px;
+  width: max-content;
+  max-width: 55vw;
+  overflow-x: auto;
+  box-sizing: border-box;
 }
 .nav-inner-container {
   padding: 10px;

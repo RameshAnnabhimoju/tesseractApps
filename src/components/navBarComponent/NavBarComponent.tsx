@@ -21,7 +21,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ArrowDown from "../../assets/arrow_down.svg";
-// import BackArrow from "../../assets/white arrow.png";
 import { appNavigate } from "../../routes/AppRoutes";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowUp from "../arrows/ArrowUp";
