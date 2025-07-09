@@ -9,7 +9,7 @@ import SubPage from "../pages/SubPage/SubPage";
 import ItemsPage from "../pages/ItemsPage/ItemsPage";
 import FAQ from "../pages/faq/FAQ";
 import AboutUsSubPage from "../pages/AboutUsSubPages/AboutUsSubPage";
-// import Teams from "../pages/teams/Teams";
+import Teams from "../pages/teams/Teams";
 import Careers from "../pages/careers/Careers";
 import ContactInformation from "../pages/contactInformation/ContactInformation";
 import Blogpost from "../pages/blogPost/Blogpost";
@@ -55,7 +55,7 @@ const AppRoutes = () => {
       <Route path="/our-story" element={<OutStory />} />
       <Route path="/our-mission-and-vision" element={<AboutUsSubPage />} />
       <Route path="/faq" element={<FAQ />} />
-      <Route path="/team" element={<ComingSoon />} />
+      <Route path="/team" element={<Teams />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact-us" element={<ContactInformation />} />
       <Route path="/blogPost" element={<Blogpost />} />
