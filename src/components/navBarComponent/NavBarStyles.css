@@ -101,6 +101,7 @@
 .nav-inner-container {
   padding: 10px;
   cursor: pointer;
+  max-width: 200px;
 }
 .nav-title {
   font-size: 16px;
