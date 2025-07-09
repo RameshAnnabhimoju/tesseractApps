@@ -1440,7 +1440,7 @@ export const dots = {
   dot6: { outer: "#EBE2FE", middle: "#C7ADFC", inner: "#932EFA" },
 };
 import detailsHero from "../assets/heroDetails1.png";
-import productsHero from "../assets/Product page Hero screen copy.jpg";
+import productsHero from "../assets/product overview.png";
 // import detailsImage1 from "../assets/detailImage1.png";
 // import detailsImage2 from "../assets/detailImage2.png";
 // import detailsImage3 from "../assets/detailImage3.png";
@@ -2335,13 +2335,14 @@ import PrashanthImage from "../assets/PRASHANTH RAGULA - SENIOR SOFTWARE ENGINEE
 // import EashwarImage from "../assets/SAI ESWAR KANDREGULA - TEST ENGINEER.jpg";
 // import SaranImage from "../assets/SINGAREDDY SARAN KUMAR REDDY - SENIOR SOFTWARE ENGINEER.jpg";
 import SuryaImage from "../assets/SURYAVAMSI DOMMETI - SOFTWARE ENGINEER.jpg";
-// import NagendraImage from "../assets/NAGENDRA - CO FOUNDER.jpg";
+import NagendraImage from "../assets/NAGENDRA - CO FOUNDER.jpg";
 // import KranthiImage from "../assets/KRANTHI KAKKERLA - CO FOUNDER.jpg";
 // import RevanthImage from "../assets/avatar-top.png";
 import BelleImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
 // import TomerImage from "../assets/TOMER DORON - SOLUTIONS CONSULTANT.jpg";
 // import DarshanImage from "../assets/DARSHAN M SHELAT - SOLUTIONS CONSULTANT.jpg";
 import sureshImage from "../assets/SURESH-COFOUNDER.png";
+import rameshImage from "../assets/RameshAnnabhimoju.png";
 import teamMan from "../assets/team-man.png";
 
 export const teamsPageData = {
@@ -2356,7 +2357,7 @@ export const teamsPageData = {
     {
       name: "NAGENDRA",
       designation: "CO FOUNDER",
-      image: teamMan,
+      image: NagendraImage,
     },
     {
       name: "SURESH",
@@ -2469,7 +2470,7 @@ export const teamsPageData = {
     {
       name: "RAMESH ANNABHIMOJU",
       designation: "SOFTWARE ENGINEER",
-      image: teamMan,
+      image: rameshImage,
     },
     {
       name: "BELLE BAI",
