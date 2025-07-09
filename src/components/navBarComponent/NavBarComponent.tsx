@@ -619,7 +619,14 @@ const NavBarComponent = ({
         position={popupPosition}
         onMouseLeave={closePopup}
       >
-        <div id="popup-nav-container">
+        <div
+          id="popup-nav-container"
+          className={
+            selectedLink && selectedLink == "Product"
+              ? "popup-nav-product-container"
+              : ""
+          }
+        >
           {selectedLink &&
             selectedLink != "Solutions" &&
             selectedLink != "Product" &&
@@ -636,20 +643,17 @@ const NavBarComponent = ({
             ))}
           {selectedLink &&
             selectedLink == "Product" &&
-            Array.isArray(navBarDummyData[selectedLink]) && (
-              <div id="popup-nav-peoduct-container">
-                {navBarDummyData[selectedLink].map((value) => (
-                  <div
-                    key={value.title}
-                    className="nav-inner-container"
-                    onClick={() => popupLinkClickHandler(value.title)}
-                  >
-                    <div className="nav-title">{value.title}</div>
-                    <div className="nav-sub-title">{value.subTitle}</div>
-                  </div>
-                ))}
+            Array.isArray(navBarDummyData[selectedLink]) &&
+            navBarDummyData[selectedLink].map((value) => (
+              <div
+                key={value.title}
+                className="nav-inner-container"
+                onClick={() => popupLinkClickHandler(value.title)}
+              >
+                <div className="nav-title">{value.title}</div>
+                <div className="nav-sub-title">{value.subTitle}</div>
               </div>
-            )}
+            ))}
 
           {selectedLink && selectedLink == "Solutions" && (
             <div id="popup-nav-services-container">
