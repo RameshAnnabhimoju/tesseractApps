@@ -2318,21 +2318,21 @@ export const aboutUsPageData = {
   ],
 };
 import MaheshwariImage from "../assets/MAHESWARI ADABALA - OPERATIONS MANAGER.jpg";
-// import ManimalaImImage from "../assets/MANIMALA JEEBU - SOFTWARE ENGINEER.jpg";
+import ManimalaImImage from "../assets/MANIMALA JEEBU - SOFTWARE ENGINEER.jpg";
 import MeghanaImage from "../assets/MEGHNA THAPA - ACCOUNT MANAGER.jpg";
 import DeepakRaj from "../assets/DEEPAK RAJ KORUKONDA - SOFTWARE ENGINEER.jpg";
 import DivyaRani from "../assets/DIVYARANI MACHCHA - BUSINESS ANALYST.jpg";
 import PratyushaImage from "../assets/JINKA PRATHYUSHA - SOFTWARE ENGINEER.jpg";
-// import PraveenImage from "../assets/PRAVEEN SHESHAM - TEAM LEAD.jpg";
+import PraveenImage from "../assets/PRAVEEN SHESHAM - TEAM LEAD.jpg";
 import RiyazImage from "../assets/RIYAZAT JAFFAR KAZARANI - UI GRAPHIC DESIGNER.jpg";
 // import KrishnaImage from "../assets/SAI KRISHNA MUNIRATHINAM - TEST ENGINEER.jpg";
 import SarojaImage from "../assets/SAROJA TENNETY - TECHNICAL ARCHITECT.jpg";
 // import TejithaImage from "../assets/TEJITHA YELLAMELLI - SOFTWARE ENGINEER.jpg";
 import SushimithaImage from "../assets/SUSHIMITHA KORUKONDA - TEAM MANAGER.jpg";
-// import RajKumarImage from "../assets/BOBBILI RAJKUMAR - PRODUCT DESINGER.jpg";
+import RajKumarImage from "../assets/BOBBILI RAJKUMAR - PRODUCT DESINGER.jpg";
 import PrameelaImage from "../assets/PRAMEELA KESAVADASU - SENIOR TEST ENGINEER.jpg";
 import PrashanthImage from "../assets/PRASHANTH RAGULA - SENIOR SOFTWARE ENGINEER.jpg";
-// import EashwarImage from "../assets/SAI ESWAR KANDREGULA - TEST ENGINEER.jpg";
+import EashwarImage from "../assets/SAI ESWAR KANDREGULA - TEST ENGINEER.jpg";
 // import SaranImage from "../assets/SINGAREDDY SARAN KUMAR REDDY - SENIOR SOFTWARE ENGINEER.jpg";
 import SuryaImage from "../assets/SURYAVAMSI DOMMETI - SOFTWARE ENGINEER.jpg";
 import NagendraImage from "../assets/NAGENDRA - CO FOUNDER.jpg";
@@ -2385,7 +2385,7 @@ export const teamsPageData = {
     {
       name: "PRAVEEN SHESHAM",
       designation: "TEAM LEAD",
-      image: teamMan,
+      image: PraveenImage,
     },
     {
       name: "SAROJA TENNETY",
@@ -2395,7 +2395,7 @@ export const teamsPageData = {
     {
       name: "BOBBILI RAJKUMAR",
       designation: "PRODUCT DESINGER",
-      image: teamMan,
+      image: RajKumarImage,
     },
     {
       name: "SURYAVAMSI DOMMETI",
@@ -2415,7 +2415,7 @@ export const teamsPageData = {
     {
       name: "MANIMALA JEEBU",
       designation: "SOFTWARE ENGINEER",
-      image: teamMan,
+      image: ManimalaImImage,
     },
     {
       name: "RIYAZAT JAFFAR KAZARANI",
@@ -2445,7 +2445,7 @@ export const teamsPageData = {
     {
       name: "SAI ESWAR KANDREGULA",
       designation: "TEST ENGINEER",
-      image: teamMan,
+      image: EashwarImage,
     },
     {
       name: "SAI KRISHNA MUNIRATHINAM",
