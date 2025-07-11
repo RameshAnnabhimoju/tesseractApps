@@ -2327,30 +2327,30 @@ import PraveenImage from "../assets/PRAVEEN SHESHAM - TEAM LEAD.jpg";
 import RiyazImage from "../assets/RIYAZAT JAFFAR KAZARANI - UI GRAPHIC DESIGNER.jpg";
 import KrishnaImage from "../assets/SAI KRISHNA MUNIRATHINAM - TEST ENGINEER.jpg";
 import SarojaImage from "../assets/SAROJA TENNETY - TECHNICAL ARCHITECT.jpg";
-// import TejithaImage from "../assets/TEJITHA YELLAMELLI - SOFTWARE ENGINEER.jpg";
+import TejithaImage from "../assets/TEJITHA YELLAMELLI - SOFTWARE ENGINEER.jpg";
 import SushimithaImage from "../assets/SUSHIMITHA KORUKONDA - TEAM MANAGER.jpg";
 import RajKumarImage from "../assets/BOBBILI RAJKUMAR - PRODUCT DESINGER.jpg";
 import PrameelaImage from "../assets/PRAMEELA KESAVADASU - SENIOR TEST ENGINEER.jpg";
 import PrashanthImage from "../assets/PRASHANTH RAGULA - SENIOR SOFTWARE ENGINEER.jpg";
 import EashwarImage from "../assets/SAI ESWAR KANDREGULA - TEST ENGINEER.jpg";
-// import SaranImage from "../assets/SINGAREDDY SARAN KUMAR REDDY - SENIOR SOFTWARE ENGINEER.jpg";
+import SaranImage from "../assets/SINGAREDDY SARAN KUMAR REDDY - SENIOR SOFTWARE ENGINEER.jpg";
 import SuryaImage from "../assets/SURYAVAMSI DOMMETI - SOFTWARE ENGINEER.jpg";
 import NagendraImage from "../assets/NAGENDRA - CO FOUNDER.jpg";
-// import KranthiImage from "../assets/KRANTHI KAKKERLA - CO FOUNDER.jpg";
-// import RevanthImage from "../assets/avatar-top.png";
+import KranthiImage from "../assets/KRANTHI KAKKERLA - CO FOUNDER.jpg";
+import RevanthImage from "../assets/REVANTH-CEO.png";
 import BelleImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
 import TomerImage from "../assets/TOMER DORON - SOLUTIONS CONSULTANT.jpg";
 import DarshanImage from "../assets/DARSHAN M SHELAT - SOLUTIONS CONSULTANT.jpg";
 import sureshImage from "../assets/SURESH-COFOUNDER.png";
 import rameshImage from "../assets/RameshAnnabhimoju.png";
-import teamMan from "../assets/team-man.png";
+import sumanthImage from "../assets/SUMANTH-COFOUNDER.png";
 
 export const teamsPageData = {
   CEO: [
     {
       name: "REVANTH",
       designation: "FOUNDER",
-      image: teamMan,
+      image: RevanthImage,
     },
   ],
   Directors: [
@@ -2367,13 +2367,13 @@ export const teamsPageData = {
     {
       name: "SUMANTH",
       designation: "CO FOUNDER",
-      image: teamMan,
+      image: sumanthImage,
     },
 
     {
       name: "KRANTHI KAKKERLA",
       designation: "CO FOUNDER",
-      image: teamMan,
+      image: KranthiImage,
     },
   ],
   Team: [
@@ -2395,7 +2395,7 @@ export const teamsPageData = {
     {
       name: "SINGAREDDY SARAN KUMAR REDDY",
       designation: "TEAM LEAD",
-      image: teamMan,
+      image: SaranImage,
     },
     {
       name: "PRASHANTH RAGULA",
@@ -2456,7 +2456,7 @@ export const teamsPageData = {
     {
       name: "TEJITHA YELLAMELLI",
       designation: "SOFTWARE ENGINEER",
-      image: teamMan,
+      image: TejithaImage,
     },
 
     {
