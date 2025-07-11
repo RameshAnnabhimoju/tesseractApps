@@ -50,11 +50,12 @@
 .teams-segment {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .teams-segment-line {
   height: 2px;
   border: 1px solid #f3f3f3;
-  width: 80%;
+  width: 100%;
 }
 .teams-segment-title {
   padding: 5px 0;
@@ -62,8 +63,15 @@
   font-weight: 500;
   font-size: 24px;
 }
+#teams-segment-line-3 {
+  width: 300px;
+}
+#teams-segment-line-4 {
+  width: 150px;
+}
 #team-data-container {
   margin: 60px 0;
+  justify-self: flex-end;
 }
 @media (max-width: 1680px) {
   .team-image-container {

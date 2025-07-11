@@ -50,7 +50,9 @@ const Teams = () => {
           })}
         </div>
         <div className="teams-segment">
-          <div className="teams-segment-title">Business & Marketing</div>
+          <div className="teams-segment-title" id="teams-segment-line-3">
+            Business & Marketing
+          </div>
           <div className="teams-segment-line" />
         </div>
         <div className="team-image-container">
@@ -68,7 +70,9 @@ const Teams = () => {
           })}
         </div>
         <div className="teams-segment">
-          <div className="teams-segment-title">Tech Team</div>
+          <div className="teams-segment-title" id="teams-segment-line-4">
+            Tech Team
+          </div>
           <div className="teams-segment-line" />
         </div>
         <div className="team-image-container">
