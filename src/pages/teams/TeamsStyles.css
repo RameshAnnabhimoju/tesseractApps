@@ -45,6 +45,7 @@
   margin-top: 5px;
   background-image: var(--color-background-gradient);
   padding: 10px 20px;
+  width: fit-content;
 }
 .teams-segment {
   display: flex;
@@ -53,7 +54,7 @@
 .teams-segment-line {
   height: 2px;
   border: 1px solid #f3f3f3;
-  width: 100%;
+  width: 80%;
 }
 .teams-segment-title {
   padding: 5px 0;

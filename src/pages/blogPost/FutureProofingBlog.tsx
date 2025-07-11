@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
-import blogImage from "../../assets/Blog Disability Services.jpg";
+import blogImage from "../../assets/blog2.jpg";
 const FutureProofingBlog = () => {
   const navigate = useNavigate();
   function handleClick(name: string) {

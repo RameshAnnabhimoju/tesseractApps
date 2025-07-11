@@ -1,6 +1,6 @@
-import image1 from "../assets/Blog Protecting Participant Data.jpg";
-import image2 from "../assets/Blog Disability Services.jpg";
-import image3 from "../assets/Blog Rostering.jpg";
+import image1 from "../assets/blog1.jpg";
+import image2 from "../assets/blog2.jpg";
+import image3 from "../assets/blog3.jpg";
 import authorImage from "../assets/businesswoman.png";
 export const ourBlogDummyData = [
   {
@@ -2376,17 +2376,60 @@ export const teamsPageData = {
       image: KranthiImage,
     },
   ],
-  Team: [
+  "BUSINESS & MARKETING": [
     {
-      name: "SAROJA TENNETY",
-      designation: "DELIVERY MANAGER",
-      image: SarojaImage,
+      name: "TOMER DORON",
+      designation: "SOLUTIONS CONSULTANT",
+      image: TomerImage,
+    },
+    {
+      name: "BELLE BAI",
+      designation: "MARKETING EXECUTIVE",
+      image: BelleImage,
     },
     {
       name: "MAHESWARI ADABALA",
       designation: "OPERATIONS MANAGER",
       image: MaheshwariImage,
     },
+    {
+      name: "MEGHNA THAPA",
+      designation: "ACCOUNT MANAGER",
+      image: MeghanaImage,
+    },
+    {
+      name: "SUSHIMITHA KORUKONDA",
+      designation: "TEAM MANAGER",
+      image: SushimithaImage,
+    },
+    {
+      name: "DEEPAK RAJ KORUKONDA",
+      designation: "SOFTWARE ENGINEER",
+      image: DeepakRaj,
+    },
+    {
+      name: "DARSHAN M SHELAT",
+      designation: "SOLUTIONS CONSULTANT",
+      image: DarshanImage,
+    },
+    {
+      name: "DIVYARANI MACHCHA",
+      designation: "PRODUCT MANAGER",
+      image: DivyaRani,
+    },
+    {
+      name: "TEJITHA YELLAMELLI",
+      designation: "PRODUCT MANAGER",
+      image: TejithaImage,
+    },
+  ],
+  Team: [
+    {
+      name: "SAROJA TENNETY",
+      designation: "DELIVERY MANAGER",
+      image: SarojaImage,
+    },
+
     {
       name: "PRAVEEN SHESHAM",
       designation: "TEAM MANAGER",
@@ -2428,17 +2471,6 @@ export const teamsPageData = {
       image: PratyushaImage,
     },
     {
-      name: "BOBBILI RAJKUMAR",
-      designation: "PRODUCT DESINGER",
-      image: RajKumarImage,
-    },
-
-    {
-      name: "RIYAZAT JAFFAR KAZARANI",
-      designation: "UI GRAPHIC DESIGNER",
-      image: RiyazImage,
-    },
-    {
       name: "PRAMEELA KESAVADASU",
       designation: "QA MANAGER",
       image: PrameelaImage,
@@ -2449,46 +2481,15 @@ export const teamsPageData = {
       image: KrishnaImage,
     },
     {
-      name: "DIVYARANI MACHCHA",
-      designation: "BUSINESS ANALYST",
-      image: DivyaRani,
-    },
-    {
-      name: "TEJITHA YELLAMELLI",
-      designation: "SOFTWARE ENGINEER",
-      image: TejithaImage,
+      name: "BOBBILI RAJKUMAR",
+      designation: "PRODUCT DESINGER",
+      image: RajKumarImage,
     },
 
     {
-      name: "DEEPAK RAJ KORUKONDA",
-      designation: "SOFTWARE ENGINEER",
-      image: DeepakRaj,
-    },
-    {
-      name: "SUSHIMITHA KORUKONDA",
-      designation: "TEAM MANAGER",
-      image: SushimithaImage,
-    },
-    {
-      name: "MEGHNA THAPA",
-      designation: "ACCOUNT MANAGER",
-      image: MeghanaImage,
-    },
-
-    {
-      name: "BELLE BAI",
-      designation: "MARKETING EXECUTIVE",
-      image: BelleImage,
-    },
-    {
-      name: "TOMER DORON",
-      designation: "SOLUTIONS CONSULTANT",
-      image: TomerImage,
-    },
-    {
-      name: "DARSHAN M SHELAT",
-      designation: "SOLUTIONS CONSULTANT",
-      image: DarshanImage,
+      name: "RIYAZAT JAFFAR KAZARANI",
+      designation: "UI GRAPHIC DESIGNER",
+      image: RiyazImage,
     },
   ],
 };

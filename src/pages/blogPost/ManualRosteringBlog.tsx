@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
-import blogImage from "../../assets/Blog Rostering.jpg";
+import blogImage from "../../assets/blog3.jpg";
 const ManualRosteringBlog = () => {
   const navigate = useNavigate();
 
