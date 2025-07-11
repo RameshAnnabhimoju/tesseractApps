@@ -71,7 +71,7 @@ const Teams = () => {
         </div>
         <div className="teams-segment">
           <div className="teams-segment-title" id="teams-segment-line-4">
-            Tech Team
+            Technical Team
           </div>
           <div className="teams-segment-line" />
         </div>
