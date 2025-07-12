@@ -13,7 +13,7 @@ const Teams = () => {
         ahead of the curve.
       </div>
       <div id="team-data-container">
-        <div className="teams-segment">
+        {/* <div className="teams-segment">
           <div className="teams-segment-title">CEO</div>
           <div className="teams-segment-line" />
         </div>
@@ -77,6 +77,24 @@ const Teams = () => {
         </div>
         <div className="team-image-container">
           {teamsPageData.Team.map((data, index) => {
+            return (
+              <div key={index} className="team-image-card">
+                <img src={data.image} alt="person" className="team-image" />
+
+                <div className="team-name-container">
+                  <div className="team-name">{data.name}</div>
+                  <div className="team-designation">{data.designation}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div> */}
+        <div className="teams-segment">
+          <div className="teams-segment-title">A Passionate Team</div>
+          <div className="teams-segment-line" />
+        </div>
+        <div className="team-image-container">
+          {teamsPageData.map((data, index) => {
             return (
               <div key={index} className="team-image-card">
                 <img src={data.image} alt="person" className="team-image" />

@@ -2345,154 +2345,297 @@ import sureshImage from "../assets/SURESH-COFOUNDER.png";
 import rameshImage from "../assets/RameshAnnabhimoju.png";
 import sumanthImage from "../assets/SUMANTH-COFOUNDER.png";
 
-export const teamsPageData = {
-  CEO: [
-    {
-      name: "REVANTH",
-      designation: "FOUNDER",
-      image: RevanthImage,
-    },
-  ],
-  Directors: [
-    {
-      name: "NAGENDRA",
-      designation: "CO FOUNDER",
-      image: NagendraImage,
-    },
-    {
-      name: "SURESH",
-      designation: "CO FOUNDER",
-      image: sureshImage,
-    },
-    {
-      name: "SUMANTH",
-      designation: "CO FOUNDER",
-      image: sumanthImage,
-    },
+// export const teamsPageData = {
+//   CEO: [
+//     {
+//       name: "REVANTH",
+//       designation: "FOUNDER",
+//       image: RevanthImage,
+//     },
+//   ],
+//   Directors: [
+//     {
+//       name: "NAGENDRA",
+//       designation: "CO FOUNDER",
+//       image: NagendraImage,
+//     },
+//     {
+//       name: "SURESH",
+//       designation: "CO FOUNDER",
+//       image: sureshImage,
+//     },
+//     {
+//       name: "SUMANTH",
+//       designation: "CO FOUNDER",
+//       image: sumanthImage,
+//     },
 
-    {
-      name: "KRANTHI KAKKERLA",
-      designation: "CO FOUNDER",
-      image: KranthiImage,
-    },
-  ],
-  "BUSINESS & MARKETING": [
-    {
-      name: "TOMER DORON",
-      designation: "SOLUTIONS CONSULTANT",
-      image: TomerImage,
-    },
-    {
-      name: "BELLE BAI",
-      designation: "MARKETING EXECUTIVE",
-      image: BelleImage,
-    },
-    {
-      name: "MAHESWARI ADABALA",
-      designation: "OPERATIONS MANAGER",
-      image: MaheshwariImage,
-    },
-    {
-      name: "MEGHNA THAPA",
-      designation: "ACCOUNT MANAGER",
-      image: MeghanaImage,
-    },
-    {
-      name: "SUSHIMITHA KORUKONDA",
-      designation: "TEAM MANAGER",
-      image: SushimithaImage,
-    },
-    {
-      name: "DEEPAK RAJ KORUKONDA",
-      designation: "SOFTWARE ENGINEER",
-      image: DeepakRaj,
-    },
-    {
-      name: "DARSHAN M SHELAT",
-      designation: "SOLUTIONS CONSULTANT",
-      image: DarshanImage,
-    },
-    {
-      name: "DIVYARANI MACHCHA",
-      designation: "PRODUCT MANAGER",
-      image: DivyaRani,
-    },
-    {
-      name: "TEJITHA YELLAMELLI",
-      designation: "PRODUCT MANAGER",
-      image: TejithaImage,
-    },
-  ],
-  Team: [
-    {
-      name: "SAROJA TENNETY",
-      designation: "DELIVERY MANAGER",
-      image: SarojaImage,
-    },
+//     {
+//       name: "KRANTHI KAKKERLA",
+//       designation: "CO FOUNDER",
+//       image: KranthiImage,
+//     },
+//   ],
+//   "BUSINESS & MARKETING": [
+//     {
+//       name: "TOMER DORON",
+//       designation: "SOLUTIONS CONSULTANT",
+//       image: TomerImage,
+//     },
+//     {
+//       name: "BELLE BAI",
+//       designation: "MARKETING EXECUTIVE",
+//       image: BelleImage,
+//     },
+//     {
+//       name: "MAHESWARI ADABALA",
+//       designation: "OPERATIONS MANAGER",
+//       image: MaheshwariImage,
+//     },
+//     {
+//       name: "MEGHNA THAPA",
+//       designation: "ACCOUNT MANAGER",
+//       image: MeghanaImage,
+//     },
+//     {
+//       name: "SUSHIMITHA KORUKONDA",
+//       designation: "TEAM MANAGER",
+//       image: SushimithaImage,
+//     },
+//     {
+//       name: "DEEPAK RAJ KORUKONDA",
+//       designation: "SOFTWARE ENGINEER",
+//       image: DeepakRaj,
+//     },
+//     {
+//       name: "DARSHAN M SHELAT",
+//       designation: "SOLUTIONS CONSULTANT",
+//       image: DarshanImage,
+//     },
+//     {
+//       name: "DIVYARANI MACHCHA",
+//       designation: "PRODUCT MANAGER",
+//       image: DivyaRani,
+//     },
+//     {
+//       name: "TEJITHA YELLAMELLI",
+//       designation: "PRODUCT MANAGER",
+//       image: TejithaImage,
+//     },
+//   ],
+//   Team: [
+//     {
+//       name: "SAROJA TENNETY",
+//       designation: "DELIVERY MANAGER",
+//       image: SarojaImage,
+//     },
 
-    {
-      name: "PRAVEEN SHESHAM",
-      designation: "TEAM MANAGER",
-      image: PraveenImage,
-    },
-    {
-      name: "SINGAREDDY SARAN KUMAR REDDY",
-      designation: "TEAM LEAD",
-      image: SaranImage,
-    },
-    {
-      name: "PRASHANTH RAGULA",
-      designation: "SENIOR SOFTWARE ENGINEER",
-      image: PrashanthImage,
-    },
-    {
-      name: "SURYAVAMSI DOMMETI",
-      designation: "SOFTWARE ENGINEER",
-      image: SuryaImage,
-    },
-    {
-      name: "MANIMALA JEEBU",
-      designation: "SOFTWARE ENGINEER",
-      image: ManimalaImImage,
-    },
-    {
-      name: "SAI ESWAR KANDREGULA",
-      designation: "SOFTWARE ENGINEER",
-      image: EashwarImage,
-    },
-    {
-      name: "RAMESH ANNABHIMOJU",
-      designation: "SENIOR SOFTWARE ENGINEER",
-      image: rameshImage,
-    },
-    {
-      name: "JINKA PRATHYUSHA",
-      designation: "SOFTWARE ENGINEER",
-      image: PratyushaImage,
-    },
-    {
-      name: "PRAMEELA KESAVADASU",
-      designation: "QA MANAGER",
-      image: PrameelaImage,
-    },
-    {
-      name: "SAI KRISHNA MUNIRATHINAM",
-      designation: "TEST ENGINEER",
-      image: KrishnaImage,
-    },
-    {
-      name: "BOBBILI RAJKUMAR",
-      designation: "PRODUCT DESINGER",
-      image: RajKumarImage,
-    },
+//     {
+//       name: "PRAVEEN SHESHAM",
+//       designation: "TEAM MANAGER",
+//       image: PraveenImage,
+//     },
+//     {
+//       name: "SINGAREDDY SARAN KUMAR REDDY",
+//       designation: "TEAM LEAD",
+//       image: SaranImage,
+//     },
+//     {
+//       name: "PRASHANTH RAGULA",
+//       designation: "SENIOR SOFTWARE ENGINEER",
+//       image: PrashanthImage,
+//     },
+//     {
+//       name: "SURYAVAMSI DOMMETI",
+//       designation: "SOFTWARE ENGINEER",
+//       image: SuryaImage,
+//     },
+//     {
+//       name: "MANIMALA JEEBU",
+//       designation: "SOFTWARE ENGINEER",
+//       image: ManimalaImImage,
+//     },
+//     {
+//       name: "SAI ESWAR KANDREGULA",
+//       designation: "SOFTWARE ENGINEER",
+//       image: EashwarImage,
+//     },
+//     {
+//       name: "RAMESH ANNABHIMOJU",
+//       designation: "SENIOR SOFTWARE ENGINEER",
+//       image: rameshImage,
+//     },
+//     {
+//       name: "JINKA PRATHYUSHA",
+//       designation: "SOFTWARE ENGINEER",
+//       image: PratyushaImage,
+//     },
+//     {
+//       name: "PRAMEELA KESAVADASU",
+//       designation: "QA MANAGER",
+//       image: PrameelaImage,
+//     },
+//     {
+//       name: "SAI KRISHNA MUNIRATHINAM",
+//       designation: "TEST ENGINEER",
+//       image: KrishnaImage,
+//     },
+//     {
+//       name: "BOBBILI RAJKUMAR",
+//       designation: "PRODUCT DESINGER",
+//       image: RajKumarImage,
+//     },
 
-    {
-      name: "RIYAZAT JAFFAR KAZARANI",
-      designation: "UI GRAPHIC DESIGNER",
-      image: RiyazImage,
-    },
-  ],
-};
+//     {
+//       name: "RIYAZAT JAFFAR KAZARANI",
+//       designation: "UI GRAPHIC DESIGNER",
+//       image: RiyazImage,
+//     },
+//   ],
+// };
+export const teamsPageData = [
+  {
+    name: "REVANTH",
+    designation: "FOUNDER & CEO",
+    image: RevanthImage,
+  },
+
+  {
+    name: "NAGENDRA",
+    designation: "CO FOUNDER",
+    image: NagendraImage,
+  },
+  {
+    name: "SURESH",
+    designation: "CO FOUNDER",
+    image: sureshImage,
+  },
+  {
+    name: "SUMANTH",
+    designation: "CO FOUNDER",
+    image: sumanthImage,
+  },
+
+  {
+    name: "KRANTHI KAKKERLA",
+    designation: "CO FOUNDER",
+    image: KranthiImage,
+  },
+
+  {
+    name: "TOMER DORON",
+    designation: "SOLUTIONS CONSULTANT",
+    image: TomerImage,
+  },
+  {
+    name: "BELLE BAI",
+    designation: "MARKETING EXECUTIVE",
+    image: BelleImage,
+  },
+  {
+    name: "MAHESWARI ADABALA",
+    designation: "OPERATIONS MANAGER",
+    image: MaheshwariImage,
+  },
+  {
+    name: "MEGHNA THAPA",
+    designation: "ACCOUNT MANAGER",
+    image: MeghanaImage,
+  },
+  {
+    name: "SUSHIMITHA KORUKONDA",
+    designation: "TEAM MANAGER",
+    image: SushimithaImage,
+  },
+  {
+    name: "DEEPAK RAJ KORUKONDA",
+    designation: "SOFTWARE ENGINEER",
+    image: DeepakRaj,
+  },
+  {
+    name: "DARSHAN M SHELAT",
+    designation: "SOLUTIONS CONSULTANT",
+    image: DarshanImage,
+  },
+  {
+    name: "DIVYARANI MACHCHA",
+    designation: "PRODUCT MANAGER",
+    image: DivyaRani,
+  },
+  {
+    name: "TEJITHA YELLAMELLI",
+    designation: "PRODUCT MANAGER",
+    image: TejithaImage,
+  },
+
+  {
+    name: "SAROJA TENNETY",
+    designation: "DELIVERY MANAGER",
+    image: SarojaImage,
+  },
+
+  {
+    name: "PRAVEEN SHESHAM",
+    designation: "TEAM MANAGER",
+    image: PraveenImage,
+  },
+  {
+    name: "SINGAREDDY SARAN KUMAR REDDY",
+    designation: "TEAM LEAD",
+    image: SaranImage,
+  },
+  {
+    name: "PRASHANTH RAGULA",
+    designation: "SENIOR SOFTWARE ENGINEER",
+    image: PrashanthImage,
+  },
+  {
+    name: "SURYAVAMSI DOMMETI",
+    designation: "SOFTWARE ENGINEER",
+    image: SuryaImage,
+  },
+  {
+    name: "MANIMALA JEEBU",
+    designation: "SOFTWARE ENGINEER",
+    image: ManimalaImImage,
+  },
+  {
+    name: "SAI ESWAR KANDREGULA",
+    designation: "SOFTWARE ENGINEER",
+    image: EashwarImage,
+  },
+  {
+    name: "RAMESH ANNABHIMOJU",
+    designation: "SENIOR SOFTWARE ENGINEER",
+    image: rameshImage,
+  },
+  {
+    name: "JINKA PRATHYUSHA",
+    designation: "SOFTWARE ENGINEER",
+    image: PratyushaImage,
+  },
+  {
+    name: "PRAMEELA KESAVADASU",
+    designation: "QA MANAGER",
+    image: PrameelaImage,
+  },
+  {
+    name: "SAI KRISHNA MUNIRATHINAM",
+    designation: "TEST ENGINEER",
+    image: KrishnaImage,
+  },
+  {
+    name: "BOBBILI RAJKUMAR",
+    designation: "PRODUCT DESINGER",
+    image: RajKumarImage,
+  },
+
+  {
+    name: "RIYAZAT JAFFAR KAZARANI",
+    designation: "UI GRAPHIC DESIGNER",
+    image: RiyazImage,
+  },
+];
 
 export const blogsData = [
   {
