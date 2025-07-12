@@ -32,7 +32,7 @@ const OurStory = () => {
           behavior: "smooth",
         });
       }
-    }, 100); // Adjust delay as needed
+    }, 1000); // Adjust delay as needed
 
     return () => clearTimeout(timer);
   }, []);

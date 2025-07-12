@@ -90,7 +90,7 @@ const Teams = () => {
           })}
         </div> */}
         <div className="teams-segment">
-          <div className="teams-segment-title">A Passionate Team</div>
+          <div className="teams-segment-title">Meet the passionate team</div>
           <div className="teams-segment-line" />
         </div>
         <div className="team-image-container">
