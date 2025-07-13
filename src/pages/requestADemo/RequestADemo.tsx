@@ -90,8 +90,8 @@ const RequestADemo = () => {
 
     if (!hasError && checkbox) {
       sendEmail(
-        formData.email,
-        "Demo Request",
+        "enquiries@tesseractapps.com",
+        "Request for Demo",
         `${formData.fullName} has requested a demo.\n
         Full Name: ${formData.fullName}\n
         Email: ${formData.email}\n

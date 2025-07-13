@@ -9,6 +9,7 @@ import { footerProductsData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import { useState } from "react";
+import { sendEmail } from "../../services/AppService";
 const FooterComponent = () => {
   const navigate = useNavigate();
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -16,9 +17,25 @@ const FooterComponent = () => {
   const handleNewsletterSubscribe = () => {
     if (newsletterEmail) {
       // Here you can add the logic to handle the newsletter subscription
+      sendEmail(
+        "enquiries@tesseractapps.com",
+        "Request for newsletter subscription",
+        `${newsletterEmail} has requested a subscription for our newsletter.\n
+              Email: ${newsletterEmail}
+        `
+      )
+        .then((response) => {
+          console.log("Email sent successfully:", response);
+          alert("Thank you for subscribing to our newsletter!");
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+          alert(
+            "There was an error sending your request. Please try again later."
+          );
+        });
       // console.log("Subscribed with email:", newsletterEmail);
       setNewsletterEmail(""); // Clear the input after subscribing
-      alert("Thank you for subscribing to our newsletter!");
     } else {
       alert("Please enter a valid email address.");
     }
