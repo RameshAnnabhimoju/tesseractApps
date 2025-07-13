@@ -4385,3 +4385,91 @@ export const productsDetailsData = {
     },
   },
 };
+
+import ourStory1 from "../assets/ourStory1.png";
+import ourStory2 from "../assets/ourStory2.png";
+import ourStory3 from "../assets/ourStory3.png";
+import ourStory4 from "../assets/ourStory4.png";
+import ourStory5 from "../assets/ourStory5.png";
+export const ourStoryData = [
+  {
+    id: 5,
+    image: ourStory5,
+    text: `Today, TesseractApps stands as a powerful, Salesforce-based 
+platform purpose-built for the Australian care sector. We help 
+organisations navigate NDIS compliance, simplify operations, 
+and ultimately deliver better outcomes for participants and 
+staff alike.`,
+  },
+  {
+    id: 0,
+    image: "",
+    text: "",
+  },
+  {
+    id: -1,
+    image: "",
+    text: "",
+  },
+  {
+    id: 4,
+    image: ourStory4,
+    text: `In January 2025, TesseractApps officially went live—delivering a 
+fully operational, market-ready solution that integrates everything 
+we learned from our early adopters.`,
+  },
+  {
+    id: 0,
+    image: "",
+    text: "",
+  },
+  {
+    id: -1,
+    image: "",
+    text: "",
+  },
+  {
+    id: 3,
+    image: ourStory3,
+    text: `By mid-2024, we launched the beta version of our first product, 
+T-NDIS, and onboarded over 10 providers whose practical
+ insights were instrumental in refining the platform.`,
+  },
+  {
+    id: 0,
+    image: "",
+    text: "",
+  },
+  {
+    id: -1,
+    image: "",
+    text: "",
+  },
+  {
+    id: 2,
+    image: ourStory2,
+    text: `In 2023, we built our foundation with a Human-Centred Design 
+approach, grounded in empathy, user research, and real-world 
+collaboration. Through rapid prototyping, iterative development, 
+and continuous feedback from care professionals, we ensured 
+every feature addressed real operational challenges.`,
+  },
+  {
+    id: 0,
+    image: "",
+    text: "",
+  },
+  {
+    id: -1,
+    image: "",
+    text: "",
+  },
+  {
+    id: 1,
+    image: ourStory1,
+    text: `TesseractApps was born from a simple yet impactful conversation 
+during a local cricket match in 2022—an exchange that sparked 
+the vision for a smarter, more connected way to support care 
+and NDIS providers.`,
+  },
+];

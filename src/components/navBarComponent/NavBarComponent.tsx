@@ -318,7 +318,7 @@ const NavBarComponent = ({
                                 </div>
                                 <div className="nav-sub-title">Learn More</div>
                               </div>
-                              {/* {navBarDummyData["Product"].map((value) => (
+                              {navBarDummyData["Product"][0].map((value) => (
                                 <div
                                   key={value.title}
                                   className="nav-inner-container"
@@ -331,7 +331,35 @@ const NavBarComponent = ({
                                     {value.subTitle}
                                   </div>
                                 </div>
-                              ))} */}
+                              ))}
+                              {navBarDummyData["Product"][1].map((value) => (
+                                <div
+                                  key={value.title}
+                                  className="nav-inner-container"
+                                  onClick={() =>
+                                    popupLinkClickHandler(value.title)
+                                  }
+                                >
+                                  <div className="nav-title">{value.title}</div>
+                                  <div className="nav-sub-title">
+                                    {value.subTitle}
+                                  </div>
+                                </div>
+                              ))}
+                              {navBarDummyData["Product"][2].map((value) => (
+                                <div
+                                  key={value.title}
+                                  className="nav-inner-container"
+                                  onClick={() =>
+                                    popupLinkClickHandler(value.title)
+                                  }
+                                >
+                                  <div className="nav-title">{value.title}</div>
+                                  <div className="nav-sub-title">
+                                    {value.subTitle}
+                                  </div>
+                                </div>
+                              ))}
                             </>
                           )}
                         {expanded == 4 &&
