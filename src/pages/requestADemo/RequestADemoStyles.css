@@ -114,3 +114,15 @@
     transform: scale(0.8);
   }
 }
+@media (max-width: 370px) {
+  #request-demo-content {
+    flex-wrap: wrap;
+  }
+  .request-demo-form {
+    transform: scale(0.9);
+  }
+  #request-demo-form {
+    max-width: 430px;
+    padding: 0 !important;
+  }
+}

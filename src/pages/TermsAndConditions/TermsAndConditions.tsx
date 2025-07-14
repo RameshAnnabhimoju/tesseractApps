@@ -31,7 +31,7 @@ const TermsAndConditions = () => {
       <p className="text terms-and-conditions-text">
         You may use our website and application for lawful purposes only.
         Unauthorized use of our website or application may give rise to a claim
-        for damages and/or be a criminal offense. (Testtract application is
+        for damages and/or be a criminal offense. (Tesseract application is
         compatible with Google Chrome, Microsoft Edge, Safari. Use these for a
         better experience.)
       </p>

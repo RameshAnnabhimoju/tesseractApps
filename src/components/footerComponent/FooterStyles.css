@@ -166,3 +166,8 @@
     padding: 10px;
   }
 }
+@media (max-width: 370px) {
+  .footer-column {
+    max-width: 140px;
+  }
+}
