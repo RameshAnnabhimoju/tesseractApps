@@ -205,7 +205,9 @@ const Pricing = () => {
                   }
                   onClick={() => navigate("/salesPage")}
                 >
-                  {data.title == "Enterprise" ? "Contact Us" : "Try for free"}
+                  {data.title == "Enterprise"
+                    ? "Contact Us"
+                    : "Talk to an expert"}
                 </button>
               )}
               <div

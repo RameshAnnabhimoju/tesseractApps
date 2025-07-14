@@ -91,8 +91,8 @@ const SalesPage = () => {
     if (!hasError && checkbox) {
       sendEmail(
         "sales@tesseractapps.com",
-        "Request for free trial",
-        `${formData.fullName} has made a Try for free Request.\n
+        "Request for talk to an expert",
+        `${formData.fullName} has made a request to talk to an expert.\n
             Full Name: ${formData.fullName}\n
             Email: ${formData.email}\n
             Phone: ${formData.phone}\n
@@ -119,7 +119,7 @@ const SalesPage = () => {
   }
   return (
     <div id="request-demo-container">
-      <div className="heading">Try for free</div>
+      <div className="heading">Talk to an expert</div>
 
       <div id="request-demo-content">
         <div id="request-demo-texts">
