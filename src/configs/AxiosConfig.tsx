@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosConfig = axios.create({
-  baseURL: "http://localhost:3000", // Replace with your actual base URL
+  baseURL: "https://tesseractapps.com", // Replace with your actual base URL
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST,PATCH, PUT, DELETE",
