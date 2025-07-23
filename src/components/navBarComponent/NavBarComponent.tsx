@@ -5,7 +5,7 @@ import profile from "../../assets/person.svg";
 import australia from "../../assets/australia.png";
 import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RefObject } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { navBarDummyData } from "../../utils/DummyData";
@@ -114,6 +114,18 @@ const NavBarComponent = ({
   const handleSearchIcon = () => {
     setShowSearch(false);
   };
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (inputRef.current)
+        inputRef.current.setAttribute("style", "width: 200px;");
+    }, 0); // slight delay ensures transition triggers
+
+    return () => clearTimeout(timeout);
+  }, [showSearch]);
+
+  // useEffect(() => {}, [showSearch]);
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
     setToggleDrawer(false);
@@ -547,12 +559,15 @@ const NavBarComponent = ({
             })}
           </div>
           <div id="nav-menu-icons">
-            <img
-              src={profile}
-              alt="navbar-profile-icon"
-              id="navbar-profile-icon"
-              onClick={loginHandler}
-            />
+            <button id="navbar-login">
+              <img
+                src={profile}
+                alt="navbar-profile-icon"
+                id="navbar-profile-icon"
+                onClick={loginHandler}
+              />{" "}
+              Login
+            </button>
             <img
               src={australia}
               alt="navbar-country-icon"
@@ -614,25 +629,44 @@ const NavBarComponent = ({
               onClick={handleSearchIcon}
             />
           ) : (
-            <input type="text" placeholder="Search..." />
+            <div id="navbar-search-container">
+              <input
+                ref={inputRef}
+                type="search"
+                placeholder="Search..."
+                id="navbar-search-input"
+              />
+              <img
+                src={search}
+                alt="navbar-search-button"
+                id="navbar-search-button"
+                onClick={handleSearchIcon}
+              />
+            </div>
           )}
         </div>
 
-        <div id="navbar-requestDemo" onClick={() => navigate("/requestDemo")}>
+        <button
+          id="navbar-requestDemo"
+          onClick={() => navigate("/requestDemo")}
+        >
           Book a Demo{" "}
           <img
             src={plus}
             alt="navbar-plus-image"
             id="navbar-requestDemo-icon"
           />
-        </div>
+        </button>
 
-        <img
-          src={profile}
-          alt="navbar-profile-icon"
-          id="navbar-profile-icon"
-          onClick={loginHandler}
-        />
+        <button id="navbar-login">
+          <img
+            src={profile}
+            alt="navbar-profile-icon"
+            id="navbar-profile-icon"
+            onClick={loginHandler}
+          />{" "}
+          Login
+        </button>
         <img
           src={australia}
           alt="navbar-country-icon"

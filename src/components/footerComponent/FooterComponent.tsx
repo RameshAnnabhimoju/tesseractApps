@@ -10,10 +10,17 @@ import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import { useState } from "react";
 import { sendEmail } from "../../services/AppService";
+import Alert from "../alert/Alert";
 const FooterComponent = () => {
   const navigate = useNavigate();
   const [newsletterEmail, setNewsletterEmail] = useState("");
-
+  const alertInitialData = {
+    heading: "",
+    text: "",
+    type: "success",
+    isOpen: false,
+  };
+  const [alertData, setAlertData] = useState(alertInitialData);
   const handleNewsletterSubscribe = () => {
     if (newsletterEmail) {
       // Here you can add the logic to handle the newsletter subscription
@@ -26,19 +33,53 @@ const FooterComponent = () => {
       )
         .then((response) => {
           console.log("Email sent successfully:", response);
-          alert("Thank you for subscribing to our newsletter!");
+          confirmationMail();
+          // alert("Thank you for subscribing to our newsletter!");
+          setAlertData({
+            ...alertData,
+            heading: "Request Submitted",
+            text: "Thank you for subscribing to our newsletter!",
+            type: "newsletter",
+            isOpen: true,
+          });
         })
         .catch((error) => {
           console.error("Error sending email:", error);
-          alert(
-            "There was an error sending your request. Please try again later."
-          );
+          // alert(
+          //   "There was an error sending your request. Please try again later."
+          // );
+          setAlertData({
+            ...alertData,
+            heading: "Request Failed",
+            text: "There was an error sending your request. Please try again later.",
+            type: "fail",
+            isOpen: true,
+          });
         });
       // console.log("Subscribed with email:", newsletterEmail);
       setNewsletterEmail(""); // Clear the input after subscribing
     } else {
       alert("Please enter a valid email address.");
     }
+  };
+  const confirmationMail = () => {
+    sendEmail(
+      newsletterEmail,
+      "Request for Demo",
+      `Dear ${newsletterEmail.split("@")[0]},\n
+        \n
+        Thank you for your request.\n
+          We have received your request for our newsletter subscription. We will process your requests within one business day.
+        \n
+        Best regards,\n
+        TesseractApps Team`
+    )
+      .then((response) => {
+        console.log("Confirmation email sent successfully:", response);
+      })
+      .catch((error) => {
+        console.error("Error sending confirmation email:", error);
+      });
   };
   function handleFooterActions(name: string) {
     if (name === "phone") {
@@ -74,6 +115,7 @@ const FooterComponent = () => {
   const productLinks = footerProductsData;
   return (
     <div id="footer-container">
+      <Alert setAlertData={setAlertData} alertData={alertData} />
       <div id="footer-top">
         <div id="footer-column-1">
           <div id="footer-column1-item">

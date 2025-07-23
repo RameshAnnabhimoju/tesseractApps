@@ -2558,6 +2558,11 @@ export const teamsPageData = [
     image: DarshanImage,
   },
   {
+    name: "SAROJA TENNETY",
+    designation: "DELIVERY MANAGER",
+    image: SarojaImage,
+  },
+  {
     name: "DIVYARANI MACHCHA",
     designation: "PRODUCT MANAGER",
     image: DivyaRani,
@@ -2567,13 +2572,6 @@ export const teamsPageData = [
     designation: "PRODUCT MANAGER",
     image: TejithaImage,
   },
-
-  {
-    name: "SAROJA TENNETY",
-    designation: "DELIVERY MANAGER",
-    image: SarojaImage,
-  },
-
   {
     name: "PRAVEEN SHESHAM",
     designation: "TEAM MANAGER",

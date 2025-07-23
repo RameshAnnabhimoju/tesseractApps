@@ -1,6 +1,7 @@
 import "./SalesPageStyles.css";
 import { sendEmail } from "../../services/AppService";
 import { useState } from "react";
+import Alert from "../../components/alert/Alert";
 type demoFormType = {
   fullName: string;
   email: string;
@@ -32,6 +33,13 @@ const SalesPage = () => {
   const [formData, setFormData] = useState(demoFormInitialState);
   const [formErrors, setFormErrors] = useState(demoFormInitialState);
   const [checkbox, setCheckbox] = useState(false);
+  const alertInitialData = {
+    heading: "",
+    text: "",
+    type: "success",
+    isOpen: false,
+  };
+  const [alertData, setAlertData] = useState(alertInitialData);
   function handleCheckboxChange() {
     setCheckbox(!checkbox);
   }
@@ -104,21 +112,56 @@ const SalesPage = () => {
       )
         .then((response) => {
           console.log("Email sent successfully:", response);
-          alert("Thank you for your request! We will be in touch soon.");
+          confirmationMail();
+          // alert("Thank you for your request! We will be in touch soon.");
+          setAlertData({
+            ...alertData,
+            heading: "Request Submitted",
+            text: "Thank you for your request! We will be in touch soon.",
+            type: "success",
+            isOpen: true,
+          });
         })
         .catch((error) => {
           console.error("Error sending email:", error);
-          alert(
-            "There was an error sending your request. Please try again later."
-          );
+          // alert(
+          //   "There was an error sending your request. Please try again later."
+          // );
+          setAlertData({
+            ...alertData,
+            heading: "Request Failed",
+            text: "There was an error sending your request. Please try again later.",
+            type: "fail",
+            isOpen: true,
+          });
         });
     }
 
     // Reset the form after submission
     // setFormData(demoFormInitialState);
   }
+  const confirmationMail = () => {
+    sendEmail(
+      formData.email,
+      "Request for Demo",
+      `Dear ${formData.fullName},\n
+        \n
+        Thank you for your request.\n
+          We have received your request. Our Expert will be in touch within one business day.
+        \n
+        Best regards,\n
+        TesseractApps Team`
+    )
+      .then((response) => {
+        console.log("Confirmation email sent successfully:", response);
+      })
+      .catch((error) => {
+        console.error("Error sending confirmation email:", error);
+      });
+  };
   return (
     <div id="request-demo-container">
+      <Alert setAlertData={setAlertData} alertData={alertData} />
       <div className="heading">Talk to an expert</div>
 
       <div id="request-demo-content">

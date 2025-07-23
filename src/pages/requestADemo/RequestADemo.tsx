@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./RequestADemoStyles.css";
 import { sendEmail } from "../../services/AppService";
+import Alert from "../../components/alert/Alert";
 type demoFormType = {
   fullName: string;
   email: string;
@@ -32,6 +33,13 @@ const RequestADemo = () => {
   const [formData, setFormData] = useState(demoFormInitialState);
   const [formErrors, setFormErrors] = useState(demoFormInitialState);
   const [checkbox, setCheckbox] = useState(false);
+  const alertInitialData = {
+    heading: "",
+    text: "",
+    type: "success",
+    isOpen: false,
+  };
+  const [alertData, setAlertData] = useState(alertInitialData);
   function handleCheckboxChange() {
     setCheckbox(!checkbox);
   }
@@ -47,6 +55,7 @@ const RequestADemo = () => {
   }
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
     // Here you would typically handle form submission, e.g., send data to a server
     console.log("Form submitted:", formData);
 
@@ -104,21 +113,57 @@ const RequestADemo = () => {
       )
         .then((response) => {
           console.log("Email sent successfully:", response);
-          alert("Thank you for your request! We will be in touch soon.");
+          confirmationMail();
+          // alert("Thank you for your request! We will be in touch soon.");
+          setAlertData({
+            ...alertData,
+            heading: "Request Submitted",
+            text: "Thank you for your request! We will be in touch soon.",
+            type: "success",
+            isOpen: true,
+          });
         })
         .catch((error) => {
           console.error("Error sending email:", error);
-          alert(
-            "There was an error sending your request. Please try again later."
-          );
+          // alert(
+          //   "There was an error sending your request. Please try again later."
+          // );
+          setAlertData({
+            ...alertData,
+            heading: "Request Failed",
+            text: "There was an error sending your request. Please try again later.",
+            type: "fail",
+            isOpen: true,
+          });
         });
     }
 
     // Reset the form after submission
     // setFormData(demoFormInitialState);
   }
+  const confirmationMail = () => {
+    sendEmail(
+      formData.email,
+      "Request for Demo",
+      `Dear ${formData.fullName},\n
+      \n
+      Thank you for your request.\n
+        We have received your request for a demo and will be in touch within one business day.
+      \n
+      Best regards,\n
+      TesseractApps Team`
+    )
+      .then((response) => {
+        console.log("Confirmation email sent successfully:", response);
+      })
+      .catch((error) => {
+        console.error("Error sending confirmation email:", error);
+      });
+  };
+
   return (
     <div id="request-demo-container">
+      <Alert setAlertData={setAlertData} alertData={alertData} />
       <div className="heading">Book a Demo</div>
       <div className="subheading" id="request-demo-text">
         Please complete the form below to get started. Our team will be in touch
@@ -276,10 +321,9 @@ const RequestADemo = () => {
               >
                 <label htmlFor="preferredTime">Preferred Demo Time*</label>
                 <input
-                  type="time"
+                  type="datetime-local"
                   id="preferredTime"
                   name="preferredTime"
-                  autoComplete="time"
                   placeholder="e.g. Monday 10 AM"
                   className={
                     "request-demo-input " +
@@ -287,6 +331,7 @@ const RequestADemo = () => {
                   }
                   value={formData.preferredTime}
                   onChange={handleInputChange}
+                  min={new Date().toISOString().slice(0, 16)}
                 />
                 {/* <div className="error-text">{formErrors.preferredTime}</div> */}
               </div>
