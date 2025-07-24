@@ -32,6 +32,7 @@ const Alert = ({ alertData, setAlertData }: alertType) => {
   }, [alertData, alertData.isOpen, setAlertData]);
   return ReactDOM.createPortal(
     <div
+      className={alertData.type != "fail" ? "ff-message-success" : ""}
       id="alert-container"
       onClick={() => setAlertData({ ...alertData, isOpen: false })}
       style={{ display: alertData.isOpen ? "flex" : "none" }}
