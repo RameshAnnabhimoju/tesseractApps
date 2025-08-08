@@ -22,6 +22,9 @@
   color: var(--color-text-gray);
   margin-bottom: 10px;
 }
+.details-hero-text-heading {
+  color: black;
+}
 .details-hero-button {
   padding: 15px 15px;
   border-radius: 5px;

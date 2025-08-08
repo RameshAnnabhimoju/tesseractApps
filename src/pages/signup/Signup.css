@@ -164,6 +164,7 @@ section.signup-section {
 /* Date picker fix */
 .signup-form-input[type="date"] {
   color-scheme: light;
+  font-family: "Roboto", sans-serif;
 }
 
 /* === Form layout (two-column) === */

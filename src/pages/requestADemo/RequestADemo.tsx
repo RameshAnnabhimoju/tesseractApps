@@ -175,7 +175,7 @@ const RequestADemo = () => {
             <div className="request-demo-title">Head Office:</div>
             <div className="request-demo-description">
               TesseractApps <br />
-              Canberra, ACT, Australia
+              28 Thynne St, Bruce ACT 2617, Canberra, ACT, Australia
             </div>
             <div className="request-demo-title">Phone:</div>
             <div className="request-demo-description">

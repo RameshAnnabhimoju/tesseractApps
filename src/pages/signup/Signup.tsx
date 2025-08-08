@@ -12,10 +12,10 @@ const Signup = () => {
     dateOfBirth: string;
     company: string;
     abn: string;
-    acn: string;
-    ndisProviderID: string;
-    branchCode: string;
-    contactName: string;
+    // acn: string;
+    // ndisProviderID: string;
+    // branchCode: string;
+    // contactName: string;
     contactNumber: string;
     companyEmail: string;
     streetAddress: string;
@@ -32,10 +32,10 @@ const Signup = () => {
     dateOfBirth: "",
     company: "",
     abn: "",
-    acn: "",
-    ndisProviderID: "",
-    branchCode: "",
-    contactName: "",
+    // acn: "",
+    // ndisProviderID: "",
+    // branchCode: "",
+    // contactName: "",
     contactNumber: "",
     companyEmail: "",
     streetAddress: "",
@@ -89,7 +89,7 @@ const Signup = () => {
   };
   const sendRequestEmail = () => {
     sendEmail(
-      "sales@tesseractapps.com",
+      "itsupport@tesseractapps.com",
       "Request for free trial signup",
       `${signupData.firstName} has made a request for free trial signup.\n
                 First Name: ${signupData.firstName}\n
@@ -99,11 +99,7 @@ const Signup = () => {
                 Date of Birth: ${signupData.dateOfBirth}\n
                 Company: ${signupData.company}\n
                 ABN: ${signupData.abn}\n
-                ACN: ${signupData.acn}\n
-                NDIS Provider ID: ${signupData.ndisProviderID}\n
-                Branch Code: ${signupData.branchCode}\n
-                Contact Name: ${signupData.contactName}\n
-                Contact Number: ${signupData.contactNumber}\n
+                
                 Company Email: ${signupData.companyEmail}\n
                 Street Address: ${signupData.streetAddress}\n
                 City: ${signupData.city}\n
@@ -147,14 +143,14 @@ const Signup = () => {
       \n
       We’ve received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.\n
       \n
-      If you have any immediate questions, feel free to reach out to us at [itsupport@tesseractapps.com] or call us at [1300 252 808].\n
+      If you have any immediate questions, feel free to reach out to us at [itsupport@tesseractapps.com] or call us at [+61261332819, 1300 252 808].\n
       \n
       We’re excited to connect with you soon!\n
       \n
       Warm regards,\n
       Team TesseractApps\n
       [Our Website: Tesseract]\n
-      [02 6133 2800] | [itsupport@tesseractapps.com]\n
+      [+61261332819,02 6133 2800] | [itsupport@tesseractapps.com]\n
       `
     )
       .then((response) => {
@@ -189,7 +185,9 @@ const Signup = () => {
 
             <div className="signup-form-group">
               <div className="signup-form-input-group">
+                div.signuo-form-label-
                 <label>First Name</label>
+                <span style={{ color: "red" }}>*</span>
                 <input
                   type="text"
                   placeholder="Enter your First Name"
@@ -230,9 +228,10 @@ const Signup = () => {
                   onChange={inputChangeHandler}
                 >
                   <option value="">Select Gender</option>
-                  <option value="">Male</option>
-                  <option value="">Female</option>
-                  <option value="">Others</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="non-binary">Non-Binary</option>
+                  <option value="prefer not to say">Prefer Not to Say</option>
                 </select>
               </div>
 
@@ -273,7 +272,7 @@ const Signup = () => {
                 />
               </div>
             </div>
-            <div className="signup-form-group">
+            {/* <div className="signup-form-group">
               <div className="signup-form-input-group">
                 <label>ACN</label>
                 <input
@@ -295,8 +294,8 @@ const Signup = () => {
                   onChange={inputChangeHandler}
                 />
               </div>
-            </div>
-            <div className="signup-form-group">
+            </div> */}
+            {/* <div className="signup-form-group">
               <div className="signup-form-input-group">
                 <label>Branch Code</label>
                 <input
@@ -318,7 +317,7 @@ const Signup = () => {
                   onChange={inputChangeHandler}
                 />
               </div>
-            </div>
+            </div> */}
             <div className="signup-form-group">
               <div className="signup-form-input-group">
                 <label>Contact Number</label>

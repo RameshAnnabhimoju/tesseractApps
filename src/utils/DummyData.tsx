@@ -3285,9 +3285,10 @@ export const productsDetailsData = {
   Timesheet: {
     page: "Timesheet",
     hero: {
-      title: "Accurate Tracking. Seamless Approvals. Effortless Payroll.",
+      title:
+        "Track Hours with Certainty! File Approvals with Ease! Payroll that Runs Like Clockwork!",
       description:
-        "Tesseract’s Timesheet and Attendance Management system redefines how hours, approvals, and payroll are handled. Built for compliance and streamlined for efficiency, it connects to your rostering, payroll, and HR tools, keeping every part of your operation in sync. ",
+        "TesseractApps Timesheets & Attendance Management platform is tailored for NDIS providers. It guarantees precise time capture, open approval trails, and seamless payroll handover. Every feature is crafted to meet NDIS compliance and ICT accessibility, layering neatly on your rostering, HR, and payroll tools. The result: audit-ready calm, operational speed, and uninterrupted care delivery. ",
       image: timesheets, // Replace with actual image import
     },
     section2: {
@@ -3296,47 +3297,47 @@ export const productsDetailsData = {
       points: [
         {
           dot: dots.dot1,
-          title: "Accurate Time Capture for Every Shift",
+          title: "Track Every Shift, Accurately ",
           description:
-            "Capture hours exactly and automatically through real-time attendance, geo-verified sign-ins, and timesheets generated from the roster. Consistent rounding logic and oversight ensure full accountability, covering every shift, including extended and overnight hours. ",
+            "Log staff attendance as it happens, using geo-verified check-ins that transform scheduled shifts into live timesheets. Whether covering overnight needs or lengthy supports, Tesseract logs every second, respecting round-off rules that protect fairness and clarity. ",
         },
         {
           dot: dots.dot2,
-          title: "Smart Approvals with Confidence",
+          title: "Smart, Flexible Approvals ",
           description:
-            "With Tesseract, you’re in control of the approval process—pick full automation, a manual double-check, or anything in between. Approve by individual, by shift, or in bulk, and tweak anything on the fly if the situation changes. Even the toughest pay scenarios, like sleepovers or extra-long shifts, are calculated in real time, guaranteeing you get it right and fair every time. ",
+            "Pick the approval workflow that fits your team—by individual, by shift, or in bulk. Approvals can be automatic or manual, and you can be confident that complex pay scenarios like sleepovers or extended shifts will be calculated correctly, with no detail slipping through. ",
         },
         {
           dot: dots.dot3,
-          title: "Payroll-Ready Integration",
-          description:
-            "Your timesheets slide straight into payroll with the right pay rates already in the system. Extra pay for weekends, public holidays, overtime, or allowances is calculated automatically, cutting the risk of manual errors and making sure your staff are paid accurately and on time.",
+          title: "Payroll Integration That Just Works ",
+          descriptionPoints: [
+            "Once timesheets gain the tick, they move straight to your payroll platform. Pay rates slot in without fuss, so calculations stay spot-on, and HR can turn its attention back to care. ",
+            "Overtime, weekend shifts, public holidays, and allowances are calculated automatically, so you save time, minimize errors, and ensure everyone gets paid accurately and on schedule. ",
+          ],
         },
         {
           dot: dots.dot4,
-          title: "Real-Time Attendance Monitoring",
+          title: "Real-Time Attendance with Geo Verification ",
           description:
-            "Let your team clock in and out with location verification that you can trust. Our geo-tracking keeps you compliant, cuts the risk of buddy punching, and makes sure your staff are exactly where they’re supposed to be, exactly when they’re supposed to be there. ",
+            "Let your team clock in and out anywhere, knowing their location is verified. Geo-tracking protects you from time fraud, keeps compliance on track, and confirms staff are right where they should be when they should be there. ",
         },
         {
           dot: dots.dot5,
-          title: "Comprehensive Shift Records",
+          title: "Every Shift, Fully Documented ",
           description:
-            "Keep a complete, accurate history on every shift. Attendance records are linked to shift notes, incident records, leave requests, and reimbursements, so every shift records the entire story and keeps transparency and compliance locked in.",
+            "Every shift gets a complete and transparent log. Attendance is linked to shift notes, incidents, leave requests, and reimbursements, giving you a full record that ensures accountability and compliance. ",
         },
         {
           dot: dots.dot6,
-          title: "Powerful Reporting & Insights",
+          title: "Reports That Make Sense ",
           description:
-            "Pull together precise reports for audits, payroll, and compliance. Red flags show you any timesheets that are unfinished or missing, and you can track attendance, punctuality, and overtime in detail to fine-tune your workforce management. ",
+            "Produce clear and detailed reports for audits, compliance, or payroll. Visual alerts highlight missing or incomplete timesheets, while built-in analytics reveal attendance trends, overtime, and punctuality patterns. ",
         },
         {
           dot: dots.dot1,
-          title: "Compliant & Future-Ready",
-          descriptionPoints: [
-            "Designed for the unique needs of NDIS providers and ICT teams, Tesseract guarantees every hour is logged, every process meets the rules, and you’re prepared for whatever comes next. ",
-            "Remain compliant, lighten paperwork, and elevate payroll integrity—from one unified dashboard. ",
-          ],
+          title: "Built for Compliance. Ready for the Future. ",
+          description:
+            "Developed for NDIS providers and ICT organisations, TesseractApps keeps you aligned with industry requirements. Reduce administration time, boost accuracy, and manage everything from one central, user-friendly dashboard. ",
         },
       ],
     },
@@ -3365,10 +3366,30 @@ export const productsDetailsData = {
   "Admin Console": {
     page: "Admin Console",
     hero: {
-      title: "Unified Settings. Smarter Facilities. Complete Admin Control.",
-      description:
-        "The Admin Console feature serves as the control panel of the application, playing a key role in managing the core functional flow across various modules. It empowers admins to manage core details from organisational info to shift settings - with precision and ease. Whether you're configuring your NDIS provider details, managing facilities, or setting up shift timing standards, this module gives you full control over your backend operations.",
-      image: adminConsole, // Replace with actual image import
+      title: "Better Settings. Simple Control. Total Facility Focus.",
+      image: adminConsole,
+      pointsObject: [
+        {
+          pointTitle: "Unified Control Centre",
+          pointDescription:
+            "Bring every core operational setting—shift schematics, organisational facts—under one fluid, linked interface.",
+        },
+        {
+          pointTitle: "NDIS-Compliant Configuration",
+          pointDescription:
+            "Build provider profiles, site addresses, and shift rules, all with compliance nudges built right into every step. ",
+        },
+        {
+          pointTitle: "Seamless Connection",
+          pointDescription:
+            "Links automatically with payroll, HR, timesheets, and compliance systems to keep everything flowing.  ",
+        },
+        {
+          pointTitle: "Precise Changes, No Fuss",
+          pointDescription:
+            "Designed for admins to execute fast, exact updates—no coding required—full command,  zero confusion. ",
+        },
+      ],
     },
     section2: {
       title: "",
@@ -3376,36 +3397,132 @@ export const productsDetailsData = {
       points: [
         {
           title: "Organisation Management",
-          description:
-            "Handle the serious stuff without stress. From contact details to banking info, your admin team can manage it all in one place - quick, clean, and totally chaos-free. Easily assign key team members to manage support requests and handle queries via your preferred email. Organise users by roles and types, link financial contacts, and control access for smooth, secure operations. Simplify management and keep everything running effortlessly.",
           dot: dots.dot1,
+          pointsData: [
+            {
+              pointTitle: "Centralised Command",
+              pointDescription:
+                "Manage contact lists, banking records, and everything in between from one neat dashboard—swift, tidy, hassle-free. ",
+            },
+            {
+              pointTitle: "Intelligent Team Assignment ",
+              pointDescription:
+                "Place the right people into support duties and send queries to the designated inboxes in a couple of clicks. ",
+            },
+            {
+              pointTitle: "Role-Based Control",
+              pointDescription:
+                "Cluster users by function, weave in finance contacts, and lock permissions to keep data secure and compliant.",
+            },
+            {
+              pointTitle: "Clearer Oversight",
+              pointDescription:
+                "Admin tools built to lighten your workload and sharpen operational clarity, so back-end management runs smooth. ",
+            },
+          ],
         },
         {
           title: "Roster Settings",
           pointsData: [
-            "Easily tailor your shift schedules to fit your organisation's needs. Set clear, colour-coded shifts for at-a-glance clarity.",
-            "Simplify expense tracking with customised reimbursement rates.",
-            "Enhance staff wellbeing with smart shift rules that manage fatigue, breaks, and compliance.",
-            "All updates here seamlessly reflect across your entire Roster Management system.",
+            {
+              pointTitle: "Flexible Shift Customisation",
+              pointDescription:
+                "Modify shift lengths and starting points to fit your operational rhythms—straightforward, direct, entirely yours.",
+            },
+            {
+              pointTitle: "Colour-Coded Clarity",
+              pointDescription:
+                "Give shifts distinct hues for fast, easy visual identification. It keeps planners briefly updated and flags any overlaps or gaps in a flash. ",
+            },
+            {
+              pointTitle: "Smart Compliance Support",
+              pointDescription:
+                "Enforce fatigue limits, mandatory off-duty hours, and statutory breaks so rosters safeguard staff health and remain compliant, all without extra intervention. ",
+            },
+            {
+              pointTitle: "Live System-wide Updates",
+              pointDescription:
+                "Edit any roster and the change weaves through the entire platform instantly—no retyping, no legacy data lingering.",
+            },
           ],
           dot: dots.dot2,
         },
         {
           title: "Facility Management",
-          description:
-            "Manage all your facilities - add, view, and edit location-specific information related to your organisation. Add and update your facilities in a snap - from contact info to services offered. Keep things fresh with easy toggles for active or inactive status. All your facilities work seamlessly behind the scenes, powering staff, rostering, and access. Just click, edit and done!",
+          pointsData: [
+            {
+              pointTitle: "Single-Panel Oversight",
+              pointDescription:
+                "Oversee every location from a single screen—shift addresses, refresh service details, or change contact numbers, all in under a minute. ",
+            },
+            {
+              pointTitle: "Live Status Management",
+              pointDescription:
+                "Toggle any site on or off with one click, and every shift and plan instantly reflects the change, keeping everything relevant.",
+            },
+            {
+              pointTitle: "Integrated Backend Logic",
+              pointDescription:
+                "Site information updates automatically in rosters, staff groupings, and security access—no manual cross-checking required. ",
+            },
+            {
+              pointTitle: "Fast, Straightforward Management",
+              pointDescription:
+                "One click to change, one click to apply—designed for admins who want order without the excess.",
+            },
+          ],
           dot: dots.dot3,
         },
         {
           title: "Participants Management",
-          description:
-            "Quickly register and manage participant profiles with an easy-to-use form capturing essential personal ID, insurance, and emergency details. Keep profiles organised with simple status controls and seamless integration across care, rostering, and organisation systems - ensuring smooth, efficient management.",
+          pointsData: [
+            {
+              pointTitle: "Quick Registration",
+              pointDescription:
+                "Gather ID numbers, insurance data, and emergency contacts in a single, fast form. ",
+            },
+            {
+              pointTitle: "Organised & Accessible",
+              pointDescription:
+                "Keep tidy, easily navigable profiles and use simple switches to mark a participant as active, inactive, or archived.",
+            },
+            {
+              pointTitle: "Seamless System Integration",
+              pointDescription:
+                "Participant data synchronises automatically across care, rostering, and organisational modules for flawless handoffs.",
+            },
+            {
+              pointTitle: "Efficient Management ",
+              pointDescription:
+                "Less time on admin, more accurate and up-to-date participant records.",
+            },
+          ],
           dot: dots.dot4,
         },
         {
           title: "Staff Management",
-          description:
-            "Get a clear overview of your entire team with card or list views and powerful search functionality. Easily onboard new staff with step-by-step forms capturing all vital personal, role, payroll, and contact information. Manage employment details, payroll settings, leave, and emergency contacts securely - all in one centralised system. Assign multiple roles and link staff to facilities effortlessly, track attendance with geo-verified sign-ins, and maintain accurate status updates for streamlined workforce management.",
+          pointsData: [
+            {
+              pointTitle: "Clear Team Overview",
+              pointDescription:
+                "Visualise your entire team in card or list views, then quickly find any person through powerful filters and searches.",
+            },
+            {
+              pointTitle: "Effortless Onboarding ",
+              pointDescription:
+                "Guided forms gather employee details—personal info, role, payroll, and contact—without missing a beat.",
+            },
+            {
+              pointTitle: "Secure Employment Management",
+              pointDescription:
+                "Manage payroll, leave, emergency contacts, and every bit of employment info from one secure place.",
+            },
+            {
+              pointTitle: "Smart Role & Facility Linking",
+              pointDescription:
+                "Assign overlapping roles, link employees to facilities, and track attendance through geo-verified clock-ins and real-time status alerts.",
+            },
+          ],
           dot: dots.dot5,
         },
       ],
@@ -3434,10 +3551,26 @@ export const productsDetailsData = {
   "Access Control Panel": {
     page: "Access Control Panel",
     hero: {
-      title: "Secure, Centralised User Control",
-      description:
-        "Tesseract's Access Control Panel simplifies, role-based permissions, and user access, ensuring seamless control across your organisation.",
-      image: accessControl, // Replace with actual image import
+      title: "Safe, Central User Command ",
+      pointsObject: [
+        {
+          pointTitle: "Role-Based Permissions Simplified",
+          pointDescription:
+            "Grant and supervise user access according to defined roles—zero technical barriers, pure intuitive oversight.",
+        },
+        {
+          pointTitle: "Unified User Oversight ",
+          pointDescription:
+            "Monitor, modify, and verify access throughout your organisation from a single, secure dashboard.",
+        },
+        {
+          pointTitle: "Concise Corporate Governance",
+          pointDescription:
+            "Preserve operational transparency and security while remaining in harmony with NDIS compliance.",
+        },
+      ],
+
+      image: accessControl,
     },
     section2: {
       title: "",
@@ -3445,20 +3578,52 @@ export const productsDetailsData = {
       points: [
         {
           title: "User Onboarding & Bulk Management",
-          description:
-            "Easily streamline user management with intuitive onboarding tools. Instantly create staff profiles and user accounts, assign roles and access levels, and activate accounts with just a few clicks. Bulk upload users for seamless integration and quick setup, ensuring your team is ready to go with minimal administrative effort.",
+          pointsData: [
+            {
+              pointTitle: "Instant Profile Generation",
+              pointDescription:
+                "Rapidly establish employee profiles and user accounts in a few clicks—without any technical strain. ",
+            },
+            {
+              pointTitle: "Intelligent Role & Permission Assignment",
+              pointDescription:
+                "Allocate roles and permissions logically, so every colleague has the correct access from their very first day.",
+            },
+            {
+              pointTitle: "Bulk Import for Swift Deployment",
+              pointDescription:
+                "Upload numerous users simultaneously for effortless setup and reduced admin workload—your team starts in minutes. ",
+            },
+          ],
           dot: dots.dot1,
         },
         {
           title: "Role-Based Access & Security Controls",
-          description:
-            "Centralised access control made simple. Manage user permissions, access levels, and status updates from one secure location. Grant, edit, or revoke module access with complete transparency and audit trails. Instantly reset passwords via secure email authentication to maintain data integrity and user confidence.",
+          pointsData: [
+            {
+              pointTitle: "One Portal, Complete Oversight ",
+              pointDescription:
+                "Oversee user permissions, access tiers, and status changes from a single, protected control centre. ",
+            },
+            {
+              pointTitle: "Live Access Administration",
+              pointDescription:
+                "Grant, change, or rescind access to modules in real time, with transparent audit trails—no uncertainty, no holdups.",
+            },
+            {
+              pointTitle: "Secure, Immediate Password Recovery",
+              pointDescription:
+                "Protect data integrity and user confidence with email-verified password resets that take seconds, not hours.",
+            },
+          ],
           dot: dots.dot2,
         },
         {
-          title: "Optimised for Compliance & Efficiency",
-          description:
+          title: "Designed for Compliance & Productivity",
+          descriptionPoints: [
             "Tesseract's Access Control Panel ensures structured workforce management, seamless onboarding, and secure credential oversight, empowering organisations with confidence, speed, and transparency.",
+            "It’s more than oversight; it’s the assurance, transparency, and responsiveness that smiles back at you. ",
+          ],
           dot: dots.dot3,
         },
       ],
@@ -3482,45 +3647,48 @@ export const productsDetailsData = {
   "HR Operations": {
     page: "HR Operations",
     hero: {
-      title:
-        "Streamlined Workforce Oversight. Efficient Administration. Thriving Workplace Culture.",
-      description:
-        "Tesseract’s HR Management simplifies every stage of the employee lifecycle - from recruitment to retention - ensuring efficient administration, seamless integration, and a thriving workplace culture.",
+      title: "HR Management Built for Thriving Teams! ",
       image: hrOperations, // Replace with actual image import
+      pointsObject: [
+        {
+          pointTitle: "From Hire to Inspire:",
+          pointDescription:
+            "TesseractApps steers you through every part of the employee experience, from first hire to lasting inspiration, blending seamless admin with a culture that sticks.",
+        },
+      ],
     },
     section2: {
-      title: "",
+      title: "HR Capabilities",
       description: "",
       points: [
         {
-          title: "Essential HR Capabilities",
-          pointsData: [
-            "Staff Profiles & Management - Maintain detailed personnel records, track roles, qualifications, and employment status in a centralised platform.",
-            "Awards & Recognition - Boost morale with milestone celebrations and integrated performance rewards.",
-            "Training & Evaluation - Assign courses, track progress, and assess performance via Wyzed integration.",
-            "Leave Management - Effortlessly process leave requests and approvals for full visibility on workforce availability.",
-          ],
+          title: "Staff Profiles & Management",
+          description:
+            "Roles, qualifications, and statuses live in one tidy record, ready for you with a single click.",
           dot: dots.dot1,
         },
         {
-          title: "Performance Management",
+          title: "Awards & Recognition",
           description:
-            "Performance Management system empowers organisations to streamline goal-setting, performance assessments, and structured reviews. Effortlessly create and manage workforce goals with intuitive tools, aligning them to your business objectives.",
-          conclusion:
-            "Customise performance tracking with flexible priorities, timelines, and automated weightage calculations, ensuring accurate evaluations. Mid-year and milestone reviews are simplified, enabling continuous feedback and improvement.",
+            "Mark the milestones, spread appreciation, and let performance rewards do the celebrating for you. ",
           dot: dots.dot2,
         },
         {
-          title: "Advanced Reporting & Analytics",
+          title: "Training & Evaluation",
           description:
-            "Advanced reporting tools provide clear insights into staff roles, review outcomes, and performance metrics, ensuring that every team member's professional growth is supported and managed effectively.",
+            "With Wyzed’s connection, keeping track of training progress and performance assessments is a breezy click. ",
 
           dot: dots.dot3,
         },
         {
-          title: "Optimised for Efficiency & Engagement",
+          title: "Leave Management",
           description:
-            "Tesseract’s HR module ensures seamless workforce oversight, automated processes, and effortless compliance, fostering a dynamic, engaged, and high-performing team. ",
+            "Leave requests travel through a clear, open process, with every approval and entitlement visible and traceable.",
+          pointsData: [
+            "Our toolkit is designed to simplify goal-setting, streamline performance reviews, and organize structured assessments so you can focus on impact, not admin. ",
+            "Craft specific priorities, automate their weight, and weave feedback into a cohesive narrative with milestone reviews that always move forward.",
+            "Apply powerful analytics to roles, desired outcomes, and performance data, producing lucid, actionable insights that drive employee development at every career stage.",
+          ],
           dot: dots.dot4,
         },
       ],
@@ -3549,10 +3717,12 @@ export const productsDetailsData = {
   "T-sign": {
     page: "T-sign",
     hero: {
-      title:
-        "Secure, Instant Digital Signatures. Built Right In. Paperless. Compliant. Effortless.",
-      description:
-        "T-sign is Tesseract's built-in e-signature solution, designed to make approvals simple, secure, and completely paperless. The T-Sign module is powerful Digital Signature feature that allows the users to digitally sign documents quickly and securely via the Application TesseractApp. It enables seamless and secure signing of official documents – anytime and anywhere. Created with real people in mind, T-signs work for everyone from support staff, participants and managers with no tech skills needed. Just open the document, sign with a tap, and you're good to go. No printing. No scanning. No chasing. T-sign helps organisations move faster, stay compliant, and keep everything in one safe place — all while cutting down on paperwork.",
+      title: "Secure, instant digital signatures.",
+      description: "Built Right In. Paperless. Compliant. Effortless. ",
+      descriptionPoints: [
+        "Say hello to T-sign, the e-signature feature baked right into TesseractApps, and watch approvals shrink to a single tap. Whether you’re support staff, a manager, or the signature-seeker, you’ll find the same fast, secure, and fully paperless signing experience.",
+        "Wave goodbye to printers, scanners, and those endless signature chases. Open the document, tap to sign, and you’re all set. ",
+      ],
       image: tsign, // Replace with actual image import
     },
     section2: {
@@ -3560,30 +3730,32 @@ export const productsDetailsData = {
       description: "",
       points: [
         {
-          title: "Key Features",
+          title: "Why choose T-sign?",
           pointsData: [
-            "Real-time digital signature capture for contracts, agreements, and sensitive documents.",
-            "Seamless cross-device compatibility – Optimized for desktop, tablet, and mobile use.",
-            "Enterprise-grade security – Signatures are fully encrypted and tamper-proof.",
-            "Multi-signer support – Enables secure signing workflows for multiple stakeholders.",
+            "Gain real-time digital signatures for contracts, agreements, and anything sensitive.",
+            "Use it everywhere: the desktop, your tablet, or mobile. ",
+            "Trust enterprise-grade security—encrypted and tamper-proof. ",
+            "Bring in multiple signers, making it a breeze to handle workflows with lots of stakeholders.",
           ],
           dot: dots.dot1,
         },
         {
           title: "Use T-sign for:",
           pointsData: [
-            "Signing business contracts and service-level agreements (SLAs)",
-            "Executing non-disclosure agreements (NDAs) and confidentiality forms",
-            "Approving internal policy documents and compliance forms",
-            "Finalizing vendor agreements, partnership deals and procurement documents",
-            "Managing employee onboarding, offer letters and HR documentation",
+            "Business contracts and service-level agreements. ",
+            "Non-disclosure and confidentiality agreements. ",
+            "Approvals of internal policies. ",
+            "Vendor contracts and procurement docs. ",
+            "HR papers, from offer letters to onboarding forms.",
           ],
           dot: dots.dot2,
         },
         {
-          title: "Digital Signature Management",
+          title: "Digital Signature Management Made Simple",
           description:
-            "T-signs eliminate the hassle of physical paperwork, giving you a faster, smarter way to manage signatures. Every document is digitally signed, securely stored and instantly accessible - all while staying fully compliant.",
+            "T-sign cuts the paperwork clutter. Every document is signed, securely stored, and instantly available, keeping you compliant, organized, and way ahead of the clock.",
+          conclusion:
+            "Built for real people, T-sign asks for zero tech skills. Just sign and keep moving.",
           dot: dots.dot3,
         },
       ],
@@ -3612,9 +3784,10 @@ export const productsDetailsData = {
   "Clock In & Clock Out": {
     page: "Clock In & Clock Out",
     hero: {
-      title: "Effortless Shift Clock In. Accurate Records. Seamless Approvals.",
+      title:
+        "Launch a fresh shift in a heartbeat, keep records sharp, and stamp approvals with one tap. ",
       description:
-        "Empowers your team to start, manage, and complete shifts with ease - directly from their mobile or desktop app. Designed for simplicity and compliance, this feature ensures every shift is accurately tracked, approved, and documented in real time.",
+        "Simplicity, compliance, and real-time accuracy—every little win flows through a single, purpose-built screen made for you, and now your team tracks shifts right from phones or desktops. ",
       image: clockInAndOut, // Replace with actual image import
     },
     section2: {
@@ -3624,37 +3797,37 @@ export const productsDetailsData = {
         {
           title: "Easy Shift Access",
           description:
-            "Users can conveniently log in and access their scheduled shifts in just a few taps. This feature highlights upcoming shifts and activates Clock In functionality right before the scheduled start time - so your team is always on time and on record.",
+            "Tomorrow’s shifts slide into view with a few quick swipes. The clock-in button flashes a few minutes before you start—no more racing the clock.",
           dot: dots.dot1,
         },
         {
           title: "Task Checklists & Notes",
           description:
-            "Once signed in, staff can view shift-specific task checklists, mark off completed duties, and enter activity notes to document their work - ensuring transparency and accountability for every participant in interaction.",
+            "We kept the weight down: checklists slide in, you tick, and quick notes drop in without fuss.",
           dot: dots.dot2,
         },
         {
-          title: "Reimbursements & Approvals",
+          title: "Reimbursements & Approvals ",
           description:
-            "Submit travel reimbursements or out-of-pocket expenses directly from the shift interface. Once completed, staff can send notes and expenses for supervisor approval in one streamlined workflow.",
+            "Reimbursements now sort themselves. Travel and expense claims surf straight into the shift screen, waving for a fast supervisor green light. ",
           dot: dots.dot3,
         },
         {
-          title: "Shift Extensions & Sleepovers",
+          title: "Shift Extensions & Sleepovers: ",
           description:
-            "Whether it's an extended shift or overnight support, users can easily log additional hours and sleepover activities, ensuring compliance and accurate payroll processing.",
+            "Teams add extra hours or book an overnight with a tap, and payroll stays tidy because times are always right. ",
           dot: dots.dot4,
         },
         {
-          title: "Supervisor Sign-Off",
+          title: "Supervisor Sign-Off: ",
           description:
-            "To complete the shift, users can capture a supervisor's digital signature - ensuring all tasks and logs are verified and approved before clocking out.",
+            "Supervisors add a digital signature when the shift’s done—every task and note is sealed before you clock out. ",
           dot: dots.dot5,
         },
         {
-          title: "Full Shift Lifecycle in One Place.",
+          title: "All shift needs, one place. ",
           description:
-            "From sign-in to sign-out, every aspect of a shift is managed, documented, and submitted in-app. This reduces paperwork, speeds up admin processes, and gives providers the data they need for audits, billing, and compliance.",
+            "Audits, billing, and compliance—everything lives right in your hand. During the shift, you track, manage, and submit without a single detour, all in one app. ",
           dot: dots.dot6,
         },
       ],
@@ -3688,81 +3861,80 @@ export const productsDetailsData = {
   "Participant Management": {
     page: "Participant Management",
     hero: {
-      title: "Comprehensive Participant Management Made Simple",
+      title: "Participant Management Made Effortless",
       description:
-        "Our Participant's Module is designed to give admins complete control over participant care, enabling efficient, personalised, and transparent management across every touchpoint. Whether it's managing support plans, tracking progress, or handling services, everything you need is in one place.",
+        "Caring for participants shouldn’t feel like a puzzle. With Tesseract’s Participant Module, all the tools you need are in a single smart, secure, and easy-to-navigate space. ",
+      conclusion:
+        "From personalised support plans to seamless progress tracking, everything is designed to give you the confidence and clarity you need to provide truly tailored care. ",
       image: participantManagement, // Replace with actual image import
     },
     section2: {
-      title: "Core Features",
+      title: "What Makes It Awesome?",
       description: "",
       points: [
         {
           dot: dots.dot1,
-          title: "",
+          title: "Smart Profiles",
           description:
-            "Easily create and manage participant profiles with all the essential details - laying the foundation for personalised care and support.",
+            "Set up and maintain participant profiles in moments. Every vital piece of information is in one place, ready to drive the individual care you provide.",
         },
         {
           dot: dots.dot2,
-          title: "",
+          title: "Care Journals",
           description:
-            "Maintain a comprehensive record of participant care with the Journal feature. Admins can add notes on care updates, progress, incidents, or special instructions - ensuring continuity and transparency in support.",
+            "Record changes, incidents, and special notes in one journal that acts like a shared care diary. Everyone stays informed without the need for constant meetings or multiple apps.",
         },
         {
           dot: dots.dot3,
-          title: "",
+          title: "Funding Tracker",
           description:
-            "Track participant funding with precision. Allocate and monitor budgets for various services, helping you stay compliant and efficient.",
+            "Keep a watchful eye on every budget and service allocation. Crystal-clear reports allow you to stay compliant and in control at every step.",
         },
         {
           dot: dots.dot4,
-          title: "",
+          title: "Service Agreements",
           description:
-            "Add and manage support services along with detailed service agreements - ensuring clarity for both participants and providers.",
+            "Add services and attach clear, mutual agreements that protect both participants and providers. Transparency is built in from the start.",
         },
         {
           dot: dots.dot5,
-          title: "",
+          title: "Document Hub",
           description:
-            "Upload and manage important documents such as assessments, medical reports, or consent forms. Set expiry dates to receive timely notifications for renewals.",
+            "Drag in assessments, medical reports, and consent forms. Assign expiry dates and receive friendly reminders so you never miss a renewal.",
         },
         {
           dot: dots.dot6,
-          title: "",
+          title: "Digital Forms",
           description:
-            "Digitally fill and store essential participant forms - like bowel movement logs and other clinical documentation - keeping everything organised and accessible.",
+            "Complete clinical forms like bowel movement logs online. No paper, no fuss—just neatly organised notes that everyone can access.",
         },
         {
           dot: dots.dot1,
-          title: "",
+          title: "Feedback Loop",
           description:
-            "Share feedback about staff or services, helping you improve quality of care and build stronger trust.",
+            "Send quick feedback on staff and services to foster continuous improvement and strengthen mutual trust.",
         },
       ],
     },
     section3: [
       {
         title: "Risk Assessment & Management",
-        description:
-          "Stay proactive and keep participants safe with built-in risk assessment and management tools. Within the Participant Module, your team can:",
+        description: "Stay one step ahead of risks with integrated tools to: ",
         points: [
-          "Conduct Risk Assessments: Identify potential risks for each participant, from health concerns to environmental factors.",
-          "Create and Manage Risk Plans: Develop clear action plans to mitigate risks, assign responsibilities, and outline response strategies.",
-          "Track and Update: Regularly review and update risk assessments and plans to reflect any changes in participant circumstances.",
-          "Ensure Compliance: Maintain a clear record of risk management actions aligned with NDIS and quality standards.",
+          "Spot health or environmental hazards from day one. ",
+          "Draft action plans and delegate clear responsibilities. ",
+          "Update assessments on the fly as things change.",
+          "Meet every NDIS and quality standard without extra paperwork.",
         ],
-        conclusion:
-          "Empower your team to manage participant risks effectively and promote a safer, more responsive care environment",
         images: [],
       },
       {
-        title: "Why Use the Participants Module?",
+        title: "You’ll wonder how you ever managed without it.",
         points: [
-          "Centralised Care Records - Keep all participant information, progress, and documentation in one secure location.",
-          "Better Compliance - Maintain accurate records and meet NDIS or organisation-specific compliance requirements.",
-          "Improved Coordination - Streamline communication between teams by documenting key information in real time.",
-          "More Personalised Support - Tailor care delivery using up-to-date journals, risk profiles, and participant feedback.",
+          "Everything in One Place – Centralised records mean easy, secure access anytime ",
+          "Stay Compliant – Match NDIS and internal standards without the stress ",
+          "Team Coordination – Instant updates keep the whole team in sync ",
+          "Personalised Support – Deliver care that is tailored, on time, and fully transparent ",
         ],
         images: [],
       },
@@ -3796,17 +3968,35 @@ export const productsDetailsData = {
   "Incident Management": {
     page: "Incident Management",
     hero: {
-      title: "Streamlined Reporting. Safer Workplaces. Smarter Compliance.",
-      description: "",
-      descriptionPoints: [
-        "The Incident Management feature helps your team securely log, manage, and track all incidents within your organisation. From the initial report to resolution, every detail is captured for transparency, safety, and NDIS compliance.",
-        "Monitor incidents across facilities and participants effortlessly. Search, view, and track real-time updates, ensuring nothing is overlooked.",
-        "Our guided reporting process simplifies data entry, saving time while capturing essential details. Real-time status tracking and intuitive controls make it easy for your team to stay on top of incident management.",
-        "With smart access controls, only unresolved incidents remain editable. Once resolved, records are locked to preserve data integrity and provide a clear audit trail.",
-      ],
-      points: [
-        "Create and Track Incidents with Ease",
-        "Secure Access & Edit Control",
+      title:
+        "Insightful Reports. Secure Workspaces. Compliance You Can Count On.",
+      description: "Incident Management Made Effortless ",
+      pointsData: [
+        {
+          pointTitle: "Log, Track & Resolve – Everything in One Place",
+          pointDescription:
+            "Securely record every incident from the first report right through to resolution, ensuring full transparency and NDIS compliance every step of the way.",
+        },
+        {
+          pointTitle: "Live Visibility across All Locations",
+          pointDescription:
+            "Keep an eye on incidents affecting both participants and team members through live updates, smart searches, and easy tracking.",
+        },
+        {
+          pointTitle: "Guided Reporting, Total Clarity",
+          pointDescription:
+            "Our clear, step-by-step process makes data entry easy while capturing every important detail – saving time and improving accuracy. ",
+        },
+        {
+          pointTitle: "Edit Wisely:",
+          pointDescription:
+            "Only open incidents can be changed. Once an incident is closed, the entry is locked, keeping data safe and leaving a clear audit trail. ",
+        },
+        {
+          pointTitle: "Track without Doubt: ",
+          pointDescription:
+            "Raise and manage incidents with total confidence that your data is secure, compliant, and ready for audit whenever you need it. ",
+        },
       ],
       image: incidentManagement, // Replace with actual image import
     },
@@ -3817,13 +4007,26 @@ export const productsDetailsData = {
         {
           title: "Key Highlights",
           pointsData: [
-            "Guided, multi-step incident reporting",
-            "Smart field logic based on priority",
-            "Real-time incident tracking and status updates",
-            "Voice-to-text support for faster documentation",
-            "Attachments and supporting evidence upload",
-            "Secure editing controls for resolved incidents",
-            "Integrated with participant and facility data",
+            {
+              pointTitle: "Guided & Flexible Reporting",
+              pointDescription:
+                "Our step-by-step process adapts to the seriousness of the incident, ensuring that the right details are collected quickly and accurately.",
+            },
+            {
+              pointTitle: "Live Tracking & Instant Alerts",
+              pointDescription:
+                "Check the status of incidents across participants and locations in real time, making sure that nothing is overlooked.",
+            },
+            {
+              pointTitle: "Designed for Speed and Ease  ",
+              pointDescription:
+                "Just speak and log what happened; upload photos and files in seconds. Your documentation stays thorough and lightning-quick. ",
+            },
+            {
+              pointTitle: "Locked and Linked ",
+              pointDescription:
+                "Once incidents are closed, they’re sealed tight and mapped to the person and facility files, guaranteeing traceable, compliant records.",
+            },
           ],
           dot: dots.dot1,
         },
@@ -3831,28 +4034,57 @@ export const productsDetailsData = {
           title: "Why It Matters",
           description: "Accurate, timely incident logging is essential to :",
           pointsData: [
-            "Ensure safety for participants and staff",
-            "Support accountability and continuous improvement",
-            "Stay compliant with NDIS and audit requirements",
+            {
+              pointTitle: "Safety First:",
+              pointDescription:
+                "Your participants and staff deserve a culture that puts their wellbeing front and centre. ",
+            },
+            {
+              pointTitle: "Ongoing Improvement:",
+              pointDescription:
+                "Use the incident data to drive smarter, evidence-based decisions that lift service quality. ",
+            },
+            {
+              pointTitle: "Audit-Ready Living:",
+              pointDescription:
+                "NDIS auditors see complete, exact records that tell the right story at a glance. ",
+            },
+          ],
+          dot: dots.dot2,
+        },
+        {
+          title: "Why Choose Incident Management? ",
+          pointsData: [
+            {
+              pointTitle: "Transparent Culture:",
+              pointDescription:
+                "An open logging environment where every incident gets documented and tackled head-on.",
+            },
+            {
+              pointTitle: "Real-Time Alerts:",
+              pointDescription:
+                "Watch reports roll in live; your response is instant, and the gaps vanish. ",
+            },
+            {
+              pointTitle: "Compliance, Handled:",
+              pointDescription:
+                "Guided templates and workflow steps keep every NDIS and audit tick in its right box. ",
+            },
+            {
+              pointTitle: "Data Defence:",
+              pointDescription:
+                "Only your security role unlocks the details. Sensitive records stay safe, and edits stay accountable. ",
+            },
           ],
           dot: dots.dot2,
         },
         {
           title: "",
-          description:
-            "Your frontline tool for safety, accountability, and compliance. The Incident Register keeps your team prepared, protected, and proactive.",
-          dot: dots.dot3,
-        },
-        {
-          title: "Why Choose Incident Management?",
-          pointsData: [
-            "Promotes a safer, more transparent work environment",
-            "Enables real-time tracking of incident reports",
-            "Supports compliance with NDIS and audit requirements",
-            "Reduces risk through structured reporting and review",
-            "Secures sensitive data with robust role-based access controls",
+          descriptionPoints: [
+            "Incident Management is more than a notebook. It’s a live readiness tool that puts you ahead, safe and compliant. ",
+            "Drive accountability, cut compliance hassle, and nurture a safer workplace from one sleek, locked-down platform. ",
           ],
-          dot: dots.dot4,
+          dot: dots.dot2,
         },
       ],
     },
@@ -3880,9 +4112,8 @@ export const productsDetailsData = {
   Repository: {
     page: "Repository",
     hero: {
-      title: "Repository — Where Documents Hang Out and Get Stuff Done!",
-      description:
-        "The Repository Module serves as your secure digital filing cabinet - designed to store, organise, and manage all important attachments and documents in one place.",
+      title:
+        "Think of it as your intelligent digital drawer—smooth, smart, and designed for one task: holding your vital documents securely and within reach. ",
       image: repository, // Replace with actual image import
     },
     section2: {
@@ -3892,37 +4123,29 @@ export const productsDetailsData = {
         {
           title: "Secure Storage & Access Control",
           description:
-            "Store all essential documents in one central, secure location - whether related to staff, participants, operations, or compliance. This ensures that important files are always safely preserved and easily accessible when needed. ",
-          conclusion:
-            "Uploading attachments is simple and supports various file formats, allowing your team to keep all necessary documentation organised in one place.",
+            "From payroll records to company policy guides, everything nests in a single, guarded space. Drag and drop files of most common types, and they’re there.",
           dot: dots.dot1,
         },
         {
           title: "Permission Management",
           description:
-            "You can grant precise access levels to the right people, controlling who can view or edit each document. Access can be assigned based on user roles or to specific individuals, ensuring sensitive information remains protected and only available to authorised personnel.",
+            "Access is chosen, not random. Assign rights by role, or to a named individual, so files are seen only by the people who need to. ",
           dot: dots.dot2,
         },
         {
           title: "Owner-Controlled Deletion",
           description:
-            "Document owners maintain full control over their files. Only the owners or authorised users have the ability to delete attachments, safeguarding data accuracy, and ensuring that only valid, approved documents are retained within the system.",
+            "Only designated users can hit delete, so only the documents you’ve stamped as final ever leave the vault. ",
           dot: dots.dot3,
         },
         {
-          title: "Why the Repository Module?",
+          title: "Why You’ll Love the Repository Module:",
           pointsData: [
-            "Efficiency: No more digging through folders - everything is searchable and organised.",
-            "Security: Only the right people see the right information.",
-            "Transparency: Clear control over document visibility and actions.",
+            "Speed—search a few letters and the document you want appears. ",
+            "Safety—only the users you’ve named can open the folders. ",
+            "Clarity—you can instantly see who can read, edit, or delete any file. ",
           ],
           dot: dots.dot4,
-        },
-        {
-          title: "",
-          description:
-            "The Repository Module brings order, security, and simplicity to your document management - making collaboration and compliance effortless.",
-          dot: dots.dot5,
         },
       ],
     },
@@ -3951,50 +4174,65 @@ export const productsDetailsData = {
     page: "Role Based Dashboard",
     hero: {
       title:
-        "Role-Based Dashboards — Intelligent Dashboards Tailored to Every Role!",
-      description:
-        "Our platform offers dynamic, role-specific dashboards designed to surface the most relevant information for Admins, Roster Managers, Accountants and Staff etc - delivering clarity, control, and convenience at a glance. ",
+        "Dashboards built for your title! Admins, Roster Managers, Accountants, and Staff view only the info that counts, neatly organised for rapid checks, clear action, and straightforward follow-up.",
       image: roleBasedDashboard, // Replace with actual image import
     },
     section2: {
-      title: "",
+      title: "What makes this dashboard unique: ",
       description: "",
       points: [
         {
-          title: "",
-          descriptionPoints: [
-            "A powerful control center offering a bird’s-eye view across the entire organization.",
-            "Easily monitor shift schedules with the Roster Schedule Tracker, which visually displays shifts by status.",
+          title: "Roster Schedule Tracker",
+          pointsData: [
+            {
+              pointTitle: "Monitor shifts by status:",
+              pointDescription:
+                "upcoming, ongoing, or finished. Harmonising the team becomes simple.",
+            },
           ],
           dot: dots.dot1,
         },
         {
           title: "",
           description:
-            "Keep up to date with staff activity and instantly access participant status through the Participant Log. The Sign-In Snapshot offers real-time insights into shift sign-ins for quick oversight. TaskBridge helps you stay on top of pending tasks such as leave requests, letters, approvals, and incident updates.",
+            "Live sign-in feeds keep you informed on staff presence and participant activity. ",
           dot: dots.dot2,
         },
         {
           title: "",
           description:
-            "HR Insights allows you to track recruitment progress, awards, and training metrics, while the Incident Directory enables efficient filtering of incidents by status. Stay informed on workforce availability with the Leave Tracker, manage finances through Invoice Management, and oversee employee development by tracking progress and approvals within performance cycles.  ",
+            "Handle leave submissions, documents, approvals, and incident notes, all on one screen.  ",
           dot: dots.dot3,
         },
         {
           title: "",
           description:
-            "Together, these dashboards deliver clear, actionable data tailored to every role, helping improve decision-making and operational control. ",
+            "HR Insights, along with the incident log, deliver a single glance at recruitment milestones, award allocations, training stats, and incident updates. ",
           dot: dots.dot4,
+        },
+        {
+          title: "",
+          description:
+            "The leave tracker delivers real-time workforce availability so you can plan with confidence. ",
+          dot: dots.dot5,
+        },
+        {
+          title: "",
+          descriptionPoints: [
+            "Finance processes glide along with user-friendly tools built for maximum efficiency. ",
+            "Keeping momentum in employee growth means tracking approvals and progress throughout every performance cycle. ",
+          ],
+          dot: dots.dot6,
         },
         {
           title: "Why It Matters",
           pointsData: [
-            "Personalized: Each role gets a tailored experience",
-            "Efficient: Surface only what's relevant—no clutter",
-            "Actionable: Direct links to take immediate action",
-            "Visual: Graphs, snapshots, and counters enhance clarity",
+            "Personalized:  Every position sees just what it needs. ",
+            "Efficient: Only the data that matters is in the frame; everything else stays out",
+            "Actionable: Clickable shortcuts take you from insight to action in one motion",
+            "Visual: Charts, snapshots, and live counters make it all easy to read",
           ],
-          dot: dots.dot5,
+          dot: dots.dot1,
         },
       ],
     },
@@ -4017,10 +4255,12 @@ export const productsDetailsData = {
   "ChaT - Secure Internal Messaging": {
     page: "ChaT - Secure Internal Messaging",
     hero: {
-      title:
-        "Your go-to hub for instant messages - keeping teams connected, conversations flowing, and work moving faster than your morning coffee!",
-      description:
-        "Chat is your organisation's private, real-time communication tool - designed to keep staff, coordinators, and managers connected quickly and securely. Think of it as your workplace's own fast, reliable messaging hub that makes teamwork easy and efficient.  ",
+      title: "Chat That Works Harder Than Your Morning Coffee!",
+      descriptionPoints: [
+        "Chat More Productive Than Your First Cup of Coffee! ",
+        "Meet Chat—your team’s private, live messaging hub that keeps everyone engaged, up to speed, and moving fast.",
+        "Whether you’re moving between visits, settled at your desk, or juggling overnight shifts, TesseractApps Chat is your pocket-sized command centre for instant updates and effortless coordination. ",
+      ],
       image: chat, // Replace with actual image import
     },
     section2: {
@@ -4028,63 +4268,72 @@ export const productsDetailsData = {
       description: "",
       points: [
         {
-          title: "Internal-Only Communication",
+          title: "For Your Team, Only",
           pointsData: [
-            "Organisation-wide chat",
-            "Only verified users from within your company can access",
-            "No external contacts, no distractions, no data leakage",
+            "Every message stays inside your walls—no outsiders, no distractions. ",
+            "Built safe, built secure, and built solely for your organisation. ",
           ],
           dot: dots.dot1,
         },
         {
-          title: "1:1 and Group Conversations",
+          title: "Conversations That Flow",
           pointsData: [
-            "Direct messages for quick check-ins",
-            "Create chaT groups by team, region, or shift",
+            "Shoot a quick 1:1 message for a daily check-in. ",
+            "Spin up group chats by team, by region, or by shift.",
+            "Keep the whole crew in the loop the moment it matters. ",
           ],
           dot: dots.dot2,
         },
         {
-          title: "File & Media Sharing",
+          title: "Share Anything, Anytime",
           pointsData: [
-            "Send PDFs, images, voice notes, and documents",
-            "Perfect for sharing incident reports, photos, or shift notes instantly",
-            "All files stored securely within your system",
+            "Drop PDFs, images, voice notes, full documents—whatever you need. ",
+
+            "Ideal for incident reports, shift notes, or a quick snap from the field.",
+
+            "Every file stays locked inside your system, safe and sound.",
           ],
           dot: dots.dot3,
         },
         {
-          title: "Real-Time, Cross-Device Sync",
+          title: "Real-Time, All the Time ",
           pointsData: [
-            "Use it on mobile, tablet, or desktop",
-            "Chat updates in real-time across all devices",
-            "Receive push notifications for messages",
+            " Use it on mobile, tablet or desktop. ",
+
+            "Messages sync instantly, no lag. ",
+
+            "Push notifications keep you updated, no matter where you are.",
           ],
           dot: dots.dot4,
         },
         {
-          title: "Ideal for:",
+          title: "Built For: ",
           pointsData: [
-            "Rostering teams needing shift confirmations",
-            "Support workers sending quick updates from the field",
-            "Managers needing instant alerts on incidents",
-            "Admins coordinating across multiple services",
+            "Rostering teams sealing the shift rotas.",
+
+            "Support workers shooting through field updates. ",
+
+            "Managers who must stay on the pulse—instant incident alerts mean you’re always in control. ",
+
+            "Admins juggling coordination across services. ",
           ],
           dot: dots.dot5,
         },
         {
           title: "Say Goodbye To:",
           pointsData: [
-            "Unsecure messages",
-            "Lost communication trails",
-            "Confusion between work and personal chats",
+            " Unsecure solo chats. ",
+
+            "Disappearing message trails. ",
+
+            "Blurred lines between work and home. ",
           ],
           dot: dots.dot6,
         },
         {
-          title: "",
+          title: "So why risk it when you’ve got TesseractApps? ",
           description:
-            "Why wing it when you can use TesseractApps it? Helping NDIS teams stay sharp, sane, and totally on top of things!",
+            "Helping NDIS teams stay sharp, connected, and totally in control—one message at a time. ",
           dot: dots.dot1,
         },
       ],
@@ -4115,43 +4364,43 @@ export const productsDetailsData = {
     section2: {
       title: "My Profile",
       description:
-        "Your Premier Hub for Workforce Management & Career Progression!",
+        "One-stop portal for workforce management and career advancement. ",
       points: [
         {
           dot: dots.dot1,
           title: "Personal Details ",
           description:
-            "Effortlessly maintain up-to-date demographic, emergency, and payroll information.",
+            "Quickly edit demographic, emergency, and payroll information with a few taps. ",
         },
         {
           dot: dots.dot2,
           title: "Leave Management",
           description:
-            "Confidently plan and manage leave. Submit requests, track approvals, and access all designated leave entitlements, ensuring seamless scheduling.",
+            "Schedule, submit, and monitor leave requests, all while checking your entitlements in the mobile app.  ",
         },
         {
           dot: dots.dot3,
           title: "Awards & Professional Development ",
           description:
-            "Celebrate milestones, embrace recognition, and engage in structured learning pathways for career advancement.",
+            "Record milestones, earn recognition, and follow guided learning pathways that accelerate your career.",
         },
         {
           dot: dots.dot4,
           title: "Reports & Payslips",
           description:
-            "Securely access payroll records, timesheets, and critical reports, ensuring transparency and financial oversight.",
+            "Retrieve payroll data, timesheets, and critical reports from a single, secure, transparent store. ",
         },
         {
           dot: dots.dot5,
           title: "Performance Insights",
           description:
-            "Establish career objectives, monitor progress, and prepare evaluations with precision.",
+            "Define career objectives, log milestones, and prep for reviews using evidence-based clarity. ",
         },
         {
           dot: dots.dot6,
           title: "Availability & Scheduling",
           description:
-            "Declare work preferences for optimised rostering, enabling seamless workforce coordination and balance.",
+            "Post your available hours to tweak rosters, creating a seamless workflow. ",
         },
       ],
     },
@@ -4159,10 +4408,10 @@ export const productsDetailsData = {
       {
         title: "Why My Profile?",
         points: [
-          "Unified Access – A streamlined platform consolidating all workforce essentials.",
-          "Autonomous Management – Navigate professional tasks independently, free from administrative hurdles.",
-          "Strategic Career Advancement – Leverage structured tools to drive growth and progression.",
-          "Tailored Workflow – Maintain preferences for a personalised and optimised experience.",
+          "One-stop access—everything you need through a single sign-on. ",
+          "Self-service controls—update your profile without waiting for admin. ",
+          "Purposeful Career Growth—Leverage structured tools to boost skills and propel career pathways. ",
+          "Personalised Engagement Hub—Save preferences for a tailored and continually updated experience. ",
         ],
         images: [],
       },
@@ -4201,9 +4450,9 @@ export const productsDetailsData = {
     page: "Forms",
     hero: {
       title:
-        "Forms — Streamline documentation with powerful, role-based form creation and management!",
+        "Smart Forms: Role-specific forms are designed and managed in-step with the workflow. ",
       description:
-        "The Forms Module gives your team everything they need to create, assign, and manage forms at every stage of care - all from one seamless platform.",
+        "Module-Based Solution: Build, circulate, and oversee forms without leaving the app.",
       image: forms, // Replace with actual image import
     },
     section2: {
@@ -4211,31 +4460,45 @@ export const productsDetailsData = {
       description: "",
       points: [
         {
-          title: "Create Forms with Ease",
-          description:
-            "Build custom forms using a simple drag-and-drop interface: Add text fields, dropdowns, checkboxes, radio buttons. Include file uploads and digital signatures. No coding required – design once, use forever. Assign templates by role or module (e.g., Client, Incident) and easily clone, modify, or archive with version control.",
+          title: "Create Forms with Ease:",
+          pointsData: [
+            "Use the drag-and-drop editor to add text fields, dropdowns, checkboxes, radio buttons, file uploads, and digital signatures with just a few clicks. ",
+            "The design places users first: create your form once, and it gradually evolves into a reusable asset—no technical skills necessary. ",
+            "Choose from role-based categories, incident-focused modules, and a straightforward version control that gently shepherds each edit.",
+          ],
           dot: dots.dot1,
         },
         {
           title: "Role-Based Access Control",
           description:
-            "Set precise permissions for form templates and submissions: Ensure sensitive information is secure and accessible only to the right people.",
+            "Customized permission sets ensure that only the right users can create, edit, or submit form templates, keeping every piece of sensitive data under lock and key. ",
           dot: dots.dot2,
         },
         {
           title: "Seamless Form Submissions",
           description:
-            "Fully optimized for mobile and tablet. Capture digital signatures. Link submissions to client or incident records.",
+            "Optimized for smartphones and tablets, your team can document evidence from any angle, at any moment. ",
           dot: dots.dot3,
         },
         {
-          title: "Why Teams Love the Forms Module",
+          title: "Collect digital signatures directly in the form.",
+          description: "",
+          dot: dots.dot3,
+        },
+        {
+          title:
+            "Automatically associate each submission with the relevant client or incident record.",
+          description: "",
+          dot: dots.dot3,
+        },
+        {
+          title: "Why Teams Value the Forms Module: ",
           pointsData: [
-            "Replace paper-based documentation",
-            "Stay compliant with NDIS and quality standards",
-            "Save time through automation and reusable templates",
+            "Transition from paper once and for all. ",
+            "Align with every NDIS and quality requirement, with total assurance.",
+            "Slash admin hours with intelligent, reusable templates.",
           ],
-          dot: dots.dot4,
+          dot: dots.dot3,
         },
       ],
     },
@@ -4264,9 +4527,11 @@ export const productsDetailsData = {
     page: "Accounting",
     hero: {
       title:
-        "Accounting Module — Smart, Seamless & Scalable Financial Management!",
-      description:
-        "Take control of your finances with our integrated Accounting Module—designed to streamline payroll, invoicing, transactions, and compliance in one secure and user-friendly platform. Whether you're managing day-to-day bookkeeping or preparing financial reports, our system adapts to your workflows with automation and clarity.",
+        "Smart Accounting, Limitless Possibilities — Your Gateway to Effortless Financial Mastery!",
+      descriptionPoints: [
+        "All-in-One Financial Hub: Seamlessly manage payroll, invoicing, transactions and   compliance — all from one secure, intuitive platform.",
+        "Built for Clarity & Growth: Automate routine tasks and   generate reports effortlessly, so you can focus on scaling your business with confidence. ",
+      ],
       image: accounting, // Replace with actual image import
     },
     section2: {
@@ -4275,50 +4540,122 @@ export const productsDetailsData = {
       points: [
         {
           title: "Payroll",
-          description:
-            "Simplify your entire payroll cycle—from timesheet processing to payslip generation. Track hours, manage taxes, apply pay rules, and ensure compliance with automated calculations and ABA file generation for direct bank uploads.",
+          pointsData: [
+            "Payroll, Perfected: From timesheets to pay slips, automate each step with intelligent rules, tax calculations, and bank-ready ABA file export. ",
+            "Effortless Accuracy: Track hours, process pay runs and ensure compliance with calculations that require no manual intervention.",
+          ],
           dot: dots.dot1,
         },
         {
           title: "Sales & Purchases",
-          description:
-            "Easily create and manage invoices, track payments, and log purchases in one place. Whether you're billing clients or managing vendor expenses, our invoicing engine ensures accurate and timely record-keeping.",
+          pointsData: [
+            {
+              pointTitle: "Send, Track, Get Paid — All in One Place ",
+              pointDescription:
+                "Issue invoices, log purchases, and oversee payments with a single smart invoicing engine. ",
+            },
+            {
+              pointTitle: "From Clients to Compliance — Covered ",
+              pointDescription:
+                "Bill customers or manage vendor expenses; enjoy accurate, real-time records without the clutter",
+            },
+          ],
           dot: dots.dot2,
         },
         {
           title: "Bank Feeds",
-          description:
-            "Connect your bank accounts to automatically import and reconcile transactions. Say goodbye to manual data entry and enjoy a clear view of your financial activity in real time.",
+          pointsData: [
+            {
+              pointTitle: "Connect & Reconcile Instantly",
+              pointDescription:
+                "Link your bank accounts to auto-import transactions and match them in seconds, eliminating manual keystrokes. ",
+            },
+            {
+              pointTitle: "See the Full Picture ",
+              pointDescription:
+                "Access a real-time, clear view of your financial activity and stay in control with live insights. ",
+            },
+          ],
           dot: dots.dot3,
         },
         {
           title: "Chart of Accounts",
-          description:
-            "Maintain a structured, flexible chart of accounts tailored to your organisation's financial reporting needs. Easily categorize income, expenses, assets, and liabilities.",
+          pointsData: [
+            {
+              pointTitle: "Tailored Financial Clarity ",
+              pointDescription:
+                "Design a flexible chart of accounts that meets your organization’s reporting needs — no more one-size-fits-all. ",
+            },
+            {
+              pointTitle: "Smart Categorization, Effortless Clarity ",
+              pointDescription:
+                "Quickly group income, expenses, assets, and liabilities for sharper decisions and cleaner, more reliable reports. ",
+            },
+          ],
           dot: dots.dot4,
         },
         {
           title: "General Ledger",
-          description:
-            "Gain visibility into every transaction with a comprehensive general ledger. View, track, and export ledger entries for audits, reporting, or financial reviews.",
+          pointsData: [
+            {
+              pointTitle: "Total Transparency:",
+              pointDescription:
+                "Explore a complete ledger that logs every transaction, ideal for audits and actionable insights.  ",
+            },
+            {
+              pointTitle: "One-Click Export:",
+              pointDescription:
+                "Extract data instantly whenever you need it—stay always ready for a deeper financial dive. ",
+            },
+          ],
           dot: dots.dot5,
         },
         {
           title: "Financial Reports",
-          description:
-            "Generate insightful, real-time reports including balance sheets, profit & loss statements, payroll summaries, and expense breakdowns. Make confident, data-driven decisions backed by accurate reporting.",
+          pointsData: [
+            {
+              pointTitle: "Live Insights, No Guessing ",
+              pointDescription:
+                "Pull balance sheets, P&L statements, payroll data, and detailed expense reports all in a single tap. ",
+            },
+            {
+              pointTitle: "Data-Driven Decisions",
+              pointDescription:
+                "Count on precise, current reports built for your unique business context—no lag, no doubt.  ",
+            },
+          ],
           dot: dots.dot6,
         },
         {
           title: "Accounting Settings",
-          description:
-            "Customize accounting workflows with tailored tax rules, payment terms, and default ledger accounts. Ensure your financial setup is aligned with your operational needs.",
+          pointsData: [
+            {
+              pointTitle: "Personalize Every Detail: ",
+              pointDescription:
+                "Set up tax rules, payment terms, and default ledger accounts that match your daily operations.  ",
+            },
+            {
+              pointTitle: "Designed for You:",
+              pointDescription:
+                "Sync your financial framework with your workflow—no workarounds, just pure control. ",
+            },
+          ],
           dot: dots.dot1,
         },
         {
           title: "Fully Integrated",
-          description:
-            "Your accounting module connects seamlessly with other parts of the system—such as payroll, rosters, and participant billing—ensuring smooth data flow and reducing double entry.",
+          pointsData: [
+            {
+              pointTitle: "Seamless Integration: ",
+              pointDescription:
+                "The TesseractApps accounting engine connects payroll, rosters, and billing—eliminating duplicate entries and info gaps. ",
+            },
+            {
+              pointTitle: "Smoother, Error-Free Flow: ",
+              pointDescription:
+                "Data glides automatically between modules, speeding up processes and cleaning up your financials.",
+            },
+          ],
           dot: dots.dot2,
         },
       ],
@@ -4364,9 +4701,9 @@ export const productsDetailsData = {
     page: "T Learning Hub",
     hero: {
       title:
-        "T Learning Hub — Role-Based Training, On-Demand. Simplified Learning for Every Team Member!",
+        "T Learning Hub—an all-in-one companion your every crew unit must master—live, light, always at hand. ",
       description:
-        "Empower your team with the right knowledge, at the right time. T Learning Hub is your organisation's centralized training hub, delivering personalized content tailored to each user's role and responsibilities.",
+        "Grow your team by matching each learning step to their role and daily duties.",
       image: tLearingHub, // Replace with actual image import
     },
     section2: {
@@ -4374,27 +4711,46 @@ export const productsDetailsData = {
       description: "",
       points: [
         {
-          title: "Personalized Learning Paths",
-          description:
-            "Log in and dive straight into content designed just for you: Unlock full access to all training materials. No clutter. No distractions. Just the content you need. Includes step-by-step walkthroughs & feature demos. Fully mobile-friendly – learn anytime, anywhere.",
+          title: "XCLUSIVELY TUNED LEARNING PORTAL:",
+          pointsData: [
+            "Guided walkthroughs give step-by-step instructions and built-in feature trials. ",
+            "Fully mobile, learning fits into any pocket, anytime, anywhere.",
+            "From their first login to mastering fine details, T Learning Hub charts a clear,personal path to exceptional readiness. ",
+            "Support tickets drop—proactive learning steps up.",
+            "Accelerate alongside expert mentors and unlock every crew member’s full potential. ",
+          ],
           dot: dots.dot1,
         },
         {
           title: "Key Features",
           pointsData: [
-            "Role-based content visibility",
-            "Centralized training library",
-            "Auto-redirect to your role's training modules",
-            "Continuous updates with every product release",
-            "Supports onboarding, upskilling, and refresher training",
+            {
+              pointTitle: "Role-Based Content Visibility:",
+              pointDescription:
+                "Training materials match what the user’s role demands. ",
+            },
+            {
+              pointTitle: "Centralized Training Library: ",
+              pointDescription:
+                "All resources are in one searchable, expandable vault. ",
+            },
+            {
+              pointTitle: "Automatic Redirection: ",
+              pointDescription:
+                "The system points learners to what matters for their role, instantly. ",
+            },
+            {
+              pointTitle: "Incremental Updates:",
+              pointDescription:
+                "Each product release refreshes training content automatically. ",
+            },
+            {
+              pointTitle: "Comprehensive Support:",
+              pointDescription:
+                "The system scales for onboarding, upskilling, and routine refresh training. ",
+            },
           ],
           dot: dots.dot2,
-        },
-        {
-          title: "Built for Continuous Learning",
-          description:
-            "Whether you're new to the platform or brushing up on features, T Learning Hub makes it easy to learn at your own pace and stay aligned with best practices. Empower your team. Reduce support tickets. Drive adoption.",
-          dot: dots.dot3,
         },
       ],
     },

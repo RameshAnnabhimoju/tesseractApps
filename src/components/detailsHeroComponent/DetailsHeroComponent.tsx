@@ -8,6 +8,7 @@ interface DeatailsHeroType {
     conclusion?: string;
     descriptionPoints?: string[];
     points?: string[];
+    pointsObject?: { pointTitle: ""; pointDescription: "" }[];
   };
   displayTitle?: boolean;
 }
@@ -55,6 +56,22 @@ const DetailsHeroComponent = ({
               return (
                 <li className="details-hero-text" key={index}>
                   {point}
+                </li>
+              );
+            })}
+          </ul>
+        )}
+        {data.pointsObject && (
+          <ul>
+            {data.pointsObject.map((point, index) => {
+              return (
+                <li key={index}>
+                  <div className="details-hero-text details-hero-text-heading">
+                    {point.pointTitle}
+                  </div>
+                  <div className="details-hero-text">
+                    {point.pointDescription}
+                  </div>
                 </li>
               );
             })}
