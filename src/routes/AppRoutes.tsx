@@ -34,7 +34,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
 import Blog4 from "../pages/blogPost/Blog4";
 import ReleaseNotes from "../pages/ReleaseNotes/ReleaseNotes";
-import Signup from "../pages/signup/Signup";
+// import Signup from "../pages/signup/Signup";
 
 const AppRoutes = () => {
   return (

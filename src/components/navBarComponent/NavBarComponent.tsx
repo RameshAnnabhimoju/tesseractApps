@@ -24,7 +24,7 @@ import ArrowDown from "../../assets/arrow_down.svg";
 import { appNavigate } from "../../routes/AppRoutes";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowUp from "../arrows/ArrowUp";
-import signupImage from "../../assets/Signup-image.png";
+// import signupImage from "../../assets/Signup-image.png";
 import Signup from "../../pages/signup/Signup";
 
 const NavBarComponent = ({

@@ -1,15 +1,15 @@
 import "./Signup.css";
-import signupImage from "../../assets/Signup-image.png";
+// import signupImage from "../../assets/Signup-image.png";
 import closeIcon from "../../assets/close.png";
 import { useState } from "react";
 import Alert from "../../components/alert/Alert";
 import { sendEmail } from "../../services/AppService";
-import logo_small from "../../assets/tesseract_logo_small.png";
-import signinBackground from "../../assets/Signin-background.png";
+// import logo_small from "../../assets/tesseract_logo_small.png";
+// import signinBackground from "../../assets/Signin-background.png";
 import { Dialog } from "@mui/material";
 const Signup = ({
   dialog,
-  setDialog,
+  // setDialog,
   handleDialog,
 }: {
   dialog: boolean;

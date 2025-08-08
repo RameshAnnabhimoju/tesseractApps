@@ -14,8 +14,10 @@ import company14 from "../../assets/NEXUS Final.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/pagination";
+import "../../../node_modules/swiper/swiper.min.css";
+import "../../../node_modules/swiper/modules/pagination.min.css";
 const TrustedClientsComponent = () => {
   const companiesImages = [
     company1,
