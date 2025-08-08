@@ -23,11 +23,10 @@ const HowItWorksComponent = () => {
   }, []);
   return (
     <div id="howItWorks-container">
-      <div className="heading ">HOW IT WORKS</div>
-      <div className="subheading subheading-howItWorks">
-        From onboarding to compliance — TesseractApps simplifies every step of
-        care delivery and operations.
-      </div>
+      <div className="heading ">How TesseractApps Works</div>
+      <h2 className="subheading subheading-howItWorks">
+        Simplify NDIS Workforce and Service Delivery — for All Industries.
+      </h2>
       <div id="howItWorks-content">
         {howItWorksDummyData.map((data, index) => {
           return (

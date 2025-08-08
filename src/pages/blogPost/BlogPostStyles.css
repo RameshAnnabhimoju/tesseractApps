@@ -141,9 +141,10 @@
 }
 
 .feature-title::before {
-  content: "🔒";
+  content: "▶";
   margin-right: 10px;
   font-size: 1.1rem;
+  color: #3182ce;
 }
 
 .security-feature ul {

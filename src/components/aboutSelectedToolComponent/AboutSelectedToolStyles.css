@@ -52,6 +52,9 @@
   max-width: 500px;
   margin-bottom: 20px;
 }
+.selected-tool-description-point-title {
+  color: black;
+}
 @media (max-width: 1000px) {
   .selected-tool-data {
     max-width: 450px;

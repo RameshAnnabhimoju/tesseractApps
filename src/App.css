@@ -3,6 +3,7 @@
   min-height: 1080px;
   max-width: 1920px;
   --color-primary: #0c78ba;
+  --color-primary-rgb: 12, 120, 186;
   --color-secondary: #002a52;
   --color-background-gradient: linear-gradient(to right, #f5fdfe, #f0f7fe);
   --color-text-gray: #676767;

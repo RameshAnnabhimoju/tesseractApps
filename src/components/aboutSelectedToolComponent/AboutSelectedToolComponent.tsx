@@ -22,6 +22,36 @@ const AboutSelectedToolComponent = ({
     points: aboutSelectedToolDummyData,
   },
 }: aboutSelectedToolType) => {
+  type PointObject = { pointTitle: string; pointDescription: string };
+
+  function isOfType(value: unknown, type: "stringArray"): value is string[];
+  function isOfType(
+    value: unknown,
+    type: "pointObjectArray"
+  ): value is PointObject[];
+  function isOfType(
+    value: unknown,
+    type: "stringArray" | "pointObjectArray"
+  ): boolean {
+    if (!Array.isArray(value)) return false;
+
+    if (type === "stringArray") {
+      return value.every((item: unknown) => typeof item === "string");
+    }
+
+    if (type === "pointObjectArray") {
+      return value.every((item: unknown) => {
+        if (typeof item !== "object" || item === null) return false;
+        const obj = item as Record<string, unknown>;
+        return (
+          typeof obj.pointTitle === "string" &&
+          typeof obj.pointDescription === "string"
+        );
+      });
+    }
+
+    return false;
+  }
   return (
     <div id="selected-tool-container">
       <div id="selected-tool-heading">{data.title}</div>
@@ -53,17 +83,35 @@ const AboutSelectedToolComponent = ({
                       </div>
                     );
                   })}
-                {subdata.pointsData && (
-                  <ul>
-                    {subdata.pointsData.map((point, index) => {
-                      return (
-                        <li className="selected-tool-description" key={index}>
-                          {point}
-                        </li>
-                      );
-                    })}{" "}
-                  </ul>
-                )}
+                {subdata.pointsData &&
+                  isOfType(subdata.pointsData, "stringArray") && (
+                    <ul>
+                      {subdata.pointsData.map((point: string, index) => {
+                        return (
+                          <li className="selected-tool-description" key={index}>
+                            {point}
+                          </li>
+                        );
+                      })}{" "}
+                    </ul>
+                  )}
+                {subdata.pointsData &&
+                  isOfType(subdata.pointsData, "pointObjectArray") && (
+                    <ul>
+                      {subdata.pointsData.map((point: PointObject, index) => {
+                        return (
+                          <li className="selected-tool-description" key={index}>
+                            <div className="selected-tool-description-point-title">
+                              {point.pointTitle}
+                            </div>
+                            <div className="selected-tool-description-point-description">
+                              {point.pointDescription}
+                            </div>
+                          </li>
+                        );
+                      })}{" "}
+                    </ul>
+                  )}
                 <div className="selected-tool-description">
                   {subdata.conclusion}
                 </div>

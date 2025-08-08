@@ -175,7 +175,8 @@ const NavBarComponent = ({
     });
   };
   const loginHandler = () => {
-    window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
+    // window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
+    appNavigate("Signup", navigate);
   };
   const [showScroll, setShowScroll] = useState(false);
 
@@ -559,14 +560,13 @@ const NavBarComponent = ({
             })}
           </div>
           <div id="nav-menu-icons">
-            <button id="navbar-login">
+            <button id="navbar-login" onClick={loginHandler}>
               <img
                 src={profile}
                 alt="navbar-profile-icon"
                 id="navbar-profile-icon"
-                onClick={loginHandler}
               />{" "}
-              Login
+              Signup
             </button>
             <img
               src={australia}
@@ -658,14 +658,13 @@ const NavBarComponent = ({
           />
         </button>
 
-        <button id="navbar-login">
+        <button id="navbar-login" onClick={loginHandler}>
           <img
             src={profile}
             alt="navbar-profile-icon"
             id="navbar-profile-icon"
-            onClick={loginHandler}
           />{" "}
-          Login
+          Signup
         </button>
         <img
           src={australia}

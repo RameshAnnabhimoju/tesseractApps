@@ -16,11 +16,11 @@
   font-weight: 600;
   margin-bottom: 25px;
 }
-#details-hero-text {
+.details-hero-text {
   font-size: 20px;
   font-weight: 400;
   color: var(--color-text-gray);
-  margin-bottom: 20px 0;
+  margin-bottom: 10px;
 }
 .details-hero-button {
   padding: 15px 15px;

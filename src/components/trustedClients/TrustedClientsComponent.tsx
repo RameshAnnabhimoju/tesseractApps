@@ -7,10 +7,10 @@ import company5 from "../../assets/company-5.png";
 // import company6 from "../../assets/company-6.png";
 import company7 from "../../assets/company-7.png";
 import company8 from "../../assets/ANA Logo.jpg";
-import company9 from "../../assets/LOGO1.png";
-import company10 from "../../assets/LOGO2.png";
+import company9 from "../../assets/FRAMILY VENTURES Final.png";
+import company10 from "../../assets/PINNACLE Final.png";
 import company13 from "../../assets/logo13.png";
-import company14 from "../../assets/logo14.png";
+import company14 from "../../assets/NEXUS Final.png";
 const TrustedClientsComponent = () => {
   const companiesImages = [
     company1,

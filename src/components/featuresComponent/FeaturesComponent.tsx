@@ -89,8 +89,13 @@ const FeaturesComponent = () => {
   return (
     <div id="features-container">
       <div className="heading">FEATURES</div>
-      <div className="subheading features-subheading">
-        Why Tesseract Apps is the trusted choice for modern organisations?
+      <h2 className="subheading features-subheading">
+        Why TesseractApps is the Preferred NDIS Software for Modern Care
+        Organisations?
+      </h2>
+      <div className="text features-text">
+        Streamline workforce management, automate compliance, support IT
+        operations, and deliver high-quality NDIS services. All in one platform.{" "}
       </div>
       <div className="features-buttons">
         <div

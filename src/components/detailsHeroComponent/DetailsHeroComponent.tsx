@@ -9,6 +9,7 @@ interface DeatailsHeroType {
     descriptionPoints?: string[];
     points?: string[];
   };
+  displayTitle?: boolean;
 }
 const DetailsHeroComponent = ({
   data = {
@@ -19,6 +20,7 @@ const DetailsHeroComponent = ({
     image: "",
     conclusion: "",
   },
+  displayTitle = true,
 }: DeatailsHeroType) => {
   const pagesWithRightImage = [
     "HR Operations",
@@ -28,7 +30,7 @@ const DetailsHeroComponent = ({
   ];
   return (
     <div id="details-hero-container">
-      <div id="details-hero-page-title">{data.page}</div>
+      {displayTitle && <div id="details-hero-page-title">{data.page}</div>}
       {pagesWithRightImage.includes(data.page) && (
         <img
           id="details-hero-image"
@@ -38,11 +40,11 @@ const DetailsHeroComponent = ({
       )}
       <div id="details-hero-contents">
         <div id="details-hero-heading">{data.title}</div>
-        <div id="details-hero-text">{data.description}</div>
+        <div className="details-hero-text">{data.description}</div>
         {data.descriptionPoints &&
           data.descriptionPoints.map((point, index) => {
             return (
-              <div id="details-hero-text" key={index}>
+              <div className="details-hero-text" key={index}>
                 {point}
               </div>
             );
@@ -51,14 +53,14 @@ const DetailsHeroComponent = ({
           <ul>
             {data.points.map((point, index) => {
               return (
-                <li id="details-hero-text" key={index}>
+                <li className="details-hero-text" key={index}>
                   {point}
                 </li>
               );
             })}
           </ul>
         )}
-        <div id="details-hero-text">{data.conclusion}</div>
+        <div className="details-hero-text">{data.conclusion}</div>
       </div>
       {!pagesWithRightImage.includes(data.page) && (
         <img

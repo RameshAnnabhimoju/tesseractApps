@@ -1,4 +1,4 @@
-import VideoComponent from "../videoComponent/VideoComponent";
+// import VideoComponent from "../videoComponent/VideoComponent";
 import "./HomeHeroStyles.css";
 import ios from "../../assets/mobile_ios.png";
 import android from "../../assets/mobile_android.png";
@@ -7,21 +7,28 @@ import youtube from "../../assets/youtube.png";
 import linkedin from "../../assets/linkedin.png";
 import instagram from "../../assets/instagram.png";
 import { appNavigate } from "../../routes/AppRoutes";
+import heroImage1 from "../../assets/heroBackground-1.png";
+import heroImage2 from "../../assets/heroBackground-2.png";
 const HomeHeroComponent = () => {
   const HandleClick = (name: string) => {
     appNavigate(name);
   };
   return (
     <div id="home-hero-container">
-      <VideoComponent />
+      {/* <VideoComponent /> */}
+      <img
+        src={heroImage1}
+        alt="hero background image 1"
+        className="hero-backround-image"
+      />
       <div id="home-text-container">
-        <div id="home-text-heading">
-          All-in-One Tools for Smarter Workforce Management
-        </div>
+        <h1 id="home-text-heading">
+          TesseractApps: One Platform to Transform Workforce Management in Care
+        </h1>
         <div id="home-text-subText">
-          "Tesseract Apps helps providers streamline compliance, manage teams
-          with ease, and deliver higher-quality care—through one secure,
-          scalable platform designed for the evolving needs of the care sector."
+          TesseractApps helps care providers streamline compliance, manage teams
+          efficiently, and deliver higher quality care with one secure, scalable
+          platform tailored to the unique needs of the care and IT sector.
         </div>
         <div id="home-store-links-container">
           <img
@@ -78,6 +85,11 @@ const HomeHeroComponent = () => {
           />
         </div>
       </div>
+      <img
+        src={heroImage2}
+        alt="hero background image 2"
+        className="hero-backround-image"
+      />
     </div>
   );
 };

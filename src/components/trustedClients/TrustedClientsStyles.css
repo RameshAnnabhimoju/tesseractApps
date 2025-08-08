@@ -4,9 +4,6 @@
   align-items: center;
   justify-content: center;
   gap: 50px;
-  flex-wrap: wrap;
-  margin: 0px 15%;
-  margin-bottom: 150px;
 }
 #trusted-clients-header {
   font-size: 20px;

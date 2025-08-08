@@ -10,12 +10,15 @@
 }
 .pricing-card {
   padding: 25px;
+  max-width: 350px;
+  padding-top: 55px;
 }
 .pricing-card-title,
 .pricing-card-title-selected {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .pricing-card-sub-title,
@@ -25,20 +28,28 @@
   font-size: 15px;
   color: var(--color-text-gray-light);
   font-weight: 600;
+  text-align: center;
 }
 .pricing-card-pricing,
 .pricing-card-pricing-selected {
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 5px;
+  text-align: center;
 }
 .pricing-card-sub-title,
 .pricing-card-sub-title-selected {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
+  color: var(--color-primary);
+}
+.pricing-card-description {
+  margin-block: 10px;
+  color: var(--color-text-gray);
+  text-align: center;
 }
 .pricing-card-time-period,
 .pricing-card-time-period-selected {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .pricing-button-secondary {
   background-color: white;
@@ -80,20 +91,59 @@
   border: 5px solid white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-#pricing-slider-container {
+#pricing-category-container {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 30px 0;
-  margin-top: 120px;
+  margin: 30px auto;
+  margin-top: 50px;
+  background-image: var(--color-background-gradient);
+  max-width: 530px;
+  padding-block: 05px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+  width: 49%;
+  border-radius: 20px;
+  background-color: var(--color-primary);
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+.pricing-category-button {
+  flex: 1;
+  text-align: center;
+  padding-block: 15px;
+  z-index: 1;
+  transition: color 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  color: var(--color-text-gray-light);
+}
+
+.pricing-category-button.selected {
+  color: white;
 }
 #pricing-slider {
   width: 1000px;
 }
 .pricing-card-selected {
-  background-color: var(--color-primary);
-  padding: 25px;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  padding-bottom: 25px;
+  padding-inline: 25px;
   border-radius: 20px;
+  max-width: 350px;
 }
 .pricing-card-title-selected,
 .pricing-card-pricing-selected {
@@ -120,20 +170,26 @@
 }
 .pricing-data-data {
   display: grid;
-  grid-template-columns: 500px auto;
+  grid-template-columns: 500px 1fr 1fr 1fr;
+  gap: 3vw;
+
   padding-left: 25px;
   margin: 10px 0;
+}
+.pricing-data-data1,
+.pricing-data-data2,
+.pricing-data-data3 {
+  justify-self: center;
 }
 .pricing-divider-line {
   height: 0;
   border: 0.5px solid lightgray;
 }
 .pricing-data-heading {
-  margin: 20px 0;
+  margin: 0;
   font-size: 18px;
   font-weight: 600;
-  background-image: var(--color-background-gradient);
-  padding: 20px 0;
+  padding: 10px 0;
 }
 .pricing-data-subtitle {
   color: var(--color-text-gray-light);
@@ -148,6 +204,11 @@
 .pricing-data-tick {
   background-color: var(--color-background-light-gray);
   border-radius: 15px;
+  width: 20px;
+  padding: 3px;
+}
+.pricing-data-tick-success {
+  background-color: var(--color-primary);
 }
 .pricing-divider-line-header {
   width: 500px;
@@ -159,6 +220,17 @@
 }
 .pricing-textt {
   max-width: 600px !important;
+}
+.pricing-card-tag {
+  justify-self: center;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  padding: 5px;
+  border-radius: 5px;
 }
 #pricing-help-card {
   background-color: var(--color-secondary);
@@ -223,15 +295,16 @@
 .pricing-links-data-container {
   cursor: pointer;
 }
-#pricing-sticky-header {
-  display: flex;
-  justify-content: space-evenly;
+.pricing-sticky-header {
+  display: grid;
+  grid-template-columns: 500px 1fr 1fr 1fr;
   gap: 3vw;
   position: sticky;
   top: 100px;
   background-color: white;
-  padding: 20px 20%;
+  /* padding: 20px 20%; */
   max-height: 180px;
+  padding-left: 25px;
 }
 .readMoreButton {
   cursor: pointer;
@@ -240,9 +313,6 @@
 }
 .features-container {
   min-width: 300px;
-  overflow: hidden;
-  transition: max-height 0.8s ease-in-out;
-  max-height: 215px; /* Adjust based on how many items fit in collapsed state */
 }
 
 .features-container.collapsed {
@@ -252,113 +322,98 @@
 .features-container.expanded {
   max-height: 750px; /* Should be large enough to fit all content */
 }
-@media screen and (min-width: 1410px) and (max-width: 1520px) {
-  #pricing-sticky-header {
-    justify-content: center;
-    padding: 0;
-    gap: 45px;
-    padding-left: 200px;
-  }
+
+#pricing-contact-information {
+  width: fit-content;
+  margin: 0 auto;
 }
-@media screen and (min-width: 1110px) and (max-width: 1400px) {
-  #pricing-sticky-header {
-    justify-content: center;
-    padding: 0;
-    gap: 45px;
-    padding-left: 260px;
-  }
-  .pricing-sticky-card {
-    max-width: 150px;
-    transform: scale(0.8);
-  }
+
+.pricing-minimum-number {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
 }
-@media screen and (max-width: 1030px) {
-  #pricing-sticky-header {
-    justify-content: center;
-    padding: 0;
-    gap: 55px;
-    padding-left: 160px;
-    max-height: 150px;
-  }
-  .pricing-sticky-card {
-    max-width: 150px;
-    transform: scale(0.6);
-  }
-  .pricing-data-tick-container {
-    gap: 30%;
+#pricing-data-accordian-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+.pricing-data-data3 {
+  display: flex;
+  align-items: center;
+}
+.pricing-sticky-card {
+  max-width: 215px;
+  justify-self: center;
+}
+.pricing-data-title-container-outer {
+  display: none;
+}
+@media (max-width: 1700px) {
+  .pricing-sticky-header {
+    grid-template-columns: 400px 1fr 1fr 1fr;
   }
   .pricing-data-data {
-    grid-template-columns: 300px auto;
+    grid-template-columns: 400px 1fr 1fr 1fr;
   }
 }
-@media screen and (max-width: 1020px) {
-  #pricing-sticky-header {
-    justify-content: center;
-    padding: 0;
-    gap: 5px;
-    padding-left: 200px;
-    max-height: 150px;
-  }
-  .pricing-sticky-card {
-    max-width: 150px;
-    transform: scale(0.6);
-  }
-  .pricing-data-tick-container {
-    gap: 30%;
+@media (max-width: 1560px) {
+  .pricing-sticky-header {
+    grid-template-columns: 300px 1fr 1fr 1fr;
   }
   .pricing-data-data {
-    grid-template-columns: 300px auto;
+    grid-template-columns: 300px 1fr 1fr 1fr;
   }
 }
-@media screen and (max-width: 780px) {
-  #pricing-sticky-header {
-    justify-content: center;
-    padding: 0;
-    gap: 5px;
-    padding-left: 320px;
-    max-height: 150px;
-  }
-  .pricing-sticky-card {
-    max-width: 150px;
-    transform: scale(0.6);
-  }
-  .pricing-data-tick-container {
-    gap: 40%;
+@media (max-width: 1020px) {
+  .pricing-sticky-header {
+    grid-template-columns: 200px 1fr 1fr 1fr;
   }
   .pricing-data-data {
-    grid-template-columns: 300px auto;
+    grid-template-columns: 200px 1fr 1fr 1fr;
   }
 }
-@media (max-width: 450px) {
-  #pricing-help-links {
-    max-width: 380px;
-    gap: 30px;
-    margin-top: 30px;
+@media (max-width: 845px) {
+  .pricing-sticky-empty-header {
+    display: none;
   }
-  #pricing-slider,
-  .pricing-divider-line-header {
-    width: 380px;
+  .pricing-sticky-header {
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  .pricing-subheading {
-    max-width: 380px;
-  }
-  #pricing-sticky-header {
-    justify-content: center;
-    padding: 0;
-    gap: 0px;
-    padding-left: 0px;
-    max-height: 200px;
-  }
-  .pricing-sticky-card {
-    max-width: 150px;
-    transform: scale(0.6);
-  }
-  .pricing-data-tick-container {
-    gap: 30%;
+  .pricing-data-title-container {
+    display: none;
   }
   .pricing-data-data {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .pricing-data-title-container-outer {
+    display: block;
+    text-align: center;
+    padding-block: 45px;
+  }
+}
+@media (max-width: 576px) {
+  .pricing-card-title {
+    font-size: 18px;
+  }
+  .pricing-card-sub-title {
+    font-size: 16px;
+  }
+  #pricing-data-accordian-container {
+    max-width: 95%;
+  }
+  .pricing-divider-line-header,
+  .pricing-subheading,
+  .pricing-textt {
+    max-width: 80%;
+  }
+}
+@media (max-width: 576px) {
+  .pricing-card-title {
+    font-size: 16px;
+  }
+  .pricing-card-sub-title {
+    font-size: 14px;
   }
 }

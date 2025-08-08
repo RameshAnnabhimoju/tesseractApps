@@ -32,6 +32,9 @@ import SalesPage from "../pages/salesPage/SalesPage";
 import ManualRosteringBlog from "../pages/blogPost/ManualRosteringBlog";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
+import Blog4 from "../pages/blogPost/Blog4";
+import ReleaseNotes from "../pages/ReleaseNotes/ReleaseNotes";
+import Signup from "../pages/signup/Signup";
 
 const AppRoutes = () => {
   return (
@@ -61,6 +64,7 @@ const AppRoutes = () => {
       <Route path="/blogPost" element={<Blogpost />} />
       <Route path="/blogPost2" element={<FutureProofingBlog />} />
       <Route path="/blogPost3" element={<ManualRosteringBlog />} />
+      <Route path="/blogPost4" element={<Blog4 />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
 
@@ -89,6 +93,8 @@ const AppRoutes = () => {
       <Route path="/forms" element={<ProductDetails />} />
       <Route path="/accounting" element={<ProductDetails />} />
       <Route path="/t-learning-hub" element={<ProductDetails />} />
+      <Route path="/release-notes" element={<ReleaseNotes />} />
+      <Route path="/signup" element={<Signup />} />
 
       <Route path="/coming-soon" element={<ComingSoon />} />
     </Routes>
@@ -157,6 +163,9 @@ export const appNavigate = (
     case "Features":
       if (navigate != undefined) navigate("/#features-container");
       break;
+    case "Signup":
+      if (navigate != undefined) navigate("/signup");
+      break;
     case "Blog":
       if (navigate != undefined)
         navigate("/blogs", {
@@ -169,30 +178,7 @@ export const appNavigate = (
           state: { data: SubPagesDummyData["Product"] },
         });
       break;
-    case "Scheduling":
-      if (navigate != undefined)
-        navigate("/scheduling", {
-          state: { data: SubPagesDummyData["Scheduling"] },
-        });
-      break;
-    case "Time Management":
-      if (navigate != undefined)
-        navigate("/time-management", {
-          state: { data: SubPagesDummyData["Time Management"] },
-        });
-      break;
-    case "HR Management":
-      if (navigate != undefined)
-        navigate("/hr-management", {
-          state: { data: SubPagesDummyData["HR Management"] },
-        });
-      break;
-    case "Communication":
-      if (navigate != undefined)
-        navigate("/communication", {
-          state: { data: SubPagesDummyData["Communication"] },
-        });
-      break;
+
     case "FAQs":
       if (navigate != undefined) navigate("/faq");
       break;
@@ -204,6 +190,9 @@ export const appNavigate = (
       break;
     case "Terms & Conditions":
       if (navigate != undefined) navigate("/terms-and-Conditions");
+      break;
+    case "Release Notes":
+      if (navigate != undefined) navigate("/release-notes");
       break;
     case "Our Story":
       if (navigate != undefined)

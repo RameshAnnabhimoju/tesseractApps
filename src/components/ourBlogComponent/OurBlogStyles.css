@@ -88,8 +88,10 @@
   object-fit: cover;
 }
 .ourBlog-author-image {
-  width: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 @media (max-width: 450px) {
   .ourBlog-card {

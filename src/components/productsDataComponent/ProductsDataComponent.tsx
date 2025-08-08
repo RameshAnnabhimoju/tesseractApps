@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./productsDataStyles.css";
 import { appNavigate } from "../../routes/AppRoutes";
+import DetailsHeroComponent from "../detailsHeroComponent/DetailsHeroComponent";
 interface ProductsDataTypes {
   data: {
     title: string;
@@ -22,22 +23,17 @@ const ProductsDataComponent = ({ data }: ProductsDataTypes) => {
       <div id="product-data-description" className="subheading">
         {data.description}
       </div>
-      <div id="product-data-card-container">
+      <div className="sticky-section">
         {data.productsData.map((subData) => (
           <div
-            className="product-data-card"
+            className="sticky-box"
             key={subData.title}
             onClick={() => handleProductDataClick(subData.title)}
           >
-            {/* <img
-              src={subData.image}
-              alt="product-data-card-image"
-              className="product-data-card-image"
-            /> */}
-            <div className="product-data-card-title">{subData.title}</div>
-            <div className="product-data-card-description">
-              {subData.description}
-            </div>
+            <DetailsHeroComponent
+              data={{ ...subData, page: subData.title }}
+              displayTitle={false}
+            />
           </div>
         ))}
       </div>

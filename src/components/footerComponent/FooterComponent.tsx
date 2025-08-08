@@ -333,6 +333,14 @@ const FooterComponent = () => {
             >
               Privacy Policy
             </div>
+            <div
+              className="footer-text"
+              onClick={() => {
+                handleProductDataClick("Release Notes");
+              }}
+            >
+              Release Notes
+            </div>
           </div>
           <div className="footer-column">
             <div className="footer-heading">Support</div>

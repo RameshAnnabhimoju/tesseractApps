@@ -15,47 +15,48 @@ const ResultsComponent = () => {
       </div>
       <div className="results-cards-container">
         <div className="results-card">
-          <div className="results-card-title">#1 in Client Satisfaction</div>
+          <div className="results-card-title">#1 in Client Happiness</div>
           <div className="results-card-text">
-            Among integrated NDIS and workforce platforms — thanks to intuitive
-            design, fast support, and continuous improvement.
+            Highest rated for ease of use and support among workforce management
+            solutions.
           </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">98% Positive Feedback</div>
+          <div className="results-card-title">98% Cheers from Readers</div>
           <div className="results-card-text">
-            From users who value our seamless user experience, performance, and
-            automation across HR, payroll, and compliance
+            Our community has been raving for it: Workflow automation and a
+            great interface.
           </div>
         </div>
-        <div className="results-card">
+        {/* <div className="results-card">
           <div className="results-card-title">500+ Active Users</div>
           <div className="results-card-text">
             Supporting thousands of workers, participants, and managers daily —
             streamlining operations at every level.
           </div>
-        </div>
+        </div> */}
         <div className="results-card">
-          <div className="results-card-title">Support in Under 30s</div>
+          <div className="results-card-title">50+ NDIS Providers converted</div>
           <div className="results-card-text">
-            By a responsive support team that understands your urgency,
-            delivering fast help.
+            From startups to national networks, TesseractApps grows as your
+            grow.
           </div>
         </div>
         <div className="results-card">
           <div className="results-card-title">
-            40% Faster Incident Reporting
+            40% Faster Resolution of Incidents
           </div>
           <div className="results-card-text">
-            Thanks to real-time mobile logs, auto-alerts, and compliance
-            dashboards — improving oversight and response times.
+            Log events as you please, generate corresponding alerts, and solve
+            cases more quickly than ever.
           </div>
         </div>
         <div className="results-card">
-          <div className="results-card-title">99.9% Platform Uptime</div>
+          <div className="results-card-title">99.9% Uptime Guarantee</div>
           <div className="results-card-text">
-            Reliability you can count on. Always-on access across desktop and
-            mobile — built on Salesforce infrastructure
+            Built on Salesforce, our platform is rock-solid reliable and
+            constantly updated, so you are always ready to drive your mission
+            forward.
           </div>
         </div>
         {/* <div className="results-card">
