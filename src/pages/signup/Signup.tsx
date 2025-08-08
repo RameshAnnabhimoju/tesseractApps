@@ -516,7 +516,9 @@ const Signup = ({
                   </div>
                 </div>
               </div>
-
+              <div className="signup-text-conditions">
+                No credit card required
+              </div>
               <div id="signup-button-container">
                 <button onClick={submitHandler} id="signup-button">
                   Submit Message

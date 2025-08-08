@@ -67,6 +67,10 @@
 #signup-from {
   margin-block: 40px;
 }
+.signup-text-conditions {
+  margin-block: 5px;
+  color: var(--color-text-gray);
+}
 .signup-form-group {
   display: flex;
   justify-content: space-between;
