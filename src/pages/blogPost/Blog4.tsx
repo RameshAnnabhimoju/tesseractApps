@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
-
+import blog4 from "../../assets/image1.png";
 const Blog4 = () => {
   const navigate = useNavigate();
   function handleClick(name: string) {
@@ -9,7 +9,7 @@ const Blog4 = () => {
   return (
     <div className="blog-container">
       <img
-        src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        src={blog4}
         alt="Workforce Management Challenges Image"
         className="blog-image"
       />

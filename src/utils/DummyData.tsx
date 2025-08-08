@@ -1,6 +1,7 @@
 import image1 from "../assets/blog1.jpg";
 import image2 from "../assets/blog2.jpg";
 import image3 from "../assets/blog3.jpg";
+import image4 from "../assets/image1.png";
 import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
 export const ourBlogDummyData = [
   {
@@ -57,7 +58,7 @@ export const ourBlogDummyData = [
     compliance, and the negative impact on reputation are costing the providers out of 
     
             `,
-    image: image3,
+    image: image4,
     date: "2025-07-28",
     author: "Belle Bai",
     authorImage: authorImage,
