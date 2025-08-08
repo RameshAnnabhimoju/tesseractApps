@@ -42,6 +42,7 @@
   display: flex;
   justify-content: center;
   padding-block: 10px;
+  margin-top: 30px;
 }
 #signup-button {
   text-align: center;
@@ -52,6 +53,9 @@
   background-color: var(--color-primary);
   color: white;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 #signup-heading {
   text-align: center;
@@ -170,6 +174,16 @@ section.signup-section {
   box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
 }
 
+.signup-form-input.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.signup-form-input.error:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
 /* === Error text === */
 .error-text {
   font-size: 12px;
@@ -224,16 +238,20 @@ section.signup-section {
 }
 .signup-form-input-container {
   display: flex;
+  margin-top: 10px;
+  align-items: center;
+  gap: 5px;
 }
 #signup-form-input-checkbox-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.signup-form-input-container {
-  margin-top: 10px;
-}
 .signup-input-checkbox,
 .signup-input-radio {
   cursor: pointer;
   accent-color: var(--color-primary);
+  transform: scale(1.2);
+}
+.signup-input-label {
+  display: flex;
 }

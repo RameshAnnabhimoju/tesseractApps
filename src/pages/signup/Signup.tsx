@@ -20,44 +20,50 @@ const Signup = ({
     firstName: string;
     lastName: string;
     email: string;
-    phone: "";
-    gender: string;
-    dateOfBirth: string;
+    phone: string;
+    // gender: string;
+    // dateOfBirth: string;
     company: string;
     abn: string;
     // acn: string;
     // ndisProviderID: string;
     // branchCode: string;
     // contactName: string;
-    contactNumber: string;
-    companyEmail: string;
-    streetAddress: string;
-    city: string;
-    province: string;
-    postalCode: string;
-    country: string;
+    industry: string;
+    features: string[];
+    demo: string;
+    // contactNumber: string;
+    // companyEmail: string;
+    // streetAddress: string;
+    // city: string;
+    // province: string;
+    // postalCode: string;
+    // country: string;
   };
   const signupInitialValues = {
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    gender: "",
-    dateOfBirth: "",
+    // gender: "",
+    // dateOfBirth: "",
     company: "",
     abn: "",
     // acn: "",
     // ndisProviderID: "",
     // branchCode: "",
     // contactName: "",
-    contactNumber: "",
-    companyEmail: "",
-    streetAddress: "",
-    city: "",
-    province: "",
-    postalCode: "",
-    country: "",
-  };
+    industry: "",
+    features: [],
+    demo: "",
+    // contactNumber: "",
+    // companyEmail: "",
+    // streetAddress: "",
+    // city: "",
+    // province: "",
+    // postalCode: "",
+    // country: "",
+  } as signupType;
   const [signupData, setSignupData] = useState(signupInitialValues);
   const [signupErrors, setSignupErrors] = useState(signupInitialValues);
   const alertInitialData = {
@@ -66,21 +72,60 @@ const Signup = ({
     type: "success",
     isOpen: false,
   };
+  console.log("signupData ", signupData);
+  // console.log("signupErrors ", signupErrors);
   const [alertData, setAlertData] = useState(alertInitialData);
 
   const inputChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = event.target;
-    setSignupData({ ...signupData, [name as string]: value });
+
+    setSignupData((prevData) => {
+      // Handle features array separately
+      if (name === "features" && Array.isArray(prevData.features)) {
+        const exists = prevData.features.includes(value);
+
+        const updatedFeatures = exists
+          ? prevData.features.filter((f) => f !== value)
+          : [...prevData.features, value];
+
+        return {
+          ...prevData,
+          features: updatedFeatures,
+        };
+      }
+
+      // Default update for single values
+      return {
+        ...prevData,
+        [name]: value,
+      };
+    });
   };
+
   const submitHandler = () => {
     let errors: any = {};
     let isValid = true;
 
     // Loop through all fields
     Object.keys(signupData).forEach((key) => {
-      if (!signupData[key as keyof typeof signupData]?.trim()) {
+      const value = signupData[key as keyof typeof signupData];
+      if (typeof value === "string") {
+        if (!value.trim()) {
+          errors[key] = "This field is required";
+          isValid = false;
+        } else {
+          errors[key] = "";
+        }
+      } else if (Array.isArray(value)) {
+        if (value.length === 0) {
+          errors[key] = "This field is required";
+          isValid = false;
+        } else {
+          errors[key] = "";
+        }
+      } else if (value === null || value === undefined || value === "") {
         errors[key] = "This field is required";
         isValid = false;
       } else {
@@ -109,18 +154,16 @@ const Signup = ({
       `${signupData.firstName} has made a request for free trial signup.\n
                 First Name: ${signupData.firstName}\n
                 Last Name: ${signupData.lastName}\n
+                Phone: ${signupData.phone}\n
                 Email: ${signupData.email}\n
-                Gender: ${signupData.gender}\n
-                Date of Birth: ${signupData.dateOfBirth}\n
+                
                 Company: ${signupData.company}\n
                 ABN: ${signupData.abn}\n
                 
-                Company Email: ${signupData.companyEmail}\n
-                Street Address: ${signupData.streetAddress}\n
-                City: ${signupData.city}\n
-                Province: ${signupData.province}\n
-                Postal Code: ${signupData.postalCode}\n
-                Country: ${signupData.country}`
+                Industry: ${signupData.industry}\n
+                Features: ${signupData.features}\n
+                Demo: ${signupData.demo}
+                `
     )
       .then((response) => {
         console.log("Email sent successfully:", response);
@@ -151,16 +194,16 @@ const Signup = ({
   const sendConfirmationEMail = () => {
     sendEmail(
       signupData.email,
-      "Thank You for Signing Up! We’ve Received Your Details",
+      "Thank You for Signing Up! We've Received Your Details",
       `Hi ${signupData.firstName},\n
       \n
       Thank you for signing up with Tesseract Apps!\n
       \n
-      We’ve received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.\n
+      We've received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.\n
       \n
       If you have any immediate questions, feel free to reach out to us at [itsupport@tesseractapps.com] or call us at [+61261332819, 1300 252 808].\n
       \n
-      We’re excited to connect with you soon!\n
+      We're excited to connect with you soon!\n
       \n
       Warm regards,\n
       Team TesseractApps\n
@@ -217,8 +260,10 @@ const Signup = ({
 
               <div className="signup-form-group">
                 <div className="signup-form-input-group">
-                  <label>First Name</label>
-                  {/* <span style={{ color: "red" }}>*</span> */}
+                  <div className="signup-input-label">
+                    <label>First Name</label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <input
                     type="text"
                     placeholder="Enter your First Name"
@@ -229,7 +274,10 @@ const Signup = ({
                 </div>
 
                 <div className="signup-form-input-group">
-                  <label>Last Name</label>
+                  <div className="signup-input-label">
+                    <label>Last Name</label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <input
                     type="text"
                     placeholder="Enter your Last Name"
@@ -278,7 +326,10 @@ const Signup = ({
               </div> */}
               <div className="signup-form-group">
                 <div className="signup-form-input-group">
-                  <label>Phone Number</label>
+                  <div className="signup-input-label">
+                    <label>Phone Number</label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <input
                     type="text"
                     className={getInputClass("phone")}
@@ -289,7 +340,10 @@ const Signup = ({
                 </div>
 
                 <div className="signup-form-input-group">
-                  <label>Email</label>
+                  <div className="signup-input-label">
+                    <label>Email</label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <input
                     type="email"
                     className={getInputClass("email")}
@@ -304,7 +358,10 @@ const Signup = ({
               </div>
               <div className="signup-form-group">
                 <div className="signup-form-input-group">
-                  <label>Company</label>
+                  <div className="signup-input-label">
+                    <label>Company</label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <input
                     type="text"
                     placeholder="Enter your Company"
@@ -315,7 +372,10 @@ const Signup = ({
                 </div>
 
                 <div className="signup-form-input-group">
-                  <label>ABN</label>
+                  <div className="signup-input-label">
+                    <label>ABN</label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <input
                     type="text"
                     placeholder="Enter your ABN"
@@ -373,10 +433,13 @@ const Signup = ({
             </div> */}
               <div className="signup-form-group">
                 <div className="signup-form-input-group">
-                  <label>What industry do you serve?</label>
+                  <div className="signup-input-label">
+                    <label>What industry do you serve?</label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <select
-                    className={getInputClass("gender")}
-                    name="gender"
+                    className={getInputClass("industry")}
+                    name="industry"
                     onChange={inputChangeHandler}
                   >
                     <option value="">Select Industry</option>
@@ -410,9 +473,12 @@ const Signup = ({
               </div>
               <div className="signup-form-group">
                 <div className="signup-form-input-group">
-                  <label>
-                    What features does your business work with / deliver ?
-                  </label>
+                  <div className="signup-input-label">
+                    <label>
+                      What features does your business work with / deliver ?
+                    </label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <div id="signup-form-input-checkbox-container">
                     <div className="signup-form-input-container">
                       <input
@@ -488,10 +554,13 @@ const Signup = ({
               </div>
               <div className="signup-form-group">
                 <div className="signup-form-input-group">
-                  <label>
-                    Would you like to schedule a demo to explore your trial
-                    access with TesseractApps?
-                  </label>
+                  <div className="signup-input-label">
+                    <label>
+                      Would you like to schedule a demo to explore your trial
+                      access with TesseractApps?
+                    </label>
+                    <span style={{ color: "red" }}>*</span>
+                  </div>
                   <div className="signup-form-input-container">
                     <input
                       type="radio"
@@ -521,7 +590,7 @@ const Signup = ({
               </div>
               <div id="signup-button-container">
                 <button onClick={submitHandler} id="signup-button">
-                  Submit Message
+                  Submit
                 </button>
               </div>
             </section>
