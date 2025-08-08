@@ -1,5 +1,5 @@
 import "./OurStoryStyles.css";
-import ourStoryImage from "../../assets/our story image.jpg";
+import ourStoryImage from "../../assets/our story image.png";
 import ourStoryImage1 from "../../assets/our-story-1.jpg";
 import ourStoryImage2 from "../../assets/our-story-2.jpg";
 import ourStoryImage3 from "../../assets/our-story-3.jpg";

@@ -24,6 +24,9 @@ import ArrowDown from "../../assets/arrow_down.svg";
 import { appNavigate } from "../../routes/AppRoutes";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowUp from "../arrows/ArrowUp";
+import signupImage from "../../assets/Signup-image.png";
+import Signup from "../../pages/signup/Signup";
+
 const NavBarComponent = ({
   portalContainerRef,
 }: {
@@ -157,6 +160,10 @@ const NavBarComponent = ({
   const popupLinkClickHandler = (name: string) => {
     closePopup();
     setToggleDrawer(false);
+    if (name && name == "Free Trial Sign-Up") {
+      handleDialog(true);
+      return;
+    }
     if (name) {
       appNavigate(name, navigate);
     }
@@ -176,7 +183,8 @@ const NavBarComponent = ({
   };
   const loginHandler = () => {
     // window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
-    appNavigate("Signup", navigate);
+    // appNavigate("Signup", navigate);
+    handleDialog();
   };
   const [showScroll, setShowScroll] = useState(false);
 
@@ -188,6 +196,14 @@ const NavBarComponent = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const [dialog, setDialog] = useState(false);
+  const handleDialog = (value?: boolean) => {
+    if (value != undefined) {
+      setDialog(value);
+    } else {
+      setDialog(!dialog);
+    }
+  };
   return (
     <nav id="navbar-container">
       {pathname.split("/")[1] && (
@@ -226,6 +242,11 @@ const NavBarComponent = ({
         onClick={() => {
           setToggleDrawer(!toggleDrawer);
         }}
+      />
+      <Signup
+        dialog={dialog}
+        setDialog={setDialog}
+        handleDialog={handleDialog}
       />
       <Drawer
         id="nav-menu-drawer"

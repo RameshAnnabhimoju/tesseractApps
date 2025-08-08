@@ -272,7 +272,7 @@ export const pricingCardsDummyData = [
     // userLimitRange: [250, 500],
     // currentPlan: false,
     features: [
-      "All-in-one HR, LMS, Payroll and Accounting Suite",
+      "All-in-one HR, Payroll and Accounting Suite",
       "Smart AI Insights & Automation ",
       "Advanced Risk & Funds Tracking ",
       "Full Incident & Compliance Reporting",

@@ -6,6 +6,8 @@ import {
   useState,
 } from "react";
 import tick from "../../assets/tick.svg";
+import tickBlue from "../../assets/tick-blue.svg";
+import tickBlack from "../../assets/tick-black.svg";
 import remove from "../../assets/remove.png";
 import ArrowDown from "../../assets/arrow_down.svg";
 // import tick_white from "../../assets/tick_white.svg";
@@ -25,7 +27,7 @@ const Pricing = () => {
   const handleBookADemoClick = () => {
     navigate("/requestdemo");
   };
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState("ndis");
   // const [userCount, setUserCount] = useState(0);
 
   function handleFooterActions(name: string) {
@@ -80,8 +82,14 @@ const Pricing = () => {
   //     }
   //   };
   // }, []);
-  const handleTabClick = (index: number) => {
-    setSelectedTab(index);
+  // const handleTabClick = (index: number) => {
+  //   setSelectedTab(index);
+  // };
+  const categoryChangeHandler = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    const value = event.target.value;
+    setSelectedTab(value);
   };
   return (
     <div id="pricing-container">
@@ -94,7 +102,7 @@ const Pricing = () => {
         "Efficiency meets simplicity-your all-in-one NDIS solution for managing
         care, rostering, invoicing and compliance seamlessly."
       </div>
-      <div id="pricing-category-container">
+      {/* <div id="pricing-category-container">
         <div
           className="slider"
           style={{ transform: `translateX(${selectedTab * 100}%)` }}
@@ -116,8 +124,50 @@ const Pricing = () => {
         >
           ICT Industry
         </div>
+      </div> */}
+      <div id="pricing-category-container">
+        <select
+          name="pricingCategory"
+          id="pricing-category-select"
+          defaultValue="ndis"
+          onChange={categoryChangeHandler}
+        >
+          <option className="pricing-category-select-option" value="">
+            Select Industry
+          </option>
+          <option className="pricing-category-select-option" value="ndis">
+            NDIS Industry
+          </option>
+          <option className="pricing-category-select-option" value="ict">
+            ICT Industry
+          </option>
+          <option
+            className="pricing-category-select-option"
+            value="retail-hospitality"
+          >
+            Retail & Hospitality
+          </option>
+          <option
+            className="pricing-category-select-option"
+            value="multi-site-businesses"
+          >
+            Multi-Site Businesses
+          </option>
+          <option
+            className="pricing-category-select-option"
+            value="manufacturing"
+          >
+            Manufacturing
+          </option>
+          <option
+            className="pricing-category-select-option"
+            value="construction"
+          >
+            Construction
+          </option>
+        </select>
       </div>
-      {selectedTab == 0 && (
+      {selectedTab == "ndis" && (
         <div id="pricing-data-container">
           <div id="pricing-cards-container">
             {pricingCardsDummyData.map((data, index) => {
@@ -162,7 +212,7 @@ const Pricing = () => {
                         >
                           <div className="pricing-tick-icon-container">
                             <img
-                              src={tick}
+                              src={index == 1 ? tickBlue : tickBlack}
                               alt="pricing-tick-icon"
                               className="pricing-tick-icon"
                             />
@@ -173,6 +223,14 @@ const Pricing = () => {
                         </div>
                       );
                     })}
+                    <div className="pricing-optional-addon-container">
+                      <div className="pricing-optional-addon-subheading">
+                        Optional Addons
+                      </div>
+                      <div className="pricing-feature-data pricing-optional-addon">
+                        LMS
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
@@ -320,7 +378,7 @@ const Pricing = () => {
           </div>
         </div>
       )}
-      {selectedTab == 1 && (
+      {selectedTab != "ndis" && (
         <div id="pricing-contact-information">
           <ContactInformationCard />
         </div>

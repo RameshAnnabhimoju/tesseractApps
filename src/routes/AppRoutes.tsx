@@ -94,7 +94,7 @@ const AppRoutes = () => {
       <Route path="/accounting" element={<ProductDetails />} />
       <Route path="/t-learning-hub" element={<ProductDetails />} />
       <Route path="/release-notes" element={<ReleaseNotes />} />
-      <Route path="/signup" element={<Signup />} />
+      {/* <Route path="/signup" element={<Signup />} /> */}
 
       <Route path="/coming-soon" element={<ComingSoon />} />
     </Routes>
@@ -163,9 +163,9 @@ export const appNavigate = (
     case "Features":
       if (navigate != undefined) navigate("/#features-container");
       break;
-    case "Signup":
-      if (navigate != undefined) navigate("/signup");
-      break;
+    // case "Signup":
+    //   if (navigate != undefined) navigate("/signup");
+    //   break;
     case "Blog":
       if (navigate != undefined)
         navigate("/blogs", {

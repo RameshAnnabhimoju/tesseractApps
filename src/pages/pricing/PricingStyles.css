@@ -350,6 +350,34 @@
 .pricing-data-title-container-outer {
   display: none;
 }
+.pricing-optional-addon-container {
+  padding-inline: 25px;
+}
+.pricing-optional-addon-subheading {
+  margin-block: 10px;
+  font-weight: 600;
+  color: var(--color-text-gray);
+}
+#pricing-category-select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--color-primary);
+  border: 0;
+}
+#pricing-category-select:active {
+  outline-color: var(--color-primary);
+}
+#pricing-category-select:focus {
+  outline-color: var(--color-primary);
+}
+.pricing-category-select-option {
+  background-color: white;
+  color: var(--color-text-gray);
+  cursor: pointer;
+}
 @media (max-width: 1700px) {
   .pricing-sticky-header {
     grid-template-columns: 400px 1fr 1fr 1fr;

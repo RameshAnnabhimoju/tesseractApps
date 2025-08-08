@@ -21,6 +21,7 @@
 }
 .contact-info-text {
   line-height: 30px;
+  max-width: 250px;
 }
 #contact-info-button {
   width: 200px;

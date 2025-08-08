@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
   gap: 50px;
 }
 #trusted-clients-header {
@@ -29,4 +30,13 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 100px;
+}
+.clients-swiper {
+  height: fit-content;
+  width: 100%;
+  margin-top: 20px;
+}
+.clients-slider-image {
+  width: 130px;
+  height: 130px;
 }

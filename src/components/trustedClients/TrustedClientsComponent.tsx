@@ -11,6 +11,11 @@ import company9 from "../../assets/FRAMILY VENTURES Final.png";
 import company10 from "../../assets/PINNACLE Final.png";
 import company13 from "../../assets/logo13.png";
 import company14 from "../../assets/NEXUS Final.png";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 const TrustedClientsComponent = () => {
   const companiesImages = [
     company1,
@@ -29,11 +34,49 @@ const TrustedClientsComponent = () => {
       <div className="heading">
         Our Most <br /> Trusted Clients
       </div>
-      <div id="trusted-clients-images-container">
+      {/* <div id="trusted-clients-images-container">
         {companiesImages?.map((image, index) => (
           <img key={index} src={image} alt="Client 1" className="client-logo" />
         ))}
-      </div>
+      </div> */}
+      <Swiper
+        slidesPerView={2}
+        breakpoints={{
+          1280: {
+            slidesPerView: 6,
+          },
+          1024: {
+            slidesPerView: 5,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          640: {
+            slidesPerView: 3,
+          },
+        }}
+        spaceBetween={10}
+        autoplay={{
+          delay: 500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false, // Remove pause to maintain smoothness
+        }}
+        speed={1500} // Slower, smoother transition
+        loop={true}
+        allowTouchMove={false} // Disable touch interaction for smoother auto-scroll
+        modules={[Autoplay]}
+        className="mySwiper clients-swiper"
+      >
+        {companiesImages.map((logo, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={logo}
+              alt={`Client Logo ${index + 1}`}
+              className="clients-slider-image"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

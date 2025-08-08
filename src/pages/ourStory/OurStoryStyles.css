@@ -42,6 +42,11 @@
 #our-story-bulb {
   width: 150px;
 }
+#our-story-image {
+  padding-inline: 50px;
+  object-fit: contain;
+  max-width: 100%;
+}
 @media (max-width: 1160px) {
   .ourStory-data-container {
     display: flex;
