@@ -1347,7 +1347,7 @@ export const dots = {
   dot5: { outer: "#F7ECD9", middle: "#E8C9A5", inner: "#D77E1B" },
   dot6: { outer: "#EBE2FE", middle: "#C7ADFC", inner: "#932EFA" },
 };
-import detailsHero from "../assets/heroDetails1.png";
+// import detailsHero from "../assets/heroDetails1.png";
 import productsHero from "../assets/product overview.png";
 // import detailsImage1 from "../assets/detailImage1.png";
 // import detailsImage2 from "../assets/detailImage2.png";
