@@ -159,6 +159,7 @@
   align-items: center;
   border-radius: 25px;
   padding-right: 20px;
+  min-width: 121px;
 }
 #navbar-search-container {
   display: flex;
@@ -190,7 +191,7 @@
   outline: var(--color-primary) solid 1px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1440px) {
   #navbar-links,
   #nav-icons-container {
     display: none;
@@ -225,7 +226,7 @@
   #nav-menu-icons {
     display: flex;
     align-items: center;
-    margin-left: 50px;
+    margin-left: 10px;
     column-gap: 10px;
   }
   .nav-menu-link {

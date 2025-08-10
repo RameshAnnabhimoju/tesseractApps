@@ -40,6 +40,7 @@ const Signup = ({
     // postalCode: string;
     // country: string;
   };
+
   const signupInitialValues = {
     firstName: "",
     lastName: "",
@@ -72,7 +73,7 @@ const Signup = ({
     type: "success",
     isOpen: false,
   };
-  console.log("signupData ", signupData);
+  // console.log("signupData ", signupData);
   // console.log("signupErrors ", signupErrors);
   const [alertData, setAlertData] = useState(alertInitialData);
 
@@ -105,7 +106,7 @@ const Signup = ({
   };
 
   const submitHandler = () => {
-    let errors: any = {};
+    const errors: any = {};
     let isValid = true;
 
     // Loop through all fields
@@ -172,7 +173,7 @@ const Signup = ({
         setAlertData({
           ...alertData,
           heading: "Request Submitted",
-          text: "Thank you for your request! We will be in touch soon.",
+          text: "Thank you for Signing Up! We will be in touch soon to provide login credentials. Keep an eye on youe inbox!",
           type: "success",
           isOpen: true,
         });

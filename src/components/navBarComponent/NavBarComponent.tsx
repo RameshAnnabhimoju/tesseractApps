@@ -24,7 +24,7 @@ import ArrowDown from "../../assets/arrow_down.svg";
 import { appNavigate } from "../../routes/AppRoutes";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowUp from "../arrows/ArrowUp";
-// import signupImage from "../../assets/Signup-image.png";
+import signupImage from "../../assets/signup.png";
 import Signup from "../../pages/signup/Signup";
 
 const NavBarComponent = ({
@@ -182,8 +182,10 @@ const NavBarComponent = ({
     });
   };
   const loginHandler = () => {
-    // window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
-    // appNavigate("Signup", navigate);
+    window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
+    appNavigate("Signup", navigate);
+  };
+  const signupHandler = () => {
     handleDialog();
   };
   const [showScroll, setShowScroll] = useState(false);
@@ -581,13 +583,21 @@ const NavBarComponent = ({
             })}
           </div>
           <div id="nav-menu-icons">
+            <button id="navbar-login" onClick={signupHandler}>
+              <img
+                src={signupImage}
+                alt="navbar-profile-icon"
+                id="navbar-profile-icon"
+              />{" "}
+              Sign Up
+            </button>
             <button id="navbar-login" onClick={loginHandler}>
               <img
                 src={profile}
                 alt="navbar-profile-icon"
                 id="navbar-profile-icon"
               />{" "}
-              Signup
+              Sign In
             </button>
             <img
               src={australia}
@@ -679,13 +689,21 @@ const NavBarComponent = ({
           />
         </button>
 
+        <button id="navbar-login" onClick={signupHandler}>
+          <img
+            src={signupImage}
+            alt="navbar-profile-icon"
+            id="navbar-profile-icon"
+          />{" "}
+          Sign Up
+        </button>
         <button id="navbar-login" onClick={loginHandler}>
           <img
             src={profile}
             alt="navbar-profile-icon"
             id="navbar-profile-icon"
           />{" "}
-          Signup
+          Sign In
         </button>
         <img
           src={australia}
