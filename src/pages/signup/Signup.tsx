@@ -3,10 +3,14 @@ import "./Signup.css";
 import closeIcon from "../../assets/close.png";
 import { useState } from "react";
 import Alert from "../../components/alert/Alert";
-import { sendEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/AppService";
 // import logo_small from "../../assets/tesseract_logo_small.png";
 // import signinBackground from "../../assets/Signin-background.png";
 import { Dialog } from "@mui/material";
+import {
+  signupConfirmationEmailTemplate,
+  signupEmaiTemplate,
+} from "../../utils/emailTemplates";
 const Signup = ({
   dialog,
   // setDialog,
@@ -41,6 +45,32 @@ const Signup = ({
     // country: string;
   };
 
+  type signupErrorsTypes = {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    // gender: string;
+    // dateOfBirth: string;
+    company: string;
+    abn: string;
+    // acn: string;
+    // ndisProviderID: string;
+    // branchCode: string;
+    // contactName: string;
+    industry: string;
+    features: string;
+    demo: string;
+    // contactNumber: string;
+    // companyEmail: string;
+    // streetAddress: string;
+    // city: string;
+    // province: string;
+    // postalCode: string;
+    // country: string;
+    [key: string]: string; // Add index signature
+  };
+
   const signupInitialValues = {
     firstName: "",
     lastName: "",
@@ -65,8 +95,33 @@ const Signup = ({
     // postalCode: "",
     // country: "",
   } as signupType;
+
+  const signupErrorsInitialValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    // gender: "",
+    // dateOfBirth: "",
+    company: "",
+    abn: "",
+    // acn: "",
+    // ndisProviderID: "",
+    // branchCode: "",
+    // contactName: "",
+    industry: "",
+    features: "",
+    demo: "",
+    // contactNumber: "",
+    // companyEmail: "",
+    // streetAddress: "",
+    // city: "",
+    // province: "",
+    // postalCode: "",
+    // country: "",
+  } as signupErrorsTypes;
   const [signupData, setSignupData] = useState(signupInitialValues);
-  const [signupErrors, setSignupErrors] = useState(signupInitialValues);
+  const [signupErrors, setSignupErrors] = useState(signupErrorsInitialValues);
   const alertInitialData = {
     heading: "",
     text: "",
@@ -106,7 +161,7 @@ const Signup = ({
   };
 
   const submitHandler = () => {
-    const errors: any = {};
+    const errors = {} as signupErrorsTypes;
     let isValid = true;
 
     // Loop through all fields
@@ -149,22 +204,20 @@ const Signup = ({
     sendRequestEmail();
   };
   const sendRequestEmail = () => {
-    sendEmail(
-      "itsupport@tesseractapps.com",
-      "Request for free trial signup",
-      `${signupData.firstName} has made a request for free trial signup.\n
-                First Name: ${signupData.firstName}\n
-                Last Name: ${signupData.lastName}\n
-                Phone: ${signupData.phone}\n
-                Email: ${signupData.email}\n
-                
-                Company: ${signupData.company}\n
-                ABN: ${signupData.abn}\n
-                
-                Industry: ${signupData.industry}\n
-                Features: ${signupData.features}\n
-                Demo: ${signupData.demo}
-                `
+    sendTextEmail(
+      signupEmaiTemplate.email,
+      signupEmaiTemplate.subject,
+      signupEmaiTemplate.body({
+        firstName: signupData.firstName,
+        lastName: signupData.lastName,
+        phone: signupData.phone,
+        email: signupData.email,
+        company: signupData.company,
+        abn: signupData.abn,
+        industry: signupData.industry,
+        features: signupData.features.toString(),
+        demo: signupData.demo,
+      })
     )
       .then((response) => {
         console.log("Email sent successfully:", response);
@@ -194,23 +247,11 @@ const Signup = ({
   };
   const sendConfirmationEMail = () => {
     sendEmail(
+      signupData.firstName + " " + signupData.lastName,
       signupData.email,
-      "Thank You for Signing Up! We've Received Your Details",
-      `Hi ${signupData.firstName},\n
-      \n
-      Thank you for signing up with Tesseract Apps!\n
-      \n
-      We've received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.\n
-      \n
-      If you have any immediate questions, feel free to reach out to us at [itsupport@tesseractapps.com] or call us at [+61261332819, 1300 252 808].\n
-      \n
-      We're excited to connect with you soon!\n
-      \n
-      Warm regards,\n
-      Team TesseractApps\n
-      [Our Website: Tesseract]\n
-      [+61261332819,02 6133 2800] | [itsupport@tesseractapps.com]\n
-      `
+      signupConfirmationEmailTemplate.subject,
+      signupConfirmationEmailTemplate.text(signupData.firstName),
+      signupConfirmationEmailTemplate.html(signupData.firstName)
     )
       .then((response) => {
         console.log("Confirmation email sent successfully:", response);

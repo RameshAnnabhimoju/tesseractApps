@@ -71,8 +71,12 @@ const OurBlogComponent = () => {
                   navigate("/blogpost");
                 } else if (data.id == 2) {
                   navigate("/blogpost2");
-                } else {
+                } else if (data.id == 3) {
                   navigate("/blogpost3");
+                } else if (data.id == 4) {
+                  navigate("/blogpost4");
+                } else {
+                  navigate("/blogpost5");
                 }
               }}
             >

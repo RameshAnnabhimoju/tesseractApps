@@ -92,7 +92,7 @@ const PrivacyPolicy = () => {
         </li>
       </ul>
       <div className="text privacy-policy-text">
-        Contact us at: enquiries@tesseractapps.com.au 1300 252 808
+        Contact us at: sales@tesseractapps.com.au 1300 252 808
       </div>
 
       <div className="heading privacy-policy-heading">

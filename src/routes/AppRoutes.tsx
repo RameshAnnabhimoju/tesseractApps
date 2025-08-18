@@ -34,6 +34,7 @@ import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
 import Blog4 from "../pages/blogPost/Blog4";
 import ReleaseNotes from "../pages/ReleaseNotes/ReleaseNotes";
+import Blog5 from "../pages/blogPost/Blog5";
 // import Signup from "../pages/signup/Signup";
 
 const AppRoutes = () => {
@@ -65,6 +66,8 @@ const AppRoutes = () => {
       <Route path="/blogPost2" element={<FutureProofingBlog />} />
       <Route path="/blogPost3" element={<ManualRosteringBlog />} />
       <Route path="/blogPost4" element={<Blog4 />} />
+      <Route path="/blogPost5" element={<Blog5 />} />
+
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
 

@@ -37,7 +37,7 @@ const ContactInformationCard = () => {
           02 6133 2800
         </div>
         <div className="contact-info-headingh">Email:</div>
-        <div className="contact-info-text">enquiries@tesseractapps.com</div>
+        <div className="contact-info-text">sales@tesseractapps.com</div>
         <button id="contact-info-button" onClick={handleButtonClick}>
           Book a Demo
         </button>

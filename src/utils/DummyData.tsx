@@ -2,6 +2,7 @@ import image1 from "../assets/blog1.jpg";
 import image2 from "../assets/blog2.jpg";
 import image3 from "../assets/blog3.jpg";
 import image4 from "../assets/image1.png";
+import blog5 from "../assets/Blog5Image3.jpeg";
 import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
 export const ourBlogDummyData = [
   {
@@ -60,6 +61,22 @@ export const ourBlogDummyData = [
             `,
     image: image4,
     date: "2025-07-28",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
+  {
+    id: 5,
+    title:
+      "Unforgettable Moments at the Disability & WorkAbility Sydney Expo 2025",
+    description: `On August 8th - 9th, 2025, the TesseractApps team proudly participated in 
+    the Sydney Disability & WorkAbility Expo, an event filled with connection, innovation, 
+    and a shared commitment to the NDIS community. Those two days brought unforgettable 
+    moments as we engaged directly with NDIS providers, support coordinators, participants, 
+    and industry leaders, all dedicated to improving `,
+    image: blog5,
+    date: "2025-08-13",
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
@@ -222,82 +239,121 @@ export const aboutSelectedToolDummyData = [
   },
 ];
 
-export const pricingCardsDummyData = [
-  {
-    id: 1,
-    title: "Essential:",
-    subTitle: "I Want to Choose What I Want",
-    description:
-      "Great for when you only need a single core module to deal with something quite specific.",
-    Pricing: 9.99,
-    timePeriod: "Per user/month",
-    // currentPlan: false,
-    // userLimitRange: [1, 140],
-    features: [
-      "Smart Rostering & Scheduling",
-      "Invoicing & Timesheets",
-      "Basic Dashboards & Insights",
-      "Core Admin & User Access",
-      "E-sign and Submit Tools, Forms, and My Profile",
-    ],
-  },
-  {
-    id: 2,
-    title: "Professional:",
-    subTitle: "Serious About Business",
-    description:
-      "A perfect solution for companies choosing two, or more modules to handle bigger projects.",
-    Pricing: 19.99,
-    timePeriod: "Per user/month",
-    // userLimitRange: [150, 200],
-    // currentPlan: false,
-    features: [
-      "Advanced HR & Recruitment",
-      "Full Participant Management ",
-      "Detailed Performance Tracking ",
-      "Group Messaging & Collaboration",
-      "Accounting & Payroll Integration ",
-      "Exportable Reports & Repository ",
-      "Dedicated Support Chat ",
-    ],
-  },
-  {
-    id: 3,
-    title: "Premium + AI(beta):",
-    subTitle: "End to End",
-    description:
-      "All-in-one solution for organisations which require all modules working in perfect harmony. ",
-    Pricing: 39.99,
-    timePeriod: "Per user/month",
-    // userLimitRange: [250, 500],
-    // currentPlan: false,
-    features: [
-      "All-in-one HR, Payroll and Accounting Suite",
-      "Smart AI Insights & Automation ",
-      "Advanced Risk & Funds Tracking ",
-      "Full Incident & Compliance Reporting",
-      "24/7 Support with Dedicated Manager ",
-      "Full Document Management & E-Signatures ",
-      "End-to-End Workforce & Service Integration",
-    ],
-  },
-  // {
-  //   id: 4,
-  //   title: "Enterprise",
-  //   subTitle: "Run your company on your terms",
-  //   Pricing: "Custom",
-  //   userLimitRange: [400, 500],
-  //   timePeriod: "Reach out for a quote",
-  //   currentPlan: false,
-  //   features: [
-  //     "Everything in Team Plan",
-  //     "Advanced security",
-  //     "Custom security",
-  //     "User provisioning (SCIM)",
-  //     "SAML SSO",
-  //   ],
-  // },
-];
+export const pricingCardsDummyData = {
+  ndis: [
+    {
+      id: 1,
+      title: "Essential:",
+      subTitle: "I Want to Choose What I Want",
+      description:
+        "Great for when you only need a single core module to deal with something quite specific.",
+      Pricing: 9.99,
+      timePeriod: "Per user/month",
+      cta: "Try TesseractApps free for 30 days",
+      features: [
+        "Smart Rostering & Scheduling",
+        "Invoicing & Timesheets",
+        "Basic Dashboards & Insights",
+        "Core Admin & User Access",
+        "T Learner",
+        "Basic Forms",
+        "My Profile",
+        "Pay slips",
+      ],
+      optionalAddons: ["LMS – Wyzed *", "E-sign (T Sign)"],
+    },
+    {
+      id: 2,
+      title: "Professional:",
+      subTitle: "Serious About Business",
+      description:
+        "A perfect solution for companies choosing two, or more modules to handle bigger projects.",
+      Pricing: 19.99,
+      timePeriod: "Per user/month",
+      cta: "Try TesseractApps free for 30 days",
+      features: [
+        "Advanced HR & Recruitment",
+        "Full Participant Management ",
+        "Detailed Performance Tracking ",
+        "Group Messaging & Collaboration",
+        "Accounting & Payroll Integration ",
+        "Exportable Reports & Repository ",
+        "Dedicated Support Chat ",
+      ],
+      optionalAddons: ["LMS – Wyzed *", "E-sign (T Sign)"],
+    },
+    {
+      id: 3,
+      title: "Premium (& AI):",
+      subTitle: "End to End",
+      description:
+        "All-in-one solution for organisations which require all modules working in perfect harmony. ",
+      Pricing: 39.99,
+      timePeriod: "Per user/month",
+      cta: "Try TesseractApps free for 30 days",
+      features: [
+        "All-in-one HR",
+        "Payroll",
+        "Accounting Suite",
+        "Advanced Risk & Funds Tracking ",
+        "Full Incident & Compliance Reporting",
+        "24/7 Support with Dedicated Manager ",
+        "Full Document Management & E-Signatures ",
+        "End-to-End Workforce & Service Integration",
+      ],
+      optionalAddons: ["LMS – Wyzed", "AI"],
+    },
+  ],
+  ict: [
+    {
+      id: 1,
+      title: "Professional:",
+      subTitle: "Serious About Business",
+      description: "Contact us for pricing",
+      Pricing: -1,
+      timePeriod: "Per user/month",
+      cta: "Try TesseractApps free for 30 days",
+      features: [
+        "Timesheets",
+        "Invoice Management",
+        "Basic Dashboards & Insights",
+        "Core Admin & User Access",
+        "My Profile",
+        "Repository for Document management",
+        "T-sign",
+        "Payroll and accounting",
+      ],
+      optionalAddons: [],
+    },
+    {
+      id: 2,
+      title: "Premium (& AI):",
+      subTitle: "End to End",
+      description: "Contact us for Pricing ",
+      Pricing: -1,
+      timePeriod: "Per user/month",
+      cta: "Try TesseractApps free for 30 days",
+      features: [
+        "Everything in Professional, plus",
+        "All-in-one HR, LMS, Payroll and Accounting Suite",
+        "Smart AI Insights & Automation",
+        "24/7 Support with Dedicated Manager",
+        "Full Document Management & E-Signatures",
+        "End-to-End Workforce & Service Integration",
+        "Advanced HR & Recruitment",
+        "Group Messaging & Collaboration",
+        "Accounting & Payroll Integration",
+        "Exportable Reports & Repository ",
+        "Dedicated Support Chat",
+      ],
+      optionalAddons: ["AI"],
+    },
+  ],
+  retailAndHospitality: [],
+  multiSiteBusinesses: [],
+  manufacturing: [],
+  construction: [],
+};
 
 export const pricingDummyData = [
   {

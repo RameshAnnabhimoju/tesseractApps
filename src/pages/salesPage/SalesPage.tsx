@@ -1,7 +1,11 @@
 import "./SalesPageStyles.css";
-import { sendEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/AppService";
 import { useState } from "react";
 import Alert from "../../components/alert/Alert";
+import {
+  expertTalkConfirmationEmailTemplate,
+  expertTalkEmailTemplate,
+} from "../../utils/emailTemplates";
 type demoFormType = {
   fullName: string;
   email: string;
@@ -97,18 +101,18 @@ const SalesPage = () => {
     }
 
     if (!hasError && checkbox) {
-      sendEmail(
-        "sales@tesseractapps.com",
-        "Request for talk to an expert",
-        `${formData.fullName} has made a request to talk to an expert.\n
-            Full Name: ${formData.fullName}\n
-            Email: ${formData.email}\n
-            Phone: ${formData.phone}\n
-            Organisation: ${formData.organisation}\n
-            Role: ${formData.role}\n
-            Areas of Interest: ${formData.areas}\n
-            Preferred Time: ${formData.preferredTime}
-            `
+      sendTextEmail(
+        expertTalkEmailTemplate.email,
+        expertTalkEmailTemplate.subject,
+        expertTalkEmailTemplate.body({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          organisation: formData.organisation,
+          role: formData.role,
+          areas: formData.areas,
+          preferredTime: formData.preferredTime,
+        })
       )
         .then((response) => {
           console.log("Email sent successfully:", response);
@@ -142,15 +146,11 @@ const SalesPage = () => {
   }
   const confirmationMail = () => {
     sendEmail(
+      formData.fullName,
       formData.email,
-      "Request for Demo",
-      `Dear ${formData.fullName},\n
-        \n
-        Thank you for your request.\n
-          We have received your request. Our Expert will be in touch within one business day.
-        \n
-        Best regards,\n
-        TesseractApps Team`
+      expertTalkConfirmationEmailTemplate.subject,
+      expertTalkConfirmationEmailTemplate.text(formData.fullName),
+      expertTalkConfirmationEmailTemplate.html(formData.fullName)
     )
       .then((response) => {
         console.log("Confirmation email sent successfully:", response);

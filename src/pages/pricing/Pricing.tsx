@@ -1,10 +1,6 @@
 import "./PricingStyles.css";
 import { pricingCardsDummyData, pricingDummyData } from "../../utils/DummyData";
-import {
-  // useEffect,
-  // useRef,
-  useState,
-} from "react";
+import { useState } from "react";
 import tick from "../../assets/tick.svg";
 import tickBlue from "../../assets/tick-blue.svg";
 import tickBlack from "../../assets/tick-black.svg";
@@ -13,7 +9,6 @@ import ArrowDown from "../../assets/arrow_down.svg";
 // import tick_white from "../../assets/tick_white.svg";
 import call from "../../assets/call.svg";
 import mark_email from "../../assets/mark_email.svg";
-// import Slider from "@mui/material/Slider";
 import { useNavigate } from "react-router-dom";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
 import {
@@ -27,7 +22,14 @@ const Pricing = () => {
   const handleBookADemoClick = () => {
     navigate("/requestdemo");
   };
-  const [selectedTab, setSelectedTab] = useState("ndis");
+  const [selectedTab, setSelectedTab] = useState<
+    | "ndis"
+    | "ict"
+    | "retailAndHospitality"
+    | "multiSiteBusinesses"
+    | "manufacturing"
+    | "construction"
+  >("ndis");
   // const [userCount, setUserCount] = useState(0);
 
   function handleFooterActions(name: string) {
@@ -36,7 +38,7 @@ const Pricing = () => {
     }
 
     if (name === "email") {
-      const mailto = "mailto:enquiries@tesseractapps.com?subject=Inquiry";
+      const mailto = "mailto:sales@tesseractapps.com?subject=Inquiry";
       const link = document.createElement("a");
       link.href = mailto;
       link.style.display = "none";
@@ -47,84 +49,38 @@ const Pricing = () => {
       setTimeout(() => {
         if (document.hasFocus()) {
           alert(
-            "If your email client didn't open, please email us at: enquiries@tesseractapps.com"
+            "If your email client didn't open, please email us at: sales@tesseractapps.com"
           );
         }
       }, 1000);
     }
   }
-  // const targetRef = useRef(null);
-  // const [showStickyHeader, setShowStickyHeader] = useState(false);
-
-  // useEffect(() => {
-  //   const isMobile = window.innerWidth < 500;
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       console.log("showStickyHeader ", entry.isIntersecting);
-  //       setShowStickyHeader(entry.isIntersecting);
-  //     },
-  //     {
-  //       root: null, // viewport
-  //       threshold: isMobile ? 0 : 0.1, // triggers as soon as any part is visible
-  //       rootMargin: isMobile ? "0px 0px 0px 0px" : "400px 0px 0px 0px",
-  //     }
-  //   );
-
-  //   const currentTarget = targetRef.current;
-
-  //   if (currentTarget) {
-  //     observer.observe(currentTarget);
-  //   }
-
-  //   return () => {
-  //     if (currentTarget) {
-  //       observer.unobserve(currentTarget);
-  //     }
-  //   };
-  // }, []);
-  // const handleTabClick = (index: number) => {
-  //   setSelectedTab(index);
-  // };
   const categoryChangeHandler = (
     event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     const value = event.target.value;
-    setSelectedTab(value);
+    setSelectedTab(value as typeof selectedTab);
   };
   return (
     <div id="pricing-container">
       <div className="heading">PRICING</div>
-      <div className="subheading pricing-subheading">
-        Compare Our Plans And Find Yours
-      </div>
+      <h1 className="subheading pricing-subheading">
+        Save time with TesseractApps.
+      </h1>
       <div className="pricing-divider-line pricing-divider-line-header" />
-      <div className="text pricing-textt">
-        "Efficiency meets simplicity-your all-in-one NDIS solution for managing
-        care, rostering, invoicing and compliance seamlessly."
+      <h2 className="text pricing-textt">
+        "Our all-in-one NDIS software helps you manage everything from staff
+        schedules to billing, quickly and easily."
+      </h2>
+      <div id="pricing-cta-button">
+        <button
+          className="pricing-button-primary button-contain"
+          onClick={() => navigate("/salesPage")}
+        >
+          Start Your Trial Now
+        </button>
       </div>
-      {/* <div id="pricing-category-container">
-        <div
-          className="slider"
-          style={{ transform: `translateX(${selectedTab * 100}%)` }}
-        />
 
-        <div
-          className={`pricing-category-button${
-            selectedTab === 0 ? " selected" : ""
-          }`}
-          onClick={() => handleTabClick(0)}
-        >
-          NDIS Industry
-        </div>
-        <div
-          className={`pricing-category-button${
-            selectedTab === 1 ? " selected" : ""
-          }`}
-          onClick={() => handleTabClick(1)}
-        >
-          ICT Industry
-        </div>
-      </div> */}
       <div id="pricing-category-container">
         <select
           name="pricingCategory"
@@ -132,9 +88,6 @@ const Pricing = () => {
           defaultValue="ndis"
           onChange={categoryChangeHandler}
         >
-          <option className="pricing-category-select-option" value="">
-            Select Industry
-          </option>
           <option className="pricing-category-select-option" value="ndis">
             NDIS Industry
           </option>
@@ -143,13 +96,13 @@ const Pricing = () => {
           </option>
           <option
             className="pricing-category-select-option"
-            value="retail-hospitality"
+            value="retailAndHospitality"
           >
             Retail & Hospitality
           </option>
           <option
             className="pricing-category-select-option"
-            value="multi-site-businesses"
+            value="multiSiteBusinesses"
           >
             Multi-Site Businesses
           </option>
@@ -167,74 +120,86 @@ const Pricing = () => {
           </option>
         </select>
       </div>
-      {selectedTab == "ndis" && (
+      {pricingCardsDummyData[selectedTab].length > 0 && (
         <div id="pricing-data-container">
           <div id="pricing-cards-container">
-            {pricingCardsDummyData.map((data, index) => {
-              return (
-                <div
-                  className={
-                    index == 1 ? "pricing-card-selected" : "pricing-card"
-                  }
-                  key={index + data.title}
-                >
-                  {index == 1 ? (
-                    <div className="pricing-card-tag">MOST POPULAR</div>
-                  ) : (
-                    <div style={{ height: "10px" }}></div>
-                  )}
-                  <div className={"pricing-card-title"}>{data.title}</div>
-                  <div className={"pricing-card-sub-title"}>
-                    {data.subTitle}
-                  </div>
-                  <div className={"pricing-card-description"}>
-                    {data.description}
-                  </div>
-                  <div className={"pricing-card-pricing"}>
-                    {"$" + data.Pricing}
-                  </div>
-                  <div className={"pricing-card-time-period"}>
-                    {data.timePeriod}
-                  </div>
-                  <div className="pricing-minimum-number">minimum 5 users</div>
-                  <button
-                    className="pricing-button-primary"
-                    onClick={() => navigate("/salesPage")}
+            {pricingCardsDummyData[selectedTab].length > 0 &&
+              pricingCardsDummyData[selectedTab].map((data, index) => {
+                return (
+                  <div
+                    className={
+                      index == 1 && selectedTab == "ndis"
+                        ? "pricing-card-selected"
+                        : "pricing-card"
+                    }
+                    key={index + data.title}
                   >
-                    Talk to an expert
-                  </button>
-                  <div className={"features-container "}>
-                    {data.features.map((feature, fIndex) => {
-                      return (
-                        <div
-                          key={fIndex}
-                          className="pricing-tick-data-container"
-                        >
-                          <div className="pricing-tick-icon-container">
-                            <img
-                              src={index == 1 ? tickBlue : tickBlack}
-                              alt="pricing-tick-icon"
-                              className="pricing-tick-icon"
-                            />
+                    {index == 1 && selectedTab == "ndis" ? (
+                      <div className="pricing-card-tag">MOST POPULAR</div>
+                    ) : (
+                      <div style={{ height: "10px" }}></div>
+                    )}
+                    <div className={"pricing-card-title"}>{data.title}</div>
+                    <div className={"pricing-card-sub-title"}>
+                      {data.subTitle}
+                    </div>
+                    <div className={"pricing-card-description"}>
+                      {data.description}
+                    </div>
+                    <div className={"pricing-card-pricing"}>
+                      {data.Pricing > 0 ? "$" + data.Pricing : ""}
+                    </div>
+                    <div className={"pricing-card-time-period"}>
+                      {data.timePeriod}
+                    </div>
+                    <div className="pricing-minimum-number">
+                      minimum 5 users
+                    </div>
+                    <button
+                      className="pricing-button-primary"
+                      onClick={() => navigate("/salesPage")}
+                    >
+                      {data.cta}
+                    </button>
+                    <div className={"features-container "}>
+                      {data.features.map((feature, fIndex) => {
+                        return (
+                          <div
+                            key={fIndex}
+                            className="pricing-tick-data-container"
+                          >
+                            <div className="pricing-tick-icon-container">
+                              <img
+                                src={index == 1 ? tickBlue : tickBlack}
+                                alt="pricing-tick-icon"
+                                className="pricing-tick-icon"
+                              />
+                            </div>
+                            <div className={"pricing-feature-data"}>
+                              {feature}
+                            </div>
                           </div>
-                          <div className={"pricing-feature-data"}>
-                            {feature}
+                        );
+                      })}
+                      {data.optionalAddons.length > 0 && (
+                        <div className="pricing-optional-addon-container">
+                          <div className="pricing-optional-addon-subheading">
+                            Optional Addons
                           </div>
+                          {data.optionalAddons.map((addOn, index) => (
+                            <div
+                              key={index + addOn}
+                              className="pricing-feature-data pricing-optional-addon"
+                            >
+                              {addOn}
+                            </div>
+                          ))}
                         </div>
-                      );
-                    })}
-                    <div className="pricing-optional-addon-container">
-                      <div className="pricing-optional-addon-subheading">
-                        Optional Addons
-                      </div>
-                      <div className="pricing-feature-data pricing-optional-addon">
-                        LMS
-                      </div>
+                      )}
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
           <div id="pricing-data-accordian-container">
             {pricingDummyData.map((data) => (
@@ -262,29 +227,24 @@ const Pricing = () => {
                   <AccordionDetails>
                     <div className="pricing-sticky-header">
                       <div className="pricing-sticky-empty-header"></div>
-                      {pricingCardsDummyData.map((data, index) => {
-                        return (
-                          <div
-                            key={index + data.title}
-                            className="pricing-sticky-card"
-                          >
-                            <div className="pricing-card-title">
-                              {data.title}
-                            </div>
-                            <div className="pricing-card-sub-title">
-                              {data.subTitle}
-                            </div>
-                            {/* <div className={"pricing-card-pricing"}>
-                                {typeof data.Pricing == "number"
-                                  ? "$" + data.Pricing
-                                  : data.Pricing}
-                              </div> */}
-                            {/* <div className={"pricing-card-time-period"}>
-                                {data.timePeriod}
-                              </div> */}
-                          </div>
-                        );
-                      })}
+                      {pricingCardsDummyData[selectedTab].length > 0 &&
+                        pricingCardsDummyData[selectedTab].map(
+                          (data, index) => {
+                            return (
+                              <div
+                                key={index + data.title}
+                                className="pricing-sticky-card"
+                              >
+                                <div className="pricing-card-title">
+                                  {data.title}
+                                </div>
+                                <div className="pricing-card-sub-title">
+                                  {data.subTitle}
+                                </div>
+                              </div>
+                            );
+                          }
+                        )}
                     </div>
 
                     {data.data.map((dataItem) => (
@@ -405,9 +365,7 @@ const Pricing = () => {
               className="pricing-links-data-container"
               onClick={() => handleFooterActions("email")}
             >
-              <div className="pricing-links-data">
-                enquiries@tesseractapps.com
-              </div>
+              <div className="pricing-links-data">sales@tesseractapps.com</div>
               <div className="pricing-links-data-subtext">Support Email</div>
             </div>
           </div>

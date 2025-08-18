@@ -9,8 +9,12 @@ import { footerProductsData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 import { appNavigate } from "../../routes/AppRoutes";
 import { useState } from "react";
-import { sendEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/AppService";
 import Alert from "../alert/Alert";
+import {
+  newsletterConfirmationEmailTemplate,
+  newsletterSubscriptionEmailTemplate,
+} from "../../utils/emailTemplates";
 const FooterComponent = () => {
   const navigate = useNavigate();
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -24,12 +28,10 @@ const FooterComponent = () => {
   const handleNewsletterSubscribe = () => {
     if (newsletterEmail) {
       // Here you can add the logic to handle the newsletter subscription
-      sendEmail(
-        "enquiries@tesseractapps.com",
-        "Request for newsletter subscription",
-        `${newsletterEmail} has requested a subscription for our newsletter.\n
-              Email: ${newsletterEmail}
-        `
+      sendTextEmail(
+        newsletterSubscriptionEmailTemplate.email,
+        newsletterSubscriptionEmailTemplate.subject,
+        newsletterSubscriptionEmailTemplate.body(newsletterEmail)
       )
         .then((response) => {
           console.log("Email sent successfully:", response);
@@ -64,15 +66,11 @@ const FooterComponent = () => {
   };
   const confirmationMail = () => {
     sendEmail(
+      newsletterEmail.split("@")[0],
       newsletterEmail,
-      "Request for Demo",
-      `Dear ${newsletterEmail.split("@")[0]},\n
-        \n
-        Thank you for your request.\n
-          We have received your request for our newsletter subscription. We will process your requests within one business day.
-        \n
-        Best regards,\n
-        TesseractApps Team`
+      newsletterConfirmationEmailTemplate.subject,
+      newsletterConfirmationEmailTemplate.text(newsletterEmail.split("@")[0]),
+      newsletterConfirmationEmailTemplate.html(newsletterEmail.split("@")[0])
     )
       .then((response) => {
         console.log("Confirmation email sent successfully:", response);
@@ -87,7 +85,7 @@ const FooterComponent = () => {
     }
 
     if (name === "email") {
-      const mailto = "mailto:enquiries@tesseractapps.com?subject=Inquiry";
+      const mailto = "mailto:sales@tesseractapps.com?subject=Inquiry";
       const link = document.createElement("a");
       link.href = mailto;
       link.style.display = "none";
@@ -98,7 +96,7 @@ const FooterComponent = () => {
       setTimeout(() => {
         if (document.hasFocus()) {
           alert(
-            "If your email client didn't open, please email us at: enquiries@tesseractapps.com"
+            "If your email client didn't open, please email us at: sales@tesseractapps.com"
           );
         }
       }, 1000);
@@ -136,7 +134,7 @@ const FooterComponent = () => {
                 className="footer-about-actions"
                 onClick={() => handleFooterActions("email")}
               >
-                Email: enquiries@tesseractapps.com
+                Email: sales@tesseractapps.com
               </span>
             </div>
             <div id="footer-social-links">

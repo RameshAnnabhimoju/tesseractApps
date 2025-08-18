@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./RequestADemoStyles.css";
-import { sendEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/AppService";
 import Alert from "../../components/alert/Alert";
+import {
+  bookDemoConfirmationEmailTemplate,
+  bookDemoEmailTemplate,
+} from "../../utils/emailTemplates";
 type demoFormType = {
   fullName: string;
   email: string;
@@ -98,18 +102,18 @@ const RequestADemo = () => {
     }
 
     if (!hasError && checkbox) {
-      sendEmail(
-        "enquiries@tesseractapps.com",
-        "Request for Demo",
-        `${formData.fullName} has requested a demo.\n
-        Full Name: ${formData.fullName}\n
-        Email: ${formData.email}\n
-        Phone: ${formData.phone}\n
-        Organisation: ${formData.organisation}\n
-        Role: ${formData.role}\n
-        Areas of Interest: ${formData.areas}\n
-        Preferred Time: ${formData.preferredTime}
-        `
+      sendTextEmail(
+        bookDemoEmailTemplate.email,
+        bookDemoEmailTemplate.subject,
+        bookDemoEmailTemplate.body({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          organisation: formData.organisation,
+          role: formData.role,
+          areas: formData.areas,
+          preferredTime: formData.preferredTime,
+        })
       )
         .then((response) => {
           console.log("Email sent successfully:", response);
@@ -143,15 +147,11 @@ const RequestADemo = () => {
   }
   const confirmationMail = () => {
     sendEmail(
+      formData.fullName,
       formData.email,
-      "Request for Demo",
-      `Dear ${formData.fullName},\n
-      \n
-      Thank you for your request.\n
-        We have received your request for a demo and will be in touch within one business day.
-      \n
-      Best regards,\n
-      TesseractApps Team`
+      bookDemoConfirmationEmailTemplate.subject,
+      bookDemoConfirmationEmailTemplate.text(formData.fullName),
+      bookDemoConfirmationEmailTemplate.html(formData.fullName)
     )
       .then((response) => {
         console.log("Confirmation email sent successfully:", response);
@@ -184,7 +184,7 @@ const RequestADemo = () => {
             </div>
             <div className="request-demo-title">Email:</div>
             <div className="request-demo-description">
-              enquiries@tesseractapps.com
+              sales@tesseractapps.com
             </div>
           </div>
           <div id="request-demo-lower">

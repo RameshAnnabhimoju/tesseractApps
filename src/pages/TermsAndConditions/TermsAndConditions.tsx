@@ -257,7 +257,7 @@ const TermsAndConditions = () => {
         or our data practices, please contact us at:
       </p>
       <p className="text terms-and-conditions-text">
-        Email: enquiries@tesseractapps.com
+        Email: sales@tesseractapps.com
         <br />
         Phone: 1300 252 808
         <br />
