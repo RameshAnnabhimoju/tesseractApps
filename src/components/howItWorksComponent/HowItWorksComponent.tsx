@@ -25,7 +25,8 @@ const HowItWorksComponent = () => {
     <div id="howItWorks-container">
       <div className="heading ">How TesseractApps Works</div>
       <h2 className="subheading subheading-howItWorks">
-        Simplify NDIS Workforce and Service Delivery — for All Industries.
+        From onboarding to compliance, TesseractApps simplifies every step of
+        care delivery and operations.
       </h2>
       <div id="howItWorks-content">
         {howItWorksDummyData.map((data, index) => {
@@ -45,10 +46,10 @@ const HowItWorksComponent = () => {
               />
               <div className="howItWorks-card-data">
                 <div className="howItWorks-card-title-number">0{data.id}</div>
-                <div className="howItWorks-card-title">{data.title}</div>
-                <div className="howItWorks-card-description">
+                <h2 className="howItWorks-card-title">{data.title}</h2>
+                <h3 className="howItWorks-card-description">
                   {data.description}
-                </div>
+                </h3>
               </div>
             </div>
           );

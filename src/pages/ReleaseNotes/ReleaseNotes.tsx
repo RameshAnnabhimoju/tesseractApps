@@ -3,6 +3,145 @@ const ReleaseNotes = () => {
   return (
     <div id="release-notes-container">
       <h1>What's New?</h1>
+      <h2>v1.24.0</h2>
+      <ul>
+        <li>
+          <b>Preferred Names:</b> Users can now set preferred names for both
+          facilities and participants, which will be reflected consistently
+          across the application for a more personalised experience.
+        </li>
+        <br />
+        <li>
+          <b>Roster Settings:</b> Introducing customisable shift timing
+          templates for both standard and customised shifts, giving you greater
+          flexibility in managing your roster.
+        </li>
+        <br />
+        <li>
+          <b>Timesheet Downloads:</b> Timesheets can now be downloaded in CSV
+          and PDF formats based on the selected frequency, making payroll and
+          reporting easier than ever.
+        </li>
+        <br />
+        <li>
+          <b>ID Documentation:</b> Implementation of 100 points of ID
+          verification to strengthen documentation and compliance processes.
+        </li>
+        <br />
+        <li>
+          <b>Roster Manager:</b> New restrictions prevent the creation of shifts
+          if they exceed preset hour limits, helping to maintain workforce
+          compliance and avoid scheduling errors.
+        </li>
+        <br />
+        <li>
+          <b>Industry Introduction in Facility:</b> Facilities now feature an
+          industry introduction section to better categorise and manage
+          facility-specific information.
+        </li>
+        <br />
+        <li>
+          <b>Manage Invoices:</b> Enhanced invoice management tools improve
+          tracking and processing for more efficient financial workflows.
+        </li>
+        <br />
+        <li>
+          <b>Pay Guides:</b> New pay guides tailored for the nursing industry
+          have been introduced to assist with accurate and compliant payroll
+          processing.
+        </li>
+        <br />
+      </ul>
+      <h2>v1.23.0</h2>
+      <ul>
+        <li>
+          <b>Roster Manager calendar view – new UI:</b> Introduced a refreshed
+          calendar view for better shift visualization.
+        </li>
+        <br />
+        <li>
+          <b>Expand and collapse of Roster Manager cards:</b> Quickly expand or
+          minimise shift cards for cleaner navigation.
+        </li>
+        <br />
+        <li>
+          <b>Side navigation bar expand and collapse:</b> Customise your
+          workspace with a collapsible side navigation panel.
+        </li>
+        <br />
+        <li>
+          <b>Roster Manager – shift reports:</b> Generate and view detailed
+          reports on scheduled shifts directly in Roster Manager.
+        </li>
+        <br />
+        <li>
+          <b>Drag and drop to reassign shifts:</b> Easily move shifts between
+          staff with a simple drag-and-drop action.
+        </li>
+        <br />
+        <li>
+          <b>Publish shifts with an end date:</b> Define and limit the
+          publishing period of shifts with a set end date.
+        </li>
+        <br />
+        <li>
+          <b>My Profile › My Availability:</b> Restrict scheduling beyond set
+          hours – Prevent shifts from being scheduled outside user-defined
+          availability.
+        </li>
+        <br />
+        <li>
+          <b>Dashboard enhancements:</b> Added a widget for rejected shifts and
+          enabled week selection in the Roster Manager widget.
+        </li>
+        <br />
+        <li>
+          <b>Preferred Staff selection UI upgraded:</b> Improved interface for
+          selecting preferred staff during scheduling.
+        </li>
+        <br />
+        <li>
+          <b>Mobile › My Availability with sub-tabs:</b> New mobile layout
+          includes separate tabs for Availability and Reports.
+        </li>
+        <br />
+        <li>
+          <b>Funds Tracker:</b> Miscellaneous fund is added in the funds.
+        </li>
+        <br />
+        <li>
+          <b>Accounting</b>
+          <ol>
+            <li>
+              <b>General Ledger:</b> Out of balance restriction – Prevents
+              posting entries that result in an unbalanced ledger.
+            </li>
+            <br />
+            <li>
+              <b>Customized email to sales:</b> Allows sending personalised
+              emails directly to the sales team.
+            </li>
+            <br />
+            <li>
+              <b>Full account list selection during record creation:</b> Enables
+              selection from the complete chart of accounts when creating
+              records.
+            </li>
+            <br />
+            <li>
+              <b>Services invoices to sales:</b> Service-based invoices are now
+              automatically reflected in sales data.
+            </li>
+            <br />
+            <li>
+              <b>Chart of Accounts › Net values in category names:</b> Displays
+              net values alongside account categories for quick financial
+              insights.
+            </li>
+          </ol>
+        </li>
+      </ul>
+
       <h2>v1.22.0</h2>
 
       <ul>

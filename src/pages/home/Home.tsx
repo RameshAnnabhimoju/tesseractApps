@@ -1,4 +1,4 @@
-import FaqComponent from "../../components/faqComponent/FaqComponent";
+// import FaqComponent from "../../components/faqComponent/FaqComponent";
 import FeaturesComponent from "../../components/featuresComponent/FeaturesComponent";
 import HomeHeroComponent from "../../components/homeHeroComponent/HomeHeroComponent";
 import HowItWorksComponent from "../../components/howItWorksComponent/HowItWorksComponent";
@@ -19,7 +19,7 @@ const Home = () => {
       <TrustedClientsComponent />
       <ResultsComponent />
       <TestimonialComponent />
-      <FaqComponent />
+      {/* <FaqComponent /> */}
       <OurBlogComponent />
     </div>
   );

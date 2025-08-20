@@ -17,6 +17,13 @@ import {
   AccordionSummary,
   Typography,
 } from "@mui/material";
+type PricingDataTickItemTypes = {
+  title: string;
+  subTitle: string;
+  data1?: boolean;
+  data2?: boolean;
+  data3?: boolean;
+};
 const Pricing = () => {
   const navigate = useNavigate();
   const handleBookADemoClick = () => {
@@ -202,7 +209,10 @@ const Pricing = () => {
               })}
           </div>
           <div id="pricing-data-accordian-container">
-            {pricingDummyData.map((data) => (
+            {(
+              pricingDummyData[selectedTab as keyof typeof pricingDummyData] ??
+              []
+            ).map((data) => (
               <Accordion
                 key={data.heading}
                 className="faq-page-accordian"
@@ -247,7 +257,7 @@ const Pricing = () => {
                         )}
                     </div>
 
-                    {data.data.map((dataItem) => (
+                    {data.data.map((dataItem: PricingDataTickItemTypes) => (
                       <Typography
                         sx={{
                           fontSize: "18px",
@@ -273,59 +283,29 @@ const Pricing = () => {
                             </div>
                           </div>
                           {/* <div className="pricing-data-tick-container"> */}
-                          {dataItem.data1 ? (
-                            <div className="pricing-data-data1">
-                              <img
-                                src={tick}
-                                alt="tick"
-                                className="pricing-data-tick pricing-data-tick-success"
-                              />
-                            </div>
-                          ) : (
-                            <div className="pricing-data-data1">
-                              <img
-                                src={remove}
-                                alt="remove"
-                                className="pricing-data-tick"
-                              />
-                            </div>
+                          {dataItem.data1 !== undefined && (
+                            <PricingDataItem
+                              value={dataItem.data1}
+                              className="pricing-data-data1"
+                            />
                           )}
-                          {dataItem.data2 ? (
-                            <div className="pricing-data-data2">
-                              <img
-                                src={tick}
-                                alt="tick"
-                                className="pricing-data-tick pricing-data-tick-success"
-                              />
-                            </div>
-                          ) : (
-                            <div className="pricing-data-data2">
-                              <img
-                                src={remove}
-                                alt="remove"
-                                className="pricing-data-tick"
-                              />
-                            </div>
+
+                          {dataItem.data2 !== undefined && (
+                            <PricingDataItem
+                              value={dataItem.data2}
+                              className="pricing-data-data2"
+                            />
                           )}
-                          {dataItem.data3 ? (
-                            <div className="pricing-data-data3">
-                              <img
-                                src={tick}
-                                alt="tick"
-                                className="pricing-data-tick pricing-data-tick-success"
-                              />
-                              {dataItem.title == "Support Chat" && (
+
+                          {dataItem.data3 !== undefined && (
+                            <PricingDataItem
+                              value={dataItem.data3}
+                              className="pricing-data-data3"
+                            >
+                              {dataItem.title === "Support Chat" && (
                                 <span>+ Dedicated Manager</span>
                               )}
-                            </div>
-                          ) : (
-                            <div className="pricing-data-data3">
-                              <img
-                                src={remove}
-                                alt="remove"
-                                className="pricing-data-tick"
-                              />
-                            </div>
+                            </PricingDataItem>
                           )}
                           {/* </div> */}
                         </div>
@@ -338,7 +318,8 @@ const Pricing = () => {
           </div>
         </div>
       )}
-      {selectedTab != "ndis" && (
+      {(pricingDummyData[selectedTab as keyof typeof pricingDummyData] ?? [])
+        .length == 0 && (
         <div id="pricing-contact-information">
           <ContactInformationCard />
         </div>
@@ -380,3 +361,30 @@ const Pricing = () => {
 };
 
 export default Pricing;
+
+import React from "react";
+
+type PricingDataItemProps = {
+  value: boolean; // true / false
+  className: string;
+  children?: React.ReactNode;
+};
+
+const PricingDataItem: React.FC<PricingDataItemProps> = ({
+  value,
+  className,
+  children,
+}) => {
+  return (
+    <div className={className}>
+      <img
+        src={value ? tick : remove}
+        alt={value ? "tick" : "remove"}
+        className={`pricing-data-tick ${
+          value ? "pricing-data-tick-success" : ""
+        }`}
+      />
+      {value && children}
+    </div>
+  );
+};

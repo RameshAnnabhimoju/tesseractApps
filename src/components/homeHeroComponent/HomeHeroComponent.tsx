@@ -22,14 +22,12 @@ const HomeHeroComponent = () => {
         className="hero-backround-image"
       />
       <div id="home-text-container">
-        <h1 id="home-text-heading">
-          TesseractApps: One Platform to Transform Workforce Management in Care
-        </h1>
-        <div id="home-text-subText">
-          TesseractApps helps care providers streamline compliance, manage teams
-          efficiently, and deliver higher quality care with one secure, scalable
-          platform tailored to the unique needs of the care and IT sector.
-        </div>
+        <h1 id="home-text-heading">END TO END WORKFORCE MANAGEMENT SOFTWARE</h1>
+        <h2 id="home-text-subText">
+          TesseractApps simplifies compliance, team management, NDIS care and
+          service delivery for care providers and IT consultants—all in one
+          secure, scalable platform.
+        </h2>
         <div id="home-store-links-container">
           <img
             src={ios}

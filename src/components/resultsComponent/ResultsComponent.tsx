@@ -9,12 +9,12 @@ const ResultsComponent = () => {
         Empowering Providers. Simplifying Care. Driving Real Outcomes.
       </div>
       <div className="text results-cards-text2">
-        At Tesseract Apps, we are committed to helping NDIS care providers and
-        IT businesses operate with greater clarity, compliance, and confidence.
-        Here’s a snapshot of our platform’s measurable impact across Australia.
+        At TesseractApps, we help NDIS providers operate with clarity,
+        compliance, and confidence. Here’s a snapshot of our platform’s
+        measurable impact across Australia:
       </div>
       <div className="results-cards-container">
-        <div className="results-card">
+        {/* <div className="results-card">
           <div className="results-card-title">#1 in Client Happiness</div>
           <div className="results-card-text">
             Highest rated for ease of use and support among workforce management
@@ -27,7 +27,7 @@ const ResultsComponent = () => {
             Our community has been raving for it: Workflow automation and a
             great interface.
           </div>
-        </div>
+        </div> */}
         {/* <div className="results-card">
           <div className="results-card-title">500+ Active Users</div>
           <div className="results-card-text">
@@ -36,28 +36,28 @@ const ResultsComponent = () => {
           </div>
         </div> */}
         <div className="results-card">
-          <div className="results-card-title">50+ NDIS Providers converted</div>
-          <div className="results-card-text">
-            From startups to national networks, TesseractApps grows as your
-            grow.
-          </div>
+          <h2 className="results-card-title">
+            2,000+ NDIS Professionals Transformed
+          </h2>
+          <h3 className="results-card-text">
+            Empowering staff and provider teams to work smarter, deliver better
+            care, and achieve measurable outcomes every day.
+          </h3>
         </div>
         <div className="results-card">
-          <div className="results-card-title">
-            40% Faster Resolution of Incidents
-          </div>
-          <div className="results-card-text">
-            Log events as you please, generate corresponding alerts, and solve
-            cases more quickly than ever.
-          </div>
+          <h2 className="results-card-title">40% Faster Incident Resolution</h2>
+          <h3 className="results-card-text">
+            Cases are resolved quicker, alerts are triggered automatically, and
+            participants’ safety is consistently improved.
+          </h3>
         </div>
         <div className="results-card">
-          <div className="results-card-title">99.9% Uptime Guarantee</div>
-          <div className="results-card-text">
-            Built on Salesforce, our platform is rock-solid reliable and
-            constantly updated, so you are always ready to drive your mission
-            forward.
-          </div>
+          <h2 className="results-card-title">99.9% Uptime Reliability</h2>
+          <h3 className="results-card-text">
+            Our Salesforce-powered platform keeps operations running without
+            interruption, so teams stay productive, and care remains
+            uninterrupted.
+          </h3>
         </div>
         {/* <div className="results-card">
           <div className="results-card-title">40%</div>

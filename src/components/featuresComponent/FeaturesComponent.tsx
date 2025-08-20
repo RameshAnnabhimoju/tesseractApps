@@ -89,14 +89,14 @@ const FeaturesComponent = () => {
   return (
     <div id="features-container">
       <div className="heading">FEATURES</div>
-      <h2 className="subheading features-subheading">
+      <h1 className="subheading features-subheading">
         Why TesseractApps is the Preferred NDIS Software for Modern Care
         Organisations?
-      </h2>
-      <div className="text features-text">
+      </h1>
+      <h2 className="text features-text">
         Streamline workforce management, automate compliance, support IT
-        operations, and deliver high-quality NDIS services. All in one platform.{" "}
-      </div>
+        operations, and deliver high-quality NDIS services. All in one platform.
+      </h2>
       <div className="features-buttons">
         <div
           className="arrow-container"
@@ -126,10 +126,10 @@ const FeaturesComponent = () => {
                 src={feature.image}
                 alt={feature.title}
               />
-              <div className="features-card-title">{feature.title}</div>
-              <div className="features-card-description">
+              <h2 className="features-card-title">{feature.title}</h2>
+              <h3 className="features-card-description">
                 {feature.description}
-              </div>
+              </h3>
             </div>
           ))}
         </div>
