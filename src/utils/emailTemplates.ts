@@ -7,7 +7,7 @@ export const newsletterConfirmationEmailTemplate = {
         \n
         Team TesseractApps\n
         [Our Website: www.tesseractapps.com.au]\n
-        [+61261332819,02 6133 2800] | [itsupport@tesseractapps.com]`,
+        [+61261332819,02 6133 2800] | [sales@tesseractapps.com]`,
   html: (name: string) => `
     <div>
     <div>Dear ${name},</div>
@@ -17,7 +17,7 @@ export const newsletterConfirmationEmailTemplate = {
     <p>Warm regards,</p>
         <p>Team TesseractApps</p>
         <div>[Our Website: <a href="https://www.tesseractapps.com.au">TesseractApps</a>]</div>
-        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:itsupport@tesseractapps.com?subject=Inquiry">itsupport@tesseractapps.com</a>]</div>
+        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:sales@tesseractapps.com?subject=Inquiry">sales@tesseractapps.com</a>]</div>
     </div>
     </div>`,
 };
@@ -77,7 +77,7 @@ export const bookDemoConfirmationEmailTemplate = {
       Best regards,\n
       Team TesseractApps\n
       [Our Website: www.tesseractapps.com.au]\n
-      [+61261332819,02 6133 2800] | [itsupport@tesseractapps.com]`,
+      [+61261332819,02 6133 2800] | [sales@tesseractapps.com]`,
   html: (fullName: string) => `
     <div>Dear ${fullName},</div>
     <p>Thank you for your request.</p>
@@ -86,7 +86,7 @@ export const bookDemoConfirmationEmailTemplate = {
     <p>Warm regards,</p>
         <p>Team TesseractApps</p>
         <div>[Our Website: <a href="https://www.tesseractapps.com.au">TesseractApps</a>]</div>
-        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:itsupport@tesseractapps.com?subject=Inquiry">itsupport@tesseractapps.com</a>]</div>
+        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:sales@tesseractapps.com?subject=Inquiry">sales@tesseractapps.com</a>]</div>
     </div>
   `,
 };
@@ -125,7 +125,7 @@ export const expertTalkConfirmationEmailTemplate = {
       Best regards,\n
       Team TesseractApps\n
       [Our Website: www.tesseractapps.com.au]\n
-      [+61261332819,02 6133 2800] | [itsupport@tesseractapps.com]`,
+      [+61261332819,02 6133 2800] | [sales@tesseractapps.com]`,
   html: (fullName: string) => `
     <div>Dear ${fullName},</div>
     <p>Thank you for your request.</p>
@@ -134,7 +134,7 @@ export const expertTalkConfirmationEmailTemplate = {
     <p>Warm regards,</p>
         <p>Team TesseractApps</p>
         <div>[Our Website: <a href="https://www.tesseractapps.com.au">TesseractApps</a>]</div>
-        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:itsupport@tesseractapps.com?subject=Inquiry">itsupport@tesseractapps.com</a>]</div>
+        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:sales@tesseractapps.com?subject=Inquiry">sales@tesseractapps.com</a>]</div>
     </div>
   `,
 };
@@ -151,7 +151,7 @@ type signupTypes = {
   demo: string;
 };
 export const signupEmaiTemplate = {
-  email: "itsupport@tesseractapps.com",
+  email: "sales@tesseractapps.com",
   subject: "Request for free trial signup",
   body: ({
     firstName,
@@ -185,27 +185,27 @@ export const signupConfirmationEmailTemplate = {
     \n
       Thank you for signing up with Tesseract Apps!\n
       We've received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.\n
-      If you have any immediate questions, feel free to reach out to us at [itsupport@tesseractapps.com] or call us at [+61261332819, 1300 252 808].\n
+      If you have any immediate questions, feel free to reach out to us at [sales@tesseractapps.com] or call us at [+61261332819, 1300 252 808].\n
       We're excited to connect with you soon!\n
       \n
       Warm regards,\n
       Team TesseractApps\n
       [Our Website: www.tesseractapps.com.au]\n
-      [+61261332819,02 6133 2800] | [itsupport@tesseractapps.com]\n
+      [+61261332819,02 6133 2800] | [sales@tesseractapps.com]\n
       `,
 
   html: (firstName: string) => `
     <div>Hi ${firstName},</div>
     <p>Thank you for signing up with Tesseract Apps!</p>
     <p>We've received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.
-      If you have any immediate questions, feel free to reach out to us at [itsupport@tesseractapps.com] or call us at [+61261332819, 1300 252 808].
+      If you have any immediate questions, feel free to reach out to us at [sales@tesseractapps.com] or call us at [+61261332819, 1300 252 808].
       We're excited to connect with you soon!
       Warm regards</p>
     <div>
     <p>Warm regards,</p>
         <p>Team TesseractApps</p>
         <div>[Our Website: <a href="https://www.tesseractapps.com.au">TesseractApps</a>]</div>
-        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:itsupport@tesseractapps.com?subject=Inquiry">itsupport@tesseractapps.com</a>]</div>
+        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:sales@tesseractapps.com?subject=Inquiry">sales@tesseractapps.com</a>]</div>
     </div>
     `,
 };

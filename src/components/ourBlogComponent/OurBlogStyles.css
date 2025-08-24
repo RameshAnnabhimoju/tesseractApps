@@ -43,9 +43,9 @@
   font-weight: 400;
   color: var(--color-text-gray);
   min-height: 125px;
-  max-height: 225px;
+  max-height: 152px !important;
   text-overflow: ellipsis;
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 }
 .ourBlog-footer {
   display: flex;
@@ -84,7 +84,7 @@
 }
 .ourBlog-image {
   width: 100%;
-  max-height: 230px;
+  max-height: 210px;
   object-fit: cover;
 }
 .ourBlog-author-image {

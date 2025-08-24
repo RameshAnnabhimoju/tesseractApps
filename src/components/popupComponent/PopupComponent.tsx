@@ -9,6 +9,9 @@ interface PopupProps {
   position?: { top: number; left: number } | null;
   children: React.ReactNode;
   onMouseLeave?: () => void;
+  showTriangle?: boolean;
+  backgroundColor?: string;
+  backgroundBlur?: string;
 }
 
 const PopupComponent = ({
@@ -18,6 +21,9 @@ const PopupComponent = ({
   position,
   children,
   onMouseLeave,
+  showTriangle = true,
+  backgroundColor,
+  backgroundBlur,
 }: PopupProps) => {
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -47,11 +53,12 @@ const PopupComponent = ({
     top: position?.top || 0,
     left: position?.left || 0,
     transform: "translateX(-50%)",
-    backgroundColor: "white",
     padding: "15px",
     borderRadius: "8px",
     boxShadow: "0px 8px 8px rgba(0,0,0,0.1)",
     zIndex: 3000,
+    backgroundColor,
+    backdropFilter: backgroundBlur ? `blur(${backgroundBlur})` : undefined,
   };
   const popupTriangle: React.CSSProperties = {
     position: "fixed",
@@ -63,10 +70,11 @@ const PopupComponent = ({
 
   return ReactDOM.createPortal(
     <div ref={popupRef} style={popupStyle} onMouseLeave={onMouseLeave}>
-      <div style={popupTriangle}>
-        <svg viewBox="0 0 20 15" width="20px" height="15px">
-          <path
-            d="M10 2
+      {showTriangle && (
+        <div style={popupTriangle}>
+          <svg viewBox="0 0 20 15" width="20px" height="15px">
+            <path
+              d="M10 2
          A1.2 1.2 0 0 1 11.2 2.7
          L17.5 10
          A1.2 1.2 0 0 1 16.9 11.7
@@ -74,10 +82,11 @@ const PopupComponent = ({
          A1.2 1.2 0 0 1 2.5 10
          L8.8 2.7
          A1.2 1.2 0 0 1 10 2"
-            fill="white"
-          />
-        </svg>
-      </div>
+              fill="white"
+            />
+          </svg>
+        </div>
+      )}
       {children}
     </div>,
     document.body

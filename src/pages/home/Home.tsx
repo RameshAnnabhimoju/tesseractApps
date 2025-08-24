@@ -7,6 +7,7 @@ import OurBlogComponent from "../../components/ourBlogComponent/OurBlogComponent
 import ResultsComponent from "../../components/resultsComponent/ResultsComponent";
 import TestimonialComponent from "../../components/testimonialComponent/TestimonialComponent";
 import TrustedClientsComponent from "../../components/trustedClients/TrustedClientsComponent";
+import VideoComponent from "../../components/videoComponent/VideoComponent";
 import "./HomeStyles.css";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       {/* <MirroredArcsComponent /> */}
       <FeaturesComponent />
       <HowItWorksComponent />
+      <VideoComponent />
       <TrustedClientsComponent />
       <ResultsComponent />
       <TestimonialComponent />

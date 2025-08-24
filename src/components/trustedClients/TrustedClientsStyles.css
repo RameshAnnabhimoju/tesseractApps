@@ -1,21 +1,23 @@
 #trusted-clients-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
   gap: 50px;
+  margin: 0 138px;
 }
 #trusted-clients-header {
   font-size: 20px;
   font-weight: 600;
-  width: 250px;
   color: var(--color-primary);
   text-align: center;
   text-transform: uppercase;
 }
-#trusted-clients-header {
-  display: flex;
+.trusted-clients-heading {
+  width: 300px;
+  text-align: left !important;
+  color: black !important;
 }
 .client-logo {
   width: 160px;
@@ -39,4 +41,42 @@
 .clients-slider-image {
   width: 130px;
   height: 130px;
+}
+.clients-slider-image {
+  max-width: 130px;
+  height: 130px;
+  padding: 0 15px;
+  object-fit: cover;
+}
+
+.clients-slider-image:last-of-type {
+  padding-left: 0;
+  margin-left: 200px;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 150px;
+}
+
+.wrapper {
+  position: absolute;
+  display: flex;
+}
+
+section {
+  display: flex;
+  animation: swipe var(--speed) linear infinite backwards;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
 }

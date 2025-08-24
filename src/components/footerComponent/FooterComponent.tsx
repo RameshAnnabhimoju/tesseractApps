@@ -115,7 +115,7 @@ const FooterComponent = () => {
     <div id="footer-container">
       <Alert setAlertData={setAlertData} alertData={alertData} />
       <div id="footer-top">
-        <div id="footer-column-1">
+        {/* <div id="footer-column-1">
           <div id="footer-column1-item">
             <div className="footer-heading">About the company</div>
             <div className="footer-text footer-about-text">
@@ -185,7 +185,7 @@ const FooterComponent = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="footer-links-texts">
           <div className="footer-column">
             <div className="footer-heading">Products</div>

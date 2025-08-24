@@ -19,18 +19,22 @@
   text-align: center;
 }
 #home-text-heading {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 600;
+  font-style: semi-bold;
   margin-bottom: 1rem;
   color: black;
   max-width: 800px;
+  line-height: 44px;
 }
 #home-text-subText {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: light;
   margin-bottom: 2rem;
   max-width: 700px;
-  line-height: 25px;
+  line-height: 37px;
+  color: var(--color-secondary);
 }
 #home-store-links-container {
   display: flex;
@@ -44,8 +48,35 @@
 #home-social-links-container {
   display: flex;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 46px;
+  margin-bottom: 34px;
   cursor: pointer;
+}
+#home-get-started-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 6px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 270px;
+  min-height: 48px;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.arrow-icon {
+  fill: white;
+}
+#home-button-subtext {
+  margin-top: 15px;
+  margin-bottom: 60px;
+  color: var(--color-text-gray);
+}
+#home-tesseract-logo {
+  margin-top: 115px;
 }
 @media (max-width: 1280px) {
   .hero-backround-image {

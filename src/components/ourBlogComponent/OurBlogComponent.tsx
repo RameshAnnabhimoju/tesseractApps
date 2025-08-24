@@ -13,7 +13,7 @@ import ArrowRight from "../arrows/ArrowRight";
 import { useEffect, useState } from "react";
 
 const OurBlogComponent = () => {
-  const [perView, setPerView] = useState(3);
+  const [perView, setPerView] = useState(4);
   useEffect(() => {
     if (window.innerWidth <= 1100) {
       setPerView(3);

@@ -12,12 +12,14 @@ import company10 from "../../assets/PINNACLE Final.png";
 import company13 from "../../assets/logo13.png";
 import company14 from "../../assets/NEXUS Final.png";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Autoplay } from "swiper/modules";
 // import "swiper/css";
 // import "swiper/css/pagination";
 import "../../../node_modules/swiper/swiper.min.css";
 import "../../../node_modules/swiper/modules/pagination.min.css";
+// import { Slider } from "@mui/material";
+import Slider from "./Slider";
 const TrustedClientsComponent = () => {
   const companiesImages = [
     company1,
@@ -33,15 +35,16 @@ const TrustedClientsComponent = () => {
   ];
   return (
     <div id="trusted-clients-container">
-      <div className="heading">
+      <div className="heading trusted-clients-heading">
         Our Most <br /> Trusted Clients
       </div>
+      <Slider images={companiesImages} speed={20000} />
       {/* <div id="trusted-clients-images-container">
         {companiesImages?.map((image, index) => (
           <img key={index} src={image} alt="Client 1" className="client-logo" />
         ))}
       </div> */}
-      <Swiper
+      {/* <Swiper
         slidesPerView={2}
         breakpoints={{
           1280: {
@@ -78,7 +81,7 @@ const TrustedClientsComponent = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
     </div>
   );
 };

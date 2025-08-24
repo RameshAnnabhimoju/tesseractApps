@@ -1,428 +1,86 @@
 .video-container {
   position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 105px;
 }
 
-video {
-  width: 100%;
+.video {
+  width: 83%;
   height: auto;
   display: block;
+  cursor: pointer;
+  border-radius: 45px;
 }
 
-.label-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+/* Overlay play button */
+.overlay {
+  width: 83%;
+  border-radius: 45px;
   height: 100%;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.label {
   position: absolute;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2); /* bottom-right shadow */
-  font-weight: 500;
-  white-space: nowrap;
-  transition: opacity 0.5s ease;
-}
-
-/* Customize these positions based on where you want them */
-
-@keyframes fadeInLabel1 {
-  0% {
-    opacity: 0;
-    transform: translate(+50%, 0) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-}
-
-.label-1 {
-  opacity: 0;
-  top: 15%;
-  left: 5%;
-  animation: fadeInLabel1 0.8s ease-out forwards;
-}
-@keyframes fadeInLabel2 {
-  0% {
-    opacity: 0;
-    transform: translate(0, +50%) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-}
-.label-2 {
-  opacity: 0;
-  top: 0%;
-  left: 40%;
-  animation: fadeInLabel2 0.8s ease-out forwards;
-}
-@keyframes fadeInLabel3 {
-  0% {
-    opacity: 0;
-    transform: translate(+50%, 0) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-}
-.label-3 {
-  opacity: 0;
-  bottom: 40%;
-  left: 5%;
-  animation: fadeInLabel3 0.8s ease-out forwards;
-}
-@keyframes fadeInLabel4 {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 0) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-}
-.label-4 {
-  opacity: 0;
-  bottom: 45%;
-  right: 10%;
-  animation: fadeInLabel4 0.8s ease-out forwards;
-}
-@keyframes fadeInLabel5 {
-  0% {
-    opacity: 0;
-    transform: translate(+50%, -50%) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-}
-.label-5 {
-  opacity: 0;
-  bottom: 5%;
-  left: 25%;
-  animation: fadeInLabel5 0.8s ease-out forwards;
-}
-@keyframes fadeInLabel6 {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, +50%) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, 0) scale(1);
-  }
-}
-.label-6 {
-  opacity: 0;
-  top: 15%;
-  right: 15%;
-  animation: fadeInLabel6 0.8s ease-out forwards;
-}
-.overlay-icon {
-  width: 25px;
-  height: 25px;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-.label-spot1 {
-  position: absolute;
-  top: 29%;
-  left: 30%;
-}
-.label-spot2 {
-  position: absolute;
-  top: 13%;
-  left: 45%;
-}
-.label-spot3 {
-  position: absolute;
-  top: 70%;
-  left: 29%;
-}
-.label-spot4 {
-  position: absolute;
-  top: 61%;
-  left: 66%;
-}
-.label-spot5 {
-  position: absolute;
-  top: 77%;
+  top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  background-image: linear-gradient(to bottom, #0c78ba, #ffffff),
+    url("https://www.w3schools.com/html/mov_bbb.mp4");
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-.label-spot6 {
+.overlay-play-background {
+  background-color: #0567a31c;
+  padding: 0;
+  border-radius: 50px;
+  transition: ease 0.5s;
+}
+.play-icon {
+  position: relative;
+  left: 5px;
+  bottom: 3px;
+}
+.play-icon-background {
+  background-color: var(--color-primary);
+  padding: 5px 18px;
+  border-radius: 50px;
+}
+.overlay-play-background:hover {
+  background-color: #0c78ba2a;
+  padding: 25px 28px;
+  border-radius: 70px;
+}
+.overlay:hover {
+  opacity: 0.7;
+}
+
+/* Controls bar */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px;
   position: absolute;
-  top: 30%;
-  left: 65%;
-}
-#video-image {
-  max-width: 35vw;
-  padding: 60px 0;
-  padding-left: 30%;
-}
-@keyframes stroke-dashoffset {
-  0% {
-    opacity: 0;
-    stroke-dashoffset: 1000;
-  }
-  100% {
-    opacity: 1;
-    stroke-dashoffset: 0;
-  }
-}
-.line {
-  animation: stroke-dashoffset 0.8s linear forwards;
+  bottom: 0;
+  width: 100%;
 }
 
-@media (min-width: 3100px) {
-  #video-image {
-    max-width: 17vw;
-    padding: 60px 0;
-    padding-left: 30%;
-    transform: translate(-28px, -30px);
-  }
-  .label-spot2 {
-    position: absolute;
-    top: 8%;
-    left: 46%;
-  }
-  .label-2 {
-    top: 0%;
-    left: 40%;
-  }
+.controls button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
-@media (min-width: 2510px) and (max-width: 3000px) {
-  #video-image {
-    max-width: 26vw;
-    padding: 60px 0;
-    padding-left: 30%;
-    transform: translate(-28px, -30px);
-  }
-  .label-spot2 {
-    position: absolute;
-    top: 8%;
-    left: 46%;
-  }
-  .label-2 {
-    top: 0%;
-    left: 40%;
-  }
-}
-@media (min-width: 1940px) and (max-width: 2500px) {
-  #video-image {
-    max-width: 35vw;
-    padding: 60px 0;
-    padding-left: 30%;
-    transform: translate(-28px, -30px);
-  }
-  .label-spot2 {
-    position: absolute;
-    top: 8%;
-    left: 46%;
-  }
-  .label-2 {
-    top: 0%;
-    left: 40%;
-  }
-}
-@media (min-width: 1370px) and (max-width: 1939px) {
-  #video-image {
-    max-width: 36vw;
-    padding: 60px 0;
-    padding-left: 30%;
-    transform: translate(-28px, -30px);
-  }
-  .label-spot2 {
-    position: absolute;
-    top: 8%;
-    left: 46%;
-  }
-  .label-2 {
-    top: 0%;
-    left: 40%;
-  }
-}
-@media (min-width: 1100px) and (max-width: 1370px) {
-  #video-image {
-    max-width: 35vw;
-    padding: 60px 0;
-    padding-left: 30%;
-    transform: translate(-28px, -30px);
-  }
-  .label-spot2 {
-    position: absolute;
-    top: 8%;
-    left: 46%;
-  }
-  .label-2 {
-    top: 0%;
-    left: 40%;
-  }
-}
-@media (min-width: 830px) and (max-width: 1100px) {
-  #video-image {
-    max-width: 41.5vw;
-    padding: 30px 0;
-    padding-left: 40%;
-    transform: translate(-55px, 10px);
-  }
-  .label-spot2 {
-    position: absolute;
-    top: 8%;
-    left: 46%;
-  }
-  .label-2 {
-    top: 0%;
-    left: 40%;
-  }
-}
-@media (min-width: 500px) and (max-width: 825px) {
-  .line {
-    display: none;
-  }
-  #video-image {
-    padding: 50px 0;
-    transform: scale(0.8);
-    transform: translateX(75px);
-    max-width: 250px;
-  }
-  .label-overlay {
-    transform: scale(0.7);
-    /* display: none; */
-  }
-  .label-1 {
-    top: 8%;
-    left: -15%;
-  }
-  .label-2 {
-    top: -18%;
-    left: 15%;
-  }
-  .label-3 {
-    bottom: 33%;
-    left: -10%;
-  }
-  .label-4 {
-    bottom: 45%;
-    right: -15%;
-  }
-  .label-5 {
-    bottom: 0%;
-    left: 30%;
-  }
-  .label-6 {
-    top: 5%;
-    right: -15%;
-  }
 
-  .label-spot1 {
-    top: 20%;
-    left: 10%;
-  }
-  .label-spot2 {
-    top: -4%;
-    left: 50%;
-  }
-  .label-spot3 {
-    top: 70%;
-    left: 10%;
-  }
-  .label-spot4 {
-    top: 58%;
-    left: 90%;
-  }
-  .label-spot5 {
-    top: 75%;
-    left: 45%;
-  }
-  .label-spot6 {
-    top: 20%;
-    left: 92%;
-  }
-}
-@media (max-width: 450px) {
-  .video-container {
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  .line {
-    display: none;
-  }
-  video {
-    transform: scale(1.5);
-  }
-  #video-image {
-    padding: 50px 0;
-    transform: scale(0.8);
-    transform: translateX(75px);
-    max-width: 250px;
-  }
-
-  .label-overlay {
-    transform: scale(0.7);
-    /* display: none; */
-  }
-  .label-1 {
-    top: 8%;
-    left: -15%;
-  }
-  .label-2 {
-    top: -18%;
-    left: 15%;
-  }
-  .label-3 {
-    bottom: 33%;
-    left: -10%;
-  }
-  .label-4 {
-    bottom: 35%;
-    right: -15%;
-  }
-  .label-5 {
-    bottom: -18%;
-    left: 30%;
-  }
-  .label-6 {
-    top: 5%;
-    right: -15%;
-  }
-
-  .label-spot1 {
-    top: 20%;
-    left: 5%;
-  }
-  .label-spot2 {
-    top: -4%;
-    left: 51%;
-  }
-  .label-spot3 {
-    top: 70%;
-    left: 6%;
-  }
-  .label-spot4 {
-    top: 71%;
-    left: 96%;
-  }
-  .label-spot5 {
-    top: 95%;
-    left: 51%;
-  }
-  .label-spot6 {
-    top: 20%;
-    left: 97%;
-  }
+.controls input[type="range"] {
+  width: 100px;
 }

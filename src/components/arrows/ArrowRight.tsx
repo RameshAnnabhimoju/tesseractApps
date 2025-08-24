@@ -1,7 +1,7 @@
-const ArrowRight = () => {
+const ArrowRight = ({ className }: { className?: string }) => {
   return (
     <svg
-      className="arrow"
+      className={"arrow " + (className || "")}
       xmlns="http://www.w3.org/2000/svg"
       height="30px"
       viewBox="0 -960 960 960"
