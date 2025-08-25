@@ -39,6 +39,7 @@ const NavBarComponent = ({
   }, [pathname]);
   const navigate = useNavigate();
   const [showSearch, setShowSearch] = useState(false);
+  const [searchHistory, setSearchHistory] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<
@@ -157,6 +158,7 @@ const NavBarComponent = ({
     closePopup();
     handleSearchIcon();
     setSearchTerm("");
+    handleSearch();
     setToggleDrawer(false);
     if (name && name == "Free Trial Sign-Up") {
       handleDialog(true);
@@ -198,7 +200,23 @@ const NavBarComponent = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  const popularSearchClickHandler = (value: string) => {
+    setSearchTerm(value);
+  };
+  const handleSearch = () => {
+    if (searchTerm) {
+      addSearch(searchTerm);
+    }
+  };
+  const addSearch = (term: string) => {
+    setSearchHistory((prev) => {
+      const updated = [...prev, term];
+      if (updated.length > 5) {
+        updated.shift(); // remove oldest
+      }
+      return updated;
+    });
+  };
   return (
     <nav id="navbar-container">
       {pathname.split("/")[1] && (
@@ -898,11 +916,17 @@ const NavBarComponent = ({
         isOpen={showSearch}
         onClose={handleSearchIcon}
         containerRef={portalContainerRef}
-        position={{ top: 150, left: window.innerWidth / 2 }}
+        position={{ top: 50, left: window.innerWidth / 2 }}
         showTriangle={false}
-        backgroundBlur="10px"
+        backgroundColor="white"
       >
         <div id="search-popup-container">
+          <header id="search-popup-header">
+            <div id="search-popup-header-text">Search at Tesseract</div>
+            <div id="search-popup-close" onClick={handleSearchIcon}>
+              &times;
+            </div>
+          </header>
           <input
             id="search-popup-input"
             type="text"
@@ -910,23 +934,90 @@ const NavBarComponent = ({
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <div id="search-popup-results-container">
-            {searchTerm.length > 0 &&
-              searchKeywords.sort().map((keyword) => {
-                if (keyword.toLowerCase().includes(searchTerm.toLowerCase())) {
-                  return (
+          {searchTerm.length == 0 ? (
+            <div>
+              <div id="search-popup-popular">
+                <div className="search-popup-title">Popular Searches</div>
+                <div id="search-popup-popular-list">
+                  <div
+                    className="search-popup-popular-item"
+                    onClick={() => popularSearchClickHandler("Accounting")}
+                  >
+                    Accounting
+                  </div>
+                  <div
+                    className="search-popup-popular-item"
+                    onClick={() =>
+                      popularSearchClickHandler("Roster Management")
+                    }
+                  >
+                    Roster Management
+                  </div>
+                  <div
+                    className="search-popup-popular-item"
+                    onClick={() => popularSearchClickHandler("HR")}
+                  >
+                    HR
+                  </div>
+                </div>
+              </div>
+              <div id="search-popup-recent">
+                <div className="search-popup-title">Recent</div>
+                <div id="search-popup-recent-list">
+                  {searchHistory.map((item, index) => (
                     <div
-                      className="search-popup-result"
-                      key={keyword}
-                      onClick={() => popupLinkClickHandler(keyword)}
+                      key={index}
+                      className="search-popup-recent-item"
+                      onClick={() => popularSearchClickHandler(item)}
                     >
-                      {keyword}
+                      {item}
                     </div>
-                  );
-                }
-                return false;
-              })}
-          </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div id="search-popup-results-container">
+              {searchTerm.length > 0 &&
+                searchKeywords
+                  .filter((keyword) =>
+                    keyword.toLowerCase().includes(searchTerm.toLowerCase())
+                  )
+                  .sort((a, b) => {
+                    const aIndex = a
+                      .toLowerCase()
+                      .indexOf(searchTerm.toLowerCase());
+                    const bIndex = b
+                      .toLowerCase()
+                      .indexOf(searchTerm.toLowerCase());
+
+                    if (aIndex === bIndex) {
+                      return a.localeCompare(b);
+                    }
+                    return aIndex - bIndex;
+                  })
+                  .map((keyword) => {
+                    const regex = new RegExp(`(${searchTerm})`, "ig");
+                    const parts = keyword.split(regex);
+
+                    return (
+                      <div
+                        className="search-popup-result"
+                        key={keyword}
+                        onClick={() => popupLinkClickHandler(keyword)}
+                      >
+                        {parts.map((part, index) =>
+                          regex.test(part) ? (
+                            <b key={index}>{part}</b> // preserves original case
+                          ) : (
+                            <span key={index}>{part}</span>
+                          )
+                        )}
+                      </div>
+                    );
+                  })}
+            </div>
+          )}
         </div>
       </Popup>
     </nav>

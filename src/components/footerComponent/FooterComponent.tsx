@@ -188,52 +188,56 @@ const FooterComponent = () => {
         </div> */}
         <div className="footer-links-texts">
           <div className="footer-column">
-            <div className="footer-heading">Products</div>
-            {productLinks[0].map((link, index) => {
-              return (
-                <div
-                  className="footer-text"
-                  key={index}
-                  onClick={() => {
-                    handleProductDataClick(link);
-                  }}
-                >
-                  {link}
-                </div>
-              );
-            })}
+            <div className="footer-heading">Company</div>
+            <div
+              className="footer-text"
+              onClick={() => {
+                handleProductDataClick("About");
+              }}
+            >
+              About
+            </div>
+            <div
+              className="footer-text"
+              onClick={() => {
+                handleProductDataClick("Careers");
+              }}
+            >
+              Careers
+            </div>
+            <div
+              className="footer-text"
+              onClick={() => {
+                handleProductDataClick("Partners");
+              }}
+            >
+              Partners
+            </div>
+            <div
+              className="footer-text"
+              onClick={() => {
+                handleProductDataClick("Terms & Conditions");
+              }}
+            >
+              Terms & Conditions
+            </div>
+            <div
+              className="footer-text"
+              onClick={() => {
+                handleProductDataClick("Privacy Policy");
+              }}
+            >
+              Privacy Policy
+            </div>
+            <div
+              className="footer-text"
+              onClick={() => {
+                handleProductDataClick("Release Notes");
+              }}
+            >
+              Release Notes
+            </div>
           </div>
-          <div className="footer-column">
-            {productLinks[1].map((link, index) => {
-              return (
-                <div
-                  className="footer-text"
-                  key={index}
-                  onClick={() => {
-                    handleProductDataClick(link);
-                  }}
-                >
-                  {link}
-                </div>
-              );
-            })}
-          </div>
-          <div className="footer-column">
-            {productLinks[2].map((link, index) => {
-              return (
-                <div
-                  className="footer-text"
-                  key={index}
-                  onClick={() => {
-                    handleProductDataClick(link);
-                  }}
-                >
-                  {link}
-                </div>
-              );
-            })}
-          </div>
-
           <div id="footer-column-3" className="footer-column">
             <div className="footer-heading">Get Started</div>
             <div
@@ -289,57 +293,7 @@ const FooterComponent = () => {
               Blog
             </div>
           </div>
-          <div className="footer-column">
-            <div className="footer-heading">Company</div>
-            <div
-              className="footer-text"
-              onClick={() => {
-                handleProductDataClick("About");
-              }}
-            >
-              About
-            </div>
-            <div
-              className="footer-text"
-              onClick={() => {
-                handleProductDataClick("Careers");
-              }}
-            >
-              Careers
-            </div>
-            <div
-              className="footer-text"
-              onClick={() => {
-                handleProductDataClick("Partners");
-              }}
-            >
-              Partners
-            </div>
-            <div
-              className="footer-text"
-              onClick={() => {
-                handleProductDataClick("Terms & Conditions");
-              }}
-            >
-              Terms & Conditions
-            </div>
-            <div
-              className="footer-text"
-              onClick={() => {
-                handleProductDataClick("Privacy Policy");
-              }}
-            >
-              Privacy Policy
-            </div>
-            <div
-              className="footer-text"
-              onClick={() => {
-                handleProductDataClick("Release Notes");
-              }}
-            >
-              Release Notes
-            </div>
-          </div>
+
           <div className="footer-column">
             <div className="footer-heading">Support</div>
             <div
@@ -383,21 +337,146 @@ const FooterComponent = () => {
               24/7 Live Chat
             </div>
           </div>
+          <div className="footer-column">
+            <div className="footer-heading">Products</div>
+            {productLinks[0].map((link, index) => {
+              return (
+                <div
+                  className="footer-text"
+                  key={index}
+                  onClick={() => {
+                    handleProductDataClick(link);
+                  }}
+                >
+                  {link}
+                </div>
+              );
+            })}
+          </div>
+          <div className="footer-column">
+            {productLinks[1].map((link, index) => {
+              return (
+                <div
+                  className="footer-text"
+                  key={index}
+                  onClick={() => {
+                    handleProductDataClick(link);
+                  }}
+                >
+                  {link}
+                </div>
+              );
+            })}
+          </div>
+          <div className="footer-column">
+            {productLinks[2].map((link, index) => {
+              return (
+                <div
+                  className="footer-text"
+                  key={index}
+                  onClick={() => {
+                    handleProductDataClick(link);
+                  }}
+                >
+                  {link}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
+      <div className="footer-heading footer-about-heading">
+        About the company
+      </div>
+      <div className="footer-text footer-about-text">
+        At Tesseract Apps, we provide tailored solutions that simplify care
+        management, accounting, compliance, and HR, helping care providers run
+        their operations efficiently and stay compliant.
+        <br></br>
+      </div>
+      <div id="footer-row-2">
+        <div id="foooter-column-5">
+          <div id="footer-newsletter-text-container">
+            <div className="footer-heading">Newsletter</div>
+            <div className="footer-text footer-newsletter-text">
+              Get the Latest Insights, Updates, and Tips Straight to Your Inbox.
+            </div>
+          </div>
+          <div id="footer-newsletter-input-container">
+            <input
+              type="text"
+              id="footer-newsletter-input"
+              placeholder="Enter your email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+            />
+            <button
+              id="footer-newsletter-button"
+              onClick={handleNewsletterSubscribe}
+            >
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+        <div>
+          <div>
+            <span
+              className="footer-about-actions"
+              onClick={() => handleFooterActions("phone")}
+            >
+              Phone: 1300 252 808
+            </span>
+            <br />
+
+            <span
+              className="footer-about-actions"
+              onClick={() => handleFooterActions("email")}
+            >
+              Email: sales@tesseractapps.com
+            </span>
+          </div>
+          <br />
+          <div id="footer-social-links">
+            <img
+              src={facebook}
+              alt="Facebook"
+              className="footer-social-icon"
+              onClick={() => HandleSocialLinksClick("facebook")}
+            ></img>
+            <img
+              src={instagram}
+              alt="Instagram"
+              className="footer-social-icon"
+              onClick={() => HandleSocialLinksClick("instagram")}
+            ></img>
+            <img
+              src={linkedin}
+              alt="LinkedIn"
+              className="footer-social-icon"
+              onClick={() => HandleSocialLinksClick("linkedin")}
+            ></img>
+            <img
+              src={youtube}
+              alt="YouTube"
+              className="footer-social-icon"
+              onClick={() => HandleSocialLinksClick("youtube")}
+            ></img>
+          </div>
+        </div>
+      </div>
+      <div id="footer-divider" />
       <div id="footer-bottom">
-        <br />
-        <br />
-        <br />
         Tesseract Apps would like to acknowledge the Traditional Custodians of
         the land on which we operate, and pay our respects to their elders past
         and present.
-        <br />
         <div id="footer-bottom-images">
           <img src={flagsImag1} alt="Flag Image 1" />
           <img src={flagsImag2} alt="Flag Image 2" />
+        </div>{" "}
+        <div id="footer-bottom-divider"> | </div>{" "}
+        <div id="footer-bottom-text">
+          © 2023 Tesseract Apps. All rights reserved.
         </div>
-        <br /> © 2023 Tesseract Apps. All rights reserved.
       </div>
     </div>
   );
