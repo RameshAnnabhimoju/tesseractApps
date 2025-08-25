@@ -202,8 +202,16 @@
     padding: 10px;
   }
 }
-@media (max-width: 370px) {
+@media (max-width: 437px) {
+  .footer-links-texts {
+    column-gap: 50px;
+  }
+}
+@media (max-width: 375px) {
   .footer-column {
-    max-width: 140px;
+    max-width: 150px;
+  }
+  .footer-links-texts {
+    column-gap: 30px;
   }
 }

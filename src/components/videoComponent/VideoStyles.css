@@ -84,3 +84,12 @@
 .controls input[type="range"] {
   width: 100px;
 }
+
+@media (max-width: 600px) {
+  .video {
+    width: 95%;
+  }
+  .overlay {
+    width: 95%;
+  }
+}

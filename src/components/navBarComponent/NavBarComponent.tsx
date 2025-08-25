@@ -45,6 +45,28 @@ const NavBarComponent = ({
   const [activeLink, setActiveLink] = useState<
     "About" | "Product" | "Solutions" | "Pricing" | "Resources" | ""
   >("");
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY < lastScrollY) {
+        // scrolling up
+        setShowHeader(true);
+      } else {
+        // scrolling down
+        setShowHeader(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
   useEffect(() => {
     const currentPath = pathname.split("/")[1];
     // console.log("Current Path:", currentPath);
@@ -158,7 +180,7 @@ const NavBarComponent = ({
     closePopup();
     handleSearchIcon();
     setSearchTerm("");
-    handleSearch();
+    handleSearch(name);
     setToggleDrawer(false);
     if (name && name == "Free Trial Sign-Up") {
       handleDialog(true);
@@ -203,9 +225,9 @@ const NavBarComponent = ({
   const popularSearchClickHandler = (value: string) => {
     setSearchTerm(value);
   };
-  const handleSearch = () => {
-    if (searchTerm) {
-      addSearch(searchTerm);
+  const handleSearch = (name: string) => {
+    if (name) {
+      addSearch(name);
     }
   };
   const addSearch = (term: string) => {
@@ -218,7 +240,10 @@ const NavBarComponent = ({
     });
   };
   return (
-    <nav id="navbar-container">
+    <nav
+      className={`navbar-container ${showHeader ? "visible" : "hidden"}`}
+      id="navbar-container"
+    >
       {pathname.split("/")[1] && (
         // <img
         //   id="nav-back"
@@ -673,7 +698,8 @@ const NavBarComponent = ({
                 id={label}
                 className={
                   "nav-link" +
-                  (activeLink == label || (isPopupOpen && selectedLink == label)
+                  (activeLink == label ||
+                  (isPopupOpen && showHeader && selectedLink == label)
                     ? " nav-link-active"
                     : "")
                 }
@@ -747,7 +773,7 @@ const NavBarComponent = ({
       <div id="nav-icons-container"></div>
 
       <Popup
-        isOpen={isPopupOpen}
+        isOpen={isPopupOpen && showHeader}
         onClose={closePopup}
         containerRef={portalContainerRef}
         position={popupPosition}
@@ -916,7 +942,7 @@ const NavBarComponent = ({
         isOpen={showSearch}
         onClose={handleSearchIcon}
         containerRef={portalContainerRef}
-        position={{ top: 50, left: window.innerWidth / 2 }}
+        position={{ top: 80, left: window.innerWidth / 2 }}
         showTriangle={false}
         backgroundColor="white"
       >

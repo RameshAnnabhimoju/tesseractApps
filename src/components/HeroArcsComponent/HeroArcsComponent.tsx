@@ -31,7 +31,8 @@ type PendulumConfig = {
   endAngle: number;
   icon: string;
   duration: number;
-  buffer: number;
+  bufferStart: number; // separate start buffer
+  bufferEnd: number; // separate end buffer
   color: string;
   iconSize: number;
   bg: string;
@@ -126,8 +127,10 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
           }
         }
 
-        const endPct = 100 - pendulum.buffer;
-        const offsetPct = (s.progress * endPct) / 100;
+        // apply start + end buffer
+        const effectiveRange = 100 - pendulum.bufferStart - pendulum.bufferEnd;
+        const offsetPct =
+          (pendulum.bufferStart + s.progress * effectiveRange) / 100;
 
         const path = document.getElementById(
           `arc-${pendulum.id}`
@@ -168,6 +171,7 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
       viewBox="0 0 300 400"
       width="30%"
       style={{ background: "transparent" }}
+      id="hero-arcs-svg"
     >
       {pendulums.map((it) => {
         const d = arcPath(
@@ -238,4 +242,5 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
     </svg>
   );
 };
+
 export default HeroArcsComponent;
