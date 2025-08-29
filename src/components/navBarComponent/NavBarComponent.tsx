@@ -133,8 +133,8 @@ const NavBarComponent = ({
     null
   );
 
-  const handleSearchIcon = () => {
-    setShowSearch(!showSearch);
+  const handleSearchIcon = (value?:boolean) => {
+    typeof value === "boolean" ?setShowSearch(value): setShowSearch(!showSearch);
   };
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -178,7 +178,7 @@ const NavBarComponent = ({
   };
   const popupLinkClickHandler = (name: string) => {
     closePopup();
-    handleSearchIcon();
+    handleSearchIcon(false);
     setSearchTerm("");
     handleSearch(name);
     setToggleDrawer(false);
@@ -723,7 +723,7 @@ const NavBarComponent = ({
             src={search}
             alt="navbar-search-icon"
             id="navbar-search-icon"
-            onClick={handleSearchIcon}
+            onClick={() => handleSearchIcon(true)}
           />
         </div>
 
@@ -949,7 +949,7 @@ const NavBarComponent = ({
         <div id="search-popup-container">
           <header id="search-popup-header">
             <div id="search-popup-header-text">Search at Tesseract</div>
-            <div id="search-popup-close" onClick={handleSearchIcon}>
+            <div id="search-popup-close" onClick={() => handleSearchIcon(false)}>
               &times;
             </div>
           </header>

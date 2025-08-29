@@ -5,6 +5,7 @@
   border-radius: 8px;
   margin: 5%;
   overflow-x: hidden;
+  padding-top: 110px;
 }
 #add-blog-title {
   background-color: var(--color-secondary);
