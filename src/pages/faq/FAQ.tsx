@@ -20,11 +20,11 @@ const FAQ = () => {
   // };
   return (
     <div id="faq-page-container">
-      <div className="heading">FAQs</div>
-      <div className="subheading">Answers to your most common questions.</div>
+      <div className="heading">Help Center</div>
+      <div className="subheading">Get Answers and Support </div>
       <div className="text" id="faq-page-text">
-        From onboarding to integrations and billing, we’ve compiled clear
-        answers to help you navigate our platform confidently.
+        Find guides, FAQs, and resources to help you get the most from
+        TesseractApps.
       </div>
       <div id="faq-page-data-container">
         {faqPageDummyData.map((data, index) => {

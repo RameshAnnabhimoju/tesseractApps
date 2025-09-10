@@ -188,6 +188,52 @@ const FooterComponent = () => {
         </div> */}
         <div className="footer-links-texts">
           <div className="footer-column">
+            <div className="footer-heading">Products</div>
+            {productLinks[0].map((link, index) => {
+              return (
+                <div
+                  className="footer-text"
+                  key={index}
+                  onClick={() => {
+                    handleProductDataClick(link);
+                  }}
+                >
+                  {link}
+                </div>
+              );
+            })}
+          </div>
+          <div className="footer-column">
+            {productLinks[1].map((link, index) => {
+              return (
+                <div
+                  className="footer-text"
+                  key={index}
+                  onClick={() => {
+                    handleProductDataClick(link);
+                  }}
+                >
+                  {link}
+                </div>
+              );
+            })}
+          </div>
+          <div className="footer-column">
+            {productLinks[2].map((link, index) => {
+              return (
+                <div
+                  className="footer-text"
+                  key={index}
+                  onClick={() => {
+                    handleProductDataClick(link);
+                  }}
+                >
+                  {link}
+                </div>
+              );
+            })}
+          </div>
+          <div className="footer-column">
             <div className="footer-heading">Company</div>
             <div
               className="footer-text"
@@ -336,52 +382,6 @@ const FooterComponent = () => {
             >
               24/7 Live Chat
             </div>
-          </div>
-          <div className="footer-column">
-            <div className="footer-heading">Products</div>
-            {productLinks[0].map((link, index) => {
-              return (
-                <div
-                  className="footer-text"
-                  key={index}
-                  onClick={() => {
-                    handleProductDataClick(link);
-                  }}
-                >
-                  {link}
-                </div>
-              );
-            })}
-          </div>
-          <div className="footer-column">
-            {productLinks[1].map((link, index) => {
-              return (
-                <div
-                  className="footer-text"
-                  key={index}
-                  onClick={() => {
-                    handleProductDataClick(link);
-                  }}
-                >
-                  {link}
-                </div>
-              );
-            })}
-          </div>
-          <div className="footer-column">
-            {productLinks[2].map((link, index) => {
-              return (
-                <div
-                  className="footer-text"
-                  key={index}
-                  onClick={() => {
-                    handleProductDataClick(link);
-                  }}
-                >
-                  {link}
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>

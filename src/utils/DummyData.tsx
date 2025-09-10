@@ -2032,47 +2032,47 @@ export const faqPageDummyData = [
       {
         question: "What is this platform designed for?",
         answer:
-          "This platform offers an all-in-one solution for NDIS providers and ICT organisations to efficiently manage participants, staff, rostering, HR, compliance, incidents, finances, and more - helping ensure smooth operations, data security, and regulatory compliance.",
+          "This platform provides an all-in-one solution for NDIS providers and ICT organisations to manage participants, staff, rostering, HR, compliance, incidents, finances, and more. It supports smooth operations, data security, and regulatory compliance.",
       },
       {
         question: "Who can use this platform?",
         answer:
-          "It is designed for a variety of users including support coordinators, administrative staff, HR professionals, roster managers, finance teams, frontline workers, and ICT administrators. Role-based access ensures everyone sees the tools and information relevant to their responsibilities.",
+          "The platform suits support coordinators, administrative staff, HR professionals, roster managers, finance teams, frontline workers, and ICT administrators. Role-based access ensures users see only the tools and information relevant to their role.",
       },
       {
         question: "Is there role-based access control?",
         answer:
-          "Yes. Users only have access to features that align with their roles. For example, staff can submit leave requests but cannot access financial modules.",
+          "Yes. Users access only the features aligned with their roles. Staff can submit leave requests but cannot access financial modules.",
       },
       {
         question: "Can I access the platform on mobile devices?",
         answer:
-          "Absolutely! The platform is fully responsive and optimized for use on phones and tablets, allowing you to check schedules, complete shift tasks, and more on the go.",
+          "Yes. The platform works on phones and tablets, allowing you to check schedules and complete shift tasks on the move.",
       },
       {
         question: "How secure is the platform?",
         answer:
-          "Security is a top priority. The system uses role-based access, audit logs, encrypted data, and secure file storage to protect your information.",
+          "The platform uses role-based access, audit logs, encrypted data, and secure file storage to protect information.",
       },
       {
         question: "Is training available for new users?",
         answer:
-          "Yes. A dedicated learning hub provides role-specific training videos to help users get up to speed quickly and use the system effectively.",
+          "Yes. The learning hub offers role-specific training videos to get users up to speed quickly.",
       },
       {
         question: "Is support available if I need help?",
         answer:
-          "Yes. Our support team is available during business hours, and you can submit support tickets through the platform to get assistance.",
+          "Yes. Support is available during business hours. Users can also submit tickets through the platform.",
       },
       {
         question: "How does the accounting feature work?",
         answer:
-          "The platform includes built-in accounting capabilities to manage invoices, payroll, expenses, and generate real-time financial reports.",
+          "The platform manages invoices, payroll, expenses, and generates real-time financial reports.",
       },
       {
         question: "Can the software be customised for my organisation?",
         answer:
-          "Yes, it can be tailored to fit your organisation's workflows, user roles, and reporting needs for a better fit.",
+          "Yes. The platform can be tailored to fit workflows, user roles, and reporting requirements.",
       },
     ],
   },
@@ -2083,19 +2083,19 @@ export const faqPageDummyData = [
         title: "Admin Console",
         faq: [
           {
-            question: "How can I update my organisation's details?",
+            question: "How can I update my organisation’s details?",
             answer:
-              "Basic organisational information can be updated directly through the admin control panel. For changes involving key or sensitive data, assistance from the support team is available to ensure accuracy and security.",
+              "Update basic organisational information through the admin console. Contact support for changes to sensitive data.",
           },
           {
-            question: "What settings can I configure in the admin console?",
+            question: "What settings can I configure?",
             answer:
-              "You can manage various settings such as support email addresses, support team, shift timings, and expense reimbursements. More advanced settings, including user roles and types, are managed in collaboration with the support team.",
+              "You can manage support emails, teams, shift timings, and expense reimbursements. Advanced settings, including user roles, require support collaboration.",
           },
           {
             question: "Can I create and manage multiple facilities?",
             answer:
-              "Yes, the platform allows you to add and oversee multiple facility profiles, including details like services provided, contact information, and location addresses.",
+              "Yes. You can add facility profiles with services, contact details, and location addresses.",
           },
         ],
       },
@@ -2103,14 +2103,13 @@ export const faqPageDummyData = [
         title: "Access Control Panel",
         faq: [
           {
-            question: "What do I do if I forget my username or password?",
+            question: "What if I forget my username or password?",
             answer:
-              "If you forget your username, please contact your system administrator who can provide it. For password resets, administrators can send you a secure reset link via email, which you can use within a limited time frame to update your password safely.",
+              "Contact your administrator for your username. Password resets are sent via email link.",
           },
           {
             question: "Can I upload multiple user accounts at once?",
-            answer:
-              "Yes, the platform supports bulk uploads, allowing you to add multiple user or staff records in a single step. This feature simplifies the process of onboarding large groups efficiently.",
+            answer: "Yes. Bulk uploads simplify onboarding for large groups.",
           },
         ],
       },
@@ -2120,17 +2119,17 @@ export const faqPageDummyData = [
           {
             question: "How are staff created and managed?",
             answer:
-              "Staff profiles are created and maintained within the HR feature, where you can securely record personal details, employment information, banking data, and manage essential documents and statuses.",
+              "Staff profiles store personal details, employment information, banking data, documents, and status.",
           },
           {
             question: "How is staff training managed?",
             answer:
-              "Training assignments and progress tracking are integrated with a dedicated learning platform, allowing seamless monitoring of course completions and evaluations.",
+              "Training assignments and progress tracking are integrated into the learning platform.",
           },
           {
             question: "Can I monitor staff performance?",
             answer:
-              "Yes, the system supports performance management activities including goal setting, periodic reviews, and evaluations to help support staff development.",
+              "Yes. The platform supports goal setting, reviews, and evaluations.",
           },
         ],
       },
@@ -2140,105 +2139,88 @@ export const faqPageDummyData = [
           {
             question: "How are shifts categorised?",
             answer:
-              "Shifts are organised by type, such as morning, afternoon, night, sleepover, or custom shifts. Each type is visually distinguished with unique colors and time settings for easy identification.",
+              "Shifts are grouped by type such as morning, afternoon, night, sleepover, or custom.",
           },
           {
             question: "What does the auto-scheduling feature do?",
             answer:
-              "Our platform includes an intelligent scheduling engine that helps us assign the most suitable staff to open shifts. It considers availability, staff preferences, and relevant employment guidelines to streamline roster management.",
+              "It assigns staff to shifts based on availability, preferences, and employment rules.",
           },
           {
-            question: "What are group shifts and how do they work?",
-            answer:
-              "Group shifts allow flexible staffing arrangements such as:",
+            question: "What are group shifts?",
+            answer: "Group shifts allow:",
             points: [
-              "One participant supported by multiple staff",
-              "One staff member supporting multiple participants",
-              "Multiple staff and participants assigned together at the same location",
+              "one participant with multiple staff",
+              "one staff with multiple participants",
+              "or multiple staff and participants at the same location.",
             ],
           },
           {
             question: "Can I add breaks during shifts?",
             answer:
-              "Yes, breaks can be included and marked as paid or unpaid. These are automatically factored into timesheets and payroll calculations.",
+              "Yes. Breaks can be paid or unpaid and factor into timesheets and payroll.",
           },
           {
-            question: "How do employees access their schedules online?",
-            answer:
-              "Employees log in to their dedicated accounts where they can view their personalised roster and upcoming shifts through an intuitive roster feature.",
+            question: "How do employees access schedules?",
+            answer: "Employees log in to view personalised rosters online.",
           },
           {
             question: "Can employees see other people's schedules?",
-            answer:
-              "Employees have permission to view only their own schedules, maintain privacy, and focus on their individual shifts.",
+            answer: "No. Each employee sees only their own schedule.",
           },
           {
             question: "How do I set up recurring shifts?",
             answer:
-              "When creating a new shift, you can set it to repeat a schedule that suits your needs - such as daily, weekly, fortnightly, or monthly. You can also define when the recurrence should end. Public holidays are automatically factored into the schedule when applicable.",
+              "Shifts can repeat daily, weekly, fortnightly, or monthly. Public holidays are included automatically.",
           },
           {
             question: "What shift types are supported?",
-            answer: "Tesseract supports:",
-            points: [
-              "General",
-              "Morning / Afternoon / Night",
-              "Sleepover (with allowance & work hours)",
-              "Custom shifts (including long-duration)",
-            ],
+            answer:
+              "General, morning, afternoon, night, sleepover, and custom long-duration shifts.",
           },
           {
-            question: "How are public holidays handled in shifts?",
-            answer: "",
-            points: [
-              "Public holiday rates apply automatically during manual shift creation and Auto-scheduling engine execution as well",
-              "A built-in public holiday calendar is used for reference.",
-            ],
+            question: "How are public holidays handled?",
+            answer:
+              "Rates apply automatically during manual shift creation and auto-scheduling.",
           },
           {
             question: "How are timesheets created?",
             answer:
-              "Timesheets are automatically generated based on your recorded shift activity. Organisations can choose to have these reviewed manually or approved automatically, depending on internal preferences.",
+              "Timesheets are generated from recorded shifts. Organisations may choose manual or automatic approval.",
           },
           {
             question: "Do timesheets include overtime and penalty rates?",
             answer:
-              "Yes, timesheets account for applicable overtime and penalty rates, including scenarios such as extended hours, short breaks between shifts, and shifts worked on weekends or public holidays.",
+              "Yes. Extended hours, short breaks, weekends, and public holidays are included.",
           },
           {
-            question: "How are sleepover shifts reflected in timesheets?",
+            question: "How are sleepover shifts reflected?",
             answer:
-              "Sleepover shifts are calculated with applicable allowances, and any active work during the sleepover period is also recorded and reflected in the final timesheet.",
+              "Sleepovers include allowances and active work hours in the final timesheet.",
           },
           {
-            question: "Where can I access my timesheet and wage reports?",
-            answer:
-              "Employees and staff can securely access and download their timesheet records, payslips, and wage reports directly from their personal profile area within the platform.",
+            question: "Where can I access timesheets and wage reports?",
+            answer: "Employees download records from their profile.",
           },
           {
             question: "Can staff claim expenses after a shift?",
             answer:
-              "Yes, staff members can submit reimbursement requests for eligible shift-related expenses - such as tolls, parking, or meals - through a streamlined post-shift process.",
+              "Yes. Reimbursements for eligible expenses are submitted post-shift.",
           },
           {
             question: "How is mileage calculated?",
             answer:
-              "Mileage claims are automatically calculated based on the type of vehicle used and pre-configured per-kilometre rates. This ensures accurate and fair reimbursements for travel.",
+              "Claims are calculated using vehicle type and pre-set per-kilometre rates.",
           },
           {
-            question: "What kind of notifications do users receive?",
-            answer: "Users receive timely alerts for key actions, including:",
-            points: [
-              "Shift assignments, rejections, and cancellations",
-              "Expression of Interest (EOI) allocations",
-              "Sign-in and sign-out reminders (typically sent 15 minutes before the scheduled time)",
-            ],
-          },
-          {
-            question:
-              "What is an EOI (Expression of Interest) and how is it used?",
+            question: "What notifications do users receive?",
             answer:
-              "The EOI feature allows coordinators to broadcast open shifts to eligible staff members. Staff can express interest, and shifts are then assigned based on availability and suitability, helping to fill gaps quickly and fairly.",
+              "Alerts for shift assignments, rejections, cancellations, EOIs, and sign-in reminders.",
+          },
+          {
+            question: "What is an EOI?",
+            answer:
+              "Expression of Interest allows staff to express interest in open shifts for assignment based on suitability.",
           },
         ],
       },
@@ -2248,17 +2230,15 @@ export const faqPageDummyData = [
           {
             question: "Where can I view signed documents?",
             answer:
-              "Access to signed documents is restricted based on user roles to ensure privacy and security. Typically, only authorised users—such as designated administrators or HR personnel—can view these documents. Access permissions are managed internally by your organisation's admin team.",
+              "Access is restricted by role. Administrators and HR personnel manage permissions.",
           },
           {
-            question: "How will I know when a document needs my signature?",
-            answer:
-              "You'll receive a notification when a document is assigned for your review or signature. Simply follow the prompt to access, review, and complete the signing process.",
+            question: "How do I know when a document needs my signature?",
+            answer: "Notifications prompt you to review and sign documents.",
           },
           {
-            question: "Is the signing process secure and compliant?",
-            answer:
-              "Yes, all digital signatures are protected by encryption and meet relevant industry compliance standards. Access and activity are logged for transparency and legal validation.",
+            question: "Is the signing process secure?",
+            answer: "Yes. Signatures are encrypted, compliant, and logged.",
           },
         ],
       },
@@ -2266,24 +2246,20 @@ export const faqPageDummyData = [
         title: "Clock In & Clock Out",
         faq: [
           {
-            question: "When can I sign in for my shift?",
-            answer:
-              "You can sign in shortly before your scheduled start time. The system allows sign-in access within a defined window to ensure accurate time tracking.",
+            question: "When can I sign in?",
+            answer: "Sign in shortly before the scheduled start time.",
           },
           {
             question: "What if I work beyond my scheduled hours?",
-            answer:
-              "If your shift extends, you'll have the opportunity to record additional hours—such as overtime or sleepover shifts—after your shift ends through a follow-up submission process.",
+            answer: "Record additional hours through follow-up submission.",
           },
           {
-            question: "Do I need supervisor's approval?",
-            answer:
-              "Yes, supervisor sign-off is required before finalising your shift submission. This helps maintain accountability and ensures that shift records are verified.",
+            question: "Is supervisor approval required?",
+            answer: "Yes. All shift records require sign-off.",
           },
           {
-            question: "What if I arrive late for a shift?",
-            answer:
-              "If you're unable to sign in at the scheduled time, you can submit a request for a manual sign-in. This request will be reviewed and approved by the appropriate team member to maintain shift integrity.",
+            question: "What if I arrive late?",
+            answer: "Submit a manual sign-in request for approval.",
           },
         ],
       },
@@ -2291,24 +2267,24 @@ export const faqPageDummyData = [
         title: "Participants Management",
         faq: [
           {
-            question: "How do I add a new participant?",
+            question: "How do I add a participant?",
             answer:
-              "Authorised users can create and manage participant profiles through the platform. This includes essential details such as care information, service plans, and relevant funding data to support comprehensive participant management.",
+              "Authorised users create profiles including care, services, and funding data.",
           },
           {
             question: "What is a Participant Journal?",
             answer:
-              "The journal is a secure space where approved staff can record important updates such as care notes, progress observations, or support instructions. It ensures continuity and clarity in participant care.",
+              "It is a secure space for care notes, progress, and instructions.",
           },
           {
             question: "Can participant funding be tracked?",
             answer:
-              "Yes, funding can be monitored to ensure it is properly allocated across services and agreements. This helps maintain transparency and accountability in line with organisational and funding requirements.",
+              "Yes. Funding allocation across services and agreements is monitored.",
           },
           {
-            question: "What is the Risk Profile used for?",
+            question: "What is the Risk Profile?",
             answer:
-              "Risk Profiles allow teams to document participant-specific risk factors. These profiles support safe care planning and help ensure that appropriate protocols are followed by all involved staff.",
+              "It documents participant-specific risks to support safe care planning.",
           },
         ],
       },
@@ -2318,17 +2294,16 @@ export const faqPageDummyData = [
           {
             question: "How do I report an incident?",
             answer:
-              "Incidents can be reported directly within the platform through a guided process tailored to your role. The system supports accurate documentation and allows for follow-up actions and reporting to ensure incidents are addressed appropriately.",
+              "Submit incidents through the platform. Follow-up actions are supported.",
           },
           {
-            question: "Can I edit an incident after it's been submitted?",
-            answer:
-              "You can edit incident records as long as they are still open. Once an incident is marked as resolved, the record becomes locked to maintain data integrity and meet compliance standards.",
+            question: "Can I edit an incident after submission?",
+            answer: "Yes, until it is resolved. Resolved incidents are locked.",
           },
           {
-            question: "Who can see reported incidents?",
+            question: "Who can see incidents?",
             answer:
-              "Access to incident records is based on user permissions. Typically, only authorised personnel - such as administrators or designated reviewers - have broader visibility across submitted reports.",
+              "Access is role-based. Administrators have broader visibility.",
           },
         ],
       },
@@ -2337,18 +2312,15 @@ export const faqPageDummyData = [
         faq: [
           {
             question: "What is the repository used for?",
-            answer:
-              "The repository serves as a central hub for storing and managing internal documents. Users can upload, organise, and share files in a secure and structured environment, making it easy to keep important resources accessible and up to date.",
+            answer: "It stores and manages internal documents securely.",
           },
           {
-            question: "Who can delete files from the repository?",
-            answer:
-              "File deletion is restricted to document owners or authorised administrators, ensuring proper control and preventing accidental loss of important information.",
+            question: "Who can delete files?",
+            answer: "Only owners or authorised administrators.",
           },
           {
-            question: "Can I control who accesses specific files?",
-            answer:
-              "Yes, access permissions can be provided to specific roles or individual users, ensuring that sensitive documents are only visible to those who need them.",
+            question: "Can I control access to specific files?",
+            answer: "Yes. Permissions can be assigned by role or user.",
           },
         ],
       },
@@ -2356,34 +2328,34 @@ export const faqPageDummyData = [
         title: "Role-based Dashboard",
         faq: [
           {
-            question: "How often is the data updated?",
+            question: "How often is data updated?",
             answer:
-              "Data refresh frequency, Real-time: Some dashboards support live data feeds. Hourly/Daily: Others may update at regular intervals.",
+              "Some dashboards update in real time. Others refresh hourly or daily.",
           },
           {
-            question: "Who can access the dashboard?",
+            question: "Who can access dashboards?",
             answer:
-              "Access depends on your role and permissions, Admins: Full access to all data and settings. Managers: Access to team-specific data. Users: Access limited to personal or assigned data.",
+              "Admins access all data. Managers see team data. Users see assigned or personal data.",
           },
         ],
       },
       {
-        title: "ChaT",
+        title: "Chat",
         faq: [
           {
-            question: "Is the internal ChaT secure?",
+            question: "Is chat secure?",
             answer:
-              "Yes, communication is fully secured and restricted to verified users within your organisation. It is not linked to any external messaging platforms, ensuring privacy and data protection.",
+              "Yes. Only verified users communicate within the organisation.",
           },
           {
-            question: "Can I share files in ChaT?",
+            question: "Can I share files?",
             answer:
-              "Yes, you can securely share documents such as PDFs, images, and notes in both group chats and private messages, supporting seamless collaboration.",
+              "Yes. Share PDFs, images, and notes in group or private messages.",
           },
           {
-            question: "Can I search for previous messages?",
+            question: "Can I search previous messages?",
             answer:
-              "Yes, users can search past conversations by keyword or participant name. Admins also have access to detailed message logs for transparency and accountability.",
+              "Yes. Users search by keyword or participant. Admins access logs.",
           },
         ],
       },
@@ -2391,30 +2363,18 @@ export const faqPageDummyData = [
         title: "My Profile",
         faq: [
           {
-            question: "Where can I complete my training?",
+            question: "Where can I complete training?",
             answer:
-              "All required training can be accessed directly through your profile once you're logged onto the platform. The training experience is fully online, allowing you to complete modules at your own pace, anytime, and from anywhere.",
-            conclusion:
-              "You'll be notified when new training is assigned, and your progress is tracked to ensure completion and compliance with organisational standards. This streamlined process helps you stay current with certifications, policies, and role-specific learning—all within a secure and user-friendly environment.",
+              "All training is online through your profile. Progress is tracked automatically.",
           },
           {
-            question:
-              "How can I prepare for and succeed in my performance review?",
+            question: "How do I prepare for performance reviews?",
             answer:
-              "Performance reviews within our platform are designed to support personal development and align individual goals with organisational expectations. These reviews are initiated by your organisation's administrators and follow a structured process. To succeed in your performance review:",
-            points: [
-              "Stay engaged with your responsibilities and objectives throughout the review period.",
-              "Access and complete your self-assessment through your profile when notified.",
-              "Be honest and reflective in your responses, highlighting achievements and identifying areas for growth.",
-              "Use feedback constructively, as the final review includes input from designated reviewers or approvers who provide valuable insights.",
-            ],
-            conclusion:
-              "The performance review process is transparent, fair, and supportive of your professional development, ensuring both you and your organisation grow together.",
+              "Complete self-assessments, track achievements, respond honestly, and use feedback constructively.",
           },
           {
             question: "How do I request leave?",
-            answer:
-              "Users can submit leave requests through their profile section. Leave applications are routed to approvers for review and approval within the platform.",
+            answer: "Submit leave requests through your profile for approval.",
           },
         ],
       },
@@ -2422,19 +2382,18 @@ export const faqPageDummyData = [
         title: "Forms",
         faq: [
           {
-            question: "Can I create custom forms for my organisation?",
+            question: "Can I create custom forms?",
             answer:
-              "Yes, our platform supports the creation of flexible forms tailored to your organisation's needs—whether for client onboarding, staff documentation, or operational workflows. The process is intuitive and requires no technical expertise.",
+              "Yes. Forms support client onboarding, staff records, and workflows.",
           },
           {
-            question: "How are forms shared or assigned to users?",
-            answer:
-              "Forms can be made available based on user roles or the specific context in which they're needed. This ensures the right people access the right forms at the right time, improving efficiency and compliance.",
+            question: "How are forms shared?",
+            answer: "Forms are assigned based on role or context.",
           },
           {
-            question: "Is there a way to track form submissions?",
+            question: "Can I track form submissions?",
             answer:
-              "Yes, all submitted forms are recorded with timestamps and traceable activity history. You can also generate reports to review submission data, helping you maintain accurate records and accountability across your organisation.",
+              "Yes. Submissions are recorded with timestamps and activity history. Reports are available.",
           },
         ],
       },
@@ -2442,35 +2401,31 @@ export const faqPageDummyData = [
         title: "Accounting",
         faq: [
           {
-            question: "Can I manage payroll through the platform?",
+            question: "Can I manage payroll?",
             answer:
-              "Yes, the platform supports payroll processing, including pay run management and payslip access. You can also generate the necessary files for banking and compliance with ease.",
+              "Yes. The system supports pay runs, payslips, and banking files.",
           },
           {
-            question: "How are invoices managed in the system?",
+            question: "How are invoices managed?",
             answer:
-              "Invoices can be efficiently created, tracked, and managed—whether they're drafts, issued, or received. The platform also aligns financial data with your organisation's accounting structure for consistent recordkeeping.",
+              "Create, track, and manage invoices aligned with your accounting structure.",
           },
           {
-            question:
-              "What is a general ledger and is it available in the system?",
+            question: "What is a general ledger?",
             answer:
-              "A general ledger is a comprehensive record of an organisation's financial transactions. It includes essential details such as dates, amounts, descriptions, debits, and credits, which are used to generate key financial reports like income statements and balance sheets. The system maintains this record automatically as transactions occur.",
+              "It records all financial transactions and generates income statements and balance sheets.",
           },
           {
-            question: "Does the platform support Single Touch Payroll (STP)?",
-            answer:
-              "Yes, Single Touch Payroll (STP) reporting is supported, helping ensure compliance with government regulations by integrating payroll information with your accounting records.",
+            question: "Does the system support Single Touch Payroll?",
+            answer: "Yes. STP reporting is included for compliance.",
           },
           {
-            question: "Can I track invoices issued to participants?",
-            answer:
-              "Yes, all financial transactions - including participant-related invoices - can be tracked within the system. These records are categorised and accessible through standard financial structures, offering full visibility across accounts.",
+            question: "Can I track participant invoices?",
+            answer: "Yes. All transactions are recorded and accessible.",
           },
           {
             question: "Can I generate wage reports?",
-            answer:
-              "Yes, wage reports are available and can be exported in commonly used formats such as Excel, making them easy to review, share, or store for compliance and analysis.",
+            answer: "Yes. Reports can be exported in Excel format.",
           },
         ],
       },
@@ -2479,44 +2434,41 @@ export const faqPageDummyData = [
         faq: [
           {
             question: "Who has access to training content?",
-            answer:
-              "Training access is streamlined for each user's role. This ensures that individuals see only the content relevant to their responsibilities, supporting more efficient and targeted learning.",
+            answer: "Access is role-based.",
           },
           {
-            question: "Can I track my training progress?",
-            answer:
-              "Yes, users can easily monitor their training status, view which courses have been completed, and revisit learning materials - such as videos - whenever needed.",
+            question: "Can I track training progress?",
+            answer: "Yes. Track completion and revisit materials as needed.",
           },
           {
-            question: "Is the training library regularly updated?",
+            question: "Is the training library updated?",
             answer:
-              "Yes, the training content is refreshed on an ongoing basis to align with platform enhancements, new features, and evolving best practices, ensuring users always have access to the most up-to-date information.",
+              "Yes. Content is regularly refreshed to match platform updates and best practices.",
           },
         ],
       },
     ],
   },
   {
-    section: "Timesheet FAQs",
+    section: "Timesheet",
     faq: [
       {
-        question: "Where can I access my timesheet and wage reports?",
-        answer:
-          "Employees and staff can securely access and download their timesheet records, payslips, and wage reports directly from their personal profile area within the platform.",
+        question: "Where can I access timesheets and wage reports?",
+        answer: "Records are available in your profile.",
       },
       {
-        question: "Can I duplicate or carry over entries from previous days?",
-        answer:
-          "Yes, our system includes a Clone feature that streamlines daily logging by reducing repetitive input. This is especially useful for consistent task schedules.",
+        question: "Can I duplicate entries from previous days?",
+        answer: "Yes. The Clone feature reduces repetitive logging.",
       },
       {
-        question: "Is there support for approval of the timesheet?",
+        question: "Is timesheet approval supported?",
         answer:
-          "Yes, timesheets follow approval flow. Approvers can review, comment and take action based on role permissions and business rules.",
+          "Yes. Approvers review, comment, and take action according to business rules.",
       },
     ],
   },
 ];
+
 import ourMissionImage from "../assets/m.png";
 import ourVisionImage from "../assets/V.png";
 export const aboutUsPageData = {
