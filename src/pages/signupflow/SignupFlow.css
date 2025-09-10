@@ -1,0 +1,7 @@
+#dialog-close-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+}

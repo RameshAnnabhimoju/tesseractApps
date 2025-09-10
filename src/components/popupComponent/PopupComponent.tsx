@@ -12,6 +12,7 @@ interface PopupProps {
   showTriangle?: boolean;
   backgroundColor?: string;
   backgroundBlur?: string;
+  currentLink?: string;
 }
 
 const PopupComponent = ({
@@ -24,8 +25,11 @@ const PopupComponent = ({
   showTriangle = true,
   backgroundColor,
   backgroundBlur,
+  currentLink,
 }: PopupProps) => {
   const popupRef = useRef<HTMLDivElement>(null);
+  const [transformStyle, setTransformStyle] =
+    React.useState("translateX(-50%)");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -46,13 +50,38 @@ const PopupComponent = ({
     };
   }, [isOpen, onClose]);
 
+  useEffect(() => {
+    if (currentLink == "Product" && isOpen && position) {
+      const innerWidth = window.innerWidth;
+      switch (true) {
+        case innerWidth < 1720 && innerWidth > 1660:
+          setTransformStyle("translateX(-45%)");
+          break;
+        case innerWidth < 1660 && innerWidth > 1540:
+          setTransformStyle("translateX(-35%)");
+          break;
+        case innerWidth < 1540 && innerWidth > 1484:
+          setTransformStyle("translateX(-30%)");
+          break;
+        case innerWidth < 1484:
+          setTransformStyle("translateX(-25%)");
+          break;
+
+        default:
+          setTransformStyle("translateX(-50%)");
+          break;
+      }
+    }
+  }, [currentLink, position, isOpen]);
+
   if (!isOpen || !containerRef.current) return null;
 
   const popupStyle: React.CSSProperties = {
     position: "fixed",
     top: position?.top || 0,
     left: position?.left || 0,
-    transform: "translateX(-50%)",
+    transform: transformStyle,
+    transition: "transform 0.2s ease-out",
     padding: "15px",
     borderRadius: "8px",
     boxShadow: "0px 8px 8px rgba(0,0,0,0.1)",
@@ -70,11 +99,13 @@ const PopupComponent = ({
 
   return ReactDOM.createPortal(
     <div ref={popupRef} style={popupStyle} onMouseLeave={onMouseLeave}>
-      {showTriangle && (
-        <div style={popupTriangle}>
-          <svg viewBox="0 0 20 15" width="20px" height="15px">
-            <path
-              d="M10 2
+      {showTriangle &&
+        currentLink !== "Product" &&
+        window.innerWidth > 1720 && (
+          <div style={popupTriangle}>
+            <svg viewBox="0 0 20 15" width="20px" height="15px">
+              <path
+                d="M10 2
          A1.2 1.2 0 0 1 11.2 2.7
          L17.5 10
          A1.2 1.2 0 0 1 16.9 11.7
@@ -82,11 +113,11 @@ const PopupComponent = ({
          A1.2 1.2 0 0 1 2.5 10
          L8.8 2.7
          A1.2 1.2 0 0 1 10 2"
-              fill="white"
-            />
-          </svg>
-        </div>
-      )}
+                fill="white"
+              />
+            </svg>
+          </div>
+        )}
       {children}
     </div>,
     document.body

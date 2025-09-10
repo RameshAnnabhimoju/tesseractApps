@@ -42,11 +42,13 @@ const DetailsHeroComponent = ({
     // console.log("cta click", name);
     appNavigate(name, navigate, false);
   };
+  // console.log(data.page);
   return (
     <div
       id="details-hero-container"
       style={{
         backgroundColor: data.backgroundColor ? data.backgroundColor : "",
+        textAlign: data.page == "Product" ? "center" : "left",
       }}
     >
       {displayTitle && <div id="details-hero-page-title">{data.page}</div>}
@@ -57,13 +59,38 @@ const DetailsHeroComponent = ({
           alt="details-hero-image"
         />
       )}
-      <div id="details-hero-contents">
-        <div id="details-hero-heading">{data.title}</div>
-        <div className="details-hero-text">{data.description}</div>
+      <div
+        id="details-hero-contents"
+        className={
+          data.page == "Product" ? "details-hero-contents-product" : ""
+        }
+      >
+        <div
+          id="details-hero-heading"
+          className={
+            data.page == "Product" ? "details-hero-heading-product" : ""
+          }
+        >
+          {data.title}
+        </div>
+        <div
+          className={
+            "details-hero-text" +
+            (data.page == "Product" ? " details-hero-text-product" : "")
+          }
+        >
+          {data.description}
+        </div>
         {data.descriptionPoints &&
           data.descriptionPoints.map((point, index) => {
             return (
-              <div className="details-hero-text" key={index}>
+              <div
+                className={
+                  "details-hero-text" +
+                  (data.page == "Product" ? " details-hero-text-product" : "")
+                }
+                key={index}
+              >
                 {point}
               </div>
             );
@@ -72,7 +99,13 @@ const DetailsHeroComponent = ({
           <ul>
             {data.points.map((point, index) => {
               return (
-                <li className="details-hero-text" key={index}>
+                <li
+                  className={
+                    "details-hero-text" +
+                    (data.page == "Product" ? " details-hero-text-product" : "")
+                  }
+                  key={index}
+                >
                   {point}
                 </li>
               );
@@ -87,7 +120,14 @@ const DetailsHeroComponent = ({
                   <div className="details-hero-text details-hero-text-heading">
                     {point.pointTitle}
                   </div>
-                  <div className="details-hero-text">
+                  <div
+                    className={
+                      "details-hero-text" +
+                      (data.page == "Product"
+                        ? " details-hero-text-product"
+                        : "")
+                    }
+                  >
                     {point.pointDescription}
                   </div>
                 </li>
@@ -95,7 +135,14 @@ const DetailsHeroComponent = ({
             })}
           </ul>
         )}
-        <div className="details-hero-text">{data.conclusion}</div>
+        <div
+          className={
+            "details-hero-text" +
+            (data.page == "Product" ? " details-hero-text-product" : "")
+          }
+        >
+          {data.conclusion}
+        </div>
         {data.cta &&
           data.cta.buttons.map((button) => (
             <div
@@ -107,10 +154,17 @@ const DetailsHeroComponent = ({
             </div>
           ))}
         {data.cta && (
-          <div className="details-hero-text">{data.cta?.conclusion}</div>
+          <div
+            className={
+              "details-hero-text" +
+              (data.page == "Product" ? " details-hero-text-product" : "")
+            }
+          >
+            {data.cta?.conclusion}
+          </div>
         )}
       </div>
-      {!pagesWithRightImage.includes(data.page) && (
+      {!pagesWithRightImage.includes(data.page) && data.page !== "Product" && (
         <img
           id="details-hero-image"
           src={data.image}

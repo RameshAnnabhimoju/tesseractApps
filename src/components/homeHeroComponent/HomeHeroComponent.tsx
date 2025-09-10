@@ -29,7 +29,7 @@ const HomeHeroComponent = () => {
       <HeroArcsLeftComponent pendulums={homeLeftArcsData} />
       <div id="home-text-container">
         <img src={logo_small} alt="tesseract logo" id="home-tesseract-logo" />
-        <h1 id="home-text-heading">END TO END WORKFORCE MANAGEMENT SOFTWARE</h1>
+        <h1 id="home-text-heading">End to end workforce management software</h1>
         <h2 id="home-text-subText">
           TesseractApps simplifies compliance, team management, NDIS care and
           service delivery for care providers and IT consultants—all in one

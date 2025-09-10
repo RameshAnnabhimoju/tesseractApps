@@ -4,7 +4,8 @@ import NavBarComponent from "./components/navBarComponent/NavBarComponent";
 import { BrowserRouter } from "react-router-dom";
 import FooterComponent from "./components/footerComponent/FooterComponent";
 import AppRoutes from "./routes/AppRoutes";
-import Signup from "./pages/signup/Signup";
+// import Signup from "./pages/signup/Signup";
+import SignupFlow from "./pages/signupflow/SignupFlow";
 
 function App() {
   const [dialog, setDialog] = useState(false);
@@ -18,18 +19,19 @@ function App() {
   const portalContainerRef = useRef<HTMLDivElement>(null);
   return (
     <BrowserRouter>
-      <Signup
+      {/* <Signup
         dialog={dialog}
         setDialog={setDialog}
         handleDialog={handleDialog}
-      />
+      /> */}
+      <SignupFlow dialog={dialog} handleDialog={handleDialog} />
       <NavBarComponent
         portalContainerRef={portalContainerRef}
         handleDialog={handleDialog}
       />
 
       <div ref={portalContainerRef} />
-      <AppRoutes handleDialog={handleDialog} />
+      <AppRoutes />
       <FooterComponent />
     </BrowserRouter>
   );

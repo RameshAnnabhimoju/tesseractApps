@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { appNavigate } from "../../routes/AppRoutes";
 
 // --- geometry helpers ---
 const toRad = (deg: number) => ((deg - 90) * Math.PI) / 180;
@@ -52,6 +54,7 @@ interface PendulumState {
 }
 
 const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
+  const navigate = useNavigate();
   const groupRefs = useRef<Record<string, SVGGElement | null>>({});
   const backgroundCircleRefs = useRef<Record<string, SVGCircleElement | null>>(
     {}
@@ -132,11 +135,11 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
 
         // easing function (cosine ease-in-out)
         const easeInOut = (t: number) => 0.5 - 0.5 * Math.cos(Math.PI * t);
-      // const easeInOutCubic = (t: number) =>
-      //   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        // const easeInOutCubic = (t: number) =>
+        //   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 
-      // const easeInOutSine = (t: number) =>
-      //   0.5 - 0.5 * Math.cos(Math.PI * t);
+        // const easeInOutSine = (t: number) =>
+        //   0.5 - 0.5 * Math.cos(Math.PI * t);
         // map linear progress -> eased
         const easedProgress = easeInOut(s.progress);
 
@@ -209,6 +212,9 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
               onMouseEnter={onEnter(it.id, it.label)}
               onMouseLeave={onLeave(it.id)}
               style={{ cursor: "pointer" }}
+              onClick={() => {
+                appNavigate(it.label, navigate, false);
+              }}
             >
               <circle
                 ref={(el) => {
@@ -248,11 +254,7 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
           }}
         >
           {tooltip.text.split("&").map((line, index) => (
-            <tspan
-              key={index}
-              x={tooltip.x}
-              dy={index === 0 ? 0 : 12}
-            >
+            <tspan key={index} x={tooltip.x} dy={index === 0 ? 0 : 12}>
               {line}
             </tspan>
           ))}

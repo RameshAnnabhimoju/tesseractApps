@@ -172,9 +172,9 @@ export const navBarDummyData = {
     {
       heading: "Integrations",
       links: [
-        { title: "Salesforce", subTitle: "" },
-        { title: "Xero", subTitle: "" },
-        { title: "Wyzed", subTitle: "" },
+        { title: "Salesforce", subTitle: "Integration" },
+        { title: "Xero", subTitle: "Integration" },
+        { title: "Wyzed", subTitle: "Integration" },
       ],
     },
   ],
@@ -1868,13 +1868,15 @@ import tesseractApsImage from "../assets/Tesseract Apps.png";
 export const SubPagesDummyData = {
   Product: {
     page: "Product",
+
     section1: {
       title: "TesseractApps Designed for the Way You Work",
       page: "Product",
       description: "Simplify Your Care Operations",
       conclusion:
         "Manage rosters, track mobile staff hours, onboard new team members, and improve communication. TesseractApps provides real-time, cloud-based tools for NDIS providers. Keep everything in one platform so your team can focus on care delivery. ",
-      image: productsHero,
+      image: "",
+      backgroundColor: "var(--color-secondary)",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
         conclusion: "No credit card is required. Free onboarding included. ",

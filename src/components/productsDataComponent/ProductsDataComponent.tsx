@@ -16,22 +16,22 @@ const ProductsDataComponent = ({ data }: ProductsDataTypes) => {
     appNavigate(name, navigate, false);
   }
   const backgroundColors = [
-    "#B4CCFF",
-    "#FEB4B4",
-    "#9DD9C2",
-    "#9DC2D1",
-    "#E8C9A5",
-    "#C7ADFC",
-    "#B4CCFF",
-    "#FEB4B4",
-    "#9DD9C2",
-    "#9DC2D1",
-    "#E8C9A5",
-    "#C7ADFC",
-    "#B4CCFF",
-    "#FEB4B4",
-    "#9DD9C2",
-    "#9DC2D1",
+    "#E6EEFF",
+    "#FFE3E3",
+    "#DBF2E8",
+    "#DBE8EF",
+    "#F7ECD9",
+    "#EBE2FE",
+    "#E6EEFF",
+    "#FFE3E3",
+    "#DBF2E8",
+    "#DBE8EF",
+    "#F7ECD9",
+    "#EBE2FE",
+    "#E6EEFF",
+    "#FFE3E3",
+    "#DBF2E8",
+    "#DBE8EF",
   ];
   return (
     <div id="products-data-container">
