@@ -39,7 +39,7 @@ import Blog4 from "../pages/blogPost/Blog4";
 import ReleaseNotes from "../pages/ReleaseNotes/ReleaseNotes";
 import Blog5 from "../pages/blogPost/Blog5";
 // import { useEffect } from "react";
-import SignupFlow from "../pages/signupflow/SignupFlow";
+// import SignupFlow from "../pages/signupflow/SignupFlow";
 // import Signup from "../pages/signup/Signup";
 
 const AppRoutes = () => {
