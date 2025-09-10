@@ -45,28 +45,28 @@ const NavBarComponent = ({
   const [activeLink, setActiveLink] = useState<
     "About" | "Product" | "Solutions" | "Pricing" | "Resources" | ""
   >("");
-  const [showHeader, setShowHeader] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [showHeader, setShowHeader] = useState(true);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+  // useEffect(() => {
+  // const handleScroll = () => {
+  //   const currentScrollY = window.scrollY;
 
-      if (currentScrollY < lastScrollY) {
-        // scrolling up
-        setShowHeader(true);
-      } else {
-        // scrolling down
-        setShowHeader(false);
-      }
+  //   if (currentScrollY < lastScrollY) {
+  //     // scrolling up
+  //     setShowHeader(true);
+  //   } else {
+  //     // scrolling down
+  //     setShowHeader(false);
+  //   }
 
-      setLastScrollY(currentScrollY);
-    };
+  //   setLastScrollY(currentScrollY);
+  // };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [lastScrollY]);
   useEffect(() => {
     const currentPath = pathname.split("/")[1];
     // console.log("Current Path:", currentPath);
