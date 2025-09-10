@@ -21,14 +21,44 @@ interface productDetailsTypes {
         dot: { outer: string; middle: string; inner: string };
         title: string;
         description: string;
+        conclusion?: string;
+        descriptionPoints?: string[];
+        pointsData?: string[];
+        cta?: {
+          title: string;
+          navigate?: string;
+          type?: string;
+        };
       }[];
     };
     section3: {
       title: string;
       description: string;
-      points: string[];
+      points?: string[];
       images: string[];
+      cta?: {
+        title: string;
+        navigate?: string;
+        type?: string;
+      };
     }[];
+    section4: {
+      title: string;
+      description: string;
+      points: {
+        dot: { outer: string; middle: string; inner: string };
+        title: string;
+        description: string;
+        conclusion?: string;
+        descriptionPoints?: string[];
+        pointsData?: string[];
+        cta?: {
+          title: string;
+          navigate?: string;
+          type?: string;
+        };
+      }[];
+    };
     faqSection: {
       title: string;
       faqData: {
@@ -49,6 +79,7 @@ const ProductDetails = () => {
         <DetailsHeroComponent data={{ ...data.hero, page: data.page }} />
       )}
       {data.section2 && <AboutSelectedToolComponent data={data.section2} />}
+      {data.section4 && <AboutSelectedToolComponent data={data.section4} />}
       {data.section3 &&
         data.section3.map((item, index) => {
           return (
@@ -58,6 +89,7 @@ const ProductDetails = () => {
             />
           );
         })}
+
       <div id="faq-product-title" className="subheading">
         {data.faqSection.title}
       </div>

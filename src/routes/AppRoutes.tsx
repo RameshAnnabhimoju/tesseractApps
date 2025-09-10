@@ -20,6 +20,9 @@ import ComingSoon from "../pages/comingSoon/ComingSoon";
 import FutureProofingBlog from "../pages/blogPost/FutureProofingBlog";
 import {
   aboutUsPageData,
+  byBusinessProblem,
+  byBusinessType,
+  byCareData,
   byIndustryData,
   byRoleData,
   itemsPageDummyData,
@@ -35,9 +38,14 @@ import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
 import Blog4 from "../pages/blogPost/Blog4";
 import ReleaseNotes from "../pages/ReleaseNotes/ReleaseNotes";
 import Blog5 from "../pages/blogPost/Blog5";
+import { useEffect } from "react";
 // import Signup from "../pages/signup/Signup";
 
-const AppRoutes = () => {
+const AppRoutes = ({
+  handleDialog,
+}: {
+  handleDialog: (value?: boolean) => void;
+}) => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -58,7 +66,7 @@ const AppRoutes = () => {
       <Route path="/support-documentation" element={<ItemsPage />} />
       <Route path="/our-story" element={<OutStory />} />
       <Route path="/our-mission-and-vision" element={<AboutUsSubPage />} />
-      <Route path="/faq" element={<FAQ />} />
+      <Route path="/help-center" element={<FAQ />} />
       <Route path="/team" element={<Teams />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact-us" element={<ContactInformation />} />
@@ -80,6 +88,27 @@ const AppRoutes = () => {
 
       <Route path="/ndis-industry" element={<ByIndustry />} />
       <Route path="/ict-industry" element={<ByIndustry />} />
+      <Route path="/retail-hospitality" element={<ByIndustry />} />
+      <Route path="/multi-site-businesses" element={<ByIndustry />} />
+      <Route path="/construction" element={<ByIndustry />} />
+      <Route path="/manufacturing" element={<ByIndustry />} />
+
+      <Route path="/disability-support-ndis" element={<ByIndustry />} />
+      <Route path="/support-coordination" element={<ByIndustry />} />
+      <Route path="/aged-care-services" element={<ByIndustry />} />
+      <Route path="/child-care-services" element={<ByIndustry />} />
+      <Route path="/allied-health-services" element={<ByIndustry />} />
+      <Route path="/home-community-care-services" element={<ByIndustry />} />
+
+      <Route path="/small-businesses" element={<ByIndustry />} />
+      <Route path="/enterprise" element={<ByIndustry />} />
+      <Route path="/franchise" element={<ByIndustry />} />
+      <Route path="/startups" element={<ByIndustry />} />
+
+      <Route path="/compliance" element={<ByIndustry />} />
+      <Route path="/employee-engagement" element={<ByIndustry />} />
+      <Route path="/time-efficiency" element={<ByIndustry />} />
+      <Route path="/cost-optimisation" element={<ByIndustry />} />
 
       <Route path="/roster-management" element={<ProductDetails />} />
       <Route path="/timesheet" element={<ProductDetails />} />
@@ -97,7 +126,10 @@ const AppRoutes = () => {
       <Route path="/accounting" element={<ProductDetails />} />
       <Route path="/t-learning-hub" element={<ProductDetails />} />
       <Route path="/release-notes" element={<ReleaseNotes />} />
-      {/* <Route path="/signup" element={<Signup />} /> */}
+      <Route
+        path="/signup"
+        element={<OpenDialog handleDialog={handleDialog} />}
+      />
 
       <Route path="/coming-soon" element={<ComingSoon />} />
     </Routes>
@@ -105,7 +137,17 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+const OpenDialog = ({
+  handleDialog,
+}: {
+  handleDialog: (open: boolean) => void;
+}) => {
+  useEffect(() => {
+    handleDialog(true);
+  }, [handleDialog]);
 
+  return null; // nothing to render, only triggers dialog
+};
 // eslint-disable-next-line react-refresh/only-export-components
 export const appNavigate = (
   route: string,
@@ -166,9 +208,9 @@ export const appNavigate = (
     case "Features":
       if (navigate != undefined) navigate("/#features-container");
       break;
-    // case "Signup":
-    //   if (navigate != undefined) navigate("/signup");
-    //   break;
+    case "Signup":
+      if (navigate != undefined) navigate("/signup");
+      break;
     case "Blog":
       if (navigate != undefined)
         navigate("/blogs", {
@@ -182,8 +224,8 @@ export const appNavigate = (
         });
       break;
 
-    case "FAQs":
-      if (navigate != undefined) navigate("/faq");
+    case "Help Center":
+      if (navigate != undefined) navigate("/help-center");
       break;
     case "Team":
       if (navigate != undefined) navigate("/team");
@@ -251,16 +293,124 @@ export const appNavigate = (
           state: { data: byRoleData["Accountant"] },
         });
       break;
-    case "NDIS Industry":
+    case "NDIS":
       if (navigate != undefined)
         navigate("/ndis-industry", {
           state: { data: byIndustryData["NDIS Industry"] },
         });
       break;
-    case "ICT Industry":
+    case "ICT":
       if (navigate != undefined)
         navigate("/ict-industry", {
           state: { data: byIndustryData["ICT Industry"] },
+        });
+      break;
+    case "Retail & Hospitality":
+      if (navigate != undefined)
+        navigate("/retail-hospitality", {
+          state: { data: byIndustryData["Retail & Hospitality"] },
+        });
+      break;
+    case "Multi-site Businesses":
+      if (navigate != undefined)
+        navigate("/multi-site-businesses", {
+          state: { data: byIndustryData["Multi-Site Businesses"] },
+        });
+      break;
+    case "Construction":
+      if (navigate != undefined)
+        navigate("/construction", {
+          state: { data: byIndustryData["Construction"] },
+        });
+      break;
+    case "Manufacturing":
+      if (navigate != undefined)
+        navigate("/manufacturing", {
+          state: { data: byIndustryData["Manufacturing"] },
+        });
+      break;
+    case "Disability Support (NDIS Providers)":
+      if (navigate != undefined)
+        navigate("/disability-support-ndis", {
+          state: { data: byCareData["Disability Support (NDIS)"] },
+        });
+      break;
+    case "Support Coordination":
+      if (navigate != undefined)
+        navigate("/support-coordination", {
+          state: { data: byCareData["Support Coordination"] },
+        });
+      break;
+    case "Aged Care Services":
+      if (navigate != undefined)
+        navigate("/aged-care-services", {
+          state: { data: byCareData["Aged Care Services"] },
+        });
+      break;
+    case "Childcare Services":
+      if (navigate != undefined)
+        navigate("/child-care-services", {
+          state: { data: byCareData["Childcare Services"] },
+        });
+      break;
+    case "Allied Health Practices":
+      if (navigate != undefined)
+        navigate("/allied-health-services", {
+          state: { data: byCareData["Allied Health Services"] },
+        });
+      break;
+    case "Home & Community Care":
+      if (navigate != undefined)
+        navigate("/home-community-care-services", {
+          state: { data: byCareData["Home & Community Care Services"] },
+        });
+      break;
+    case "Small Businesses":
+      if (navigate != undefined)
+        navigate("/small-businesses", {
+          state: { data: byBusinessType["Small Businesses"] },
+        });
+      break;
+    case "Enterprise":
+      if (navigate != undefined)
+        navigate("/enterprise", {
+          state: { data: byBusinessType["Enterprises"] },
+        });
+      break;
+    case "Franchises":
+      if (navigate != undefined)
+        navigate("/franchise", {
+          state: { data: byBusinessType["Franchises"] },
+        });
+      break;
+    case "Startups":
+      if (navigate != undefined)
+        navigate("/startups", {
+          state: { data: byBusinessType["Startups"] },
+        });
+      break;
+    case "Compliance":
+      if (navigate != undefined)
+        navigate("/compliance", {
+          state: { data: byBusinessProblem["Compliance"] },
+        });
+      break;
+    case "Employee Engagement":
+      if (navigate != undefined)
+        navigate("/employee-engagement", {
+          state: { data: byBusinessProblem["Employee Engagement"] },
+        });
+      break;
+    case "Time Efficiency":
+      if (navigate != undefined)
+        navigate("/time-efficiency", {
+          state: { data: byBusinessProblem["Time Efficiency"] },
+        });
+      break;
+    case "Cost Optimisation":
+      if (navigate != undefined)
+        navigate("/cost-optimisation", {
+          state: { data: byBusinessProblem["Cost Optimisation"] },
         });
       break;
     case "Roster Management":
@@ -301,7 +451,7 @@ export const appNavigate = (
     case "T-sign":
       if (navigate != undefined)
         navigate("/t-sign", {
-          state: { data: productsDetailsData["T-sign"] },
+          state: { data: productsDetailsData["T-Sign"] },
         });
       break;
 
@@ -348,7 +498,7 @@ export const appNavigate = (
       if (navigate != undefined)
         navigate("/chat", {
           state: {
-            data: productsDetailsData["ChaT - Secure Internal Messaging"],
+            data: productsDetailsData["ChaT (Secure Communication)"],
           },
         });
       break;
@@ -356,7 +506,7 @@ export const appNavigate = (
       if (navigate != undefined)
         navigate("/chat", {
           state: {
-            data: productsDetailsData["ChaT - Secure Internal Messaging"],
+            data: productsDetailsData["ChaT (Secure Communication)"],
           },
         });
       break;
@@ -364,7 +514,7 @@ export const appNavigate = (
       if (navigate != undefined)
         navigate("/chat", {
           state: {
-            data: productsDetailsData["ChaT - Secure Internal Messaging"],
+            data: productsDetailsData["ChaT (Secure Communication)"],
           },
         });
       break;

@@ -1,6 +1,6 @@
 #pricing-container {
   padding-bottom: 80px;
-  padding-top: 110px;
+  /* padding-top: 110px; */
 }
 #pricing-cards-container {
   display: flex;
@@ -385,6 +385,47 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+#pricing-category-option-container {
+  position: relative;
+  display: flex;
+  background-color: var(--color-background-light-gray);
+  width: 100%; /* can grow */
+  padding: 5px;
+  height: 60px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.pricing-category-highlight {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  margin-inline: 5px;
+  height: calc(100% - 10px);
+  background-color: var(--color-primary);
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.pricing-category-option {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-category-option-selected {
+  color: white;
 }
 @media (max-width: 1700px) {
   .pricing-sticky-header {

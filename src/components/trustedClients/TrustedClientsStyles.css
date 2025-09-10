@@ -70,6 +70,10 @@ section {
   animation: swipe var(--speed) linear infinite backwards;
 }
 
+.swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
 @keyframes swipe {
   0% {
     transform: translate(0);

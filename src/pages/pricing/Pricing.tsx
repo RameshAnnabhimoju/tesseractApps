@@ -63,11 +63,12 @@ const Pricing = () => {
     }
   }
   const categoryChangeHandler = (
-    event: React.ChangeEvent<HTMLSelectElement>
+    event: React.MouseEvent<HTMLDivElement>
   ) => {
-    const value = event.target.value;
+    const value = (event.target as HTMLDivElement).id;
     setSelectedTab(value as typeof selectedTab);
   };
+  const categories = ["ndis", "ict"];
   return (
     <div id="pricing-container">
       <div className="heading">PRICING</div>
@@ -88,7 +89,7 @@ const Pricing = () => {
         </button>
       </div>
 
-      <div id="pricing-category-container">
+      {/* <div id="pricing-category-container">
         <select
           name="pricingCategory"
           id="pricing-category-select"
@@ -126,7 +127,33 @@ const Pricing = () => {
             Construction
           </option>
         </select>
+      </div> */}
+
+<div id="pricing-category-container">
+  <div id="pricing-category-option-container">
+    <div
+      className="pricing-category-highlight"
+      style={{
+        width: `${(100 / categories.length)-1}%`,
+        transform: `translateX(${categories.indexOf(selectedTab) * 100}%)`,
+      }}
+    />
+    {categories.map((cat) => (
+      <div
+        key={cat}
+        id={cat}
+        className={
+          "pricing-category-option" +
+          (selectedTab === cat ? " pricing-category-option-selected" : "")
+        }
+        onClick={categoryChangeHandler}
+      >
+        {cat.toUpperCase()}
       </div>
+    ))}
+  </div>
+</div>
+
       {pricingCardsDummyData[selectedTab].length > 0 && (
         <div id="pricing-data-container">
           <div id="pricing-cards-container">

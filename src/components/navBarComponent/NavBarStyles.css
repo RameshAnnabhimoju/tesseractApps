@@ -1,6 +1,6 @@
 #navbar-container {
-  /* position: sticky;
-  top: 0; */
+  position: sticky;
+  top: 0;
   z-index: 200;
   display: flex;
   justify-content: space-between;
@@ -80,6 +80,14 @@
   border-radius: 25px;
   min-width: 200px;
 }
+.navbar-tryForFree {
+  background-color: var(--color-primary);
+  color: white;
+  padding-block: 13px;
+  cursor: pointer;
+  padding-inline: 25px;
+  border-radius: 25px;
+}
 .navbar-requestDemo-text {
   font-size: 20px;
   font-weight: 300;
@@ -128,6 +136,15 @@
   cursor: pointer;
   max-width: 200px;
 }
+.nav-inner-heading {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  max-width: 85%;
+  padding: 10px;
+  color: var(--color-text-gray-light);
+  text-transform: uppercase;
+}
 .nav-title {
   font-size: 16px;
   font-weight: 600;
@@ -151,9 +168,9 @@
 #popup-nav-products-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   grid-auto-flow: column;
-  height: 365px !important;
+  height: 465px !important;
 }
 .services-heading {
   font-size: 12px;
@@ -309,8 +326,7 @@
   transition: background-color 0.2s ease;
 }
 .search-popup-result:hover {
-  background-color: #0c78ba55;
-  color: white;
+  color: var(--color-primary);
 }
 #search-popup-header {
   display: flex;
@@ -324,6 +340,9 @@
   cursor: pointer;
   font-size: 45px;
   font-weight: 300;
+}
+#search-popup-close:hover {
+  color: var(--color-primary);
 }
 #search-popup-popular-list {
   display: flex;

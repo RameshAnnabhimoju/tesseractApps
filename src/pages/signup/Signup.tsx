@@ -11,6 +11,7 @@ import {
   signupConfirmationEmailTemplate,
   signupEmaiTemplate,
 } from "../../utils/emailTemplates";
+import { useNavigate } from "react-router-dom";
 const Signup = ({
   dialog,
   // setDialog,
@@ -262,8 +263,15 @@ const Signup = ({
   };
   const getInputClass = (field: keyof signupType) =>
     "signup-form-input" + (signupErrors[field] ? " error" : "");
+  const navigate = useNavigate();
   return (
-    <Dialog open={dialog} onClose={() => handleDialog(false)} fullScreen>
+    <Dialog
+      open={dialog}
+      onClose={() => {
+        handleDialog(false);
+      }}
+      fullScreen
+    >
       {/* <div id="dialog-header">
         <div id="navbar-logo">
           <img src={logo_small} alt="tesseract logo" />
@@ -280,7 +288,12 @@ const Signup = ({
         src={closeIcon}
         alt="close icon"
         id="dialog-close-icon"
-        onClick={() => handleDialog(false)}
+        onClick={() => {
+          navigate(-1);
+          setTimeout(() => {
+            handleDialog(false);
+          }, 100);
+        }}
       />
       <div id="signup-container">
         <Alert setAlertData={setAlertData} alertData={alertData} />

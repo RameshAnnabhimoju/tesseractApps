@@ -2,16 +2,20 @@
   overflow-x: hidden;
   min-height: 1080px;
   max-width: 1920px;
-  
+  font-family: "Roboto", sans-serif;
+
   --color-primary: #0c78ba;
   --color-primary-rgb: 12, 120, 186;
   --color-secondary: #002a52;
+  --color-alt-secondary: #243b8c;
   --color-background-gradient: linear-gradient(to right, #f5fdfe, #f0f7fe);
   --color-text-gray: #676767;
+  --color-text-gray2: #4d525f;
   --color-text-gray-light: #616161b4;
   --color-text-dark-gray: #343434;
   --color-background-light-gray: #eaeaea;
   --color-background-light-gray2: rgb(236, 236, 236);
+  --color-background-gray: #f3f3f3;
   .heading {
     font-size: 22px;
     font-weight: 600;
@@ -60,7 +64,9 @@
     fill: white;
   }
 }
-
+body {
+  margin: 0;
+}
 /* XS: Extra Small (<360px) */
 @media (max-width: 359px) {
 }

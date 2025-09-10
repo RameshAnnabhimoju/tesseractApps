@@ -45,7 +45,10 @@ const DetailsDataComponent = ({
         </div>
       )}
 
-      <div id="details-data-text">
+      <div
+        id="details-data-text"
+        className={componentType == 2 ? "text-align-right" : ""}
+      >
         <div id="details-data-text-title"> {data.title} </div>
         <div id="details-data-text-description">{data.description}</div>
         {data.points && (

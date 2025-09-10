@@ -127,10 +127,21 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
           }
         }
 
-        // apply start + end buffer
+        // apply start + end buffer with easing
         const effectiveRange = 100 - pendulum.bufferStart - pendulum.bufferEnd;
+
+        // easing function (cosine ease-in-out)
+        const easeInOut = (t: number) => 0.5 - 0.5 * Math.cos(Math.PI * t);
+      // const easeInOutCubic = (t: number) =>
+      //   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+      // const easeInOutSine = (t: number) =>
+      //   0.5 - 0.5 * Math.cos(Math.PI * t);
+        // map linear progress -> eased
+        const easedProgress = easeInOut(s.progress);
+
         const offsetPct =
-          (pendulum.bufferStart + s.progress * effectiveRange) / 100;
+          (pendulum.bufferStart + easedProgress * effectiveRange) / 100;
 
         const path = document.getElementById(
           `arc-${pendulum.id}`
@@ -236,7 +247,15 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
             userSelect: "none",
           }}
         >
-          {tooltip.text}
+          {tooltip.text.split("&").map((line, index) => (
+            <tspan
+              key={index}
+              x={tooltip.x}
+              dy={index === 0 ? 0 : 12}
+            >
+              {line}
+            </tspan>
+          ))}
         </text>
       )}
     </svg>

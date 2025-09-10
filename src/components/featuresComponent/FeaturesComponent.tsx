@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { featuresDummyData } from "../../utils/DummyData";
 import { appNavigate } from "../../routes/AppRoutes";
-import ArrowLeft from "../arrows/ArrowLeft";
-import ArrowRight from "../arrows/ArrowRight";
+// import ArrowLeft from "../arrows/ArrowLeft";
+// import ArrowRight from "../arrows/ArrowRight";
 const FeaturesComponent = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -21,10 +21,11 @@ const FeaturesComponent = () => {
       setPerView(1);
     }
   }, []);
-  const [sliderFeaturesRef, featuresSlider] = useKeenSlider(
+  const [sliderFeaturesRef] = useKeenSlider(
     {
-      mode: "snap",
+      mode: "free-snap",
       rubberband: true,
+      loop: true,
       slides: {
         perView: perView,
         spacing: 30,
@@ -97,7 +98,7 @@ const FeaturesComponent = () => {
         Streamline workforce management, automate compliance, support IT
         operations, and deliver high-quality NDIS services. All in one platform.
       </h2>
-      <div className="features-buttons">
+      {/* <div className="features-buttons">
         <div
           className="arrow-container"
           id="features-prev"
@@ -112,7 +113,7 @@ const FeaturesComponent = () => {
         >
           <ArrowRight />
         </div>
-      </div>
+      </div> */}
       <div className="features-slider">
         <div ref={sliderFeaturesRef} className="keen-slider">
           {featuresDummyData.map((feature) => (

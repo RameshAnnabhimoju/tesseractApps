@@ -12,14 +12,13 @@ import company10 from "../../assets/PINNACLE Final.png";
 import company13 from "../../assets/logo13.png";
 import company14 from "../../assets/NEXUS Final.png";
 
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 // import "swiper/css";
 // import "swiper/css/pagination";
 import "../../../node_modules/swiper/swiper.min.css";
 import "../../../node_modules/swiper/modules/pagination.min.css";
-// import { Slider } from "@mui/material";
-import Slider from "./Slider";
+// import Slider from "./Slider";
 const TrustedClientsComponent = () => {
   const companiesImages = [
     company1,
@@ -38,13 +37,13 @@ const TrustedClientsComponent = () => {
       <div className="heading trusted-clients-heading">
         Our Most <br /> Trusted Clients
       </div>
-      <Slider images={companiesImages} speed={20000} />
+      {/* <Slider images={companiesImages} speed={20000} /> */}
       {/* <div id="trusted-clients-images-container">
         {companiesImages?.map((image, index) => (
           <img key={index} src={image} alt="Client 1" className="client-logo" />
         ))}
       </div> */}
-      {/* <Swiper
+      <Swiper
         slidesPerView={2}
         breakpoints={{
           1280: {
@@ -60,13 +59,13 @@ const TrustedClientsComponent = () => {
             slidesPerView: 3,
           },
         }}
-        spaceBetween={10}
+        spaceBetween={0}
         autoplay={{
-          delay: 500,
+          delay: 0,
           disableOnInteraction: false,
           pauseOnMouseEnter: false, // Remove pause to maintain smoothness
         }}
-        speed={1500} // Slower, smoother transition
+        speed={2000} // Slower, smoother transition
         loop={true}
         allowTouchMove={false} // Disable touch interaction for smoother auto-scroll
         modules={[Autoplay]}
@@ -81,7 +80,7 @@ const TrustedClientsComponent = () => {
             />
           </SwiperSlide>
         ))}
-      </Swiper> */}
+      </Swiper>
     </div>
   );
 };

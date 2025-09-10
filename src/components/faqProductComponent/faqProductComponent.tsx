@@ -43,7 +43,7 @@ const FaqProductComponent = ({ data }: faqProductionTypes) => {
           >
             <AccordionSummary expandIcon={<img src={ArrowDown} alt="arrow" />}>
               <Typography
-                sx={{ fontSize: "18px", fontWeight: 600, textAlign: "left" }}
+                sx={{ fontSize: "26px", fontWeight: 600, textAlign: "left" }}
                 component="span"
               >
                 {data.question}
@@ -51,12 +51,12 @@ const FaqProductComponent = ({ data }: faqProductionTypes) => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography
-                sx={{ fontSize: "14px", fontWeight: 400, textAlign: "left" }}
+                sx={{ fontSize: "24px", fontWeight: 400, textAlign: "left" }}
               >
                 {data.answer}
               </Typography>
               <Typography
-                sx={{ fontSize: "14px", fontWeight: 400, textAlign: "left" }}
+                sx={{ fontSize: "24px", fontWeight: 400, textAlign: "left" }}
               >
                 {data.points &&
                   data.points.map((pointsData, pointsindex) => {

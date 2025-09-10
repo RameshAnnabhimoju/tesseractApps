@@ -16,7 +16,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   justify-content: space-between;
-  padding-top: 110px;
+  /* padding-top: 110px; */
 }
 #signup-image-container {
   overflow: hidden;

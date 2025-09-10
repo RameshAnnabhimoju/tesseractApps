@@ -29,7 +29,7 @@ function App() {
       />
 
       <div ref={portalContainerRef} />
-      <AppRoutes />
+      <AppRoutes handleDialog={handleDialog} />
       <FooterComponent />
     </BrowserRouter>
   );

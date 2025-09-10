@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import "./DetailsHeroStyles.css";
+import { appNavigate } from "../../routes/AppRoutes";
 interface DeatailsHeroType {
   data?: {
     page: string;
@@ -8,7 +10,12 @@ interface DeatailsHeroType {
     conclusion?: string;
     descriptionPoints?: string[];
     points?: string[];
+    backgroundColor?: string;
     pointsObject?: { pointTitle: ""; pointDescription: "" }[];
+    cta?: {
+      buttons: { title: string; navigate: string }[];
+      conclusion: string;
+    };
   };
   displayTitle?: boolean;
 }
@@ -20,6 +27,7 @@ const DetailsHeroComponent = ({
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Diam, dapibus mattis Ronsectetur adipiscing elit. Diam, dapibus mattis ",
     image: "",
     conclusion: "",
+    backgroundColor: "",
   },
   displayTitle = true,
 }: DeatailsHeroType) => {
@@ -29,8 +37,18 @@ const DetailsHeroComponent = ({
     "Forms",
     "Accounting",
   ];
+  const navigate = useNavigate();
+  const handlectaClick = (name: string) => {
+    // console.log("cta click", name);
+    appNavigate(name, navigate, false);
+  };
   return (
-    <div id="details-hero-container">
+    <div
+      id="details-hero-container"
+      style={{
+        backgroundColor: data.backgroundColor ? data.backgroundColor : "",
+      }}
+    >
       {displayTitle && <div id="details-hero-page-title">{data.page}</div>}
       {pagesWithRightImage.includes(data.page) && (
         <img
@@ -78,6 +96,19 @@ const DetailsHeroComponent = ({
           </ul>
         )}
         <div className="details-hero-text">{data.conclusion}</div>
+        {data.cta &&
+          data.cta.buttons.map((button) => (
+            <div
+              className="details-hero-button"
+              key={button.title}
+              onClick={() => handlectaClick(button.navigate)}
+            >
+              {button.title}
+            </div>
+          ))}
+        {data.cta && (
+          <div className="details-hero-text">{data.cta?.conclusion}</div>
+        )}
       </div>
       {!pagesWithRightImage.includes(data.page) && (
         <img
