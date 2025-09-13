@@ -14,9 +14,11 @@ import ArrowRight from "../arrows/ArrowRight";
 import HeroArcsLeftComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import HeroArcsRightComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import { homeLeftArcsData, homeRightArcsData } from "../../utils/DummyData";
+import { useNavigate } from "react-router-dom";
 const HomeHeroComponent = () => {
+  const navigate = useNavigate();
   const HandleClick = (name: string) => {
-    appNavigate(name);
+    appNavigate(name, navigate, false);
   };
   return (
     <div id="home-hero-container">
@@ -29,17 +31,14 @@ const HomeHeroComponent = () => {
       <HeroArcsLeftComponent pendulums={homeLeftArcsData} />
       <div id="home-text-container">
         <img src={logo_small} alt="tesseract logo" id="home-tesseract-logo" />
-        <h1 id="home-text-heading">End to end workforce management software</h1>
+        <h1 id="home-text-heading">End-to-End Workforce Management Software</h1>
         <h2 id="home-text-subText">
-          TesseractApps simplifies compliance, team management, NDIS care and
-          service delivery for care providers and IT consultants—all in one
-          secure, scalable platform.
+          TesseractApps simplifies compliance, team management, NDIS care, and
+          service delivery for care providers and IT consultants in one secure,
+          scalable platform.
         </h2>
-        <div
-          id="home-get-started-button"
-          onClick={() => HandleClick("get-started")}
-        >
-          <div>Get Started Today</div> <ArrowRight className="arrow-icon" />
+        <div id="home-get-started-button" onClick={() => HandleClick("Signup")}>
+          <div>Try It Free</div> <ArrowRight className="arrow-icon" />
         </div>
         <div id="home-button-subtext">
           No credit card is required. Free onboarding included.

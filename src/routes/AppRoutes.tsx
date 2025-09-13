@@ -38,11 +38,15 @@ import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
 import Blog4 from "../pages/blogPost/Blog4";
 import ReleaseNotes from "../pages/ReleaseNotes/ReleaseNotes";
 import Blog5 from "../pages/blogPost/Blog5";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 // import SignupFlow from "../pages/signupflow/SignupFlow";
 // import Signup from "../pages/signup/Signup";
 
-const AppRoutes = () => {
+const AppRoutes = ({
+  handleDialog,
+}: {
+  handleDialog: (value?: boolean | undefined) => void;
+}) => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -123,10 +127,10 @@ const AppRoutes = () => {
       <Route path="/accounting" element={<ProductDetails />} />
       <Route path="/t-learning-hub" element={<ProductDetails />} />
       <Route path="/release-notes" element={<ReleaseNotes />} />
-      {/* <Route
+      <Route
         path="/signup"
         element={<OpenDialog handleDialog={handleDialog} />}
-      /> */}
+      />
       {/* <Route path="/signup" element={<SignupFlow />} /> */}
 
       <Route path="/coming-soon" element={<ComingSoon />} />
@@ -135,17 +139,17 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
-// const OpenDialog = ({
-//   handleDialog,
-// }: {
-//   handleDialog: (open: boolean) => void;
-// }) => {
-//   useEffect(() => {
-//     handleDialog(true);
-//   }, [handleDialog]);
+const OpenDialog = ({
+  handleDialog,
+}: {
+  handleDialog: (open: boolean) => void;
+}) => {
+  useEffect(() => {
+    handleDialog(true);
+  }, [handleDialog]);
 
-//   return null; // nothing to render, only triggers dialog
-// };
+  return null; // nothing to render, only triggers dialog
+};
 // eslint-disable-next-line react-refresh/only-export-components
 export const appNavigate = (
   route: string,
@@ -206,9 +210,9 @@ export const appNavigate = (
     case "Features":
       if (navigate != undefined) navigate("/#features-container");
       break;
-    // case "Signup":
-    //   if (navigate != undefined) navigate("/signup");
-    //   break;
+    case "Signup":
+      if (navigate != undefined) navigate("/signup");
+      break;
     case "Blog":
       if (navigate != undefined)
         navigate("/blogs", {

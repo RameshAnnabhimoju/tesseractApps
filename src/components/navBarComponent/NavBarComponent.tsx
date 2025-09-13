@@ -29,9 +29,11 @@ import signupImage from "../../assets/signup.png";
 const NavBarComponent = ({
   portalContainerRef,
   handleDialog,
+  handleBookADemo,
 }: {
   portalContainerRef: RefObject<HTMLDivElement | null>;
   handleDialog: (value?: boolean) => void;
+  handleBookADemo: (value?: boolean) => void;
 }) => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -46,7 +48,7 @@ const NavBarComponent = ({
     "About" | "Product" | "Solutions" | "Pricing" | "Resources" | ""
   >("");
   const DROPDOWN_LINKS = ["Product", "Solutions", "Resources"];
-  const NAV_LINKS = ["Product", "Pricing", "About", "Solutions", "Resources"];
+  const NAV_LINKS = ["Product", "Pricing", "Solutions", "Resources"];
   // const [showHeader, setShowHeader] = useState(true);
   // const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -168,7 +170,7 @@ const NavBarComponent = ({
     let centerX = rect.left + rect.width / 2;
 
     setPopupPosition({
-      top: 80, // right below nav-link
+      top: 120, // right below nav-link
       left: centerX, // center X position
     });
     setPopupOpen(true);
@@ -311,7 +313,7 @@ const NavBarComponent = ({
                 "navbar-requestDemo" +
                 (toggleDrawer ? " drawer-request-demo" : "")
               }
-              onClick={() => popupLinkClickHandler("Book a Demo")}
+              onClick={() => handleBookADemo(true)}
             >
               <div className="navbar-requestDemo-text">Book a Demo</div>
               <div className="navbar-requestDemo-icon-container">
@@ -682,57 +684,73 @@ const NavBarComponent = ({
         </div>
       </Drawer>
       <div id="navbar-links">
-        {NAV_LINKS.map((label) => {
-          const shouldHavePopup = DROPDOWN_LINKS.includes(label);
-
-          return (
-            <div
-              key={label}
-              id={label}
-              className={
-                "nav-link" +
-                (activeLink == label || (isPopupOpen && selectedLink == label)
-                  ? " nav-link-active"
-                  : "")
-              }
-              onClick={handleNavClick}
-              onMouseEnter={(event) => {
-                if (label == "Pricing") closePopup();
-                if (shouldHavePopup) handleNavPopupClick(event);
-              }}
-              onMouseLeave={() => {
-                if (label == "Pricing") closePopup();
-              }}
-              // onMouseLeave={shouldHavePopup ? closePopup : undefined}
-            >
-              {label}
-            </div>
-          );
-        })}
-        <div id="navbar-search">
-          <img
-            src={search}
-            alt="navbar-search-icon"
-            id="navbar-search-icon"
-            onClick={() => handleSearchIcon(true)}
-          />
-        </div>
-
-        <div
-          className="navbar-requestDemo"
-          onClick={() => navigate("/requestDemo")}
-        >
-          <div className="navbar-requestDemo-text">Book a Demo</div>
-          <div className="navbar-requestDemo-icon-container">
-            <img
-              src={plus}
-              alt="navbar-plus-image"
-              className="navbar-requestDemo-icon"
-            />
+        <div id="navbar-links-logins">
+          <div className="nav-link-logins" onClick={loginHandler}>
+            Sign in
+          </div>
+          <div className="nav-link-logins" onClick={signupHandler}>
+            Sign up
           </div>
         </div>
+        <div id="navbar-links-links">
+          {NAV_LINKS.map((label) => {
+            const shouldHavePopup = DROPDOWN_LINKS.includes(label);
 
-        {/* <button id="navbar-login" onClick={signupHandler}>
+            return (
+              <div
+                key={label}
+                id={label}
+                className={
+                  "nav-link" +
+                  (activeLink == label || (isPopupOpen && selectedLink == label)
+                    ? " nav-link-active"
+                    : "")
+                }
+                onClick={handleNavClick}
+                onMouseEnter={(event) => {
+                  if (label == "Pricing") closePopup();
+                  if (shouldHavePopup) handleNavPopupClick(event);
+                }}
+                onMouseLeave={() => {
+                  if (label == "Pricing") closePopup();
+                }}
+                // onMouseLeave={shouldHavePopup ? closePopup : undefined}
+              >
+                {label}
+              </div>
+            );
+          })}
+          <div id="navbar-search">
+            <img
+              src={search}
+              alt="navbar-search-icon"
+              id="navbar-search-icon"
+              onClick={() => handleSearchIcon(true)}
+            />
+          </div>
+
+          <div
+            className="navbar-tryItFree"
+            onClick={() => appNavigate("Signup", navigate, false)}
+          >
+            <div className="navbar-requestDemo-text">Try It Free</div>
+          </div>
+
+          <div
+            className="navbar-requestDemo"
+            onClick={() => handleBookADemo(true)}
+          >
+            <div className="navbar-requestDemo-text">Book a Demo</div>
+            <div className="navbar-requestDemo-icon-container">
+              <img
+                src={plus}
+                alt="navbar-plus-image"
+                className="navbar-requestDemo-icon"
+              />
+            </div>
+          </div>
+
+          {/* <button id="navbar-login" onClick={signupHandler}>
           <img
             src={signupImage}
             alt="navbar-profile-icon"
@@ -740,7 +758,7 @@ const NavBarComponent = ({
           />{" "}
           Sign Up
         </button> */}
-        {/* <button id="navbar-login" onClick={loginHandler}>
+          {/* <button id="navbar-login" onClick={loginHandler}>
           <img
             src={profile}
             alt="navbar-profile-icon"
@@ -748,17 +766,18 @@ const NavBarComponent = ({
           />{" "}
           Sign In
         </button> */}
-        <img
+          {/* <img
           src={profile}
           alt="navbar-profile-icon"
           id="navbar-profile-icon"
           onMouseEnter={(event) => handleNavPopupClick(event)}
-        />
-        <img
+        /> */}
+          {/* <img
           src={australia}
           alt="navbar-country-icon"
           id="navbar-country-icon"
-        />
+        /> */}
+        </div>
       </div>
 
       <div id="nav-icons-container"></div>
@@ -938,7 +957,7 @@ const NavBarComponent = ({
         isOpen={showSearch}
         onClose={handleSearchIcon}
         containerRef={portalContainerRef}
-        position={{ top: 80, left: window.innerWidth / 2 }}
+        position={{ top: 120, left: window.innerWidth / 2 }}
         showTriangle={false}
         backgroundColor="white"
       >

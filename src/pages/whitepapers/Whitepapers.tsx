@@ -1,8 +1,10 @@
 import "./WhitepapersStyles.css";
 import pdf from "../../assets/Digital Transformation in Disability Services A Roadmap for 2025–2030.pdf";
 import pdf2 from "../../assets/White Paper Aug 2025.pdf";
-import whitepaper1 from "../../assets/whitepaper1.png";
+import pdf3 from "../../assets/White Paper Sep 2025.pdf";
+// import whitepaper1 from "../../assets/whitepaper1.png";
 import whitepaper2 from "../../assets/White Paper Aug 2025_page-0001.jpg";
+import whitepaper3 from "../../assets/whitepaper-3.png";
 import { useLocation } from "react-router-dom";
 const Whitepapers = () => {
   const location = useLocation();
@@ -16,6 +18,9 @@ const Whitepapers = () => {
         break;
       case "whitepaper-2":
         window.open(pdf2, "_blank");
+        break;
+      case "whitepaper-3":
+        window.open(pdf3, "_blank");
         break;
       default:
         break;
@@ -32,16 +37,23 @@ const Whitepapers = () => {
       </div>
 
       <div id="whitepapers-item-container">
-        <img
+        {/* <img
           id="whitepaper-1"
           src={whitepaper1}
           alt="whitepaper-1"
           onClick={handleClick}
           className="whitepaper-item"
-        />
+        /> */}
         <img
           id="whitepaper-2"
           src={whitepaper2}
+          alt="whitepaper-2"
+          onClick={handleClick}
+          className="whitepaper-item"
+        />
+        <img
+          id="whitepaper-3"
+          src={whitepaper3}
           alt="whitepaper-2"
           onClick={handleClick}
           className="whitepaper-item"

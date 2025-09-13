@@ -106,12 +106,13 @@ const AboutSelectedToolComponent = ({
                   />
                 )}
                 <div>
-                  {/* <svg viewBox="0 0 40 40" width="40" height="40">
-                  <circle cx="20" cy="20" r="16" fill={subdata.dot.outer} />
-                  <circle cx="20" cy="20" r="11" fill={subdata.dot.middle} />
-                  <circle cx="20" cy="20" r="6" fill={subdata.dot.inner} />
-                </svg> */}
-                  <svg
+                  <svg viewBox="0 0 48 48" width="40" height="40">
+                    <circle cx="24" cy="24" r="24" fill={subdata.dot.outer} />
+                    <circle cx="24" cy="24" r="16" fill={subdata.dot.middle} />
+                    <circle cx="24" cy="24" r="10" fill={subdata.dot.inner} />
+                  </svg>
+
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="40"
                     height="40"
@@ -128,7 +129,7 @@ const AboutSelectedToolComponent = ({
                       ry="6"
                       fill={subdata.dot.outer}
                     />
-                  </svg>
+                  </svg> */}
 
                   <h2 className="selected-tool-title">{subdata.title}</h2>
                   <div className="selected-tool-description">

@@ -11,7 +11,9 @@ import {
   signupConfirmationEmailTemplate,
   signupEmaiTemplate,
 } from "../../utils/emailTemplates";
+import Slide from "@mui/material/Slide";
 import { useNavigate } from "react-router-dom";
+
 const Signup = ({
   dialog,
   // setDialog,
@@ -129,6 +131,7 @@ const Signup = ({
     type: "success",
     isOpen: false,
   };
+  const navigate = useNavigate();
   // console.log("signupData ", signupData);
   // console.log("signupErrors ", signupErrors);
   const [alertData, setAlertData] = useState(alertInitialData);
@@ -263,7 +266,6 @@ const Signup = ({
   };
   const getInputClass = (field: keyof signupType) =>
     "signup-form-input" + (signupErrors[field] ? " error" : "");
-  const navigate = useNavigate();
   return (
     <Dialog
       open={dialog}
@@ -271,6 +273,9 @@ const Signup = ({
         handleDialog(false);
       }}
       fullScreen
+      slots={{ transition: Slide }}
+      slotProps={{ transition: { direction: "up" } }}
+      sx={{ margin: "auto", maxWidth: "1920px" }}
     >
       {/* <div id="dialog-header">
         <div id="navbar-logo">
@@ -498,16 +503,14 @@ const Signup = ({
                     onChange={inputChangeHandler}
                   >
                     <option value="">Select Industry</option>
-                    <option value="ndis">NDIS Industry</option>
-                    <option value="ict">ICT Industry</option>
-                    <option value="retail-hospitality">
-                      Retail & Hospitality
+                    <option value="NDIS Provider">NDIS Provider</option>
+                    <option value="Aged Care Service">Aged Care Service</option>
+                    <option value="Childcare">Childcare</option>
+                    <option value="Allied Health">Allied Health</option>
+                    <option value="Home & Community Care">
+                      Home & Community Care
                     </option>
-                    <option value="multi-site-businesses">
-                      Multi-Site Businesses
-                    </option>
-                    <option value="manufacturing">Manufacturing</option>
-                    <option value="construction">Construction</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
                 <div className="signup-form-input-group"></div>
@@ -555,7 +558,7 @@ const Signup = ({
                         value="Timesheet"
                         onChange={inputChangeHandler}
                       />
-                      <label>Timesheet</label>
+                      <label>Timesheet & Payroll</label>
                     </div>
                     <div className="signup-form-input-container">
                       <input
@@ -600,6 +603,28 @@ const Signup = ({
                         onChange={inputChangeHandler}
                       />
                       <label>Digital Signatures</label>
+                    </div>
+                    <div className="signup-form-input-container">
+                      <input
+                        type="checkbox"
+                        placeholder="Enter Street Address"
+                        className="signup-input-checkbox"
+                        name="features"
+                        value="Reporting & Dashboard"
+                        onChange={inputChangeHandler}
+                      />
+                      <label>Reporting & Dashboard</label>
+                    </div>
+                    <div className="signup-form-input-container">
+                      <input
+                        type="checkbox"
+                        placeholder="Enter Street Address"
+                        className="signup-input-checkbox"
+                        name="features"
+                        value="NDIS Claims & Invoicing"
+                        onChange={inputChangeHandler}
+                      />
+                      <label>NDIS Claims & Invoicing</label>
                     </div>
                   </div>
                 </div>

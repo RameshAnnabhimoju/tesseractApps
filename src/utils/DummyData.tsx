@@ -186,7 +186,6 @@ export const navBarDummyData = {
       { title: "Multi-site Businesses", subTitle: " " },
       { title: "Construction", subTitle: " " },
       { title: "Manufacturing", subTitle: " " },
-      { title: "More Industries", subTitle: " " },
     ],
     "BY ROLE": [
       { title: "Administrator", subTitle: " " },
@@ -282,63 +281,89 @@ export const pricingCardsDummyData = {
   ndis: [
     {
       id: 1,
-      title: "Essential:",
+      title: "Starter:",
       subTitle: "I Want to Choose What I Want",
       description:
-        "Great for when you only need a single core module to deal with something quite specific.",
+        "Freedom of choice for providers beginning their journey in the care industry. Suitable for 5–10 users.",
       Pricing: 9.99,
       timePeriod: "Per user/month",
-      cta: "Try TesseractApps free for 30 days",
+      cta: "Try It Free",
+      featuresText:
+        "Get the essentials to manage participants, shifts, and invoices.",
       features: [
-        "Smart Rostering & Scheduling",
-        "Invoicing & Timesheets",
-        "Basic Dashboards & Insights",
-        "Core Admin & User Access",
-        "T Learner",
-        "Basic Forms",
-        "My Profile",
-        "Pay slips",
+        "Participant profiles & digital forms",
+        "Roster tracker & shift publishing",
+        "Role-based dashboards",
+        "Incident reporting & audit-ready reports",
+        "Support worker dashboard",
+        "Goal tracking & support requests",
+        "Unlimited uploads & storage",
+        "Chat & email support",
       ],
       optionalAddons: ["LMS – Wyzed *", "E-sign (T Sign)"],
     },
     {
       id: 2,
-      title: "Professional:",
+      title: "Standard :",
       subTitle: "Serious About Business",
       description:
-        "A perfect solution for companies choosing two, or more modules to handle bigger projects.",
+        "For providers serious about growth and looking to streamline multiple business operations. Ideal for those frustrated with current payroll and HR integration. ",
       Pricing: 19.99,
       timePeriod: "Per user/month",
-      cta: "Try TesseractApps free for 30 days",
+      cta: "Try It Free",
+      featuresText:
+        "Add smarter rostering, funds tracking, and incident logging. .",
       features: [
-        "Advanced HR & Recruitment",
-        "Full Participant Management ",
-        "Detailed Performance Tracking ",
-        "Group Messaging & Collaboration",
-        "Accounting & Payroll Integration ",
-        "Exportable Reports & Repository ",
-        "Dedicated Support Chat ",
+        "Budget tracker & document access",
+        "Incident logging (SIRS-ready)",
+        "Worker records & leave management",
+        "Access controls & secure messaging",
+        "Participant monitoring & case notes",
+        "Coordinator dashboard & communication hub",
       ],
       optionalAddons: ["LMS – Wyzed *", "E-sign (T Sign)"],
     },
     {
       id: 3,
-      title: "Premium (& AI):",
-      subTitle: "End to End",
+      title: "Professional :",
+      subTitle: "Almost Everything Your Business Needs",
       description:
-        "All-in-one solution for organisations which require all modules working in perfect harmony. ",
+        "For providers with established systems seeking advanced scheduling, compliance, and HR tools to scale confidently. ",
+      Pricing: 29.99,
+      timePeriod: "Per user/month",
+      cta: "Try It Free",
+      featuresText:
+        "Advanced scheduling, compliance, and HR tools to scale confidently ",
+      features: [
+        "Auto-scheduling & shift compliance",
+        "Timesheet approvals & bulk invoicing",
+        "Document vault & support allocation",
+        "Recruitment & training tools",
+        "Custom dashboards & performance tracker",
+        "Support approvals & accounting suite",
+        "AI-powered automation",
+      ],
+      optionalAddons: ["LMS – Wyzed", "AI"],
+    },
+    {
+      id: 4,
+      title: "Premium :",
+      subTitle: "End-to-End Business Management ",
+      description:
+        " For established providers seeking a complete, custom solution to manage all business operations. ",
       Pricing: 39.99,
       timePeriod: "Per user/month",
-      cta: "Try TesseractApps free for 30 days",
+      cta: "Try It Free",
+      featuresText:
+        "Full‑featured platform with custom dashboards and enterprise‑grade support. ",
       features: [
-        "All-in-one HR",
-        "Payroll",
-        "Accounting Suite",
-        "Advanced Risk & Funds Tracking ",
-        "Full Incident & Compliance Reporting",
-        "24/7 Support with Dedicated Manager ",
-        "Full Document Management & E-Signatures ",
-        "End-to-End Workforce & Service Integration",
+        "Custom onboarding & dedicated account manager",
+        "Geo-location, sleepover tracking, voice notes & client signatures",
+        "Advanced risk management (NDIS Risk Matrix)",
+        "HR insights & unlimited storage",
+        "Group chat & central communication hub",
+        "Privacy settings & timesheet submission",
+        "Full access to AI automation & LMS",
       ],
       optionalAddons: ["LMS – Wyzed", "AI"],
     },
@@ -397,482 +422,87 @@ export const pricingCardsDummyData = {
 export const pricingDummyData = {
   ndis: [
     {
-      heading: "Role-based Dashboard",
+      heading: "Provider Management",
       data: [
         {
-          title: "Custom Views by Role",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Sign-Up",
+          subTitle: "Quick registration for NDIS providers",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Roster Schedule Tracker",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Onboarding",
+          subTitle: "Guided setup for staff, participants & compliance",
+          data1: {
+            value: true,
+            text: "1 complimentary session",
+          },
+          data2: {
+            value: true,
+            text: "2 weeks*",
+          },
+          data3: {
+            value: true,
+            text: "3 weeks*",
+          },
+          data4: {
+            value: true,
+            text: "Custom onboarding",
+          },
         },
         {
-          title: "Staff Summary",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Staff Training",
+          subTitle: "NDIS-aligned live or recorded training",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Clock in  Snapshot",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Participant Log",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "HR Insights",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "TaskBridge",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Invoice Summary",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Leave Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Incident Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Performance Tracker",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Funds Tracker",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Rejected Shifts",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "Admin Console",
-      data: [
-        {
-          title: "Organisation Settings",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Facility Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Participant Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Staff Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "Roster Management",
-      subHeading: "",
-      data: [
-        {
-          title: "Shift Grouping",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Recurring Shift",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Split Shifts",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Roster Efficiency (Under/Over)",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Custom Shifts",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Shift Reports",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Expression of Interest Shifts",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Sleepover Shifts",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Extended- Shifts",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-
-        {
-          title: "Real-time notifications",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Timesheet Approvals",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Reimbursements Requests",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Checklists",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Shift Activity Logs",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Voice-to-Text Shift Notes",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Staff View",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Participants View",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Auto Scheduling",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Participant Risk Indicator",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Fatigue Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Classification: Levels and Pay Points",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Auto fill and Address Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Services Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-
-        {
-          title: "Bulk Invoicing",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-
-        {
-          title: "Drag and Drop Shift Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Instant Search Schedules",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title:
-            "Real-time clock-in and out with/without geo-location tracking",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Publish",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Rejected Shifts",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "Clock In & Clock Out",
-      data: [
-        {
-          title: "Geo-location Tracking",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Clock In & Clock Out",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Shift Details",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Shift Notes",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Checklists",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-
-        {
-          title: "Activity Logs",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Client or Supervisor Signatures",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Shift Notifications",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Shift & Log Management by Admin",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-
-        {
-          title: "Reimbursements Requests",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "HR Operations",
-      data: [
-        {
-          title: "Staff Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Awards",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Training & Evaluation (Wyzed)",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Leave Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Staff Onboarding",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Applicant tracking System",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Recruitments",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Performance Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Account Manager / SLA",
+          subTitle: "Dedicated support with service-level agreement",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "Account Manager",
+          },
+          data4: {
+            value: true,
+            text: "Account Manager/SLA",
+          },
         },
       ],
     },
@@ -880,689 +510,1394 @@ export const pricingDummyData = {
       heading: "Participant Management",
       data: [
         {
-          title: "Participant Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Participant Profiles",
+          subTitle: "Track goals, notes & progress",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Participant Journal",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Digital Forms",
+          subTitle: "NDIA-compliant onboarding & assessments",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Service Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Budget Tracker",
+          subTitle: "Monitor plan budgets & feedback",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Funds Tracker",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Document Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        { title: "Forms", subTitle: "", data1: true, data2: true, data3: true },
-        {
-          title: "Feedback",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Schedule",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          title: "Document Vault",
+          subTitle: "Secure storage for NDIS documents",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
           title: "Risk Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
+          subTitle: "Identify & manage participant risks",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Participant Snapshot",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "Accounting",
-      data: [
-        {
-          title: "Sales & Purchases",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Bank Feed",
-          subTitle: "",
-          data1: false,
-          data2: false,
-          data3: true,
+          title: "Support Allocation",
+          subTitle: "Quickly assign unfilled supports",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Chart of Accounts",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "General Ledger",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Payroll",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Reports",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Account Settings",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Payroll Settings",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
+          title: "NDIS Forms",
+          subTitle: "Pre-built audit-ready templates",
+          data1: {
+            value: true,
+            text: "Basic Froms",
+          },
+          data2: {
+            value: true,
+            text: "Advanced Forms",
+          },
+          data3: {
+            value: true,
+            text: "AI Froms",
+          },
+          data4: {
+            value: true,
+            text: "Custom Forms",
+          },
         },
       ],
     },
     {
-      heading: "Incident Management",
+      heading: "Staff & Support Worker Management",
       data: [
         {
-          title: "Create & Track Incidents",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Track History",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Export and Download Reports",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "Repository",
-      data: [
-        {
-          title: "Bulk Storage",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "User-Specific Document Access",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "My Profile",
-      data: [
-        {
-          title: "Awards & Recognition",
-          subTitle: "",
-          data1: true,
-          data2: false,
-          data3: true,
-        },
-        {
-          title: "Training & Evaluation",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Leave Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Payslips & Timesheet",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Performance Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "My Availability",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "Access Control Panel",
-      data: [
-        {
-          title: "Create User Account",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "User Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Staff Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Reset Password",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "User Report",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "T Sign",
-      data: [
-        {
-          title: "E Signatures",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Support PDF, Word",
-          subTitle: "",
-          data1: false,
-          data2: false,
-          data3: true,
-        },
-        {
-          title: "Support Chat",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "Forms",
-      data: [
-        {
-          title: "Customised Forms",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Publish Customised Forms",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Manage Forms",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "ChaT",
-      data: [
-        {
-          title: "ChaT feature ob both Web and Mobile",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Group ChaT-Web",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Poll-Web",
-          subTitle: "",
-          data1: false,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-
-    {
-      heading: "T Learner",
-      data: [
-        {
-          title: "In-App Tutorials",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-        {
-          title: "Learning by ROle",
-          subTitle: "",
-          data1: true,
-          data2: true,
-          data3: true,
-        },
-      ],
-    },
-    {
-      heading: "AI (Beta)",
-      data: [
-        {
-          title: "Predict. Act. Simplify - Coming Soon",
-          subTitle: "",
-          data1: false,
-          data2: false,
-          data3: false,
-        },
-      ],
-    },
-  ],
-  ict: [
-    {
-      heading: "Dashboard",
-      data: [
-        {
-          title: "Custom Views by Role",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Timesheet management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Staff Summary",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Payroll Tracker",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "HR Insights/Talent Pulse",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "TaskBridge",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Invoice Summary",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Leave Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-      ],
-    },
-    {
-      heading: "Admin Console",
-      data: [
-        {
-          title: "Organisation Settings",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Facility directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Worker Records",
+          subTitle: "Track staff credentials & compliance",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
           title: "Staff Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          subTitle: "Centralised support worker list",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Leave & Onboarding",
+          subTitle: "Manage leave & training tasks",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Recruitment & Training",
+          subTitle: "Hire & train per NDIA standards",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "HR Insights",
+          subTitle: "Monitor staff performance & metrics",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Access Controls",
+          subTitle: "Role-based permissions",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Shift Notifications",
+          subTitle: "Real-time alerts for new or changed shifts",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Incident Register",
+          subTitle: "Log and track staff-related incidents",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
       ],
     },
-
     {
-      heading: "Accounting",
+      heading: "Rostering & Shift Management",
       data: [
         {
-          title: "Sales & Purchase",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Roster Scheduling",
+          subTitle: "View all shifts in one place",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Bank Feed",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Shift Publishing",
+          subTitle: "Assign & notify support workers",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Chart of Accounts",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Staff Dashboard",
+          subTitle: "Staff view shifts & updates",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "General Ledger",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Participant Dashboard",
+          subTitle: "Participants view upcoming supports",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Reports",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Shift Notes",
+          subTitle: "Add instructions & requirements",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Payroll",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Recurring Shifts",
+          subTitle: "Automate group/split/broken shifts",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Account Settings",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Checklists & Reimbursements",
+          subTitle: "Track tasks & expenses",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Payroll Settings",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Auto Scheduling (AI)",
+          subTitle: "Generate rosters with NDIA rules",
+          data1: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data2: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: true,
+            text: "Optional add-on",
+          },
+        },
+        {
+          title: "Shift Compliance",
+          subTitle: "Apply fatigue & award rules",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Time Tracking",
+          subTitle: "Clock-in/out & approve timesheets",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "SCHADS Awards",
+          subTitle: "Apply fatigue, pay & rostering rules per NDIA standards",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Shift Tools",
+          subTitle: "GPS, voice notes & risk flags",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
       ],
     },
     {
-      heading: "Repository",
+      heading: "Reporting & Business Intelligence",
+      data: [
+        {
+          title: "Role-Based Dashboards",
+          subTitle: "Insights by user role",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Performance Tracker",
+          subTitle: "Measure outcomes & staff impact",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Custom Dashboards",
+          subTitle: "Build NDIA-aligned reports",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "1:1 Chat",
+          subTitle: "Secure staff-participant messaging",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Group Chat",
+          subTitle: "Team coordination & updates",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Support",
+          subTitle: "Ongoing chat & email help",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+      ],
+    },
+    {
+      heading: "Support Management",
+      data: [
+        {
+          title: "Service Locations",
+          subTitle: "Manage delivery sites",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Incident Logging",
+          subTitle: "NDIA-compliant reporting",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Audit Reports",
+          subTitle: "Generate NDIA-ready documents",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+      ],
+    },
+    {
+      heading: "Property & Service Locations",
       data: [
         {
           title: "Bulk Storage",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "User-Specific Document Access",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-      ],
-    },
-    {
-      heading: "My Profile",
-      data: [
-        {
-          title: "My Profile",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Awards",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Training & Evaluation",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Leave Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Payslips & Timesheet",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Will update soon",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          subTitle: "Upload large volumes of files",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
       ],
     },
     {
-      heading: "Access Control Panel",
+      heading: "Document & Incident Management",
       data: [
         {
-          title: "Create User Account",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Access Control",
+          subTitle: "Restrict document visibility",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "User Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Unlimited Storage",
+          subTitle: "No file limits",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Staff Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Upcoming Supports",
+          subTitle: "Real-time support schedule",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Reset Password",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Support Requests",
+          subTitle: "Book or cancel supports",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "User Report",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Funding Overview",
+          subTitle: "View plan balances & usage",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
       ],
     },
     {
-      heading: "T Sign",
+      heading: "Participant App",
       data: [
         {
-          title: "E Signatures",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Goal Tracking",
+          subTitle: "Monitor goals & achievements",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Support PDF, Word",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Document Access",
+          subTitle: "View care plans, agreements & assessments",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Support Chat",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Secure Messaging",
+          subTitle: "Encrypted chat with support team",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Participant Schedule",
+          subTitle: "View upcoming supports & appointments",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Timesheet Submission",
+          subTitle: "Submit hours for payroll processing",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Activity Logs / Journals",
+          subTitle: "Record daily routines & observations",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Reminders & Notifications",
+          subTitle: "Alerts for meds, goals & appointments",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Feedback & Surveys",
+          subTitle: "Share feedback on services & staff",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Emergency / SOS Button",
+          subTitle: "One-tap access to emergency help",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
       ],
     },
     {
-      heading: "HR Operations",
+      heading: "Support Worker App",
       data: [
         {
-          title: "Staff Directory",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Incident Reporting",
+          subTitle: "Report participant incidents via app",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Awards & Recognition",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Task Management",
+          subTitle: "Complete daily support tasks & checklists",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Training & Evaluation",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Shift Swaps & Requests",
+          subTitle: "Request shift changes or swaps",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Leave Management",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Training & Certification Tracker",
+          subTitle: "Track mandatory qualifications & expiry",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Staff Onboarding",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Applicant tracking system ",
-          subTitle: "",
-          data1: true,
-          data2: true,
-        },
-        {
-          title: "Recruitments",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Mobile Time Clock with GPS",
+          subTitle: "GPS-based clock-in/out at support sites",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
       ],
     },
     {
-      heading: "ChaT",
+      heading: "Support Coordinator App",
       data: [
         {
-          title: "ChaT feature on both Web and Mobile (iOS, Android)",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Incident Oversight",
+          subTitle: "Monitor & escalate incident reports",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Group Chat - Web",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Participant Plan Overview",
+          subTitle: "View goals, budgets & funding usage",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
         },
         {
-          title: "Poll - Web",
-          subTitle: "",
-          data1: true,
-          data2: true,
+          title: "Document Automation",
+          subTitle: "Auto-generate NDIA-compliant documents",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Reporting & Analytics",
+          subTitle: "Dashboards for participant & staff metrics",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Audit Trail",
+          subTitle: "Track changes to records for compliance",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Participant\u2013Worker Matching",
+          subTitle: "Match staff based on skills & availability",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Communication Templates",
+          subTitle: "Prebuilt messages for approvals & updates",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+      ],
+    },
+    {
+      heading: "Add-Ons",
+      data: [
+        {
+          title: "Full Accounting Suite",
+          subTitle: "Compliant invoicing & financial reporting",
+          data1: {
+            value: true,
+            text: "Optional (10% off)",
+          },
+          data2: {
+            value: true,
+            text: "Optional (10% off)",
+          },
+          data3: {
+            value: true,
+            text: "Optional (10% off)",
+          },
+          data4: {
+            value: true,
+            text: "Optional (10% off)",
+          },
+        },
+        {
+          title: "Learning Management System (Wyzed)",
+          subTitle: "Online staff training aligned with NDIS standards",
+          data1: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data2: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: true,
+            text: "Optional add-on",
+          },
+        },
+        {
+          title: "PDF & Word Document Signing",
+          subTitle: "Secure signing of NDIS service agreements and care plans",
+          data1: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data2: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: true,
+            text: "Optional add-on",
+          },
+        },
+        {
+          title: "AI-Powered NDIS Automation",
+          subTitle: "Predictive rostering and smart admin workflows",
+          data1: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data2: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: true,
+            text: "Optional add-on",
+          },
         },
       ],
     },
@@ -1604,14 +1939,14 @@ export const featuresDummyData = [
     id: 3,
     title: "Admin Console",
     description:
-      "The Admin Console is the single point of control that makes it easy to manage organisational details, manage user access, facilities, roster and staff with smooth, secure operations. ",
+      "he Admin Console is the single point of control that makes it easy to manage organisational details, manage user access, facilities, roster and staff with smooth, secure operations.",
     image: AdminConsoleImage,
   },
   {
     id: 4,
     title: "HR Operations",
     description:
-      "Centralise HR flows - from onboarding to compliance reporting.",
+      "Centralise HR flows. From onboarding to compliance reporting.",
     image: HRImage,
   },
   {
@@ -1625,14 +1960,14 @@ export const featuresDummyData = [
     id: 6,
     title: "ChaT & Notifications",
     description:
-      "In-app messaging, mobile alerts, and real-time updates will ensure your team has the latest information – securely archived.",
+      "In-app messaging, mobile alerts, and real-time updates will ensure your team has the latest information.",
     image: ChatImage,
   },
   {
     id: 7,
     title: "Repository",
     description:
-      "Safely store and organize files of staff and participants with role-based access and digital signatures. ",
+      "Safely store and organize files of staff and participants with role-based access and digital signatures.",
     image: RepoImage,
   },
   {
@@ -1645,7 +1980,7 @@ export const featuresDummyData = [
   {
     id: 9,
     title: "Incident Management",
-    description: "Record logs with automatic alerts and escalation channels. ",
+    description: "Record logs with automatic alerts and escalation channels.",
     image: IncidentImage,
   },
   {
@@ -1666,87 +2001,87 @@ export const featuresDummyData = [
     id: 12,
     title: "Access Control Panel",
     description:
-      "The Access Control Panel simplifies user management by enabling administrators to assign, manage, and revoke access rights in real-time offering effective and flexible control over entry permissions. ",
+      "The Access Control Panel simplifies user management by enabling administrators to assign, manage, and revoke access rights in real-time offering effective and flexible control over entry permissions.",
     image: AccessImage,
   },
   {
     id: 13,
     title: "Forms",
     description:
-      "Design and manage bespoke forms to fit your workflow. Quickly deploy forms to compile, review, and save data submitted by users in real time ",
+      "Design and manage bespoke forms to fit your workflow. Quickly deploy forms to compile, review, and save data submitted by users in real time",
     image: Forms,
   },
   {
     id: 14,
     title: "T-sign",
     description:
-      "Sign documents with confidence with T Sign E-Signature for PDF and Word formats. Improve teamwork with Chat support built right in to ensure everyone communicate when signing in real-time. ",
+      "Sign documents with confidence with T Sign E-Signature for PDF and Word formats. Improve teamwork with Chat support built right in to ensure everyone communicate when signing in real-time.",
     image: TSign,
   },
   {
     id: 15,
     title: "My Profile",
     description:
-      "Control your private information and preferences from a single location. Keep your profile current for all the benefits of having access and get a more personalized experience. ",
+      "Control your private information and preferences from a single location. Keep your profile current for all the benefits of having access and get a more personalized experience.",
     image: Profile,
   },
   {
     id: 16,
     title: "Role based Dashboards",
     description:
-      "Role-based dashboards offer a personalized view to critical tools and insight, enabling users to monitor vital information, work, schedules, and performance with greater ease. ",
+      "Role-based dashboards offer a personalized view to critical tools and insight, enabling users to monitor vital information, work, schedules, and performance with greater ease.",
     image: Role,
   },
 ];
 import howItWorksImage1 from "../assets/howItWorks1.png";
 import howItWorksImage2 from "../assets/howItWorks2.png";
 import howItWorksImage3 from "../assets/howItWorks3.png";
-import howItWorksImage4 from "../assets/howItWorks4.png";
-import howItWorksImage5 from "../assets/howItWorks5.png";
-import howItWorksImage6 from "../assets/howItWorks6.png";
+// import howItWorksImage4 from "../assets/howItWorks4.png";
+// import howItWorksImage5 from "../assets/howItWorks5.png";
+// import howItWorksImage6 from "../assets/howItWorks6.png";
 export const howItWorksDummyData = [
   {
     id: 1,
-    title: "Book a Demo",
-    image: howItWorksImage1,
+    title: "Try It Free",
+    image: howItWorksImage2,
     description:
-      "See the platform in action. We’ll show you how TesseractApps fits your service type and team needs.",
+      "Sign up in a few clicks and enjoy 7 days of full access. No pressure, just explore at your pace. ",
   },
   {
     id: 2,
-    title: "Sign In and Get Started",
-    image: howItWorksImage2,
+    title: "Book a Demo ",
+    image: howItWorksImage1,
     description:
-      "Once you’re set up, log in to your dashboard—desktop or mobile. Everything you need is ready to go.",
+      "Pick a time for a demo and see how TesseractApps fits your team and services. ",
   },
   {
     id: 3,
-    title: "Add Your Team and Participants",
+    title: "Get Setup Support ",
     image: howItWorksImage3,
     description:
-      "Easily add staff, link NDIS participants, upload documents, and assign roles—all in one place. ",
+      "One of our friendly team members will guide you through setup and answer any questions along the way. ",
   },
-  {
-    id: 4,
-    title: "Manage Rosters, Services & Notes",
-    image: howItWorksImage4,
-    description:
-      "Create rosters, log progress notes, track time, and deliver services—your daily tasks simplified.",
-  },
-  {
-    id: 5,
-    title: "Claim & Pay with Confidence",
-    image: howItWorksImage5,
-    description:
-      "Generate NDIS claims, run payroll, and send invoices in a few clicks. Accurate, fast, and reliable.",
-  },
-  {
-    id: 6,
-    title: "Stay Compliant & In Control",
-    image: howItWorksImage6,
-    description:
-      "Track compliance, training, budgets, and reports in real time. Be audit-ready every day.",
-  },
+  // {
+  //   id: 4,
+  //   title: "Manage Rosters, Services & Notes",
+  //   image: howItWorksImage4,
+  //   description:
+  //     "Create rosters, log progress notes, track time, and deliver services—your daily tasks simplified.",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Claim & Pay with Confidence",
+  //   image: howItWorksImage5,
+  //   description:
+  //     "Generate NDIS claims, run payroll, and send invoices in a few clicks. Accurate, fast, and reliable.",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Stay Compliant & In Control",
+  //   image: howItWorksImage6,
+  //   description:
+  //     "Track compliance, training, budgets, and reports in real time. Be audit-ready every day.",
+  // },
 ];
 
 import testimonialImage from "../assets/avatar-mid-alt.png";
@@ -1860,11 +2195,27 @@ export const dots = {
   dot6: { outer: "#EBE2FE", middle: "#C7ADFC", inner: "#932EFA" },
 };
 // import detailsHero from "../assets/heroDetails1.png";
-import productsHero from "../assets/product overview.png";
+// import productsHero from "../assets/product overview.png";
 // import detailsImage1 from "../assets/detailImage1.png";
 // import detailsImage2 from "../assets/detailImage2.png";
 // import detailsImage3 from "../assets/detailImage3.png";
-import tesseractApsImage from "../assets/Tesseract Apps.png";
+// import tesseractApsImage from "../assets/Tesseract Apps.png";
+import rosternew from "../assets/Website images/Roster Management.png";
+import timesheetNew from "../assets/Website images/My roster time sheet.png";
+import adminConsoleNew from "../assets/Website images/Admin Console.png";
+import accessNew from "../assets/Website images/Access control panel.png";
+import hrnew from "../assets/Website images/HR.png";
+import repoNew from "../assets/Website images/Repository.png";
+import participantNew from "../assets/Website images/Participants.png";
+import incidentNew from "../assets/Website images/Incident Register.png";
+import rollbased from "../assets/Website images/Role-Based Dashboards.png";
+import tsignNew from "../assets/Website images/Tsign.png";
+import chatNew from "../assets/Website images/Chat.png";
+import myprofileNew from "../assets/Website images/My profile.png";
+import clockiN from "../assets/Website images/clock in clock out.png";
+import formsNew from "../assets/Website images/Forms.png";
+import accountingNew from "../assets/Website images/Accounting.png";
+import TLEARNINGNEW from "../assets/Website images/T learner.png";
 export const SubPagesDummyData = {
   Product: {
     page: "Product",
@@ -1882,11 +2233,32 @@ export const SubPagesDummyData = {
         conclusion: "No credit card is required. Free onboarding included. ",
       },
     },
-    section3: {
-      images: [timesheets],
+    section2: {
       title: "One Connected Platform ",
-      description:
-        "Access all essential tools in one system. Workforce and participant data live in a single source. Gain visibility across care delivery, HR, finance, and operations. Automation reduces errors and saves time. ",
+      points: [
+        {
+          dot: dots.dot1,
+          title: "",
+          description: "Access all essential tools in one system.",
+        },
+        {
+          dot: dots.dot2,
+          title: "",
+          description:
+            "Workforce and participant data live in a single source.",
+        },
+        {
+          dot: dots.dot3,
+          title: "",
+          description:
+            "Gain visibility across care delivery, HR, finance, and operations.",
+        },
+        {
+          dot: dots.dot4,
+          title: "",
+          description: "Automation reduces errors and saves time.",
+        },
+      ],
     },
     products: {
       title: "Get Started Today",
@@ -1894,7 +2266,7 @@ export const SubPagesDummyData = {
         "See how TesseractApps can simplify your workflows and drive better outcomes for staff and participants alike. ",
       productsData: [
         {
-          image: resterManagement,
+          image: rosternew,
           title: "Roster Management",
           subTitle:
             "Precision Rostering Simplified for Disability Support Carers",
@@ -1902,7 +2274,7 @@ export const SubPagesDummyData = {
             "Create rosters that work for both staff and participants. Handle recurring shifts, resolve conflicts, and see changes in real time so your team stays on track.",
         },
         {
-          image: timesheets,
+          image: timesheetNew,
           title: "Timesheet",
           subTitle:
             "Accurate Tracking. Seamless Approvals. Effortless Payroll. ",
@@ -1910,93 +2282,93 @@ export const SubPagesDummyData = {
             "Capture hours with geo-verified clock-ins and match them directly to scheduled shifts. Approvals are flexible, whether you want to check them by staff, by shift, or in bulk. Timesheets connect straight to payroll, so overtime and allowances are always accounted for.",
         },
         {
-          image: adminConsole,
+          image: adminConsoleNew,
           title: "Admin Console",
           description:
             "Control your operations from one place. Update sites, adjust settings, and maintain compliance without switching between different systems. ",
         },
         {
-          image: accessControl,
+          image: accessNew,
           title: "Access Control Panel",
           description:
             "Keep data secure with role-based access. Add new users in bulk, scale permissions as your team grows, and always know who has access to what. ",
         },
         {
-          image: hrOperations,
+          image: hrnew,
           title: "HR Operations",
           description:
             "Stay across your workforce from hire to performance. Track leave, qualifications, and training to keep your staff supported and compliant. ",
         },
         {
-          image: tsign,
+          image: tsignNew,
           title: "T-sign",
           description:
             "Approve documents online with full security. Each action is logged, creating a clear audit trail that supports compliance and reduces manual paperwork. ",
         },
         {
-          image: clockInAndOut,
+          image: clockiN,
           title: "Clock In & Clock Out",
           description:
             "Record shifts in real time with accuracy. Staff log their hours instantly, managers approve quickly, and payroll runs smoothly with fewer errors.",
         },
         {
-          image: participantManagement,
+          image: participantNew,
           title: "Participant Management",
           description:
             "Organise participant data in a clean, structured way. Access records instantly without the clutter, ensuring care delivery stays focused.",
         },
         {
-          image: incidentManagement,
+          image: incidentNew,
           title: "Incident Management",
           description:
             "Log incidents as they occur. Support workplace safety, meet compliance requirements, and keep clear records for audits. ",
         },
         {
-          image: repository,
+          image: repoNew,
           title: "Repository",
           description:
             " Store and share documents in one secure place. Version control keeps every edit tracked and ensures files are always easy to find.",
         },
         {
-          image: roleBasedDashboard,
+          image: rollbased,
           title: "Role based Dashboard",
           description:
             "See the data that matters to you. Monitor rosters, HR records, and performance metrics in real time with a clear, role-specific view. ",
         },
         {
-          image: chat,
+          image: chatNew,
           title: "ChaT",
           description:
             " Communicate with your team in a secure channel. Share updates and reduce reliance on external messaging tools.",
         },
         {
-          image: tesseractApsImage,
+          image: myprofileNew,
           title: "My Profile",
           description:
             "Give staff visibility of their own information. From schedules to leave and performance history, everything is managed in one place.",
         },
         {
-          image: forms,
+          image: formsNew,
           title: "Forms",
           description:
             "Replace paperwork with digital forms. Customise them by role and streamline approvals to save time and reduce admin. ",
         },
         {
-          image: accounting,
+          image: accountingNew,
           title: "Accounting",
           description: `Connect budgets, invoices, and payroll in one system. Keep financial reporting accurate and ready for compliance checks. `,
         },
         {
-          image: tLearingHub,
+          image: TLEARNINGNEW,
           title: "T Learning Hub",
           description:
             " Provide training on demand. Staff learn by role, track progress, and maintain compliance with ongoing development. ",
         },
-        {
-          image: tesseractApsImage,
-          title: "AI Coming Soon",
-          description: "Predict. Act. Simplify",
-        },
+        // {
+        //   image: tesseractApsImage,
+        //   title: "AI Coming Soon",
+        //   description: "Predict. Act. Simplify",
+        // },
       ],
     },
   },
@@ -2871,6 +3243,9 @@ import ndisStaff from "../assets/Role NDIS staff.png";
 import hr from "../assets/Role HR manager.png";
 import accountingImage from "../assets/Role Accounting.png";
 import participantsImage from "../assets/Role Participants.png";
+import one from "../assets/01.png";
+import two from "../assets/02.png";
+import three from "../assets/03.png";
 export const byRoleData = {
   Administrator: {
     hero: {
@@ -2951,13 +3326,13 @@ export const byRoleData = {
         title: "Management and Compliance",
         description:
           "TesseractApps provides a centralised dashboard where administrators can manage all users, modules, and system settings in one place. Compliance tracking and automated alerts ensure staff certifications and trainings remain current. Audit logs and secure data storage protect sensitive information and maintain organisational accountability.",
-        images: [participantsImage],
+        images: [one],
       },
       {
         title: "Reporting and Workflow Efficiency ",
         description:
           "Reporting tools and dashboards offer real-time insights into staff performance, service delivery, and operational metrics. Workflow automation reduces manual tasks, allowing administrators to focus on improving efficiency, streamlining processes, and maintaining full oversight of the organisation.",
-        images: [participantsImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -3059,13 +3434,13 @@ export const byRoleData = {
         title: "Optimised Workforce Management",
         description:
           "TesseractApps allows Roster Managers to balance workloads, assign staff based on skills or availability, and manage leave seamlessly. Real-time dashboards provide visibility into shift coverage, staff utilisation, and upcoming absences, enabling informed decisions that reduce overtime, prevent burnout, and improve service delivery.",
-        images: [participantsImage],
+        images: [one],
       },
       {
         title: "Reporting and Workflow Efficiency",
         description:
           "Dashboards and reporting tools provide insights into staffing levels, shift coverage, attendance patterns, and workload distribution. Automation reduces manual scheduling and approval tasks, allowing Roster Managers to focus on workforce optimisation and operational efficiency.",
-        images: [participantsImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -3160,13 +3535,13 @@ export const byRoleData = {
         title: "Financial Management and Compliance",
         description:
           "TesseractApps provides a centralised platform where accountants can manage payroll, invoicing, budgets, and financial reporting in one place. Automated alerts and compliance tracking ensure deadlines, taxation, and auditing requirements are always met. Secure storage and audit logs protect sensitive financial data.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Reporting and Workflow Efficiency ",
         description:
           "Dashboards and reporting tools offer real-time insights into payroll, spending, and financial performance. Automation reduces manual processes, allowing accountants to focus on accuracy, analysis, and strategic financial planning. ",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -3267,13 +3642,13 @@ export const byRoleData = {
         title: "Care Management and Compliance ",
         description:
           "TesseractApps provides NDIS staff with a centralised platform to manage participants, schedules, and tasks efficiently. Automated alerts ensure staff certifications, training, and compliance requirements are always up to date. Digital records and audit trails protect sensitive participant and staff information. ",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Reporting and Workflow Efficiency ",
         description:
           "Dashboards and reporting tools give staff real-time visibility into their schedules, session records, and participant progress. Automation reduces manual reporting and paperwork, allowing staff to focus on care delivery and operational tasks.   ",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -3374,13 +3749,13 @@ export const byRoleData = {
         title: "HR Management and Compliance ",
         description:
           "TesseractApps provides a centralised dashboard where HR Managers can manage all staff records, qualifications, leave, and training requirements. Automated alerts notify managers of upcoming deadlines or missing documentation, keeping compliance and workforce readiness on track. ",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Reporting and Workflow Efficiency ",
         description:
           "Dashboards and reporting tools provide insights into HR metrics, staff performance, training completion, and leave patterns. Automation reduces manual HR tasks, allowing managers to focus on workforce planning, staff development, and operational efficiency. ",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -3472,13 +3847,13 @@ export const byRoleData = {
         title: "Centralised Access and Transparency",
         description:
           "TesseractApps gives participants a single platform to view schedules, documents, and service updates. Notifications and reminders keep participants informed about upcoming appointments and any changes to their support. Secure access protects personal information while ensuring transparency and engagement. ",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Participation and Workflow Efficiency",
         description:
           "Participants can track their goals, provide feedback, and communicate with their care team in real time. Digital records and automated alerts reduce confusion, improve engagement, and make managing support services simple and convenient. ",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -3515,6 +3890,10 @@ export const byRoleData = {
 };
 import ndisIndustry from "../assets/NDIS Industry.png";
 import ictIndustry from "../assets/ICT Industry.png";
+import retail from "../assets/Retail & Hospitality.png";
+import multiSite from "../assets/Multi-site Businesses.png";
+import construction from "../assets/Construction.png";
+import manufacturing from "../assets/Manufacturing.png";
 export const byIndustryData = {
   "NDIS Industry": {
     hero: {
@@ -3529,7 +3908,7 @@ export const byIndustryData = {
       },
     },
     details: {
-      title: "Why NDIS Providers Choose TesseractApps ?",
+      title: "Why NDIS Providers Choose TesseractApps?",
       points: [
         {
           dot: dots.dot1,
@@ -3713,19 +4092,19 @@ export const byIndustryData = {
         title: "Operational Efficiency",
         description:
           "Manage all ICT workflows from a single platform. Connect timesheets, rosters, HR, and finance for seamless operations. Staff submit shifts and leave through mobile or desktop tools. Managers track activity, approve tasks, and monitor performance in real time. Automated workflows reduce manual steps, minimise errors, and keep operations transparent. ",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Security",
         description:
           "Keep your ICT operations fully compliant with industry regulations and standards. Protect sensitive staff, project, and financial data with role-based access controls and secure digital approvals. Track audits and document histories accurately. Every record is fully traceable and accessible only to authorised users, ensuring ICT compliance and operational accountability. ",
-        images: [accountingImage],
+        images: [two],
       },
       {
         title: "Streamlined ICT Operations",
         description:
           "TesseractApps helps ICT managers manage staff, shifts, projects, and system settings efficiently from a single secure platform. Automated alerts notify you of compliance requirements, training expirations, or scheduling conflicts. Audit logs and secure data storage protect sensitive information, reduce errors, and improve ICT operational efficiency. ",
-        images: [accountingImage],
+        images: [three],
       },
     ],
 
@@ -3762,7 +4141,7 @@ export const byIndustryData = {
   },
   "Retail & Hospitality": {
     hero: {
-      image: participantsImage,
+      image: retail,
       title: "Smarter Workforce Management for Retail & Hospitality",
       page: "Retail & Hospitality",
       description:
@@ -3859,7 +4238,7 @@ export const byIndustryData = {
   },
   "Multi-Site Businesses": {
     hero: {
-      image: participantsImage,
+      image: multiSite,
       title: "Unified Management Across All Your Locations",
       page: "Multi-Site Businesses",
       description:
@@ -3964,7 +4343,7 @@ export const byIndustryData = {
   },
   Construction: {
     hero: {
-      image: participantsImage,
+      image: construction,
       title: "Smarter Workforce & Compliance Management for Construction",
       page: "Construction",
       description:
@@ -4074,7 +4453,7 @@ export const byIndustryData = {
   },
   Manufacturing: {
     hero: {
-      image: participantsImage,
+      image: manufacturing,
       title: "Streamlined Workforce & Compliance Management for Manufacturing",
       page: "Manufacturing",
       description:
@@ -4139,13 +4518,13 @@ export const byIndustryData = {
         title: "Operational Efficiency",
         description:
           "TesseractApps centralises workforce management, rostering, and shift tracking in one platform. Real-time dashboards provide visibility into staff activity, attendance, and production schedules, helping your manufacturing operations run smoothly.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Resource Management",
         description:
           "TesseractApps ensures staff training, certifications, and safety documentation remain current. Automated alerts, digital approvals, and secure document storage reduce administrative tasks and maintain regulatory compliance. Resources and workflows are optimised for productivity and safety.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
 
@@ -4182,6 +4561,11 @@ export const byIndustryData = {
     },
   },
 };
+import support from "../assets/Disability Support.png";
+import aged from "../assets/aged Care Services.png";
+import child from "../assets/Childcare Services.png";
+import allied from "../assets/Allied Health Practices.png";
+import home from "../assets/Home & Community Care.png";
 export const byCareData = {
   "Disability Support (NDIS)": {
     hero: {
@@ -4220,7 +4604,7 @@ export const byCareData = {
           dot: dots.dot4,
           title: "Compliance Tracker",
           description:
-            "Track staff certifications, NDIS standards, and audit requirements. Automated alerts always keep your workforce compliant and audit ready.",
+            "Track staff certifications, NDIS standards, and audit requirements. Automated alerts always keep your workforce compliant and audit-ready.",
         },
         {
           dot: dots.dot5,
@@ -4265,13 +4649,13 @@ export const byCareData = {
         title: "Efficient Participant and Staff Management",
         description:
           "TesseractApps centralises participant records, staff rostering, and support session tracking in one platform. Real-time dashboards provide visibility into service delivery, attendance, and care schedules, helping your organisation coordinate NDIS support effectively.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Care Quality",
         description:
           "TesseractApps ensures staff qualifications, mandatory training, and documentation remain current. Automated alerts, digital approvals, and secure document storage maintain compliance and reduce administrative work. Staff can focus on delivering high-quality care while you maintain oversight and accountability.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -4280,7 +4664,7 @@ export const byCareData = {
         {
           question: "How does TesseractApps support NDIS compliance?",
           answer:
-            "The system tracks staff certifications, service agreements, and incident reports automatically. Audit logs and alerts ensure you are always NDIS audit ready.",
+            "The system tracks staff certifications, service agreements, and incident reports automatically. Audit logs and alerts ensure you are always NDIS audit-ready.",
         },
         {
           question: "Can it handle complex rosters for multiple participants?",
@@ -4307,7 +4691,7 @@ export const byCareData = {
   },
   "Support Coordination": {
     hero: {
-      image: participantsImage,
+      image: support,
       title: "Support Coordination Solutions",
       page: "Support Coordination",
       description:
@@ -4375,13 +4759,13 @@ export const byCareData = {
         title: "Efficient Participant and Service Management",
         description:
           "TesseractApps centralises participant records, support plans, and staff scheduling in one platform. Real-time dashboards provide visibility into sessions, service delivery, and team assignments, helping coordinators manage care efficiently.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Oversight",
         description:
           "TesseractApps tracks staff qualifications, mandatory training, and documentation automatically. Automated alerts, digital approvals, and secure document storage maintain compliance while reducing administrative work. Coordinators can focus on participant outcomes while you maintain operational oversight.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -4418,7 +4802,7 @@ export const byCareData = {
   },
   "Aged Care Services": {
     hero: {
-      image: participantsImage,
+      image: aged,
       title: "Efficient Workforce and Care Management for Aged Care Providers",
       page: "Aged Care Services",
       description:
@@ -4498,13 +4882,13 @@ export const byCareData = {
         title: "Efficient Care and Staff Management",
         description:
           "TesseractApps centralises resident records, staff rostering, and care session tracking in one platform. Real-time dashboards provide visibility into schedules, attendance, and service delivery, helping your organisation coordinate aged care efficiently.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Quality Assurance",
         description:
           "TesseractApps tracks staff certifications, mandatory training, and documentation automatically. Automated alerts, digital approvals, and secure document storage maintain compliance while reducing administrative work. Staff can focus on providing quality care while you maintain oversight and accountability.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -4541,7 +4925,7 @@ export const byCareData = {
   },
   "Childcare Services": {
     hero: {
-      image: participantsImage,
+      image: child,
       title: "Simplified Operations and Compliance for Childcare Centres",
       page: "Childcare Services",
       description:
@@ -4621,13 +5005,13 @@ export const byCareData = {
         title: "Efficient Child and Staff Management",
         description:
           "TesseractApps centralises enrolment records, staff rostering, and activity scheduling in one platform. Real-time dashboards provide visibility into attendance, class schedules, and staff allocation, helping your childcare centre operate efficiently.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Safety Oversight",
         description:
           "TesseractApps tracks staff qualifications, mandatory training, and regulatory documentation automatically. Automated alerts, digital approvals, and secure document storage maintain compliance and reduce administrative work. Staff can focus on childcare and engagement while you maintain safety and operational oversight.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -4663,7 +5047,7 @@ export const byCareData = {
   },
   "Allied Health Services": {
     hero: {
-      image: participantsImage,
+      image: allied,
       title: "Streamline Operations for Allied Health Providers",
       page: "Allied Health Services",
       description:
@@ -4743,13 +5127,13 @@ export const byCareData = {
         title: "Streamlined Patient and Staff Management",
         description:
           "TesseractApps centralises client records, appointment scheduling, and staff rostering in one platform. Real-time dashboards give visibility into sessions, attendance, and service delivery, helping your organisation manage care efficiently.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Professional Development",
         description:
           "TesseractApps tracks staff certifications, mandatory training, and documentation automatically. Automated alerts, digital approvals, and secure document storage ensure compliance while reducing administrative work. Staff can focus on client care and professional growth while you maintain oversight.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -4785,7 +5169,7 @@ export const byCareData = {
   },
   "Home & Community Care Services": {
     hero: {
-      image: participantsImage,
+      image: home,
       title: "Streamlined Operations for Home & Community Care Providers",
       page: "Home & Community Care Services",
       description:
@@ -4865,13 +5249,13 @@ export const byCareData = {
         title: "Efficient Care Coordination",
         description:
           "TesseractApps centralises participant management, staff rostering, and visit tracking in one platform. Real-time dashboards provide visibility into care schedules, attendance, and service delivery, helping your organisation coordinate care efficiently.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Compliance and Staff Support",
         description:
           "TesseractApps ensures staff certifications, training, and documentation remain up to date. Automated alerts, digital approvals, and secure document storage maintain compliance while reducing administrative work. Staff can focus on delivering quality care while you maintain oversight and accountability.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -4906,10 +5290,14 @@ export const byCareData = {
     },
   },
 };
+import small from "../assets/Small Businesses.png";
+import enterprise from "../assets/Enterprise.png";
+import Franchises from "../assets/Franchises.png";
+import Startups from "../assets/Startups.png";
 export const byBusinessType = {
   "Small Businesses": {
     hero: {
-      image: participantsImage,
+      image: small,
       title: "Simplify Operations for Small Businesses",
       page: "Small Businesses",
       description:
@@ -4989,13 +5377,13 @@ export const byBusinessType = {
         title: "Challenges for Small Businesses",
         description:
           "Small businesses often face limited resources, fragmented systems, and time-consuming administrative tasks. Managing staff, payroll, and compliance manually can slow growth and increase risk.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "How TesseractApps Helps",
         description:
           "TesseractApps centralises workforce management, payroll, compliance, and communication into a single platform. Automation and dashboards reduce administrative effort, improve oversight, and let business owners focus on growth and customer satisfaction.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5031,7 +5419,7 @@ export const byBusinessType = {
   },
   Enterprises: {
     hero: {
-      image: participantsImage,
+      image: enterprise,
       title: "Enterprise Workforce Management Solutions",
       page: "Enterprises",
       description:
@@ -5111,13 +5499,13 @@ export const byBusinessType = {
         title: "Challenges for Enterprises",
         description:
           "Large organisations face complex workforce management, multi-department coordination, strict compliance requirements, and high administrative overhead. Disconnected systems make oversight and operational consistency difficult.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "How TesseractApps Helps",
         description:
           "TesseractApps centralises HR, payroll, compliance, communication, and operations into one secure platform. Automation, real-time dashboards, and secure document storage reduce manual work, provide oversight, and allow leaders to focus on strategic growth and organisational efficiency.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5154,7 +5542,7 @@ export const byBusinessType = {
   },
   Franchises: {
     hero: {
-      image: participantsImage,
+      image: Franchises,
       title: "Management for Franchise Networks",
       page: "Franchises",
       description:
@@ -5228,13 +5616,13 @@ export const byBusinessType = {
         title: "Operations and Consistency",
         description:
           "TesseractApps lets you manage staff, schedules, payroll, and compliance across multiple locations from one platform. Real-time dashboards provide visibility into operations, ensuring consistency and efficiency across your franchise network.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Automation and Risk Reduction",
         description:
           "TesseractApps reduces administrative work and standardises workflows. Automated alerts, digital approvals, and secure document storage maintain compliance and protect sensitive information. Staff can focus on delivering quality service while you maintain oversight of the entire network.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5270,7 +5658,7 @@ export const byBusinessType = {
   },
   Startups: {
     hero: {
-      image: participantsImage,
+      image: Startups,
       title: "Workforce Solutions for Startups",
       page: "Startups",
       description:
@@ -5350,13 +5738,13 @@ export const byBusinessType = {
         title: "Streamlined Operations",
         description:
           "TesseractApps centralises workforce management, payroll, rostering, and compliance in one platform. Automation reduces manual tasks, helping your startup operate efficiently with limited resources. Real-time dashboards give you visibility into staff performance, schedules, and operational workflows.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Scalability and Growth Support",
         description:
           "TesseractApps provides tools to manage growth smoothly. Track budgets, monitor compliance, and onboard new staff quickly. Workflow automation and integrated training ensure your team stays productive and compliant as your startup expands.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5391,10 +5779,14 @@ export const byBusinessType = {
     },
   },
 };
+import compliance from "../assets/ompliance.png";
+import emmpEng from "../assets/Employee Engagement.png";
+import timeEff from "../assets/Time Efficiency.png";
+import costOp from "../assets/Cost Optimisation.png";
 export const byBusinessProblem = {
   Compliance: {
     hero: {
-      image: participantsImage,
+      image: compliance,
       title: "Manage Compliance and Reduce Risk",
       page: "Compliance & Risk Management",
       description:
@@ -5462,13 +5854,13 @@ export const byBusinessProblem = {
         title: "Oversight and Risk Visibility",
         description:
           "TesseractApps centralises compliance tracking, incident reporting, and risk management. Track staff certifications, mandatory training, and regulatory requirements automatically. Dashboards display real-time compliance and risk status. Reporting tools give you insights to make informed operational decisions.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Security and Operational Efficiency",
         description:
           "TesseractApps reduces administrative work while keeping audit records complete. Use T-Sign for secure digital approvals. Assign role-based access to protect sensitive data. Centralised document storage and automated workflows ensure compliance tasks are completed on time. Training tools help staff meet regulatory standards consistently.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5504,7 +5896,7 @@ export const byBusinessProblem = {
   },
   "Employee Engagement": {
     hero: {
-      image: participantsImage,
+      image: emmpEng,
       title: "Enhance Employee Engagement Across Your Organisation",
       page: "Employee Engagement",
       description:
@@ -5572,13 +5964,13 @@ export const byBusinessProblem = {
         title: "Communication and Collaboration",
         description:
           "TesseractApps provides secure messaging and file sharing tools to keep teams connected. Staff receive updates, announcements, and feedback instantly, improving engagement and collaboration across your organisation.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Recognition and Development",
         description:
           "TesseractApps supports staff motivation through role-based training, progress tracking, and recognition of achievements. Automated workflows reduce administrative tasks, allowing employees to focus on meaningful work and growth opportunities.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5615,7 +6007,7 @@ export const byBusinessProblem = {
   },
   "Time Efficiency": {
     hero: {
-      image: participantsImage,
+      image: timeEff,
       title: "Save Time Across Your Organisation",
       page: "Time Efficiency",
       description:
@@ -5677,13 +6069,13 @@ export const byBusinessProblem = {
         title: "Workflow and Task Automation",
         description:
           "TesseractApps centralises rostering, timesheets, approvals, and administrative tasks in one platform. Automated workflows reduce repetitive work, speed up approvals, and help staff complete tasks efficiently. Real-time dashboards give you clear visibility into operations and staff activity.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Productivity and Operational Oversight",
         description:
           "TesseractApps helps your organisation save time while maintaining accuracy and compliance. Mobile and desktop tools allow staff to submit shifts, leave, and reports quickly. Managers track performance, attendance, and workflows in real time, ensuring decisions are informed and operations run smoothly.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5719,7 +6111,7 @@ export const byBusinessProblem = {
   },
   "Cost Optimisation": {
     hero: {
-      image: participantsImage,
+      image: costOp,
       title: "Reduce Operational Costs and Maximise Efficiency",
       page: "Cost Optimisation",
       description:
@@ -5781,13 +6173,13 @@ export const byBusinessProblem = {
         title: "Spend Control and Visibility",
         description:
           "TesseractApps centralises workforce, payroll, and resource management in one platform. Automated alerts and real-time dashboards help you monitor costs, track budgets, and identify overspending. You gain clear visibility into operational expenses and staffing efficiency.",
-        images: [accountingImage],
+        images: [one],
       },
       {
         title: "Efficiency and Compliance",
         description:
           "TesseractApps reduces unnecessary expenditure while maintaining compliance. Automation streamlines payroll, resource allocation, and reporting. Workflow tools help you optimise staffing, control costs, and make data-driven financial decisions across your organisation.",
-        images: [accountingImage],
+        images: [two],
       },
     ],
     faqSection: {
@@ -5823,26 +6215,32 @@ export const byBusinessProblem = {
     },
   },
 };
-import resterManagement from "../assets/Product Roster management.png";
+import resterManagement from "../assets/Roster manager schedule.png";
 import adminConsole from "../assets/Product Admin con.png";
-import timesheets from "../assets/Product Time sheet.png";
+import adminConsole2 from "../assets/admin 2.png";
+// import timesheets from "../assets/Product Time sheet.png";
 import accessControl from "../assets/Product Access control.png";
+import accessControlPanel from "../assets/access.png";
 import hrOperations from "../assets/Product HR.png";
 import tsign from "../assets/Product Sign.png";
-import clockInAndOut from "../assets/Product Sign in.png";
-import participantManagement from "../assets/Product Participent management.png";
-import incidentManagement from "../assets/Product incident management.png";
+// import clockInAndOut from "../assets/Product Sign in.png";
+import participantManagement from "../assets/partispant management.png";
+import incidentManagement from "../assets/incident.png";
 import repository from "../assets/Product Repository.png";
 import roleBasedDashboard from "../assets/Product Rolebase dashboard.png";
-import forms from "../assets/Product Forms.png";
+import forms from "../assets/Forms.png";
 import accounting from "../assets/Product Accounting.png";
-import tLearingHub from "../assets/Product Learning.png";
-import chat from "../assets/Product Chat.png";
+import tLearingHub from "../assets/learning.png";
+import myProfile from "../assets/Product My profile.png";
+import myProfileNew from "../assets/My profile.png";
+import chat from "../assets/Chat.png";
+import salesforce from "../assets/service.png";
+import wyzed from "../assets/S and L.png";
 export const productsDetailsData = {
   "Roster Management": {
     page: "Roster Management",
     hero: {
-      image: resterManagement,
+      image: rosternew,
       title: "Streamline Staff Scheduling",
       description:
         "Plan, approve, and manage shifts efficiently with TesseractApps. Keep your workforce organised, reduce conflicts, and ensure proper coverage across all sites.",
@@ -5897,13 +6295,14 @@ export const productsDetailsData = {
         title: "Scheduling and Efficiency",
         description:
           "TesseractApps Roster Management centralises staff scheduling in one platform. Automated notifications, compliance checks, and real-time updates reduce errors and simplify workforce planning. Managers can respond quickly to changes while maintaining proper coverage and audit-ready records.",
-        images: [accountingImage],
+        images: [resterManagement],
       },
     ],
     section4: {
       title: "How Roster Management Helps Your Team",
       points: [
         {
+          dot: dots.dot1,
           title: "For Administrators",
           description:
             "Gain full visibility of staffing levels, track attendance, and maintain compliance with minimal manual work.",
@@ -5915,6 +6314,7 @@ export const productsDetailsData = {
           },
         },
         {
+          dot: dots.dot2,
           title: "For Roster Managers",
           description:
             "Easily create, update, and approve rosters, balance workloads, and reduce scheduling conflicts across teams.",
@@ -5926,6 +6326,7 @@ export const productsDetailsData = {
           },
         },
         {
+          dot: dots.dot3,
           title: "For HR Managers",
           description:
             "Link rostering with leave, qualifications, and payroll to ensure smooth workforce management and accurate records.",
@@ -5937,6 +6338,7 @@ export const productsDetailsData = {
           },
         },
         {
+          dot: dots.dot4,
           title: "For NDIS Staff",
           description:
             " Access schedules, submit availability, and receive shift updates instantly, keeping your day organised and tasks clear.",
@@ -5988,7 +6390,7 @@ export const productsDetailsData = {
       title: "Simplify Staff Time Tracking ",
       description:
         "Record, approve, and manage staff hours efficiently with TesseractApps. Ensure accurate payroll, reduce errors, and maintain compliance. ",
-      image: timesheets, // Replace with actual image import
+      image: timesheetNew, // Replace with actual image import
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
         conclusion: "No credit card is required. Free onboarding included.",
@@ -6088,7 +6490,7 @@ export const productsDetailsData = {
       {
         title: "Time Management and Accuracy",
         description:
-          "TesseractApps Timesheets centralises time tracking for staff and managers. Automated approvals, payroll integration, and compliance checks reduce administrative work, eliminate errors, and keep workforce records accurate and audit ready. ",
+          "TesseractApps Timesheets centralises time tracking for staff and managers. Automated approvals, payroll integration, and compliance checks reduce administrative work, eliminate errors, and keep workforce records accurate and audit-ready. ",
         images: [adminConsole],
       },
     ],
@@ -6126,7 +6528,7 @@ export const productsDetailsData = {
   "Admin Console": {
     page: "Admin Console",
     hero: {
-      image: adminConsole,
+      image: adminConsoleNew,
       title: "Full Control in One Place",
       description:
         "Manage your organisation efficiently with TesseractApps. Oversee users, modules, settings, and compliance from a single, secure dashboard.",
@@ -6181,7 +6583,7 @@ export const productsDetailsData = {
         title: "System Management",
         description:
           "TesseractApps Admin Console centralises management of your organisation’s modules and settings. Automation, audit logs, and role-based access reduce manual work, enhance security, and keep operations compliant and organised.",
-        images: [accountingImage],
+        images: [adminConsole2],
       },
     ],
     section4: {
@@ -6258,7 +6660,7 @@ export const productsDetailsData = {
   "Access Control Panel": {
     page: "Access Control Panel",
     hero: {
-      image: accessControl,
+      image: accessNew,
       title: "Manage Access and Permissions Securely",
       description:
         "Control who sees what with TesseractApps. Assign roles, scale permissions, and monitor activity to keep your organisation secure and compliant.",
@@ -6313,7 +6715,7 @@ export const productsDetailsData = {
         title: "Access Management",
         description:
           "TesseractApps Access Control Panel centralises permission management across all modules. Role-based access, monitoring, and automated alerts improve security, reduce errors, and ensure your organisation complies with regulatory standards.",
-        images: [accounting],
+        images: [accessControlPanel],
       },
     ],
     section4: {
@@ -6401,7 +6803,7 @@ export const productsDetailsData = {
   "HR Operations": {
     page: "HR Operations",
     hero: {
-      image: hrOperations,
+      image: hrnew,
       title: "Manage Your Workforce Efficiently",
       description:
         "Oversee recruitment, onboarding, staff records, and performance with TesseractApps. Keep all HR processes in one secure platform to ensure accuracy, compliance, and operational efficiency.",
@@ -6456,7 +6858,7 @@ export const productsDetailsData = {
         title: "HR Management and Efficiency",
         description:
           "TesseractApps HR Operations centralises all HR workflows in one platform. Automated processes for recruitment, onboarding, leave, and performance reduce manual tasks and ensure staff records are accurate, secure, and compliant.",
-        images: [accountingImage],
+        images: [hrOperations],
       },
     ],
     section4: {
@@ -6544,7 +6946,7 @@ export const productsDetailsData = {
   "T-Sign": {
     page: "T-Sign (Digital Signatures)",
     hero: {
-      image: tsign,
+      image: tsignNew,
       title: "Approve Documents Securely and Efficiently",
       description:
         "Digitally sign and manage documents with TesseractApps. Maintain compliance, streamline approvals, and keep accurate audit trails for all critical records.",
@@ -6599,7 +7001,7 @@ export const productsDetailsData = {
         title: "Digital Approval",
         description:
           "TesseractApps T-Sign centralises all digital signatures and approval workflows in one secure platform. Automated notifications, multi-level approvals, and audit-ready records reduce administrative burden, improve compliance, and save time.",
-        images: [accountingImage],
+        images: [tsign],
       },
     ],
     section4: {
@@ -6676,7 +7078,7 @@ export const productsDetailsData = {
   "Clock In & Clock Out": {
     page: "Clock In & Clock Out",
     hero: {
-      image: clockInAndOut,
+      image: clockiN,
       title: "Track Staff Attendance Accurately",
       description:
         "Record staff start and end times digitally with TesseractApps. Ensure accurate attendance, streamline payroll, and maintain compliance with ease.",
@@ -6731,7 +7133,7 @@ export const productsDetailsData = {
         title: "Attendance and Efficiency",
         description:
           "TesseractApps Clock In & Clock Out centralises attendance tracking across all teams. Real-time data, automated alerts, and seamless integration with timesheets and payroll reduce errors, improve accountability, and simplify workforce management. ",
-        images: [accountingImage],
+        images: [accessControl],
       },
     ],
     section4: {
@@ -6819,7 +7221,7 @@ export const productsDetailsData = {
   "Participant Management": {
     page: "Participant Management",
     hero: {
-      image: participantManagement,
+      image: participantNew,
       title: "Manage Participants Efficiently",
       description:
         "Track participant information, support plans, and service delivery with TesseractApps. Ensure accurate records, improve care quality, and maintain compliance.",
@@ -6874,7 +7276,7 @@ export const productsDetailsData = {
         title: "Participant Management",
         description:
           "TesseractApps Participant Management centralises all participant information, care plans, and session tracking in one platform. Automated alerts, secure storage, and reporting tools reduce errors, improve care quality, and maintain compliance with NDIS standards.",
-        images: [accountingImage],
+        images: [participantManagement],
       },
     ],
     section4: {
@@ -6951,7 +7353,7 @@ export const productsDetailsData = {
   "Incident Management": {
     page: "Incident Management",
     hero: {
-      image: incidentManagement,
+      image: incidentNew,
       title: "Record and Resolve Incidents Efficiently",
       description:
         "Track, manage, and report incidents with TesseractApps. Ensure staff and participant safety, maintain compliance, and keep accurate records in real time.",
@@ -7006,7 +7408,7 @@ export const productsDetailsData = {
         title: "Incident Management",
         description:
           "TesseractApps Incident Management centralises incident reporting, investigation, and resolution. Automated alerts, secure document storage, and reporting tools reduce administrative burden, improve safety outcomes, and ensure regulatory compliance.",
-        images: [accountingImage],
+        images: [incidentManagement],
       },
     ],
     section4: {
@@ -7083,7 +7485,7 @@ export const productsDetailsData = {
   Repository: {
     page: "Repository (Document Hub)",
     hero: {
-      image: repository,
+      image: repoNew,
       title: "Store and Manage Documents Securely",
       description:
         "Centralise all your documents with TesseractApps. Keep care plans, agreements, policies, and records organised, secure, and easily accessible.",
@@ -7138,7 +7540,7 @@ export const productsDetailsData = {
         title: "Document Management",
         description:
           "TesseractApps Repository centralises all documents in a secure, organised hub. Role-based access, version tracking, and integration with workflows improve efficiency, accountability, and regulatory compliance.",
-        images: [accounting],
+        images: [repository],
       },
     ],
     section4: {
@@ -7216,7 +7618,7 @@ export const productsDetailsData = {
   "Role Based Dashboard": {
     page: "Role Based Dashboard",
     hero: {
-      image: roleBasedDashboard,
+      image: rollbased,
       title: "Monitor Your Operations in One Place",
       description:
         "Access real-time insights and manage workflows efficiently with TesseractApps. Track performance, compliance, and tasks specific to each role, all from a single, secure dashboard.",
@@ -7331,7 +7733,7 @@ export const productsDetailsData = {
         title: "Insights and Efficiency",
         description:
           "TesseractApps Role-Based Dashboard consolidates critical operational data in one platform. Customised views, real-time monitoring, and integrated reporting reduce manual tracking, improve transparency, and help your team act quickly on insights.",
-        images: [accountingImage],
+        images: [roleBasedDashboard],
       },
     ],
     faqSection: {
@@ -7370,7 +7772,7 @@ export const productsDetailsData = {
   "ChaT (Secure Communication)": {
     page: "ChaT (Secure Communication)",
     hero: {
-      image: chat,
+      image: chatNew,
       title: "Communicate Safely and Effectively",
       description:
         "Send messages, share files, and collaborate with your team securely. TesseractApps ChaT keeps communication private, organised, and integrated with your workflows.",
@@ -7425,7 +7827,7 @@ export const productsDetailsData = {
         title: "Secure Communication",
         description:
           "TesseractApps ChaT centralises team communication in a secure environment. Real-time messaging, role-based groups, and module integration streamline collaboration, improve response times, and maintain compliance.",
-        images: [accounting],
+        images: [chat],
       },
     ],
     section4: {
@@ -7513,7 +7915,7 @@ export const productsDetailsData = {
   "My Profile": {
     page: "My Profile",
     hero: {
-      image: productsHero,
+      image: myProfileNew,
       title: "Manage Your Information Efficiently",
       description:
         "Keep your personal and work details up to date with TesseractApps. Access schedules, leave balances, certifications, and preferences from a single, secure portal.",
@@ -7568,7 +7970,7 @@ export const productsDetailsData = {
         title: "Personal Management",
         description:
           "TesseractApps My Profile provides a secure portal for staff to manage their personal, training, and work-related information. Automated notifications and integration with rostering and HR ensure your details are always current and accurate.",
-        images: [accountingImage],
+        images: [myProfile],
       },
     ],
     section4: {
@@ -7634,7 +8036,7 @@ export const productsDetailsData = {
   Forms: {
     page: "Forms / Custom Forms",
     hero: {
-      image: forms,
+      image: formsNew,
       title: "Streamline Data Collection and Reporting",
       description:
         "Create, manage, and submit digital forms with TesseractApps. Capture participant information, staff records, and operational data efficiently and accurately.",
@@ -7689,7 +8091,7 @@ export const productsDetailsData = {
         title: "Form Management",
         description:
           "TesseractApps Forms centralises all data collection in one platform. Automated workflows, integration with modules, and secure storage reduce administrative work, improve accuracy, and support compliance.",
-        images: [accessControl],
+        images: [forms],
       },
     ],
     section4: {
@@ -7777,7 +8179,7 @@ export const productsDetailsData = {
   Accounting: {
     page: "Accounting",
     hero: {
-      image: accounting,
+      image: accountingNew,
       title: "Simplify Payroll and Financial Management",
       description:
         "Manage payroll, track budgets, and process invoices efficiently with TesseractApps. Integrate finance workflows with rostering, HR, and participant management to maintain accuracy and compliance.",
@@ -7919,7 +8321,7 @@ export const productsDetailsData = {
   "T Learning Hub": {
     page: "T Learning Hub",
     hero: {
-      image: tLearingHub,
+      image: TLEARNINGNEW,
       title: "Deliver Role-Based Training with Ease",
       description:
         "Provide staff with accessible, personalised training through TesseractApps. Track progress, ensure compliance, and support professional development across your organisation.",
@@ -7974,7 +8376,7 @@ export const productsDetailsData = {
         title: "Learning Management",
         description:
           "TesseractApps T Learning Hub centralises training across your organisation. Automated assignments, progress tracking, and integrated reporting streamline professional development, ensure compliance, and support continuous improvement.",
-        images: [accounting],
+        images: [tLearingHub],
       },
     ],
     section4: {
@@ -8050,7 +8452,7 @@ export const productsDetailsData = {
   "Salesforce Integration": {
     page: "Salesforce Integration",
     hero: {
-      image: productsHero,
+      image: salesforce,
       title: "Centralise Participant and Service Data",
       description:
         "TesseractApps is built on Salesforce, giving you a secure, scalable, and reliable platform to manage staff, participants, and operations across your organisation.",
@@ -8094,40 +8496,43 @@ export const productsDetailsData = {
         },
       ],
     },
-    section3: [
-      {
-        title: "Key Features",
-        description: "",
-        images: [accounting],
-        list: [
-          {
-            title: "Participant Management",
-            description:
-              "Track participant details, goals, and services with integrated Salesforce data.",
-          },
-          {
-            title: "Staff Management",
-            description:
-              "Maintain profiles, qualifications, and training records in one place.",
-          },
-          {
-            title: "Service Tracking",
-            description:
-              "Monitor service delivery, session attendance, and participant progress efficiently.",
-          },
-          {
-            title: "Reporting and Analytics",
-            description:
-              "Generate customised reports and dashboards to track performance and outcomes.",
-          },
-          {
-            title: "Compliance and Audit Readiness",
-            description:
-              "Maintain regulatory compliance with automated alerts, digital approvals, and secure data storage.",
-          },
-        ],
-      },
-    ],
+    section4: {
+      title: "Key Features",
+      description: "",
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Participant Management",
+          description:
+            "Track participant details, goals, and services with integrated Salesforce data.",
+        },
+        {
+          dot: dots.dot1,
+          title: "Staff Management",
+          description:
+            "Maintain profiles, qualifications, and training records in one place.",
+        },
+        {
+          dot: dots.dot1,
+          title: "Service Tracking",
+          description:
+            "Monitor service delivery, session attendance, and participant progress efficiently.",
+        },
+        {
+          dot: dots.dot1,
+          title: "Reporting and Analytics",
+          description:
+            "Generate customised reports and dashboards to track performance and outcomes.",
+        },
+        {
+          dot: dots.dot1,
+          title: "Compliance and Audit Readiness",
+          description:
+            "Maintain regulatory compliance with automated alerts, digital approvals, and secure data storage.",
+        },
+      ],
+    },
+
     faqSection: {
       title: "Q&A: Salesforce Integration",
       faqData: [
@@ -8162,7 +8567,7 @@ export const productsDetailsData = {
   "Xero Integration": {
     page: "Xero Integration",
     hero: {
-      image: accessControl,
+      image: accounting,
       title: "Simplify Payroll and Invoicing",
       description:
         "TesseractApps integrates with Xero to provide accurate, secure, and efficient payroll and financial management for your organisation.",
@@ -8274,7 +8679,7 @@ export const productsDetailsData = {
   "Wyzed Integration": {
     page: "Wyzed Integration",
     hero: {
-      image: roleBasedDashboard,
+      image: wyzed,
       title: "Streamline Training and Learning",
       description:
         "TesseractApps integrates with Wyzed to deliver role-based training, track progress, and maintain compliance across your organisation.",
@@ -8650,5 +9055,320 @@ export const homeRightArcsData = [
     startPos: 0.6,
     initialDirection: -1,
     label: "Access Control",
+  },
+];
+import popupImage1 from "../assets/popup-image1.png";
+import popupImage2 from "../assets/popup-image2.png";
+import popupImage3 from "../assets/popup-image3.png";
+import popupImage4 from "../assets/popup-image4.png";
+export const bookADemoFormData = [
+  {
+    text: "Organisation Type",
+    subText: "Tell us the type of service your organisation provides.",
+    question: "What describes your organisation best?",
+    id: "organisaitionType",
+    multiSelect: false,
+    image: popupImage1,
+    fields: [
+      {
+        id: "",
+        type: "option",
+        value: "NDIS Provider",
+        displayName: "NDIS Provider",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Aged Care Service",
+        displayName: "Aged Care Service",
+      },
+      { id: "", type: "option", value: "Childcare", displayName: "Childcare" },
+      {
+        id: "",
+        type: "option",
+        value: "Allied Health",
+        displayName: "Allied Health",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Home & Community Care",
+        displayName: "Home & Community Care",
+      },
+      { id: "", type: "option", value: "Other", displayName: "Other" },
+    ],
+  },
+  {
+    text: "Organisation Type",
+    subText: "Tell us the type of service your organisation provides.",
+    question: "Which roles are in your team? ",
+    id: "teamRoles",
+    multiSelect: true,
+    image: popupImage2,
+    fields: [
+      {
+        id: "",
+        type: "option",
+        value: "Administrator",
+        displayName: "Administrator",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Roster Manager",
+        displayName: "Roster Manager",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Support Worker / Carer",
+        displayName: "Support Worker / Carer",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Plan Manager / Coordinator",
+        displayName: "Plan Manager / Coordinator",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Allied Health Professional (Therapist, Clinician)",
+        displayName: "Allied Health Professional (Therapist, Clinician)",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "HR / Payroll Staff",
+        displayName: "HR / Payroll Staff",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Accountant / Finance",
+        displayName: "Accountant / Finance",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Manager / Supervisor ",
+        displayName: "Manager / Supervisor ",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Compliance Officer",
+        displayName: "Compliance Officer",
+      },
+      { id: "", type: "option", value: "Other", displayName: "Other" },
+    ],
+  },
+  {
+    text: "Organisation Type",
+    subText: "Tell us the type of service your organisation provides.",
+    image: popupImage3,
+    question: "How many staff you currently have?",
+    id: "staff",
+    multiSelect: false,
+    fields: [
+      { id: "", type: "option", value: "1–10", displayName: "1–10" },
+      { id: "", type: "option", value: "A11–50", displayName: "11–50" },
+      { id: "", type: "option", value: "51–100", displayName: "51–100" },
+      { id: "", type: "option", value: "101-200", displayName: "101-200" },
+      { id: "", type: "option", value: "200+", displayName: "200+" },
+    ],
+  },
+  {
+    text: "Organisation Type",
+    subText: "Tell us the type of service your organisation provides.",
+    image: popupImage4,
+    question: "What is your role?",
+    id: "currentRoles",
+    multiSelect: true,
+    fields: [
+      {
+        id: "",
+        type: "option",
+        value: "Administrator",
+        displayName: "Administrator",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Roster Manager",
+        displayName: "Roster Manager",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Support Coordinator",
+        displayName: "Support Coordinator",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "101-Allied Health Professional",
+        displayName: "Allied Health Professional-200",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "HR Manager",
+        displayName: "HR Manager",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Roster/Scheduling Manager",
+        displayName: "Roster/Scheduling Manager",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Accountant/Finance",
+        displayName: "Accountant/Finance",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Compliance Officer",
+        displayName: "Compliance Officer",
+      },
+      { id: "", type: "option", value: "200+", displayName: "200+" },
+    ],
+  },
+  {
+    text: "What Matters Most",
+    subText: "Let us know the features and goals that matter most to you.",
+    image: popupImage3,
+    question: "Which features are most important to you?",
+    id: "features",
+    multiSelect: true,
+    fields: [
+      {
+        id: "",
+        type: "option",
+        value: "Roster & Schedule",
+        displayName: "Roster & Schedule",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Timesheet & Payroll",
+        displayName: "Timesheet & Payroll",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Admin Console",
+        displayName: "Admin Console",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Access Control Panel",
+        displayName: "Access Control Panel",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "HR Operations",
+        displayName: "HR Operations",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Digital Signatures",
+        displayName: "Digital Signatures",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Reporting & Dashboard",
+        displayName: "Reporting & Dashboard",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "NDIS Claims & Invoicing",
+        displayName: "NDIS Claims & Invoicing",
+      },
+    ],
+  },
+  {
+    text: "What Matters Most",
+    subText: "Let us know the features and goals that matter most to you.",
+    image: popupImage2,
+    question: "What’s your main goal with TesseractApps?",
+    id: "goal",
+    multiSelect: false,
+    fields: [
+      {
+        id: "",
+        type: "option",
+        value: "Save admin time",
+        displayName: "Save admin time ",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Timesheet & Payroll",
+        displayName: "Timesheet & Payroll",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Reduce audit risk",
+        displayName: "Reduce audit risk",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Simplify NDIS compliance",
+        displayName: "Simplify NDIS compliance",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Better reporting & insights",
+        displayName: "Better reporting & insights",
+      },
+      {
+        id: "",
+        type: "option",
+        value: "Streamline HR & Payroll",
+        displayName: "Streamline HR & Payroll",
+      },
+    ],
+  },
+  {
+    text: "Final Step: Book Your Demo",
+    subText: "Provide your details to schedule a personalised demo.",
+    image: popupImage1,
+    multiSelect: false,
+    question: "Your Details",
+    fields: [
+      { type: "input", id: "firstName", displayName: "First Name", value: "" },
+      { type: "input", id: "lastName", displayName: "Last Name", value: "" },
+      { type: "input", id: "email", displayName: "Business Email", value: "" },
+      {
+        type: "input",
+        id: "phoneNumber",
+        displayName: "Phone number",
+        value: "",
+      },
+      {
+        type: "input",
+        id: "companyName",
+        displayName: "Company name",
+        value: "",
+      },
+      {
+        type: "input",
+        id: "schedule",
+        displayName: "Pick a date & time",
+        value: "",
+      },
+    ],
   },
 ];

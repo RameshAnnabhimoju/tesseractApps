@@ -4,11 +4,13 @@ import NavBarComponent from "./components/navBarComponent/NavBarComponent";
 import { BrowserRouter } from "react-router-dom";
 import FooterComponent from "./components/footerComponent/FooterComponent";
 import AppRoutes from "./routes/AppRoutes";
-// import Signup from "./pages/signup/Signup";
-import SignupFlow from "./pages/signupflow/SignupFlow";
+import Signup from "./pages/signup/Signup";
+import BookADemo from "./pages/bookADemo/BookADemo";
+// import SignupFlow from "./pages/signupflow/SignupFlow";
 
 function App() {
   const [dialog, setDialog] = useState(false);
+  const [bookADemo, setBookADemo] = useState(false);
   const handleDialog = (value?: boolean) => {
     if (value != undefined) {
       setDialog(value);
@@ -16,23 +18,33 @@ function App() {
       setDialog(!dialog);
     }
   };
+  const handleBookADemo = (value?: boolean) => {
+    if (value != undefined) {
+      setBookADemo(value);
+    } else {
+      setBookADemo(!dialog);
+    }
+  };
   const portalContainerRef = useRef<HTMLDivElement>(null);
   return (
     <BrowserRouter>
-      {/* <Signup
+      <Signup
         dialog={dialog}
         setDialog={setDialog}
         handleDialog={handleDialog}
-      /> */}
-      <SignupFlow dialog={dialog} handleDialog={handleDialog} />
-      <NavBarComponent
-        portalContainerRef={portalContainerRef}
-        handleDialog={handleDialog}
       />
+      <BookADemo bookADemo={bookADemo} handleBookADemo={handleBookADemo} />
+      {!(dialog || bookADemo) && (
+        <NavBarComponent
+          portalContainerRef={portalContainerRef}
+          handleDialog={handleDialog}
+          handleBookADemo={handleBookADemo}
+        />
+      )}
 
       <div ref={portalContainerRef} />
-      <AppRoutes />
-      <FooterComponent />
+      {!(dialog || bookADemo) && <AppRoutes handleDialog={handleDialog} />}
+      {!(dialog || bookADemo) && <FooterComponent />}
     </BrowserRouter>
   );
 }

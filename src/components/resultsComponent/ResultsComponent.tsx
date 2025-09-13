@@ -37,26 +37,25 @@ const ResultsComponent = () => {
         </div> */}
         <div className="results-card">
           <h2 className="results-card-title">
-            2,000+ NDIS Professionals Transformed
+            1,000+ NDIS Professionals Users
           </h2>
           <h3 className="results-card-text">
-            Empowering staff and provider teams to work smarter, deliver better
-            care, and achieve measurable outcomes every day.
+            Staff and provider teams work smarter, deliver better care, and
+            achieve measurable outcomes daily.
           </h3>
         </div>
         <div className="results-card">
           <h2 className="results-card-title">40% Faster Incident Resolution</h2>
           <h3 className="results-card-text">
-            Cases are resolved quicker, alerts are triggered automatically, and
-            participants’ safety is consistently improved.
+            Cases are resolved quicker, alerts trigger automatically, and
+            participant safety improves.
           </h3>
         </div>
         <div className="results-card">
           <h2 className="results-card-title">99.9% Uptime Reliability</h2>
           <h3 className="results-card-text">
             Our Salesforce-powered platform keeps operations running without
-            interruption, so teams stay productive, and care remains
-            uninterrupted.
+            interruption, maintaining team productivity and uninterrupted care.
           </h3>
         </div>
         {/* <div className="results-card">

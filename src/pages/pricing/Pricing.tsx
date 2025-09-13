@@ -9,26 +9,38 @@ import ArrowDown from "../../assets/arrow_down.svg";
 // import tick_white from "../../assets/tick_white.svg";
 import call from "../../assets/call.svg";
 import mark_email from "../../assets/mark_email.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
+// import priceBg from "../../assets/price bg.png";
+import p1 from "../../assets/p1.png";
+import p2 from "../../assets/p2.png";
+import p3 from "../../assets/p3.png";
+// import p4 from "../../assets/p4.png";
+import p5 from "../../assets/p5.png";
 import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  FormControlLabel,
+  Switch,
   Typography,
 } from "@mui/material";
-type PricingDataTickItemTypes = {
-  title: string;
-  subTitle: string;
-  data1?: boolean;
-  data2?: boolean;
-  data3?: boolean;
-};
+// type PricingDataTickItemTypes = {
+//   title: string;
+//   subTitle: string;
+//   data1?: { value: boolean; text: string };
+//   data2?: { value: boolean; text: string };
+//   data3?: { value: boolean; text: string };
+//   data4?: { value: boolean; text: string };
+// };
 const Pricing = () => {
+  const imageArr1 = [p1, p2];
+  const imageArr2 = [p3, p5];
   const navigate = useNavigate();
   const handleBookADemoClick = () => {
     navigate("/requestdemo");
   };
+  const [toggleSwitch, setToggleSwitch] = useState(true);
   const [selectedTab, setSelectedTab] = useState<
     | "ndis"
     | "ict"
@@ -62,31 +74,50 @@ const Pricing = () => {
       }, 1000);
     }
   }
-  const categoryChangeHandler = (
-    event: React.MouseEvent<HTMLDivElement>
-  ) => {
-    const value = (event.target as HTMLDivElement).id;
-    setSelectedTab(value as typeof selectedTab);
+  // const categoryChangeHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+  //   const value = (event.target as HTMLDivElement).id;
+  //   setSelectedTab(value as typeof selectedTab);
+  // };
+  const handleTryItFree = () => {
+    setSelectedTab("ndis"); // no use, just to avoid linting
+    appNavigate("Signup", navigate, false);
   };
-  const categories = ["ndis", "ict"];
+  // const categories = ["ndis", "ict"];
   return (
     <div id="pricing-container">
-      <div className="heading">PRICING</div>
-      <h1 className="subheading pricing-subheading">
-        Save time with TesseractApps.
-      </h1>
-      <div className="pricing-divider-line pricing-divider-line-header" />
-      <h2 className="text pricing-textt">
-        "Our all-in-one NDIS software helps you manage everything from staff
-        schedules to billing, quickly and easily."
-      </h2>
-      <div id="pricing-cta-button">
-        <button
-          className="pricing-button-primary button-contain"
-          onClick={() => navigate("/salesPage")}
-        >
-          Start Your Trial Now
-        </button>
+      <div id="pricing-her-container">
+        <div id="paricing-hero-images-container">
+          {imageArr1.map((image) => (
+            <img src={image} alt="ph-image" className="paricing-hero-images" />
+          ))}
+        </div>
+        <div>
+          <div className="heading">PRICING</div>
+          <h1 className="subheading pricing-subheading">
+            Save time with TesseractApps.
+          </h1>
+          <div className="pricing-divider-line pricing-divider-line-header" />
+          <h2 className="text pricing-textt">
+            "Our all-in-one NDIS software helps you manage everything from staff
+            schedules to billing, quickly and easily."
+          </h2>
+          <div id="pricing-cta-button">
+            <button
+              className="pricing-button-primary button-contain"
+              onClick={handleTryItFree}
+            >
+              Try It Free
+            </button>
+          </div>
+          <h2 className="text pricing-textt">
+            No credit card is required. Free onboarding included.
+          </h2>
+        </div>
+        <div id="paricing-hero-images-container">
+          {imageArr2.map((image) => (
+            <img src={image} alt="ph-image" className="paricing-hero-images" />
+          ))}
+        </div>
       </div>
 
       {/* <div id="pricing-category-container">
@@ -129,7 +160,7 @@ const Pricing = () => {
         </select>
       </div> */}
 
-<div id="pricing-category-container">
+      {/* <div id="pricing-category-container">
   <div id="pricing-category-option-container">
     <div
       className="pricing-category-highlight"
@@ -152,7 +183,20 @@ const Pricing = () => {
       </div>
     ))}
   </div>
-</div>
+</div> */}
+      <div id="pricing-category-container">
+        <FormControlLabel
+          control={
+            <Switch
+              defaultChecked
+              checked={toggleSwitch}
+              onChange={() => setToggleSwitch(!toggleSwitch)}
+            />
+          }
+          label="Get 10% off with TesseractApps Full Accounting Suite"
+        />
+      </div>
+      {/* <img src={priceBg} alt="price" id="price-bg" /> */}
 
       {pricingCardsDummyData[selectedTab].length > 0 && (
         <div id="pricing-data-container">
@@ -173,17 +217,47 @@ const Pricing = () => {
                     ) : (
                       <div style={{ height: "10px" }}></div>
                     )}
-                    <div className={"pricing-card-title"}>{data.title}</div>
-                    <div className={"pricing-card-sub-title"}>
+                    <div
+                      className={
+                        "pricing-card-title" + (index == 1 ? "-selected" : "")
+                      }
+                    >
+                      {data.title}
+                    </div>
+                    <div
+                      className={
+                        "pricing-card-sub-title" +
+                        (index == 1 ? "-selected" : "")
+                      }
+                    >
                       {data.subTitle}
                     </div>
-                    <div className={"pricing-card-description"}>
+                    <div
+                      className={
+                        "pricing-card-description" +
+                        (index == 1 ? "-selected" : "")
+                      }
+                    >
                       {data.description}
                     </div>
-                    <div className={"pricing-card-pricing"}>
-                      {data.Pricing > 0 ? "$" + data.Pricing : ""}
+                    <div
+                      className={
+                        "pricing-card-pricing" + (index == 1 ? "-selected" : "")
+                      }
+                    >
+                      {data.Pricing > 0
+                        ? "$" +
+                          (toggleSwitch
+                            ? (data.Pricing * 0.9).toFixed(2)
+                            : data.Pricing)
+                        : ""}
                     </div>
-                    <div className={"pricing-card-time-period"}>
+                    <div
+                      className={
+                        "pricing-card-time-period" +
+                        (index == 1 ? "-selected" : "")
+                      }
+                    >
                       {data.timePeriod}
                     </div>
                     <div className="pricing-minimum-number">
@@ -191,7 +265,7 @@ const Pricing = () => {
                     </div>
                     <button
                       className="pricing-button-primary"
-                      onClick={() => navigate("/salesPage")}
+                      onClick={handleTryItFree}
                     >
                       {data.cta}
                     </button>
@@ -209,28 +283,55 @@ const Pricing = () => {
                                 className="pricing-tick-icon"
                               />
                             </div>
-                            <div className={"pricing-feature-data"}>
+                            <div
+                              className={
+                                "pricing-feature-data" +
+                                (index == 1 ? "-selected" : "")
+                              }
+                            >
                               {feature}
                             </div>
                           </div>
                         );
                       })}
-                      {data.optionalAddons.length > 0 && (
+                      {/* {data.optionalAddons.length > 0 && (
                         <div className="pricing-optional-addon-container">
-                          <div className="pricing-optional-addon-subheading">
+                          <div
+                            className={
+                              "pricing-optional-addon-subheading" +
+                              (index == 1 ? "-selected" : "")
+                            }
+                          >
                             Optional Addons
                           </div>
-                          {data.optionalAddons.map((addOn, index) => (
+                          {data.optionalAddons.map((addOn, index2) => (
                             <div
-                              key={index + addOn}
-                              className="pricing-feature-data pricing-optional-addon"
+                              key={index2 + addOn}
+                              className={
+                                "pricing-feature-data pricing-optional-addon" +
+                                (index == 1 ? "-selected" : "")
+                              }
                             >
                               {addOn}
                             </div>
                           ))}
                         </div>
-                      )}
+                      )} */}
                     </div>
+                    <Link
+                      className={
+                        "pricing-more-info" + (index == 1 ? "-selected" : "")
+                      }
+                      to="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document
+                          .getElementById("pricing-data-accordian-container")
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      More Information
+                    </Link>
                   </div>
                 );
               })}
@@ -284,7 +385,7 @@ const Pricing = () => {
                         )}
                     </div>
 
-                    {data.data.map((dataItem: PricingDataTickItemTypes) => (
+                    {data.data.map((dataItem) => (
                       <Typography
                         sx={{
                           fontSize: "18px",
@@ -312,27 +413,29 @@ const Pricing = () => {
                           {/* <div className="pricing-data-tick-container"> */}
                           {dataItem.data1 !== undefined && (
                             <PricingDataItem
-                              value={dataItem.data1}
-                              className="pricing-data-data1"
+                              data={dataItem.data1}
+                              className="pricing-data-item"
                             />
                           )}
 
                           {dataItem.data2 !== undefined && (
                             <PricingDataItem
-                              value={dataItem.data2}
-                              className="pricing-data-data2"
+                              data={dataItem.data2}
+                              className="pricing-data-item"
                             />
                           )}
 
                           {dataItem.data3 !== undefined && (
                             <PricingDataItem
-                              value={dataItem.data3}
-                              className="pricing-data-data3"
-                            >
-                              {dataItem.title === "Support Chat" && (
-                                <span>+ Dedicated Manager</span>
-                              )}
-                            </PricingDataItem>
+                              data={dataItem.data3}
+                              className="pricing-data-item"
+                            />
+                          )}
+                          {dataItem.data4 !== undefined && (
+                            <PricingDataItem
+                              data={dataItem.data4}
+                              className="pricing-data-item"
+                            />
                           )}
                           {/* </div> */}
                         </div>
@@ -390,28 +493,29 @@ const Pricing = () => {
 export default Pricing;
 
 import React from "react";
+import { appNavigate } from "../../routes/AppRoutes";
 
 type PricingDataItemProps = {
-  value: boolean; // true / false
+  data: { value: boolean; text: string }; // true / false
   className: string;
-  children?: React.ReactNode;
 };
 
 const PricingDataItem: React.FC<PricingDataItemProps> = ({
-  value,
+  data,
   className,
-  children,
 }) => {
   return (
     <div className={className}>
-      <img
-        src={value ? tick : remove}
-        alt={value ? "tick" : "remove"}
-        className={`pricing-data-tick ${
-          value ? "pricing-data-tick-success" : ""
-        }`}
-      />
-      {value && children}
+      {data.text == "" && (
+        <img
+          src={data.value ? tick : remove}
+          alt={data.value ? "tick" : "remove"}
+          className={`pricing-data-tick ${
+            data.value ? "pricing-data-tick-success" : ""
+          }`}
+        />
+      )}
+      {data.text}
     </div>
   );
 };
