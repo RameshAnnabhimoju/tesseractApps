@@ -3892,8 +3892,8 @@ import ndisIndustry from "../assets/NDIS Industry.png";
 import ictIndustry from "../assets/ICT Industry.png";
 import retail from "../assets/Retail & Hospitality.png";
 import multiSite from "../assets/Multi-site Businesses.png";
-import construction from "../assets/Construction.png";
-import manufacturing from "../assets/Manufacturing.png";
+import construction from "../assets/Construction-removebg-preview.png";
+import manufacturing from "../assets/Manufacturing-removebg-preview.png";
 export const byIndustryData = {
   "NDIS Industry": {
     hero: {
@@ -4562,10 +4562,10 @@ export const byIndustryData = {
   },
 };
 import support from "../assets/Disability Support.png";
-import aged from "../assets/aged Care Services.png";
-import child from "../assets/Childcare Services.png";
-import allied from "../assets/Allied Health Practices.png";
-import home from "../assets/Home & Community Care.png";
+import aged from "../assets/aged_Care_Services-removebg-preview.png";
+import child from "../assets/Childcare_Services-removebg-preview.png";
+import allied from "../assets/Allied_Health_Practices-removebg-preview.png";
+import home from "../assets/Home___Community_Care-removebg-preview.png";
 export const byCareData = {
   "Disability Support (NDIS)": {
     hero: {
@@ -5291,9 +5291,9 @@ export const byCareData = {
   },
 };
 import small from "../assets/Small Businesses.png";
-import enterprise from "../assets/Enterprise.png";
-import Franchises from "../assets/Franchises.png";
-import Startups from "../assets/Startups.png";
+import enterprise from "../assets/Enterprise-removebg-preview.png";
+import Franchises from "../assets/Franchises-removebg-preview.png";
+import Startups from "../assets/Startups-removebg-preview.png";
 export const byBusinessType = {
   "Small Businesses": {
     hero: {
@@ -5779,10 +5779,10 @@ export const byBusinessType = {
     },
   },
 };
-import compliance from "../assets/ompliance.png";
+import compliance from "../assets/ompliance-removebg-preview.png";
 import emmpEng from "../assets/Employee Engagement.png";
-import timeEff from "../assets/Time Efficiency.png";
-import costOp from "../assets/Cost Optimisation.png";
+import timeEff from "../assets/Time_Efficiency-removebg-preview.png";
+import costOp from "../assets/Cost_Optimisation-removebg-preview.png";
 export const byBusinessProblem = {
   Compliance: {
     hero: {
