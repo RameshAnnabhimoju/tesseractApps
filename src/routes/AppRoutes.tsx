@@ -421,6 +421,12 @@ export const appNavigate = (
           state: { data: productsDetailsData["Roster Management"] },
         });
       break;
+    case "Rostering & Scheduling":
+      if (navigate != undefined)
+        navigate("/roster-management", {
+          state: { data: productsDetailsData["Roster Management"] },
+        });
+      break;
 
     case "Timesheet":
       if (navigate != undefined)
@@ -443,7 +449,20 @@ export const appNavigate = (
         });
       break;
 
+    case "Access Control":
+      if (navigate != undefined)
+        navigate("/access-control-panel", {
+          state: { data: productsDetailsData["Access Control Panel"] },
+        });
+      break;
+
     case "HR Operations":
+      if (navigate != undefined)
+        navigate("/hr-operations", {
+          state: { data: productsDetailsData["HR Operations"] },
+        });
+      break;
+    case "Human Resources":
       if (navigate != undefined)
         navigate("/hr-operations", {
           state: { data: productsDetailsData["HR Operations"] },
@@ -451,6 +470,12 @@ export const appNavigate = (
       break;
 
     case "T-sign":
+      if (navigate != undefined)
+        navigate("/t-sign", {
+          state: { data: productsDetailsData["T-Sign"] },
+        });
+      break;
+    case "T Sign":
       if (navigate != undefined)
         navigate("/t-sign", {
           state: { data: productsDetailsData["T-Sign"] },

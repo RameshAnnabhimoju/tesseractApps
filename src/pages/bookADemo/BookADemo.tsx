@@ -8,6 +8,9 @@ import logo_small from "../../assets/popup-logo.png";
 import TextField from "@mui/material/TextField";
 import React from "react";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
+import Alert from "../../components/alert/Alert";
+import image1 from "../../assets/bookADemoSuccess.png";
+import image2 from "../../assets/bookADemoSuccessMan.png";
 import {
   bookDemoConfirmationEmailTemplate,
   bookDemoEmailTemplate,
@@ -57,6 +60,7 @@ const BookADemo = ({
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState(formEmptyData);
   const [alertData, setAlertData] = useState(alertInitialData);
+  const [showSuccess, setShowSuccess] = useState(false);
   const isSelected = (
     formData: formDataType,
     id: keyof formDataType,
@@ -141,19 +145,21 @@ const BookADemo = ({
         console.log("Email sent successfully:", response);
         confirmationMail();
         // alert("Thank you for your request! We will be in touch soon.");
-        setAlertData({
-          ...alertData,
-          heading: "Request Submitted",
-          text: "Thank you for your request! We will be in touch soon.",
-          type: "success",
-          isOpen: true,
-        });
+        // setAlertData({
+        //   ...alertData,
+        //   heading: "Request Submitted",
+        //   text: "Thank you for your request! We will be in touch soon.",
+        //   type: "success",
+        //   isOpen: true,
+        // });
+        setShowSuccess(true);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
         // alert(
         //   "There was an error sending your request. Please try again later."
         // );
+        setShowSuccess(false);
         setAlertData({
           ...alertData,
           heading: "Request Failed",
@@ -190,7 +196,11 @@ const BookADemo = ({
       slotProps={{ transition: { direction: "up" } }}
       sx={{ margin: "auto", maxWidth: "1920px" }}
     >
-      <div id="bookADemo-header-container">
+      <Alert setAlertData={setAlertData} alertData={alertData} />
+      <div
+        id="bookADemo-header-container"
+        style={showSuccess ? { backgroundColor: "#3175da" } : {}}
+      >
         <div id="bookADemo-navbar-logo-container">
           <img
             src={logo_small}
@@ -211,119 +221,146 @@ const BookADemo = ({
         />
       </div>
 
-      <div id="bookADemo-container">
-        <div id="bookADemo-text-section">
-          <div id="bookADemo-text">{bookADemoFormData[currentStep].text}</div>
-          <div id="bookADemo-subText">
-            {bookADemoFormData[currentStep].subText}
+      {showSuccess ? (
+        <div id="bookADemo-Success-Container">
+          <img
+            src={image1}
+            alt="success image"
+            className="bookADemo-Success-image"
+          />
+          <div id="bookADemo-Success-Title" className="bookADemo-success-text">
+            Successfully Sent
+          </div>
+          <div
+            id="bookADemo-success-message"
+            className="bookADemo-success-text"
+          >
+            Thank you! Your demo has been successfully booked. Our team will
+            contact you shortly to confirm the details.
+          </div>
+          <img
+            src={image2}
+            alt="success image2"
+            className="bookADemo-Success-image bookADemo-Success-image-man"
+          />
+        </div>
+      ) : (
+        <div id="bookADemo-container">
+          <div id="bookADemo-text-section">
+            <div id="bookADemo-text">{bookADemoFormData[currentStep].text}</div>
+            <div id="bookADemo-subText">
+              {bookADemoFormData[currentStep].subText}
 
-            <img
-              src={bookADemoFormData[currentStep].image}
-              alt="book-a-demo-text"
-              id="bookADemo-image"
-            />
+              <img
+                src={bookADemoFormData[currentStep].image}
+                alt="book-a-demo-text"
+                id="bookADemo-image"
+              />
+            </div>
           </div>
-        </div>
-        <div id="bookADemo-form-section">
-          <div id="bookADemo-form-question">
-            {bookADemoFormData[currentStep].question}
-          </div>
-          <div id="bookADemo-form-fields-container">
-            {bookADemoFormData[currentStep].fields.map((field, index) => (
-              <React.Fragment key={field.displayName + index}>
-                {field.type == "option" ? (
-                  <div
-                    className={
-                      "bookADemo-field-select" +
-                      (currentId && isSelected(formData, currentId, field.value)
-                        ? " selected"
-                        : "")
-                    }
-                    onClick={(event) =>
-                      handleButtonPress(
-                        event,
-                        bookADemoFormData[currentStep].id ?? "",
-                        bookADemoFormData[currentStep].multiSelect
-                      )
-                    }
-                    data-value={field.value}
-                  >
-                    {field.displayName}
-                  </div>
-                ) : field.displayName == "Pick a date & time" ? (
-                  <TextField
-                    className="bookADemo-textInput"
-                    id={field?.id}
-                    label={field.displayName}
-                    variant="outlined"
-                    type="datetime-local"
-                    slotProps={{
-                      inputLabel: {
-                        shrink: true,
-                      },
-                    }}
-                    onChange={handleInputChange}
-                  />
-                ) : (
-                  <TextField
-                    className="bookADemo-textInput"
-                    id={field?.id}
-                    label={field.displayName}
-                    variant="outlined"
-                    type="text"
-                    onChange={handleInputChange}
-                  />
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-          <div id="bookADemo-Buttons-Container">
-            {currentStep != 0 ? (
-              <div
-                className="bookADemo-Button-alt"
-                onClick={(event) =>
-                  handleButtonPress(
-                    event,
-                    bookADemoFormData[currentStep].id ?? "",
-                    bookADemoFormData[currentStep].multiSelect
-                  )
-                }
-              >
-                Previous
-              </div>
-            ) : (
-              ""
-            )}
-            {currentStep != 0 && bookADemoFormData[currentStep].multiSelect ? (
-              <div
-                className="bookADemo-Button"
-                onClick={(event) =>
-                  handleButtonPress(
-                    event,
-                    bookADemoFormData[currentStep].id ?? "",
-                    bookADemoFormData[currentStep].multiSelect
-                  )
-                }
-              >
-                Next
-              </div>
-            ) : (
-              ""
-            )}
-            {Object.values(formData).every((value) => {
-              if (Array.isArray(value)) {
-                return value.length > 0; // arrays must have at least one selection
-              }
-              return value.trim() !== ""; // strings must not be empty
-            }) &&
-              currentStep > 5 && (
-                <div className="bookADemo-Button" onClick={handleSubmit}>
-                  Submit
+          <div id="bookADemo-form-section">
+            <div id="bookADemo-form-question">
+              {bookADemoFormData[currentStep].question}
+            </div>
+            <div id="bookADemo-form-fields-container">
+              {bookADemoFormData[currentStep].fields.map((field, index) => (
+                <React.Fragment key={field.displayName + index}>
+                  {field.type == "option" ? (
+                    <div
+                      className={
+                        "bookADemo-field-select" +
+                        (currentId &&
+                        isSelected(formData, currentId, field.value)
+                          ? " selected"
+                          : "")
+                      }
+                      onClick={(event) =>
+                        handleButtonPress(
+                          event,
+                          bookADemoFormData[currentStep].id ?? "",
+                          bookADemoFormData[currentStep].multiSelect
+                        )
+                      }
+                      data-value={field.value}
+                    >
+                      {field.displayName}
+                    </div>
+                  ) : field.displayName == "Pick a date & time" ? (
+                    <TextField
+                      className="bookADemo-textInput"
+                      id={field?.id}
+                      label={field.displayName}
+                      variant="outlined"
+                      type="datetime-local"
+                      slotProps={{
+                        inputLabel: {
+                          shrink: true,
+                        },
+                      }}
+                      onChange={handleInputChange}
+                    />
+                  ) : (
+                    <TextField
+                      className="bookADemo-textInput"
+                      id={field?.id}
+                      label={field.displayName}
+                      variant="outlined"
+                      type="text"
+                      onChange={handleInputChange}
+                    />
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+            <div id="bookADemo-Buttons-Container">
+              {currentStep != 0 ? (
+                <div
+                  className="bookADemo-Button-alt"
+                  onClick={(event) =>
+                    handleButtonPress(
+                      event,
+                      bookADemoFormData[currentStep].id ?? "",
+                      bookADemoFormData[currentStep].multiSelect
+                    )
+                  }
+                >
+                  Previous
                 </div>
+              ) : (
+                ""
               )}
+              {currentStep != 0 &&
+              bookADemoFormData[currentStep].multiSelect ? (
+                <div
+                  className="bookADemo-Button"
+                  onClick={(event) =>
+                    handleButtonPress(
+                      event,
+                      bookADemoFormData[currentStep].id ?? "",
+                      bookADemoFormData[currentStep].multiSelect
+                    )
+                  }
+                >
+                  Next
+                </div>
+              ) : (
+                ""
+              )}
+              {Object.values(formData).every((value) => {
+                if (Array.isArray(value)) {
+                  return value.length > 0; // arrays must have at least one selection
+                }
+                return value.trim() !== ""; // strings must not be empty
+              }) &&
+                currentStep > 5 && (
+                  <div className="bookADemo-Button" onClick={handleSubmit}>
+                    Submit
+                  </div>
+                )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </Dialog>
   );
 };

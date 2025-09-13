@@ -129,7 +129,43 @@
   border-radius: 6px;
   padding-inline: 10px;
 }
-
+#bookADemo-Success-Container {
+  display: flex;
+  flex-direction: column;
+  background-color: #3175da;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.bookADemo-Success-image {
+  max-width: 200px;
+  position: relative;
+  bottom: 100px;
+}
+.bookADemo-Success-image-man {
+  max-width: 300px;
+  position: absolute;
+  bottom: 50px;
+}
+.bookADemo-success-text {
+  position: relative;
+  bottom: 100px;
+  color: white;
+}
+#bookADemo-Success-Title {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 30px;
+}
+#bookADemo-success-message {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 50px;
+  width: 60%;
+  text-align: center;
+}
 @media (max-width: 1350px) {
   #bookADemo-header-container {
     display: flex;
