@@ -294,7 +294,6 @@ const Signup = ({
         alt="close icon"
         id="dialog-close-icon"
         onClick={() => {
-          navigate(-1);
           setTimeout(() => {
             handleDialog(false);
           }, 100);

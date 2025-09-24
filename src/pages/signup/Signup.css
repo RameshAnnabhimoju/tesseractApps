@@ -86,7 +86,7 @@
   font-size: 20px;
 }
 /* === Section Wrapper === */
-section.signup-section {
+.signup-form-section.signup-section {
   max-width: 900px;
   margin: 0 auto;
   padding: 40px;

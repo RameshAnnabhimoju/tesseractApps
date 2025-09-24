@@ -15,6 +15,7 @@ import {
   bookDemoConfirmationEmailTemplate,
   bookDemoEmailTemplate,
 } from "../../utils/emailTemplates";
+import { useNavigate } from "react-router-dom";
 
 type formDataType = {
   organisaitionType: string;
@@ -51,6 +52,7 @@ const BookADemo = ({
   bookADemo: boolean;
   handleBookADemo: (value?: boolean | undefined) => void;
 }) => {
+  const navigate = useNavigate();
   const alertInitialData = {
     heading: "",
     text: "",
@@ -184,6 +186,12 @@ const BookADemo = ({
         console.error("Error sending confirmation email:", error);
       });
   };
+  const handleLogoClick = () => {
+    navigate("/");
+    setTimeout(() => {
+      handleBookADemo(false);
+    }, 100);
+  };
   return (
     <Dialog
       open={bookADemo}
@@ -207,6 +215,7 @@ const BookADemo = ({
             alt="tesseract logo"
             id="bookADemo-navbar-logo"
             width={200}
+            onClick={handleLogoClick}
           />
         </div>
         <img

@@ -211,7 +211,7 @@ const NavBarComponent = ({
   };
   const loginHandler = () => {
     window.open("https://tesseractapps.my.site.com/s/login/", "_blank");
-    appNavigate("Signup", navigate);
+    // appNavigate("Signup", navigate);
     closePopup();
   };
   const signupHandler = () => {
