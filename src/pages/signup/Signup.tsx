@@ -12,7 +12,7 @@ import {
   signupEmaiTemplate,
 } from "../../utils/emailTemplates";
 import Slide from "@mui/material/Slide";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Signup = ({
   dialog,
@@ -131,7 +131,7 @@ const Signup = ({
     type: "success",
     isOpen: false,
   };
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // console.log("signupData ", signupData);
   // console.log("signupErrors ", signupErrors);
   const [alertData, setAlertData] = useState(alertInitialData);
