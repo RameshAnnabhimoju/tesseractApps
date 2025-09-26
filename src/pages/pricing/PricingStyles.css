@@ -365,7 +365,7 @@
   color: var(--color-text-gray);
 }
 .pricing-optional-addon-subheading-selected {
-  argin-block: 10px;
+  margin-block: 10px;
   font-weight: 600;
   color: white;
 }

@@ -165,6 +165,7 @@
   border-radius: 8px;
   margin-top: 50px;
   border-top: 4px solid #4299e1;
+  flex-direction: column;
 }
 
 .sources-list {
