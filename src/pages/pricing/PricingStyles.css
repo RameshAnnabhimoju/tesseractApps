@@ -1,6 +1,6 @@
 #pricing-container {
   padding-bottom: 80px;
-  background-image: url("../../assets/price bg.png");
+  background-image: url("../../assets/pricing-background-2.png");
   background-repeat: no-repeat;
   background-position: le;
   object-fit: contain;
@@ -345,7 +345,7 @@
   color: var(--color-primary);
 }
 #pricing-data-accordian-container {
-  max-width: 80%;
+  max-width: 92%;
   margin: 0 auto;
 }
 

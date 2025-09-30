@@ -353,6 +353,9 @@ const Pricing = () => {
                 <AccordionSummary
                   sx={{
                     backgroundImage: "var(--color-background-gradient)",
+                    margin: 0,
+                    maxHeight: "40px",
+                    overflow: "hidden",
                   }}
                   expandIcon={<img src={ArrowDown} alt="arrow" />}
                 >
