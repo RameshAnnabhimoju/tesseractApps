@@ -40,7 +40,7 @@ const Pricing = () => {
   const handleBookADemoClick = () => {
     navigate("/requestdemo");
   };
-  const [toggleSwitch, setToggleSwitch] = useState(true);
+  const [toggleSwitch, setToggleSwitch] = useState(false);
   const [selectedTab, setSelectedTab] = useState<
     | "ndis"
     | "ict"
@@ -103,7 +103,7 @@ const Pricing = () => {
           </h2>
           <div id="pricing-cta-button">
             <button
-              className="pricing-button-primary button-contain"
+              className="cta-button pricing-button-primary button-contain"
               onClick={handleTryItFree}
             >
               Try It Free
@@ -193,7 +193,7 @@ const Pricing = () => {
               onChange={() => setToggleSwitch(!toggleSwitch)}
             />
           }
-          label="Get 10% off with TesseractApps Full Accounting Suite"
+          label="Get 10% off with TesseractApps Full Accounting Suite (limited time only)"
         />
       </div>
       {/* <img src={priceBg} alt="price" id="price-bg" /> */}
@@ -264,7 +264,7 @@ const Pricing = () => {
                       minimum 5 users
                     </div>
                     <button
-                      className="pricing-button-primary"
+                      className="cta-button pricing-button-primary"
                       onClick={handleTryItFree}
                     >
                       {data.cta}
@@ -469,7 +469,7 @@ const Pricing = () => {
               className="pricing-links-data-container"
               onClick={() => handleFooterActions("phone")}
             >
-              <div className="pricing-links-data">+61 1300 252 808</div>
+              <div className="pricing-links-data">1300 252 808</div>
               <div className="pricing-links-data-subtext">Support Hotline</div>
             </div>
           </div>

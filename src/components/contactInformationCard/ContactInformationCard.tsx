@@ -17,6 +17,9 @@ const ContactInformationCard = () => {
           <div className="contact-info-headingh">Email:</div>
           <div className="contact-info-text">sales@tesseractapps.com</div>
         </div>
+        <button id="contact-info-button" onClick={handleButtonClick}>
+          Book a Demo
+        </button>
         <div id="contact-info-lower">
           <div className="contact-info-headingh">Not Ready to Talk Yet?</div>
           <div className="contact-info-text">
@@ -29,17 +32,22 @@ const ContactInformationCard = () => {
         <div className="contact-info-headingh">Head Office:</div>
         <div className="contact-info-text">
           TesseractApps <br />
-          28 Thynne St, Bruce ACT 2617, Canberra, ACT, Australia
+          {/* 28 Thynne St, Bruce ACT 2617, Canberra, ACT, Australia */}
+          Canberra, ACT, Australia
         </div>
         <div className="contact-info-headingh">Phone:</div>
         <div className="contact-info-text">
           1300 252 808 <br />
           02 6133 2800
         </div>
-        <div className="contact-info-headingh">Email:</div>
-        <div className="contact-info-text">sales@tesseractapps.com</div>
+        {/* <div className="contact-info-headingh">Email:</div> */}
+        <br />
+        <br />
+        <br />
+        <br />
+        <div className="contact-info-text">Become a TesseractApps Partner</div>
         <button id="contact-info-button" onClick={handleButtonClick}>
-          Book a Demo
+          Contact Us
         </button>
       </div>
     </div>

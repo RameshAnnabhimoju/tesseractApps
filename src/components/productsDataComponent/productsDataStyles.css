@@ -42,7 +42,7 @@
 
 .sticky-section {
   height: max-content;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -53,8 +53,6 @@
   margin-top: 14rem; /* mt-56 */
   margin-bottom: 14rem; /* mb-56 */
   width: 100%;
-  border: 1px solid var(--color-text-gray-light);
-  border-radius: 25px;
   overflow: hidden;
   /* background-image: var(--color-background-gradient); */
   cursor: pointer;
@@ -66,9 +64,9 @@
   justify-content: center;
   gap: 50px;
 }
-.product-card-data-container {
-  /* max-width: 500px; */
-}
+/* .product-card-data-container {
+  max-width: 500px;
+} */
 @media (max-width: 450px) {
   .product-data-card {
     max-width: 380px;

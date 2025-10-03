@@ -3,6 +3,7 @@ import image2 from "../assets/blog2.jpg";
 import image3 from "../assets/blog3.jpg";
 import image4 from "../assets/image1.png";
 import blog5 from "../assets/Blog5Image3.jpeg";
+import blog6 from "../assets/expo-canberra1.jpg";
 import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
 export const ourBlogDummyData = [
   {
@@ -33,24 +34,9 @@ export const ourBlogDummyData = [
     comments: 0,
     categories: ["App", "Technology"],
   },
+
   {
     id: 3,
-    title: "Why Manual Rostering Is Costing You More Than You Think",
-    description: `Many NDIS providers still build rosters by hand — using
-            spreadsheets, whiteboards or group chats. It feels simple and
-            "free". But the hidden costs add up fast. Every week, managers lose
-            hours fixing mistakes. Shifts get double-booked. Overtime blows out
-            budgets. Simple slip-ups mean under-claimed hours or overpayments.
-            `,
-    image: image3,
-    date: "2025-07-06",
-    author: "Belle Bai",
-    authorImage: authorImage,
-    comments: 0,
-    categories: ["Technology", "Product"],
-  },
-  {
-    id: 4,
     title: "The Hidden Costs of Poor Workforce Management for NDIS Providers",
     description: `NDIS service providers rely on having their operations staffed 
     properly. But too many organizations don’t realize how much bad workforce management 
@@ -67,7 +53,7 @@ export const ourBlogDummyData = [
     categories: ["Technology", "Product"],
   },
   {
-    id: 5,
+    id: 4,
     title:
       "Unforgettable Moments at the Disability & WorkAbility Sydney Expo 2025",
     description: `On August 8th - 9th, 2025, the TesseractApps team proudly participated in 
@@ -77,6 +63,53 @@ export const ourBlogDummyData = [
     and industry leaders, all dedicated to improving `,
     image: blog5,
     date: "2025-08-13",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
+  {
+    id: 5,
+    title: "TesseractApps Connects with Canberra’s NDIS Community at the Expo",
+    description: `As a proud Canberra-based company, TesseractApps was thrilled to
+            participate in the recent Canberra NDIS Expo, connecting with local
+            providers, allied health professionals, and community organisations.
+            The event was an invaluable opportunity to engage directly with the
+            people shaping the future of care in our city.`,
+    image: blog6,
+    date: "2025-09-15",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
+  {
+    id: 6,
+    title:
+      "Beyond Compliance: How TesseractApps NDIS Software Elevates Care Quality and Staff Experience",
+    description: `NDIS providers face strict compliance requirements while working to
+            deliver quality care. TesseractApps NDIS software helps you reduce
+            administration, improve staff experience, and meet compliance
+            standards without losing focus on participants.
+            `,
+    image: image3,
+    date: "2025-09-16",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
+  {
+    id: 7,
+    title: "Why Manual Rostering Is Costing You More Than You Think",
+    description: `Many NDIS providers still build rosters by hand — using
+            spreadsheets, whiteboards or group chats. It feels simple and
+            "free". But the hidden costs add up fast. Every week, managers lose
+            hours fixing mistakes. Shifts get double-booked. Overtime blows out
+            budgets. Simple slip-ups mean under-claimed hours or overpayments.
+            `,
+    image: image3,
+    date: "2025-09-25",
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
@@ -1904,21 +1937,27 @@ export const pricingDummyData = {
   ],
 };
 
-import RosterManagementImage from "../assets/Roster Management.png";
+// import RosterManagementImage from "../assets/Roster Management.png";
+import RosterManagementImageF from "../assets/features-Roster Management.png";
 import TimesheetImage from "../assets/Time sheet.png";
 import AdminConsoleImage from "../assets/Admin.png";
-import HRImage from "../assets/HR.png";
+// import HRImage from "../assets/HR.png";
+import HRImageF from "../assets/features-HR.png";
 import ParticipantsImage from "../assets/Participants Management.png";
 import ChatImage from "../assets/Chat and Notification.png";
-import RepoImage from "../assets/Repository.png";
-import AccountingImage from "../assets/accounting.png";
+// import RepoImage from "../assets/Repository.png";
+import RepoImageF from "../assets/features-Repository.png";
+// import AccountingImage from "../assets/accounting.png";
+import AccountingImageF from "../assets/features-Accounting.png";
 import IncidentImage from "../assets/Incident Management.png";
 import ClockImage from "../assets/clock in clock out.png";
 import ComplianceImage from "../assets/complaince and safe guard.png";
-import AccessImage from "../assets/Access control panel.png";
+// import AccessImage from "../assets/Access control panel.png";
+import AccessImageF from "../assets/features-Access control panel.png";
 import Forms from "../assets/Form.png";
 import TSign from "../assets/T sign.png";
-import Profile from "../assets/My profile.png";
+// import Profile from "../assets/My profile.png";
+import ProfileF from "../assets/features-My profile.png";
 import Role from "../assets/Role base dashboard.png";
 export const featuresDummyData = [
   {
@@ -1926,7 +1965,7 @@ export const featuresDummyData = [
     title: "Roster Management",
     description:
       "Easily plan, distribute, and coordinate shifts. No more roster conflicts, less wear and tear, and fill-ins as they occur.",
-    image: RosterManagementImage,
+    image: RosterManagementImageF,
   },
   {
     id: 2,
@@ -1947,7 +1986,7 @@ export const featuresDummyData = [
     title: "HR Operations",
     description:
       "Centralise HR flows. From onboarding to compliance reporting.",
-    image: HRImage,
+    image: HRImageF,
   },
   {
     id: 5,
@@ -1968,14 +2007,14 @@ export const featuresDummyData = [
     title: "Repository",
     description:
       "Safely store and organize files of staff and participants with role-based access and digital signatures.",
-    image: RepoImage,
+    image: RepoImageF,
   },
   {
     id: 8,
     title: "Accounting",
     description:
       "Streamline payroll, invoicing, reimbursements and NDIS claims with automation. Seamless integration with accounting platforms.",
-    image: AccountingImage,
+    image: AccountingImageF,
   },
   {
     id: 9,
@@ -2002,7 +2041,7 @@ export const featuresDummyData = [
     title: "Access Control Panel",
     description:
       "The Access Control Panel simplifies user management by enabling administrators to assign, manage, and revoke access rights in real-time offering effective and flexible control over entry permissions.",
-    image: AccessImage,
+    image: AccessImageF,
   },
   {
     id: 13,
@@ -2023,7 +2062,7 @@ export const featuresDummyData = [
     title: "My Profile",
     description:
       "Control your private information and preferences from a single location. Keep your profile current for all the benefits of having access and get a more personalized experience.",
-    image: Profile,
+    image: ProfileF,
   },
   {
     id: 16,
@@ -4022,7 +4061,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps ICT companies simplify workforce scheduling, project tracking, payroll, and compliance—all in one secure, scalable platform.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4147,7 +4186,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps retailers, restaurants, and hospitality providers manage staff schedules, payroll, compliance, and communication in one secure platform. Improve team efficiency, reduce manual work, and deliver seamless customer service.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4244,7 +4283,7 @@ export const byIndustryData = {
       description:
         "TesseractApps empowers multi-site businesses to manage staff, compliance, payroll, and communication across multiple locations from one secure, centralised platform. Gain full visibility and control while reducing manual work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4349,7 +4388,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps construction companies manage crews, projects, compliance, and payroll seamlessly across sites. Keep your workforce safe, schedules on track, and reporting effortless—all from one platform.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4459,7 +4498,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps manufacturing businesses optimise workforce scheduling, maintain compliance, track production teams, and simplify payroll—all from a single platform. Stay audit-ready, reduce downtime, and keep your operations efficient.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4808,7 +4847,7 @@ export const byCareData = {
       description:
         "TesseractApps helps aged care organisations manage staff, schedules, participant care, compliance, and payroll in one secure platform. Deliver consistent, high-quality care while reducing administrative work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4931,7 +4970,7 @@ export const byCareData = {
       description:
         "TesseractApps helps childcare centres manage staff, schedules, enrolments, compliance, and billing in one secure platform. Focus on delivering quality care while reducing administrative workload.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5053,7 +5092,7 @@ export const byCareData = {
       description:
         "TesseractApps helps allied health organisations manage clients, appointments, staff, compliance, and billing from one secure platform. Improve service delivery while reducing administrative work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5175,7 +5214,7 @@ export const byCareData = {
       description:
         "TesseractApps helps HACC organisations manage clients, staff, schedules, compliance, and billing in one secure platform. Focus on delivering high-quality care while reducing administrative burden.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5303,7 +5342,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps small businesses manage staff, schedules, payroll, compliance, and communication in one secure platform. Reduce administrative workload and focus on growing your business.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5425,7 +5464,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps enterprise organisations manage large teams, multiple departments, compliance, and finance in one secure platform. Streamline operations, reduce administrative complexity, and maintain oversight across the organisation.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5548,7 +5587,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps franchise owners and managers oversee multiple locations, staff, schedules, compliance, and finances from a single platform. Ensure consistency, efficiency, and growth across your network.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5664,7 +5703,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps startups manage staff, schedules, payroll, compliance, and communication in one central platform. Reduce administrative overhead and focus on growth and innovation.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5792,7 +5831,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations maintain regulatory compliance, track certifications, and manage operational risks efficiently. Protect your organisation and ensure audit readiness.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5902,7 +5941,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations improve communication, recognition, training, and collaboration to boost staff satisfaction and productivity.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -6013,7 +6052,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations streamline workflows, automate routine tasks, and manage staff and resources efficiently. Spend less time on administration and more time on strategic work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -6117,7 +6156,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations optimise staffing, payroll, and resource management to reduce overheads while maintaining compliance and service quality.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -9371,4 +9410,75 @@ export const bookADemoFormData = [
       },
     ],
   },
+];
+
+export const signupFormData = [
+  [
+    { label: "ABN", required: true, id: "abn", type: "text" },
+    { label: "Company Name", required: true, id: "company", type: "text" },
+    {
+      label: "Industry Served",
+      required: true,
+      id: "industry",
+      type: "select",
+      options: [
+        { name: "NDIS Provider", value: "NDIS Provider" },
+        { name: "Aged Care Service", value: "Aged Care Service" },
+        { name: "Childcare", value: "Childcare" },
+        { name: "Allied Health", value: "Allied Health" },
+        { name: "Allied Health", value: "Allied Health" },
+        { name: "Other", value: "Other" },
+      ],
+    },
+  ],
+  [
+    { label: "First Name", required: true, id: "firstName", type: "text" },
+    { label: "Last Name", required: true, id: "lastName", type: "text" },
+    { label: "Email", required: true, id: "email", type: "email" },
+    { label: "Phone Number", required: true, id: "phone", type: "text" },
+  ],
+  [
+    {
+      label: "Which features are most relevant to your business?",
+      required: false,
+      id: "features",
+      type: "select",
+      multiSelect: true,
+      options: [
+        { name: "Workforce Management", value: "Roster & Schedule " },
+        { name: "Workforce Management", value: "Timesheet & Payroll" },
+        { name: "Workforce Management", value: "HR Operations" },
+        { name: "Business Operations & Admin", value: "Admin Console" },
+        { name: "Business Operations & Admin", value: "Access Control Panel " },
+        {
+          name: "Business Operations & Admin",
+          value: "Reporting & Dashboard ",
+        },
+        {
+          name: "Compliance & Client Management",
+          value: "NDIS Claims & Invoicing",
+        },
+        { name: "Compliance & Client Management", value: "Digital Signatures" },
+        { name: "other", value: "other" },
+      ],
+    },
+  ],
+  [
+    {
+      label: "How would you like to start?",
+      required: true,
+      id: "preference",
+      type: "select",
+      options: [
+        {
+          name: "Book a Demo",
+          value: "Book a Demo - schedule a session with TesseractApps team",
+        },
+        {
+          name: "Start Free Trial",
+          value: "Start Free Trial – no credit card required",
+        },
+      ],
+    },
+  ],
 ];

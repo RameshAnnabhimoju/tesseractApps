@@ -6,11 +6,13 @@ import FooterComponent from "./components/footerComponent/FooterComponent";
 import AppRoutes from "./routes/AppRoutes";
 import Signup from "./pages/signup/Signup";
 import BookADemo from "./pages/bookADemo/BookADemo";
+import ExpoBanner from "./components/exporBanner/ExpoBanner";
 // import SignupFlow from "./pages/signupflow/SignupFlow";
 
 function App() {
   const [dialog, setDialog] = useState(false);
   const [bookADemo, setBookADemo] = useState(false);
+  const [expoBanner, setExpoBanner] = useState(true);
   const handleDialog = (value?: boolean) => {
     if (value != undefined) {
       setDialog(value);
@@ -43,7 +45,15 @@ function App() {
       )}
 
       <div ref={portalContainerRef} />
-      {!(dialog || bookADemo) && <AppRoutes handleDialog={handleDialog} />}
+      {!(dialog || bookADemo) && expoBanner && (
+        <ExpoBanner
+          showBanner={expoBanner}
+          handleBannerClose={() => {
+            setExpoBanner(false);
+          }}
+        />
+      )}
+      {!(dialog || bookADemo) && <AppRoutes />}
       {!(dialog || bookADemo) && <FooterComponent />}
     </BrowserRouter>
   );

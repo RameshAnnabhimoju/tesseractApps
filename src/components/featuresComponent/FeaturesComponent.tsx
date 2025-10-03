@@ -11,7 +11,7 @@ const FeaturesComponent = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  console.log(currentSlide, loaded);
+  // console.log(currentSlide, loaded);
   const [perView, setPerView] = useState(5);
   useEffect(() => {
     if (window.innerWidth <= 1100) {
@@ -20,6 +20,7 @@ const FeaturesComponent = () => {
     if (window.innerWidth <= 425) {
       setPerView(1);
     }
+    console.log(currentSlide, loaded);
   }, []);
   const [sliderFeaturesRef] = useKeenSlider(
     {

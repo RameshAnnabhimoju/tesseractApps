@@ -1,16 +1,16 @@
 // import VideoComponent from "../videoComponent/VideoComponent";
 import "./HomeHeroStyles.css";
 import logo_small from "../../assets/tesseract_logo_small.png";
-import ios from "../../assets/mobile_ios.png";
-import android from "../../assets/mobile_android.png";
-import facebook from "../../assets/facebook.png";
-import youtube from "../../assets/youtube.png";
-import linkedin from "../../assets/linkedin.png";
-import instagram from "../../assets/instagram.png";
+// import ios from "../../assets/mobile_ios.png";
+// import android from "../../assets/mobile_android.png";
+// import facebook from "../../assets/facebook.png";
+// import youtube from "../../assets/youtube.png";
+// import linkedin from "../../assets/linkedin.png";
+// import instagram from "../../assets/instagram.png";
 import { appNavigate } from "../../routes/AppRoutes";
 // import heroImage1 from "../../assets/heroBackground-1.png";
 // import heroImage2 from "../../assets/heroBackground-2.png";
-import ArrowRight from "../arrows/ArrowRight";
+// import ArrowRight from "../arrows/ArrowRight";
 import HeroArcsLeftComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import HeroArcsRightComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import { homeLeftArcsData, homeRightArcsData } from "../../utils/DummyData";
@@ -37,13 +37,14 @@ const HomeHeroComponent = () => {
           service delivery for care providers and IT consultants in one secure,
           scalable platform.
         </h2>
-        <div id="home-get-started-button" onClick={() => HandleClick("Signup")}>
-          <div>Try It Free</div> <ArrowRight className="arrow-icon" />
+        <div className="cta-button" onClick={() => HandleClick("Signup")}>
+          <div>Try It Free</div>
+          {/* <ArrowRight className="arrow-icon" /> */}
         </div>
         <div id="home-button-subtext">
           No credit card is required. Free onboarding included.
         </div>
-        <div id="home-store-links-container">
+        {/* <div id="home-store-links-container">
           <img
             src={ios}
             alt="ios"
@@ -62,8 +63,8 @@ const HomeHeroComponent = () => {
               HandleClick("android");
             }}
           />
-        </div>
-        <div id="home-social-links-container">
+        </div> */}
+        {/* <div id="home-social-links-container">
           <img
             src={facebook}
             alt="facebook-link"
@@ -96,7 +97,7 @@ const HomeHeroComponent = () => {
               HandleClick("instagram");
             }}
           />
-        </div>
+        </div> */}
       </div>
       <HeroArcsRightComponent pendulums={homeRightArcsData} />
       {/* <img

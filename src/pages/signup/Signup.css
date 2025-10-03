@@ -259,3 +259,49 @@
 .signup-input-label {
   display: flex;
 }
+.required-indicator {
+  color: red;
+}
+.select-options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.select-option {
+  border: 1px solid #caddff;
+  /* max-height: 45px; */
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #f2f8ff;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0%;
+  margin-top: 25px;
+}
+.select-option:hover {
+  border-color: var(--color-primary);
+  background-color: #e9f3fd;
+}
+.select-option.selected {
+  background-color: #9bd0ff;
+  font-weight: 400;
+}
+.signup-bottom-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.signup-form-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #374151;
+}
+.signup-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding: 5px 0;
+  width: 100%;
+}

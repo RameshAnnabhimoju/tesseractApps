@@ -48,7 +48,7 @@ const NavBarComponent = ({
     "About" | "Product" | "Solutions" | "Pricing" | "Resources" | ""
   >("");
   const DROPDOWN_LINKS = ["Product", "Solutions", "Resources"];
-  const NAV_LINKS = ["Product", "Pricing", "Solutions", "Resources"];
+  const NAV_LINKS = ["Product", "Pricing", "About", "Solutions", "Resources"];
   // const [showHeader, setShowHeader] = useState(true);
   // const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -83,7 +83,8 @@ const NavBarComponent = ({
       currentPath == "our-vision" ||
       currentPath == "team" ||
       currentPath == "careers" ||
-      currentPath == "contact-information"
+      currentPath == "contact-information" ||
+      currentPath == "about"
     ) {
       setActiveLink("About");
     }
@@ -104,6 +105,9 @@ const NavBarComponent = ({
       currentPath == "hr-operations" ||
       currentPath == "role-based-dashboard" ||
       currentPath == "t-sign" ||
+      currentPath == "salesforce-integration" ||
+      currentPath == "xero" ||
+      currentPath == "wyzed" ||
       currentPath == "my-profile"
     ) {
       setActiveLink("Product");
@@ -116,7 +120,25 @@ const NavBarComponent = ({
       currentPath == "ndis-staff" ||
       currentPath == "hr-manager" ||
       currentPath == "accountant" ||
-      currentPath == "participant"
+      currentPath == "participant" ||
+      currentPath == "retail-hospitality" ||
+      currentPath == "multi-site-businesses" ||
+      currentPath == "construction" ||
+      currentPath == "manufacturing" ||
+      currentPath == "disability-support-ndis" ||
+      currentPath == "support-coordination" ||
+      currentPath == "aged-care-services" ||
+      currentPath == "child-care-services" ||
+      currentPath == "allied-health-services" ||
+      currentPath == "home-community-care-services" ||
+      currentPath == "small-businesses" ||
+      currentPath == "enterprise" ||
+      currentPath == "franchise" ||
+      currentPath == "startups" ||
+      currentPath == "compliance" ||
+      currentPath == "employee-engagement" ||
+      currentPath == "time-efficiency" ||
+      currentPath == "cost-optimisation"
     ) {
       setActiveLink("Solutions");
     }
@@ -335,7 +357,7 @@ const NavBarComponent = ({
           </div>
           <div id="nav-menu-links">
             {NAV_LINKS.map((label, index) => {
-              if (label != "Pricing") {
+              if (label != "Pricing" && label != "About") {
                 return (
                   <Accordion
                     key={label}
@@ -361,7 +383,7 @@ const NavBarComponent = ({
                     </AccordionSummary>
                     <AccordionDetails>
                       <Typography sx={{ fontSize: "18px", fontWeight: 400 }}>
-                        {expanded == 0 &&
+                        {/* {expanded == 2 &&
                           Array.isArray(navBarDummyData["About"]) &&
                           navBarDummyData["About"].map((value) => (
                             <div
@@ -374,8 +396,8 @@ const NavBarComponent = ({
                                 {value.subTitle}
                               </div>
                             </div>
-                          ))}
-                        {expanded == 1 &&
+                          ))} */}
+                        {expanded == 0 &&
                           Array.isArray(navBarDummyData["Product"]) && (
                             <>
                               <div
@@ -478,7 +500,7 @@ const NavBarComponent = ({
                               </div>
                             )
                           )} */}
-                        {expanded == 2 && (
+                        {expanded == 3 && (
                           <div id="nav-menu-solutions">
                             <div>
                               <div className="services-heading">
@@ -617,7 +639,7 @@ const NavBarComponent = ({
               } else {
                 return (
                   <div
-                    className="nav-menu-link"
+                    className="nav-menu-link no-dropdown"
                     key={label}
                     id={label}
                     onClick={handleNavClick}
