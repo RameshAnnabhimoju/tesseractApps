@@ -2239,22 +2239,22 @@ export const dots = {
 // import detailsImage2 from "../assets/detailImage2.png";
 // import detailsImage3 from "../assets/detailImage3.png";
 // import tesseractApsImage from "../assets/Tesseract Apps.png";
-import rosternew from "../assets/Website images/Roster Management.png";
-import timesheetNew from "../assets/Website images/My roster time sheet.png";
-import adminConsoleNew from "../assets/Website images/Admin Console.png";
-import accessNew from "../assets/Website images/Access control panel.png";
-import hrnew from "../assets/Website images/HR.png";
-import repoNew from "../assets/Website images/Repository.png";
-import participantNew from "../assets/Website images/Participants.png";
-import incidentNew from "../assets/Website images/Incident Register.png";
-import rollbased from "../assets/Website images/Role-Based Dashboards.png";
-import tsignNew from "../assets/Website images/Tsign.png";
-import chatNew from "../assets/Website images/Chat.png";
-import myprofileNew from "../assets/Website images/My profile.png";
-import clockiN from "../assets/Website images/clock in clock out.png";
-import formsNew from "../assets/Website images/Forms.png";
-import accountingNew from "../assets/Website images/Accounting.png";
-import TLEARNINGNEW from "../assets/Website images/T learner.png";
+import rosternew from "../assets/Roster Management  N.png";
+import timesheetNew from "../assets/My roster time sheet N.png";
+import adminConsoleNew from "../assets/Admin Console N.png";
+import accessNew from "../assets/Access control panel N.png";
+import hrnew from "../assets/HR N.png";
+import repoNew from "../assets/Repository 2.png";
+import participantNew from "../assets/Participants N.png";
+import incidentNew from "../assets/Incident Register N.png";
+import rollbased from "../assets/Role-Based Dashboards N.png";
+import tsignNew from "../assets/T Sign N.png";
+import chatNew from "../assets/Chat N.png";
+import myprofileNew from "../assets/My profile N.png";
+import clockiN from "../assets/clock in clock out N.png";
+import formsNew from "../assets/Form N.png";
+import accountingNew from "../assets/Accounting N.png";
+import TLEARNINGNEW from "../assets/T learner N.png";
 export const SubPagesDummyData = {
   Product: {
     page: "Product",
@@ -6254,6 +6254,7 @@ export const byBusinessProblem = {
     },
   },
 };
+// import rosterN from "../assets/Roster Management  N.png";
 import resterManagement from "../assets/Roster manager schedule.png";
 import adminConsole from "../assets/Product Admin con.png";
 import adminConsole2 from "../assets/admin 2.png";
@@ -6271,7 +6272,7 @@ import forms from "../assets/Forms.png";
 import accounting from "../assets/Product Accounting.png";
 import tLearingHub from "../assets/learning.png";
 import myProfile from "../assets/Product My profile.png";
-import myProfileNew from "../assets/My profile.png";
+import myProfileNew from "../assets/My profile N.png";
 import chat from "../assets/Chat.png";
 import salesforce from "../assets/service.png";
 import wyzed from "../assets/S and L.png";
