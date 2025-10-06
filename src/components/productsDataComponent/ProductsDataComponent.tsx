@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./productsDataStyles.css";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { AppNavigate } from "../../routes/AppNavigate";
 import DetailsHeroComponent from "../detailsHeroComponent/DetailsHeroComponent";
+import useAppNavigate from "../../hooks/useAppNavigate";
 interface ProductsDataTypes {
   data: {
     title: string;
@@ -10,10 +11,11 @@ interface ProductsDataTypes {
   };
 }
 const ProductsDataComponent = ({ data }: ProductsDataTypes) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const appNavigate = useAppNavigate();
   function handleProductDataClick(name: string) {
     // console.log(name);
-    appNavigate(name, navigate, false);
+    appNavigate(name);
   }
   const backgroundColors = [
     "#E6EEFF",

@@ -7,18 +7,22 @@ import logo_small from "../../assets/tesseract_logo_small.png";
 // import youtube from "../../assets/youtube.png";
 // import linkedin from "../../assets/linkedin.png";
 // import instagram from "../../assets/instagram.png";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { AppNavigate } from "../../routes/AppNavigate";
 // import heroImage1 from "../../assets/heroBackground-1.png";
 // import heroImage2 from "../../assets/heroBackground-2.png";
 // import ArrowRight from "../arrows/ArrowRight";
 import HeroArcsLeftComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import HeroArcsRightComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import { homeLeftArcsData, homeRightArcsData } from "../../utils/DummyData";
-import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../../contexts/AppContext.tsx";
+// import { useNavigate } from "react-router-dom";
 const HomeHeroComponent = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const { handleSignup } = useAppContext();
   const HandleClick = (name: string) => {
-    appNavigate(name, navigate, false);
+    if (name == "Signup") {
+      handleSignup(true);
+    }
   };
   return (
     <div id="home-hero-container">

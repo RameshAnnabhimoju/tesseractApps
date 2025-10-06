@@ -1,5 +1,5 @@
 import "./ExpoBanner.css";
-import expoBannerImage from "../../assets/expo-bnner-image.png";
+import expoBannerImage from "../../assets/expo-banner-oct.png";
 import closeIcon from "../../assets/close.png";
 import { ChangeEvent, useState } from "react";
 import { Dialog } from "@mui/material";
@@ -230,30 +230,44 @@ const ExpoBanner = ({ showBanner, handleBannerClose }: PopupProps) => {
       <Dialog
         open={showBanner && !alertData.isOpen}
         onClose={() => handleBannerClose()}
-        slots={{ transition: Slide }}
-        slotProps={{ transition: { direction: "up" } }}
-        sx={{ margin: "auto", maxWidth: "1920px" }}
+        slots={{
+          transition: Slide,
+        }}
+        slotProps={{
+          paper: {
+            sx: {
+              backgroundColor: showForm ? "white" : "transparent",
+              boxShadow: showForm ? 1 : "none", // transparent dialog
+            },
+          },
+          transition: { direction: "up" }, // Slide transition
+        }}
+        sx={{
+          marginInline: "auto",
+          maxWidth: "1920px",
+        }}
       >
         <div id="expo-banner-container">
-          <div id="expo-banner-header">
-            <div id="expo-banner-header-titles-container">
-              <div id="expo-banner-title">
-                Melbourne NDIS Expo | 21–22 November 2025
-              </div>
-              <div id="expo-banner-subtitle">
-                Register now for live demos, exclusive expo offers, and event
-                updates.
-              </div>
-            </div>
-            <img
-              src={closeIcon}
-              alt="close icon"
-              onClick={handleBannerClose}
-              id="expo-banner-close-icon"
-            />
-          </div>
           {showForm ? (
             <>
+              <div id="expo-banner-header">
+                <div id="expo-banner-header-titles-container">
+                  <div id="expo-banner-title">
+                    Melbourne NDIS Expo | 21–22 November 2025
+                  </div>
+                  <div id="expo-banner-subtitle">
+                    Register now for live demos, exclusive expo offers, and
+                    event updates.
+                  </div>
+                </div>
+                <img
+                  src={closeIcon}
+                  alt="close icon"
+                  onClick={handleBannerClose}
+                  id="expo-banner-close-icon"
+                />
+              </div>
+
               <div id="expo-banner-form-container">
                 <div className="expo-banner-input-container">
                   <label
@@ -416,16 +430,23 @@ const ExpoBanner = ({ showBanner, handleBannerClose }: PopupProps) => {
           ) : (
             <>
               <img
+                src={closeIcon}
+                alt="close icon"
+                onClick={handleBannerClose}
+                id="expo-banner-image-close-icon"
+              />
+              <img
                 src={expoBannerImage}
                 alt="expo banner image"
                 id="expo-banner-image"
+                onClick={handleButtonClick}
               />
-              <button
+              {/* <button
                 className="expo-banner-button"
                 onClick={handleButtonClick}
               >
                 Register Your Interest
-              </button>
+              </button> */}
             </>
           )}
         </div>

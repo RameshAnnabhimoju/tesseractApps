@@ -4,6 +4,8 @@ import DetailsDataComponent from "../../components/detailsDataComponent/DetailsD
 import DetailsHeroComponent from "../../components/detailsHeroComponent/DetailsHeroComponent";
 import AboutSelectedToolComponent from "../../components/aboutSelectedToolComponent/AboutSelectedToolComponent";
 import FaqProductComponent from "../../components/faqProductComponent/faqProductComponent";
+import { useAppContext } from "../../contexts/AppContext";
+import ComingSoon from "../comingSoon/ComingSoon";
 interface productDetailsTypes {
   data: {
     page: string;
@@ -72,7 +74,13 @@ interface productDetailsTypes {
 }
 const ProductDetails = () => {
   const location = useLocation();
-  const { data }: productDetailsTypes = location.state || {};
+  const { getRoute } = useAppContext();
+  const path = location.pathname.replace(/\/$/, "");
+  const data: productDetailsTypes["data"] =
+    (location.state as any)?.data ?? getRoute(path)?.data ?? null;
+  if (!data) {
+    return <ComingSoon />;
+  }
   return (
     <div id="product-details-container">
       {data.hero && (
@@ -84,6 +92,7 @@ const ProductDetails = () => {
         data.section3.map((item, index) => {
           return (
             <DetailsDataComponent
+              key={item.title + index}
               data={item}
               componentType={index % 2 == 0 ? 1 : 2}
             />

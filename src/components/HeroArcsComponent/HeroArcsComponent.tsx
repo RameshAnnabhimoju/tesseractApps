@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+import { useAppNavigate } from "../../hooks/useAppNavigate";
 
 // --- geometry helpers ---
 const toRad = (deg: number) => ((deg - 90) * Math.PI) / 180;
@@ -54,7 +53,7 @@ interface PendulumState {
 }
 
 const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const groupRefs = useRef<Record<string, SVGGElement | null>>({});
   const backgroundCircleRefs = useRef<Record<string, SVGCircleElement | null>>(
     {}
@@ -213,7 +212,7 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
               onMouseLeave={onLeave(it.id)}
               style={{ cursor: "pointer" }}
               onClick={() => {
-                appNavigate(it.label, navigate, false);
+                navigate(it.label);
               }}
             >
               <circle
@@ -241,10 +240,10 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
         );
       })}
 
-      {tooltip.show && (
+      {tooltip.text && (
         <text
           x={tooltip.x}
-          y={tooltip.y - 30}
+          y={tooltip.y + 35} // below circle (adjust as needed)
           textAnchor="middle"
           fontSize="10"
           fill="#414141ff"
@@ -253,9 +252,9 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
             userSelect: "none",
           }}
         >
-          {tooltip.text.split("&").map((line, index) => (
+          {tooltip.text.split(" ").map((word, index) => (
             <tspan key={index} x={tooltip.x} dy={index === 0 ? 0 : 12}>
-              {line}
+              {word}
             </tspan>
           ))}
         </text>

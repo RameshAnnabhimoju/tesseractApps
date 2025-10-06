@@ -2,8 +2,8 @@ import "./AboutSelectedToolStyles.css";
 import { aboutSelectedToolDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
 import dividerLine from "../../assets/divider_line.jpg";
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { useNavigate } from "react-router-dom";
+import useAppNavigate from "../../hooks/useAppNavigate";
 interface aboutSelectedToolType {
   data?: {
     title: string;
@@ -31,6 +31,7 @@ const AboutSelectedToolComponent = ({
     points: aboutSelectedToolDummyData,
   },
 }: aboutSelectedToolType) => {
+  const appNavigate = useAppNavigate();
   type PointObject = { pointTitle: string; pointDescription: string };
 
   function isOfType(value: unknown, type: "stringArray"): value is string[];
@@ -79,10 +80,10 @@ const AboutSelectedToolComponent = ({
     return () => window.removeEventListener("resize", handleResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleCtaClick = (name: string) => {
     console.log("cta click ", name);
-    appNavigate(name, navigate, false);
+    appNavigate(name);
   };
   return (
     <div id="selected-tool-container">

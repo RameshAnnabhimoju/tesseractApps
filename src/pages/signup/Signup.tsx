@@ -22,17 +22,11 @@ import {
 import Slide from "@mui/material/Slide";
 import React from "react";
 import { signupFormData } from "../../utils/DummyData";
+import { useAppContext } from "../../contexts/AppContext";
 // import { useNavigate } from "react-router-dom";
 
-const Signup = ({
-  dialog,
-  // setDialog,
-  handleDialog,
-}: {
-  dialog: boolean;
-  setDialog: React.Dispatch<React.SetStateAction<boolean>>;
-  handleDialog: (value?: boolean | undefined) => void;
-}) => {
+const Signup = () => {
+  const { signUp, handleSignup } = useAppContext();
   type signupType = {
     firstName: string;
     lastName: string;
@@ -392,9 +386,9 @@ const Signup = ({
   console.log("signupErrors", signupErrors);
   return (
     <Dialog
-      open={dialog}
+      open={signUp}
       onClose={() => {
-        handleDialog(false);
+        handleSignup(false);
       }}
       fullScreen
       slots={{ transition: Slide }}
@@ -420,7 +414,7 @@ const Signup = ({
         onClick={() => {
           console.log("close clicked");
           setTimeout(() => {
-            handleDialog(false);
+            handleSignup(false);
           }, 100);
         }}
       />

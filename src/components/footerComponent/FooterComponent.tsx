@@ -6,8 +6,8 @@ import youtube from "../../assets/youtube.png";
 import flagsImag1 from "../../assets/flagImage1.jpg";
 import flagsImag2 from "../../assets/flagImage2.jpg";
 import { footerProductsData } from "../../utils/DummyData";
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { useNavigate } from "react-router-dom";
+// import { AppNavigate } from "../../routes/AppNavigate";
 import { useState } from "react";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
 import Alert from "../alert/Alert";
@@ -15,8 +15,10 @@ import {
   newsletterConfirmationEmailTemplate,
   newsletterSubscriptionEmailTemplate,
 } from "../../utils/emailTemplates";
+import useAppNavigate from "../../hooks/useAppNavigate";
 const FooterComponent = () => {
-  const navigate = useNavigate();
+  const appNavigate = useAppNavigate();
+  // const navigate = useNavigate();
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const alertInitialData = {
     heading: "",
@@ -108,7 +110,7 @@ const FooterComponent = () => {
   }
   function handleProductDataClick(name: string) {
     // console.log(name);
-    if (name) appNavigate(name, navigate);
+    if (name) appNavigate(name);
   }
   const productLinks = footerProductsData;
   return (

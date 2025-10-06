@@ -1,12 +1,14 @@
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { useNavigate } from "react-router-dom";
+// import { AppNavigate } from "../../routes/AppNavigate";
 import "./BlogPostStyles.css";
 import blogImage from "../../assets/blog3.jpg"; // replace with actual image
+import useAppNavigate from "../../hooks/useAppNavigate";
 
 const BeyondComplianceBlog = () => {
-  const navigate = useNavigate();
+  const appNavigate = useAppNavigate();
+  // const navigate = useNavigate();
   function handleClick(name: string) {
-    appNavigate(name, navigate);
+    appNavigate(name);
   }
 
   return (

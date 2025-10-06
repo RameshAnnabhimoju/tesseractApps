@@ -21,25 +21,25 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ArrowDown from "../../assets/arrow_down.svg";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { AppNavigate } from "../../routes/AppNavigate";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowUp from "../arrows/ArrowUp";
 import signupImage from "../../assets/signup.png";
+import useAppNavigate from "../../hooks/useAppNavigate";
+import { useAppContext } from "../../contexts/AppContext";
 
 const NavBarComponent = ({
   portalContainerRef,
-  handleDialog,
-  handleBookADemo,
 }: {
   portalContainerRef: RefObject<HTMLDivElement | null>;
-  handleDialog: (value?: boolean) => void;
-  handleBookADemo: (value?: boolean) => void;
 }) => {
+  const { handleBookADemo, handleSignup } = useAppContext();
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
   const navigate = useNavigate();
+  const appNavigate = useAppNavigate();
   const [showSearch, setShowSearch] = useState(false);
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -180,7 +180,7 @@ const NavBarComponent = ({
     const name = event.currentTarget.id;
     setToggleDrawer(false);
     if (name) {
-      appNavigate(name, navigate, false);
+      appNavigate(name);
     }
   };
   const handleNavPopupClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -211,11 +211,12 @@ const NavBarComponent = ({
     handleSearch(name);
     setToggleDrawer(false);
     if (name && name == "Free Trial Sign-Up") {
-      handleDialog(true);
+      handleSignup(true);
       return;
     }
+    console.log("Name:", name);
     if (name) {
-      appNavigate(name, navigate);
+      appNavigate(name);
     }
   };
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -237,7 +238,7 @@ const NavBarComponent = ({
     closePopup();
   };
   const signupHandler = () => {
-    handleDialog();
+    handleSignup();
     closePopup();
   };
   const [showScroll, setShowScroll] = useState(false);
@@ -411,27 +412,29 @@ const NavBarComponent = ({
                                 </div>
                                 <div className="nav-sub-title">Learn More</div>
                               </div>
-                              {navBarDummyData["Product"].map((value) => (
-                                <>
-                                  <div>{value.heading}</div>
-                                  {value.links.map((link) => (
-                                    <div
-                                      key={link.title}
-                                      className="nav-inner-container"
-                                      onClick={() =>
-                                        popupLinkClickHandler(link.title)
-                                      }
-                                    >
-                                      <div className="nav-title">
-                                        {link.title}
+                              {navBarDummyData["Product"].map(
+                                (value, index) => (
+                                  <div key={value.heading + index}>
+                                    <div>{value.heading}</div>
+                                    {value.links.map((link, innerIndex) => (
+                                      <div
+                                        key={link.title + innerIndex}
+                                        className="nav-inner-container"
+                                        onClick={() =>
+                                          popupLinkClickHandler(link.title)
+                                        }
+                                      >
+                                        <div className="nav-title">
+                                          {link.title}
+                                        </div>
+                                        <div className="nav-sub-title">
+                                          {link.subTitle}
+                                        </div>
                                       </div>
-                                      <div className="nav-sub-title">
-                                        {link.subTitle}
-                                      </div>
-                                    </div>
-                                  ))}
-                                </>
-                              ))}
+                                    ))}
+                                  </div>
+                                )
+                              )}
                               {/* {navBarDummyData["Product"][1].map((value) => (
                                   <div
                                     key={value.title}
@@ -468,9 +471,9 @@ const NavBarComponent = ({
                           )}
                         {expanded == 4 &&
                           Array.isArray(navBarDummyData["Resources"]) &&
-                          navBarDummyData["Resources"].map((value) => (
+                          navBarDummyData["Resources"].map((value, index) => (
                             <div
-                              key={value.title}
+                              key={value.title + index}
                               className="nav-inner-container"
                               onClick={() => popupLinkClickHandler(value.title)}
                             >
@@ -510,9 +513,9 @@ const NavBarComponent = ({
                                 navBarDummyData["Solutions"]["BY INDUSTRY"]
                               ) &&
                                 navBarDummyData["Solutions"]["BY INDUSTRY"].map(
-                                  (value) => (
+                                  (value, index) => (
                                     <div
-                                      key={value.title}
+                                      key={value.title + index}
                                       className="nav-inner-container"
                                       onClick={() =>
                                         popupLinkClickHandler(value.title)
@@ -534,9 +537,9 @@ const NavBarComponent = ({
                                 navBarDummyData["Solutions"]["BY CARE"]
                               ) &&
                                 navBarDummyData["Solutions"]["BY CARE"].map(
-                                  (value) => (
+                                  (value, index) => (
                                     <div
-                                      key={value.title}
+                                      key={value.title + index}
                                       className="nav-inner-container"
                                       onClick={() =>
                                         popupLinkClickHandler(value.title)
@@ -558,9 +561,9 @@ const NavBarComponent = ({
                                 navBarDummyData["Solutions"]["BY ROLE"]
                               ) &&
                                 navBarDummyData["Solutions"]["BY ROLE"].map(
-                                  (value) => (
+                                  (value, index) => (
                                     <div
-                                      key={value.title}
+                                      key={value.title + index}
                                       className="nav-inner-container"
                                       onClick={() =>
                                         popupLinkClickHandler(value.title)
@@ -585,9 +588,9 @@ const NavBarComponent = ({
                               ) &&
                                 navBarDummyData["Solutions"][
                                   "BY BUSINESS TYPE"
-                                ].map((value) => (
+                                ].map((value, index) => (
                                   <div
-                                    key={value.title}
+                                    key={value.title + index}
                                     className="nav-inner-container"
                                     onClick={() =>
                                       popupLinkClickHandler(value.title)
@@ -613,9 +616,9 @@ const NavBarComponent = ({
                               ) &&
                                 navBarDummyData["Solutions"][
                                   "BY BUSINESS PROBLEM"
-                                ].map((value) => (
+                                ].map((value, index) => (
                                   <div
-                                    key={value.title}
+                                    key={value.title + index}
                                     className="nav-inner-container"
                                     onClick={() =>
                                       popupLinkClickHandler(value.title)
@@ -715,12 +718,12 @@ const NavBarComponent = ({
           </div>
         </div>
         <div id="navbar-links-links">
-          {NAV_LINKS.map((label) => {
+          {NAV_LINKS.map((label, index) => {
             const shouldHavePopup = DROPDOWN_LINKS.includes(label);
 
             return (
               <div
-                key={label}
+                key={label + index}
                 id={label}
                 className={
                   "nav-link" +
@@ -753,7 +756,9 @@ const NavBarComponent = ({
 
           <div
             className="navbar-tryItFree"
-            onClick={() => appNavigate("Signup", navigate, false)}
+            onClick={() => {
+              handleSignup(true);
+            }}
           >
             <div className="navbar-requestDemo-text">Try It Free</div>
           </div>
@@ -829,9 +834,9 @@ const NavBarComponent = ({
                 title: string;
                 subTitle: string;
               }[]
-            ).map((value) => (
+            ).map((value, index) => (
               <div
-                key={value.title}
+                key={value.title + index}
                 className="nav-inner-container"
                 onClick={() => popupLinkClickHandler(value.title)}
               >
@@ -841,12 +846,17 @@ const NavBarComponent = ({
             ))}
           {selectedLink && selectedLink == "Product" && (
             <div id="popup-nav-products-container">
-              {navBarDummyData["Product"].map((value) => (
+              {navBarDummyData["Product"].map((value, index) => (
                 <>
-                  <div className="nav-inner-heading">{value.heading}</div>
-                  {value.links.map((link) => (
+                  <div
+                    className="nav-inner-heading"
+                    key={value.heading + index}
+                  >
+                    {value.heading}
+                  </div>
+                  {value.links.map((link, innerIndex) => (
                     <div
-                      key={link.title}
+                      key={link.title + innerIndex}
                       className="nav-inner-container"
                       onClick={() => popupLinkClickHandler(link.title)}
                     >
@@ -886,44 +896,50 @@ const NavBarComponent = ({
               <div>
                 <div className="services-heading">BY INDUSTRY</div>
                 {Array.isArray(navBarDummyData[selectedLink]["BY INDUSTRY"]) &&
-                  navBarDummyData[selectedLink]["BY INDUSTRY"].map((value) => (
-                    <div
-                      key={value.title}
-                      className="nav-inner-container"
-                      onClick={() => popupLinkClickHandler(value.title)}
-                    >
-                      <div className="nav-title">{value.title}</div>
-                      <div className="nav-sub-title">{value.subTitle}</div>
-                    </div>
-                  ))}
+                  navBarDummyData[selectedLink]["BY INDUSTRY"].map(
+                    (value, index) => (
+                      <div
+                        key={value.title + index}
+                        className="nav-inner-container"
+                        onClick={() => popupLinkClickHandler(value.title)}
+                      >
+                        <div className="nav-title">{value.title}</div>
+                        <div className="nav-sub-title">{value.subTitle}</div>
+                      </div>
+                    )
+                  )}
               </div>
               <div>
                 <div className="services-heading">BY CARE</div>
                 {Array.isArray(navBarDummyData[selectedLink]["BY CARE"]) &&
-                  navBarDummyData[selectedLink]["BY CARE"].map((value) => (
-                    <div
-                      key={value.title}
-                      className="nav-inner-container"
-                      onClick={() => popupLinkClickHandler(value.title)}
-                    >
-                      <div className="nav-title">{value.title}</div>
-                      <div className="nav-sub-title">{value.subTitle}</div>
-                    </div>
-                  ))}
+                  navBarDummyData[selectedLink]["BY CARE"].map(
+                    (value, index) => (
+                      <div
+                        key={value.title + index}
+                        className="nav-inner-container"
+                        onClick={() => popupLinkClickHandler(value.title)}
+                      >
+                        <div className="nav-title">{value.title}</div>
+                        <div className="nav-sub-title">{value.subTitle}</div>
+                      </div>
+                    )
+                  )}
               </div>
               <div>
                 <div className="services-heading">BY ROLE</div>
                 {Array.isArray(navBarDummyData[selectedLink]["BY ROLE"]) &&
-                  navBarDummyData[selectedLink]["BY ROLE"].map((value) => (
-                    <div
-                      key={value.title}
-                      className="nav-inner-container"
-                      onClick={() => popupLinkClickHandler(value.title)}
-                    >
-                      <div className="nav-title">{value.title}</div>
-                      <div className="nav-sub-title">{value.subTitle}</div>
-                    </div>
-                  ))}
+                  navBarDummyData[selectedLink]["BY ROLE"].map(
+                    (value, index) => (
+                      <div
+                        key={value.title + index}
+                        className="nav-inner-container"
+                        onClick={() => popupLinkClickHandler(value.title)}
+                      >
+                        <div className="nav-title">{value.title}</div>
+                        <div className="nav-sub-title">{value.subTitle}</div>
+                      </div>
+                    )
+                  )}
               </div>
               <div>
                 <div className="services-heading">BY BUSINESS TYPE</div>
@@ -931,9 +947,9 @@ const NavBarComponent = ({
                   navBarDummyData[selectedLink]["BY BUSINESS TYPE"]
                 ) &&
                   navBarDummyData[selectedLink]["BY BUSINESS TYPE"].map(
-                    (value) => (
+                    (value, index) => (
                       <div
-                        key={value.title}
+                        key={value.title + index}
                         className="nav-inner-container"
                         onClick={() => popupLinkClickHandler(value.title)}
                       >
@@ -949,9 +965,9 @@ const NavBarComponent = ({
                   navBarDummyData[selectedLink]["BY BUSINESS PROBLEM"]
                 ) &&
                   navBarDummyData[selectedLink]["BY BUSINESS PROBLEM"].map(
-                    (value) => (
+                    (value, index) => (
                       <div
-                        key={value.title}
+                        key={value.title + index}
                         className="nav-inner-container"
                         onClick={() => popupLinkClickHandler(value.title)}
                       >
@@ -1032,7 +1048,7 @@ const NavBarComponent = ({
                 <div id="search-popup-recent-list">
                   {searchHistory.map((item, index) => (
                     <div
-                      key={index}
+                      key={item + index}
                       className="search-popup-recent-item"
                       onClick={() => popularSearchClickHandler(item)}
                     >
@@ -1062,19 +1078,19 @@ const NavBarComponent = ({
                     }
                     return aIndex - bIndex;
                   })
-                  .map((keyword) => {
+                  .map((keyword, index) => {
                     const regex = new RegExp(`(${searchTerm})`, "ig");
                     const parts = keyword.split(regex);
 
                     return (
                       <div
                         className="search-popup-result"
-                        key={keyword}
+                        key={keyword + index}
                         onClick={() => popupLinkClickHandler(keyword)}
                       >
                         {parts.map((part, index) =>
                           regex.test(part) ? (
-                            <b key={index}>{part}</b> // preserves original case
+                            <b key={part + index}>{part}</b> // preserves original case
                           ) : (
                             <span key={index}>{part}</span>
                           )

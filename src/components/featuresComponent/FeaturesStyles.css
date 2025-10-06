@@ -12,6 +12,7 @@
 }
 .features-text {
   max-width: 550px !important;
+  margin-bottom: 45px !important;
 }
 .dot {
   width: 10px;

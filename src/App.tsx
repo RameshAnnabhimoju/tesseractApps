@@ -7,45 +7,24 @@ import AppRoutes from "./routes/AppRoutes";
 import Signup from "./pages/signup/Signup";
 import BookADemo from "./pages/bookADemo/BookADemo";
 import ExpoBanner from "./components/exporBanner/ExpoBanner";
+import { useAppContext } from "./contexts/AppContext";
 // import SignupFlow from "./pages/signupflow/SignupFlow";
 
 function App() {
-  const [dialog, setDialog] = useState(false);
-  const [bookADemo, setBookADemo] = useState(false);
+  const { signUp, bookADemo } = useAppContext();
+  const displayCondition = signUp || bookADemo;
   const [expoBanner, setExpoBanner] = useState(true);
-  const handleDialog = (value?: boolean) => {
-    if (value != undefined) {
-      setDialog(value);
-    } else {
-      setDialog(!dialog);
-    }
-  };
-  const handleBookADemo = (value?: boolean) => {
-    if (value != undefined) {
-      setBookADemo(value);
-    } else {
-      setBookADemo(!dialog);
-    }
-  };
   const portalContainerRef = useRef<HTMLDivElement>(null);
   return (
     <BrowserRouter>
-      <Signup
-        dialog={dialog}
-        setDialog={setDialog}
-        handleDialog={handleDialog}
-      />
-      <BookADemo bookADemo={bookADemo} handleBookADemo={handleBookADemo} />
-      {!(dialog || bookADemo) && (
-        <NavBarComponent
-          portalContainerRef={portalContainerRef}
-          handleDialog={handleDialog}
-          handleBookADemo={handleBookADemo}
-        />
+      <Signup />
+      <BookADemo />
+      {!displayCondition && (
+        <NavBarComponent portalContainerRef={portalContainerRef} />
       )}
 
       <div ref={portalContainerRef} />
-      {!(dialog || bookADemo) && expoBanner && (
+      {!displayCondition && expoBanner && (
         <ExpoBanner
           showBanner={expoBanner}
           handleBannerClose={() => {
@@ -53,8 +32,8 @@ function App() {
           }}
         />
       )}
-      {!(dialog || bookADemo) && <AppRoutes />}
-      {!(dialog || bookADemo) && <FooterComponent />}
+      {!displayCondition && <AppRoutes />}
+      {!displayCondition && <FooterComponent />}
     </BrowserRouter>
   );
 }

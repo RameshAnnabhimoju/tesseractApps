@@ -1,5 +1,5 @@
 #pricing-container {
-  background-image: url("../../assets/pricing-background-5.png");
+  background-image: url("../../assets/pricing-background-6.png");
   background-repeat: no-repeat;
   background-position: top;
   background-position-y: -400px;
@@ -30,7 +30,7 @@
 }
 .pricing-card-title,
 .pricing-card-title-selected {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
   margin-bottom: 5px;
   text-align: center;
@@ -91,7 +91,6 @@
   width: 100%;
   cursor: pointer;
   font-weight: 600;
-  margin-bottom: 30px;
 }
 .pricing-tick-data-container {
   display: flex;
@@ -114,8 +113,8 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 30px auto;
-  margin-top: 50px;
-  max-width: 590px;
+  margin-top: 30px;
+  max-width: 660px;
   padding-block: 05px;
   border-radius: 25px;
   overflow: hidden;
@@ -193,7 +192,7 @@
   display: grid;
   grid-template-columns: 500px 1fr 1fr 1fr 1fr;
   gap: 3vw;
-
+  border-bottom: 1px solid #e4e4e4;
   padding-left: 25px;
   margin: 10px 0;
 }
@@ -213,13 +212,14 @@
 }
 .pricing-data-subtitle {
   color: var(--color-text-gray-light);
-  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-top: -5px;
 }
 .pricing-data-title {
   font-weight: 500;
 }
 .pricing-data-title-container {
-  max-width: 300px;
+  max-width: 500px;
 }
 .pricing-data-tick {
   background-color: var(--color-background-light-gray);
@@ -228,7 +228,8 @@
   padding: 3px;
 }
 .pricing-data-tick-success {
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
+  width: 30px;
 }
 .pricing-divider-line-header {
   width: 500px;
@@ -252,6 +253,16 @@
   border: 1px solid lightgreen;
   padding: 5px;
   border-radius: 5px;
+  padding-inline: 10px;
+}
+#pricing-most-popular-container {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+#pricing-most-popular-star {
+  width: 25px;
+  height: 25px;
 }
 #pricing-help-card {
   background-color: var(--color-secondary);
@@ -260,9 +271,14 @@
   justify-content: space-between;
   padding: 30px;
   margin: 20px auto;
-  width: 90%;
+  width: 92%;
   border-radius: 10px;
-  margin-top: 100px;
+}
+.pricing-hero-bottom-text {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 16px;
 }
 #pricing-help-title {
   font-size: 26px;
@@ -361,6 +377,7 @@
 .pricing-sticky-card {
   max-width: 215px;
   justify-self: center;
+  margin-top: 10px;
 }
 .pricing-data-title-container-outer {
   display: none;
