@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 #expo-banner-container {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 #expo-banner-form-container {
   display: grid;
@@ -103,5 +103,9 @@
 @media (max-width: 600px) {
   #expo-banner-form-container {
     grid-template-columns: 1fr; /* single column */
+  }
+  #expo-banner-form-container > :last-child {
+    margin-right: 30px;
+    grid-column: span 1; /* make last element stretch across 2 columns */
   }
 }

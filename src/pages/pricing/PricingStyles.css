@@ -57,10 +57,12 @@
   margin-bottom: 5px;
   color: var(--color-primary);
 }
-.pricing-card-description {
+.pricing-card-description,
+.pricing-card-description-selected {
   margin-block: 10px;
   color: var(--color-text-gray);
   text-align: center;
+  min-height: 80px;
 }
 .pricing-card-time-period,
 .pricing-card-time-period-selected {
@@ -348,7 +350,9 @@
   color: var(--color-primary);
   text-align: center;
 }
-
+.features-container {
+  margin-top: 20px;
+}
 .features-container.collapsed {
   max-height: 215px;
 }

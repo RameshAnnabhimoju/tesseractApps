@@ -225,10 +225,10 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
               <circle r={it.iconSize * 0.8} fill={it.color} />
               <image
                 href={it.icon}
-                x={-it.iconSize / 2}
-                y={-it.iconSize / 2}
-                width={it.iconSize}
-                height={it.iconSize}
+                x={-it.iconSize / 2 + 1.1}
+                y={-it.iconSize / 2 + 1.1}
+                width={it.iconSize * 0.8}
+                height={it.iconSize * 0.8}
                 preserveAspectRatio="xMidYMid meet"
                 style={{
                   pointerEvents: "none",

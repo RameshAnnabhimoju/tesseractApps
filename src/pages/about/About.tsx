@@ -7,7 +7,20 @@ import KranthiImage from "../../assets/KRANTHI KAKKERLA - CO FOUNDER.jpg";
 import NagendraImage from "../../assets/NAGENDRA - CO FOUNDER.jpg";
 import sumanthImage from "../../assets/SUMANTH-COFOUNDER.png";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 const About = () => {
+  const location = useLocation();
+  useEffect(() => {
+    console.log("About state", location.state);
+    const targetId = location.state?.targetId;
+    if (targetId) {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location.state]);
   return (
     <div id="about-container">
       <div id="about-our-comapany-container">

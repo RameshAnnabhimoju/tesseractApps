@@ -14,9 +14,14 @@ export const useAppNavigate = () => {
   const appNavigate = useCallback(
     (
       key: string, // path ("/pricing") or friendly name ("Pricing")
-      opts?: { replace?: boolean; defaultRoute?: boolean }
+      opts?: { replace?: boolean; defaultRoute?: boolean; targetId?: string }
     ) => {
-      const { replace = false, defaultRoute = true } = opts || {};
+      const {
+        replace = false,
+        defaultRoute = true,
+        targetId = "",
+      } = opts || {};
+      console.log("useAppNavigate targetId", targetId);
 
       // try path first, then friendly name
       let config = getRoute(key);
@@ -42,7 +47,11 @@ export const useAppNavigate = () => {
 
       // internal navigation
       navigate(config.path, {
-        state: config.data ? { data: config.data } : undefined,
+        state: config.data
+          ? { data: config.data, targetId }
+          : targetId
+          ? { targetId }
+          : undefined,
         replace,
       });
       return true;

@@ -11,6 +11,11 @@ import company9 from "../../assets/FRAMILY VENTURES Final.png";
 import company10 from "../../assets/PINNACLE Final.png";
 import company13 from "../../assets/logo13.png";
 import company14 from "../../assets/NEXUS Final.png";
+import company15 from "../../assets/Bright Path Psychosocial & disability Services Pty Ltd.png";
+import company16 from "../../assets/Blessing Care and Support Pty Ltd.jpg";
+import company17 from "../../assets/Clear Choice Clinic Pty Ltd.png";
+import company18 from "../../assets/I've Got You Empowerment Pty Ltd.png";
+import company19 from "../../assets/Aussie Care Health Services Pty Ltd.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -31,6 +36,11 @@ const TrustedClientsComponent = () => {
     company8,
     company9,
     company14,
+    company15,
+    company16,
+    company17,
+    company18,
+    company19,
   ];
   return (
     <div id="trusted-clients-container">

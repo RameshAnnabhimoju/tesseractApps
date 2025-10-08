@@ -73,6 +73,9 @@
     background-color: var(--color-primary);
     max-width: fit-content;
   }
+  .cta-button:hover {
+    background-color: rgba(var(--color-primary-rgb), 0.9);
+  }
 }
 body {
   margin: 0;

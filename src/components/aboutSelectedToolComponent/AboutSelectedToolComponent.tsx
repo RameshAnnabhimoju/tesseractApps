@@ -6,6 +6,7 @@ import dividerLine from "../../assets/divider_line.jpg";
 import useAppNavigate from "../../hooks/useAppNavigate";
 interface aboutSelectedToolType {
   data?: {
+    type?: number;
     title: string;
     description: string;
     points: {
@@ -94,24 +95,40 @@ const AboutSelectedToolComponent = ({
         simplifying care management, rostering, invoicing, and compliance –
         delivering efficiency, security, and affordability in one solution.
       </div> */}
-      <div id="selected-tool-data-container">
+      <div
+        id="selected-tool-data-container"
+        style={data.type == 2 ? { gap: "60px" } : {}}
+      >
         {data.points &&
           data.points?.map((subdata, index) => {
             return (
               <div key={index} className={"selected-tool-data"}>
-                {dividerRows.includes(index + 1) && (
+                {data.type != 2 && dividerRows.includes(index + 1) && (
                   <img
                     src={dividerLine}
                     alt="dividerLine"
                     className="selected-dividerLine"
                   />
                 )}
-                <div>
-                  <svg viewBox="0 0 48 48" width="40" height="40">
-                    <circle cx="24" cy="24" r="24" fill={subdata.dot.outer} />
-                    <circle cx="24" cy="24" r="16" fill={subdata.dot.middle} />
-                    <circle cx="24" cy="24" r="10" fill={subdata.dot.inner} />
-                  </svg>
+                <div
+                  style={
+                    data.type == 2
+                      ? { backgroundColor: subdata.dot.outer, padding: "40px" }
+                      : {}
+                  }
+                >
+                  {data.type != 2 && (
+                    <svg viewBox="0 0 48 48" width="40" height="40">
+                      <circle cx="24" cy="24" r="24" fill={subdata.dot.outer} />
+                      <circle
+                        cx="24"
+                        cy="24"
+                        r="16"
+                        fill={subdata.dot.middle}
+                      />
+                      <circle cx="24" cy="24" r="10" fill={subdata.dot.inner} />
+                    </svg>
+                  )}
 
                   {/* <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -82,7 +82,9 @@ const ByIndustry = () => {
     <div id="byindustry-container">
       {data.hero && <DetailsHeroComponent data={data.hero} />}
       {data.details && <AboutSelectedToolComponent data={data.details} />}
-      {data.details2 && <AboutSelectedToolComponent data={data.details2} />}
+      {data.details2 && (
+        <AboutSelectedToolComponent data={{ ...data.details2, type: 2 }} />
+      )}
       {data?.section3 &&
         Array.isArray(data?.section3) &&
         data?.section3?.map((item, index) => {

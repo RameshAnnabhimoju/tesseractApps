@@ -272,7 +272,7 @@ const PrivacyPolicy = () => {
       <div className="heading privacy-policy-heading">10. Contact Us</div>
       <div className="text privacy-policy-text">Tesseract</div>
       <div className="text privacy-policy-text">
-        Email: enquiries@tesseractapps.com
+        Email: sales@tesseractapps.com
       </div>
       <div className="text privacy-policy-text">Phone: 1300 252 808</div>
       <div className="text privacy-policy-text">Address: Australia</div>

@@ -376,7 +376,12 @@ export const pricingCardsDummyData = {
         "Support approvals & accounting suite",
         "AI-powered automation",
       ],
-      optionalAddons: ["LMS – Wyzed", "AI"],
+      optionalAddons: [
+        "LMS – Wyzed",
+        "AI",
+        "CMS",
+        "Custom Workflows & Processes",
+      ],
     },
     {
       id: 4,
@@ -398,7 +403,7 @@ export const pricingCardsDummyData = {
         "Privacy settings & timesheet submission",
         "Full access to AI automation & LMS",
       ],
-      optionalAddons: ["LMS – Wyzed", "AI"],
+      optionalAddons: ["LMS – Wyzed", "AI", "Automated Workflows & Processes"],
     },
   ],
   ict: [
@@ -1932,6 +1937,66 @@ export const pricingDummyData = {
             text: "Optional add-on",
           },
         },
+        {
+          title: "CMS",
+          subTitle: "Content Management System",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: false,
+            text: "",
+          },
+        },
+        {
+          title: "Custom Workflows& Processes",
+          subTitle: "",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: false,
+            text: "",
+          },
+        },
+        {
+          title: "Automated Workflows & Processes",
+          subTitle: "",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "Optional add-on",
+          },
+        },
       ],
     },
   ],
@@ -2123,21 +2188,20 @@ export const howItWorksDummyData = [
   // },
 ];
 
-import testimonialImage from "../assets/avatar-mid-alt.png";
-import busineessWomanInage from "../assets/businesswoman.png";
+// import testimonialImage from "../assets/avatar-mid-alt.png";
+// import busineessWomanInage from "../assets/businesswoman.png";
+import seedDiability from "../assets/company-4.png";
+import sSquare from "../assets/company-5.png";
+import nexus from "../assets/NEXUS Final.png";
 export const testimonialDummyData = [
   {
     id: 1,
     rating: 5,
-    testimonial: "",
-    testimonialPoints: [
-      "Tesseract Apps has been an intuitive and reliable platform that’s streamlined our workflow and boosted team productivity. It integrated seamlessly into our operations, saving time and reducing manual tasks.",
-      "The user interface is clean and easy to navigate, making adoption effortless across the team. In a short time, the Tesseract Apps team delivered two key improvements—a powerful reporting dashboard and a streamlined task management feature—both of which have had a direct, positive impact on our efficiency.",
-      "Support has also been excellent: responsive, proactive, and always open to feedback. Tesseract Apps has quickly become an indispensable tool for our organisation, and I highly recommend it to any team seeking a smart, scalable solution.",
-    ],
-    authorImage: testimonialImage,
-    author: "Nathan Chakanetsa",
-    authorTitle: "Seed Disability Services Pty Ltd",
+    testimonial:
+      "Tesseract Apps has made a big difference in how we run our NDIS operations. Having everything like rostering, payroll, and participant management in one system makes life a lot easier. It was a bit tricky to get the hang of at the start, but once you get used to it the platform is really straightforward and saves a lot of time.",
+    authorImage: seedDiability,
+    author: "Seed Disability Services ",
+    authorTitle: "",
   },
   // {
   //   id: 2,
@@ -2155,18 +2219,18 @@ export const testimonialDummyData = [
   {
     id: 3,
     rating: 5,
-    testimonial: `“User-friendly, efficient, and built for care teams. Our staff love the simplicity of the interface, and compliance reporting has never been easier. Payroll is on time, every time. Choosing Tesseract was the best tech decision we made.”`,
-    authorImage: testimonialImage,
-    author: "Care Services Manager",
+    testimonial: `“We have been using Tesseract to run payroll for our staff and contractors for over a year now. The system is quick, easy to use and the customer service is excellent.”`,
+    authorImage: sSquare,
+    author: "Ssquare Accounts",
     authorTitle: "",
   },
   {
     id: 4,
     rating: 4,
-    testimonial: `“An essential tool for Support Coordinators. It’s not just a platform; it’s a strategic partner. I can track notes, manage participant goals, schedule supports, and handle billing in one place. It has saved me hours every week.”`,
-    authorImage: busineessWomanInage,
-    author: "Emalee Rose Bayliss",
-    authorTitle: "Specialist Senior Support Coordinator",
+    testimonial: `“Revolutionizing NDIS Workforce Management and IT Solutions. Tesseract Apps has streamlined our operations with its all-in-one platform for NDIS care providers and IT consultants. Liking the fact that Tesseract centralizes timesheets, HR, payroll, contracts, and compliance - carrying out transactions is now a breeze with the sense of security added. Onboarding was smooth, thanks to the responsive customer support. The admin console provides full organizational control, while the role-based dashboards and mobile access empower our team to stay informed and productive from anywhere. Since switching from another provider, we've saved time, reduced errors. The platform’s reliability (99.9% uptime) and automation capabilities have significantly reduced manual work and improved compliance. Tesseract Apps isn’t just software—it’s a Game-Changer. Highly recommended for anyone seeking a smart, intuitive design, scalable and user-friendly solution.”`,
+    authorImage: nexus,
+    author: "Nexus IT",
+    authorTitle: "",
   },
 ];
 export const accordiaDummyData = [
@@ -2255,6 +2319,7 @@ import clockiN from "../assets/clock in clock out N.png";
 import formsNew from "../assets/Form N.png";
 import accountingNew from "../assets/Accounting N.png";
 import TLEARNINGNEW from "../assets/T learner N.png";
+import productImage from "../assets/productImage.png";
 export const SubPagesDummyData = {
   Product: {
     page: "Product",
@@ -2272,32 +2337,44 @@ export const SubPagesDummyData = {
         conclusion: "No credit card is required. Free onboarding included. ",
       },
     },
-    section2: {
-      title: "One Connected Platform ",
-      points: [
-        {
-          dot: dots.dot1,
-          title: "",
-          description: "Access all essential tools in one system.",
-        },
-        {
-          dot: dots.dot2,
-          title: "",
-          description:
-            "Workforce and participant data live in a single source.",
-        },
-        {
-          dot: dots.dot3,
-          title: "",
-          description:
-            "Gain visibility across care delivery, HR, finance, and operations.",
-        },
-        {
-          dot: dots.dot4,
-          title: "",
-          description: "Automation reduces errors and saves time.",
-        },
-      ],
+    // section2: {
+    //   title: "One Connected Platform",
+    //   points: [
+    //     {
+    //       dot: dots.dot1,
+    //       title: "",
+    //       description: "Access all essential tools in one system.",
+    //     },
+    //     {
+    //       dot: dots.dot2,
+    //       title: "",
+    //       description:
+    //         "Workforce and participant data live in a single source.",
+    //     },
+    //     {
+    //       dot: dots.dot3,
+    //       title: "",
+    //       description:
+    //         "Gain visibility across care delivery, HR, finance, and operations.",
+    //     },
+    //     {
+    //       dot: dots.dot4,
+    //       title: "",
+    //       description: "Automation reduces errors and saves time.",
+    //     },
+    //   ],
+    // },
+    section3: {
+      title: "One Connected Platform",
+      images: [productImage],
+      description:
+        "Access all essential tools in one system. Workforce and participant data live in a single source. Gain visibility across care delivery, HR, finance, and operations. Automation reduces errors and saves time.",
+      // discriptionsPoints: [
+      //   "Access all essential tools in one system.",
+      //   "Workforce and participant data live in a single source.",
+      //   "Gain visibility across care delivery, HR, finance, and operations.",
+      //   "Automation reduces errors and saves time.",
+      // ],
     },
     products: {
       title: "Get Started Today",
@@ -8939,7 +9016,7 @@ export const homeLeftArcsData = [
     bufferStart: 8,
     bufferEnd: 8,
     color: "#f2ad94ff",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#F2AD9433",
     minScale: 1,
     maxScale: 1.4,
@@ -8960,7 +9037,7 @@ export const homeLeftArcsData = [
     bufferStart: 5,
     bufferEnd: 5,
     color: "#FF5457",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#FF8C8E38",
     minScale: 1,
     maxScale: 1.4,
@@ -8981,7 +9058,7 @@ export const homeLeftArcsData = [
     bufferStart: 5,
     bufferEnd: 5,
     color: "#4042E2",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#407BFF3B",
     minScale: 0.9,
     maxScale: 1.3,
@@ -9002,7 +9079,7 @@ export const homeLeftArcsData = [
     bufferStart: 5,
     bufferEnd: 5,
     color: "#0C78BA",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#0C78BA38",
     minScale: 1,
     maxScale: 1.5,
@@ -9026,7 +9103,7 @@ export const homeRightArcsData = [
     bufferStart: 5,
     bufferEnd: 5,
     color: "#0C78BA",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#0C78BA38",
     minScale: 1,
     maxScale: 1.5,
@@ -9047,7 +9124,7 @@ export const homeRightArcsData = [
     bufferStart: 5,
     bufferEnd: 5,
     color: "#FF928E",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#F4846229",
     minScale: 0.9,
     maxScale: 1.3,
@@ -9068,7 +9145,7 @@ export const homeRightArcsData = [
     bufferStart: 5,
     bufferEnd: 5,
     color: "#5F982D",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#5F982D3B",
     minScale: 1,
     maxScale: 1.4,
@@ -9089,7 +9166,7 @@ export const homeRightArcsData = [
     bufferStart: 10,
     bufferEnd: 10,
     color: "#FBBC04",
-    iconSize: 20,
+    iconSize: 15,
     bg: "#FBBC0433",
     minScale: 1,
     maxScale: 1.4,
