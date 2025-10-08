@@ -1,11 +1,17 @@
 import "./About.css";
 import aboutOurCompanyImage from "../../assets/about-our-company.png";
-import aboutOurTeamImage from "../../assets/about-team-image.png";
+// import aboutOurTeamImage from "../../assets/about-team-image.png";
+import aboutOurTeamImage from "../../assets/Team 1.png";
 import RevanthImage from "../../assets/REVANTH-CEO.png";
-import sureshImage from "../../assets/SURESH-COFOUNDER.png";
+import tomImage from "../../assets/3.png";
 import KranthiImage from "../../assets/KRANTHI KAKKERLA - CO FOUNDER.jpg";
-import NagendraImage from "../../assets/NAGENDRA - CO FOUNDER.jpg";
-import sumanthImage from "../../assets/SUMANTH-COFOUNDER.png";
+import BelleBaiImage from "../../assets/11.png";
+import darshanImage from "../../assets/5.png";
+import sushimithaImage from "../../assets/7.png";
+import maheshwariImage from "../../assets/8.png";
+import deepakrajImage from "../../assets/4.png";
+import meghnaImage from "../../assets/13.png";
+import saiKrishnaImage from "../../assets/2.png";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -70,7 +76,7 @@ const About = () => {
           id="about-our-comapany-image"
         />
         <div id="about-our-comapany-text-container">
-          <div id="about-our-company-heading">Our Company</div>
+          <div id="about-our-company-heading">Our Story</div>
           <div id="about-our-company-text">
             TesseractApps started in 2022 from a conversation that revealed
             common frustrations in care management and NDIS compliance. <br />
@@ -160,6 +166,112 @@ const About = () => {
       <div id="about-team-images">
         <div className="about-team-image-card">
           <img
+            src={tomImage}
+            alt="Suresh Image"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Tomer Doron</div>
+            <div className="about-team-image-card-designation">
+              Solutions Consultant
+            </div>
+          </div>
+        </div>
+
+        <div className="about-team-image-card">
+          <img
+            src={BelleBaiImage}
+            alt="Nagendra Image"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Belle Bai</div>
+            <div className="about-team-image-card-designation">
+              Marketing Executive
+            </div>
+          </div>
+        </div>
+
+        <div className="about-team-image-card">
+          <img
+            src={darshanImage}
+            alt="Sumanth Image"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Darshan Shelat</div>
+            <div className="about-team-image-card-designation">
+              Solutions Consultant
+            </div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
+            src={sushimithaImage}
+            alt="sushimithaImage"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Sushimitha</div>
+            <div className="about-team-image-card-designation">
+              Team manager
+            </div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
+            src={maheshwariImage}
+            alt="MaheshwariImage"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Maheshwari</div>
+            <div className="about-team-image-card-designation">
+              Operations Manager
+            </div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
+            src={deepakrajImage}
+            alt="DeepakrajImage"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Deepakraj</div>
+            <div className="about-team-image-card-designation">
+              Software Engineer
+            </div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
+            src={meghnaImage}
+            alt="MeghnaImage"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Meghna</div>
+            <div className="about-team-image-card-designation">
+              Accounts Manager
+            </div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
+            src={saiKrishnaImage}
+            alt="SaiKrishnaImage"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Sai Krishna</div>
+            <div className="about-team-image-card-designation">
+              Software Engineer
+            </div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
             src={RevanthImage}
             alt="Revanth Image"
             className="about-team-image-card-image"
@@ -180,42 +292,6 @@ const About = () => {
           />
           <div className="about-team-image-card-text">
             <div className="about-team-image-card-name">Kranthi</div>
-            <div className="about-team-image-card-designation">Co Founder</div>
-          </div>
-        </div>
-
-        <div className="about-team-image-card">
-          <img
-            src={NagendraImage}
-            alt="Nagendra Image"
-            className="about-team-image-card-image"
-          />
-          <div className="about-team-image-card-text">
-            <div className="about-team-image-card-name">Nagendra</div>
-            <div className="about-team-image-card-designation">Co Founder</div>
-          </div>
-        </div>
-
-        <div className="about-team-image-card">
-          <img
-            src={sumanthImage}
-            alt="Sumanth Image"
-            className="about-team-image-card-image"
-          />
-          <div className="about-team-image-card-text">
-            <div className="about-team-image-card-name">Sumanth</div>
-            <div className="about-team-image-card-designation">Co Founder</div>
-          </div>
-        </div>
-
-        <div className="about-team-image-card">
-          <img
-            src={sureshImage}
-            alt="Suresh Image"
-            className="about-team-image-card-image"
-          />
-          <div className="about-team-image-card-text">
-            <div className="about-team-image-card-name">Suresh</div>
             <div className="about-team-image-card-designation">Co Founder</div>
           </div>
         </div>

@@ -42,8 +42,8 @@
   font-size: 18px;
   font-weight: 400;
   color: var(--color-text-gray);
-  min-height: 125px;
-  max-height: 152px !important;
+
+  height: 152px !important;
   text-overflow: ellipsis;
   overflow-y: hidden !important;
 }

@@ -7,6 +7,7 @@ interface detailsDataType {
     points?: string[];
     conclusion?: string;
     discriptionsPoints?: string[];
+    list?: { title: string; description: string }[];
   };
   componentType?: number;
 }
@@ -61,6 +62,18 @@ const DetailsDataComponent = ({
               <li id="details-data-text-points" key={index}>
                 {point}
               </li>
+            ))}
+          </ul>
+        )}
+        {data.list && (
+          <ul>
+            {data.list.map((point, index) => (
+              <div key={point.title + index}>
+                <div id="details-data-text-title"> {point.title} </div>
+                <div id="details-data-text-description">
+                  {point.description}
+                </div>
+              </div>
             ))}
           </ul>
         )}

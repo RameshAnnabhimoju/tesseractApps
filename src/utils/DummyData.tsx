@@ -6345,12 +6345,14 @@ import participantManagement from "../assets/partispant management.png";
 import incidentManagement from "../assets/incident.png";
 import repository from "../assets/Product Repository.png";
 import roleBasedDashboard from "../assets/Product Rolebase dashboard.png";
-import forms from "../assets/Forms.png";
+// import forms from "../assets/Forms.png";
+import prodForms from "../assets/Product Forms.png";
+import prodChat from "../assets/Product Access control.png";
 import accounting from "../assets/Product Accounting.png";
 import tLearingHub from "../assets/learning.png";
 import myProfile from "../assets/Product My profile.png";
 import myProfileNew from "../assets/My profile N.png";
-import chat from "../assets/Chat.png";
+// import chat from "../assets/Chat.png";
 import salesforce from "../assets/service.png";
 import wyzed from "../assets/S and L.png";
 export const productsDetailsData = {
@@ -7944,7 +7946,7 @@ export const productsDetailsData = {
         title: "Secure Communication",
         description:
           "TesseractApps ChaT centralises team communication in a secure environment. Real-time messaging, role-based groups, and module integration streamline collaboration, improve response times, and maintain compliance.",
-        images: [chat],
+        images: [prodChat],
       },
     ],
     section4: {
@@ -8208,7 +8210,7 @@ export const productsDetailsData = {
         title: "Form Management",
         description:
           "TesseractApps Forms centralises all data collection in one platform. Automated workflows, integration with modules, and secure storage reduce administrative work, improve accuracy, and support compliance.",
-        images: [forms],
+        images: [prodForms],
       },
     ],
     section4: {
@@ -8624,25 +8626,25 @@ export const productsDetailsData = {
             "Track participant details, goals, and services with integrated Salesforce data.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot2,
           title: "Staff Management",
           description:
             "Maintain profiles, qualifications, and training records in one place.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot3,
           title: "Service Tracking",
           description:
             "Monitor service delivery, session attendance, and participant progress efficiently.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot4,
           title: "Reporting and Analytics",
           description:
             "Generate customised reports and dashboards to track performance and outcomes.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot5,
           title: "Compliance and Audit Readiness",
           description:
             "Maintain regulatory compliance with automated alerts, digital approvals, and secure data storage.",
@@ -8728,40 +8730,43 @@ export const productsDetailsData = {
         },
       ],
     },
-    section3: [
-      {
-        title: "Features",
-        description: "",
-        images: [accounting],
-        list: [
-          {
-            title: "Payroll Automation",
-            description:
-              "Process pay runs, leave, allowances, and deductions directly from TesseractApps to Xero.",
-          },
-          {
-            title: "Invoice Management",
-            description:
-              "Create and export invoices for funded services or clients. Track payment status and reconcile with accounting records.",
-          },
-          {
-            title: "Financial Reporting",
-            description:
-              "Generate reports on staff costs, participant budgets, and operational expenditure for review or audits.",
-          },
-          {
-            title: "Budget Tracking",
-            description:
-              "Monitor participant funding, service costs, and overall budgets. Receive alerts for overages or discrepancies.",
-          },
-          {
-            title: "Audit Readiness",
-            description:
-              "Maintain complete financial records with secure storage, approval workflows, and traceable changes.",
-          },
-        ],
-      },
-    ],
+    section4: {
+      title: "Features",
+      description: "",
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Payroll Automation",
+          description:
+            "Process pay runs, leave, allowances, and deductions directly from TesseractApps to Xero.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Invoice Management",
+          description:
+            "Create and export invoices for funded services or clients. Track payment status and reconcile with accounting records.",
+        },
+        {
+          dot: dots.dot3,
+          title: "Financial Reporting",
+          description:
+            "Generate reports on staff costs, participant budgets, and operational expenditure for review or audits.",
+        },
+        {
+          dot: dots.dot4,
+          title: "Budget Tracking",
+          description:
+            "Monitor participant funding, service costs, and overall budgets. Receive alerts for overages or discrepancies.",
+        },
+        {
+          dot: dots.dot5,
+          title: "Audit Readiness",
+          description:
+            "Maintain complete financial records with secure storage, approval workflows, and traceable changes.",
+        },
+      ],
+    },
+
     faqSection: {
       title: "Q&A: Xero Integration",
       faqData: [
@@ -8840,40 +8845,43 @@ export const productsDetailsData = {
         },
       ],
     },
-    section3: [
-      {
-        title: "Features",
-        description: "",
-        images: [accessControl],
-        list: [
-          {
-            title: "Course Management",
-            description:
-              "Create, assign, and manage role-specific training courses.",
-          },
-          {
-            title: "Progress Reporting",
-            description:
-              "Track completion, assessment results, and certifications for all staff.",
-          },
-          {
-            title: "Compliance Tracking",
-            description:
-              "Monitor mandatory training and generate reports for audits.",
-          },
-          {
-            title: "Mobile-Friendly Learning",
-            description:
-              "Allow staff to access training anytime, anywhere, on desktop or mobile devices.",
-          },
-          {
-            title: "Automated Notifications",
-            description:
-              "Send reminders for upcoming or overdue training to ensure compliance.",
-          },
-        ],
-      },
-    ],
+    section4: {
+      title: "Features",
+      description: "",
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Course Management",
+          description:
+            "Create, assign, and manage role-specific training courses.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Progress Reporting",
+          description:
+            "Track completion, assessment results, and certifications for all staff.",
+        },
+        {
+          dot: dots.dot3,
+          title: "Compliance Tracking",
+          description:
+            "Monitor mandatory training and generate reports for audits.",
+        },
+        {
+          dot: dots.dot4,
+          title: "Mobile-Friendly Learning",
+          description:
+            "Allow staff to access training anytime, anywhere, on desktop or mobile devices.",
+        },
+        {
+          dot: dots.dot5,
+          title: "Automated Notifications",
+          description:
+            "Send reminders for upcoming or overdue training to ensure compliance.",
+        },
+      ],
+    },
+
     faqSection: {
       title: "Q&A: Wyzed Integration",
       faqData: [

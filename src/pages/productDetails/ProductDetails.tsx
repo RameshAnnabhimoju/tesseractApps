@@ -87,7 +87,9 @@ const ProductDetails = () => {
         <DetailsHeroComponent data={{ ...data.hero, page: data.page }} />
       )}
       {data.section2 && <AboutSelectedToolComponent data={data.section2} />}
-      {data.section4 && <AboutSelectedToolComponent data={data.section4} />}
+      {data.section4 && (
+        <AboutSelectedToolComponent data={{ ...data.section4, type: 2 }} />
+      )}
       {data.section3 &&
         data.section3.map((item, index) => {
           return (
