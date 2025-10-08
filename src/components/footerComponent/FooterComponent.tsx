@@ -438,18 +438,21 @@ const FooterComponent = () => {
               Phone: 1300 252 808
             </span>
             <br />
+            <br />
 
             <span
               className="footer-about-actions"
               onClick={() => handleFooterActions("email")}
             >
-              Email: sales@tesseractapps.com
+              Sales Email: sales@tesseractapps.com
             </span>
+            <br />
+            <br />
             <span
               className="footer-about-actions"
               onClick={() => handleFooterActions("email2")}
             >
-              Email: marketing@tesseractapps.com
+              Marketing Email: marketing@tesseractapps.com
             </span>
           </div>
           <br />

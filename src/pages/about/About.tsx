@@ -11,16 +11,56 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 const About = () => {
   const location = useLocation();
+
   useEffect(() => {
-    console.log("About state", location.state);
     const targetId = location.state?.targetId;
-    if (targetId) {
+    if (!targetId) return;
+
+    const scrollToTarget = () => {
       const element = document.getElementById(targetId);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        const rect = element.getBoundingClientRect();
+        const absoluteY = rect.top + window.scrollY;
+        const offset = window.innerHeight / 2 - rect.height / 2; // center buffer
+        const scrollY = absoluteY - offset;
+
+        window.scrollTo({
+          top: scrollY,
+          behavior: "smooth",
+        });
       }
-    }
+    };
+
+    // Run once DOM is ready — sometimes elements aren't painted yet
+    // Try a few times in case of async rendering
+    let tries = 0;
+    const interval = setInterval(() => {
+      scrollToTarget();
+      tries++;
+      if (document.getElementById(targetId) || tries > 5) {
+        clearInterval(interval);
+      }
+    }, 200);
+
+    return () => clearInterval(interval);
   }, [location.state]);
+  const handleEmail = () => {
+    const mailto = "mailto:marketing@tesseractapps.com?subject=Inquiry";
+    const link = document.createElement("a");
+    link.href = mailto;
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    setTimeout(() => {
+      if (document.hasFocus()) {
+        alert(
+          "If your email client didn't open, please email us at: sales@tesseractapps.com"
+        );
+      }
+    }, 1000);
+  };
   return (
     <div id="about-container">
       <div id="about-our-comapany-container">
@@ -103,13 +143,13 @@ const About = () => {
           </div>
           <div id="about-image-overlay-links-container">
             <div className="about-image-overlay-link">Team</div>
-            <div className="about-image-overlay-link">Event 1</div>
+            {/* <div className="about-image-overlay-link">Event 1</div>
             <div className="about-image-overlay-link">Event 2</div>
             <div className="about-image-overlay-link">Event 3</div>
             <div className="about-image-overlay-link">Event 4</div>
             <div className="about-image-overlay-link">Event 5</div>
             <div className="about-image-overlay-link">Event 6</div>
-            <div className="about-image-overlay-link">Event 7</div>
+            <div className="about-image-overlay-link">Event 7</div> */}
           </div>
         </div>
       </div>
@@ -199,6 +239,13 @@ const About = () => {
           team is here to help.
         </div>
         <ContactInformationCard />
+        <div id="about-contact-us-text">
+          For marketing collaborations, media enquiries, or partnership
+          opportunities, please contact our Marketing Team at{" "}
+          <span className="hyper-link" onClick={handleEmail}>
+            marketing@tesseractapps.com
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -76,6 +76,14 @@
   .cta-button:hover {
     background-color: rgba(var(--color-primary-rgb), 0.9);
   }
+  .hyper-link {
+    text-decoration: none;
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+  .hyper-link:hover {
+    text-decoration: underline;
+  }
 }
 body {
   margin: 0;

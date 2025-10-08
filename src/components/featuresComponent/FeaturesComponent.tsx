@@ -16,10 +16,10 @@ const FeaturesComponent = () => {
   // console.log(currentSlide, loaded);
   const [perView, setPerView] = useState(5);
   useEffect(() => {
-    if (window.innerWidth <= 1100) {
-      setPerView(3);
+    if (window.innerWidth <= 1150) {
+      setPerView(2);
     }
-    if (window.innerWidth <= 425) {
+    if (window.innerWidth <= 450) {
       setPerView(1);
     }
     console.log(currentSlide, loaded);
