@@ -2,10 +2,11 @@ import "./AboutSelectedToolStyles.css";
 import { aboutSelectedToolDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
 import dividerLine from "../../assets/divider_line.jpg";
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { useNavigate } from "react-router-dom";
+import useAppNavigate from "../../hooks/useAppNavigate";
 interface aboutSelectedToolType {
   data?: {
+    type?: number;
     title: string;
     description: string;
     points: {
@@ -31,6 +32,7 @@ const AboutSelectedToolComponent = ({
     points: aboutSelectedToolDummyData,
   },
 }: aboutSelectedToolType) => {
+  const appNavigate = useAppNavigate();
   type PointObject = { pointTitle: string; pointDescription: string };
 
   function isOfType(value: unknown, type: "stringArray"): value is string[];
@@ -79,10 +81,10 @@ const AboutSelectedToolComponent = ({
     return () => window.removeEventListener("resize", handleResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleCtaClick = (name: string) => {
     console.log("cta click ", name);
-    appNavigate(name, navigate, false);
+    appNavigate(name);
   };
   return (
     <div id="selected-tool-container">
@@ -93,24 +95,40 @@ const AboutSelectedToolComponent = ({
         simplifying care management, rostering, invoicing, and compliance –
         delivering efficiency, security, and affordability in one solution.
       </div> */}
-      <div id="selected-tool-data-container">
+      <div
+        id="selected-tool-data-container"
+        style={data.type == 2 ? { gap: "60px" } : {}}
+      >
         {data.points &&
           data.points?.map((subdata, index) => {
             return (
               <div key={index} className={"selected-tool-data"}>
-                {dividerRows.includes(index + 1) && (
+                {data.type != 2 && dividerRows.includes(index + 1) && (
                   <img
                     src={dividerLine}
                     alt="dividerLine"
                     className="selected-dividerLine"
                   />
                 )}
-                <div>
-                  <svg viewBox="0 0 48 48" width="40" height="40">
-                    <circle cx="24" cy="24" r="24" fill={subdata.dot.outer} />
-                    <circle cx="24" cy="24" r="16" fill={subdata.dot.middle} />
-                    <circle cx="24" cy="24" r="10" fill={subdata.dot.inner} />
-                  </svg>
+                <div
+                  style={
+                    data.type == 2
+                      ? { backgroundColor: subdata.dot.outer, padding: "40px" }
+                      : {}
+                  }
+                >
+                  {data.type != 2 && (
+                    <svg viewBox="0 0 48 48" width="40" height="40">
+                      <circle cx="24" cy="24" r="24" fill={subdata.dot.outer} />
+                      <circle
+                        cx="24"
+                        cy="24"
+                        r="16"
+                        fill={subdata.dot.middle}
+                      />
+                      <circle cx="24" cy="24" r="10" fill={subdata.dot.inner} />
+                    </svg>
+                  )}
 
                   {/* <svg
                     xmlns="http://www.w3.org/2000/svg"

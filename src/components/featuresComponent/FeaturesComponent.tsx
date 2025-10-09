@@ -2,24 +2,27 @@ import "./FeaturesStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { featuresDummyData } from "../../utils/DummyData";
-import { appNavigate } from "../../routes/AppRoutes";
+import useAppNavigate from "../../hooks/useAppNavigate";
+// import { AppNavigate } from "../../routes/AppNavigate";
 // import ArrowLeft from "../arrows/ArrowLeft";
 // import ArrowRight from "../arrows/ArrowRight";
 const FeaturesComponent = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const appNavigate = useAppNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  console.log(currentSlide, loaded);
+  // console.log(currentSlide, loaded);
   const [perView, setPerView] = useState(5);
   useEffect(() => {
-    if (window.innerWidth <= 1100) {
-      setPerView(3);
+    if (window.innerWidth <= 1150) {
+      setPerView(2);
     }
-    if (window.innerWidth <= 425) {
+    if (window.innerWidth <= 450) {
       setPerView(1);
     }
+    console.log(currentSlide, loaded);
   }, []);
   const [sliderFeaturesRef] = useKeenSlider(
     {
@@ -74,7 +77,7 @@ const FeaturesComponent = () => {
   }
 
   const clickHandler = (name: string) => {
-    appNavigate(name, navigate);
+    appNavigate(name);
   };
   const location = useLocation();
 

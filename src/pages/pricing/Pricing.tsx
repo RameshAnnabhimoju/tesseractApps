@@ -1,7 +1,7 @@
 import "./PricingStyles.css";
 import { pricingCardsDummyData, pricingDummyData } from "../../utils/DummyData";
 import { useState } from "react";
-import tick from "../../assets/tick.svg";
+import tick from "../../assets/ok.svg";
 import tickBlue from "../../assets/tick-blue.svg";
 import tickBlack from "../../assets/tick-black.svg";
 import remove from "../../assets/remove.png";
@@ -9,14 +9,15 @@ import ArrowDown from "../../assets/arrow_down.svg";
 // import tick_white from "../../assets/tick_white.svg";
 import call from "../../assets/call.svg";
 import mark_email from "../../assets/mark_email.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
 // import priceBg from "../../assets/price bg.png";
 import p1 from "../../assets/p1.png";
 import p2 from "../../assets/p2.png";
 import p3 from "../../assets/p3.png";
 // import p4 from "../../assets/p4.png";
-import p5 from "../../assets/p5.png";
+import p5 from "../../assets/p6.png";
+import pricingStar from "../../assets/pricing-star.png";
 import {
   Accordion,
   AccordionDetails,
@@ -25,6 +26,10 @@ import {
   Switch,
   Typography,
 } from "@mui/material";
+import React from "react";
+import { useAppContext } from "../../contexts/AppContext";
+// import useAppNavigate from "../../hooks/useAppNavigate";
+// import { AppNavigate } from "../../routes/AppNavigate";
 // type PricingDataTickItemTypes = {
 //   title: string;
 //   subTitle: string;
@@ -36,11 +41,12 @@ import {
 const Pricing = () => {
   const imageArr1 = [p1, p2];
   const imageArr2 = [p3, p5];
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const { handleBookADemo, handleSignup } = useAppContext();
   const handleBookADemoClick = () => {
-    navigate("/requestdemo");
+    handleBookADemo(true);
   };
-  const [toggleSwitch, setToggleSwitch] = useState(true);
+  const [toggleSwitch, setToggleSwitch] = useState(false);
   const [selectedTab, setSelectedTab] = useState<
     | "ndis"
     | "ict"
@@ -80,7 +86,8 @@ const Pricing = () => {
   // };
   const handleTryItFree = () => {
     setSelectedTab("ndis"); // no use, just to avoid linting
-    appNavigate("Signup", navigate, false);
+    // appNavigate("Signup");
+    handleSignup(true);
   };
   // const categories = ["ndis", "ict"];
   return (
@@ -103,13 +110,13 @@ const Pricing = () => {
           </h2>
           <div id="pricing-cta-button">
             <button
-              className="pricing-button-primary button-contain"
+              className="cta-button pricing-button-primary button-contain"
               onClick={handleTryItFree}
             >
               Try It Free
             </button>
           </div>
-          <h2 className="text pricing-textt">
+          <h2 className="pricing-hero-bottom-text">
             No credit card is required. Free onboarding included.
           </h2>
         </div>
@@ -193,7 +200,13 @@ const Pricing = () => {
               onChange={() => setToggleSwitch(!toggleSwitch)}
             />
           }
-          label="Get 10% off with TesseractApps Full Accounting Suite"
+          label="Get 10% off with TesseractApps Full Accounting Suite (limited time only)"
+          sx={{
+            "& .MuiFormControlLabel-label": {
+              fontSize: "18px",
+              color: "var(--color-text-gray)", // your desired font size
+            },
+          }}
         />
       </div>
       {/* <img src={priceBg} alt="price" id="price-bg" /> */}
@@ -213,7 +226,14 @@ const Pricing = () => {
                     key={index + data.title}
                   >
                     {index == 1 && selectedTab == "ndis" ? (
-                      <div className="pricing-card-tag">MOST POPULAR</div>
+                      <div id="pricing-most-popular-container">
+                        <img
+                          src={pricingStar}
+                          alt="pricing start"
+                          id="pricing-most-popular-star"
+                        />{" "}
+                        <div className="pricing-card-tag"> MOST POPULAR</div>
+                      </div>
                     ) : (
                       <div style={{ height: "10px" }}></div>
                     )}
@@ -264,7 +284,7 @@ const Pricing = () => {
                       minimum 5 users
                     </div>
                     <button
-                      className="pricing-button-primary"
+                      className="cta-button pricing-button-primary"
                       onClick={handleTryItFree}
                     >
                       {data.cta}
@@ -469,7 +489,7 @@ const Pricing = () => {
               className="pricing-links-data-container"
               onClick={() => handleFooterActions("phone")}
             >
-              <div className="pricing-links-data">+61 1300 252 808</div>
+              <div className="pricing-links-data">1300 252 808</div>
               <div className="pricing-links-data-subtext">Support Hotline</div>
             </div>
           </div>
@@ -494,9 +514,6 @@ const Pricing = () => {
 };
 
 export default Pricing;
-
-import React from "react";
-import { appNavigate } from "../../routes/AppRoutes";
 
 type PricingDataItemProps = {
   data: { value: boolean; text: string }; // true / false

@@ -6,10 +6,18 @@ import pdf3 from "../../assets/White Paper Sep 2025.pdf";
 import whitepaper2 from "../../assets/White Paper Aug 2025_page-0001.jpg";
 import whitepaper3 from "../../assets/whitepaper-3.png";
 import { useLocation } from "react-router-dom";
+import { useAppContext } from "../../contexts/AppContext";
+import ComingSoon from "../comingSoon/ComingSoon";
 const Whitepapers = () => {
   const location = useLocation();
-  const { data } = location.state || {};
-  console.log(data);
+  // const { data } = location.state || {};
+  // console.log(data);
+  const { getRoute } = useAppContext();
+  const path = location.pathname.replace(/\/$/, "");
+  const data = (location.state as any)?.data ?? getRoute(path)?.data ?? null;
+  if (!data) {
+    return <ComingSoon />;
+  }
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const id = event.currentTarget.id;
     switch (id) {

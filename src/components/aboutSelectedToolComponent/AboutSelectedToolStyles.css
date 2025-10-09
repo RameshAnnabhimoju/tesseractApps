@@ -5,6 +5,8 @@
   text-align: center;
   margin-bottom: 20px;
   line-height: 120%;
+  text-wrap: wrap;
+  max-width: 95%;
 }
 #selected-tool-subheading {
   font-size: 32px;

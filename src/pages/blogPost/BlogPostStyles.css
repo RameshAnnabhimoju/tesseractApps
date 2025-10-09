@@ -234,6 +234,17 @@ p {
 #blog-video-section {
   width: auto;
 }
+.canberra-blog-image {
+  object-position: 0 20%;
+}
+.blog-link {
+  cursor: pointer;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.blog-link:hover {
+  text-decoration: underline;
+}
 /* Responsive Design */
 @media (max-width: 1024px) {
   .blog-section-image {

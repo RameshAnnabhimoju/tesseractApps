@@ -6,8 +6,8 @@ import youtube from "../../assets/youtube.png";
 import flagsImag1 from "../../assets/flagImage1.jpg";
 import flagsImag2 from "../../assets/flagImage2.jpg";
 import { footerProductsData } from "../../utils/DummyData";
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { useNavigate } from "react-router-dom";
+// import { AppNavigate } from "../../routes/AppNavigate";
 import { useState } from "react";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
 import Alert from "../alert/Alert";
@@ -15,8 +15,12 @@ import {
   newsletterConfirmationEmailTemplate,
   newsletterSubscriptionEmailTemplate,
 } from "../../utils/emailTemplates";
+import useAppNavigate from "../../hooks/useAppNavigate";
+import { useAppContext } from "../../contexts/AppContext";
 const FooterComponent = () => {
-  const navigate = useNavigate();
+  const appNavigate = useAppNavigate();
+  const { handleBookADemo, handleSignup } = useAppContext();
+  // const navigate = useNavigate();
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const alertInitialData = {
     heading: "",
@@ -101,6 +105,23 @@ const FooterComponent = () => {
         }
       }, 1000);
     }
+    if (name === "email2") {
+      const mailto = "mailto:marketing@tesseractapps.com?subject=Inquiry";
+      const link = document.createElement("a");
+      link.href = mailto;
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setTimeout(() => {
+        if (document.hasFocus()) {
+          alert(
+            "If your email client didn't open, please email us at: sales@tesseractapps.com"
+          );
+        }
+      }, 1000);
+    }
   }
 
   function HandleSocialLinksClick(name: string) {
@@ -108,7 +129,11 @@ const FooterComponent = () => {
   }
   function handleProductDataClick(name: string) {
     // console.log(name);
-    if (name) appNavigate(name, navigate);
+    if (name == "Careers")
+      return appNavigate("About", { targetId: "about-careers-heading" });
+    if (name == "Contact Us")
+      return appNavigate("About", { targetId: "contact-info-text-container" });
+    if (name) return appNavigate(name);
   }
   const productLinks = footerProductsData;
   return (
@@ -254,14 +279,6 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("Partners");
-              }}
-            >
-              Partners
-            </div>
-            <div
-              className="footer-text"
-              onClick={() => {
                 handleProductDataClick("Terms & Conditions");
               }}
             >
@@ -289,7 +306,8 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("Sign Up");
+                // handleProductDataClick("Sign Up");
+                handleSignup(true);
               }}
             >
               Sign Up
@@ -297,15 +315,7 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("Learn More");
-              }}
-            >
-              Learn More
-            </div>
-            <div
-              className="footer-text"
-              onClick={() => {
-                handleProductDataClick("Contact Information");
+                handleProductDataClick("Contact Us");
               }}
             >
               Contact Us
@@ -316,7 +326,7 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("Features");
+                handleProductDataClick("Product");
               }}
             >
               Features
@@ -345,7 +355,7 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("Help Centre");
+                handleProductDataClick("Help Center");
               }}
             >
               Help Centre
@@ -353,7 +363,7 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("FAQs");
+                handleProductDataClick("Help Center");
               }}
             >
               FAQs
@@ -361,12 +371,13 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("Book a Demo");
+                // handleProductDataClick("Book a Demo");
+                handleBookADemo(true);
               }}
             >
               Book a Demo
             </div>
-            <div
+            {/* <div
               className="footer-text"
               onClick={() => {
                 handleProductDataClick("Submit a Ticket");
@@ -381,7 +392,7 @@ const FooterComponent = () => {
               }}
             >
               24/7 Live Chat
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -427,12 +438,21 @@ const FooterComponent = () => {
               Phone: 1300 252 808
             </span>
             <br />
+            <br />
 
             <span
               className="footer-about-actions"
               onClick={() => handleFooterActions("email")}
             >
-              Email: sales@tesseractapps.com
+              Sales Email: sales@tesseractapps.com
+            </span>
+            <br />
+            <br />
+            <span
+              className="footer-about-actions"
+              onClick={() => handleFooterActions("email2")}
+            >
+              Marketing Email: marketing@tesseractapps.com
             </span>
           </div>
           <br />

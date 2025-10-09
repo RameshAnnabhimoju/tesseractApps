@@ -33,14 +33,14 @@ const TestimonialComponent = () => {
               <div className="testimonial-text-container">
                 <div className="testimonial-text">{item.testimonial}</div>
 
-                {item?.testimonialPoints &&
+                {/* {item?.testimonialPoints &&
                   item.testimonialPoints.map((point, index) => {
                     return (
                       <div key={index} className="testimonial-text">
                         {point}
                       </div>
                     );
-                  })}
+                  })} */}
               </div>
 
               <div className="testimonial-author-details">

@@ -7,6 +7,7 @@ interface detailsDataType {
     points?: string[];
     conclusion?: string;
     discriptionsPoints?: string[];
+    list?: { title: string; description: string }[];
   };
   componentType?: number;
 }
@@ -41,7 +42,11 @@ const DetailsDataComponent = ({
       )}
       {componentType == 1 && data.images && data.images.length == 1 && (
         <div id="details-data-image">
-          <img src={data.images[0]} alt="details image 1" />
+          <img
+            src={data.images[0]}
+            alt="details image 1"
+            className="details-data-image"
+          />
         </div>
       )}
 
@@ -57,6 +62,18 @@ const DetailsDataComponent = ({
               <li id="details-data-text-points" key={index}>
                 {point}
               </li>
+            ))}
+          </ul>
+        )}
+        {data.list && (
+          <ul>
+            {data.list.map((point, index) => (
+              <div key={point.title + index}>
+                <div id="details-data-text-title"> {point.title} </div>
+                <div id="details-data-text-description">
+                  {point.description}
+                </div>
+              </div>
             ))}
           </ul>
         )}
@@ -81,7 +98,11 @@ const DetailsDataComponent = ({
       )}
       {componentType == 2 && data.images && data.images.length == 1 && (
         <div id="details-data-image">
-          <img src={data.images[0]} alt="details image 1" />
+          <img
+            src={data.images[0]}
+            alt="details image 1"
+            className="details-data-image"
+          />
         </div>
       )}
     </div>

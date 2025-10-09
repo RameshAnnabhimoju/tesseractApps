@@ -16,6 +16,7 @@ import {
   bookDemoEmailTemplate,
 } from "../../utils/emailTemplates";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../../contexts/AppContext";
 
 type formDataType = {
   organisaitionType: string;
@@ -45,13 +46,8 @@ const formEmptyData: formDataType = {
   companyName: "",
   schedule: "",
 };
-const BookADemo = ({
-  bookADemo,
-  handleBookADemo,
-}: {
-  bookADemo: boolean;
-  handleBookADemo: (value?: boolean | undefined) => void;
-}) => {
+const BookADemo = () => {
+  const { bookADemo, handleBookADemo } = useAppContext();
   const navigate = useNavigate();
   const alertInitialData = {
     heading: "",

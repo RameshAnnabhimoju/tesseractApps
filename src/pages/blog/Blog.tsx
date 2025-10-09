@@ -81,8 +81,10 @@ const Blog = () => {
                 navigate("/blogpost3");
               } else if (blog.id == 4) {
                 navigate("/blogpost4");
-              } else {
+              } else if (blog.id == 5) {
                 navigate("/blogpost5");
+              } else {
+                navigate("/blogpost6");
               }
             }}
             className="blog-page-card"

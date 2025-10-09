@@ -25,7 +25,7 @@
 }
 #nav-back {
   position: fixed;
-  top: 120px;
+  top: 150px;
 }
 #navbar-logo {
   font-size: 24px;
@@ -305,7 +305,11 @@
   .nav-menu-link {
     font-size: 20px;
     font-weight: 600;
-    margin: 18px 15px;
+    padding: 18px 15px;
+  }
+  .nav-menu-link.no-dropdown {
+    border-top: 1px solid #e1e1e1;
+    padding-top: 20px;
   }
 }
 #search-popup-container {

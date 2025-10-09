@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+import { useAppNavigate } from "../../hooks/useAppNavigate";
 
 // --- geometry helpers ---
 const toRad = (deg: number) => ((deg - 90) * Math.PI) / 180;
@@ -54,7 +53,7 @@ interface PendulumState {
 }
 
 const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
-  const navigate = useNavigate();
+  const navigate = useAppNavigate();
   const groupRefs = useRef<Record<string, SVGGElement | null>>({});
   const backgroundCircleRefs = useRef<Record<string, SVGCircleElement | null>>(
     {}
@@ -213,7 +212,7 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
               onMouseLeave={onLeave(it.id)}
               style={{ cursor: "pointer" }}
               onClick={() => {
-                appNavigate(it.label, navigate, false);
+                navigate(it.label);
               }}
             >
               <circle
@@ -226,10 +225,10 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
               <circle r={it.iconSize * 0.8} fill={it.color} />
               <image
                 href={it.icon}
-                x={-it.iconSize / 2}
-                y={-it.iconSize / 2}
-                width={it.iconSize}
-                height={it.iconSize}
+                x={-it.iconSize / 2 + 1.1}
+                y={-it.iconSize / 2 + 1.1}
+                width={it.iconSize * 0.8}
+                height={it.iconSize * 0.8}
                 preserveAspectRatio="xMidYMid meet"
                 style={{
                   pointerEvents: "none",
@@ -241,10 +240,10 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
         );
       })}
 
-      {tooltip.show && (
+      {tooltip.text && (
         <text
           x={tooltip.x}
-          y={tooltip.y - 30}
+          y={tooltip.y + 35} // below circle (adjust as needed)
           textAnchor="middle"
           fontSize="10"
           fill="#414141ff"
@@ -253,9 +252,9 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
             userSelect: "none",
           }}
         >
-          {tooltip.text.split("&").map((line, index) => (
+          {tooltip.text.split(" ").map((word, index) => (
             <tspan key={index} x={tooltip.x} dy={index === 0 ? 0 : 12}>
-              {line}
+              {word}
             </tspan>
           ))}
         </text>

@@ -6,23 +6,27 @@ import Alert from "../../components/alert/Alert";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
 // import logo_small from "../../assets/tesseract_logo_small.png";
 // import signinBackground from "../../assets/Signin-background.png";
-import { Dialog } from "@mui/material";
+import {
+  Box,
+  Button,
+  Dialog,
+  Step,
+  StepLabel,
+  Stepper,
+  Typography,
+} from "@mui/material";
 import {
   signupConfirmationEmailTemplate,
   signupEmaiTemplate,
 } from "../../utils/emailTemplates";
 import Slide from "@mui/material/Slide";
+import React from "react";
+import { signupFormData } from "../../utils/DummyData";
+import { useAppContext } from "../../contexts/AppContext";
 // import { useNavigate } from "react-router-dom";
 
-const Signup = ({
-  dialog,
-  // setDialog,
-  handleDialog,
-}: {
-  dialog: boolean;
-  setDialog: React.Dispatch<React.SetStateAction<boolean>>;
-  handleDialog: (value?: boolean | undefined) => void;
-}) => {
+const Signup = () => {
+  const { signUp, handleSignup } = useAppContext();
   type signupType = {
     firstName: string;
     lastName: string;
@@ -38,7 +42,8 @@ const Signup = ({
     // contactName: string;
     industry: string;
     features: string[];
-    demo: string;
+    otherFeature: string;
+    preference: string;
     // contactNumber: string;
     // companyEmail: string;
     // streetAddress: string;
@@ -63,7 +68,7 @@ const Signup = ({
     // contactName: string;
     industry: string;
     features: string;
-    demo: string;
+    preference: string;
     // contactNumber: string;
     // companyEmail: string;
     // streetAddress: string;
@@ -89,7 +94,8 @@ const Signup = ({
     // contactName: "",
     industry: "",
     features: [],
-    demo: "",
+    otherFeature: "",
+    preference: "",
     // contactNumber: "",
     // companyEmail: "",
     // streetAddress: "",
@@ -114,7 +120,7 @@ const Signup = ({
     // contactName: "",
     industry: "",
     features: "",
-    demo: "",
+    preference: "",
     // contactNumber: "",
     // companyEmail: "",
     // streetAddress: "",
@@ -167,9 +173,12 @@ const Signup = ({
   const submitHandler = () => {
     const errors = {} as signupErrorsTypes;
     let isValid = true;
-
+    const filteredFields = signupFormData[activeStep].map((field) => field.id);
+    const filteredSignupData = Object.fromEntries(
+      Object.entries(signupData).filter(([key]) => filteredFields.includes(key))
+    );
     // Loop through all fields
-    Object.keys(signupData).forEach((key) => {
+    Object.keys(filteredSignupData).forEach((key) => {
       const value = signupData[key as keyof typeof signupData];
       if (typeof value === "string") {
         if (!value.trim()) {
@@ -220,7 +229,8 @@ const Signup = ({
         abn: signupData.abn,
         industry: signupData.industry,
         features: signupData.features.toString(),
-        demo: signupData.demo,
+        otherFeature: signupData.otherFeature,
+        preference: signupData.preference,
       })
     )
       .then((response) => {
@@ -266,11 +276,119 @@ const Signup = ({
   };
   const getInputClass = (field: keyof signupType) =>
     "signup-form-input" + (signupErrors[field] ? " error" : "");
+  const steps = [
+    "Company Verification",
+    "Personal Details",
+    "Feature Interests",
+    "Demo / Trial Preference",
+  ];
+  const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set<number>());
+
+  const isStepOptional = (step: number) => {
+    return step === 2;
+  };
+
+  const isStepSkipped = (step: number) => {
+    return skipped.has(step);
+  };
+
+  const handleNext = () => {
+    const errors = {} as signupErrorsTypes;
+    let isValid = true;
+
+    // Loop through all fields
+    const filteredFields = signupFormData[activeStep].map((field) => field.id);
+    const filteredSignupData = Object.fromEntries(
+      Object.entries(signupData).filter(([key]) => filteredFields.includes(key))
+    );
+    Object.keys(filteredSignupData).forEach((key) => {
+      const value = signupData[key as keyof typeof signupData];
+      if (typeof value === "string") {
+        if (!value.trim()) {
+          errors[key] = "This field is required";
+          isValid = false;
+        } else {
+          errors[key] = "";
+        }
+      } else if (Array.isArray(value)) {
+        if (value.length === 0) {
+          errors[key] = "This field is required";
+          isValid = false;
+        } else {
+          errors[key] = "";
+        }
+      } else if (value === null || value === undefined || value === "") {
+        errors[key] = "This field is required";
+        isValid = false;
+      } else {
+        errors[key] = "";
+      }
+    });
+
+    setSignupErrors(errors);
+    if (isValid) {
+      let newSkipped = skipped;
+      if (isStepSkipped(activeStep)) {
+        newSkipped = new Set(newSkipped.values());
+        newSkipped.delete(activeStep);
+      }
+
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      setSkipped(newSkipped);
+    }
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleSkip = () => {
+    if (!isStepOptional(activeStep)) {
+      // You probably want to guard against something like this,
+      // it should never occur unless someone's actively trying to break something.
+      throw new Error("You can't skip a step that isn't optional.");
+    }
+
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setSkipped((prevSkipped) => {
+      const newSkipped = new Set(prevSkipped.values());
+      newSkipped.add(activeStep);
+      return newSkipped;
+    });
+  };
+
+  // const handleReset = () => {
+  //   setActiveStep(0);
+  // };
+  const handleClickSelection = (field: string, value: string) => {
+    if (field === "features") {
+      const updatedFeatures = Array.isArray(signupData.features)
+        ? [...signupData.features]
+        : [];
+      const index = updatedFeatures.indexOf(value);
+      if (index > -1) {
+        updatedFeatures.splice(index, 1); // Remove if already selected
+      } else {
+        updatedFeatures.push(value); // Add if not selected
+      }
+      setSignupData((prevData) => ({
+        ...prevData,
+        [field]: updatedFeatures,
+      }));
+    } else {
+      setSignupData((prevData) => ({
+        ...prevData,
+        [field]: value,
+      }));
+    }
+  };
+  console.log("signupErrors", signupErrors);
   return (
     <Dialog
-      open={dialog}
+      open={signUp}
       onClose={() => {
-        handleDialog(false);
+        handleSignup(false);
       }}
       fullScreen
       slots={{ transition: Slide }}
@@ -294,8 +412,9 @@ const Signup = ({
         alt="close icon"
         id="dialog-close-icon"
         onClick={() => {
+          console.log("close clicked");
           setTimeout(() => {
-            handleDialog(false);
+            handleSignup(false);
           }, 100);
         }}
       />
@@ -309,371 +428,178 @@ const Signup = ({
         </div> */}
         <div id="signup-image-container"></div>
         <div id="signup-form-container">
-          <div id="signup-heading">Sign Up for Free</div>
-          <div id="signup-text">You're One Step Away! Just Add Your Info</div>
-          <div id="signup-from">
-            <section className="signup-form-section">
-              <div className="signup-form-section-heading">
-                Step-1 : Personal Details
-              </div>
-
-              <div className="signup-form-group">
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>First Name</label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Enter your First Name"
-                    className={getInputClass("firstName")}
-                    name="firstName"
-                    onChange={inputChangeHandler}
-                  />
-                </div>
-
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>Last Name</label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Enter your Last Name"
-                    className={getInputClass("lastName")}
-                    name="lastName"
-                    onChange={inputChangeHandler}
-                  />
-                </div>
-              </div>
-
-              {/* <div className="signup-form-input-group">
-                <label>Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter your Email"
-                  className={getInputClass("email")}
-                  name="email"
-                  onChange={inputChangeHandler}
-                />
-              </div> */}
-              {/* <div className="signup-form-group">
-                <div className="signup-form-input-group">
-                  <label>Gender</label>
-                  <select
-                    className={getInputClass("gender")}
-                    name="gender"
-                    onChange={inputChangeHandler}
-                  >
-                    <option value="">Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="non-binary">Non-Binary</option>
-                    <option value="prefer not to say">Prefer Not to Say</option>
-                  </select>
-                </div>
-
-                <div className="signup-form-input-group">
-                  <label>Date of Birth</label>
-                  <input
-                    type="date"
-                    className={getInputClass("dateOfBirth")}
-                    name="dateOfBirth"
-                    onChange={inputChangeHandler}
-                  />
-                </div>
-              </div> */}
-              <div className="signup-form-group">
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>Phone Number</label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <input
-                    type="text"
-                    className={getInputClass("phone")}
-                    name="phone"
-                    placeholder="Enter Phone Number"
-                    onChange={inputChangeHandler}
-                  />
-                </div>
-
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>Email</label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <input
-                    type="email"
-                    className={getInputClass("email")}
-                    name="email"
-                    placeholder="Enter Email"
-                    onChange={inputChangeHandler}
-                  />
-                </div>
-              </div>
-              <div className="signup-form-section-heading">
-                Step-2 : Company Information
-              </div>
-              <div className="signup-form-group">
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>Company</label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Enter your Company"
-                    className={getInputClass("company")}
-                    name="company"
-                    onChange={inputChangeHandler}
-                  />
-                </div>
-
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>ABN</label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Enter your ABN"
-                    className={getInputClass("abn")}
-                    name="abn"
-                    onChange={inputChangeHandler}
-                  />
-                </div>
-              </div>
-              {/* <div className="signup-form-group">
-              <div className="signup-form-input-group">
-                <label>ACN</label>
-                <input
-                  type="text"
-                  placeholder="Enter your ACN"
-                  className={getInputClass("acn")}
-                  name="acn"
-                  onChange={inputChangeHandler}
-                />
-              </div>
-
-              <div className="signup-form-input-group">
-                <label>NDIS Provider ID</label>
-                <input
-                  type="text"
-                  placeholder="Enter your NDIS Provider ID"
-                  className={getInputClass("ndisProviderID")}
-                  name="ndisProviderID"
-                  onChange={inputChangeHandler}
-                />
-              </div>
-            </div> */}
-              {/* <div className="signup-form-group">
-              <div className="signup-form-input-group">
-                <label>Branch Code</label>
-                <input
-                  type="text"
-                  placeholder="Enter your Branch Code"
-                  className={getInputClass("branchCode")}
-                  name="branchCode"
-                  onChange={inputChangeHandler}
-                />
-              </div>
-
-              <div className="signup-form-input-group">
-                <label>Contact Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter Contact Name"
-                  className={getInputClass("contactName")}
-                  name="contactName"
-                  onChange={inputChangeHandler}
-                />
-              </div>
-            </div> */}
-              <div className="signup-form-group">
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>What industry do you serve?</label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <select
-                    className={getInputClass("industry")}
-                    name="industry"
-                    onChange={inputChangeHandler}
-                  >
-                    <option value="">Select Industry</option>
-                    <option value="NDIS Provider">NDIS Provider</option>
-                    <option value="Aged Care Service">Aged Care Service</option>
-                    <option value="Childcare">Childcare</option>
-                    <option value="Allied Health">Allied Health</option>
-                    <option value="Home & Community Care">
-                      Home & Community Care
-                    </option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-                <div className="signup-form-input-group"></div>
-                {/* <div className="signup-form-input-group">
-                  <label>Company Email</label>
-                  <input
-                    type="email"
-                    placeholder="Enter Company Email"
-                    className={getInputClass("companyEmail")}
-                    name="companyEmail"
-                    onChange={inputChangeHandler}
-                  />
-                </div> */}
-              </div>
-
-              <div className="signup-form-section-heading">
-                Step-3 : Feature References
-              </div>
-              <div className="signup-form-group">
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>
-                      What features does your business work with / deliver ?
+          <Box sx={{ width: "100%" }}>
+            <Stepper activeStep={activeStep} alternativeLabel>
+              {steps.map((label, index) => {
+                const stepProps: { completed?: boolean } = {};
+                const labelProps: {
+                  optional?: React.ReactNode;
+                } = {};
+                if (isStepOptional(index)) {
+                  labelProps.optional = (
+                    <Typography variant="caption">Optional</Typography>
+                  );
+                }
+                if (isStepSkipped(index)) {
+                  stepProps.completed = false;
+                }
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            <React.Fragment>
+              <Typography sx={{ mt: 2, mb: 1 }}>
+                Step {activeStep + 1}
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", pt: 2 }}>
+                {signupFormData[activeStep].map((field) => (
+                  <div key={field.id} className="signup-form-field">
+                    <label className="signup-form-label">
+                      {field.label}
+                      {field.required && (
+                        <span className="required-indicator"> * </span>
+                      )}
                     </label>
-                    <span style={{ color: "red" }}>*</span>
+                    {field.type === "select" ? (
+                      field.options ? (
+                        <div className="select-options-container">
+                          {field.options.map((option) => (
+                            <div
+                              className={
+                                "select-option" +
+                                (field.id != "features"
+                                  ? option.value ===
+                                    signupData[field.id as keyof signupType]
+                                    ? " selected"
+                                    : ""
+                                  : signupData[
+                                      field.id as keyof signupType
+                                    ].includes(option.value)
+                                  ? " selected"
+                                  : "")
+                              }
+                              onClick={() => {
+                                handleClickSelection(field.id, option.value);
+                              }}
+                            >
+                              {option.value}
+                            </div>
+                          ))}
+                          {signupData[field.id as keyof signupType].includes(
+                            "other"
+                          ) ? (
+                            <input
+                              type="text"
+                              className={getInputClass(
+                                field.id as keyof signupType
+                              )}
+                              placeholder="Please specify"
+                              name="otherFeature"
+                              value={
+                                signupData[
+                                  "otherFeature" as keyof signupType
+                                ] || ""
+                              }
+                              onChange={inputChangeHandler}
+                            />
+                          ) : (
+                            ""
+                          )}
+                        </div>
+                      ) : (
+                        <div></div>
+                      )
+                    ) : field.type === "checkbox" ? (
+                      <div className="checkbox-group">
+                        {field.options &&
+                          field.options.map((option) => (
+                            <label
+                              key={option.value}
+                              className="checkbox-label"
+                            >
+                              <input
+                                type="checkbox"
+                                name={field.id}
+                                value={option.value}
+                                checked={
+                                  Array.isArray(
+                                    signupData[field.id as keyof signupType]
+                                  ) &&
+                                  (
+                                    signupData[
+                                      field.id as keyof signupType
+                                    ] as string[]
+                                  ).includes(option.value)
+                                }
+                                onChange={inputChangeHandler}
+                                className="checkbox-input"
+                              />
+                              {option.name}
+                            </label>
+                          ))}
+                      </div>
+                    ) : (
+                      <input
+                        type={field.type || "text"}
+                        name={field.id}
+                        value={signupData[field.id as keyof signupType] || ""}
+                        onChange={inputChangeHandler}
+                        className={getInputClass(field.id as keyof signupType)}
+                        placeholder={"Enter " + field.label}
+                      />
+                    )}
+                    {signupErrors[field.id as keyof signupErrorsTypes] &&
+                      (field.id as keyof signupErrorsTypes) !== "features" && (
+                        <span className="error-text">
+                          {signupErrors[field.id as keyof signupErrorsTypes]}
+                        </span>
+                      )}
                   </div>
-                  <div id="signup-form-input-checkbox-container">
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="Roster & Schedule"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>Roster & Schedule</label>
-                    </div>
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="Timesheet"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>Timesheet & Payroll</label>
-                    </div>
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="Admin Console"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>Admin Console</label>
-                    </div>
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="Access Control Panel"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>Access Control Panel</label>
-                    </div>
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="HR Operation"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>HR Operations</label>
-                    </div>
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="Digital Signatures"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>Digital Signatures</label>
-                    </div>
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="Reporting & Dashboard"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>Reporting & Dashboard</label>
-                    </div>
-                    <div className="signup-form-input-container">
-                      <input
-                        type="checkbox"
-                        placeholder="Enter Street Address"
-                        className="signup-input-checkbox"
-                        name="features"
-                        value="NDIS Claims & Invoicing"
-                        onChange={inputChangeHandler}
-                      />
-                      <label>NDIS Claims & Invoicing</label>
-                    </div>
-                  </div>
+                ))}
+                <div className="signup-bottom-buttons-container">
+                  <Button
+                    color="inherit"
+                    disabled={activeStep === 0}
+                    onClick={handleBack}
+                    sx={{
+                      mr: 1,
+                      color: "var(--color-primary)",
+                      border: "1px solid var(--color-primary)",
+                      borderColor:
+                        activeStep === 0
+                          ? "transparent"
+                          : "var(--color-primary)",
+                    }}
+                  >
+                    Back
+                  </Button>
+                  {isStepOptional(activeStep) && (
+                    <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
+                      Skip
+                    </Button>
+                  )}
+                  <Button
+                    onClick={
+                      activeStep === steps.length - 1
+                        ? submitHandler
+                        : handleNext
+                    }
+                    sx={{
+                      backgroundColor: "var(--color-primary)",
+                      color: "white",
+                    }}
+                  >
+                    {activeStep === steps.length - 1
+                      ? "Submit Request"
+                      : "Next"}
+                  </Button>
                 </div>
-              </div>
-              <div className="signup-form-section-heading">
-                Step-4 : Demo Preference
-              </div>
-              <div className="signup-form-group">
-                <div className="signup-form-input-group">
-                  <div className="signup-input-label">
-                    <label>
-                      Would you like to schedule a demo to explore your trial
-                      access with TesseractApps?
-                    </label>
-                    <span style={{ color: "red" }}>*</span>
-                  </div>
-                  <div className="signup-form-input-container">
-                    <input
-                      type="radio"
-                      placeholder="Enter Street Address"
-                      className="signup-input-radio"
-                      name="demo"
-                      value="yes"
-                      onChange={inputChangeHandler}
-                    />
-                    <label>Yes - I'd like to book a demo</label>
-                  </div>
-                  <div className="signup-form-input-container">
-                    <input
-                      type="radio"
-                      placeholder="Enter Street Address"
-                      className="signup-input-radio"
-                      name="demo"
-                      value="no"
-                      onChange={inputChangeHandler}
-                    />
-                    <label>No - I prefer to explore on my own</label>
-                  </div>
-                </div>
-              </div>
-              <div className="signup-text-conditions">
-                No credit card required
-              </div>
-              <div id="signup-button-container">
-                <button onClick={submitHandler} id="signup-button">
-                  Submit
-                </button>
-              </div>
-            </section>
-          </div>
+              </Box>
+            </React.Fragment>
+          </Box>
         </div>
       </div>
     </Dialog>

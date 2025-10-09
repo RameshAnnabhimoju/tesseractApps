@@ -4,6 +4,8 @@ import DetailsHeroComponent from "../../components/detailsHeroComponent/DetailsH
 import AboutSelectedToolComponent from "../../components/aboutSelectedToolComponent/AboutSelectedToolComponent";
 import DetailsDataComponent from "../../components/detailsDataComponent/DetailsDataComponent";
 import FaqProductComponent from "../../components/faqProductComponent/faqProductComponent";
+import { useAppContext } from "../../contexts/AppContext";
+import ComingSoon from "../comingSoon/ComingSoon";
 interface byroleTypes {
   data: {
     hero: {
@@ -46,7 +48,13 @@ interface byroleTypes {
 
 const ByRole = () => {
   const location = useLocation();
-  const { data }: byroleTypes = location.state || {};
+  const { getRoute } = useAppContext();
+  const path = location.pathname.replace(/\/$/, "");
+  const data: byroleTypes["data"] =
+    (location.state as any)?.data ?? getRoute(path)?.data ?? null;
+  if (!data) {
+    return <ComingSoon />;
+  }
   return (
     <div id="byrole-container">
       {data.hero && <DetailsHeroComponent data={data.hero} />}

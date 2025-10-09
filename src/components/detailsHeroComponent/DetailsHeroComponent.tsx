@@ -1,6 +1,8 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import "./DetailsHeroStyles.css";
-import { appNavigate } from "../../routes/AppRoutes";
+import { useAppContext } from "../../contexts/AppContext";
+import productHeroImage from "../../assets/productHeroImage.png";
+// import { AppNavigate } from "../../routes/AppNavigate";
 interface DeatailsHeroType {
   data?: {
     page: string;
@@ -37,10 +39,16 @@ const DetailsHeroComponent = ({
     "Forms",
     "Accounting",
   ];
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const { handleSignup, handleBookADemo } = useAppContext();
   const handlectaClick = (name: string) => {
     // console.log("cta click", name);
-    appNavigate(name, navigate, false);
+    if (name == "Signup") {
+      handleSignup(true);
+    }
+    if (name == "bookADemo") {
+      handleBookADemo(true);
+    }
   };
   // console.log(data.page);
   return (
@@ -49,6 +57,7 @@ const DetailsHeroComponent = ({
       style={{
         backgroundColor: data.backgroundColor ? data.backgroundColor : "",
         textAlign: data.page == "Product" ? "center" : "left",
+        flexDirection: data.page == "Product" ? "column" : "row",
       }}
     >
       {displayTitle && <div id="details-hero-page-title">{data.page}</div>}
@@ -75,7 +84,7 @@ const DetailsHeroComponent = ({
         </div>
         <div
           className={
-            "details-hero-text" +
+            "details-hero-text details-hero-text-description" +
             (data.page == "Product" ? " details-hero-text-product" : "")
           }
         >
@@ -137,7 +146,7 @@ const DetailsHeroComponent = ({
         )}
         <div
           className={
-            "details-hero-text" +
+            "details-hero-text details-hero-text-conclusion" +
             (data.page == "Product" ? " details-hero-text-product" : "")
           }
         >
@@ -146,7 +155,7 @@ const DetailsHeroComponent = ({
         {data.cta &&
           data.cta.buttons.map((button) => (
             <div
-              className="details-hero-button"
+              className="details-hero-button cta-button"
               key={button.title}
               onClick={() => handlectaClick(button.navigate)}
             >
@@ -170,6 +179,15 @@ const DetailsHeroComponent = ({
           src={data.image}
           alt="details-hero-image"
         />
+      )}
+      {data.page == "Product" ? (
+        <img
+          src={productHeroImage}
+          alt="product image"
+          id="details-product-bottom-image"
+        />
+      ) : (
+        ""
       )}
     </div>
   );

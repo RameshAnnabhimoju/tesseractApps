@@ -3,6 +3,7 @@ import image2 from "../assets/blog2.jpg";
 import image3 from "../assets/blog3.jpg";
 import image4 from "../assets/image1.png";
 import blog5 from "../assets/Blog5Image3.jpeg";
+import blog6 from "../assets/expo-canberra1.jpg";
 import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
 export const ourBlogDummyData = [
   {
@@ -33,24 +34,9 @@ export const ourBlogDummyData = [
     comments: 0,
     categories: ["App", "Technology"],
   },
+
   {
     id: 3,
-    title: "Why Manual Rostering Is Costing You More Than You Think",
-    description: `Many NDIS providers still build rosters by hand — using
-            spreadsheets, whiteboards or group chats. It feels simple and
-            "free". But the hidden costs add up fast. Every week, managers lose
-            hours fixing mistakes. Shifts get double-booked. Overtime blows out
-            budgets. Simple slip-ups mean under-claimed hours or overpayments.
-            `,
-    image: image3,
-    date: "2025-07-06",
-    author: "Belle Bai",
-    authorImage: authorImage,
-    comments: 0,
-    categories: ["Technology", "Product"],
-  },
-  {
-    id: 4,
     title: "The Hidden Costs of Poor Workforce Management for NDIS Providers",
     description: `NDIS service providers rely on having their operations staffed 
     properly. But too many organizations don’t realize how much bad workforce management 
@@ -67,7 +53,7 @@ export const ourBlogDummyData = [
     categories: ["Technology", "Product"],
   },
   {
-    id: 5,
+    id: 4,
     title:
       "Unforgettable Moments at the Disability & WorkAbility Sydney Expo 2025",
     description: `On August 8th - 9th, 2025, the TesseractApps team proudly participated in 
@@ -77,6 +63,53 @@ export const ourBlogDummyData = [
     and industry leaders, all dedicated to improving `,
     image: blog5,
     date: "2025-08-13",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
+  {
+    id: 5,
+    title: "TesseractApps Connects with Canberra’s NDIS Community at the Expo",
+    description: `As a proud Canberra-based company, TesseractApps was thrilled to
+            participate in the recent Canberra NDIS Expo, connecting with local
+            providers, allied health professionals, and community organisations.
+            The event was an invaluable opportunity to engage directly with the
+            people shaping the future of care in our city.`,
+    image: blog6,
+    date: "2025-09-15",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
+  {
+    id: 6,
+    title:
+      "Beyond Compliance: How TesseractApps NDIS Software Elevates Care Quality and Staff Experience",
+    description: `NDIS providers face strict compliance requirements while working to
+            deliver quality care. TesseractApps NDIS software helps you reduce
+            administration, improve staff experience, and meet compliance
+            standards without losing focus on participants.
+            `,
+    image: image3,
+    date: "2025-09-16",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
+  {
+    id: 7,
+    title: "Why Manual Rostering Is Costing You More Than You Think",
+    description: `Many NDIS providers still build rosters by hand — using
+            spreadsheets, whiteboards or group chats. It feels simple and
+            "free". But the hidden costs add up fast. Every week, managers lose
+            hours fixing mistakes. Shifts get double-booked. Overtime blows out
+            budgets. Simple slip-ups mean under-claimed hours or overpayments.
+            `,
+    image: image3,
+    date: "2025-09-25",
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
@@ -343,7 +376,12 @@ export const pricingCardsDummyData = {
         "Support approvals & accounting suite",
         "AI-powered automation",
       ],
-      optionalAddons: ["LMS – Wyzed", "AI"],
+      optionalAddons: [
+        "LMS – Wyzed",
+        "AI",
+        "CMS",
+        "Custom Workflows & Processes",
+      ],
     },
     {
       id: 4,
@@ -365,7 +403,7 @@ export const pricingCardsDummyData = {
         "Privacy settings & timesheet submission",
         "Full access to AI automation & LMS",
       ],
-      optionalAddons: ["LMS – Wyzed", "AI"],
+      optionalAddons: ["LMS – Wyzed", "AI", "Automated Workflows & Processes"],
     },
   ],
   ict: [
@@ -1899,26 +1937,92 @@ export const pricingDummyData = {
             text: "Optional add-on",
           },
         },
+        {
+          title: "CMS",
+          subTitle: "Content Management System",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: false,
+            text: "",
+          },
+        },
+        {
+          title: "Custom Workflows& Processes",
+          subTitle: "",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "Optional add-on",
+          },
+          data4: {
+            value: false,
+            text: "",
+          },
+        },
+        {
+          title: "Automated Workflows & Processes",
+          subTitle: "",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: false,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "Optional add-on",
+          },
+        },
       ],
     },
   ],
 };
 
-import RosterManagementImage from "../assets/Roster Management.png";
+// import RosterManagementImage from "../assets/Roster Management.png";
+import RosterManagementImageF from "../assets/features-Roster Management.png";
 import TimesheetImage from "../assets/Time sheet.png";
 import AdminConsoleImage from "../assets/Admin.png";
-import HRImage from "../assets/HR.png";
+// import HRImage from "../assets/HR.png";
+import HRImageF from "../assets/features-HR.png";
 import ParticipantsImage from "../assets/Participants Management.png";
 import ChatImage from "../assets/Chat and Notification.png";
-import RepoImage from "../assets/Repository.png";
-import AccountingImage from "../assets/accounting.png";
+// import RepoImage from "../assets/Repository.png";
+import RepoImageF from "../assets/features-Repository.png";
+// import AccountingImage from "../assets/accounting.png";
+import AccountingImageF from "../assets/features-Accounting.png";
 import IncidentImage from "../assets/Incident Management.png";
 import ClockImage from "../assets/clock in clock out.png";
 import ComplianceImage from "../assets/complaince and safe guard.png";
-import AccessImage from "../assets/Access control panel.png";
+// import AccessImage from "../assets/Access control panel.png";
+import AccessImageF from "../assets/features-Access control panel.png";
 import Forms from "../assets/Form.png";
 import TSign from "../assets/T sign.png";
-import Profile from "../assets/My profile.png";
+// import Profile from "../assets/My profile.png";
+import ProfileF from "../assets/features-My profile.png";
 import Role from "../assets/Role base dashboard.png";
 export const featuresDummyData = [
   {
@@ -1926,7 +2030,7 @@ export const featuresDummyData = [
     title: "Roster Management",
     description:
       "Easily plan, distribute, and coordinate shifts. No more roster conflicts, less wear and tear, and fill-ins as they occur.",
-    image: RosterManagementImage,
+    image: RosterManagementImageF,
   },
   {
     id: 2,
@@ -1947,7 +2051,7 @@ export const featuresDummyData = [
     title: "HR Operations",
     description:
       "Centralise HR flows. From onboarding to compliance reporting.",
-    image: HRImage,
+    image: HRImageF,
   },
   {
     id: 5,
@@ -1968,14 +2072,14 @@ export const featuresDummyData = [
     title: "Repository",
     description:
       "Safely store and organize files of staff and participants with role-based access and digital signatures.",
-    image: RepoImage,
+    image: RepoImageF,
   },
   {
     id: 8,
     title: "Accounting",
     description:
       "Streamline payroll, invoicing, reimbursements and NDIS claims with automation. Seamless integration with accounting platforms.",
-    image: AccountingImage,
+    image: AccountingImageF,
   },
   {
     id: 9,
@@ -2002,7 +2106,7 @@ export const featuresDummyData = [
     title: "Access Control Panel",
     description:
       "The Access Control Panel simplifies user management by enabling administrators to assign, manage, and revoke access rights in real-time offering effective and flexible control over entry permissions.",
-    image: AccessImage,
+    image: AccessImageF,
   },
   {
     id: 13,
@@ -2023,7 +2127,7 @@ export const featuresDummyData = [
     title: "My Profile",
     description:
       "Control your private information and preferences from a single location. Keep your profile current for all the benefits of having access and get a more personalized experience.",
-    image: Profile,
+    image: ProfileF,
   },
   {
     id: 16,
@@ -2084,21 +2188,20 @@ export const howItWorksDummyData = [
   // },
 ];
 
-import testimonialImage from "../assets/avatar-mid-alt.png";
-import busineessWomanInage from "../assets/businesswoman.png";
+// import testimonialImage from "../assets/avatar-mid-alt.png";
+// import busineessWomanInage from "../assets/businesswoman.png";
+import seedDiability from "../assets/company-4.png";
+import sSquare from "../assets/company-5.png";
+import nexus from "../assets/NEXUS Final.png";
 export const testimonialDummyData = [
   {
     id: 1,
     rating: 5,
-    testimonial: "",
-    testimonialPoints: [
-      "Tesseract Apps has been an intuitive and reliable platform that’s streamlined our workflow and boosted team productivity. It integrated seamlessly into our operations, saving time and reducing manual tasks.",
-      "The user interface is clean and easy to navigate, making adoption effortless across the team. In a short time, the Tesseract Apps team delivered two key improvements—a powerful reporting dashboard and a streamlined task management feature—both of which have had a direct, positive impact on our efficiency.",
-      "Support has also been excellent: responsive, proactive, and always open to feedback. Tesseract Apps has quickly become an indispensable tool for our organisation, and I highly recommend it to any team seeking a smart, scalable solution.",
-    ],
-    authorImage: testimonialImage,
-    author: "Nathan Chakanetsa",
-    authorTitle: "Seed Disability Services Pty Ltd",
+    testimonial:
+      "Tesseract Apps has made a big difference in how we run our NDIS operations. Having everything like rostering, payroll, and participant management in one system makes life a lot easier. It was a bit tricky to get the hang of at the start, but once you get used to it the platform is really straightforward and saves a lot of time.",
+    authorImage: seedDiability,
+    author: "Seed Disability Services ",
+    authorTitle: "",
   },
   // {
   //   id: 2,
@@ -2116,18 +2219,18 @@ export const testimonialDummyData = [
   {
     id: 3,
     rating: 5,
-    testimonial: `“User-friendly, efficient, and built for care teams. Our staff love the simplicity of the interface, and compliance reporting has never been easier. Payroll is on time, every time. Choosing Tesseract was the best tech decision we made.”`,
-    authorImage: testimonialImage,
-    author: "Care Services Manager",
+    testimonial: `“We have been using Tesseract to run payroll for our staff and contractors for over a year now. The system is quick, easy to use and the customer service is excellent.”`,
+    authorImage: sSquare,
+    author: "Ssquare Accounts",
     authorTitle: "",
   },
   {
     id: 4,
     rating: 4,
-    testimonial: `“An essential tool for Support Coordinators. It’s not just a platform; it’s a strategic partner. I can track notes, manage participant goals, schedule supports, and handle billing in one place. It has saved me hours every week.”`,
-    authorImage: busineessWomanInage,
-    author: "Emalee Rose Bayliss",
-    authorTitle: "Specialist Senior Support Coordinator",
+    testimonial: `“Revolutionizing NDIS Workforce Management and IT Solutions. Tesseract Apps has streamlined our operations with its all-in-one platform for NDIS care providers and IT consultants. Liking the fact that Tesseract centralizes timesheets, HR, payroll, contracts, and compliance - carrying out transactions is now a breeze with the sense of security added. Onboarding was smooth, thanks to the responsive customer support. The admin console provides full organizational control, while the role-based dashboards and mobile access empower our team to stay informed and productive from anywhere. Since switching from another provider, we've saved time, reduced errors. The platform’s reliability (99.9% uptime) and automation capabilities have significantly reduced manual work and improved compliance. Tesseract Apps isn’t just software—it’s a Game-Changer. Highly recommended for anyone seeking a smart, intuitive design, scalable and user-friendly solution.”`,
+    authorImage: nexus,
+    author: "Nexus IT",
+    authorTitle: "",
   },
 ];
 export const accordiaDummyData = [
@@ -2200,22 +2303,23 @@ export const dots = {
 // import detailsImage2 from "../assets/detailImage2.png";
 // import detailsImage3 from "../assets/detailImage3.png";
 // import tesseractApsImage from "../assets/Tesseract Apps.png";
-import rosternew from "../assets/Website images/Roster Management.png";
-import timesheetNew from "../assets/Website images/My roster time sheet.png";
-import adminConsoleNew from "../assets/Website images/Admin Console.png";
-import accessNew from "../assets/Website images/Access control panel.png";
-import hrnew from "../assets/Website images/HR.png";
-import repoNew from "../assets/Website images/Repository.png";
-import participantNew from "../assets/Website images/Participants.png";
-import incidentNew from "../assets/Website images/Incident Register.png";
-import rollbased from "../assets/Website images/Role-Based Dashboards.png";
-import tsignNew from "../assets/Website images/Tsign.png";
-import chatNew from "../assets/Website images/Chat.png";
-import myprofileNew from "../assets/Website images/My profile.png";
-import clockiN from "../assets/Website images/clock in clock out.png";
-import formsNew from "../assets/Website images/Forms.png";
-import accountingNew from "../assets/Website images/Accounting.png";
-import TLEARNINGNEW from "../assets/Website images/T learner.png";
+import rosternew from "../assets/Roster Management  N.png";
+import timesheetNew from "../assets/My roster time sheet N.png";
+import adminConsoleNew from "../assets/Admin Console N.png";
+import accessNew from "../assets/Access control panel N.png";
+import hrnew from "../assets/HR N.png";
+import repoNew from "../assets/Repository 2.png";
+import participantNew from "../assets/Participants N.png";
+import incidentNew from "../assets/Incident Register N.png";
+import rollbased from "../assets/Role-Based Dashboards N.png";
+import tsignNew from "../assets/T Sign N.png";
+import chatNew from "../assets/Chat N.png";
+import myprofileNew from "../assets/My profile N.png";
+import clockiN from "../assets/clock in clock out N.png";
+import formsNew from "../assets/Form N.png";
+import accountingNew from "../assets/Accounting N.png";
+import TLEARNINGNEW from "../assets/T learner N.png";
+import productImage from "../assets/productImage.png";
 export const SubPagesDummyData = {
   Product: {
     page: "Product",
@@ -2233,32 +2337,44 @@ export const SubPagesDummyData = {
         conclusion: "No credit card is required. Free onboarding included. ",
       },
     },
-    section2: {
-      title: "One Connected Platform ",
-      points: [
-        {
-          dot: dots.dot1,
-          title: "",
-          description: "Access all essential tools in one system.",
-        },
-        {
-          dot: dots.dot2,
-          title: "",
-          description:
-            "Workforce and participant data live in a single source.",
-        },
-        {
-          dot: dots.dot3,
-          title: "",
-          description:
-            "Gain visibility across care delivery, HR, finance, and operations.",
-        },
-        {
-          dot: dots.dot4,
-          title: "",
-          description: "Automation reduces errors and saves time.",
-        },
-      ],
+    // section2: {
+    //   title: "One Connected Platform",
+    //   points: [
+    //     {
+    //       dot: dots.dot1,
+    //       title: "",
+    //       description: "Access all essential tools in one system.",
+    //     },
+    //     {
+    //       dot: dots.dot2,
+    //       title: "",
+    //       description:
+    //         "Workforce and participant data live in a single source.",
+    //     },
+    //     {
+    //       dot: dots.dot3,
+    //       title: "",
+    //       description:
+    //         "Gain visibility across care delivery, HR, finance, and operations.",
+    //     },
+    //     {
+    //       dot: dots.dot4,
+    //       title: "",
+    //       description: "Automation reduces errors and saves time.",
+    //     },
+    //   ],
+    // },
+    section3: {
+      title: "One Connected Platform",
+      images: [productImage],
+      description:
+        "Access all essential tools in one system. Workforce and participant data live in a single source. Gain visibility across care delivery, HR, finance, and operations. Automation reduces errors and saves time.",
+      // discriptionsPoints: [
+      //   "Access all essential tools in one system.",
+      //   "Workforce and participant data live in a single source.",
+      //   "Gain visibility across care delivery, HR, finance, and operations.",
+      //   "Automation reduces errors and saves time.",
+      // ],
     },
     products: {
       title: "Get Started Today",
@@ -4022,7 +4138,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps ICT companies simplify workforce scheduling, project tracking, payroll, and compliance—all in one secure, scalable platform.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4147,7 +4263,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps retailers, restaurants, and hospitality providers manage staff schedules, payroll, compliance, and communication in one secure platform. Improve team efficiency, reduce manual work, and deliver seamless customer service.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4244,7 +4360,7 @@ export const byIndustryData = {
       description:
         "TesseractApps empowers multi-site businesses to manage staff, compliance, payroll, and communication across multiple locations from one secure, centralised platform. Gain full visibility and control while reducing manual work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4349,7 +4465,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps construction companies manage crews, projects, compliance, and payroll seamlessly across sites. Keep your workforce safe, schedules on track, and reporting effortless—all from one platform.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4459,7 +4575,7 @@ export const byIndustryData = {
       description:
         "TesseractApps helps manufacturing businesses optimise workforce scheduling, maintain compliance, track production teams, and simplify payroll—all from a single platform. Stay audit-ready, reduce downtime, and keep your operations efficient.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4808,7 +4924,7 @@ export const byCareData = {
       description:
         "TesseractApps helps aged care organisations manage staff, schedules, participant care, compliance, and payroll in one secure platform. Deliver consistent, high-quality care while reducing administrative work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -4931,7 +5047,7 @@ export const byCareData = {
       description:
         "TesseractApps helps childcare centres manage staff, schedules, enrolments, compliance, and billing in one secure platform. Focus on delivering quality care while reducing administrative workload.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5053,7 +5169,7 @@ export const byCareData = {
       description:
         "TesseractApps helps allied health organisations manage clients, appointments, staff, compliance, and billing from one secure platform. Improve service delivery while reducing administrative work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5175,7 +5291,7 @@ export const byCareData = {
       description:
         "TesseractApps helps HACC organisations manage clients, staff, schedules, compliance, and billing in one secure platform. Focus on delivering high-quality care while reducing administrative burden.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5303,7 +5419,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps small businesses manage staff, schedules, payroll, compliance, and communication in one secure platform. Reduce administrative workload and focus on growing your business.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5425,7 +5541,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps enterprise organisations manage large teams, multiple departments, compliance, and finance in one secure platform. Streamline operations, reduce administrative complexity, and maintain oversight across the organisation.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5548,7 +5664,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps franchise owners and managers oversee multiple locations, staff, schedules, compliance, and finances from a single platform. Ensure consistency, efficiency, and growth across your network.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5664,7 +5780,7 @@ export const byBusinessType = {
       description:
         "TesseractApps helps startups manage staff, schedules, payroll, compliance, and communication in one central platform. Reduce administrative overhead and focus on growth and innovation.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5792,7 +5908,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations maintain regulatory compliance, track certifications, and manage operational risks efficiently. Protect your organisation and ensure audit readiness.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -5902,7 +6018,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations improve communication, recognition, training, and collaboration to boost staff satisfaction and productivity.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -6013,7 +6129,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations streamline workflows, automate routine tasks, and manage staff and resources efficiently. Spend less time on administration and more time on strategic work.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -6117,7 +6233,7 @@ export const byBusinessProblem = {
       description:
         "TesseractApps helps organisations optimise staffing, payroll, and resource management to reduce overheads while maintaining compliance and service quality.",
       cta: {
-        buttons: [{ title: "Register your interest", navigate: "" }],
+        buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
       },
     },
@@ -6215,6 +6331,7 @@ export const byBusinessProblem = {
     },
   },
 };
+// import rosterN from "../assets/Roster Management  N.png";
 import resterManagement from "../assets/Roster manager schedule.png";
 import adminConsole from "../assets/Product Admin con.png";
 import adminConsole2 from "../assets/admin 2.png";
@@ -6228,12 +6345,14 @@ import participantManagement from "../assets/partispant management.png";
 import incidentManagement from "../assets/incident.png";
 import repository from "../assets/Product Repository.png";
 import roleBasedDashboard from "../assets/Product Rolebase dashboard.png";
-import forms from "../assets/Forms.png";
+// import forms from "../assets/Forms.png";
+import prodForms from "../assets/Product Forms.png";
+import prodChat from "../assets/Product Access control.png";
 import accounting from "../assets/Product Accounting.png";
 import tLearingHub from "../assets/learning.png";
 import myProfile from "../assets/Product My profile.png";
-import myProfileNew from "../assets/My profile.png";
-import chat from "../assets/Chat.png";
+import myProfileNew from "../assets/My profile N.png";
+// import chat from "../assets/Chat.png";
 import salesforce from "../assets/service.png";
 import wyzed from "../assets/S and L.png";
 export const productsDetailsData = {
@@ -7827,7 +7946,7 @@ export const productsDetailsData = {
         title: "Secure Communication",
         description:
           "TesseractApps ChaT centralises team communication in a secure environment. Real-time messaging, role-based groups, and module integration streamline collaboration, improve response times, and maintain compliance.",
-        images: [chat],
+        images: [prodChat],
       },
     ],
     section4: {
@@ -8091,7 +8210,7 @@ export const productsDetailsData = {
         title: "Form Management",
         description:
           "TesseractApps Forms centralises all data collection in one platform. Automated workflows, integration with modules, and secure storage reduce administrative work, improve accuracy, and support compliance.",
-        images: [forms],
+        images: [prodForms],
       },
     ],
     section4: {
@@ -8507,25 +8626,25 @@ export const productsDetailsData = {
             "Track participant details, goals, and services with integrated Salesforce data.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot2,
           title: "Staff Management",
           description:
             "Maintain profiles, qualifications, and training records in one place.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot3,
           title: "Service Tracking",
           description:
             "Monitor service delivery, session attendance, and participant progress efficiently.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot4,
           title: "Reporting and Analytics",
           description:
             "Generate customised reports and dashboards to track performance and outcomes.",
         },
         {
-          dot: dots.dot1,
+          dot: dots.dot5,
           title: "Compliance and Audit Readiness",
           description:
             "Maintain regulatory compliance with automated alerts, digital approvals, and secure data storage.",
@@ -8611,40 +8730,43 @@ export const productsDetailsData = {
         },
       ],
     },
-    section3: [
-      {
-        title: "Features",
-        description: "",
-        images: [accounting],
-        list: [
-          {
-            title: "Payroll Automation",
-            description:
-              "Process pay runs, leave, allowances, and deductions directly from TesseractApps to Xero.",
-          },
-          {
-            title: "Invoice Management",
-            description:
-              "Create and export invoices for funded services or clients. Track payment status and reconcile with accounting records.",
-          },
-          {
-            title: "Financial Reporting",
-            description:
-              "Generate reports on staff costs, participant budgets, and operational expenditure for review or audits.",
-          },
-          {
-            title: "Budget Tracking",
-            description:
-              "Monitor participant funding, service costs, and overall budgets. Receive alerts for overages or discrepancies.",
-          },
-          {
-            title: "Audit Readiness",
-            description:
-              "Maintain complete financial records with secure storage, approval workflows, and traceable changes.",
-          },
-        ],
-      },
-    ],
+    section4: {
+      title: "Features",
+      description: "",
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Payroll Automation",
+          description:
+            "Process pay runs, leave, allowances, and deductions directly from TesseractApps to Xero.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Invoice Management",
+          description:
+            "Create and export invoices for funded services or clients. Track payment status and reconcile with accounting records.",
+        },
+        {
+          dot: dots.dot3,
+          title: "Financial Reporting",
+          description:
+            "Generate reports on staff costs, participant budgets, and operational expenditure for review or audits.",
+        },
+        {
+          dot: dots.dot4,
+          title: "Budget Tracking",
+          description:
+            "Monitor participant funding, service costs, and overall budgets. Receive alerts for overages or discrepancies.",
+        },
+        {
+          dot: dots.dot5,
+          title: "Audit Readiness",
+          description:
+            "Maintain complete financial records with secure storage, approval workflows, and traceable changes.",
+        },
+      ],
+    },
+
     faqSection: {
       title: "Q&A: Xero Integration",
       faqData: [
@@ -8723,40 +8845,43 @@ export const productsDetailsData = {
         },
       ],
     },
-    section3: [
-      {
-        title: "Features",
-        description: "",
-        images: [accessControl],
-        list: [
-          {
-            title: "Course Management",
-            description:
-              "Create, assign, and manage role-specific training courses.",
-          },
-          {
-            title: "Progress Reporting",
-            description:
-              "Track completion, assessment results, and certifications for all staff.",
-          },
-          {
-            title: "Compliance Tracking",
-            description:
-              "Monitor mandatory training and generate reports for audits.",
-          },
-          {
-            title: "Mobile-Friendly Learning",
-            description:
-              "Allow staff to access training anytime, anywhere, on desktop or mobile devices.",
-          },
-          {
-            title: "Automated Notifications",
-            description:
-              "Send reminders for upcoming or overdue training to ensure compliance.",
-          },
-        ],
-      },
-    ],
+    section4: {
+      title: "Features",
+      description: "",
+      points: [
+        {
+          dot: dots.dot1,
+          title: "Course Management",
+          description:
+            "Create, assign, and manage role-specific training courses.",
+        },
+        {
+          dot: dots.dot2,
+          title: "Progress Reporting",
+          description:
+            "Track completion, assessment results, and certifications for all staff.",
+        },
+        {
+          dot: dots.dot3,
+          title: "Compliance Tracking",
+          description:
+            "Monitor mandatory training and generate reports for audits.",
+        },
+        {
+          dot: dots.dot4,
+          title: "Mobile-Friendly Learning",
+          description:
+            "Allow staff to access training anytime, anywhere, on desktop or mobile devices.",
+        },
+        {
+          dot: dots.dot5,
+          title: "Automated Notifications",
+          description:
+            "Send reminders for upcoming or overdue training to ensure compliance.",
+        },
+      ],
+    },
+
     faqSection: {
       title: "Q&A: Wyzed Integration",
       faqData: [
@@ -8878,10 +9003,14 @@ and NDIS providers.`,
   },
 ];
 
-import humanResourceIvon from "../assets/checkbook.svg";
-import performanceManager from "../assets/flag_check.svg";
-import tsignicon from "../assets/stylus_note.svg";
-import incidentRegisterIcon from "../assets/siren_check.svg";
+import humanResourceIvon from "../assets/hero-T Sign.png";
+import heroIncident from "../assets/hero-Incident  Register.png";
+import heroHr from "../assets/hero-Human  Resources.png";
+import roster from "../assets/hero-Roster  Management.png";
+import heroAccounting from "../assets/hero-Account  Management.png";
+import heroperformance from "../assets/hero-Performance  Management.png";
+import heropayroll from "../assets/hero-Payroll 2.png";
+import heroparticipant from "../assets/hero-Participants.png";
 export const homeLeftArcsData = [
   {
     id: "p1",
@@ -8894,7 +9023,7 @@ export const homeLeftArcsData = [
     duration: 40,
     bufferStart: 8,
     bufferEnd: 8,
-    color: "#F2AD94",
+    color: "#f2ad94ff",
     iconSize: 15,
     bg: "#F2AD9433",
     minScale: 1,
@@ -8902,7 +9031,7 @@ export const homeLeftArcsData = [
     mirror: false,
     startPos: 0.8,
     initialDirection: -1,
-    label: "T Sign",
+    label: "T-sign",
   },
   {
     id: "p2",
@@ -8911,7 +9040,7 @@ export const homeLeftArcsData = [
     r: 380,
     startAngle: 120,
     endAngle: 60,
-    icon: performanceManager,
+    icon: heroIncident,
     duration: 35,
     bufferStart: 5,
     bufferEnd: 5,
@@ -8932,7 +9061,7 @@ export const homeLeftArcsData = [
     r: 330,
     startAngle: 120,
     endAngle: 60,
-    icon: tsignicon,
+    icon: heroHr,
     duration: 50,
     bufferStart: 5,
     bufferEnd: 5,
@@ -8944,7 +9073,7 @@ export const homeLeftArcsData = [
     mirror: false,
     startPos: 0.5,
     initialDirection: -1,
-    label: "Human Resources",
+    label: "HR Operations",
   },
   {
     id: "p4",
@@ -8953,7 +9082,7 @@ export const homeLeftArcsData = [
     r: 280,
     startAngle: 120,
     endAngle: 60,
-    icon: incidentRegisterIcon,
+    icon: roster,
     duration: 45,
     bufferStart: 5,
     bufferEnd: 5,
@@ -8965,12 +9094,10 @@ export const homeLeftArcsData = [
     mirror: false,
     startPos: 0.8,
     initialDirection: 1,
-    label: "Rostering & Scheduling",
+    label: "Roster Management",
   },
 ];
 
-import AccountingIcon from "../assets/payments.svg";
-import HumanResourcesIcon from "../assets/folder_supervised.svg";
 export const homeRightArcsData = [
   {
     id: "p5",
@@ -8979,7 +9106,7 @@ export const homeRightArcsData = [
     r: 280,
     startAngle: 120,
     endAngle: 60,
-    icon: AccountingIcon,
+    icon: heroAccounting,
     duration: 45,
     bufferStart: 5,
     bufferEnd: 5,
@@ -8991,7 +9118,7 @@ export const homeRightArcsData = [
     mirror: true,
     startPos: 0.5,
     initialDirection: 1,
-    label: "Accounting",
+    label: "Account Management",
   },
   {
     id: "p6",
@@ -9000,7 +9127,7 @@ export const homeRightArcsData = [
     r: 330,
     startAngle: 120,
     endAngle: 60,
-    icon: HumanResourcesIcon,
+    icon: heroperformance,
     duration: 50,
     bufferStart: 5,
     bufferEnd: 5,
@@ -9012,7 +9139,7 @@ export const homeRightArcsData = [
     mirror: true,
     startPos: 0.8,
     initialDirection: -1,
-    label: "Care Management",
+    label: "Performance Management",
   },
   {
     id: "p7",
@@ -9021,7 +9148,7 @@ export const homeRightArcsData = [
     r: 380,
     startAngle: 120,
     endAngle: 60,
-    icon: tsignicon,
+    icon: heropayroll,
     duration: 35,
     bufferStart: 5,
     bufferEnd: 5,
@@ -9033,7 +9160,7 @@ export const homeRightArcsData = [
     mirror: true,
     startPos: 0.1,
     initialDirection: 1,
-    label: "Clock In & Clock Out",
+    label: "Accounting",
   },
   {
     id: "p8",
@@ -9042,7 +9169,7 @@ export const homeRightArcsData = [
     r: 420,
     startAngle: 120,
     endAngle: 60,
-    icon: incidentRegisterIcon,
+    icon: heroparticipant,
     duration: 40,
     bufferStart: 10,
     bufferEnd: 10,
@@ -9054,7 +9181,7 @@ export const homeRightArcsData = [
     mirror: true,
     startPos: 0.6,
     initialDirection: -1,
-    label: "Access Control",
+    label: "Participant Management",
   },
 ];
 import popupImage1 from "../assets/popup-image1.png";
@@ -9371,4 +9498,75 @@ export const bookADemoFormData = [
       },
     ],
   },
+];
+
+export const signupFormData = [
+  [
+    { label: "ABN", required: true, id: "abn", type: "text" },
+    { label: "Company Name", required: true, id: "company", type: "text" },
+    {
+      label: "Industry Served",
+      required: true,
+      id: "industry",
+      type: "select",
+      options: [
+        { name: "NDIS Provider", value: "NDIS Provider" },
+        { name: "Aged Care Service", value: "Aged Care Service" },
+        { name: "Childcare", value: "Childcare" },
+        { name: "Allied Health", value: "Allied Health" },
+        { name: "Allied Health", value: "Allied Health" },
+        { name: "Other", value: "Other" },
+      ],
+    },
+  ],
+  [
+    { label: "First Name", required: true, id: "firstName", type: "text" },
+    { label: "Last Name", required: true, id: "lastName", type: "text" },
+    { label: "Email", required: true, id: "email", type: "email" },
+    { label: "Phone Number", required: true, id: "phone", type: "text" },
+  ],
+  [
+    {
+      label: "Which features are most relevant to your business?",
+      required: false,
+      id: "features",
+      type: "select",
+      multiSelect: true,
+      options: [
+        { name: "Workforce Management", value: "Roster & Schedule " },
+        { name: "Workforce Management", value: "Timesheet & Payroll" },
+        { name: "Workforce Management", value: "HR Operations" },
+        { name: "Business Operations & Admin", value: "Admin Console" },
+        { name: "Business Operations & Admin", value: "Access Control Panel " },
+        {
+          name: "Business Operations & Admin",
+          value: "Reporting & Dashboard ",
+        },
+        {
+          name: "Compliance & Client Management",
+          value: "NDIS Claims & Invoicing",
+        },
+        { name: "Compliance & Client Management", value: "Digital Signatures" },
+        { name: "other", value: "other" },
+      ],
+    },
+  ],
+  [
+    {
+      label: "How would you like to start?",
+      required: true,
+      id: "preference",
+      type: "select",
+      options: [
+        {
+          name: "Book a Demo",
+          value: "Book a Demo - schedule a session with TesseractApps team",
+        },
+        {
+          name: "Start Free Trial",
+          value: "Start Free Trial – no credit card required",
+        },
+      ],
+    },
+  ],
 ];

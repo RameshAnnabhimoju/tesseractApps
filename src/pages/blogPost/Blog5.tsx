@@ -1,13 +1,15 @@
-import { useNavigate } from "react-router-dom";
-import { appNavigate } from "../../routes/AppRoutes";
+// import { useNavigate } from "react-router-dom";
+// import { AppNavigate } from "../../routes/AppNavigate";
 import blog5 from "../../assets/Blog5Image3.jpeg";
 import blogImage1 from "../../assets/Blog5Image1.jpg";
 import blogVideo from "../../assets/Sydney expo 2025.mp4";
+import useAppNavigate from "../../hooks/useAppNavigate";
 // import blogImage2 from "../../assets/Blog5Image2.jpeg";
 const Blog5 = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const appNavigate = useAppNavigate();
   function handleClick(name: string) {
-    appNavigate(name, navigate);
+    appNavigate(name);
   }
   return (
     <div className="blog-container">
