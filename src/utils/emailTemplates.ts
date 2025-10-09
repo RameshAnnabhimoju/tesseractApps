@@ -7,7 +7,7 @@ export const newsletterConfirmationEmailTemplate = {
         \n
         Team TesseractApps\n
         [Our Website: www.tesseractapps.com.au]\n
-        [+61261332819,02 6133 2800] | [sales@tesseractapps.com]`,
+        [+61261332819,02 6133 2800] | [marketing@tesseractapps.com]`,
   html: (name: string) => `
     <div>
     <div>Dear ${name},</div>
@@ -17,7 +17,7 @@ export const newsletterConfirmationEmailTemplate = {
     <p>Warm regards,</p>
         <p>Team TesseractApps</p>
         <div>[Our Website: <a href="https://www.tesseractapps.com.au">TesseractApps</a>]</div>
-        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:sales@tesseractapps.com?subject=Inquiry">sales@tesseractapps.com</a>]</div>
+        <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:marketing@tesseractapps.com?subject=Inquiry">marketing@tesseractapps.com</a>]</div>
     </div>
     </div>`,
 };
@@ -243,7 +243,7 @@ We’ll be in touch soon with more details about your exclusive offer and how to
 Warm regards,\n
 The TesseractApps Team\n
 Website: https://www.tesseractapps.com.au\n
-Contact: sales@tesseractapps.com
+Contact: marketing@tesseractapps.com
 `,
   html: (firstName: string) => `
 <!DOCTYPE html>
@@ -326,7 +326,7 @@ Contact: sales@tesseractapps.com
 
         <p>Warm regards,<br>
         The TesseractApps Team<br>
-        <a href="https://www.tesseractapps.com.au">Website</a> | <a href="mailto:sales@tesseractapps.com?subject=Inquiry">Contact Us</a></p>
+        <a href="https://www.tesseractapps.com.au">Website</a> | <a href="mailto:marketing@tesseractapps.com?subject=Inquiry">Contact Us</a></p>
       </div>
       
     </div>
@@ -336,7 +336,7 @@ Contact: sales@tesseractapps.com
 };
 
 export const expoSalesEmailTemplate = {
-  email: "sales@tesseractapps.com",
+  email: "marketing@tesseractapps.com",
   subject: "Registered: Melbourne NDIS Expo 21st – 22nd November 2025",
   body: ({
     firstName,
