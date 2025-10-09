@@ -12,6 +12,7 @@ import maheshwariImage from "../../assets/8.png";
 import deepakrajImage from "../../assets/4.png";
 import meghnaImage from "../../assets/13.png";
 import saiKrishnaImage from "../../assets/2.png";
+import BecImage from "../../assets/16.png";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -166,8 +167,44 @@ const About = () => {
       <div id="about-team-images">
         <div className="about-team-image-card">
           <img
+            src={RevanthImage}
+            alt="Revanth Image"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Revanth</div>
+            <div className="about-team-image-card-designation">
+              Founder & CEO
+            </div>
+          </div>
+        </div>
+
+        <div className="about-team-image-card">
+          <img
+            src={KranthiImage}
+            alt="kranthi Image"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Kranthi</div>
+            <div className="about-team-image-card-designation">Co Founder</div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
+            src={BecImage}
+            alt="Bec Image"
+            className="about-team-image-card-image"
+          />
+          <div className="about-team-image-card-text">
+            <div className="about-team-image-card-name">Bec Mcfarland</div>
+            <div className="about-team-image-card-designation">HR manager</div>
+          </div>
+        </div>
+        <div className="about-team-image-card">
+          <img
             src={tomImage}
-            alt="Suresh Image"
+            alt="Tomer Image"
             className="about-team-image-card-image"
           />
           <div className="about-team-image-card-text">
@@ -195,7 +232,7 @@ const About = () => {
         <div className="about-team-image-card">
           <img
             src={darshanImage}
-            alt="Sumanth Image"
+            alt="Darshan Image"
             className="about-team-image-card-image"
           />
           <div className="about-team-image-card-text">
@@ -266,33 +303,8 @@ const About = () => {
           <div className="about-team-image-card-text">
             <div className="about-team-image-card-name">Sai Krishna</div>
             <div className="about-team-image-card-designation">
-              Software Engineer
+              Test Engineer
             </div>
-          </div>
-        </div>
-        <div className="about-team-image-card">
-          <img
-            src={RevanthImage}
-            alt="Revanth Image"
-            className="about-team-image-card-image"
-          />
-          <div className="about-team-image-card-text">
-            <div className="about-team-image-card-name">Revanth</div>
-            <div className="about-team-image-card-designation">
-              Founder & CEO
-            </div>
-          </div>
-        </div>
-
-        <div className="about-team-image-card">
-          <img
-            src={KranthiImage}
-            alt="Revanth Image"
-            className="about-team-image-card-image"
-          />
-          <div className="about-team-image-card-text">
-            <div className="about-team-image-card-name">Kranthi</div>
-            <div className="about-team-image-card-designation">Co Founder</div>
           </div>
         </div>
       </div>

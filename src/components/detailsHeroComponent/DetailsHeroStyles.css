@@ -87,6 +87,8 @@
 #details-product-bottom-image {
   position: relative;
   bottom: -50px;
+  max-width: 95%;
+  object-fit: cover;
 }
 @media (max-width: 1500px) {
   #details-hero-image {
