@@ -1,11 +1,10 @@
 import axios from "axios";
 
 const AxiosConfig = axios.create({
-  baseURL: "https://tesseractapps.com",
+  // baseURL: "https://tesseractapps.com",
+  baseURL: "http://localhost:5000",
   headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST,PATCH, PUT, DELETE",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Content-Type": "application/json",
   },
   timeout: 10000,
 });
