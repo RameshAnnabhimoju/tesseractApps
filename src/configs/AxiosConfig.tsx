@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const AxiosConfig = axios.create({
-  // baseURL: "https://tesseractapps.com",
-  baseURL: "http://localhost:5000",
+  baseURL: "https://tesseractapps.com",
+  // baseURL: "http://localhost:5000",
   headers: {
     "Content-Type": "application/json",
   },
