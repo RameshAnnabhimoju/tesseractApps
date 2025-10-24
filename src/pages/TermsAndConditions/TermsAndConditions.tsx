@@ -261,7 +261,7 @@ const TermsAndConditions = () => {
         <br />
         Phone: 1300 252 808
         <br />
-        Address: Australia
+        Address: TesseractApps, Bruce ACT 2617
       </p>
     </div>
   );

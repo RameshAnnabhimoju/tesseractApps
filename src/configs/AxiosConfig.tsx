@@ -1,13 +1,9 @@
 import axios from "axios";
 
 const AxiosConfig = axios.create({
-  // baseURL: "https://tesseractapps.com",
   baseURL: "https://tesseractapps.com",
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST,PATCH, PUT, DELETE",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization",
-  },
+  // baseURL: "http://localhost:5001",
+  withCredentials: true,
   timeout: 10000,
 });
 // AxiosConfig.interceptors.request.use(

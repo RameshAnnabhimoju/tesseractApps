@@ -37,7 +37,7 @@ const ContactInformationCard = () => {
         <div className="contact-info-text">
           TesseractApps <br />
           {/* 28 Thynne St, Bruce ACT 2617, Canberra, ACT, Australia */}
-          Canberra, ACT, Australia
+          TesseractApps, Bruce ACT 2617
         </div>
         <div className="contact-info-text">Phone:</div>
         <div className="contact-info-text">
