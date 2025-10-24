@@ -47,7 +47,7 @@ const formEmptyData: formDataType = {
   schedule: "",
 };
 const BookADemo = () => {
-  const { bookADemo, handleBookADemo } = useAppContext();
+  const { bookADemo, handleBookADemo, closeRoute } = useAppContext();
   const navigate = useNavigate();
   const alertInitialData = {
     heading: "",
@@ -58,6 +58,7 @@ const BookADemo = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState(formEmptyData);
   const [alertData, setAlertData] = useState(alertInitialData);
+
   const [showSuccess, setShowSuccess] = useState(false);
   const isSelected = (
     formData: formDataType,
@@ -112,7 +113,7 @@ const BookADemo = () => {
     );
   };
 
-  console.log(formData);
+  // console.log(formData);
   const currentId = bookADemoFormData[currentStep]?.id as
     | keyof formDataType
     | undefined;
@@ -219,6 +220,9 @@ const BookADemo = () => {
           alt="close icon"
           id="dialog-close-icon"
           onClick={() => {
+            if (closeRoute != "") {
+              navigate(closeRoute);
+            }
             setTimeout(() => {
               handleBookADemo(false);
             }, 100);
@@ -264,9 +268,21 @@ const BookADemo = () => {
             </div>
           </div>
           <div id="bookADemo-form-section">
-            <div id="bookADemo-form-question">
+            <div
+              id="bookADemo-form-question"
+              style={
+                !bookADemoFormData[currentStep].multiSelect
+                  ? { marginBottom: "40px" }
+                  : {}
+              }
+            >
               {bookADemoFormData[currentStep].question}
             </div>
+            {bookADemoFormData[currentStep].multiSelect ? (
+              <div id="bookADemo-form-multiple">Select Multiple</div>
+            ) : (
+              ""
+            )}
             <div id="bookADemo-form-fields-container">
               {bookADemoFormData[currentStep].fields.map((field, index) => (
                 <React.Fragment key={field.displayName + index}>

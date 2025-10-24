@@ -115,6 +115,19 @@ export const ourBlogDummyData = [
     comments: 0,
     categories: ["Technology", "Product"],
   },
+  {
+    id: 8,
+    title:
+      "Future-Proof Your NDIS Organisation: Strategies for 2025 and Beyond",
+    description: `The NDIS landscape is evolving rapidly. With regulatory changes and rising expectations from participants in 2025 and beyond, providers need smarter, more sustainable ways to operate. Future-proofing your organisation means enhancing compliance, streamlining operations, empowering your workforce, and delivering consistently high-quality care.
+            `,
+    image: image3,
+    date: "2025-10-22",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Technology", "Product"],
+  },
 ];
 export const footerProductsData = {
   0: [

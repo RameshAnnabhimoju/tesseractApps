@@ -33,15 +33,30 @@ import About from "../pages/about/About";
 import { useAppContext } from "../contexts/AppContext";
 import { useEffect } from "react";
 import Whitepapers from "../pages/whitepapers/Whitepapers";
+import Blog8 from "../pages/blogPost/Blog8";
+// import BookADemoPage from "../pages/dialogPages/BookADemoPage";
 
 const AppRoutes = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { getRoute } = useAppContext();
+  const { getRoute, handleSignup, handleBookADemo, setCloseRoute } =
+    useAppContext();
 
   useEffect(() => {
     const cleanPath = location.pathname.replace(/\/$/, "");
     // If the route already has state data, do nothing
+    console.log("AppROute => cleanPath => ", cleanPath);
+    if (cleanPath == "/book-a-demo") {
+      handleBookADemo(true);
+      setCloseRoute("/");
+      return;
+    } else if (cleanPath == "/signup") {
+      handleSignup(true);
+      setCloseRoute("/");
+      return;
+    } else {
+      setCloseRoute("");
+    }
     if ((location.state as any)?.data) return;
 
     // Lookup route config by path
@@ -89,6 +104,7 @@ const AppRoutes = () => {
       <Route path="/blogPost5" element={<CanberraNDISExpoBlog />} />
       <Route path="/blogPost6" element={<BeyondComplianceBlog />} />
       <Route path="/blogPost7" element={<ManualRosteringBlog />} />
+      <Route path="/blogPost8" element={<Blog8 />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
       <Route path="/administrator" element={<ByRole />} />
@@ -140,6 +156,9 @@ const AppRoutes = () => {
       <Route path="/coming-soon" element={<ComingSoon />} />
       {/* any remaining single-route pages */}
       <Route path="/details" element={<Details />} />
+
+      {/* <Route path="/book-a-demo" element={<BookADemoPage />} />
+      <Route path="/sign-up" element={<BookADemoPage />} /> */}
     </Routes>
   );
 };

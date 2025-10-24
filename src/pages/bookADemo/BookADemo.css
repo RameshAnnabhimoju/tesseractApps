@@ -93,7 +93,6 @@
 }
 
 #bookADemo-form-question {
-  margin-bottom: 40px;
   font-weight: 400;
   font-size: 24px;
 
@@ -165,6 +164,12 @@
   line-height: 50px;
   width: 60%;
   text-align: center;
+}
+#bookADemo-form-multiple {
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: var(--color-text-gray);
 }
 @media (max-width: 1350px) {
   #bookADemo-header-container {

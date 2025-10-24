@@ -2,9 +2,11 @@ import "./WhitepapersStyles.css";
 import pdf from "../../assets/Digital Transformation in Disability Services A Roadmap for 2025–2030.pdf";
 import pdf2 from "../../assets/White Paper Aug 2025.pdf";
 import pdf3 from "../../assets/White Paper Sep 2025.pdf";
+import pdf4 from "../../assets/Whitepaper July 2025.pdf";
 // import whitepaper1 from "../../assets/whitepaper1.png";
 import whitepaper2 from "../../assets/White Paper Aug 2025_page-0001.jpg";
 import whitepaper3 from "../../assets/whitepaper-3.png";
+import whitepaper4 from "../../assets/Whitepaper July 2025-images-0.jpg";
 import { useLocation } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 import ComingSoon from "../comingSoon/ComingSoon";
@@ -29,6 +31,9 @@ const Whitepapers = () => {
         break;
       case "whitepaper-3":
         window.open(pdf3, "_blank");
+        break;
+      case "whitepaper-4":
+        window.open(pdf4, "_blank");
         break;
       default:
         break;
@@ -62,7 +67,14 @@ const Whitepapers = () => {
         <img
           id="whitepaper-3"
           src={whitepaper3}
-          alt="whitepaper-2"
+          alt="whitepaper-3"
+          onClick={handleClick}
+          className="whitepaper-item"
+        />
+        <img
+          id="whitepaper-4"
+          src={whitepaper4}
+          alt="whitepaper-4"
           onClick={handleClick}
           className="whitepaper-item"
         />

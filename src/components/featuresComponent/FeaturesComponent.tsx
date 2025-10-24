@@ -6,8 +6,8 @@ import { useLocation } from "react-router-dom";
 import { featuresDummyData } from "../../utils/DummyData";
 import useAppNavigate from "../../hooks/useAppNavigate";
 // import { AppNavigate } from "../../routes/AppNavigate";
-// import ArrowLeft from "../arrows/ArrowLeft";
-// import ArrowRight from "../arrows/ArrowRight";
+import ArrowLeft from "../arrows/ArrowLeft";
+import ArrowRight from "../arrows/ArrowRight";
 const FeaturesComponent = () => {
   // const navigate = useNavigate();
   const appNavigate = useAppNavigate();
@@ -24,7 +24,7 @@ const FeaturesComponent = () => {
     }
     console.log(currentSlide, loaded);
   }, []);
-  const [sliderFeaturesRef] = useKeenSlider(
+  const [sliderFeaturesRef, featuresSlider] = useKeenSlider(
     {
       mode: "free-snap",
       rubberband: true,
@@ -100,7 +100,7 @@ const FeaturesComponent = () => {
         Manage your team, automate compliance, and deliver high quality NDIS
         services in one platform.
       </h2>
-      {/* <div className="features-buttons">
+      <div className="features-buttons">
         <div
           className="arrow-container"
           id="features-prev"
@@ -115,7 +115,7 @@ const FeaturesComponent = () => {
         >
           <ArrowRight />
         </div>
-      </div> */}
+      </div>
       <div className="features-slider">
         <div ref={sliderFeaturesRef} className="keen-slider">
           {featuresDummyData.map((feature) => (

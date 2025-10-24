@@ -23,10 +23,12 @@ import Slide from "@mui/material/Slide";
 import React from "react";
 import { signupFormData } from "../../utils/DummyData";
 import { useAppContext } from "../../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const { signUp, handleSignup } = useAppContext();
+  const { signUp, handleSignup, closeRoute } = useAppContext();
+  const navigate = useNavigate();
   type signupType = {
     firstName: string;
     lastName: string;
@@ -413,6 +415,9 @@ const Signup = () => {
         id="dialog-close-icon"
         onClick={() => {
           console.log("close clicked");
+          if (closeRoute != "") {
+            navigate(closeRoute);
+          }
           setTimeout(() => {
             handleSignup(false);
           }, 100);

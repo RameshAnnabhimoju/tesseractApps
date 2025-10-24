@@ -26,6 +26,8 @@ type AppContextType = {
   handleSignup: (value?: boolean) => void;
   bookADemo: boolean;
   handleBookADemo: (value?: boolean) => void;
+  closeRoute: string;
+  setCloseRoute: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -33,6 +35,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [signUp, setSignUp] = useState(false);
   const [bookADemo, setBookADemo] = useState(false);
+  const [closeRoute, setCloseRoute] = useState("");
   const handleSignup = (value?: boolean) => {
     if (value != undefined) {
       setSignUp(value);
@@ -54,6 +57,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/": { name: "Home", path: "/" },
       "/pricing": { name: "Pricing", path: "/pricing" },
       "/requestDemo": { name: "Book a Demo", path: "/requestDemo" },
+      "/book-a-demo": { name: "Book a Demo", path: "/book-a-demo" },
+      "/signup": { name: "SignUp", path: "/signup" },
       "/blogs": {
         name: "Blog",
         path: "/blogs",
@@ -376,6 +381,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         handleSignup,
         bookADemo,
         handleBookADemo,
+        closeRoute,
+        setCloseRoute,
       }}
     >
       {children}
