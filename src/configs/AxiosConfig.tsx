@@ -2,7 +2,7 @@ import axios from "axios";
 
 const AxiosConfig = axios.create({
   // baseURL: "https://tesseractapps.com",
-  baseURL: "http://tesseractapps.com",
+  baseURL: "https://tesseractapps.com",
   headers: {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "GET, POST,PATCH, PUT, DELETE",
