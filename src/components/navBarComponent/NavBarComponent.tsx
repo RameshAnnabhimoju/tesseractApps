@@ -1,4 +1,4 @@
-import logo_small from "../../assets/tesseract_logo_small.png";
+// import logo_small from "../../assets/tesseract_logo_small.png";
 import search from "../../assets/search.svg";
 import plus from "../../assets/plus.svg";
 import profile from "../../assets/person.svg";
@@ -27,6 +27,7 @@ import ArrowUp from "../arrows/ArrowUp";
 import signupImage from "../../assets/signup.png";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import { useAppContext } from "../../contexts/AppContext";
+import AppLogo from "../appLogo/AppLogo";
 
 const NavBarComponent = ({
   portalContainerRef,
@@ -298,10 +299,11 @@ const NavBarComponent = ({
           <ArrowUp />
         </div>
       )}
-      <div id="navbar-logo" onClick={() => navigate("/")}>
+      {/* <div id="navbar-logo" onClick={() => navigate("/")}>
         <img src={logo_small} alt="tesseract logo" />
         TesseractApps
-      </div>
+      </div> */}
+      <AppLogo />
       <img
         src={menuIcon}
         alt="menu"

@@ -28,6 +28,8 @@ type AppContextType = {
   handleBookADemo: (value?: boolean) => void;
   closeRoute: string;
   setCloseRoute: React.Dispatch<React.SetStateAction<string>>;
+  expoBanner: boolean;
+  setExpoBanner: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -36,6 +38,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [signUp, setSignUp] = useState(false);
   const [bookADemo, setBookADemo] = useState(false);
   const [closeRoute, setCloseRoute] = useState("");
+  const [expoBanner, setExpoBanner] = useState(true);
   const handleSignup = (value?: boolean) => {
     if (value != undefined) {
       setSignUp(value);
@@ -59,6 +62,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/requestDemo": { name: "Book a Demo", path: "/requestDemo" },
       "/book-a-demo": { name: "Book a Demo", path: "/book-a-demo" },
       "/signup": { name: "SignUp", path: "/signup" },
+      "/expo": { name: "SignUp", path: "/expo" },
       "/blogs": {
         name: "Blog",
         path: "/blogs",
@@ -383,6 +387,8 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         handleBookADemo,
         closeRoute,
         setCloseRoute,
+        expoBanner,
+        setExpoBanner,
       }}
     >
       {children}

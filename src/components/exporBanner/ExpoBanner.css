@@ -18,6 +18,7 @@
   max-width: 800px;
   width: 100%;
   margin: 0 20px;
+  margin-top: 50px;
 }
 #expo-banner-form-container > :last-child {
   margin-right: 30px;

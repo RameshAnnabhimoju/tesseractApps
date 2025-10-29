@@ -72,8 +72,8 @@ const TrustedClientsComponent = () => {
         spaceBetween={0}
         autoplay={{
           delay: 0,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false, // Remove pause to maintain smoothness
+          disableOnInteraction: true,
+          pauseOnMouseEnter: true, // Remove pause to maintain smoothness
         }}
         speed={2000} // Slower, smoother transition
         loop={true}

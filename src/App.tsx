@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import "./App.css";
 import NavBarComponent from "./components/navBarComponent/NavBarComponent";
 import { BrowserRouter } from "react-router-dom";
@@ -6,14 +6,15 @@ import FooterComponent from "./components/footerComponent/FooterComponent";
 import AppRoutes from "./routes/AppRoutes";
 import Signup from "./pages/signup/Signup";
 import BookADemo from "./pages/bookADemo/BookADemo";
-import ExpoBanner from "./components/exporBanner/ExpoBanner";
+// import ExpoBanner from "./components/exporBanner/ExpoBanner";
 import { useAppContext } from "./contexts/AppContext";
+import ExpoPage from "./pages/expoPage/ExpoPage";
 // import SignupFlow from "./pages/signupflow/SignupFlow";
 
 function App() {
-  const { signUp, bookADemo } = useAppContext();
+  const { signUp, bookADemo, expoBanner, setExpoBanner } = useAppContext();
   const displayCondition = signUp || bookADemo;
-  const [expoBanner, setExpoBanner] = useState(true);
+
   const portalContainerRef = useRef<HTMLDivElement>(null);
   return (
     <BrowserRouter>
@@ -25,7 +26,13 @@ function App() {
 
       <div ref={portalContainerRef} />
       {!displayCondition && expoBanner && (
-        <ExpoBanner
+        // <ExpoBanner
+        //   showBanner={expoBanner}
+        //   handleBannerClose={() => {
+        //     setExpoBanner(false);
+        //   }}
+        // />
+        <ExpoPage
           showBanner={expoBanner}
           handleBannerClose={() => {
             setExpoBanner(false);

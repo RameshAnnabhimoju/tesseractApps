@@ -39,20 +39,30 @@ import Blog8 from "../pages/blogPost/Blog8";
 const AppRoutes = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { getRoute, handleSignup, handleBookADemo, setCloseRoute } =
-    useAppContext();
+  const {
+    getRoute,
+    handleSignup,
+    handleBookADemo,
+    setCloseRoute,
+    setExpoBanner,
+  } = useAppContext();
 
   useEffect(() => {
+    const prevPath = sessionStorage.getItem("prevPath");
     const cleanPath = location.pathname.replace(/\/$/, "");
     // If the route already has state data, do nothing
     console.log("AppROute => cleanPath => ", cleanPath);
     if (cleanPath == "/book-a-demo") {
       handleBookADemo(true);
-      setCloseRoute("/");
+      setCloseRoute(prevPath || "/");
       return;
     } else if (cleanPath == "/signup") {
       handleSignup(true);
-      setCloseRoute("/");
+      setCloseRoute(prevPath || "/");
+      return;
+    } else if (cleanPath == "/expo") {
+      setExpoBanner(true);
+      setCloseRoute(prevPath || "/");
       return;
     } else {
       setCloseRoute("");
@@ -69,6 +79,7 @@ const AppRoutes = () => {
         state: { data: routeConfig.data },
       });
     }
+    sessionStorage.setItem("prevPath", location.pathname);
     // only run when pathname changes; getRoute is stable in AppContext (useMemo)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
