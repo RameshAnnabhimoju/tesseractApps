@@ -13,7 +13,7 @@ import ExpoPage from "./pages/expoPage/ExpoPage";
 
 function App() {
   const { signUp, bookADemo, expoBanner, setExpoBanner } = useAppContext();
-  const displayCondition = signUp || bookADemo;
+  const displayCondition = signUp || bookADemo || expoBanner;
 
   const portalContainerRef = useRef<HTMLDivElement>(null);
   return (
@@ -25,7 +25,7 @@ function App() {
       )}
 
       <div ref={portalContainerRef} />
-      {!displayCondition && expoBanner && (
+      {!(signUp || bookADemo) && expoBanner && (
         // <ExpoBanner
         //   showBanner={expoBanner}
         //   handleBannerClose={() => {

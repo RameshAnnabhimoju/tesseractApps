@@ -5,6 +5,8 @@ import image4 from "../assets/image1.png";
 import blog5 from "../assets/Blog5Image3.jpeg";
 import blog6 from "../assets/expo-canberra1.jpg";
 import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
+import blog7 from "../assets/Why Manual Rostering Is Costing You More Than You Think.png";
+import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.png";
 export const ourBlogDummyData = [
   {
     id: 1,
@@ -92,7 +94,7 @@ export const ourBlogDummyData = [
             administration, improve staff experience, and meet compliance
             standards without losing focus on participants.
             `,
-    image: image3,
+    image: blog8,
     date: "2025-09-16",
     author: "Belle Bai",
     authorImage: authorImage,
@@ -108,7 +110,7 @@ export const ourBlogDummyData = [
             hours fixing mistakes. Shifts get double-booked. Overtime blows out
             budgets. Simple slip-ups mean under-claimed hours or overpayments.
             `,
-    image: image3,
+    image: blog7,
     date: "2025-09-25",
     author: "Belle Bai",
     authorImage: authorImage,

@@ -2,7 +2,7 @@ import { Dialog } from "@mui/material";
 import Slide from "@mui/material/Slide";
 import "./ExpoPage.css";
 import "../../components/exporBanner/ExpoBanner.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import closeIcon from "../../assets/close.png";
 import { useAppContext } from "../../contexts/AppContext";
 import AppLogo from "../../components/appLogo/AppLogo";
@@ -17,6 +17,8 @@ import {
   expoSalesEmailTemplate,
 } from "../../utils/emailTemplates";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
+import Call from "../../components/svgs/Call";
+import Mail from "../../components/svgs/Mail";
 interface PopupProps {
   showBanner: boolean;
   handleBannerClose: () => void;
@@ -58,6 +60,7 @@ const initialFormErrors: FormErrors = {
   consent: "",
 };
 const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
+  const { handleBookADemo } = useAppContext();
   const [formData, setFormData] = useState(initialFormData);
   const [errors, setErrors] = useState(initialFormErrors);
   const alertInitialData = {
@@ -194,6 +197,18 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
   const privacyPolicyClickHandler = () => {
     window.open("https://www.tesseractapps.com.au/privacy-policy", "_blank");
   };
+  const handleScroll = () => {
+    const element = document.getElementById("expo-banner-form-container");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const handleBookADemoClick = () => {
+    handleBannerClose();
+    setTimeout(() => {
+      handleBookADemo(true);
+    }, 500);
+  };
   return (
     <Dialog
       open={showBanner}
@@ -238,8 +253,12 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             Australia's leading NDIS workforce management platform
           </div>
           <div id="expo-page-hero-cta-container">
-            <div id="expo-page-hero-cta-gradient">Claim My 50% Discount</div>
-            <div id="expo-page-hero-cta">Book a Demo</div>
+            <div id="expo-page-hero-cta-gradient" onClick={handleScroll}>
+              Claim My 50% Discount
+            </div>
+            <div id="expo-page-hero-cta" onClick={() => handleBookADemoClick()}>
+              Book a Demo
+            </div>
           </div>
           <div id="expo-page-time-venue-container">
             <div className="expo-page-time-venue">
@@ -358,9 +377,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
               <div className="expo-section-card-2-image-bg">
                 <CalenderIcon className="force-fill-white" />
               </div>
-              <div className="expo-section-card-title">
-                50% Off First 3 Months
-              </div>
+              <div className="expo-section-card-title">50% Off</div>
               <div className="expo-section-card-text">
                 Substantial savings on your subscription to help you get started
                 with confidence
@@ -398,7 +415,9 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
               Limited to Melbourne-based NDIS providers who book a demo at Booth
               05 or by 29 November 2025
             </div>
-            <button id="section-banner-cta">Claim Your Expo Offer Now</button>
+            <button id="section-banner-cta" onClick={handleScroll}>
+              Claim Your Expo Offer Now
+            </button>
           </div>
         </div>
 
@@ -429,9 +448,8 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
               </div>
               <div className="expo-section-card-title">Register On-Site</div>
               <div className="expo-section-card-text">
-                Scan the QR code or complete our quick registration form 
+                Complete our quick registration form
               </div>
-              \
             </div>
             <div className="expo-section-card-4">
               <div className="expo-section-card-2-image-bg card-bg-rounded">
@@ -772,6 +790,25 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
           <div id="bottom-subtext">
             * Required fields. Your information will be kept secure and used
             only to process your registration. 
+          </div>
+        </div>
+        <div id="expo-page-footer">
+          <div id="expo-page-footer-title">Contact & Support</div>
+          <div id="expo-footer-contact-container">
+            <div className="expo-footer-contact-item">
+              <Call className="fill-black" /> 1300 252 808
+            </div>
+
+            <div className="expo-footer-contact-item">
+              <Mail className="fill-black" />
+              sales@tesseractapp.com
+            </div>
+          </div>
+          <Link to="/ " className="expo-footer-text">
+            tesseractapps.com.au
+          </Link>
+          <div className="expo-footer-text">
+            Empowering NDIS Provides Accross Australia
           </div>
         </div>
       </div>
