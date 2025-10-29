@@ -11,6 +11,7 @@ import locationIcon from "../../assets/location-icon.svg";
 import CalenderIcon from "../../components/svgs/Calender";
 import Cross from "../../components/svgs/Cross";
 import TickCircle from "../../components/svgs/TickCircle";
+import Location from "../../components/svgs/Location";
 import { ChangeEvent, useState } from "react";
 import {
   expoRegistrationEmailTemplate,
@@ -19,6 +20,21 @@ import {
 import { sendEmail, sendTextEmail } from "../../services/AppService";
 import Call from "../../components/svgs/Call";
 import Mail from "../../components/svgs/Mail";
+import Shield from "../../components/svgs/Shield";
+import Document from "../../components/svgs/Document";
+import Dollar from "../../components/svgs/Dollar";
+import Group from "../../components/svgs/Group";
+import Chart from "../../components/svgs/Chart";
+import Ribbon from "../../components/svgs/Ribbon";
+import Clock from "../../components/svgs/Clock";
+import Fullscreen from "../../components/svgs/Fullscreen";
+import AddPerson from "../../components/svgs/AddPerson";
+import Settings from "../../components/svgs/Settings";
+import Rocket from "../../components/svgs/Rocket";
+import PersonHeart from "../../components/svgs/PersonHeart";
+import Heart from "../../components/svgs/Heart";
+import Stethescope from "../../components/svgs/Stethescope";
+import Clicpboard from "../../components/svgs/Clicpboard";
 interface PopupProps {
   showBanner: boolean;
   handleBannerClose: () => void;
@@ -276,9 +292,17 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
         <div className="expo-section">
           <div className="expo-section-heading">Why TesseractApps? </div>
           <div className="expo-section-badge-container">
-            <div className="expo-section-badge">NDIS-Ready</div>
-            <div className="expo-section-badge">Australian Owned</div>
-            <div className="expo-section-badge">Data Secure</div>
+            <div className="expo-section-badge">
+              <TickCircle className="fill-whil=te" />
+              NDIS-Ready
+            </div>
+            <div className="expo-section-badge">
+              <Location className="fill-white" /> Australian Owned
+            </div>
+            <div className="expo-section-badge">
+              {" "}
+              <Shield className="fill-white" /> Data Secure
+            </div>
           </div>
           <div className="expo-section-text">
             TesseractApps consolidates all your workforce management needs in
@@ -299,7 +323,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-1">
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Document className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">
                 Automated NDIS Claims
@@ -311,7 +335,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-1">
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Shield className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">
                 Compliance Alerts & Reporting
@@ -323,7 +347,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-1">
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Dollar className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">
                 Integrated Payroll & Finance Sync
@@ -335,7 +359,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-1">
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Group className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">
                 Participant & Staff Management
@@ -347,7 +371,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-1">
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Chart className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">
                 Real-Time Dashboards
@@ -375,7 +399,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
           <div className="expo-section-card-container">
             <div className="expo-section-card-1">
               <div className="expo-section-card-2-image-bg">
-                <CalenderIcon className="force-fill-white" />
+                <TickCircle className="force-fill-white" />
               </div>
               <div className="expo-section-card-title">50% Off</div>
               <div className="expo-section-card-text">
@@ -385,7 +409,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-1">
               <div className="expo-section-card-2-image-bg">
-                <CalenderIcon className="force-fill-white" />
+                <Ribbon className="force-fill-white" />
               </div>
               <div className="expo-section-card-title">
                 Done-For-You Onboarding
@@ -397,7 +421,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-1">
               <div className="expo-section-card-2-image-bg">
-                <CalenderIcon className="force-fill-white" />
+                <Clock className="force-fill-white" />
               </div>
               <div className="expo-section-card-title">
                 Priority Feature Access
@@ -432,7 +456,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
                 01
               </div>
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Fullscreen className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">Visit Booth 05</div>
               <div className="expo-section-card-text">
@@ -444,7 +468,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
                 02
               </div>
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <AddPerson className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">Register On-Site</div>
               <div className="expo-section-card-text">
@@ -456,7 +480,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
                 03
               </div>
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Settings className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">Setup Your Account</div>
               <div className="expo-section-card-text">
@@ -468,7 +492,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
                 04
               </div>
               <div className="expo-section-card-1-image-bg">
-                <CalenderIcon className="force-fill-blue" />
+                <Rocket className="force-fill-blue" />
               </div>
               <div className="expo-section-card-title">Start Immediately </div>
               <div className="expo-section-card-text">
@@ -561,7 +585,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
           <div className="expo-section-card-container">
             <div className="expo-section-card-3">
               <div className="expo-section-card-2-image-bg">
-                <CalenderIcon className="force-fill-white" />
+                <PersonHeart className="force-fill-white" />
               </div>
               <div className="expo-section-card-text-container">
                 <div className="expo-section-card-title">NDIS Providers</div>
@@ -573,7 +597,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-3">
               <div className="expo-section-card-2-image-bg">
-                <CalenderIcon className="force-fill-white" />
+                <Heart className="force-fill-white" />
               </div>
               <div className="expo-section-card-text-container">
                 <div className="expo-section-card-title">
@@ -587,7 +611,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-3">
               <div className="expo-section-card-2-image-bg">
-                <CalenderIcon className="force-fill-white" />
+                <Stethescope className="force-fill-white" />
               </div>
               <div className="expo-section-card-text-container">
                 <div className="expo-section-card-title">Allied Health</div>
@@ -599,7 +623,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
             <div className="expo-section-card-3">
               <div className="expo-section-card-2-image-bg">
-                <CalenderIcon className="force-fill-white" />
+                <Clicpboard className="force-fill-white" />
               </div>
               <div className="expo-section-card-text-container">
                 <div className="expo-section-card-title">
