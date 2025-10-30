@@ -262,7 +262,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             Exclusive Melbourne Expo Offer
           </div>
           <div id="expo-page-heading">Melbourne Disability Expo 2025</div>
-          <div id="expo-page-sub-heading">50% Off TesseractApps</div>
+          <div id="expo-page-sub-heading">Upto 50% Off TesseractApps</div>
           <div id="expo-page-text">
             Visit <strong style={{ color: "white" }}>Booth 05</strong> at
             Melbourne Exhibition Centre and unlock exclusive savings on
@@ -270,7 +270,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
           </div>
           <div id="expo-page-hero-cta-container">
             <div id="expo-page-hero-cta-gradient" onClick={handleScroll}>
-              Claim My 50% Discount
+              Claim My Discount
             </div>
             <div id="expo-page-hero-cta" onClick={() => handleBookADemoClick()}>
               Book a Demo
@@ -401,7 +401,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
               <div className="expo-section-card-2-image-bg">
                 <TickCircle className="force-fill-white" />
               </div>
-              <div className="expo-section-card-title">50% Off</div>
+              <div className="expo-section-card-title">Upto 50% Off</div>
               <div className="expo-section-card-text">
                 Substantial savings on your subscription to help you get started
                 with confidence
@@ -484,7 +484,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
               </div>
               <div className="expo-section-card-title">Setup Your Account</div>
               <div className="expo-section-card-text">
-                Our team configures your account with 50% discount applied
+                Our team configures your account with discount applied
               </div>
             </div>
             <div className="expo-section-card-4">
@@ -639,7 +639,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
         </div>
         <div className="expo-section">
           <div className="expo-section-heading">
-            Register for Your 50% Discount 
+            Register For Your Discount 
           </div>
           <div className="expo-section-text expo-section-text-padding">
             Complete this form to claim your exclusive Melbourne Expo offer
@@ -809,7 +809,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
             </div>
           </div>
           <button className="expo-banner-button" onClick={handleSubmit}>
-            Claim My 50% Discount
+            Claim My Discount
           </button>
           <div id="bottom-subtext">
             * Required fields. Your information will be kept secure and used
