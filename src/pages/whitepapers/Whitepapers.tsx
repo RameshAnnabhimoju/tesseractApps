@@ -64,13 +64,13 @@ const Whitepapers = () => {
           onClick={handleClick}
           className="whitepaper-item"
         />
-        <img
+        {/* <img
           id="whitepaper-3"
           src={whitepaper3}
           alt="whitepaper-3"
           onClick={handleClick}
           className="whitepaper-item"
-        />
+        /> */}
         <img
           id="whitepaper-4"
           src={whitepaper4}
