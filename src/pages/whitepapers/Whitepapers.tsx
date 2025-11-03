@@ -5,7 +5,7 @@ import pdf3 from "../../assets/White Paper Sep 2025.pdf";
 import pdf4 from "../../assets/Whitepaper July 2025.pdf";
 // import whitepaper1 from "../../assets/whitepaper1.png";
 import whitepaper2 from "../../assets/White Paper Aug 2025_page-0001.jpg";
-import whitepaper3 from "../../assets/whitepaper-3.png";
+// import whitepaper3 from "../../assets/whitepaper-3.png";
 import whitepaper4 from "../../assets/Whitepaper July 2025-images-0.jpg";
 import { useLocation } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
