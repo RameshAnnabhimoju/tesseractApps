@@ -35,10 +35,14 @@ type AppContextType = {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
+  const location = window.location.pathname;
+  // console.log("location:", location);
   const [signUp, setSignUp] = useState(false);
   const [bookADemo, setBookADemo] = useState(false);
   const [closeRoute, setCloseRoute] = useState("");
-  const [expoBanner, setExpoBanner] = useState(true);
+  const [expoBanner, setExpoBanner] = useState(
+    location == "/privacy-policy" ? false : true
+  );
   const handleSignup = (value?: boolean) => {
     if (value != undefined) {
       setSignUp(value);
