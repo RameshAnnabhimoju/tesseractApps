@@ -12,7 +12,7 @@ import CalenderIcon from "../../components/svgs/Calender";
 import Cross from "../../components/svgs/Cross";
 import TickCircle from "../../components/svgs/TickCircle";
 import Location from "../../components/svgs/Location";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import {
   expoRegistrationEmailTemplate,
   expoSalesEmailTemplate,
@@ -88,6 +88,9 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
   const [alertData, setAlertData] = useState(alertInitialData);
   const navigate = useNavigate();
   const { closeRoute } = useAppContext();
+  useEffect(() => {
+    navigate("/expo");
+  }, []);
   const changeHandler = (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -142,6 +145,17 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
       // Form is valid, proceed with submission logic
       console.log("Form submitted:", formData);
       // Reset form after submission
+      window.dataLayer.push({
+        event: "expo_form_submit",
+        user_data: {
+          email: formData.email,
+          phone_number: formData.phone,
+          address: {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+          },
+        },
+      });
       sendSalesEMail();
       setFormData(initialFormData);
       setErrors(initialFormErrors);

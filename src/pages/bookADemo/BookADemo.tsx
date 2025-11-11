@@ -127,6 +127,18 @@ const BookADemo = () => {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
   const handleSubmit = () => {
+    window.dataLayer.push({
+      event: "book_demo_form_submit",
+      user_data: {
+        email: formData.email,
+        phone_number: formData.phoneNumber,
+        address: {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+        },
+      },
+    });
+
     sendTextEmail(
       bookDemoEmailTemplate.email,
       bookDemoEmailTemplate.subject,

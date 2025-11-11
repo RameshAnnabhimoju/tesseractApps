@@ -216,6 +216,17 @@ const Signup = () => {
       });
       return; // stop here if there are errors
     }
+    window.dataLayer.push({
+      event: "try_it_free_form_submit",
+      user_data: {
+        email: signupData.email,
+        phone_number: signupData.phone,
+        address: {
+          first_name: signupData.firstName,
+          last_name: signupData.lastName,
+        },
+      },
+    });
     sendRequestEmail();
   };
   const sendRequestEmail = () => {

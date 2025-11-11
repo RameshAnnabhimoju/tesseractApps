@@ -7,6 +7,8 @@ import blog6 from "../assets/expo-canberra1.jpg";
 import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
 import blog7 from "../assets/Why Manual Rostering Is Costing You More Than You Think.png";
 import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.png";
+import blog9 from "../assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.png";
+import blog10 from "../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.png";
 export const ourBlogDummyData = [
   {
     id: 1,
@@ -129,6 +131,34 @@ export const ourBlogDummyData = [
     authorImage: authorImage,
     comments: 0,
     categories: ["Technology", "Product"],
+  },
+  {
+    id: 9,
+    title: "Top 3 Compliance Myths Busted",
+    description: `Compliance is one of the biggest concerns for NDIS providers. Many
+            organisations worry about audits, documentation gaps, and the
+            complexity of staying “NDIS-ready.” But the truth is, much of this
+            fear comes from misunderstanding what compliance really involves.
+            `,
+    image: blog9,
+    date: "2025-11-11",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Product"],
+  },
+  {
+    id: 10,
+    title: "Avoid These Common Payroll Pitfalls: A Guide for NDIS Provider",
+    description: `Payroll management is essential for NDIS providers, but even minor errors can create compliance risks, financial losses, and staff dissatisfaction. Understanding and addressing common payroll pitfalls ensures smooth operations, accurate reporting, and happier employees.
+
+            `,
+    image: blog10,
+    date: "2025-11-11",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Product"],
   },
 ];
 export const footerProductsData = {

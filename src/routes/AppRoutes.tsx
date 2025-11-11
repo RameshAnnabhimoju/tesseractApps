@@ -34,6 +34,8 @@ import { useAppContext } from "../contexts/AppContext";
 import { useEffect } from "react";
 import Whitepapers from "../pages/whitepapers/Whitepapers";
 import Blog8 from "../pages/blogPost/Blog8";
+import Blog9 from "../pages/blogPost/Blog9";
+import Blog10 from "../pages/blogPost/Blog10";
 // import BookADemoPage from "../pages/dialogPages/BookADemoPage";
 
 const AppRoutes = () => {
@@ -116,6 +118,8 @@ const AppRoutes = () => {
       <Route path="/blogPost6" element={<BeyondComplianceBlog />} />
       <Route path="/blogPost7" element={<ManualRosteringBlog />} />
       <Route path="/blogPost8" element={<Blog8 />} />
+      <Route path="/blogPost9" element={<Blog9 />} />
+      <Route path="/blogPost10" element={<Blog10 />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
       <Route path="/administrator" element={<ByRole />} />
