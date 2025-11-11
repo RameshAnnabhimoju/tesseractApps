@@ -110,6 +110,7 @@
 }
 .expo-section-badge-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin: 20px 0;
 }
@@ -289,4 +290,36 @@
   color: gray;
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  #expo-page-hero-container {
+    padding: 10px;
+  }
+  #expo-page-heading {
+    font-size: 28px;
+  }
+  #expo-page-sub-heading {
+    font-size: 24px;
+  }
+  #expo-page-text {
+    font-size: 16px;
+  }
+  .expo-section-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  #section-column-container {
+    flex-direction: column;
+    margin: 20px;
+  }
+  #expo-footer-contact-container {
+    display: flex;
+    flex-direction: column;
+    margin-block: 30px;
+    align-items: center;
+  }
+  .expo-footer-contact-item {
+    max-height: 50px;
+  }
 }

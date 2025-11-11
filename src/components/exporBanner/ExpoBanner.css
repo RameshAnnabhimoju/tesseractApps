@@ -8,9 +8,7 @@
 #expo-banner-close-icon {
   cursor: pointer;
 }
-#expo-banner-container {
-  /* overflow-x: hidden; */
-}
+
 #expo-banner-form-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 equal-width columns */
@@ -100,6 +98,11 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+@media (max-width: 700px) {
+  .expo-banner-input-container {
+    max-width: 100%;
+  }
 }
 @media (max-width: 600px) {
   #expo-banner-form-container {

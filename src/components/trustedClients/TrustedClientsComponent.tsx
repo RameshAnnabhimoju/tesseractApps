@@ -5,7 +5,7 @@ import company2 from "../../assets/company-2.png";
 import company4 from "../../assets/company-4.png";
 import company5 from "../../assets/company-5.png";
 // import company6 from "../../assets/company-6.png";
-import company7 from "../../assets/company-7.png";
+// import company7 from "../../assets/company-7.png";
 import company8 from "../../assets/ANA Logo.jpg";
 import company9 from "../../assets/FRAMILY VENTURES Final.png";
 import company10 from "../../assets/PINNACLE Final.png";
@@ -15,7 +15,9 @@ import company15 from "../../assets/Bright Path Psychosocial & disability Servic
 import company16 from "../../assets/Blessing Care and Support Pty Ltd.jpg";
 import company17 from "../../assets/Clear Choice Clinic Pty Ltd.png";
 import company18 from "../../assets/I've Got You Empowerment Pty Ltd.png";
-import company19 from "../../assets/Aussie Care Health Services Pty Ltd.jpg";
+import company19 from "../../assets/ImprovedAbility.png";
+import company20 from "../../assets/RCG-Logo_2[12038376].png";
+// import company19 from "../../assets/Aussie Care Health Services Pty Ltd.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
@@ -32,7 +34,7 @@ const TrustedClientsComponent = () => {
     company13,
     company4,
     company5,
-    company7,
+    // company7,
     company8,
     company9,
     company14,
@@ -41,6 +43,7 @@ const TrustedClientsComponent = () => {
     company17,
     company18,
     company19,
+    company20,
   ];
   return (
     <div id="trusted-clients-container">
