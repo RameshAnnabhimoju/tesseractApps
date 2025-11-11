@@ -89,8 +89,8 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
   const navigate = useNavigate();
   const { closeRoute } = useAppContext();
   useEffect(() => {
-    navigate("/expo");
-  }, []);
+    if (showBanner) navigate("/expo");
+  }, [showBanner]);
   const changeHandler = (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {

@@ -1,7 +1,7 @@
 import "./Signup.css";
 // import signupImage from "../../assets/Signup-image.png";
 import closeIcon from "../../assets/close.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Alert from "../../components/alert/Alert";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
 // import logo_small from "../../assets/tesseract_logo_small.png";
@@ -29,6 +29,9 @@ import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const { signUp, handleSignup, closeRoute } = useAppContext();
   const navigate = useNavigate();
+  useEffect(() => {
+    if (signUp) navigate("/signup");
+  }, [signUp]);
   type signupType = {
     firstName: string;
     lastName: string;

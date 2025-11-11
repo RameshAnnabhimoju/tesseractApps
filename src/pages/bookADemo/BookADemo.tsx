@@ -2,7 +2,7 @@ import "./BookADemo.css";
 import { Dialog } from "@mui/material";
 import closeIcon from "../../assets/close.png";
 import Slide from "@mui/material/Slide";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { bookADemoFormData } from "../../utils/DummyData";
 import logo_small from "../../assets/popup-logo.png";
 import TextField from "@mui/material/TextField";
@@ -49,6 +49,9 @@ const formEmptyData: formDataType = {
 const BookADemo = () => {
   const { bookADemo, handleBookADemo, closeRoute } = useAppContext();
   const navigate = useNavigate();
+  useEffect(() => {
+    if (bookADemo) navigate("/book-a-demo");
+  }, [bookADemo]);
   const alertInitialData = {
     heading: "",
     text: "",
