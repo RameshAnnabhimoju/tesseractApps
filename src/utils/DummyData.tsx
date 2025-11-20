@@ -732,6 +732,26 @@ export const pricingDummyData = {
             text: "Custom Forms",
           },
         },
+        {
+          title: "Participant Onboarding #new",
+          subTitle: "Seamless participant setup",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
       ],
     },
     {
@@ -880,6 +900,26 @@ export const pricingDummyData = {
         {
           title: "Incident Register",
           subTitle: "Log and track staff-related incidents",
+          data1: {
+            value: false,
+            text: "",
+          },
+          data2: {
+            value: false,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Staff Onboarding #new",
+          subTitle: "Simplified staff onboarding process",
           data1: {
             value: false,
             text: "",
@@ -2003,8 +2043,8 @@ export const pricingDummyData = {
           },
         },
         {
-          title: "Custom Workflows& Processes",
-          subTitle: "",
+          title: "Automated Workflows & Processes",
+          subTitle: "Streamline admin & compliance tasks",
           data1: {
             value: false,
             text: "",
@@ -2023,8 +2063,8 @@ export const pricingDummyData = {
           },
         },
         {
-          title: "Automated Workflows & Processes",
-          subTitle: "",
+          title: "Custom Automated Workflows (Beta)",
+          subTitle: "Build tailored workflows for unique processes",
           data1: {
             value: false,
             text: "",

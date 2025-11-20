@@ -1,6 +1,6 @@
 import "./VideoStyles.css";
 import React, { useRef, useState } from "react";
-import video from "../../assets/ndisOrgAdminAdminModule.mp4";
+import video from "../../assets/homepage-video.mp4";
 const VideoComponent: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 

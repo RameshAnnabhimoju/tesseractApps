@@ -35,6 +35,7 @@ import PersonHeart from "../../components/svgs/PersonHeart";
 import Heart from "../../components/svgs/Heart";
 import Stethescope from "../../components/svgs/Stethescope";
 import Clicpboard from "../../components/svgs/Clicpboard";
+import Alert from "../../components/alert/Alert";
 interface PopupProps {
   showBanner: boolean;
   handleBannerClose: () => void;
@@ -249,6 +250,7 @@ const ExpoPage = ({ showBanner, handleBannerClose }: PopupProps) => {
       sx={{ margin: "auto", maxWidth: "1920px" }}
     >
       <div id="expo-page-container">
+        <Alert setAlertData={setAlertData} alertData={alertData} />
         <div id="expo-page-header">
           <AppLogo />
           <img

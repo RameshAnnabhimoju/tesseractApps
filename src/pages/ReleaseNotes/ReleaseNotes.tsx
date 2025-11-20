@@ -3,6 +3,407 @@ const ReleaseNotes = () => {
   return (
     <div id="release-notes-container">
       <h1>What's New?</h1>
+      <h2>v1.27.0</h2>
+      <ul>
+        <li>
+          <b>Participant Login:</b> Participants can now log in to the
+          application and access multiple modules seamlessly.
+        </li>
+        <br />
+        <li>
+          <b>T-Sign Enhancement:</b> Added an ABN field to the T-Sign form.
+        </li>
+        <br />
+        <li>
+          <b>Rejected Shifts:</b> Shifts starting within the next 24 hours can
+          no longer be rejected.
+        </li>
+        <br />
+        <li>
+          <b>Public Holidays:</b> Updated with the latest public holiday data.
+        </li>
+        <br />
+        <li>
+          <b>Mobile: Shift Card:</b> Participant name is now displayed on the
+          Shift Card.
+        </li>
+        <br />
+        <li>
+          <b>Mobile: Calendar View:</b> Shift-related data is now displayed
+          directly in the Calendar.
+        </li>
+        <br />
+        <li>
+          <b>Mobile: My Roster:</b> Added Day and Week views for shifts.
+        </li>
+        <br />
+        <li>
+          <b>Mobile: Geolocation & Notifications:</b> Implemented forced sign-in
+          geolocation and notification permissions.
+        </li>
+        <br />
+        <li>
+          <b>Facility Management:</b> Each facility can now create its own
+          custom roles.
+        </li>
+        <br />
+        <li>
+          <b>Childcare Pay Guides:</b> Updated pay guides are now available
+          within the application.
+        </li>
+        <br />
+        <li>
+          <b>Roster Manager:</b> Added an ‘All’ option to view all staff at
+          once.
+        </li>
+        <br />
+        <li>
+          <b>Manage Forms:</b> Introduced a ‘Submitted Forms’ tab where users
+          can view all submitted forms.
+        </li>
+        <br />
+        <li>
+          <b>Keyboard Shortcuts:</b> Added keyboard shortcuts for navigation and
+          common actions.
+        </li>
+        <br />
+        <li>
+          <b>Global Search (Admin Module):</b> Implemented a global search
+          function in the Admin module.
+        </li>
+        <br />
+        <li>
+          <b>Early Sign-Out Notification:</b> Admins will now receive
+          notifications when staff sign out early.
+        </li>
+        <br />
+        <li>
+          <b>Request Sign-In Enhancements:</b> Added two new fields displaying
+          staff location status and distance from site.
+        </li>
+        <br />
+        <li>
+          <b>Payslip Revamp:</b> Payslips are now broken down into M (Morning),
+          A (Afternoon), N (Night), S (Sleepover) categories and Leave summary.
+          Improved rendering of Pay Points in staff payslips. Added disclaimers
+          for paid breaks in invoices and payslips.
+        </li>
+        <br />
+        <li>
+          <b>T-Sign Document Limit:</b> Implemented a limit for Word document
+          uploads in T-Sign.
+        </li>
+        <br />
+        <li>
+          <b>Mobile: Pagination:</b> Pagination added across multiple mobile
+          sections for better performance.
+        </li>
+        <br />
+        <li>
+          <b>Preferred Staff Matching:</b> Staff preferences now support
+          filtering by Gender, Language, and Nationality.
+        </li>
+        <br />
+        <li>
+          <b>Xero Integration:</b> Full Xero integration for invoice and payroll
+          synchronization.
+        </li>
+        <br />
+        <li>
+          <b>Participant Bulk Upload:</b> Users can now upload participant data
+          in bulk.
+        </li>
+        <br />
+        <li>
+          <b>Journal Module:</b> Introduced a new journal flow with history
+          tracking.
+        </li>
+        <br />
+        <li>
+          <b>Funds Tracker Enhancements:</b> Revamped UI with improved period
+          management.
+        </li>
+        <br />
+        <li>
+          <b>T-Sign Revamp:</b> Multiple improvements including:
+          <br />
+          Signature pixel accuracy
+          <br />
+          Mac ID (gateway) tracking
+          <br />
+          Font adjustment
+          <br />
+          System ID visibility
+          <br />
+          Field overlap fixes
+          <br />
+          Email ID validation for sent forms
+        </li>
+      </ul>
+
+      <h2>v1.26.0</h2>
+      <ul>
+        <li>
+          <b>Welcome Emails and Reset Password Links:</b> Implemented a new,
+          modern email format for welcome messages and password reset links to
+          enhance readability and branding consistency.
+        </li>
+        <br />
+        <li>
+          <b>Mobile - Show Participant Name in Shift Card:</b> Updated the
+          mobile view to display the participant’s name within each shift card
+          for better context and quick identification.
+        </li>
+        <br />
+        <li>
+          <b>Dashboard - Roster Manager Widget Dropdown Option:</b> Added a
+          dropdown option in the Roster Manager widget on the dashboard to
+          easily filter and manage roster data.
+        </li>
+        <br />
+        <li>
+          <b>Onboarding:</b> Improved the onboarding process with a more
+          intuitive layout and streamlined user flow.
+        </li>
+        <br />
+        <li>
+          <b>Increase Text area Limit to 1000:</b> Extended the character limit
+          for all text area fields across the application from default to 1000
+          characters.
+        </li>
+        <br />
+        <li>
+          <b>Multiple Document Upload Across the Application:</b> Introduced
+          functionality to upload multiple documents simultaneously in various
+          modules for improved efficiency.
+        </li>
+        <br />
+        <li>
+          <b>
+            Roster Manager Calendar - Dynamic Expansion of the View Based on the
+            Shifts:
+          </b>{" "}
+          Enhanced the calendar to automatically expand and adjust dynamically
+          based on the number of shifts displayed.
+        </li>
+        <br />
+        <li>
+          <b>Time picker Over All Application:</b> Implemented a new, consistent
+          time picker component across the entire application for better user
+          experience and design uniformity.
+        </li>
+        <br />
+        <li>
+          <b>
+            Based on the Shift Start and End Times the Billable Hours
+            Calculation:
+          </b>{" "}
+          Billable hours are now automatically calculated and displayed based on
+          the shift start and end times.
+        </li>
+        <br />
+        <li>
+          <b>Max Duration of Shift in Roster Settings:</b> Added a configuration
+          option in Roster Settings to define the maximum allowable duration for
+          any shift.
+        </li>
+        <br />
+        <li>
+          <b>
+            History for Every Change in IR + Export the Contents of the Table in
+            IR + Signature:
+          </b>{" "}
+          Added history tracking for all changes in Incident Reports, enabled
+          export of the IR table contents, and introduced digital signature
+          functionality.
+        </li>
+        <br />
+        <li>
+          <b>Smart Roster - Participant & Staff View (UI):</b> Redesigned the
+          Smart Roster interface for both Participant and Staff views to offer a
+          cleaner, more intuitive experience.
+        </li>
+        <br />
+        <li>
+          <b>
+            Editing Payrates for In Progress/Completed Shifts - Sleepover Shift:
+          </b>{" "}
+          Enabled the ability to edit payrates for In Progress and Completed
+          sleepover shifts.
+        </li>
+        <br />
+        <li>
+          <b>Editing Payrates in Timesheet - Sleepover Shift:</b> Added
+          functionality to edit payrates in timesheets specifically for
+          sleepover shifts.
+        </li>
+        <br />
+        <li>
+          <b>Adding Services for In Progress/Completed Shifts:</b> Implemented
+          the ability to add services to in-progress and completed.
+        </li>
+        <br />
+        <li>
+          <b>
+            Simplify Participant View by Adding Accordions in Personal Tab and
+            Removing Extra Tabs:
+          </b>{" "}
+          Simplified the participant view by converting sections in the Personal
+          tab into collapsible accordions and removing unnecessary tabs.
+        </li>
+        <br />
+        <li>
+          <b>Manage Invoices - Mail Implementation:</b> Introduced email
+          functionality in the Manage Invoices module to send invoices directly
+          to recipients from the system.
+        </li>
+        <br />
+        <li>
+          <b>Reimbursements:</b> Manages both shift and reimbursement invoices,
+          tracks invoice statuses, supports bulk actions, and ensures complete
+          audit trails and compliance.
+        </li>
+        <br />
+        <li>
+          <b>Manage Invoices:</b> Added a yearly date picker for easier
+          navigation and filtering by year. Introduced new tabs Cancelled and
+          Total Value, and added a Reimbursements column under both Pending and
+          Total Value tabs.
+        </li>
+        <br />
+        <li>
+          <b>Funds Tracker:</b> Implemented Shift name and Entity Name dropdowns
+          in Add New Fund slide and Miscellaneous values in service type
+          dropdown.
+        </li>
+        <br />
+        <li>
+          <b>
+            Timesheets - Feasibility for staff Break in and breakout option:
+          </b>{" "}
+          Implemented feasibility for staff to record Break In and Break Out
+          times within timesheets, allowing accurate tracking of break durations
+          and improved payroll calculations.
+        </li>
+        <br />
+        <li>
+          <b>Mobile – Break In and Break Out in Sign in Module:</b> Added Break
+          In and Break Out options in the mobile sign-in module to enable staff
+          to accurately record break durations during their shifts.
+        </li>
+        <br />
+        <li>
+          <b>Mobile – Participant Name in Shift Card:</b> Updated the mobile
+          view to display the Participant Name within each shift card for better
+          visibility and quick identification.
+        </li>
+        <br />
+        <li>
+          <b>Funds Tracker – Nursing Enhancements:</b> Enhanced the Funds
+          Tracker to allow adding multiple catalogue items, updating rates, and
+          renaming items, improving flexibility and ease of use for nursing
+          services.
+        </li>
+        <br />
+        <li>
+          <b>Navigations:</b> Implemented a new navigation feature allowing
+          users to return to the previous window when they have navigated to the
+          last page, improving workflow and ease of use.
+        </li>
+      </ul>
+
+      <h2>v1.25.0</h2>
+      <ul>
+        <li>
+          <b>Immediate Email Notifications:</b> User creation and password reset
+          emails are now sent instantly upon action for improved responsiveness.
+        </li>
+        <br />
+        <li>
+          <b>Forgot Password Link:</b> A "Forgot Password" option is now
+          available on the login page, making password recovery more convenient.
+        </li>
+        <br />
+        <li>
+          <b>Custom Shift Rates:</b> Roster Manager now supports custom shift
+          rates, offering greater flexibility in shift planning and budgeting.
+        </li>
+        <br />
+        <li>
+          <b>Real-Time Shift Reallocation:</b> Introduced real-time shift
+          reallocation for faster and more efficient schedule adjustments.
+        </li>
+        <br />
+        <li>
+          <b>Shift Names and Timings Display:</b> Shift names and timings
+          configured in Roster Settings are now shown in both Participant
+          Schedule and Participant Availability views.
+        </li>
+        <br />
+        <li>
+          <b>Support for Custom Shift Names (Mobile):</b> Mobile app now
+          displays custom shift names in alignment with facility-specific
+          settings.
+        </li>
+        <br />
+        <li>
+          <b>"Sign Out" Checkbox (Web):</b> A new checkbox for "Sign out" has
+          been added to the web platform for a smoother logout process.
+        </li>
+        <br />
+        <li>
+          <b>Request Sign-Out Feature:</b> A new "Request Sign out" option is
+          now available within the Sign-in workflow, improving tracking and
+          control.
+        </li>
+        <br />
+        <li>
+          <b>Email Notifications for Sign-In/Out:</b> Automatic email alerts are
+          now sent for both Sign-in and Sign-out requests to keep stakeholders
+          informed.
+        </li>
+        <br />
+        <li>
+          <b>Enhanced Search in 100 Points of ID:</b> Improved search
+          functionality allows faster and easier access to ID verification
+          records.
+        </li>
+        <br />
+        <li>
+          <b>UI Enhancements:</b> Visual improvements made to "My Profile - My
+          Availability" and "Participant Schedule" for a more user-friendly
+          experience.
+        </li>
+        <br />
+        <li>
+          <b>Preferred Names Display:</b> Preferred names for Facilities and
+          Participants are now displayed according to facility-specific
+          preferences.
+        </li>
+        <br />
+        <li>
+          <b>My Notification:</b> Users can now configure notification
+          preferences for improved communication and control.
+        </li>
+        <br />
+        <li>
+          <b>"My Notifications" Section (Mobile):</b> A dedicated "My
+          Notifications" tab is now available in the mobile app for easier
+          access to alerts and updates.
+        </li>
+        <br />
+        <li>
+          <b>Smart Forms:</b> Users can now complete Smart Forms directly from
+          both web and mobile devices, enhancing accessibility and efficiency.
+        </li>
+        <br />
+        <li>
+          <b>Shift Names:</b> Shift names and timings configured in Roster
+          Settings are now displayed consistently in Participant Schedule and
+          Participant Availability views.
+        </li>
+      </ul>
+
       <h2>v1.24.0</h2>
       <ul>
         <li>

@@ -249,7 +249,7 @@ const About = () => {
             className="about-team-image-card-image"
           />
           <div className="about-team-image-card-text">
-            <div className="about-team-image-card-name">Sushimitha</div>
+            <div className="about-team-image-card-name">Sushmitha</div>
             <div className="about-team-image-card-designation">
               Team manager
             </div>

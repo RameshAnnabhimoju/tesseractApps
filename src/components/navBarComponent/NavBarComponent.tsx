@@ -7,7 +7,7 @@ import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
 import { useEffect, useRef, useState } from "react";
 import { RefObject } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
 import { navBarDummyData } from "../../utils/DummyData";
 import { Drawer } from "@mui/material";
 import menuIcon from "../../assets/menu.png";
@@ -269,12 +269,14 @@ const NavBarComponent = ({
       return updated;
     });
   };
+  const navType = useNavigationType();
+  const canGoBack = navType !== "POP";
   return (
     <nav
       // className={`navbar-container ${showHeader ? "visible" : "hidden"}`}
       id="navbar-container"
     >
-      {pathname.split("/")[1] && (
+      {pathname.split("/")[1] && canGoBack && (
         // <img
         //   id="nav-back"
         //   src={BackArrow}

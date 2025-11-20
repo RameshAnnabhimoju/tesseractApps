@@ -136,6 +136,8 @@ const Signup = () => {
   } as signupErrorsTypes;
   const [signupData, setSignupData] = useState(signupInitialValues);
   const [signupErrors, setSignupErrors] = useState(signupErrorsInitialValues);
+  const [activeStep, setActiveStep] = useState(0);
+  const [skipped, setSkipped] = useState(new Set<number>());
   const alertInitialData = {
     heading: "",
     text: "",
@@ -256,10 +258,13 @@ const Signup = () => {
         setAlertData({
           ...alertData,
           heading: "Request Submitted",
-          text: "Thank you for Signing Up! We will be in touch soon to provide login credentials. Keep an eye on youe inbox!",
+          text: "Thank you for Signing Up! We will be in touch soon to provide login credentials. Keep an eye on your inbox!",
           type: "success",
           isOpen: true,
         });
+        console.log("close clicked");
+        setSignupData(signupInitialValues);
+        setActiveStep(0);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -298,8 +303,6 @@ const Signup = () => {
     "Feature Interests",
     "Demo / Trial Preference",
   ];
-  const [activeStep, setActiveStep] = useState(0);
-  const [skipped, setSkipped] = useState(new Set<number>());
 
   const isStepOptional = (step: number) => {
     return step === 2;

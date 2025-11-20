@@ -1,20 +1,37 @@
 export const newsletterConfirmationEmailTemplate = {
-  subject: "TesseractApps newsletter subscription",
-  text: (name: string) => `Dear ${name},\n
+  subject: "Thank You for Subscribing!",
+  text: (name: string) => `Hi ${name},\n
         \n
-        Thank you for your request.\n
-          We have received your request for our newsletter subscription. We will process your requests within one business day.
+         Thank you for subscribing to the TesseractApps newsletter! We’re excited to\n   
+keep you updated with the latest news, insights, and updates about NDIS\n   
+software solutions and best practices.\n
         \n
+        You can expect to receive regular updates directly in your inbox, including tips \n 
+to optimise your services, new feature announcements, and exclusive offers.\n
+\n
+If you have any questions or suggestions, feel free to reach out to us at  \n
+marketing@tesseractapps.com  \n
+\n 
+Welcome to the TesseractApps community! \n
+\n
         Team TesseractApps\n
         [Our Website: www.tesseractapps.com.au]\n
-        [+61261332819,02 6133 2800] | [marketing@tesseractapps.com]`,
+        [+61261332819,02 6133 2800] | [marketing@tesseractapps.com]\n
+        \n
+        `,
   html: (name: string) => `
     <div>
-    <div>Dear ${name},</div>
-    <p>Thank you for your request.</p>
-    <p>We have received your request for our newsletter subscription. We will process your requests within one business day.</p>
+    <div>Hi ${name},</div>
+    <p>Thank you for subscribing to the TesseractApps newsletter! We’re excited to   
+keep you updated with the latest news, insights, and updates about NDIS   
+software solutions and best practices.</p>
+    <p>You can expect to receive regular updates directly in your inbox, including tips   
+to optimise your services, new feature announcements, and exclusive offers.  </p>
+<p>If you have any questions or suggestions, feel free to reach out to us at   
+marketing@tesseractapps.com  </p>
+<p>Welcome to the TesseractApps community!  </p>
     <div>
-    <p>Warm regards,</p>
+    <p>Best regards,</p>
         <p>Team TesseractApps</p>
         <div>[Our Website: <a href="https://www.tesseractapps.com.au">TesseractApps</a>]</div>
         <div>✆;[<a href="tel:+61261332819">+61261332819</a>,<a href="tel:+61261332800">02 6133 2800</a>] 📧 [<a href="mailto:marketing@tesseractapps.com?subject=Inquiry">marketing@tesseractapps.com</a>]</div>
