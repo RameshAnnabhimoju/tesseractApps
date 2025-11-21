@@ -418,7 +418,21 @@ const Pricing = () => {
                       >
                         <div className="pricing-data-title-container-outer">
                           <div className="pricing-data-title">
-                            {dataItem.title}
+                            {dataItem.title.split("#")[0]}{" "}
+                            {dataItem.title.split("#")[1] ? (
+                              <span
+                                style={{
+                                  color: "white",
+                                  backgroundColor: "var( --color-primary)",
+                                  padding: "2px 8px",
+                                  borderRadius: "12px",
+                                  fontSize: "14px",
+                                  fontWeight: 500,
+                                }}
+                              >
+                                {dataItem.title.split("#")[1]}
+                              </span>
+                            ) : null}
                           </div>
                           <div className="pricing-data-subtitle">
                             {dataItem.subTitle}
