@@ -8,11 +8,15 @@ import Signup from "./pages/signup/Signup";
 import BookADemo from "./pages/bookADemo/BookADemo";
 // import ExpoBanner from "./components/exporBanner/ExpoBanner";
 import { useAppContext } from "./contexts/AppContext";
-import ExpoPage from "./pages/expoPage/ExpoPage";
+// import ExpoPage from "./pages/expoPage/ExpoPage";
 // import SignupFlow from "./pages/signupflow/SignupFlow";
 
 function App() {
-  const { signUp, bookADemo, expoBanner, setExpoBanner } = useAppContext();
+  const {
+    signUp,
+    bookADemo,
+    // expoBanner, setExpoBanner
+  } = useAppContext();
   const displayCondition = signUp || bookADemo;
 
   const portalContainerRef = useRef<HTMLDivElement>(null);
@@ -25,7 +29,7 @@ function App() {
       )}
 
       <div ref={portalContainerRef} />
-      {!(signUp || bookADemo) && expoBanner && (
+      {/* {!(signUp || bookADemo) && expoBanner && (
         // <ExpoBanner
         //   showBanner={expoBanner}
         //   handleBannerClose={() => {
@@ -38,7 +42,7 @@ function App() {
             setExpoBanner(false);
           }}
         />
-      )}
+      )} */}
       {!displayCondition && <AppRoutes />}
       {!displayCondition && <FooterComponent />}
     </BrowserRouter>

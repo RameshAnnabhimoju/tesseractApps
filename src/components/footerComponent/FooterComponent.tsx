@@ -495,7 +495,7 @@ const FooterComponent = () => {
         </div>{" "}
         <div id="footer-bottom-divider"> | </div>{" "}
         <div id="footer-bottom-text">
-          © 2023 Tesseract Apps. All rights reserved.
+          © 2025 Tesseract Apps. All rights reserved.
         </div>
       </div>
     </div>
