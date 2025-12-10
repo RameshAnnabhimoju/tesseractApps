@@ -36,7 +36,7 @@ import Whitepapers from "../pages/whitepapers/Whitepapers";
 import Blog8 from "../pages/blogPost/Blog8";
 import Blog9 from "../pages/blogPost/Blog9";
 import Blog10 from "../pages/blogPost/Blog10";
-// import BookADemoPage from "../pages/dialogPages/BookADemoPage";
+// import BookADemoPage from "../pages/bookADemo/BookADemo";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -50,26 +50,23 @@ const AppRoutes = () => {
   } = useAppContext();
 
   useEffect(() => {
-    const prevPath = sessionStorage.getItem("prevPath");
+    // const prevPath = sessionStorage.getItem("prevPath");
     const cleanPath = location.pathname.replace(/\/$/, "");
     // If the route already has state data, do nothing
     console.log("AppROute => cleanPath => ", cleanPath);
     if (cleanPath == "/book-a-demo") {
       handleBookADemo(true);
-      setCloseRoute(prevPath || "/");
       return;
     } else if (cleanPath == "/signup") {
       handleSignup(true);
-      setCloseRoute(prevPath || "/");
       return;
     } else if (cleanPath == "/expo") {
       setExpoBanner(true);
-      setCloseRoute(prevPath || "/");
       return;
-    } else {
-      setCloseRoute("");
     }
+    setCloseRoute(cleanPath || "/");
     if ((location.state as any)?.data) return;
+    sessionStorage.setItem("prevPath", location.pathname);
 
     // Lookup route config by path
     const routeConfig = getRoute(cleanPath);
@@ -81,7 +78,7 @@ const AppRoutes = () => {
         state: { data: routeConfig.data },
       });
     }
-    sessionStorage.setItem("prevPath", location.pathname);
+
     // only run when pathname changes; getRoute is stable in AppContext (useMemo)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
@@ -172,8 +169,8 @@ const AppRoutes = () => {
       {/* any remaining single-route pages */}
       <Route path="/details" element={<Details />} />
 
-      {/* <Route path="/book-a-demo" element={<BookADemoPage />} />
-      <Route path="/sign-up" element={<BookADemoPage />} /> */}
+      {/* <Route path="/book-a-demo" element={<BookADemoPage />} /> */}
+      {/* <Route path="/sign-up" element={<BookADemoPage />} /> */}
     </Routes>
   );
 };

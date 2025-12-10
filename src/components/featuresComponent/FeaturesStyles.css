@@ -36,7 +36,9 @@
   color: var(--color-primary);
 }
 .features-card-image {
-  max-width: 50px;
+  min-width: 50px;
+  max-width: 60px;
+  min-height: 50px;
 }
 .features-card-title {
   font-size: 22px;

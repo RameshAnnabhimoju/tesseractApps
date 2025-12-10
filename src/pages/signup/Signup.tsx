@@ -402,7 +402,7 @@ const Signup = () => {
       }));
     }
   };
-  console.log("signupErrors", signupErrors);
+  // console.log("signupErrors", signupErrors);
   return (
     <Dialog
       open={signUp}

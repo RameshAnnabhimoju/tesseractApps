@@ -97,9 +97,9 @@ const OurBlogComponent = () => {
               />
               <div className="ourBlog-attributes-container">
                 <div className="ourBlog-attributes">{data?.date}</div>
-                <div className="ourBlog-attributes">
+                {/* <div className="ourBlog-attributes">
                   {data?.comments} COMMENTS
-                </div>
+                </div> */}
               </div>
               <div className="ourBlog-title">{data?.title}</div>
               <div className="ourBlog-description">{data?.description}</div>

@@ -7,6 +7,7 @@
   line-height: 120%;
   text-wrap: wrap;
   max-width: 95%;
+  font-family: "roboto", sans-serif;
 }
 #selected-tool-subheading {
   font-size: 32px;
@@ -15,6 +16,7 @@
   max-width: 900px;
   margin-bottom: 20px;
   line-height: 120%;
+  font-family: "roboto", sans-serif;
 }
 #selected-tool-text {
   font-size: 20px;
@@ -23,6 +25,7 @@
   max-width: 1000px;
   color: var(--color-text-gray);
   margin-bottom: 50px;
+  font-family: "inter", sans-serif;
 }
 #selected-tool-container {
   display: flex;
@@ -55,6 +58,7 @@
   font-weight: 700;
   line-height: 120%;
   margin: 10px 0;
+  font-family: "roboto", sans-serif;
 }
 .selected-tool-description {
   font-size: 24px;
@@ -63,6 +67,7 @@
   color: var(--color-text-gray2);
   max-width: 500px;
   margin-bottom: 20px;
+  font-family: "inter", sans-serif;
 }
 .selected-tool-description-point-title {
   color: black;

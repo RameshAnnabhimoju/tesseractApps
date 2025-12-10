@@ -23,6 +23,7 @@
   margin-bottom: 25px;
   line-height: 50px;
   color: var(--color-secondary);
+  font-family: "roboto", sans-serif;
 }
 .details-hero-heading-product {
   color: white !important;
@@ -35,6 +36,7 @@
   color: var(--color-text-gray);
   margin-bottom: 10px;
   margin-top: 20px;
+  font-family: "inter", sans-serif;
 }
 .details-hero-text-product {
   color: white;

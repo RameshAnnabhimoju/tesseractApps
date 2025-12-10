@@ -146,7 +146,12 @@ const NavBarComponent = ({
     if (currentPath == "pricing") {
       setActiveLink("Pricing");
     }
-    if (currentPath == "blogs" || currentPath == "faq") {
+    if (
+      currentPath == "blogs" ||
+      currentPath == "faq" ||
+      currentPath == "whitepapers" ||
+      currentPath == "help-center"
+    ) {
       setActiveLink("Resources");
     }
     if (currentPath == "requestDemo") {

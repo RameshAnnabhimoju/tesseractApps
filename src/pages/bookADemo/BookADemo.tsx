@@ -49,8 +49,16 @@ const formEmptyData: formDataType = {
 const BookADemo = () => {
   const { bookADemo, handleBookADemo, closeRoute } = useAppContext();
   const navigate = useNavigate();
+  // useEffect(() => {
+  //   console.log("Book a demo current location ", location.pathname);
+  //   if (location.pathname == "/book-a-demo") {
+  //     setCloseRoute("/");
+  //   } else {
+  //     setCloseRoute(location.pathname);
+  //   }
+  // }, []);
   useEffect(() => {
-    if (bookADemo) navigate("/book-a-demo");
+    if (bookADemo) navigate("/book-a-demo", { replace: true });
   }, [bookADemo]);
   const alertInitialData = {
     heading: "",
@@ -63,6 +71,16 @@ const BookADemo = () => {
   const [alertData, setAlertData] = useState(alertInitialData);
 
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const resetForm = () => {
+    setCurrentStep(0);
+    setFormData(formEmptyData);
+    setAlertData(alertInitialData);
+    setShowSuccess(false);
+    setTimeout(() => {
+      handleBookADemo(false);
+    }, 1);
+  };
   const isSelected = (
     formData: formDataType,
     id: keyof formDataType,
@@ -219,7 +237,7 @@ const BookADemo = () => {
       <Alert setAlertData={setAlertData} alertData={alertData} />
       <div
         id="bookADemo-header-container"
-        style={showSuccess ? { backgroundColor: "#3175da" } : {}}
+        style={showSuccess ? { backgroundColor: "var(--color-secondary)" } : {}}
       >
         <div id="bookADemo-navbar-logo-container">
           <img
@@ -234,13 +252,17 @@ const BookADemo = () => {
           src={closeIcon}
           alt="close icon"
           id="dialog-close-icon"
+          style={
+            showSuccess ? { filter: "invert(1)" } : { filter: "invert(0)" }
+          }
           onClick={() => {
+            console.log("Book a Demo Close Route ", closeRoute);
             if (closeRoute != "") {
-              navigate(closeRoute);
+              navigate(closeRoute, { replace: true });
+            } else {
+              navigate("/", { replace: true });
             }
-            setTimeout(() => {
-              handleBookADemo(false);
-            }, 100);
+            resetForm();
           }}
         />
       </div>

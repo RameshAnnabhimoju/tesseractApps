@@ -12,7 +12,7 @@
   height: 100%;
 }
 #bookADemo-text-section {
-  background-color: #3175da;
+  background-color: var(--color-secondary);
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -33,7 +33,7 @@
   flex-wrap: wrap;
 }
 #bookADemo-navbar-logo-container {
-  background-color: #3175da;
+  background-color: var(--color-secondary);
 }
 #bookADemo-text {
   font-weight: 400;
@@ -131,7 +131,7 @@
 #bookADemo-Success-Container {
   display: flex;
   flex-direction: column;
-  background-color: #3175da;
+  background-color: var(--color-secondary);
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -185,7 +185,7 @@
     display: none;
   }
   #bookADemo-header-container {
-    background-color: #3175da;
+    background-color: var(--color-secondary);
   }
   #bookADemo-text-section {
     width: 100%;

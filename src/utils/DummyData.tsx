@@ -2100,7 +2100,7 @@ import RepoImageF from "../assets/features-Repository.png";
 // import AccountingImage from "../assets/accounting.png";
 import AccountingImageF from "../assets/features-Accounting.png";
 import IncidentImage from "../assets/Incident Management.png";
-import ClockImage from "../assets/clock in clock out.png";
+import ClockImage from "../assets/clock in clock out2.png";
 import ComplianceImage from "../assets/complaince and safe guard.png";
 // import AccessImage from "../assets/Access control panel.png";
 import AccessImageF from "../assets/features-Access control panel.png";
@@ -2128,7 +2128,7 @@ export const featuresDummyData = [
     id: 3,
     title: "Admin Console",
     description:
-      "he Admin Console is the single point of control that makes it easy to manage organisational details, manage user access, facilities, roster and staff with smooth, secure operations.",
+      "The Admin Console is the single point of control that makes it easy to manage organisational details, manage user access, facilities, roster and staff with smooth, secure operations.",
     image: AdminConsoleImage,
   },
   {

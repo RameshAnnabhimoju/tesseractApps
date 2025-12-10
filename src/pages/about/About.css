@@ -24,6 +24,7 @@
   line-height: 140%;
   font-size: 24px;
   font-weight: 300;
+  font-family: "inter";
 }
 #about-vision-mission-container {
   display: flex;
@@ -55,6 +56,7 @@
   font-size: 24px;
   line-height: 180%;
   letter-spacing: 0%;
+  font-family: "inter", sans-serif;
 }
 #about-our-team-container {
   display: flex;
@@ -85,6 +87,7 @@
   text-align: center;
   max-width: 76%;
   margin-bottom: 20px;
+  font-family: "inter", sans-serif;
 }
 #about-our-team-title {
   font-family: Roboto;
@@ -98,14 +101,15 @@
 #about-image-overlay-container {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: -180px;
+  /* position: absolute;
+  bottom: -250px; */
   max-width: 70%;
   background-color: white;
   opacity: 0.7;
   padding: 50px 80px;
   border-radius: 40px;
   border: 1px solid #d9d9d9;
+  /* margin-bottom: 100px; */
 }
 #about-image-overlay-heading {
   font-family: Roboto;
@@ -122,6 +126,7 @@
   line-height: 20px;
   letter-spacing: 0%;
   margin-bottom: 55px;
+  font-family: "inter", sans-serif;
 }
 #about-image-overlay-links-container {
   display: flex;
@@ -188,6 +193,7 @@
 }
 .about-team-image-card-text {
   padding: 20px 0;
+  font-family: "inter", sans-serif;
 }
 .about-team-image-card-name {
   font-family: Roboto;
@@ -229,6 +235,7 @@
   line-height: 20px;
   letter-spacing: 0%;
   margin-bottom: 40px;
+  font-family: "inter";
 }
 #about-careers-button {
   background: var(--color-primary);
@@ -265,6 +272,7 @@
   line-height: 20px;
   letter-spacing: 0%;
   margin-bottom: 40px;
+  font-family: "inter", sans-serif;
 }
 @media (max-width: 1130px) {
   #about-image-overlay-container {
