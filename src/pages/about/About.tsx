@@ -149,7 +149,7 @@ const About = () => {
             stay ahead of the curve.
           </div>
           <div id="about-image-overlay-links-container">
-            <div className="about-image-overlay-link">Team</div>
+            {/* <div className="about-image-overlay-link">Team</div> */}
             {/* <div className="about-image-overlay-link">Event 1</div>
             <div className="about-image-overlay-link">Event 2</div>
             <div className="about-image-overlay-link">Event 3</div>
