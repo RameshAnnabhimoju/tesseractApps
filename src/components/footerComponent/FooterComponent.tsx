@@ -5,6 +5,9 @@ import linkedin from "../../assets/linkedin.png";
 import youtube from "../../assets/youtube.png";
 import flagsImag1 from "../../assets/flagImage1.jpg";
 import flagsImag2 from "../../assets/flagImage2.jpg";
+import localAward from "../../assets/2025_CANB_WINNER_LBA.png";
+import iso27001 from "../../assets/JAS-ANZ ISMS.jpg";
+import iso9001 from "../../assets/JAS-ANZ QMS.jpg";
 import { footerProductsData } from "../../utils/DummyData";
 // import { useNavigate } from "react-router-dom";
 // import { AppNavigate } from "../../routes/AppNavigate";
@@ -428,6 +431,23 @@ const FooterComponent = () => {
               SUBSCRIBE
             </button>
           </div>
+        </div>
+        <div id="footer-awards-container">
+          <img
+            src={iso27001}
+            alt="ISO 27001"
+            className="footer-award-image footer-award-image2"
+          />
+          <img
+            src={iso9001}
+            alt="ISO 9001"
+            className="footer-award-image footer-award-image2"
+          />
+          <img
+            src={localAward}
+            alt="Local Business Award"
+            className="footer-award-image"
+          />
         </div>
         <div>
           <div>

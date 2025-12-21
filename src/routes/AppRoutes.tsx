@@ -36,6 +36,7 @@ import Whitepapers from "../pages/whitepapers/Whitepapers";
 import Blog8 from "../pages/blogPost/Blog8";
 import Blog9 from "../pages/blogPost/Blog9";
 import Blog10 from "../pages/blogPost/Blog10";
+import Blog11 from "../pages/blogPost/Blog11";
 // import BookADemoPage from "../pages/bookADemo/BookADemo";
 
 const AppRoutes = () => {
@@ -117,6 +118,7 @@ const AppRoutes = () => {
       <Route path="/blogPost8" element={<Blog8 />} />
       <Route path="/blogPost9" element={<Blog9 />} />
       <Route path="/blogPost10" element={<Blog10 />} />
+      <Route path="/blogPost11" element={<Blog11 />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
       <Route path="/administrator" element={<ByRole />} />

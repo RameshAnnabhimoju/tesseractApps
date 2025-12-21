@@ -93,12 +93,18 @@ const Blog = () => {
                 navigate("/blogpost9");
               } else if (blog.id == 10) {
                 navigate("/blogpost10");
+              } else if (blog.id == 11) {
+                navigate("/blogPost11");
               }
             }}
             className="blog-page-card"
             key={index}
           >
-            <img src={blog.image} alt="Blog" className="blog-page-image" />
+            {typeof blog.image === "string" ? (
+              <img src={blog.image} alt="Blog" className="blog-page-image" />
+            ) : (
+              ""
+            )}
             <div className="blog-page-title">{blog.title}</div>
             <div className="blog-page-description">{blog.description}</div>
             <div className="blog-page-categories">

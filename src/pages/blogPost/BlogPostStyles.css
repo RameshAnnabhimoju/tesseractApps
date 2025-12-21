@@ -245,6 +245,9 @@ p {
 .blog-link:hover {
   text-decoration: underline;
 }
+.blog-11-image {
+  object-position: 0 30%;
+}
 /* Responsive Design */
 @media (max-width: 1024px) {
   .blog-section-image {

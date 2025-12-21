@@ -9,6 +9,7 @@ import blog7 from "../assets/Why Manual Rostering Is Costing You More Than You T
 import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.png";
 import blog9 from "../assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.png";
 import blog10 from "../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.png";
+import Blog11 from "../assets/MelbourneExpo.jpg";
 export const ourBlogDummyData = [
   {
     id: 1,
@@ -155,6 +156,21 @@ export const ourBlogDummyData = [
             `,
     image: blog10,
     date: "2025-11-11",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["Product"],
+  },
+  {
+    id: 11,
+    title:
+      "Tesseract Apps at the Melbourne Expo 2025 Driving Smarter NDIS Operations",
+    description: `Tesseract Apps was proud to showcase our NDIS management platform at
+            the Melbourne Expo 2025, connecting with providers across Victoria
+            to demonstrate how technology can simplify compliance, reduce
+            administrative workload, and improve participant outcomes.`,
+    image: Blog11,
+    date: "2025-12-04",
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
@@ -2142,7 +2158,7 @@ export const featuresDummyData = [
     id: 5,
     title: "Participant Management",
     description:
-      "Track progress, take notes, and monitor goals, while at the same time stay on top of participant needs automatic.",
+      "Track progress, log notes, monitor goals, and stay on top of participant needs — all in one place.",
     image: ParticipantsImage,
   },
   {
@@ -9273,6 +9289,7 @@ import popupImage1 from "../assets/popup-image1.png";
 import popupImage2 from "../assets/popup-image2.png";
 import popupImage3 from "../assets/popup-image3.png";
 import popupImage4 from "../assets/popup-image4.png";
+
 export const bookADemoFormData = [
   {
     text: "Organisation Type",

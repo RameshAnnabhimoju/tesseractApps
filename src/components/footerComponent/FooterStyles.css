@@ -129,6 +129,17 @@
   flex-shrink: 15; /* Item can shrink */
   flex-basis: 1000px;
 }
+#footer-awards-container {
+  display: flex;
+  align-items: center;
+}
+.footer-award-image {
+  width: 100px;
+  margin: 0 10px;
+}
+.footer-award-image2 {
+  width: 145px;
+}
 #footer-bottom-images {
   display: flex;
   margin: 0 6px;
@@ -202,6 +213,14 @@
     flex-grow: 1; /* Item can grow */
     flex-shrink: 1; /* Item can shrink */
     flex-basis: 500px;
+  }
+}
+@media (max-width: 965px) {
+  #footer-awards-container {
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: center;
   }
 }
 @media (max-width: 700px) {
