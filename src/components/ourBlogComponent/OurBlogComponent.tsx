@@ -61,72 +61,76 @@ const OurBlogComponent = () => {
         </div>
       </div>
       <div ref={sliderRef} className="keen-slider">
-        {ourBlogDummyData.map((data, index) => {
-          return (
-            <div
-              key={index}
-              className="keen-slider__slide ourBlog-card"
-              onClick={() => {
-                if (data.id == 1) {
-                  navigate("/blogpost");
-                } else if (data.id == 2) {
-                  navigate("/blogpost2");
-                } else if (data.id == 3) {
-                  navigate("/blogpost3");
-                } else if (data.id == 4) {
-                  navigate("/blogpost4");
-                } else if (data.id == 5) {
-                  navigate("/blogpost5");
-                } else if (data.id == 6) {
-                  navigate("/blogpost6");
-                } else if (data.id == 7) {
-                  navigate("/blogpost7");
-                } else if (data.id == 8) {
-                  navigate("/blogpost8");
-                } else if (data.id == 9) {
-                  navigate("/blogpost9");
-                } else if (data.id == 10) {
-                  navigate("/blogpost10");
-                } else if (data.id == 11) {
-                  navigate("/blogPost11");
-                }
-              }}
-            >
-              <img
-                className="ourBlog-image"
-                src={data.image}
-                alt="ourBlog Image"
-              />
-              <div className="ourBlog-attributes-container">
-                <div className="ourBlog-attributes">{data?.date}</div>
-                {/* <div className="ourBlog-attributes">
+        {ourBlogDummyData
+          .sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          )
+          .map((data, index) => {
+            return (
+              <div
+                key={index}
+                className="keen-slider__slide ourBlog-card"
+                onClick={() => {
+                  if (data.id == 1) {
+                    navigate("/blogpost");
+                  } else if (data.id == 2) {
+                    navigate("/blogpost2");
+                  } else if (data.id == 3) {
+                    navigate("/blogpost3");
+                  } else if (data.id == 4) {
+                    navigate("/blogpost4");
+                  } else if (data.id == 5) {
+                    navigate("/blogpost5");
+                  } else if (data.id == 6) {
+                    navigate("/blogpost6");
+                  } else if (data.id == 7) {
+                    navigate("/blogpost7");
+                  } else if (data.id == 8) {
+                    navigate("/blogpost8");
+                  } else if (data.id == 9) {
+                    navigate("/blogpost9");
+                  } else if (data.id == 10) {
+                    navigate("/blogpost10");
+                  } else if (data.id == 11) {
+                    navigate("/blogPost11");
+                  }
+                }}
+              >
+                <img
+                  className="ourBlog-image"
+                  src={data.image}
+                  alt="ourBlog Image"
+                />
+                <div className="ourBlog-attributes-container">
+                  <div className="ourBlog-attributes">{data?.date}</div>
+                  {/* <div className="ourBlog-attributes">
                   {data?.comments} COMMENTS
                 </div> */}
-              </div>
-              <div className="ourBlog-title">{data?.title}</div>
-              <div className="ourBlog-description">{data?.description}</div>
-              <div className="dividerLine" />
-              <div className="ourBlog-footer">
-                <div className="ourBlog-author">
-                  <img
-                    src={data.authorImage}
-                    alt="author Image"
-                    className="ourBlog-author-image"
-                  />
-                  <div className="ourBlog-author-name">{data?.author}</div>
                 </div>
-                <div className="read-more-container">
-                  <div className="ourBlog-read-more">Read More</div>
-                  <img
-                    className="ourBlog-right-arrow"
-                    src={rightArrow}
-                    alt="arrow Image"
-                  />
+                <div className="ourBlog-title">{data?.title}</div>
+                <div className="ourBlog-description">{data?.description}</div>
+                <div className="dividerLine" />
+                <div className="ourBlog-footer">
+                  <div className="ourBlog-author">
+                    <img
+                      src={data.authorImage}
+                      alt="author Image"
+                      className="ourBlog-author-image"
+                    />
+                    <div className="ourBlog-author-name">{data?.author}</div>
+                  </div>
+                  <div className="read-more-container">
+                    <div className="ourBlog-read-more">Read More</div>
+                    <img
+                      className="ourBlog-right-arrow"
+                      src={rightArrow}
+                      alt="arrow Image"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
-#blog-container{
+#blog-container {
   /* padding-top: 110px; */
+  min-height: 80vh;
 }
 #blog-heading {
   margin-top: 70px;
@@ -16,7 +17,6 @@
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 20px;
   margin: 80px 15%;
-  
 }
 .blog-page-card {
   cursor: pointer;

@@ -17,6 +17,7 @@ import company17 from "../../assets/Clear Choice Clinic Pty Ltd.png";
 // import company18 from "../../assets/I've Got You Empowerment Pty Ltd.png";
 import company19 from "../../assets/ImprovedAbility.png";
 import company20 from "../../assets/RCG-Logo_2[12038376].png";
+import company21 from "../../assets/Company-YDCS-.jpg";
 // import company19 from "../../assets/Aussie Care Health Services Pty Ltd.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -44,6 +45,7 @@ const TrustedClientsComponent = () => {
     // company18,
     company19,
     company20,
+    company21,
   ];
   return (
     <div id="trusted-clients-container">

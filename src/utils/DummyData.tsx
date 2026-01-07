@@ -25,7 +25,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["App", "Technology"],
+    categories: ["NDIS"],
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["App", "Technology"],
+    categories: ["NDIS"],
   },
 
   {
@@ -55,7 +55,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Technology", "Product"],
+    categories: ["NDIS"],
   },
   {
     id: 4,
@@ -71,7 +71,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Technology", "Product"],
+    categories: ["Events"],
   },
   {
     id: 5,
@@ -86,7 +86,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Technology", "Product"],
+    categories: ["Events"],
   },
   {
     id: 6,
@@ -102,7 +102,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Technology", "Product"],
+    categories: ["NDIS"],
   },
   {
     id: 7,
@@ -118,7 +118,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Technology", "Product"],
+    categories: ["NDIS"],
   },
   {
     id: 8,
@@ -131,7 +131,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Technology", "Product"],
+    categories: ["NDIS"],
   },
   {
     id: 9,
@@ -146,7 +146,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Product"],
+    categories: ["NDIS"],
   },
   {
     id: 10,
@@ -159,7 +159,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Product"],
+    categories: ["NDIS"],
   },
   {
     id: 11,
@@ -174,7 +174,7 @@ export const ourBlogDummyData = [
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,
-    categories: ["Product"],
+    categories: ["Events"],
   },
 ];
 export const footerProductsData = {

@@ -10,13 +10,17 @@ const Blog = () => {
     setCategoryFilter(category);
   };
   useEffect(() => {
-    const filteredData = ourBlogDummyData.filter(
-      (blog) =>
-        blog?.categories?.includes(categoryFilter) || categoryFilter === "All"
-    );
+    const filteredData = (
+      categoryFilter === "All"
+        ? ourBlogDummyData
+        : ourBlogDummyData.filter((blog) =>
+            blog?.categories?.includes(categoryFilter)
+          )
+    ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    // Sort by date in descending order
     setBlogsData(filteredData);
   }, [categoryFilter]); //
-
+  const categories = ["All", "NDIS", "Aged Care", "Events", "Business"];
   return (
     <div id="blog-container">
       <div className="heading">BLOG</div>
@@ -27,47 +31,25 @@ const Blog = () => {
         Stay informed with expert articles on NDIS compliance, workforce
         management, digital transformation, and care sector innovation.
       </div>
+
       <div id="blog-category-filters">
         <div id="category-text">Category</div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "All" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("All")}
-        >
-          All
-        </div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "Product" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("Product")}
-        >
-          Product
-        </div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "Technology" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("Technology")}
-        >
-          Technology
-        </div>
-        <div
-          className={
-            "category-filter " +
-            (categoryFilter == "App" ? "active-filter" : "")
-          }
-          onClick={() => handleCategoryFilter("App")}
-        >
-          App
-        </div>
+
+        {categories.map((category) => (
+          <div
+            key={category}
+            className={`category-filter ${
+              categoryFilter === category ? "active-filter" : ""
+            }`}
+            onClick={() => handleCategoryFilter(category)}
+          >
+            {category}
+          </div>
+        ))}
+
         {/* <div id="add-blog-button" onClick={() => navigate("/addBlog")}>
-          New Blog
-        </div> */}
+    New Blog
+  </div> */}
       </div>
       <div id="blog-page-card-container">
         {blogsData.map((blog, index) => (
