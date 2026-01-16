@@ -3,7 +3,7 @@ import Slide from "@mui/material/Slide";
 import "./ExpoPage.css";
 import "../../components/exporBanner/ExpoBanner.css";
 import { Link, useNavigate } from "react-router-dom";
-import closeIcon from "../../assets/close.png";
+import closeIcon from "../../assets/close.webp";
 import { useAppContext } from "../../contexts/AppContext";
 import AppLogo from "../../components/appLogo/AppLogo";
 import giftIcon from "../../assets/gift-icon.svg";

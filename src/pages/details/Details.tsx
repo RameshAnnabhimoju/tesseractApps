@@ -4,7 +4,7 @@ import DetailsHeroComponent from "../../components/detailsHeroComponent/DetailsH
 import DownloadAppComponent from "../../components/donloadAppComponent/DownloadAppComponent";
 import FaqComponent from "../../components/faqComponent/FaqComponent";
 import TestimonialComponent from "../../components/testimonialComponent/TestimonialComponent";
-// import selectedTool from "../../assets/about selected tool.png";
+// import selectedTool from "../../assets/about selected tool.webp";
 import "./DetailsStyles.css";
 const Details = () => {
   return (

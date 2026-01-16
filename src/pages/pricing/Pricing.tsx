@@ -4,20 +4,20 @@ import { useState } from "react";
 import tick from "../../assets/ok.svg";
 import tickBlue from "../../assets/tick-blue.svg";
 import tickBlack from "../../assets/tick-black.svg";
-import remove from "../../assets/remove.png";
+import remove from "../../assets/remove.webp";
 import ArrowDown from "../../assets/arrow_down.svg";
 // import tick_white from "../../assets/tick_white.svg";
 import call from "../../assets/call.svg";
 import mark_email from "../../assets/mark_email.svg";
 import { Link } from "react-router-dom";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
-// import priceBg from "../../assets/price bg.png";
-import p1 from "../../assets/p1.png";
-import p2 from "../../assets/p2.png";
-import p3 from "../../assets/p3.png";
-// import p4 from "../../assets/p4.png";
-import p5 from "../../assets/p6.png";
-import pricingStar from "../../assets/pricing-star.png";
+// import priceBg from "../../assets/price bg.webp";
+import p1 from "../../assets/p1.webp";
+import p2 from "../../assets/p2.webp";
+import p3 from "../../assets/p3.webp";
+// import p4 from "../../assets/p4.webp";
+import p5 from "../../assets/p6.webp";
+import pricingStar from "../../assets/pricing-star.webp";
 import {
   Accordion,
   AccordionDetails,

@@ -11,7 +11,7 @@
   display: flex;
   flex: 1;
   overflow: hidden;
-  background-image: url("/src/assets/Signin-background.png");
+  background-image: url("/src/assets/Signin-background.webp");
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;

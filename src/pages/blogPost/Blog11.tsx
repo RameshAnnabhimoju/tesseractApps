@@ -1,5 +1,5 @@
 import "./BlogPostStyles.css";
-import blogImage from "../../assets/MelbourneExpo.jpg";
+import blogImage from "../../assets/MelbourneExpo.webp";
 const Blog11 = () => {
   return (
     <div className="blog-container">

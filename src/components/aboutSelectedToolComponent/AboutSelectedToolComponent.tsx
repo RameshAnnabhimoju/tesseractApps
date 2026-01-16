@@ -1,7 +1,7 @@
 import "./AboutSelectedToolStyles.css";
 import { aboutSelectedToolDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
-import dividerLine from "../../assets/divider_line.jpg";
+import dividerLine from "../../assets/divider_line.webp";
 // import { useNavigate } from "react-router-dom";
 import useAppNavigate from "../../hooks/useAppNavigate";
 interface aboutSelectedToolType {

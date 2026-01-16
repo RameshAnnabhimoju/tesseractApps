@@ -2,10 +2,10 @@ import "./TestimonialStyles.css";
 import "keen-slider/keen-slider.min.css";
 // import { useKeenSlider } from "keen-slider/react";
 import { testimonialDummyData } from "../../utils/DummyData";
-// import leftArrow from "../../assets/Blue arrow.png";
-// import rightArrow from "../../assets/white arrow.png";
-import star from "../../assets/star.png";
-// import blurImage from "../../assets/blurPinkImage.png";
+// import leftArrow from "../../assets/Blue arrow.webp";
+// import rightArrow from "../../assets/white arrow.webp";
+import star from "../../assets/star.webp";
+// import blurImage from "../../assets/blurPinkImage.webp";
 // import { useEffect, useState } from "react";
 const TestimonialComponent = () => {
   return (

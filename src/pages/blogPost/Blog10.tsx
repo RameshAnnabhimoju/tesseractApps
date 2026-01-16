@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import blogImage from "../../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.png";
+import blogImage from "../../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.webp";
 // import useAppNavigate from "../../hooks/useAppNavigate";
 import "./BlogPostStyles.css";
 

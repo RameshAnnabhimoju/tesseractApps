@@ -1,4 +1,4 @@
-import blog4 from "../../assets/image1.png";
+import blog4 from "../../assets/image1.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import "./BlogPostStyles.css";
 

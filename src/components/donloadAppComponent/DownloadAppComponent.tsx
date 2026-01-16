@@ -1,6 +1,6 @@
 import "./DownloadAppStyles.css";
-import mockup from "../../assets/mockups.png";
-import mobileLinks from "../../assets/mobile_insets.png";
+import mockup from "../../assets/mockups.webp";
+import mobileLinks from "../../assets/mobile_insets.webp";
 const DownloadAppComponent = () => {
   return (
     <div id="download-container">
