@@ -77,6 +77,8 @@ const Blog = () => {
                 navigate("/blogpost10");
               } else if (blog.id == 11) {
                 navigate("/blogPost11");
+              } else if (blog.id == 12) {
+                navigate("/ndis-compliance-audit-failures-2026");
               }
             }}
             className="blog-page-card"

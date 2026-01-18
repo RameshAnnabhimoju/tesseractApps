@@ -93,6 +93,8 @@ const OurBlogComponent = () => {
                     navigate("/blogpost10");
                   } else if (data.id == 11) {
                     navigate("/blogPost11");
+                  } else if (data.id == 12) {
+                    navigate("/ndis-compliance-audit-failures-2026");
                   }
                 }}
               >
