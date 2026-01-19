@@ -1,11 +1,11 @@
 import "./Signup.css";
-// import signupImage from "../../assets/Signup-image.png";
-import closeIcon from "../../assets/close.png";
+// import signupImage from "../../assets/Signup-image.webp";
+import closeIcon from "../../assets/close.webp";
 import { useEffect, useState } from "react";
 import Alert from "../../components/alert/Alert";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
-// import logo_small from "../../assets/tesseract_logo_small.png";
-// import signinBackground from "../../assets/Signin-background.png";
+// import logo_small from "../../assets/tesseract_logo_small.webp";
+// import signinBackground from "../../assets/Signin-background.webp";
 import {
   Box,
   Button,

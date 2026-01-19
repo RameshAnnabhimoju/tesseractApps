@@ -1,15 +1,15 @@
-import image1 from "../assets/blog1.jpg";
-import image2 from "../assets/blog2.jpg";
-import image3 from "../assets/blog3.jpg";
-import image4 from "../assets/image1.png";
-import blog5 from "../assets/Blog5Image3.jpeg";
-import blog6 from "../assets/expo-canberra1.jpg";
-import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
-import blog7 from "../assets/Why Manual Rostering Is Costing You More Than You Think.png";
-import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.png";
-import blog9 from "../assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.png";
-import blog10 from "../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.png";
-import Blog11 from "../assets/MelbourneExpo.jpg";
+import image1 from "../assets/blog1.webp";
+import image2 from "../assets/blog2.webp";
+import image3 from "../assets/blog3.webp";
+import image4 from "../assets/image1.webp";
+import blog5 from "../assets/Blog5Image3.webp";
+import blog6 from "../assets/expo-canberra1.webp";
+import authorImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.webp";
+import blog7 from "../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
+import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.webp";
+import blog9 from "../assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.webp";
+import blog10 from "../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.webp";
+import Blog11 from "../assets/MelbourneExpo.webp";
 export const ourBlogDummyData = [
   {
     id: 1,
@@ -2116,28 +2116,28 @@ export const pricingDummyData = {
   ],
 };
 
-// import RosterManagementImage from "../assets/Roster Management.png";
-import RosterManagementImageF from "../assets/features-Roster Management.png";
-import TimesheetImage from "../assets/Time sheet.png";
-import AdminConsoleImage from "../assets/Admin.png";
-// import HRImage from "../assets/HR.png";
-import HRImageF from "../assets/features-HR.png";
-import ParticipantsImage from "../assets/Participants Management.png";
-import ChatImage from "../assets/Chat and Notification.png";
-// import RepoImage from "../assets/Repository.png";
-import RepoImageF from "../assets/features-Repository.png";
-// import AccountingImage from "../assets/accounting.png";
-import AccountingImageF from "../assets/features-Accounting.png";
-import IncidentImage from "../assets/Incident Management.png";
-import ClockImage from "../assets/clock in clock out2.png";
-import ComplianceImage from "../assets/complaince and safe guard.png";
-// import AccessImage from "../assets/Access control panel.png";
-import AccessImageF from "../assets/features-Access control panel.png";
-import Forms from "../assets/Form.png";
-import TSign from "../assets/T sign.png";
-// import Profile from "../assets/My profile.png";
-import ProfileF from "../assets/features-My profile.png";
-import Role from "../assets/Role base dashboard.png";
+// import RosterManagementImage from "../assets/Roster Management.webp";
+import RosterManagementImageF from "../assets/features-Roster Management.webp";
+import TimesheetImage from "../assets/Time sheet.webp";
+import AdminConsoleImage from "../assets/Admin.webp";
+// import HRImage from "../assets/HR.webp";
+import HRImageF from "../assets/features-HR.webp";
+import ParticipantsImage from "../assets/Participants Management.webp";
+import ChatImage from "../assets/Chat and Notification.webp";
+// import RepoImage from "../assets/Repository.webp";
+import RepoImageF from "../assets/features-Repository.webp";
+// import AccountingImage from "../assets/accounting.webp";
+import AccountingImageF from "../assets/features-Accounting.webp";
+import IncidentImage from "../assets/Incident Management.webp";
+import ClockImage from "../assets/clock in clock out2.webp";
+import ComplianceImage from "../assets/complaince and safe guard.webp";
+// import AccessImage from "../assets/Access control panel.webp";
+import AccessImageF from "../assets/features-Access control panel.webp";
+import Forms from "../assets/Form.webp";
+import TSign from "../assets/T sign.webp";
+// import Profile from "../assets/My profile.webp";
+import ProfileF from "../assets/features-My profile.webp";
+import Role from "../assets/Role base dashboard.webp";
 export const featuresDummyData = [
   {
     id: 1,
@@ -2251,12 +2251,12 @@ export const featuresDummyData = [
     image: Role,
   },
 ];
-import howItWorksImage1 from "../assets/howItWorks1.png";
-import howItWorksImage2 from "../assets/howItWorks2.png";
-import howItWorksImage3 from "../assets/howItWorks3.png";
-// import howItWorksImage4 from "../assets/howItWorks4.png";
-// import howItWorksImage5 from "../assets/howItWorks5.png";
-// import howItWorksImage6 from "../assets/howItWorks6.png";
+import howItWorksImage1 from "../assets/howItWorks1.webp";
+import howItWorksImage2 from "../assets/howItWorks2.webp";
+import howItWorksImage3 from "../assets/howItWorks3.webp";
+// import howItWorksImage4 from "../assets/howItWorks4.webp";
+// import howItWorksImage5 from "../assets/howItWorks5.webp";
+// import howItWorksImage6 from "../assets/howItWorks6.webp";
 export const howItWorksDummyData = [
   {
     id: 1,
@@ -2302,11 +2302,11 @@ export const howItWorksDummyData = [
   // },
 ];
 
-// import testimonialImage from "../assets/avatar-mid-alt.png";
-// import busineessWomanInage from "../assets/businesswoman.png";
-import seedDiability from "../assets/company-4.png";
-import sSquare from "../assets/company-5.png";
-import nexus from "../assets/NEXUS Final.png";
+// import testimonialImage from "../assets/avatar-mid-alt.webp";
+// import busineessWomanInage from "../assets/businesswoman.webp";
+import seedDiability from "../assets/company-4.webp";
+import sSquare from "../assets/company-5.webp";
+import nexus from "../assets/NEXUS Final.webp";
 export const testimonialDummyData = [
   {
     id: 1,
@@ -2411,29 +2411,29 @@ export const dots = {
   dot5: { outer: "#F7ECD9", middle: "#E8C9A5", inner: "#D77E1B" },
   dot6: { outer: "#EBE2FE", middle: "#C7ADFC", inner: "#932EFA" },
 };
-// import detailsHero from "../assets/heroDetails1.png";
-// import productsHero from "../assets/product overview.png";
-// import detailsImage1 from "../assets/detailImage1.png";
-// import detailsImage2 from "../assets/detailImage2.png";
-// import detailsImage3 from "../assets/detailImage3.png";
-// import tesseractApsImage from "../assets/Tesseract Apps.png";
-import rosternew from "../assets/Roster Management  N.png";
-import timesheetNew from "../assets/My roster time sheet N.png";
-import adminConsoleNew from "../assets/Admin Console N.png";
-import accessNew from "../assets/Access control panel N.png";
-import hrnew from "../assets/HR N.png";
-import repoNew from "../assets/Repository 2.png";
-import participantNew from "../assets/Participants N.png";
-import incidentNew from "../assets/Incident Register N.png";
-import rollbased from "../assets/Role-Based Dashboards N.png";
-import tsignNew from "../assets/T Sign N.png";
-import chatNew from "../assets/Chat N.png";
-import myprofileNew from "../assets/My profile N.png";
-import clockiN from "../assets/clock in clock out N.png";
-import formsNew from "../assets/Form N.png";
-import accountingNew from "../assets/Accounting N.png";
-import TLEARNINGNEW from "../assets/T learner N.png";
-import productImage from "../assets/productImage.png";
+// import detailsHero from "../assets/heroDetails1.webp";
+// import productsHero from "../assets/product overview.webp";
+// import detailsImage1 from "../assets/detailImage1.webp";
+// import detailsImage2 from "../assets/detailImage2.webp";
+// import detailsImage3 from "../assets/detailImage3.webp";
+// import tesseractApsImage from "../assets/Tesseract Apps.webp";
+import rosternew from "../assets/Roster Management  N.webp";
+import timesheetNew from "../assets/My roster time sheet N.webp";
+import adminConsoleNew from "../assets/Admin Console N.webp";
+import accessNew from "../assets/Access control panel N.webp";
+import hrnew from "../assets/HR N.webp";
+import repoNew from "../assets/Repository 2.webp";
+import participantNew from "../assets/Participants N.webp";
+import incidentNew from "../assets/Incident Register N.webp";
+import rollbased from "../assets/Role-Based Dashboards N.webp";
+import tsignNew from "../assets/T Sign N.webp";
+import chatNew from "../assets/Chat N.webp";
+import myprofileNew from "../assets/My profile N.webp";
+import clockiN from "../assets/clock in clock out N.webp";
+import formsNew from "../assets/Form N.webp";
+import accountingNew from "../assets/Accounting N.webp";
+import TLEARNINGNEW from "../assets/T learner N.webp";
+import productImage from "../assets/productImage.webp";
 export const SubPagesDummyData = {
   Product: {
     page: "Product",
@@ -3073,8 +3073,8 @@ export const faqPageDummyData = [
   },
 ];
 
-import ourMissionImage from "../assets/m.png";
-import ourVisionImage from "../assets/V.png";
+import ourMissionImage from "../assets/m.webp";
+import ourVisionImage from "../assets/V.webp";
 export const aboutUsPageData = {
   "Our Story": {
     title: "Our Story",
@@ -3099,33 +3099,33 @@ export const aboutUsPageData = {
     },
   ],
 };
-import MaheshwariImage from "../assets/MAHESWARI ADABALA - OPERATIONS MANAGER.jpg";
-import ManimalaImImage from "../assets/MANIMALA JEEBU - SOFTWARE ENGINEER.jpg";
-import MeghanaImage from "../assets/MEGHNA THAPA - ACCOUNT MANAGER.jpg";
-import DeepakRaj from "../assets/DEEPAK RAJ KORUKONDA - SOFTWARE ENGINEER.jpg";
-import DivyaRani from "../assets/DIVYARANI MACHCHA - BUSINESS ANALYST.jpg";
-import PratyushaImage from "../assets/JINKA PRATHYUSHA - SOFTWARE ENGINEER.jpg";
-import PraveenImage from "../assets/PRAVEEN SHESHAM - TEAM LEAD.jpg";
-import RiyazImage from "../assets/RIYAZAT JAFFAR KAZARANI - UI GRAPHIC DESIGNER.jpg";
-import KrishnaImage from "../assets/SAI KRISHNA MUNIRATHINAM - TEST ENGINEER.jpg";
-import SarojaImage from "../assets/SAROJA TENNETY - TECHNICAL ARCHITECT.jpg";
-import TejithaImage from "../assets/TEJITHA YELLAMELLI - SOFTWARE ENGINEER.jpg";
-import SushimithaImage from "../assets/SUSHIMITHA KORUKONDA - TEAM MANAGER.jpg";
-import RajKumarImage from "../assets/BOBBILI RAJKUMAR - PRODUCT DESINGER.jpg";
-import PrameelaImage from "../assets/PRAMEELA KESAVADASU - SENIOR TEST ENGINEER.jpg";
-import PrashanthImage from "../assets/PRASHANTH RAGULA - SENIOR SOFTWARE ENGINEER.jpg";
-import EashwarImage from "../assets/SAI ESWAR KANDREGULA - TEST ENGINEER.jpg";
-import SaranImage from "../assets/SINGAREDDY SARAN KUMAR REDDY - SENIOR SOFTWARE ENGINEER.jpg";
-import SuryaImage from "../assets/SURYAVAMSI DOMMETI - SOFTWARE ENGINEER.jpg";
-import NagendraImage from "../assets/NAGENDRA - CO FOUNDER.jpg";
-import KranthiImage from "../assets/KRANTHI KAKKERLA - CO FOUNDER.jpg";
-import RevanthImage from "../assets/REVANTH-CEO.png";
-import BelleImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.jpg";
-import TomerImage from "../assets/TOMER DORON - SOLUTIONS CONSULTANT.jpg";
-import DarshanImage from "../assets/DARSHAN M SHELAT - SOLUTIONS CONSULTANT.jpg";
-import sureshImage from "../assets/SURESH-COFOUNDER.png";
-import rameshImage from "../assets/RameshAnnabhimoju.png";
-import sumanthImage from "../assets/SUMANTH-COFOUNDER.png";
+import MaheshwariImage from "../assets/MAHESWARI ADABALA - OPERATIONS MANAGER.webp";
+import ManimalaImImage from "../assets/MANIMALA JEEBU - SOFTWARE ENGINEER.webp";
+import MeghanaImage from "../assets/MEGHNA THAPA - ACCOUNT MANAGER.webp";
+import DeepakRaj from "../assets/DEEPAK RAJ KORUKONDA - SOFTWARE ENGINEER.webp";
+import DivyaRani from "../assets/DIVYARANI MACHCHA - BUSINESS ANALYST.webp";
+import PratyushaImage from "../assets/JINKA PRATHYUSHA - SOFTWARE ENGINEER.webp";
+import PraveenImage from "../assets/PRAVEEN SHESHAM - TEAM LEAD.webp";
+import RiyazImage from "../assets/RIYAZAT JAFFAR KAZARANI - UI GRAPHIC DESIGNER.webp";
+import KrishnaImage from "../assets/SAI KRISHNA MUNIRATHINAM - TEST ENGINEER.webp";
+import SarojaImage from "../assets/SAROJA TENNETY - TECHNICAL ARCHITECT.webp";
+import TejithaImage from "../assets/TEJITHA YELLAMELLI - SOFTWARE ENGINEER.webp";
+import SushimithaImage from "../assets/SUSHIMITHA KORUKONDA - TEAM MANAGER.webp";
+import RajKumarImage from "../assets/BOBBILI RAJKUMAR - PRODUCT DESINGER.webp";
+import PrameelaImage from "../assets/PRAMEELA KESAVADASU - SENIOR TEST ENGINEER.webp";
+import PrashanthImage from "../assets/PRASHANTH RAGULA - SENIOR SOFTWARE ENGINEER.webp";
+import EashwarImage from "../assets/SAI ESWAR KANDREGULA - TEST ENGINEER.webp";
+import SaranImage from "../assets/SINGAREDDY SARAN KUMAR REDDY - SENIOR SOFTWARE ENGINEER.webp";
+import SuryaImage from "../assets/SURYAVAMSI DOMMETI - SOFTWARE ENGINEER.webp";
+import NagendraImage from "../assets/NAGENDRA - CO FOUNDER.webp";
+import KranthiImage from "../assets/KRANTHI KAKKERLA - CO FOUNDER.webp";
+import RevanthImage from "../assets/REVANTH-CEO.webp";
+import BelleImage from "../assets/BELLE BAI - MARKETING EXECUTIVE.webp";
+import TomerImage from "../assets/TOMER DORON - SOLUTIONS CONSULTANT.webp";
+import DarshanImage from "../assets/DARSHAN M SHELAT - SOLUTIONS CONSULTANT.webp";
+import sureshImage from "../assets/SURESH-COFOUNDER.webp";
+import rameshImage from "../assets/RameshAnnabhimoju.webp";
+import sumanthImage from "../assets/SUMANTH-COFOUNDER.webp";
 
 // export const teamsPageData = {
 //   CEO: [
@@ -3467,15 +3467,15 @@ export const blogsData = [
     ],
   },
 ];
-import adminImage from "../assets/Role Administrator.png";
-import rosterManager from "../assets/Product Roster management.png";
-import ndisStaff from "../assets/Role NDIS staff.png";
-import hr from "../assets/Role HR manager.png";
-import accountingImage from "../assets/Role Accounting.png";
-import participantsImage from "../assets/Role Participants.png";
-import one from "../assets/01.png";
-import two from "../assets/02.png";
-import three from "../assets/03.png";
+import adminImage from "../assets/Role Administrator.webp";
+import rosterManager from "../assets/Product Roster management.webp";
+import ndisStaff from "../assets/Role NDIS staff.webp";
+import hr from "../assets/Role HR manager.webp";
+import accountingImage from "../assets/Role Accounting.webp";
+import participantsImage from "../assets/Role Participants.webp";
+import one from "../assets/01.webp";
+import two from "../assets/02.webp";
+import three from "../assets/03.webp";
 export const byRoleData = {
   Administrator: {
     hero: {
@@ -4118,12 +4118,12 @@ export const byRoleData = {
     },
   },
 };
-import ndisIndustry from "../assets/NDIS Industry.png";
-import ictIndustry from "../assets/ICT Industry.png";
-import retail from "../assets/Retail & Hospitality.png";
-import multiSite from "../assets/Multi-site Businesses.png";
-import construction from "../assets/Construction-removebg-preview.png";
-import manufacturing from "../assets/Manufacturing-removebg-preview.png";
+import ndisIndustry from "../assets/NDIS Industry.webp";
+import ictIndustry from "../assets/ICT Industry.webp";
+import retail from "../assets/Retail & Hospitality.webp";
+import multiSite from "../assets/Multi-site Businesses.webp";
+import construction from "../assets/Construction-removebg-preview.webp";
+import manufacturing from "../assets/Manufacturing-removebg-preview.webp";
 export const byIndustryData = {
   "NDIS Industry": {
     hero: {
@@ -4791,11 +4791,11 @@ export const byIndustryData = {
     },
   },
 };
-import support from "../assets/Disability Support.png";
-import aged from "../assets/aged_Care_Services-removebg-preview.png";
-import child from "../assets/Childcare_Services-removebg-preview.png";
-import allied from "../assets/Allied_Health_Practices-removebg-preview.png";
-import home from "../assets/Home___Community_Care-removebg-preview.png";
+import support from "../assets/Disability Support.webp";
+import aged from "../assets/aged_Care_Services-removebg-preview.webp";
+import child from "../assets/Childcare_Services-removebg-preview.webp";
+import allied from "../assets/Allied_Health_Practices-removebg-preview.webp";
+import home from "../assets/Home___Community_Care-removebg-preview.webp";
 export const byCareData = {
   "Disability Support (NDIS)": {
     hero: {
@@ -5520,10 +5520,10 @@ export const byCareData = {
     },
   },
 };
-import small from "../assets/Small Businesses.png";
-import enterprise from "../assets/Enterprise-removebg-preview.png";
-import Franchises from "../assets/Franchises-removebg-preview.png";
-import Startups from "../assets/Startups-removebg-preview.png";
+import small from "../assets/Small Businesses.webp";
+import enterprise from "../assets/Enterprise-removebg-preview.webp";
+import Franchises from "../assets/Franchises-removebg-preview.webp";
+import Startups from "../assets/Startups-removebg-preview.webp";
 export const byBusinessType = {
   "Small Businesses": {
     hero: {
@@ -6009,10 +6009,10 @@ export const byBusinessType = {
     },
   },
 };
-import compliance from "../assets/ompliance-removebg-preview.png";
-import emmpEng from "../assets/Employee Engagement.png";
-import timeEff from "../assets/Time_Efficiency-removebg-preview.png";
-import costOp from "../assets/Cost_Optimisation-removebg-preview.png";
+import compliance from "../assets/ompliance-removebg-preview.webp";
+import emmpEng from "../assets/Employee Engagement.webp";
+import timeEff from "../assets/Time_Efficiency-removebg-preview.webp";
+import costOp from "../assets/Cost_Optimisation-removebg-preview.webp";
 export const byBusinessProblem = {
   Compliance: {
     hero: {
@@ -6445,30 +6445,29 @@ export const byBusinessProblem = {
     },
   },
 };
-// import rosterN from "../assets/Roster Management  N.png";
-import resterManagement from "../assets/Roster manager schedule.png";
-import adminConsole from "../assets/Product Admin con.png";
-import adminConsole2 from "../assets/admin 2.png";
-// import timesheets from "../assets/Product Time sheet.png";
-import accessControl from "../assets/Product Access control.png";
-import accessControlPanel from "../assets/access.png";
-import hrOperations from "../assets/Product HR.png";
-import tsign from "../assets/Product Sign.png";
-// import clockInAndOut from "../assets/Product Sign in.png";
-import participantManagement from "../assets/partispant management.png";
-import incidentManagement from "../assets/incident.png";
-import repository from "../assets/Product Repository.png";
-import roleBasedDashboard from "../assets/Product Rolebase dashboard.png";
-// import forms from "../assets/Forms.png";
-import prodForms from "../assets/Product Forms.png";
-import prodChat from "../assets/Product Access control.png";
-import accounting from "../assets/Product Accounting.png";
-import tLearingHub from "../assets/learning.png";
-import myProfile from "../assets/Product My profile.png";
-import myProfileNew from "../assets/My profile N.png";
-// import chat from "../assets/Chat.png";
-import salesforce from "../assets/service.png";
-import wyzed from "../assets/S and L.png";
+import resterManagement from "../assets/Roster manager schedule.webp";
+import adminConsole from "../assets/Product Admin con.webp";
+import adminConsole2 from "../assets/admin 2.webp";
+// import timesheets from "../assets/Product Time sheet.webp";
+import accessControl from "../assets/Product Access control.webp";
+import accessControlPanel from "../assets/access.webp";
+import hrOperations from "../assets/Product HR.webp";
+import tsign from "../assets/Product Sign.webp";
+// import clockInAndOut from "../assets/Product Sign in.webp";
+import participantManagement from "../assets/partispant management.webp";
+import incidentManagement from "../assets/incident.webp";
+import repository from "../assets/Product Repository.webp";
+import roleBasedDashboard from "../assets/Product Rolebase dashboard.webp";
+// import forms from "../assets/Forms.webp";
+import prodForms from "../assets/Product Forms.webp";
+import prodChat from "../assets/Product Access control.webp";
+import accounting from "../assets/Product Accounting.webp";
+import tLearingHub from "../assets/learning.webp";
+import myProfile from "../assets/Product My profile.webp";
+import myProfileNew from "../assets/My profile N.webp";
+// import chat from "../assets/Chat.webp";
+import salesforce from "../assets/service.webp";
+import wyzed from "../assets/S and L.webp";
 export const productsDetailsData = {
   "Roster Management": {
     page: "Roster Management",
@@ -9029,11 +9028,11 @@ export const productsDetailsData = {
   },
 };
 
-import ourStory1 from "../assets/ourStory1.png";
-import ourStory2 from "../assets/ourStory2.png";
-import ourStory3 from "../assets/ourStory3.png";
-import ourStory4 from "../assets/ourStory4.png";
-import ourStory5 from "../assets/ourStory5.png";
+import ourStory1 from "../assets/ourStory1.webp";
+import ourStory2 from "../assets/ourStory2.webp";
+import ourStory3 from "../assets/ourStory3.webp";
+import ourStory4 from "../assets/ourStory4.webp";
+import ourStory5 from "../assets/ourStory5.webp";
 export const ourStoryData = [
   {
     id: 5,
@@ -9117,14 +9116,14 @@ and NDIS providers.`,
   },
 ];
 
-import humanResourceIvon from "../assets/hero-T Sign.png";
-import heroIncident from "../assets/hero-Incident  Register.png";
-import heroHr from "../assets/hero-Human  Resources.png";
-import roster from "../assets/hero-Roster  Management.png";
-import heroAccounting from "../assets/hero-Account  Management.png";
-import heroperformance from "../assets/hero-Performance  Management.png";
-import heropayroll from "../assets/hero-Payroll 2.png";
-import heroparticipant from "../assets/hero-Participants.png";
+import humanResourceIvon from "../assets/hero-T Sign.webp";
+import heroIncident from "../assets/hero-Incident  Register.webp";
+import heroHr from "../assets/hero-Human  Resources.webp";
+import roster from "../assets/hero-Roster  Management.webp";
+import heroAccounting from "../assets/hero-Account  Management.webp";
+import heroperformance from "../assets/hero-Performance  Management.webp";
+import heropayroll from "../assets/hero-Payroll 2.webp";
+import heroparticipant from "../assets/hero-Participants.webp";
 export const homeLeftArcsData = [
   {
     id: "p1",
@@ -9298,10 +9297,10 @@ export const homeRightArcsData = [
     label: "Participant Management",
   },
 ];
-import popupImage1 from "../assets/popup-image1.png";
-import popupImage2 from "../assets/popup-image2.png";
-import popupImage3 from "../assets/popup-image3.png";
-import popupImage4 from "../assets/popup-image4.png";
+import popupImage1 from "../assets/popup-image1.webp";
+import popupImage2 from "../assets/popup-image2.webp";
+import popupImage3 from "../assets/popup-image3.webp";
+import popupImage4 from "../assets/popup-image4.webp";
 
 export const bookADemoFormData = [
   {

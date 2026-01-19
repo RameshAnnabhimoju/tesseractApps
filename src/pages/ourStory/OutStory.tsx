@@ -1,10 +1,10 @@
 import "./OurStoryStyles.css";
-import ourStoryImage from "../../assets/our story image.png";
-import ourStoryImage1 from "../../assets/our-story-1.jpg";
-import ourStoryImage2 from "../../assets/our-story-2.jpg";
-import ourStoryImage3 from "../../assets/our-story-3.jpg";
-import ourStoryImage4 from "../../assets/our-story-4.jpg";
-import ourStoryImage5 from "../../assets/our-story-5.jpg";
+import ourStoryImage from "../../assets/our story image.webp";
+import ourStoryImage1 from "../../assets/our-story-1.webp";
+import ourStoryImage2 from "../../assets/our-story-2.webp";
+import ourStoryImage3 from "../../assets/our-story-3.webp";
+import ourStoryImage4 from "../../assets/our-story-4.webp";
+import ourStoryImage5 from "../../assets/our-story-5.webp";
 
 import { useEffect } from "react";
 

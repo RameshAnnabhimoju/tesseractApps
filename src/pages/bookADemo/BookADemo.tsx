@@ -1,16 +1,16 @@
 import "./BookADemo.css";
 import { Dialog } from "@mui/material";
-import closeIcon from "../../assets/close.png";
+import closeIcon from "../../assets/close.webp";
 import Slide from "@mui/material/Slide";
 import { useEffect, useState } from "react";
 import { bookADemoFormData } from "../../utils/DummyData";
-import logo_small from "../../assets/popup-logo.png";
+import logo_small from "../../assets/popup-logo.webp";
 import TextField from "@mui/material/TextField";
 import React from "react";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
 import Alert from "../../components/alert/Alert";
-import image1 from "../../assets/bookADemoSuccess.png";
-import image2 from "../../assets/bookADemoSuccessMan.png";
+import image1 from "../../assets/bookADemoSuccess.webp";
+import image2 from "../../assets/bookADemoSuccessMan.webp";
 import {
   bookDemoConfirmationEmailTemplate,
   bookDemoEmailTemplate,

@@ -12,7 +12,7 @@ Disallow: /*?*
 Allow: /
 Allow: /assets/
 Allow: /vite.svg
-Allow: /tesseract_logo.png
+Allow: /tesseract_logo.webp
 
 # Allow all public content pages
 Allow: /blogs

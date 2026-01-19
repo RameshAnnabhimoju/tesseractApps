@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
 import "./DetailsHeroStyles.css";
 import { useAppContext } from "../../contexts/AppContext";
-import productHeroImage from "../../assets/productHeroImage.png";
+import productHeroImage from "../../assets/productHeroImage.webp";
 // import { AppNavigate } from "../../routes/AppNavigate";
 interface DeatailsHeroType {
   data?: {

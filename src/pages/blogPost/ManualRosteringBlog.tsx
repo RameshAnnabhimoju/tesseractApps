@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
 // import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
-import blogImage from "../../assets/Why Manual Rostering Is Costing You More Than You Think.png";
+import blogImage from "../../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
 const ManualRosteringBlog = () => {
   // const navigate = useNavigate();
 

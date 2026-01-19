@@ -2,42 +2,49 @@ import "./OurBlogStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
-// import image3 from "../../assets/image2.png";
-// import image4 from "../../assets/image3.png";
-// import leftArrow from "../../assets/Blue arrow.png";
-import rightArrow from "../../assets/white arrow.png";
+// import image3 from "../../assets/image2.webp";
+// import image4 from "../../assets/image3.webp";
+// import leftArrow from "../../assets/Blue arrow.webp";
+import rightArrow from "../../assets/white arrow.webp";
 import { ourBlogDummyData } from "../../utils/DummyData";
 import { useNavigate } from "react-router-dom";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowRight from "../arrows/ArrowRight";
-import { useEffect, useState } from "react";
 
 const OurBlogComponent = () => {
-  const [perView, setPerView] = useState(4);
-  useEffect(() => {
-    if (window.innerWidth <= 1100) {
-      setPerView(3);
-    }
-    if (window.innerWidth <= 1000) {
-      setPerView(2);
-    }
-    if (window.innerWidth <= 570) {
-      setPerView(1);
-    }
-  }, []);
+  const getPerView = () => {
+    if (typeof window === "undefined") return 4;
+    if (window.innerWidth <= 570) return 1;
+    if (window.innerWidth <= 1000) return 2;
+    if (window.innerWidth <= 1100) return 3;
+    return 4;
+  };
+
   const [sliderRef, slider] = useKeenSlider(
     {
       mode: "free-snap",
       slides: {
-        perView: perView,
+        perView: getPerView(),
         spacing: 50,
-      },
-      slideChanged(slide) {
-        console.log(slide.track.details.rel);
       },
     },
     [
-      // add plugins here
+      (slider) => {
+        const handleResize = () => {
+          slider.update({
+            slides: {
+              perView: getPerView(),
+              spacing: 50,
+            },
+          });
+        };
+        slider.on("created", () => {
+          window.addEventListener("resize", handleResize);
+        });
+        slider.on("destroyed", () => {
+          window.removeEventListener("resize", handleResize);
+        });
+      },
     ]
   );
 

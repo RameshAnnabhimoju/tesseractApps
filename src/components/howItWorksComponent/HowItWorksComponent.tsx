@@ -1,6 +1,6 @@
 import "./HowItWorksStyles.css";
 import { howItWorksDummyData } from "../../utils/DummyData";
-import dividerLine from "../../assets/divider_line.jpg";
+import dividerLine from "../../assets/divider_line.webp";
 import { useEffect, useState } from "react";
 const HowItWorksComponent = () => {
   const divderRowsInitialValues = [2, 3, 5, 6];

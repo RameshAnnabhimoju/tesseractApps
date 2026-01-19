@@ -1,8 +1,8 @@
 // import { useNavigate } from "react-router-dom";
 // import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
-import blog5 from "../../assets/expo-canberra1.jpg"; // replace with actual expo image
-import blog6 from "../../assets/expo-canberra2.jpg";
+import blog5 from "../../assets/expo-canberra1.webp"; // replace with actual expo image
+import blog6 from "../../assets/expo-canberra2.webp";
 import blogVideo from "../../assets/Canberra Expo 2025.mp4"; // replace with actual expo image
 
 const CanberraNDISExpoBlog = () => {

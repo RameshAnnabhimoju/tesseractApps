@@ -1,5 +1,5 @@
 import Mail from "../svgs/Mail";
-import close from "../../assets/close.png";
+import close from "../../assets/close.webp";
 import "./Alert.css";
 import ReactDOM from "react-dom";
 import Success from "../svgs/Success";

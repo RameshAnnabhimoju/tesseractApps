@@ -1,6 +1,6 @@
 import "./ExpoBanner.css";
-import expoBannerImage from "../../assets/expo-banner-oct.png";
-import closeIcon from "../../assets/close.png";
+import expoBannerImage from "../../assets/expo-banner-oct.webp";
+import closeIcon from "../../assets/close.webp";
 import { ChangeEvent, useState } from "react";
 import { Dialog } from "@mui/material";
 import Slide from "@mui/material/Slide";

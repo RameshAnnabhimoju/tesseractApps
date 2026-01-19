@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
 // import { AppNavigate } from "../../routes/AppNavigate";
 import "./BlogPostStyles.css";
-import blogImage from "../../assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.png"; // replace with actual image
+import blogImage from "../../assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.webp"; // replace with actual image
 import useAppNavigate from "../../hooks/useAppNavigate";
 
 const BeyondComplianceBlog = () => {

@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
 // import { AppNavigate } from "../../routes/AppNavigate";
 import "./BlogPostStyles.css";
-import blogImage from "../../assets/blog2.jpg";
+import blogImage from "../../assets/blog2.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
 const FutureProofingBlog = () => {
   // const navigate = useNavigate();

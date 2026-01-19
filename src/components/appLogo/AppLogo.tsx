@@ -1,5 +1,5 @@
 import "./AppLogo.css";
-import logo_small from "../../assets/tesseract_logo_small.png";
+import logo_small from "../../assets/tesseract_logo_small.webp";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 
