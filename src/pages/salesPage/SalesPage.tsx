@@ -6,6 +6,7 @@ import {
   expertTalkConfirmationEmailTemplate,
   expertTalkEmailTemplate,
 } from "../../utils/emailTemplates";
+import { useMetaTags } from "../../utils/useMetaTags";
 type demoFormType = {
   fullName: string;
   email: string;
@@ -34,6 +35,11 @@ const demoFormErrorState: demoFormType = {
   preferredTime: "Required",
 };
 const SalesPage = () => {
+  useMetaTags({
+    title: "Talk to an Expert | Sales Enquiry | TesseractApps",
+    description: "Speak directly with our NDIS software specialists. Contact TesseractApps sales team for expert advice on workforce management solutions for your care business."
+  });
+
   const [formData, setFormData] = useState(demoFormInitialState);
   const [formErrors, setFormErrors] = useState(demoFormInitialState);
   const [checkbox, setCheckbox] = useState(false);

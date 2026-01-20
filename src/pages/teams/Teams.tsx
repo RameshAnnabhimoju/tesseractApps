@@ -1,6 +1,13 @@
 import "./TeamsStyles.css";
 import { teamsPageData } from "../../utils/DummyData";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const Teams = () => {
+  useMetaTags({
+    title: "Meet the TesseractApps Team | Leadership & Experts | Australian Tech",
+    description: "Meet the diverse team behind TesseractApps - technologists, product specialists, and industry experts committed to solving real-world workforce management challenges."
+  });
+
   return (
     <div id="teams-container">
       <div className="heading">TEAM</div>

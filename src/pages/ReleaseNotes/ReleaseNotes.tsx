@@ -1,5 +1,12 @@
 import "./ReleaseNotes.css";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const ReleaseNotes = () => {
+  useMetaTags({
+    title: "Release Notes | Product Updates & New Features | TesseractApps",
+    description: "Stay updated with TesseractApps latest features and improvements. Browse release notes for all platform updates, bug fixes, and new functionality."
+  });
+
   return (
     <div id="release-notes-container">
       <h1>What's New?</h1>

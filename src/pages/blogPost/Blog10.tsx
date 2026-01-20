@@ -2,8 +2,13 @@ import { useNavigate } from "react-router-dom";
 import blogImage from "../../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.webp";
 // import useAppNavigate from "../../hooks/useAppNavigate";
 import "./BlogPostStyles.css";
+import { useMetaTags } from "../../utils/useMetaTags";
 
 const Blog10 = () => {
+  useMetaTags({
+    title: "Common Payroll Pitfalls for NDIS Providers | Avoid Mistakes | TesseractApps",
+    description: "Avoid common payroll mistakes as an NDIS provider. SCHADS Award compliance, timesheet accuracy, and payroll processing best practices."
+  });
   const appNavigate = useNavigate();
 
   function handleClick(name: string) {

@@ -2,7 +2,13 @@ import "./BlogStyles.css";
 import { ourBlogDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const Blog = () => {
+  useMetaTags({
+    title: "TesseractApps Blog | NDIS Industry Insights & Tips | Australia",
+    description: "Expert articles on NDIS compliance, workforce management, digital transformation, and care sector innovation. Stay informed with industry updates and practical tips."
+  });
   const navigate = useNavigate();
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [blogsData, setBlogsData] = useState(ourBlogDummyData);
@@ -55,29 +61,7 @@ const Blog = () => {
         {blogsData.map((blog, index) => (
           <div
             onClick={() => {
-              if (blog.id == 1) {
-                navigate("/blogpost");
-              } else if (blog.id == 2) {
-                navigate("/blogpost2");
-              } else if (blog.id == 3) {
-                navigate("/blogpost3");
-              } else if (blog.id == 4) {
-                navigate("/blogpost4");
-              } else if (blog.id == 5) {
-                navigate("/blogpost5");
-              } else if (blog.id == 6) {
-                navigate("/blogpost6");
-              } else if (blog.id == 7) {
-                navigate("/blogpost7");
-              } else if (blog.id == 8) {
-                navigate("/blogpost8");
-              } else if (blog.id == 9) {
-                navigate("/blogpost9");
-              } else if (blog.id == 10) {
-                navigate("/blogpost10");
-              } else if (blog.id == 11) {
-                navigate("/blogPost11");
-              }
+              if (blog.slug) navigate(blog.slug);
             }}
             className="blog-page-card"
             key={index}

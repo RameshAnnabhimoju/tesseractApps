@@ -3,7 +3,14 @@
 import "./BlogPostStyles.css";
 import blogImage from "../../assets/blog2.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const FutureProofingBlog = () => {
+  useMetaTags({
+    title: "Future-Proofing Your NDIS Business | Technology Trends | TesseractApps",
+    description: "Learn how to future-proof your NDIS business with technology. Digital transformation strategies, automation trends, and compliance preparation for providers."
+  });
+
   // const navigate = useNavigate();
   const appNavigate = useAppNavigate();
   function handleClick(name: string) {

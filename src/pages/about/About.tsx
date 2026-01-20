@@ -16,7 +16,14 @@ import BecImage from "../../assets/16.webp";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const About = () => {
+  useMetaTags({
+    title: "About TesseractApps | Our Story, Mission & Team | Australian NDIS Software",
+    description: "Learn about TesseractApps - founded in 2022 to simplify NDIS compliance and care management. Meet our team of technologists and industry experts building the future of workforce technology in Australia."
+  });
+
   const location = useLocation();
 
   useEffect(() => {

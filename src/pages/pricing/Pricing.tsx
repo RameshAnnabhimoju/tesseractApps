@@ -28,6 +28,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useAppContext } from "../../contexts/AppContext";
+import { useMetaTags } from "../../utils/useMetaTags";
 // import useAppNavigate from "../../hooks/useAppNavigate";
 // import { AppNavigate } from "../../routes/AppNavigate";
 // type PricingDataTickItemTypes = {
@@ -39,6 +40,10 @@ import { useAppContext } from "../../contexts/AppContext";
 //   data4?: { value: boolean; text: string };
 // };
 const Pricing = () => {
+  useMetaTags({
+    title: "TesseractApps Pricing | NDIS Software Plans & Packages | Australia",
+    description: "View TesseractApps pricing plans for NDIS providers. Choose from Starter, Standard, Professional, or Premium packages. 7-day free trial, no credit card required. Get 10% off with full accounting suite."
+  });
   const imageArr1 = [p1, p2];
   const imageArr2 = [p3, p5];
   // const navigate = useNavigate();
