@@ -37,6 +37,7 @@ import Blog8 from "../pages/blogPost/Blog8";
 import Blog9 from "../pages/blogPost/Blog9";
 import Blog10 from "../pages/blogPost/Blog10";
 import Blog11 from "../pages/blogPost/Blog11";
+import NDISComplianceBlog from "../pages/blogPost/NDISComplianceBlog";
 // import BookADemoPage from "../pages/bookADemo/BookADemo";
 
 const AppRoutes = () => {
@@ -119,6 +120,7 @@ const AppRoutes = () => {
       <Route path="/top-3-compliance-myths-busted" element={<Blog9 />} />
       <Route path="/common-payroll-pitfalls-ndis" element={<Blog10 />} />
       <Route path="/melbourne-expo-2025" element={<Blog11 />} />
+      <Route path="/ndis-compliance-audit-failures-2026" element={<NDISComplianceBlog />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
       <Route path="/administrator" element={<ByRole />} />

@@ -284,6 +284,10 @@ export const metaTagsConfig: Record<string, MetaTagConfig> = {
     title: "TesseractApps at Melbourne Expo 2025 | NDIS Event Recap | Australia",
     description: "TesseractApps showcases NDIS management platform at Melbourne Expo 2025. Simplifying compliance and improving participant outcomes for Victorian providers."
   },
+  "/ndis-compliance-audit-failures-2026": {
+    title: "Why NDIS Providers Fail Compliance Audits 2026 | How to Fix It | TesseractApps",
+    description: "Learn why NDIS providers fail compliance audits in 2026 and how to fix common issues. Documentation, training records, risk management, and governance gaps explained."
+  },
 
   // Legal Pages
   "/privacy-policy": {

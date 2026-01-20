@@ -10,6 +10,7 @@ import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software 
 import blog9 from "../assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.webp";
 import blog10 from "../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.webp";
 import Blog11 from "../assets/MelbourneExpo.webp";
+import blog12 from "../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
 export const ourBlogDummyData = [
   {
     id: 1,
@@ -186,6 +187,22 @@ export const ourBlogDummyData = [
     authorImage: authorImage,
     comments: 0,
     categories: ["Events"],
+  },
+  {
+    id: 12,
+    slug: "/ndis-compliance-audit-failures-2026",
+    title:
+      "Why NDIS Providers Fail Compliance Audits in 2026 | How to Fix It",
+    description: `NDIS compliance audits are not failing providers because of poor
+            care delivery. They fail because providers cannot demonstrate
+            compliance with evidence. Learn about the common audit failures
+            and how to fix them.`,
+    image: blog12,
+    date: "2026-01-20",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["NDIS"],
   },
 ];
 export const footerProductsData = {
