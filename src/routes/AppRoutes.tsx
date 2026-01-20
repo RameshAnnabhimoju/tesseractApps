@@ -37,6 +37,7 @@ import Blog8 from "../pages/blogPost/Blog8";
 import Blog9 from "../pages/blogPost/Blog9";
 import Blog10 from "../pages/blogPost/Blog10";
 import Blog11 from "../pages/blogPost/Blog11";
+import NDISComplianceBlog from "../pages/blogPost/NDISComplianceBlog";
 // import BookADemoPage from "../pages/bookADemo/BookADemo";
 
 const AppRoutes = () => {

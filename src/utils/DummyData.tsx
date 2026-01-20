@@ -187,6 +187,19 @@ export const ourBlogDummyData = [
     comments: 0,
     categories: ["Events"],
   },
+  {
+    id: 12,
+    title: "Why NDIS Providers Fail Compliance Audits in 2026 | How to Fix It",
+    description: `NDIS compliance audits are not failing providers because of poor care delivery. 
+    They fail because providers cannot demonstrate compliance with evidence.
+Across Australia, auditors consistently identify the same systemic weaknesses: fragmented documentation, incomplete training records, weak risk management, and reactive governance. While these issues may seem operationally minor, they frequently result in non-conformities under the NDIS Practice Standards—placing provider registration, funding, and reputation at risk.`,
+    image: Blog11,
+    date: "2026-01-08",
+    author: "Belle Bai",
+    authorImage: authorImage,
+    comments: 0,
+    categories: ["NDIS"],
+  },
 ];
 export const footerProductsData = {
   0: [

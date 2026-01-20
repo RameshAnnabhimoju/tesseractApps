@@ -10,6 +10,163 @@ const ReleaseNotes = () => {
   return (
     <div id="release-notes-container">
       <h1>What's New?</h1>
+      <h2>v1.29.0</h2>
+      <ul>
+        <li>
+          <b>Quote Generator:</b> Introduced a Quote Generator to enable
+          providers to quickly create service quotes with accurate pricing and
+          service details.
+        </li>
+        <br />
+        <li>
+          <b>Rounding and buffer time:</b> Implemented a 15-minute and 30 minute
+          rounding in the timesheet. Allows a buffer time so minor time
+          variances are treated as matched, preventing unnecessary timesheet
+          mismatches.
+        </li>
+        <br />
+        <li>
+          <b>Replicate Previous Week / Fortnightly Roster:</b> Roster managers
+          can now replicate rosters from the previous week or fortnight. This
+          enhancement significantly reduces repetitive scheduling work, improves
+          efficiency, and ensures continuity in staff and participant
+          assignments.
+        </li>
+        <br />
+        <li>
+          <b>My Availability – New Changes:</b> Enhanced staff availability
+          management with updated logic and improved flexibility. Roster
+          managers now have more accurate and reliable availability data when
+          planning shifts, leading to better coverage and reduced scheduling
+          conflicts.
+        </li>
+        <br />
+        <li>
+          <b>Repository Renamed to “Documents”:</b> The existing repository has
+          been renamed to Documents, consolidating:
+          <br />
+          Staff documents
+          <br />
+          Organization documents
+          <br />
+          Participant documents
+          <br />
+          Compliance-related files
+          <br />
+          This unified structure improves document management, accessibility,
+          and compliance tracking.
+        </li>
+        <br />
+        <li>
+          <b>Multi-Facility Staff Payments by Facility Pay Group:</b> Introduced
+          support for processing staff payments by facility-specific pay groups.
+          This allows accurate payroll calculations for staff working across
+          multiple facilities, ensuring correct pay rates and financial
+          reporting per facility.
+        </li>
+        <br />
+        <li>
+          <b>Conversion of Unused Leave Hours:</b> Enabled conversion of unused
+          leave hours in accordance with NDIS guidelines. This feature supports
+          compliant rollover options, incentives, or adjustments, giving
+          providers greater flexibility while maintaining regulatory adherence.
+        </li>
+        <br />
+        <li>
+          <b>Period Management in Participant Module:</b> Added period
+          management functionality within the participant module to control
+          service periods, billing cycles, and funding timelines. This improves
+          accuracy in participant service tracking and financial management.
+        </li>
+        <br />
+        <li>
+          <b>Notification & Communication in Participant Contacts:</b>{" "}
+          Introduced notifications and communication capabilities within
+          participant contacts. This ensures timely updates, better
+          coordination, and improved communication between providers, staff, and
+          participant contacts.
+        </li>
+        <br />
+        <li>
+          <b>Compliance Report for Each Staff:</b> Implemented a comprehensive
+          compliance report at the staff level. This report provides visibility
+          into document status, training completion, and overall compliance,
+          helping organizations meet audit and regulatory requirements.
+        </li>
+        <br />
+        <li>
+          <b>
+            Cross Rostering for Staff & Participants Across Multiple Facilities:
+          </b>
+          Enabled cross-facility rostering where staff and participants can be
+          assigned to multiple facilities. This enhancement supports complex
+          operational models and ensures payroll accuracy for individuals
+          working across different facilities.
+        </li>
+        <br />
+        <li>
+          <b>Document Acknowledgement / Confirmation:</b> Introduced document
+          acknowledgement functionality, allowing staff (e.g., support workers)
+          to confirm they have viewed and acknowledged documents. This feature
+          provides audit proof, reduces compliance risk, and protects providers
+          from liability.
+        </li>
+      </ul>
+      <h2>v1.28.0</h2>
+      <ul>
+        <li>
+          <b>Bulk Upload Enhancements:</b> Implemented Staff, Participant and
+          Facility bulk uploads.
+        </li>
+        <br />
+        <li>
+          <b>Staff Documentation:</b> Now the Admin has the feasibility to
+          either approve or reject the documents uploaded by Staff which can
+          improve the documentation.
+        </li>
+        <br />
+        <li>
+          <b>Participant Nickname Feature and notifications:</b> Admins can
+          assign a nickname to each participant for quick and intuitive
+          identification across the platform and notified when a service is
+          created or updated or when a staff is assigned.
+        </li>
+        <br />
+        <li>
+          <b>Chat:</b> The web and platform now includes real-time messaging
+          authenticated via CometChat, enhancing team communication.
+        </li>
+        <br />
+        <li>
+          <b>MYOB Integration:</b> New improvements streamline synchronisation
+          between the platform and MYOB, ensuring accurate financial and payroll
+          data.
+        </li>
+        <br />
+        <li>
+          <b>Repository – Documents Enhancements:</b> Improved the documents
+          repository structure, making organisation, retrieval, and versioning
+          more efficient.
+        </li>
+        <br />
+        <li>
+          <b>Login Page Upgrade:</b> Introduced a modern UI with improved
+          accessibility and performance for login.
+        </li>
+        <br />
+        <li>
+          <b>Fund Tracker – Approved Date Fix / Entity Name Update:</b>{" "}
+          Implemented a complete solution to address incorrect approved dates
+          and entity naming issues within the fund tracker.
+        </li>
+        <br />
+        <li>
+          <b>Facility - Documentation:</b> Four new tabs—Documents, Identity,
+          Trainings, and Shift Compliance—have been added under Facility
+          Documentation, allowing all related documents and identity details to
+          be configured in one place.
+        </li>
+      </ul>
       <h2>v1.27.0</h2>
       <ul>
         <li>
