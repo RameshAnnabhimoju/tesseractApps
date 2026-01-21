@@ -6,6 +6,9 @@ import AboutSelectedToolComponent from "../../components/aboutSelectedToolCompon
 import FaqProductComponent from "../../components/faqProductComponent/faqProductComponent";
 import { useAppContext } from "../../contexts/AppContext";
 import ComingSoon from "../comingSoon/ComingSoon";
+import { useMetaTags } from "../../utils/useMetaTags";
+import { getMetaTags } from "../../utils/metaTagsConfig";
+
 interface productDetailsTypes {
   data: {
     page: string;
@@ -76,6 +79,9 @@ const ProductDetails = () => {
   const location = useLocation();
   const { getRoute } = useAppContext();
   const path = location.pathname.replace(/\/$/, "");
+  const metaTags = getMetaTags(path);
+  useMetaTags(metaTags);
+
   const data: productDetailsTypes["data"] =
     (location.state as any)?.data ?? getRoute(path)?.data ?? null;
   if (!data) {

@@ -1,8 +1,14 @@
 import blog4 from "../../assets/image1.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import "./BlogPostStyles.css";
+import { useMetaTags } from "../../utils/useMetaTags";
 
 const Blog8 = () => {
+  useMetaTags({
+    title: "NDIS Automation Guide | Workflow Efficiency | TesseractApps",
+    description: "Automate your NDIS operations for efficiency. Guide to workflow automation, time savings, and reducing administrative burden for care providers."
+  });
+
   const appNavigate = useAppNavigate();
 
   function handleClick(name: string) {

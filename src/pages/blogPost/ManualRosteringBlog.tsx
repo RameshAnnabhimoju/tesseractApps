@@ -2,7 +2,14 @@
 // import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
 import blogImage from "../../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const ManualRosteringBlog = () => {
+  useMetaTags({
+    title: "Why Manual Rostering Costs More Than You Think | NDIS | TesseractApps",
+    description: "Calculate the true cost of manual rostering for your NDIS business. Time waste, errors, compliance risks, and how automation delivers ROI."
+  });
+
   // const navigate = useNavigate();
 
   // function handleClick(name: string) {

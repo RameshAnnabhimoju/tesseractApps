@@ -6,7 +6,13 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 // import { useState } from "react";
 import ArrowDown from "../../assets/arrow_down.svg";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const FAQ = () => {
+  useMetaTags({
+    title: "Help Center | FAQs & Support Resources | TesseractApps",
+    description: "Find answers to common questions about TesseractApps. Browse FAQs, guides, and support resources to get the most from your NDIS software platform."
+  });
   // const [expanded, setExpanded] = useState(-1);
 
   // const handleExpansion = (index: number) => {

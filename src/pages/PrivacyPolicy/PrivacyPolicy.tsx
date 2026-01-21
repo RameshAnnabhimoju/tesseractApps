@@ -1,6 +1,12 @@
 import "./PrivacyPolicy.css";
+import { useMetaTags } from "../../utils/useMetaTags";
 
 const PrivacyPolicy = () => {
+  useMetaTags({
+    title: "Privacy Policy | Data Protection | TesseractApps Australia",
+    description: "TesseractApps privacy policy. Learn how we collect, use, and protect your personal information. Data hosted securely in Australia, compliant with Privacy Act 1988."
+  });
+
   return (
     <div id="privacy-policy-container">
       <div id="privacy-policy-title" className="heading">

@@ -6,6 +6,7 @@ import {
   bookDemoConfirmationEmailTemplate,
   bookDemoEmailTemplate,
 } from "../../utils/emailTemplates";
+import { useMetaTags } from "../../utils/useMetaTags";
 type demoFormType = {
   fullName: string;
   email: string;
@@ -34,6 +35,11 @@ const demoFormErrorState: demoFormType = {
   preferredTime: "Required",
 };
 const RequestADemo = () => {
+  useMetaTags({
+    title: "Book a Demo | See TesseractApps in Action | NDIS Software Australia",
+    description: "Book a free demo of TesseractApps NDIS software. See how our platform can streamline your rostering, compliance, and participant management. No obligation."
+  });
+
   const [formData, setFormData] = useState(demoFormInitialState);
   const [formErrors, setFormErrors] = useState(demoFormInitialState);
   const [checkbox, setCheckbox] = useState(false);

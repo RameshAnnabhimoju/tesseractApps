@@ -2,7 +2,7 @@
 // import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
 // import blogImage from "../../assets/NDIS Compliance Audits 2026.png";
-import blogImage from "../../assets/Why Manual Rostering Is Costing You More Than You Think.png";
+import blogImage from "../../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
 
 const NDISComplianceBlog = () => {
   // const navigate = useNavigate();
@@ -328,7 +328,7 @@ const NDISComplianceBlog = () => {
             accessible when auditors request it.
           </p>
           <p>
-            If you’re reviewing your compliance framework for 2026, exploring
+            If you're reviewing your compliance framework for 2026, exploring
             the right systems early can make a measurable difference.
           </p>
         </section>

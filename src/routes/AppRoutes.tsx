@@ -109,21 +109,18 @@ const AppRoutes = () => {
       <Route path="/about" element={<About />} />
       <Route path="/careers" element={<Careers />} />
       <Route path="/contact-us" element={<ContactInformation />} />
-      <Route path="/blogPost" element={<Blogpost />} />
-      <Route path="/blogPost2" element={<FutureProofingBlog />} />
-      <Route path="/blogPost3" element={<Blog4 />} />
-      <Route path="/blogPost4" element={<Blog5 />} />
-      <Route path="/blogPost5" element={<CanberraNDISExpoBlog />} />
-      <Route path="/blogPost6" element={<BeyondComplianceBlog />} />
-      <Route path="/blogPost7" element={<ManualRosteringBlog />} />
-      <Route path="/blogPost8" element={<Blog8 />} />
-      <Route path="/blogPost9" element={<Blog9 />} />
-      <Route path="/blogPost10" element={<Blog10 />} />
-      <Route path="/blogPost11" element={<Blog11 />} />
-      <Route
-        path="/ndis-compliance-audit-failures-2026"
-        element={<NDISComplianceBlog />}
-      />
+      <Route path="/protecting-participant-data" element={<Blogpost />} />
+      <Route path="/future-proofing-disability-services" element={<FutureProofingBlog />} />
+      <Route path="/hidden-costs-workforce-management" element={<Blog4 />} />
+      <Route path="/sydney-disability-workability-expo-2025" element={<Blog5 />} />
+      <Route path="/canberra-ndis-expo" element={<CanberraNDISExpoBlog />} />
+      <Route path="/beyond-compliance-care-quality" element={<BeyondComplianceBlog />} />
+      <Route path="/manual-rostering-hidden-costs" element={<ManualRosteringBlog />} />
+      <Route path="/future-proof-ndis-organisation-2025" element={<Blog8 />} />
+      <Route path="/top-3-compliance-myths-busted" element={<Blog9 />} />
+      <Route path="/common-payroll-pitfalls-ndis" element={<Blog10 />} />
+      <Route path="/melbourne-expo-2025" element={<Blog11 />} />
+      <Route path="/ndis-compliance-audit-failures-2026" element={<NDISComplianceBlog />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
       <Route path="/administrator" element={<ByRole />} />

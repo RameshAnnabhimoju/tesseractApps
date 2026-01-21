@@ -10,9 +10,11 @@ import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software 
 import blog9 from "../assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.webp";
 import blog10 from "../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.webp";
 import Blog11 from "../assets/MelbourneExpo.webp";
+import blog12 from "../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
 export const ourBlogDummyData = [
   {
     id: 1,
+    slug: "/protecting-participant-data",
     title:
       "Protecting Participant Data: Why Security Matters for NDIS and Care Providers",
     description: ` Every day, disability support and aged care providers collect
@@ -29,6 +31,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 2,
+    slug: "/future-proofing-disability-services",
     title:
       "Future-Proofing Disability Services: Why NDIS Providers Need Smarter Systems Now",
     description: `Australia’s NDIS (National Disability Insurance Scheme) is evolving at pace. By March 2025, the scheme supported over 717,000 active participants — a 3.5% increase in just one quarter. This rapid expansion creates significant operational, compliance, and workforce challenges for NDIS providers.`,
@@ -42,6 +45,7 @@ export const ourBlogDummyData = [
 
   {
     id: 3,
+    slug: "/hidden-costs-workforce-management",
     title: "The Hidden Costs of Poor Workforce Management for NDIS Providers",
     description: `NDIS service providers rely on having their operations staffed 
     properly. But too many organizations don’t realize how much bad workforce management 
@@ -59,6 +63,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 4,
+    slug: "/sydney-disability-workability-expo-2025",
     title:
       "Unforgettable Moments at the Disability & WorkAbility Sydney Expo 2025",
     description: `On August 8th - 9th, 2025, the TesseractApps team proudly participated in 
@@ -75,7 +80,8 @@ export const ourBlogDummyData = [
   },
   {
     id: 5,
-    title: "TesseractApps Connects with Canberra’s NDIS Community at the Expo",
+    slug: "/canberra-ndis-expo",
+    title: "TesseractApps Connects with Canberra's NDIS Community at the Expo",
     description: `As a proud Canberra-based company, TesseractApps was thrilled to
             participate in the recent Canberra NDIS Expo, connecting with local
             providers, allied health professionals, and community organisations.
@@ -90,6 +96,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 6,
+    slug: "/beyond-compliance-care-quality",
     title:
       "Beyond Compliance: How TesseractApps NDIS Software Elevates Care Quality and Staff Experience",
     description: `NDIS providers face strict compliance requirements while working to
@@ -106,6 +113,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 7,
+    slug: "/manual-rostering-hidden-costs",
     title: "Why Manual Rostering Is Costing You More Than You Think",
     description: `Many NDIS providers still build rosters by hand — using
             spreadsheets, whiteboards or group chats. It feels simple and
@@ -122,6 +130,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 8,
+    slug: "/future-proof-ndis-organisation-2025",
     title:
       "Future-Proof Your NDIS Organisation: Strategies for 2025 and Beyond",
     description: `The NDIS landscape is evolving rapidly. With regulatory changes and rising expectations from participants in 2025 and beyond, providers need smarter, more sustainable ways to operate. Future-proofing your organisation means enhancing compliance, streamlining operations, empowering your workforce, and delivering consistently high-quality care.
@@ -135,6 +144,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 9,
+    slug: "/top-3-compliance-myths-busted",
     title: "Top 3 Compliance Myths Busted",
     description: `Compliance is one of the biggest concerns for NDIS providers. Many
             organisations worry about audits, documentation gaps, and the
@@ -150,6 +160,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 10,
+    slug: "/common-payroll-pitfalls-ndis",
     title: "Avoid These Common Payroll Pitfalls: A Guide for NDIS Provider",
     description: `Payroll management is essential for NDIS providers, but even minor errors can create compliance risks, financial losses, and staff dissatisfaction. Understanding and addressing common payroll pitfalls ensures smooth operations, accurate reporting, and happier employees.
 
@@ -163,6 +174,7 @@ export const ourBlogDummyData = [
   },
   {
     id: 11,
+    slug: "/melbourne-expo-2025",
     title:
       "Tesseract Apps at the Melbourne Expo 2025 Driving Smarter NDIS Operations",
     description: `Tesseract Apps was proud to showcase our NDIS management platform at
@@ -178,12 +190,15 @@ export const ourBlogDummyData = [
   },
   {
     id: 12,
-    title: "Why NDIS Providers Fail Compliance Audits in 2026 | How to Fix It",
-    description: `NDIS compliance audits are not failing providers because of poor care delivery. 
-    They fail because providers cannot demonstrate compliance with evidence.
-Across Australia, auditors consistently identify the same systemic weaknesses: fragmented documentation, incomplete training records, weak risk management, and reactive governance. While these issues may seem operationally minor, they frequently result in non-conformities under the NDIS Practice Standards—placing provider registration, funding, and reputation at risk.`,
-    image: Blog11,
-    date: "2026-01-08",
+    slug: "/ndis-compliance-audit-failures-2026",
+    title:
+      "Why NDIS Providers Fail Compliance Audits in 2026 | How to Fix It",
+    description: `NDIS compliance audits are not failing providers because of poor
+            care delivery. They fail because providers cannot demonstrate
+            compliance with evidence. Learn about the common audit failures
+            and how to fix them.`,
+    image: blog12,
+    date: "2026-01-20",
     author: "Belle Bai",
     authorImage: authorImage,
     comments: 0,

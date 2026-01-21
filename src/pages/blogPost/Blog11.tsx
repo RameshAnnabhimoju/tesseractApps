@@ -1,6 +1,13 @@
 import "./BlogPostStyles.css";
 import blogImage from "../../assets/MelbourneExpo.webp";
+import { useMetaTags } from "../../utils/useMetaTags";
+
 const Blog11 = () => {
+  useMetaTags({
+    title: "NDIS Industry Trends 2025 | Care Sector Outlook | TesseractApps",
+    description: "Explore NDIS industry trends for 2025. Technology adoption, regulatory changes, workforce challenges, and opportunities for Australian care providers."
+  });
+
   return (
     <div className="blog-container">
       <img

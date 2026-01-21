@@ -4,8 +4,15 @@ import blog5 from "../../assets/Blog5Image3.webp";
 import blogImage1 from "../../assets/Blog5Image1.webp";
 import blogVideo from "../../assets/Sydney expo 2025.mp4";
 import useAppNavigate from "../../hooks/useAppNavigate";
+import { useMetaTags } from "../../utils/useMetaTags";
 // import blogImage2 from "../../assets/Blog5Image2.webp";
+
 const Blog5 = () => {
+  useMetaTags({
+    title: "NDIS Compliance Guide | Provider Requirements | TesseractApps",
+    description: "Essential NDIS compliance guide for providers. Understand Quality and Safeguards requirements, documentation needs, and how technology can help you stay compliant."
+  });
+
   // const navigate = useNavigate();
   const appNavigate = useAppNavigate();
   function handleClick(name: string) {

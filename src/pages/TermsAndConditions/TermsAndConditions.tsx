@@ -1,6 +1,12 @@
 import "./TermsAndConditions.css";
+import { useMetaTags } from "../../utils/useMetaTags";
 
 const TermsAndConditions = () => {
+  useMetaTags({
+    title: "Terms & Conditions | Service Agreement | TesseractApps Australia",
+    description: "TesseractApps terms and conditions for NDIS software services. Understand your rights, subscription terms, data ownership, and service agreements."
+  });
+
   return (
     <div id="terms-and-conditions-container">
       <h1 className="heading">Terms & Conditions</h1>

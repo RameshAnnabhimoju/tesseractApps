@@ -6,6 +6,9 @@ import { useAppContext } from "../../contexts/AppContext";
 import ComingSoon from "../comingSoon/ComingSoon";
 import "./SubPage.css";
 import { useLocation } from "react-router-dom";
+import { useMetaTags } from "../../utils/useMetaTags";
+import { getMetaTags } from "../../utils/metaTagsConfig";
+
 const SubPage = () => {
   const location = useLocation();
   // const { data } = location.state || {};
@@ -13,6 +16,10 @@ const SubPage = () => {
 
   // normalize path
   const path = location.pathname.replace(/\/$/, "");
+
+  // Set dynamic meta tags based on current route
+  const metaTags = getMetaTags(path);
+  useMetaTags(metaTags);
 
   // Prefer location.state.data (present when navigated internally), otherwise fallback to AppContext
   const data = (location.state as any)?.data ?? getRoute(path)?.data ?? null;
