@@ -110,8 +110,8 @@ const Pricing = () => {
           </h1>
           <div className="pricing-divider-line pricing-divider-line-header" />
           <h2 className="text pricing-textt">
-            "Our all-in-one NDIS software helps you manage everything from staff
-            schedules to billing, quickly and easily."
+            "Our all in one NDIS software helps you manage everything 
+            from staffing schedules to billing quickly and with ease."
           </h2>
           <div id="pricing-cta-button">
             <button
@@ -122,7 +122,7 @@ const Pricing = () => {
             </button>
           </div>
           <h2 className="pricing-hero-bottom-text">
-            No credit card is required. Free onboarding included.
+            No credit card is required.  
           </h2>
         </div>
         <div id="paricing-hero-images-container">

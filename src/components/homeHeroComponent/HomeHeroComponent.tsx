@@ -37,7 +37,7 @@ const HomeHeroComponent = () => {
         <img src={logo_small} alt="tesseract logo" id="home-tesseract-logo" />
         <h1 id="home-text-heading">End-to-End Workforce Management Software</h1>
         <h2 id="home-text-subText">
-          TesseractApps simplifies compliance, team management, NDIS care, and
+          TesseractApps simplifies compliance, team management, NDIS-related care, and
           service delivery for care providers and IT consultants in one secure,
           scalable platform.
         </h2>
@@ -46,7 +46,7 @@ const HomeHeroComponent = () => {
           {/* <ArrowRight className="arrow-icon" /> */}
         </div>
         <div id="home-button-subtext">
-          No credit card is required. Free onboarding included.
+          No credit card is required.  
         </div>
         {/* <div id="home-store-links-container">
           <img

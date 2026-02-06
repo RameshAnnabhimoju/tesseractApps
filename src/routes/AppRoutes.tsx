@@ -159,7 +159,7 @@ const AppRoutes = () => {
       <Route path="/participant-management" element={<ProductDetails />} />
       <Route path="/incident-management" element={<ProductDetails />} />
       <Route path="/role-based-dashboard" element={<ProductDetails />} />
-      <Route path="/repository" element={<ProductDetails />} />
+      <Route path="/Documents" element={<ProductDetails />} />
       <Route path="/chat" element={<ProductDetails />} />
       <Route path="/my-profile" element={<ProductDetails />} />
       <Route path="/forms" element={<ProductDetails />} />
