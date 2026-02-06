@@ -1126,7 +1126,7 @@ const searchKeywords = [
   "Clock In & Clock Out",
   "Participant Management",
   "Incident Management",
-  "Repository",
+  "Documents",
   "Role based Dashboard",
   "My Profile",
   "Forms",

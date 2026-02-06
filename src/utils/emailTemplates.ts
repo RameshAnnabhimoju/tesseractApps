@@ -43,7 +43,7 @@ export const newsletterSubscriptionEmailTemplate = {
   email: "sales@tesseractapps.com",
   subject: "Request for newsletter subscription",
   body: (
-    email: string
+    email: string,
   ) => `${email} has requested a subscription for our newsletter.\n
         Email: ${email}\n
         \n
@@ -212,7 +212,7 @@ export const signupConfirmationEmailTemplate = {
   subject: "Thank You for Signing Up! We've Received Your Details",
   text: (firstName: string) => `Hi ${firstName},\n
     \n
-      Thank you for signing up with Tesseract Apps!\n
+      Thank you for signing up with TesseractApps!\n
       We've received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.\n
       If you have any immediate questions, feel free to reach out to us at [sales@tesseractapps.com] or call us at [+61261332819, 1300 252 808].\n
       We're excited to connect with you soon!\n
@@ -225,7 +225,7 @@ export const signupConfirmationEmailTemplate = {
 
   html: (firstName: string) => `
     <div>Hi ${firstName},</div>
-    <p>Thank you for signing up with Tesseract Apps!</p>
+    <p>Thank you for signing up with TesseractApps!</p>
     <p>We've received your details and our team is currently reviewing them. One of our representatives will get in touch with you soon to guide you through the next steps.
       If you have any immediate questions, feel free to reach out to us at [sales@tesseractapps.com] or call us at [+61261332819, 1300 252 808].
       We're excited to connect with you soon!
