@@ -9639,9 +9639,8 @@ export const signupFormData = [
       type: "select",
       options: [
         { name: "NDIS Provider", value: "NDIS Provider" },
-        { name: "Aged Care Service", value: "Aged Care Service" },
+        { name: "Aged Care", value: "Aged Care" },
         { name: "Childcare", value: "Childcare" },
-        { name: "Allied Health", value: "Allied Health" },
         { name: "Allied Health", value: "Allied Health" },
         { name: "Other", value: "Other" },
       ],
