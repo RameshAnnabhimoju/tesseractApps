@@ -110,7 +110,7 @@ const Pricing = () => {
           </h1>
           <div className="pricing-divider-line pricing-divider-line-header" />
           <h2 className="text pricing-textt">
-            "Our all in one NDIS software helps you manage everything 
+            "Our all in one NDIS software helps you manage everything
             from staffing schedules to billing quickly and with ease."
           </h2>
           <div id="pricing-cta-button">
@@ -118,11 +118,11 @@ const Pricing = () => {
               className="cta-button pricing-button-primary button-contain"
               onClick={handleTryItFree}
             >
-              Try It Free
+              Try For Free
             </button>
           </div>
           <h2 className="pricing-hero-bottom-text">
-            No credit card is required.  
+            No credit card is required.
           </h2>
         </div>
         <div id="paricing-hero-images-container">
@@ -272,9 +272,9 @@ const Pricing = () => {
                     >
                       {data.Pricing > 0
                         ? "$" +
-                          (toggleSwitch
-                            ? (data.Pricing * 0.9).toFixed(2)
-                            : data.Pricing)
+                        (toggleSwitch
+                          ? (data.Pricing * 0.9).toFixed(2)
+                          : data.Pricing)
                         : ""}
                     </div>
                     <div
@@ -506,10 +506,10 @@ const Pricing = () => {
       )}
       {(pricingDummyData[selectedTab as keyof typeof pricingDummyData] ?? [])
         .length == 0 && (
-        <div id="pricing-contact-information">
-          <ContactInformationCard />
-        </div>
-      )}
+          <div id="pricing-contact-information">
+            <ContactInformationCard />
+          </div>
+        )}
       <div id="pricing-help-card">
         <div id="pricing-help-title-container">
           <div id="pricing-help-title">Still have questions?</div>
@@ -563,9 +563,8 @@ const PricingDataItem: React.FC<PricingDataItemProps> = ({
         <img
           src={data.value ? tick : remove}
           alt={data.value ? "tick" : "remove"}
-          className={`pricing-data-tick ${
-            data.value ? "pricing-data-tick-success" : ""
-          }`}
+          className={`pricing-data-tick ${data.value ? "pricing-data-tick-success" : ""
+            }`}
         />
       )}
       {data.text}
