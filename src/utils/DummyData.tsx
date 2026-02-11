@@ -10,7 +10,7 @@ import blog8 from "../assets/Beyond Compliance_ How TesseractApps NDIS Software 
 import blog9 from "../assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.webp";
 import blog10 from "../assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.webp";
 import Blog11 from "../assets/MelbourneExpo.webp";
-import blog12 from "../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
+import blog13 from "../assets/Why NDIS Providers Fail Compliance Audits in 2026 _ How to Fix It.webp";
 export const ourBlogDummyData = [
   {
     id: 1,
@@ -196,7 +196,7 @@ export const ourBlogDummyData = [
             care delivery. They fail because providers cannot demonstrate
             compliance with evidence. Learn about the common audit failures
             and how to fix them.`,
-    image: blog12,
+    image: blog13,
     date: "2026-01-20",
     author: "Belle Bai",
     authorImage: authorImage,
@@ -638,6 +638,26 @@ export const pricingDummyData = {
         {
           title: "Participant Profiles",
           subTitle: "Track goals, notes & progress",
+          data1: {
+            value: true,
+            text: "",
+          },
+          data2: {
+            value: true,
+            text: "",
+          },
+          data3: {
+            value: true,
+            text: "",
+          },
+          data4: {
+            value: true,
+            text: "",
+          },
+        },
+        {
+          title: "Quote",
+          subTitle: "Create a contact quickly for quoting",
           data1: {
             value: true,
             text: "",

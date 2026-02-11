@@ -2,7 +2,7 @@
 // import { appNavigate } from "../../routes/AppRoutes";
 import "./BlogPostStyles.css";
 // import blogImage from "../../assets/NDIS Compliance Audits 2026.png";
-import blogImage from "../../assets/Why Manual Rostering Is Costing You More Than You Think.webp";
+import blogImage from "../../assets/Why NDIS Providers Fail Compliance Audits in 2026 _ How to Fix It.webp";
 
 const NDISComplianceBlog = () => {
   // const navigate = useNavigate();
