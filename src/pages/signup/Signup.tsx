@@ -8,7 +8,6 @@ import logo_small from "../../assets/popup-logo.webp";
 // import signinBackground from "../../assets/Signin-background.webp";
 import {
   Box,
-  Button,
   Dialog,
   Step,
   StepLabel,
