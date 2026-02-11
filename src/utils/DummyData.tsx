@@ -2355,7 +2355,7 @@ export const testimonialDummyData = [
   {
     id: 4,
     rating: 4,
-    testimonial: `“Revolutionizing NDIS Workforce Management and IT Solutions. Tesseract Apps has streamlined our operations with its all-in-one platform for NDIS care providers and IT consultants. Liking the fact that Tesseract centralizes timesheets, HR, payroll, contracts, and compliance - carrying out transactions is now a breeze with the sense of security added. Onboarding was smooth, thanks to the responsive customer support. The admin console provides full organizational control, while the role-based dashboards and mobile access empower our team to stay informed and productive from anywhere. Since switching from another provider, we've saved time, reduced errors. The platform’s reliability (99.9% uptime) and automation capabilities have significantly reduced manual work and improved compliance. TesseractApps isn’t just software—it’s a Game-Changer. Highly recommended for anyone seeking a smart, intuitive design, scalable and user-friendly solution.”`,
+    testimonial: `“Revolutionizing NDIS Workforce Management and IT Solutions. TesseractApps has streamlined our operations with its all-in-one platform for NDIS  care providers and IT consultants. Liking the fact that Tesseract centralizes timesheets, HR, payroll, contracts, and compliance - carrying out transactions is now a breeze with the sense of security added. Onboarding was smooth, thanks to the responsive customer support. The admin console provides full organizational control, while the role-based dashboards and mobile access empower our team to stay informed and productive from anywhere. Since switching from another provider, we've saved time, reduced errors. The platform’s reliability (99.9% uptime) and automation capabilities have significantly reduced manual work and improved compliance. TesseractApps isn’t just software—it’s a Game-Changer. Highly recommended for anyone seeking a smart, intuitive design, scalable and user-friendly solution.”`,
     authorImage: nexus,
     author: "Nexus IT",
     authorTitle: "",
@@ -3537,7 +3537,7 @@ export const byRoleData = {
           dot: dots.dot6,
           title: "Role-Based Dashboard",
           description:
-            "Monitor operations in one place, tracking staff activity, performance, compliance, and workflows in real-time. Administrators Make informed decisions quickly with real-time financial insights.",
+            "Monitor operations in one place, tracking staff activity, performance, compliance, and workflows in real-time. Administrators make informed decisions quickly.",
         },
         {
           dot: dots.dot5,
@@ -3634,7 +3634,7 @@ export const byRoleData = {
         {
           dot: dots.dot2,
           title: "Timesheets and Attendance",
-          description: `Monitor staff hours, submit and approve timesheets, and link shifts to payroll for seamless integration. Ensure accurate reporting, reducing errors in staff payments.. `,
+          description: `Monitor staff hours, submit and approve timesheets, and link shifts to payroll for seamless integration. Ensure accurate reporting, reducing errors in staff payments. `,
         },
         {
           dot: dots.dot3,
@@ -3755,7 +3755,7 @@ export const byRoleData = {
         {
           dot: dots.dot6,
           title: "Compliance Tracker",
-          description: `Stay compliant with taxation, auditing, and NDIS reporting requirements, ensuring timely action. Receive automated alerts for upcoming deadlines, ensuring timely action. Accountants minimise risk and ensure accurate financial reporting. `,
+          description: `Stay compliant with taxation, auditing, and NDIS reporting requirements, ensuring timely action. Receive automated alerts for upcoming deadlines, ensuring you never miss a crucial date. Accountants minimise risk and ensure accurate financial reporting. `,
         },
         {
           dot: dots.dot1,
@@ -3784,7 +3784,7 @@ export const byRoleData = {
       {
         title: "Reporting and Workflow Efficiency ",
         description:
-          "Dashboards and reporting tools offer real-time insights into payroll, spending, and financial performance. Automation reduces manual processes, allowing accountants to focus on accuracy, analysis, and strategic financial planning. ",
+          "Dashboards and reporting tools provide staff real-time visibility into payroll, spending, and financial performance. Automation reduces manual processes, allowing accountants to focus on accuracy, analysis, and strategic financial planning. ",
         images: [two],
       },
     ],
@@ -4144,7 +4144,7 @@ export const byIndustryData = {
       image: ndisIndustry,
       title: "Complete Workforce & Compliance Solution for NDIS Providers",
       description:
-        "TesseractApps provides a secure, integrated platform designed for NDIS organisations. From participant management to rostering, payroll, and compliance, we simplify your operations allowing to focus on quality care. ",
+        "TesseractApps provides a secure, integrated platform designed for NDIS organisations. From participant management to rostering, payroll, and compliance, we simplify your operations, allowing you to focus on quality care. ",
       page: "NDIS Industry",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
@@ -4167,12 +4167,12 @@ export const byIndustryData = {
         {
           dot: dots.dot3,
           title: "Efficient Workforce Management",
-          description: `Smart rostering, timesheets, and payroll automation reduce administrative overhead. Staff can submit shifts, clock in/out, and request leave via mobile or desktop, while managers approve and track everything in real time. `,
+          description: `Smart rostering, timesheets, and payroll automation reduce administrative overhead. Staff can submit shifts, clock in/out, and request leave via mobile or desktop, while managers approve and track everything in real-time. `,
         },
         {
           dot: dots.dot4,
           title: "Financial Control & NDIS Claims",
-          description: `Automate payroll, generate invoices, and reconcile payments with bank feedsto ensure accurate billing and compliant NDIS claims with minimal effort. `,
+          description: `Automate payroll, generate invoices, and reconcile payments with bank feeds to ensure accurate billing and compliant NDIS claims with minimal effort. `,
         },
         {
           dot: dots.dot5,
@@ -4591,7 +4591,7 @@ export const byIndustryData = {
       title: "Smarter Workforce & Compliance Management for Construction",
       page: "Construction",
       description:
-        "TesseractApps helps construction companies seamlessly manage crews, projects, compliance, and payroll across sites. Keep your workforce safe, schedules on track, and reporting effortless—all from one platform.",
+        "TesseractApps helps construction companies seamlessly manage crews, projects, compliance, and payroll across sites. Keep your workforce safe, schedules on track, and reporting effortless, all from one platform.",
       cta: {
         buttons: [{ title: "Register your interest", navigate: "bookADemo" }],
         conclusion: "",
@@ -4613,12 +4613,12 @@ export const byIndustryData = {
         {
           dot: dots.dot3,
           title: "Payroll & Accounting",
-          description: `Monitor licences, certifications, and safety training, receiving alerts before expiry dates to ensure workers remain site-compliant and audit-ready.`,
+          description: `Automate payroll for permanent, part-time, and contract workers, reconcile site-specific costs, generate invoices, and integrate directly with accounting systems.`,
         },
         {
           dot: dots.dot4,
           title: "Compliance Tracking",
-          description: `Monitor licences, certifications, and safety training. Receive alerts before expiry dates to ensure workers remain site-compliant and audit-ready.`,
+          description: `Monitor licences, certifications, and safety training, receiving alerts before expiry dates to ensure workers remain site-compliant and audit-ready.`,
         },
         {
           dot: dots.dot5,
@@ -5728,7 +5728,7 @@ export const byBusinessType = {
           dot: dots.dot3,
           title: "Secure Communication (ChaT)",
           description:
-            "Communicate securely across teams, departments, and sites, sharing updates, documents, and announcements instantly. Share updates, Documents, and announcements instantly.",
+            "Communicate securely across teams, departments, and sites, sharing updates, documents, and announcements instantly.",
         },
         {
           dot: dots.dot4,
@@ -6199,7 +6199,7 @@ export const byBusinessProblem = {
           dot: dots.dot2,
           title: "Documents",
           description:
-            "Provide easy access to policies, guidelines, and resources to support staff performance. Ensure employees have the information they need to perform effectively.",
+            "Provide easy access to policies, guidelines, and resources to support staff performance.",
         },
       ],
     },
@@ -6280,7 +6280,7 @@ export const byBusinessProblem = {
           dot: dots.dot3,
           title: "Workflow Automation",
           description:
-            "Streamline repetitive administrative tasks, such as approvals, notifications, and reporting, saving hours every week. Save hours every week.",
+            "Streamline repetitive administrative tasks, such as approvals, notifications, and reporting, saving hours every week.",
         },
         {
           dot: dots.dot4,
@@ -6292,13 +6292,13 @@ export const byBusinessProblem = {
           dot: dots.dot5,
           title: "Secure Document Management (Documents & T-Sign)",
           description:
-            "Store, approve, and retrieve documents digitally, reducing time spent on paperwork and approvals. Reduce time spent on paperwork and approvals.",
+            "Store, approve, and retrieve documents digitally, reducing time spent on paperwork and approvals.",
         },
         {
           dot: dots.dot6,
           title: "Communication Tools (ChaT)",
           description:
-            "Send messages, share files, and collaborate instantly with teams, reducing delays and keeping everyone aligned. Minimise delays and keep everyone aligned.",
+            "Send messages, share files, and collaborate instantly with teams, reducing delays and keeping everyone aligned.",
         },
         {
           dot: dots.dot1,
@@ -6489,10 +6489,10 @@ export const productsDetailsData = {
       image: rosternew,
       title: "Streamline Staff Scheduling",
       description:
-        "Efficiently plan, approve, and manage shifts efficiently with TesseractApps. Keep your workforce organised, reduce conflicts, and ensure proper coverage across all sites.",
+        "Efficiently plan, approve, and manage shifts with TesseractApps. Keep your workforce organised, reduce conflicts, and ensure proper coverage across all sites.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.  ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -6514,7 +6514,7 @@ export const productsDetailsData = {
           dot: dots.dot3,
           title: "Automated Approvals",
           description:
-            "Set rules for shift approvalsto reduce delays and enable managers can quickly authorise schedules.",
+            "Set rules for shift approvals to reduce delays and enable managers to quickly authorise schedules.",
         },
         {
           dot: dots.dot4,
@@ -6639,7 +6639,7 @@ export const productsDetailsData = {
       image: timesheetNew, // Replace with actual image import
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.  ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -6649,13 +6649,13 @@ export const productsDetailsData = {
           dot: dots.dot1,
           title: "Submit and Approve Timesheets",
           description:
-            "Staff can submit hours digitally, managers can review and approve with one click, reducing delays and errors.",
+            "Staff can submit hours digitally, and managers can review and approve with one click, reducing delays and errors.",
         },
         {
           dot: dots.dot2,
           title: "Integration with Payroll",
           description:
-            "Automatically link approved timesheets to payroll, Ensuring accurate payments and reducing manual reconciliation.",
+            "Automatically link approved timesheets to payroll, ensuring accurate payments and reducing manual reconciliation.",
         },
         {
           dot: dots.dot3,
@@ -6777,10 +6777,10 @@ export const productsDetailsData = {
       image: adminConsoleNew,
       title: "Full Control in One Place",
       description:
-        "Manage your organisation efficiently using TesseractApps. Oversee users, modules, settings, and compliance from a one secure dashboard.",
+        "Manage your organisation efficiently using TesseractApps. Oversee users, modules, settings, and compliance from one secure dashboard.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -6802,7 +6802,7 @@ export const productsDetailsData = {
           dot: dots.dot3,
           title: "Compliance Oversight",
           description:
-            "Track staff certifications, mandatory trainings, and audit requirements, receiving automated alerts for upcoming deadlines.",
+            "Track staff certifications, mandatory training, and audit requirements, receiving automated alerts for upcoming deadlines.",
         },
         {
           dot: dots.dot4,
@@ -6814,7 +6814,7 @@ export const productsDetailsData = {
           dot: dots.dot5,
           title: "Reporting and Insights",
           description:
-            "Generate reports on user activity, system usage, and operational metrics, using dashboards to Make informed decisions quickly with real-time financial insights.",
+            "Generate reports on user activity, system usage, and operational metrics, using dashboards to make informed decisions quickly.",
         },
         {
           dot: dots.dot6,
@@ -6912,7 +6912,7 @@ export const productsDetailsData = {
         "Control who can access what with TesseractApps. Assign roles, scale permissions, and monitor activity to keep your organisation secure and compliant efficiently.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -7055,7 +7055,7 @@ export const productsDetailsData = {
         "Oversee recruitment, onboarding, staff records, and performance using TesseractApps. Keep all HR processes in one secure platform, ensuring accuracy, compliance, and operational efficiency.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.  ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -7198,7 +7198,7 @@ export const productsDetailsData = {
         "Digitally sign and manage documents using TesseractApps. Maintain compliance, streamline approvals, and ensure accurate audit trails for all critical records.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -7232,7 +7232,7 @@ export const productsDetailsData = {
           dot: dots.dot5,
           title: "Integration with Documents",
           description:
-            "Store signed documents securely in the central documents hub, tracking versions, revisions, and access permissions.",
+            "Store signed documents securely in the central repository, tracking versions, revisions, and access permissions.",
         },
         {
           dot: dots.dot6,
@@ -7330,7 +7330,7 @@ export const productsDetailsData = {
         "Digitally record staff start and end times with TesseractApps. Ensure accurate attendance, streamline payroll, and easily maintain compliance.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.  ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -7473,7 +7473,7 @@ export const productsDetailsData = {
         "Track participant information, support plans, and service delivery using TesseractApps. Ensure accurate records, improve care quality, and maintain compliance with ease.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -7483,7 +7483,7 @@ export const productsDetailsData = {
           dot: dots.dot1,
           title: "Participant Profiles",
           description:
-            "Create and update participant records with detailed personal, health, and support information to keep all data organised and accessible.",
+            "Create and update participant records with detailed personal, health, and support information to keep data organised and accessible.",
         },
         {
           dot: dots.dot2,
@@ -7605,7 +7605,7 @@ export const productsDetailsData = {
         "Track, manage, and report incidents using TesseractApps. Ensure staff and participant safety, maintain compliance, and keep accurate real-time records.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -7737,7 +7737,7 @@ export const productsDetailsData = {
         "Centralise all your Documents using TesseractApps. Keep care plans, agreements, policies, and records organised, secure, and easily accessible at all times.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -7790,7 +7790,7 @@ export const productsDetailsData = {
       },
     ],
     section4: {
-      title: "How documents Helps Your Team",
+      title: "How Documents Helps Your Team",
       points: [
         {
           dot: dots.dot1,
@@ -7870,7 +7870,7 @@ export const productsDetailsData = {
         "Access real-time insights and manage workflows efficiently using TesseractApps. Track performance, compliance, and tasks specific to each role, all from one secure, centralised dashboard.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8024,7 +8024,7 @@ export const productsDetailsData = {
         "Send messages, share files, and collaborate securely with your team. TesseractApps ChaT keeps communication private, organised, and integrated with your workflows.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8167,7 +8167,7 @@ export const productsDetailsData = {
         "Keep your personal and work details up-to-date with TesseractApps. Access schedules, leave balances, certifications, and preferences through a single, secure portal.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8288,7 +8288,7 @@ export const productsDetailsData = {
         "Create, manage, and submit digital forms using TesseractApps. Capture participant information, staff records, and operational data efficiently and accurately with TesseractApps.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8328,7 +8328,7 @@ export const productsDetailsData = {
           dot: dots.dot6,
           title: "Secure Storage and Access",
           description:
-            "Store all forms in the central documents with role-based access to ensure sensitive data is protected and easily retrievable.",
+            "Store all forms in a central repository with role-based access to ensure sensitive data is protected and easily retrievable.",
         },
       ],
     },
@@ -8431,7 +8431,7 @@ export const productsDetailsData = {
         "Manage payroll, track budgets, and process invoices efficiently using TesseractApps. Integrate finance workflows with rostering, HR, and participant management to ensure accuracy and compliance.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8573,7 +8573,7 @@ export const productsDetailsData = {
         "Provide staff with accessible, personalised training using TesseractApps. Track progress, ensure compliance, and support professional development across your organisation efficiently.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.      ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8704,7 +8704,7 @@ export const productsDetailsData = {
         "TesseractApps is built on Salesforce, providing a secure, scalable, and reliable platform to manage staff, participants, and operations across your organisation.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.  ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8714,7 +8714,7 @@ export const productsDetailsData = {
           dot: dots.dot1,
           title: "Secure and Scalable Platform",
           description:
-            "Manage your participant, staff, and service data in one system, with salesforce ensures enterprise-grade security and supporting organisational growth without disruption.",
+            "Manage your participant, staff, and service data in one system, with Salesforce ensuring enterprise-grade security and supporting organisational growth without disruption.",
         },
         {
           dot: dots.dot2,
@@ -8726,7 +8726,7 @@ export const productsDetailsData = {
           dot: dots.dot3,
           title: "Real-Time Insights",
           description:
-            "Dashboards and reporting tools provide real-time visibility into participant engagement, staff performance, and operational metrics, helping you Make informed decisions quickly with real-time financial insights.",
+            "Dashboards and reporting tools provide real-time visibility into participant engagement, staff performance, and operational metrics, helping you make informed decisions quickly.",
         },
         {
           dot: dots.dot4,
@@ -8819,7 +8819,7 @@ export const productsDetailsData = {
         "TesseractApps integrates with Xero to offer accurate, secure, and efficient payroll and financial management for your organisation.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required.  ",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8835,13 +8835,13 @@ export const productsDetailsData = {
           dot: dots.dot2,
           title: "Accurate Invoicing",
           description:
-            "Generate invoices automatically and export them to Xero, tracking payments, reconcile accounts, and managing participant budgets efficiently.",
+            "Generate invoices automatically and export them to Xero, tracking payments, reconciling accounts, and managing participant budgets efficiently.",
         },
         {
           dot: dots.dot3,
           title: "Real-Time Financial Insights",
           description:
-            "Dashboards provide instant visibility into payroll expenses, cash flow, and operational costs to help you Make informed decisions quickly with real-time financial insights.",
+            "Dashboards provide instant visibility into payroll expenses, cash flow, and operational costs to help you make informed decisions quickly.",
         },
         {
           dot: dots.dot4,
@@ -8889,7 +8889,7 @@ export const productsDetailsData = {
           dot: dots.dot5,
           title: "Audit Readiness",
           description:
-            "Maintain complete financial records with secure storage, approval workflows, and traceable changes for full accountablility.",
+            "Maintain complete financial records with secure storage, approval workflows, and traceable changes for full accountability.",
         },
       ],
     },
@@ -8934,7 +8934,7 @@ export const productsDetailsData = {
         "TesseractApps integrates with Wyzed to provide role-based training, track progress, and maintain compliance across your organisation.",
       cta: {
         buttons: [{ title: "Try It Free", navigate: "Signup" }],
-        conclusion: "No credit card is required. Free onboarding included",
+        conclusion: "No credit card is required.",
       },
     },
     section2: {
@@ -8950,7 +8950,7 @@ export const productsDetailsData = {
           dot: dots.dot2,
           title: "Progress Tracking",
           description:
-            "Monitor staff training completion in real time, identifying gaps and providing targeted support to improve performance.",
+            "Monitor staff training completion in real-time, identifying gaps and providing targeted support to improve performance.",
         },
         {
           dot: dots.dot3,

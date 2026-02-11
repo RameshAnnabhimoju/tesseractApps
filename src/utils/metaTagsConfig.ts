@@ -89,7 +89,7 @@ export const metaTagsConfig: Record<string, MetaTagConfig> = {
       "Customisable dashboards tailored to each role - administrators, roster managers, HR, and staff. Real-time insights and KPIs for NDIS operations.",
   },
   "/Documents": {
-    title: "Documents Management | Secure File Storage | TesseractApps",
+    title: "Documents | Secure File Storage | TesseractApps",
     description:
       "Centralised documents for NDIS providers. Store, organise, and access compliance documents, policies, and staff files with secure cloud storage.",
   },

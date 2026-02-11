@@ -147,7 +147,7 @@ const FooterComponent = () => {
           <div id="footer-column1-item">
             <div className="footer-heading">About the company</div>
             <div className="footer-text footer-about-text">
-              At Tesseract Apps, we provide tailored solutions that simplify
+              At TesseractApps, we provide tailored solutions that simplify
               care management, accounting, compliance, and HR, helping care
               providers run their operations efficiently and stay compliant.
               <br></br>

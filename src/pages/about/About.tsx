@@ -95,8 +95,8 @@ const About = () => {
             We tested features in real workflows, refined processes, and removed
             unnecessary complexity. <br />
             <br />
-            By mid-2024, T-NDIS beta was launched. Providers gave feedback that
-            shaped the system for day-to-day operations. <br />
+            By mid-2024, the T-NDIS beta was launched. Providers provided
+            feedback that shaped the system for day-to-day operations. <br />
             <br />
             In January 2025, TesseractApps became fully operational and ready
             for the market. <br />
@@ -135,7 +135,7 @@ const About = () => {
           businesses beyond limits.
         </div>
         <div id="about-our-team-text">
-          Tesseractapps is where technology meets purpose. From NDIS and ICT
+          TesseractApps is where technology meets purpose. From NDIS and ICT
           applications to HR and Accounting operations, we design, develop, and
           deliver custom solutions that help businesses achieve their goals with
           precision and innovation.

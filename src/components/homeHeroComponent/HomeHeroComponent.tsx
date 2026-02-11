@@ -37,8 +37,7 @@ const HomeHeroComponent = () => {
         <img src={logo_small} alt="tesseract logo" id="home-tesseract-logo" />
         <h1 id="home-text-heading">End-to-End Workforce Management Software</h1>
         <h2 id="home-text-subText">
-          TesseractApps streamlines compliance, team management, NDIS-related care, and
-          service delivery for providers, all on a secure, scalable platform.
+          TesseractApps simplifies compliance, team management, NDIS-related care and service delivery for care providers and IT consultants on a secure, scalable platform.
         </h2>
         <div className="cta-button" onClick={() => HandleClick("Signup")}>
           <div>Try For Free</div>

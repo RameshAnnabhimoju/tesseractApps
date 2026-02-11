@@ -110,8 +110,7 @@ const Pricing = () => {
           </h1>
           <div className="pricing-divider-line pricing-divider-line-header" />
           <h2 className="text pricing-textt">
-            "Our all in one NDIS software helps you manage everything
-            from staffing schedules to billing quickly and with ease."
+            Our all in one NDIS software helps you manage everything from staffing schedules to billing quickly and with ease.
           </h2>
           <div id="pricing-cta-button">
             <button
