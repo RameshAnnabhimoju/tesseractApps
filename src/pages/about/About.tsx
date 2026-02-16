@@ -80,7 +80,7 @@ const About = () => {
   return (
     <div id="about-container">
       <div id="about-our-comapany-container">
-        <img
+        <img loading="lazy"
           src={aboutOurCompanyImage}
           alt="about our company"
           id="about-our-comapany-image"
@@ -141,7 +141,7 @@ const About = () => {
           precision and innovation.
         </div>
         <div id="about-our-team-title">Our Team</div>
-        <img
+        <img loading="lazy"
           src={aboutOurTeamImage}
           alt="about our team"
           id="about-our-team-image"
@@ -175,7 +175,7 @@ const About = () => {
       </div>
       <div id="about-team-images">
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={RevanthImage}
             alt="Revanth Image"
             className="about-team-image-card-image"
@@ -189,7 +189,7 @@ const About = () => {
         </div>
 
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={KranthiImage}
             alt="kranthi Image"
             className="about-team-image-card-image"
@@ -200,7 +200,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={BecImage}
             alt="Bec Image"
             className="about-team-image-card-image"
@@ -211,7 +211,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={tomImage}
             alt="Tomer Image"
             className="about-team-image-card-image"
@@ -225,7 +225,7 @@ const About = () => {
         </div>
 
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={BelleBaiImage}
             alt="Nagendra Image"
             className="about-team-image-card-image"
@@ -239,7 +239,7 @@ const About = () => {
         </div>
 
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={darshanImage}
             alt="Darshan Image"
             className="about-team-image-card-image"
@@ -252,7 +252,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={sushimithaImage}
             alt="sushimithaImage"
             className="about-team-image-card-image"
@@ -265,7 +265,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={maheshwariImage}
             alt="MaheshwariImage"
             className="about-team-image-card-image"
@@ -278,7 +278,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={deepakrajImage}
             alt="DeepakrajImage"
             className="about-team-image-card-image"
@@ -291,7 +291,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={meghnaImage}
             alt="MeghnaImage"
             className="about-team-image-card-image"
@@ -304,7 +304,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-team-image-card">
-          <img
+          <img loading="lazy"
             src={saiKrishnaImage}
             alt="SaiKrishnaImage"
             className="about-team-image-card-image"

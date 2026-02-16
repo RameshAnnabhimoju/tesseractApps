@@ -33,16 +33,21 @@ const HowItWorksComponent = () => {
           return (
             <div key={data.id + index} className="howItWorks-card">
               {dividerRows.includes(data.id) && (
-                <img
+                <img loading="lazy"
                   src={dividerLine}
-                  alt="dividerLine"
+                  alt=""
+                  aria-hidden="true"
                   className="howItWorks-dividerLine"
+                  width="120"
+                  height="3"
                 />
               )}
-              <img
+              <img loading="lazy"
                 src={data.image}
-                alt="howItWorks-card-image"
+                alt={data.title}
                 className="howItWorks-card-image"
+                width="180"
+                height="180"
               />
               <div className="howItWorks-card-data">
                 <div className="howItWorks-card-title-number">0{data.id}</div>

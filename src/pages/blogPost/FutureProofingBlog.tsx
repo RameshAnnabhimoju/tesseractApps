@@ -20,7 +20,7 @@ const FutureProofingBlog = () => {
   }
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blogImage}
         alt="Protecting Participant Data Image"
         className="blog-image"

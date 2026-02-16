@@ -48,7 +48,7 @@ const ReleaseNotes = () => {
           <br />
           Staff documents
           <br />
-          Organization documents
+          Organisation documents
           <br />
           Participant documents
           <br />
@@ -92,7 +92,7 @@ const ReleaseNotes = () => {
           <b>Compliance Report for Each Staff:</b> Implemented a comprehensive
           compliance report at the staff level. This report provides visibility
           into document status, training completion, and overall compliance,
-          helping organizations meet audit and regulatory requirements.
+          helping organisations meet audit and regulatory requirements.
         </li>
         <br />
         <li>

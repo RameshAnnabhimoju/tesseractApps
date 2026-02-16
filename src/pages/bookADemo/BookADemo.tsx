@@ -246,7 +246,7 @@ const BookADemo = () => {
     >
       <Alert setAlertData={setAlertData} alertData={alertData} />
 
-      <img
+      <img loading="lazy"
         src={closeIcon}
         alt="close icon"
         id="dialog-close-icon"
@@ -266,7 +266,7 @@ const BookADemo = () => {
 
       {showSuccess ? (
         <div id="bookADemo-Success-Container">
-          <img
+          <img loading="lazy"
             src={image1}
             alt="success image"
             className="bookADemo-Success-image"
@@ -278,7 +278,7 @@ const BookADemo = () => {
             Thank you! Your demo has been successfully booked. Our team will
             contact you shortly to confirm the details.
           </div>
-          <img
+          <img loading="lazy"
             src={image2}
             alt="success image2"
             className="bookADemo-Success-image bookADemo-Success-image-man"
@@ -289,7 +289,7 @@ const BookADemo = () => {
 
           {/* Left Panel */}
           <div id="bookADemo-text-section">
-            <img
+            <img loading="lazy"
               src={logo_small}
               alt="tesseract logo"
               id="bookADemo-navbar-logo"
@@ -299,7 +299,7 @@ const BookADemo = () => {
             <div id="bookADemo-subText">
               {bookADemoFormData[currentStep].subText}
             </div>
-            <img
+            <img loading="lazy"
               src={bookADemoFormData[currentStep].image}
               alt="book-a-demo-visual"
               id="bookADemo-image"

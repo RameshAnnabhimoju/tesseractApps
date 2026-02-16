@@ -10,7 +10,7 @@ const ComingSoon = () => {
 
   return (
     <div id="comming-soon-container">
-      <img
+      <img loading="lazy"
         src={comingSoonImage}
         alt="coming-soon-image"
         id="coming-soon-image"

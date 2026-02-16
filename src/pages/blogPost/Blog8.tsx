@@ -17,7 +17,7 @@ const Blog8 = () => {
 
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blog4}
         alt="Future-Proof Your NDIS Organisation Image"
         className="blog-image"

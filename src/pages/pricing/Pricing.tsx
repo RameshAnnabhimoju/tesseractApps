@@ -100,7 +100,7 @@ const Pricing = () => {
       <div id="pricing-her-container">
         <div id="paricing-hero-images-container">
           {imageArr1.map((image) => (
-            <img src={image} alt="ph-image" className="paricing-hero-images" />
+            <img loading="lazy" src={image} alt="ph-image" className="paricing-hero-images" />
           ))}
         </div>
         <div>
@@ -126,7 +126,7 @@ const Pricing = () => {
         </div>
         <div id="paricing-hero-images-container">
           {imageArr2.map((image) => (
-            <img src={image} alt="ph-image" className="paricing-hero-images" />
+            <img loading="lazy" src={image} alt="ph-image" className="paricing-hero-images" />
           ))}
         </div>
       </div>
@@ -213,7 +213,7 @@ const Pricing = () => {
           }}
         />
       </div>
-      {/* <img src={priceBg} alt="price" id="price-bg" /> */}
+      {/* <img loading="lazy" src={priceBg} alt="price" id="price-bg" /> */}
 
       {pricingCardsDummyData[selectedTab].length > 0 && (
         <div id="pricing-data-container">
@@ -231,7 +231,7 @@ const Pricing = () => {
                   >
                     {index == 1 && selectedTab == "ndis" ? (
                       <div id="pricing-most-popular-container">
-                        <img
+                        <img loading="lazy"
                           src={pricingStar}
                           alt="pricing start"
                           id="pricing-most-popular-star"
@@ -301,7 +301,7 @@ const Pricing = () => {
                             className="pricing-tick-data-container"
                           >
                             <div className="pricing-tick-icon-container">
-                              <img
+                              <img loading="lazy"
                                 src={index == 1 ? tickBlue : tickBlack}
                                 alt="pricing-tick-icon"
                                 className="pricing-tick-icon"
@@ -381,7 +381,7 @@ const Pricing = () => {
                     maxHeight: "40px",
                     overflow: "hidden",
                   }}
-                  expandIcon={<img src={ArrowDown} alt="arrow" />}
+                  expandIcon={<img loading="lazy" src={ArrowDown} alt="arrow" />}
                 >
                   <Typography component="span">
                     <div className="pricing-data-heading">{data.heading}</div>
@@ -516,7 +516,7 @@ const Pricing = () => {
         </div>
         <div id="pricing-help-links">
           <div className="pricing-links-container">
-            <img src={call} alt="" className="pricing-links-image" />
+            <img loading="lazy" src={call} alt="" className="pricing-links-image" />
             <div
               className="pricing-links-data-container"
               onClick={() => handleFooterActions("phone")}
@@ -526,7 +526,7 @@ const Pricing = () => {
             </div>
           </div>
           <div className="pricing-links-container">
-            <img src={mark_email} alt="" className="pricing-links-image" />
+            <img loading="lazy" src={mark_email} alt="" className="pricing-links-image" />
             <div
               className="pricing-links-data-container"
               onClick={() => handleFooterActions("email")}
@@ -559,7 +559,7 @@ const PricingDataItem: React.FC<PricingDataItemProps> = ({
   return (
     <div className={className}>
       {data.text == "" && (
-        <img
+        <img loading="lazy"
           src={data.value ? tick : remove}
           alt={data.value ? "tick" : "remove"}
           className={`pricing-data-tick ${data.value ? "pricing-data-tick-success" : ""

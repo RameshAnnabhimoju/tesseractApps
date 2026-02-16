@@ -5,12 +5,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-image: var(--color-background-gradient);
   padding: 20px 50px;
-  min-width: max-content;
   width: 100%;
   max-width: 1920px;
+  box-sizing: border-box;
 }
 .navbar-container {
   position: fixed;
@@ -410,6 +409,41 @@
 #search-popup-header-text {
   font-size: 24px;
 }
+/* Native accordion replacing MUI Accordion in mobile drawer */
+.nav-accordion {
+  margin-bottom: 5px;
+}
+.nav-accordion-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 15px;
+  cursor: pointer;
+  border-top: 1px solid #e1e1e1;
+}
+.nav-accordion-label {
+  font-size: 20px;
+  font-weight: 600;
+}
+.nav-accordion-arrow {
+  width: 20px;
+  transition: transform 0.2s ease;
+}
+.nav-accordion-arrow.expanded {
+  transform: rotate(180deg);
+}
+.nav-accordion-details {
+  display: none;
+  padding: 0 15px 10px;
+}
+.nav-accordion-details.open {
+  display: block;
+}
+.nav-accordion-content {
+  font-size: 18px;
+  font-weight: 400;
+}
+
 @media (max-width: 500px) {
   #nav-back {
     top: 25px;

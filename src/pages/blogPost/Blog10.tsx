@@ -17,7 +17,7 @@ const Blog10 = () => {
 
   return (
     <div className="blog-container">
-      <img src={blogImage} alt="blogImage Image" className="blog-image" />
+      <img loading="lazy" src={blogImage} alt="blogImage Image" className="blog-image" />
       <article className="blog-post">
         <header className="blog-header">
           <h1 className="blog-title">

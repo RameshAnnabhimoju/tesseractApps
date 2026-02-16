@@ -13,7 +13,7 @@ const NDISComplianceBlog = () => {
 
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blogImage}
         alt="NDIS Compliance Audits 2026 Why Providers Fail and How to Fix It"
         className="blog-image"

@@ -124,10 +124,12 @@ const FeaturesComponent = () => {
               className="keen-slider__slide features-card"
               onClick={() => clickHandler(feature.title)}
             >
-              <img
+              <img loading="lazy"
                 className="features-card-image"
                 src={feature.image}
                 alt={feature.title}
+                width="60"
+                height="60"
               />
               <h2 className="features-card-title">{feature.title}</h2>
               <h3 className="features-card-description">

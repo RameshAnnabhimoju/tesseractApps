@@ -20,7 +20,7 @@ const ManualRosteringBlog = () => {
 
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blogImage}
         alt="Manual Rostering Costs"
         className="blog-image"

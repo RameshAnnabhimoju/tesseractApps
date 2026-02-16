@@ -10,7 +10,7 @@ const ContactInformationCard = () => {
   };
   return (
     <div id="contact-info-text-container">
-      <img src={contactUsImage} alt="contact us image" id="contact-us-image" />
+      <img loading="lazy" src={contactUsImage} alt="contact us image" id="contact-us-image" />
       <div id="contact-info-sales" className="contact-info">
         <div id="contact-info-upper">
           <div className="contact-info-headingh">Contact Sales:</div>

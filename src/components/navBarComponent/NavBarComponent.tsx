@@ -8,7 +8,7 @@ import "./NavBarStyles.css";
 import { useEffect, useRef, useState } from "react";
 import { RefObject } from "react";
 import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
-import { navBarDummyData } from "../../utils/DummyData";
+import { navBarDummyData } from "../../utils/NavData";
 import { Drawer } from "@mui/material";
 import menuIcon from "../../assets/menu.webp";
 import closeIcon from "../../assets/close.webp";
@@ -16,10 +16,6 @@ interface PopupPosition {
   top: number;
   left: number;
 }
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ArrowDown from "../../assets/arrow_down.svg";
 // import { AppNavigate } from "../../routes/AppNavigate";
 import ArrowLeft from "../arrows/ArrowLeft";
@@ -229,12 +225,11 @@ const NavBarComponent = ({
   const [expanded, setExpanded] = useState(-1);
 
   const handleExpansion = (index: number) => {
-    // console.log(index);
     setExpanded((prevExpanded) => {
       if (prevExpanded === index) {
-        return -1; // Collapse the currently expanded item
+        return -1;
       } else {
-        return index; // Expand the clicked item
+        return index;
       }
     });
   };
@@ -282,7 +277,7 @@ const NavBarComponent = ({
       id="navbar-container"
     >
       {pathname.split("/")[1] && canGoBack && (
-        // <img
+        // <img loading="lazy"
         //   id="nav-back"
         //   src={BackArrow}
         //   alt="nav-back"
@@ -307,13 +302,13 @@ const NavBarComponent = ({
         </div>
       )}
       {/* <div id="navbar-logo" onClick={() => navigate("/")}>
-        <img src={logo_small} alt="tesseract logo" />
+        <img loading="lazy" src={logo_small} alt="tesseract logo" />
         TesseractApps
       </div> */}
       <AppLogo />
-      <img
+      <img loading="lazy"
         src={menuIcon}
-        alt="menu"
+        alt="Open navigation menu"
         id="nav-menu-icon"
         onClick={() => {
           setToggleDrawer(!toggleDrawer);
@@ -324,16 +319,11 @@ const NavBarComponent = ({
         id="nav-menu-drawer"
         anchor="right"
         open={toggleDrawer}
-        // PaperProps={{
-        //   sx: {
-        //     height: "80vh", // <-- Set Drawer height to 80% of viewport height
-        //   },
-        // }}
         ModalProps={{
           BackdropProps: {
             sx: {
-              backdropFilter: "blur(4px)", // 💡 adds blur effect
-              backgroundColor: "rgba(0, 0, 0, 0.4)", // optional dark overlay
+              backdropFilter: "blur(4px)",
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
             },
           },
         }}
@@ -349,16 +339,16 @@ const NavBarComponent = ({
             >
               <div className="navbar-requestDemo-text">Book a Demo</div>
               <div className="navbar-requestDemo-icon-container">
-                <img
+                <img loading="lazy"
                   src={plus}
-                  alt="navbar-plus-image"
+                  alt="Open demo request form"
                   className="navbar-requestDemo-icon"
                 />
               </div>
             </div>
-            <img
+            <img loading="lazy"
               src={closeIcon}
-              alt="closeIcon"
+              alt="Close navigation menu"
               id="nav-drawer-close"
               onClick={() => {
                 setToggleDrawer(false);
@@ -369,44 +359,31 @@ const NavBarComponent = ({
             {NAV_LINKS.map((label, index) => {
               if (label != "Pricing" && label != "About") {
                 return (
-                  <Accordion
-                    key={label}
-                    className="faq-accordian"
-                    elevation={0}
-                    square
-                    expanded={expanded === index}
-                    onChange={() => handleExpansion(index)}
-                    sx={{
-                      backgroundColor: "transparent",
-                      marginBottom: "5px",
-                    }}
-                  >
-                    <AccordionSummary
-                      expandIcon={<img src={ArrowDown} alt="arrow" />}
+                  <div key={label} className="nav-accordion">
+                    <div
+                      className="nav-accordion-summary"
+                      onClick={() => handleExpansion(index)}
                     >
-                      <Typography
-                        sx={{ fontSize: "20px", fontWeight: 600 }}
-                        component="span"
-                      >
-                        {label}
-                      </Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography sx={{ fontSize: "18px", fontWeight: 400 }}>
-                        {/* {expanded == 2 &&
-                          Array.isArray(navBarDummyData["About"]) &&
-                          navBarDummyData["About"].map((value) => (
-                            <div
-                              key={value.title}
-                              className="nav-inner-container"
-                              onClick={() => popupLinkClickHandler(value.title)}
-                            >
-                              <div className="nav-title">{value.title}</div>
-                              <div className="nav-sub-title">
-                                {value.subTitle}
-                              </div>
-                            </div>
-                          ))} */}
+                      <span className="nav-accordion-label">{label}</span>
+                      <img
+                        loading="lazy"
+                        src={ArrowDown}
+                        alt="arrow"
+                        className={
+                          expanded === index
+                            ? "nav-accordion-arrow expanded"
+                            : "nav-accordion-arrow"
+                        }
+                      />
+                    </div>
+                    <div
+                      className={
+                        expanded === index
+                          ? "nav-accordion-details open"
+                          : "nav-accordion-details"
+                      }
+                    >
+                      <div className="nav-accordion-content">
                         {expanded == 0 &&
                           Array.isArray(navBarDummyData["Product"]) && (
                             <>
@@ -444,38 +421,6 @@ const NavBarComponent = ({
                                   </div>
                                 )
                               )}
-                              {/* {navBarDummyData["Product"][1].map((value) => (
-                                  <div
-                                    key={value.title}
-                                    className="nav-inner-container"
-                                    onClick={() =>
-                                      popupLinkClickHandler(value.title)
-                                    }
-                                  >
-                                    <div className="nav-title">
-                                      {value.title}
-                                    </div>
-                                    <div className="nav-sub-title">
-                                      {value.subTitle}
-                                    </div>
-                                  </div>
-                                ))}
-                                {navBarDummyData["Product"][2].map((value) => (
-                                  <div
-                                    key={value.title}
-                                    className="nav-inner-container"
-                                    onClick={() =>
-                                      popupLinkClickHandler(value.title)
-                                    }
-                                  >
-                                    <div className="nav-title">
-                                      {value.title}
-                                    </div>
-                                    <div className="nav-sub-title">
-                                      {value.subTitle}
-                                    </div>
-                                  </div>
-                                ))} */}
                             </>
                           )}
                         {expanded == 4 &&
@@ -492,26 +437,6 @@ const NavBarComponent = ({
                               </div>
                             </div>
                           ))}
-                        {/* {expanded == 5 &&
-                          Array.isArray(
-                            navBarDummyData["Additional Features"]
-                          ) &&
-                          navBarDummyData["Additional Features"].map(
-                            (value) => (
-                              <div
-                                key={value.title}
-                                className="nav-inner-container"
-                                onClick={() =>
-                                  popupLinkClickHandler(value.title)
-                                }
-                              >
-                                <div className="nav-title">{value.title}</div>
-                                <div className="nav-sub-title">
-                                  {value.subTitle}
-                                </div>
-                              </div>
-                            )
-                          )} */}
                         {expanded == 3 && (
                           <div id="nav-menu-solutions">
                             <div>
@@ -644,9 +569,9 @@ const NavBarComponent = ({
                             </div>
                           </div>
                         )}
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
+                      </div>
+                    </div>
+                  </div>
                 );
               } else {
                 return (
@@ -661,55 +586,25 @@ const NavBarComponent = ({
                 );
               }
             })}
-            {/* <Accordion
-              key={"Country"}
-              className="faq-accordian"
-              elevation={0}
-              square
-              expanded={expanded === 5}
-              onChange={() => handleExpansion(5)}
-              sx={{
-                backgroundColor: "transparent",
-                marginBottom: "5px",
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<img src={ArrowDown} alt="arrow" />}
-              >
-                <Typography
-                  sx={{ fontSize: "20px", fontWeight: 600 }}
-                  component="span"
-                >
-                  Country
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography sx={{ fontSize: "18px", fontWeight: 400 }}>
-                  <div className="nav-inner-container">Australia</div>
-                  <div className="nav-inner-container">United Kingdom</div>
-                  <div className="nav-inner-container">India</div>
-                </Typography>
-              </AccordionDetails>
-            </Accordion> */}
           </div>
           <div id="nav-menu-icons">
             <button id="navbar-login" onClick={signupHandler}>
-              <img
+              <img loading="lazy"
                 src={signupImage}
-                alt="navbar-profile-icon"
+                alt="Sign up"
                 id="navbar-profile-icon"
               />{" "}
               Sign Up
             </button>
             <button id="navbar-login" onClick={loginHandler}>
-              <img
+              <img loading="lazy"
                 src={profile}
-                alt="navbar-profile-icon"
+                alt="Sign in"
                 id="navbar-profile-icon"
               />{" "}
               Sign In
             </button>
-            <img
+            <img loading="lazy"
               src={australia}
               alt="navbar-country-icon"
               id="navbar-country-icon"
@@ -755,9 +650,9 @@ const NavBarComponent = ({
             );
           })}
           <div id="navbar-search">
-            <img
+            <img loading="lazy"
               src={search}
-              alt="navbar-search-icon"
+              alt="Open search"
               id="navbar-search-icon"
               onClick={() => handleSearchIcon(true)}
             />
@@ -778,16 +673,16 @@ const NavBarComponent = ({
           >
             <div className="navbar-requestDemo-text">Book a Demo</div>
             <div className="navbar-requestDemo-icon-container">
-              <img
+              <img loading="lazy"
                 src={plus}
-                alt="navbar-plus-image"
+                alt="Open demo request form"
                 className="navbar-requestDemo-icon"
               />
             </div>
           </div>
 
           {/* <button id="navbar-login" onClick={signupHandler}>
-          <img
+          <img loading="lazy"
             src={signupImage}
             alt="navbar-profile-icon"
             id="navbar-profile-icon"
@@ -795,20 +690,20 @@ const NavBarComponent = ({
           Sign Up
         </button> */}
           {/* <button id="navbar-login" onClick={loginHandler}>
-          <img
+          <img loading="lazy"
             src={profile}
             alt="navbar-profile-icon"
             id="navbar-profile-icon"
           />{" "}
           Sign In
         </button> */}
-          {/* <img
+          {/* <img loading="lazy"
           src={profile}
           alt="navbar-profile-icon"
           id="navbar-profile-icon"
           onMouseEnter={(event) => handleNavPopupClick(event)}
         /> */}
-          {/* <img
+          {/* <img loading="lazy"
           src={australia}
           alt="navbar-country-icon"
           id="navbar-country-icon"

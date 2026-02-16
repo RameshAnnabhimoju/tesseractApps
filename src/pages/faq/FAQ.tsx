@@ -70,7 +70,7 @@ const FAQ = () => {
                               >
                                 <AccordionSummary
                                   expandIcon={
-                                    <img src={ArrowDown} alt="arrow" />
+                                    <img loading="lazy" src={ArrowDown} alt="arrow" />
                                   }
                                 >
                                   <Typography
@@ -143,7 +143,7 @@ const FAQ = () => {
                       }}
                     >
                       <AccordionSummary
-                        expandIcon={<img src={ArrowDown} alt="arrow" />}
+                        expandIcon={<img loading="lazy" src={ArrowDown} alt="arrow" />}
                       >
                         <Typography
                           sx={{ fontSize: "26px", fontWeight: 600 }}

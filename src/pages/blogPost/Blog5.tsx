@@ -20,7 +20,7 @@ const Blog5 = () => {
   }
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blog5}
         alt="Workforce Management Challenges Image"
         className="blog-image"
@@ -51,12 +51,12 @@ const Blog5 = () => {
 
           <section className="section">
             <div className="blogs-images-section">
-              <img
+              <img loading="lazy"
                 src={blogImage1}
                 alt="Blocg 5 Image 1"
                 className="blog-section-image"
               />
-              <img
+              <img loading="lazy"
                 src={blog5}
                 alt="Blocg 5 Image 1"
                 className="blog-section-image"

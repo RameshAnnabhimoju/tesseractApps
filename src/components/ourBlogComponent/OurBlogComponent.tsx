@@ -81,7 +81,7 @@ const OurBlogComponent = () => {
                   if (data.slug) navigate(data.slug);
                 }}
               >
-                <img
+                <img loading="lazy"
                   className="ourBlog-image"
                   src={data.image}
                   alt="ourBlog Image"
@@ -97,7 +97,7 @@ const OurBlogComponent = () => {
                 <div className="dividerLine" />
                 <div className="ourBlog-footer">
                   <div className="ourBlog-author">
-                    <img
+                    <img loading="lazy"
                       src={data.authorImage}
                       alt="author Image"
                       className="ourBlog-author-image"
@@ -106,7 +106,7 @@ const OurBlogComponent = () => {
                   </div>
                   <div className="read-more-container">
                     <div className="ourBlog-read-more">Read More</div>
-                    <img
+                    <img loading="lazy"
                       className="ourBlog-right-arrow"
                       src={rightArrow}
                       alt="arrow Image"

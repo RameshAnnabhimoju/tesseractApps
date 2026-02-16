@@ -30,7 +30,7 @@ const Teams = () => {
           {teamsPageData.CEO.map((data, index) => {
             return (
               <div key={index} className="team-image-card">
-                <img src={data.image} alt="person" className="team-image" />
+                <img loading="lazy" src={data.image} alt="person" className="team-image" />
 
                 <div className="team-name-container">
                   <div className="team-name">{data.name}</div>
@@ -48,7 +48,7 @@ const Teams = () => {
           {teamsPageData.Directors.map((data, index) => {
             return (
               <div key={index} className="team-image-card">
-                <img src={data.image} alt="person" className="team-image" />
+                <img loading="lazy" src={data.image} alt="person" className="team-image" />
 
                 <div className="team-name-container">
                   <div className="team-name">{data.name}</div>
@@ -68,7 +68,7 @@ const Teams = () => {
           {teamsPageData["BUSINESS & MARKETING"].map((data, index) => {
             return (
               <div key={index} className="team-image-card">
-                <img src={data.image} alt="person" className="team-image" />
+                <img loading="lazy" src={data.image} alt="person" className="team-image" />
 
                 <div className="team-name-container">
                   <div className="team-name">{data.name}</div>
@@ -88,7 +88,7 @@ const Teams = () => {
           {teamsPageData.Team.map((data, index) => {
             return (
               <div key={index} className="team-image-card">
-                <img src={data.image} alt="person" className="team-image" />
+                <img loading="lazy" src={data.image} alt="person" className="team-image" />
 
                 <div className="team-name-container">
                   <div className="team-name">{data.name}</div>
@@ -106,7 +106,7 @@ const Teams = () => {
           {teamsPageData.map((data, index) => {
             return (
               <div key={index} className="team-image-card">
-                <img src={data.image} alt="person" className="team-image" />
+                <img loading="lazy" src={data.image} alt="person" className="team-image" />
 
                 <div className="team-name-container">
                   <div className="team-name">{data.name}</div>

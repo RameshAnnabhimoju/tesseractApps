@@ -48,7 +48,7 @@ const OurStory = () => {
           <div id="our-story-title" className="subheading">
             Our Story
           </div>
-          <img src={ourStoryImage} alt="our-story-image" id="our-story-image" />
+          <img loading="lazy" src={ourStoryImage} alt="our-story-image" id="our-story-image" />
         </>
       )}
       {window.innerWidth < 800 && (
@@ -56,27 +56,27 @@ const OurStory = () => {
           <div id="our-story-title" className="subheading">
             Our Story
           </div>
-          <img
+          <img loading="lazy"
             src={ourStoryImage1}
             alt="our-story-image1"
             id="our-story-image1"
           />
-          <img
+          <img loading="lazy"
             src={ourStoryImage2}
             alt="our-story-image2"
             id="our-story-image3"
           />
-          <img
+          <img loading="lazy"
             src={ourStoryImage3}
             alt="our-story-image3"
             id="our-story-image3"
           />
-          <img
+          <img loading="lazy"
             src={ourStoryImage4}
             alt="our-story-image4"
             id="our-story-image4"
           />
-          <img
+          <img loading="lazy"
             src={ourStoryImage5}
             alt="our-story-image5"
             id="our-story-image5"

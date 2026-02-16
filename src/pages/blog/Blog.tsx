@@ -67,7 +67,7 @@ const Blog = () => {
             key={index}
           >
             {typeof blog.image === "string" ? (
-              <img src={blog.image} alt="Blog" className="blog-page-image" />
+              <img loading="lazy" src={blog.image} alt="Blog" className="blog-page-image" />
             ) : (
               ""
             )}

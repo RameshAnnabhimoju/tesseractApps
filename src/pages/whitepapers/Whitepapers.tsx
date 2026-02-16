@@ -61,35 +61,35 @@ const Whitepapers = () => {
       </div>
 
       <div id="whitepapers-item-container">
-        {/* <img
+        {/* <img loading="lazy"
           id="whitepaper-1"
           src={whitepaper1}
           alt="whitepaper-1"
           onClick={handleClick}
           className="whitepaper-item"
         /> */}
-        <img
+        <img loading="lazy"
           id="whitepaper-2"
           src={whitepaper2}
           alt="whitepaper-2"
           onClick={handleClick}
           className="whitepaper-item"
         />
-        {/* <img
+        {/* <img loading="lazy"
           id="whitepaper-3"
           src={whitepaper3}
           alt="whitepaper-3"
           onClick={handleClick}
           className="whitepaper-item"
         /> */}
-        <img
+        <img loading="lazy"
           id="whitepaper-4"
           src={whitepaper4}
           alt="whitepaper-4"
           onClick={handleClick}
           className="whitepaper-item"
         />
-        <img
+        <img loading="lazy"
           id="whitepaper-5"
           src={whitepaper5}
           alt="whitepaper-5"

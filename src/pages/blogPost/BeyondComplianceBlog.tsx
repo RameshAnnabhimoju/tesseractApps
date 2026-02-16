@@ -21,7 +21,7 @@ const BeyondComplianceBlog = () => {
 
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blogImage}
         alt="TesseractApps NDIS Software"
         className="blog-image"

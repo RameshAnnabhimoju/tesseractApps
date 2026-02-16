@@ -18,7 +18,7 @@ const CanberraNDISExpoBlog = () => {
 
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blog5}
         alt="TesseractApps at Canberra NDIS Expo"
         className="blog-image canberra-blog-image"
@@ -81,12 +81,12 @@ const CanberraNDISExpoBlog = () => {
           </section>
           <section className="section">
             <div className="blogs-images-section">
-              <img
+              <img loading="lazy"
                 src={blog6}
                 alt="Blocg 5 Image 1"
                 className="blog-section-image"
               />
-              <img
+              <img loading="lazy"
                 src={blog5}
                 alt="Blocg 5 Image 1"
                 className="blog-section-image"

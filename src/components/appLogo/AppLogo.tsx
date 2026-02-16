@@ -14,7 +14,7 @@ const AppLogo = () => {
   };
   return (
     <div id="app-logo" onClick={() => handleClick()}>
-      <img src={logo_small} alt="tesseract logo" />
+      <img loading="lazy" src={logo_small} alt="Tesseract Apps Logo" width="50" height="50" />
       TesseractApps
     </div>
   );

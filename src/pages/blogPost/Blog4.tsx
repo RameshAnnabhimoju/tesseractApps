@@ -19,7 +19,7 @@ const Blog4 = () => {
   }
   return (
     <div className="blog-container">
-      <img
+      <img loading="lazy"
         src={blog4}
         alt="Workforce Management Challenges Image"
         className="blog-image"
@@ -34,7 +34,7 @@ const Blog4 = () => {
         <div className="blog-content">
           <p className="intro-paragraph">
             NDIS service providers rely on having their operations staffed
-            properly. But too many organizations don't realize how much bad
+            properly. But too many organisations don't realize how much bad
             workforce management can rip into their bottom line. It's easy to
             see where the money is being spent in the form of staffing hours,
             but the hidden costs associated with overtime, absence, compliance,

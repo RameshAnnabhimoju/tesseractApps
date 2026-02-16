@@ -1,6 +1,7 @@
 // import VideoComponent from "../videoComponent/VideoComponent";
 import "./HomeHeroStyles.css";
-import logo_small from "../../assets/tesseract_logo_small.webp";
+// Logo served from public/ so the preload link in index.html matches the exact URL
+const logo_small = "/tesseract_logo_small.webp";
 // import ios from "../../assets/mobile_ios.webp";
 // import android from "../../assets/mobile_android.webp";
 // import facebook from "../../assets/facebook.webp";
@@ -27,14 +28,22 @@ const HomeHeroComponent = () => {
   return (
     <div id="home-hero-container">
       {/* <VideoComponent /> */}
-      {/* <img
+      {/* <img loading="lazy"
         src={heroImage1}
         alt="hero background image 1"
         className="hero-backround-image"
       /> */}
       <HeroArcsLeftComponent pendulums={homeLeftArcsData} />
       <div id="home-text-container">
-        <img src={logo_small} alt="tesseract logo" id="home-tesseract-logo" />
+        <img
+          loading="eager"
+          fetchPriority="high"
+          src={logo_small}
+          alt="tesseract logo"
+          id="home-tesseract-logo"
+          width="59"
+          height="59"
+        />
         <h1 id="home-text-heading">End-to-End Workforce Management Software</h1>
         <h2 id="home-text-subText">
           TesseractApps simplifies compliance, team management, NDIS-related care and service delivery for care providers and IT consultants on a secure, scalable platform.
@@ -47,7 +56,7 @@ const HomeHeroComponent = () => {
           No credit card is required.
         </div>
         {/* <div id="home-store-links-container">
-          <img
+          <img loading="lazy"
             src={ios}
             alt="ios"
             id="ios-store"
@@ -56,7 +65,7 @@ const HomeHeroComponent = () => {
               HandleClick("ios");
             }}
           />
-          <img
+          <img loading="lazy"
             src={android}
             alt="android"
             id="android-store"
@@ -67,7 +76,7 @@ const HomeHeroComponent = () => {
           />
         </div> */}
         {/* <div id="home-social-links-container">
-          <img
+          <img loading="lazy"
             src={facebook}
             alt="facebook-link"
             className="home-social-links"
@@ -75,7 +84,7 @@ const HomeHeroComponent = () => {
               HandleClick("facebook");
             }}
           />
-          <img
+          <img loading="lazy"
             src={youtube}
             alt="youtube-link"
             className="home-social-links"
@@ -83,7 +92,7 @@ const HomeHeroComponent = () => {
               HandleClick("youtube");
             }}
           />
-          <img
+          <img loading="lazy"
             src={linkedin}
             alt="linkedin-link"
             className="home-social-links"
@@ -91,7 +100,7 @@ const HomeHeroComponent = () => {
               HandleClick("linkedin");
             }}
           />
-          <img
+          <img loading="lazy"
             src={instagram}
             alt="instagram-link"
             className="home-social-links"
@@ -102,7 +111,7 @@ const HomeHeroComponent = () => {
         </div> */}
       </div>
       <HeroArcsRightComponent pendulums={homeRightArcsData} />
-      {/* <img
+      {/* <img loading="lazy"
         src={heroImage2}
         alt="hero background image 2"
         className="hero-backround-image"
