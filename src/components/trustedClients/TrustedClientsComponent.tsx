@@ -20,13 +20,9 @@ import company20 from "../../assets/RCG-Logo_2[12038376].webp";
 import company21 from "../../assets/Company-YDCS-.webp";
 // import company19 from "../../assets/Aussie Care Health Services Pty Ltd.webp";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/pagination";
-import "../../../node_modules/swiper/swiper.min.css";
-import "../../../node_modules/swiper/modules/pagination.min.css";
-// import Slider from "./Slider";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+
 const TrustedClientsComponent = () => {
   const companiesImages = [
     // company1,
@@ -47,55 +43,60 @@ const TrustedClientsComponent = () => {
     company20,
     company21,
   ];
+
+  const animation = { duration: 20000, easing: (t: number) => t };
+
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    renderMode: "performance",
+    drag: false,
+    slides: {
+      perView: 2,
+      spacing: 30,
+    },
+    breakpoints: {
+      "(min-width: 640px)": {
+        slides: { perView: 3, spacing: 30 },
+      },
+      "(min-width: 768px)": {
+        slides: { perView: 4, spacing: 40 },
+      },
+      "(min-width: 1024px)": {
+        slides: { perView: 5, spacing: 50 },
+      },
+      "(min-width: 1280px)": {
+        slides: { perView: 6, spacing: 60 },
+      },
+    },
+    created(s) {
+      s.moveToIdx(5, true, animation);
+    },
+    updated(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+    animationEnded(s) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+  });
+
   return (
     <div id="trusted-clients-container">
       <div className="heading trusted-clients-heading">
         Our Most <br /> Trusted Clients
       </div>
-      {/* <Slider images={companiesImages} speed={20000} /> */}
-      {/* <div id="trusted-clients-images-container">
-        {companiesImages?.map((image, index) => (
-          <img key={index} src={image} alt="Client 1" className="client-logo" />
-        ))}
-      </div> */}
-      <Swiper
-        slidesPerView={2}
-        breakpoints={{
-          1280: {
-            slidesPerView: 6,
-          },
-          1024: {
-            slidesPerView: 5,
-          },
-          768: {
-            slidesPerView: 4,
-          },
-          640: {
-            slidesPerView: 3,
-          },
-        }}
-        spaceBetween={0}
-        autoplay={{
-          delay: 0,
-          disableOnInteraction: true,
-          pauseOnMouseEnter: true, // Remove pause to maintain smoothness
-        }}
-        speed={2000} // Slower, smoother transition
-        loop={true}
-        allowTouchMove={false} // Disable touch interaction for smoother auto-scroll
-        modules={[Autoplay]}
-        className="mySwiper clients-swiper"
-      >
+      <div ref={sliderRef} className="keen-slider clients-swiper">
         {companiesImages.map((logo, index) => (
-          <SwiperSlide key={index}>
-            <img
+          <div key={index} className="keen-slider__slide">
+            <img loading="lazy"
               src={logo}
-              alt={`Client Logo ${index + 1}`}
+              alt={`Client logo ${index + 1}`}
               className="clients-slider-image"
+              
+              decoding="async"
             />
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 };

@@ -19,6 +19,7 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style" />
     <link rel="preload" href="/tesseract_logo.webp" as="image" type="image/webp" />
+    <link rel="preload" href="/tesseract_logo_small.webp" as="image" type="image/webp" fetchpriority="high" />
 
     <!-- Load fonts asynchronously -->
     <link
@@ -57,9 +58,9 @@
         --color-secondary: #002a52;
         --color-alt-secondary: #243b8c;
         --color-background-gradient: linear-gradient(to right, #f5fdfe, #f0f7fe);
-        --color-text-gray: #676767;
+        --color-text-gray: #555555;
         --color-text-gray2: #4d525f;
-        --color-text-gray-light: #616161b4;
+        --color-text-gray-light: #4d4d4d;
         --color-text-dark-gray: #343434;
         --color-background-light-gray: #eaeaea;
         --color-background-light-gray2: rgb(236, 236, 236);
@@ -77,9 +78,9 @@
         align-items: center;
         background-image: var(--color-background-gradient);
         padding: 20px 50px;
-        min-width: max-content;
         width: 100%;
         max-width: 1920px;
+        box-sizing: border-box;
       }
       .navbar-container {
         position: fixed;
