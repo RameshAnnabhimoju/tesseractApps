@@ -436,7 +436,7 @@ const Signup = () => {
         <div id="signup-text-section">
           {/* Reuse the small logo from top of file imports if available, otherwise just text/structure */}
           <div id="signup-navbar-logo">
-            <img loading="lazy" src={logo_small} alt="tesseract logo" width={200} />
+            <img loading="lazy" src={logo_small} alt="tesseract logo" width={120} />
           </div>
           <div id="signup-text">Start your free trial</div>
           <div id="signup-subText">
