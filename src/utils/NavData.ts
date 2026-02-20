@@ -30,7 +30,7 @@ export const navBarDummyData = {
             links: [
                 { title: "Roster Management", subTitle: "Auto Scheduling" },
                 { title: "Timesheet", subTitle: "Time Tracking" },
-                { title: "Clock In & Clock Out", subTitle: "Attendence" },
+                { title: "Clock In & Clock Out", subTitle: "Attendance" },
             ],
         },
         {

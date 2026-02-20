@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteCompression from 'vite-plugin-compression';
+// @ts-ignore
+import { visualizer } from 'rollup-plugin-visualizer';
 
 // Plugin: converts the bundled stylesheet <link> to async loading
 // so it doesn't block the initial render (eliminates render-blocking CSS)
@@ -10,9 +12,9 @@ const asyncCssPlugin = {
     // Replace: <link rel="stylesheet" crossorigin href="/assets/style-*.css">
     // With async load pattern (same as how Google Fonts are loaded)
     return html.replace(
-      /<link rel="stylesheet" crossorigin href="(\/assets\/style-[^"]+\.css)">/g,
+      /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/g,
       (_, href) =>
-        `<link rel="preload" href="${href}" as="style" onload="this.onload=null;this.rel='stylesheet'" />`+
+        `<link rel="preload" href="${href}" as="style" onload="this.onload=null;this.rel='stylesheet'" />` +
         `<noscript><link rel="stylesheet" href="${href}"></noscript>`
     );
   },
@@ -31,10 +33,20 @@ export default defineConfig({
       ext: '.br',
     }),
     asyncCssPlugin,
+    visualizer({ open: false }), // Generate bundle analysis
   ],
   build: {
-    cssCodeSplit: false,
+    cssCodeSplit: true,
     sourcemap: false,
+    modulePreload: {
+      resolveDependencies: (_filename, deps) => {
+        // Only preload vendor-react — required immediately on every page.
+        // vendor-ui (MUI/Emotion), vendor-slider, and page chunks are only used
+        // by lazy-loaded routes/components; preloading them wastes 64+ KB on
+        // every page load where those features are never used.
+        return deps.filter(dep => dep.includes('vendor-react'));
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -47,12 +59,10 @@ export default defineConfig({
           ) {
             return 'vendor-react';
           }
-          if (id.includes('node_modules/@mui/') || id.includes('node_modules/@emotion/')) {
-            return 'vendor-ui';
-          }
-          if (id.includes('node_modules/gsap/')) {
-            return 'vendor-animation';
-          }
+          // vendor-ui removed to allow granular splitting of MUI
+          // if (id.includes('node_modules/@mui/') || id.includes('node_modules/@emotion/')) {
+          //   return 'vendor-ui';
+          // }
           if (id.includes('node_modules/keen-slider/')) {
             return 'vendor-slider';
           }
