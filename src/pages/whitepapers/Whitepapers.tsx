@@ -12,13 +12,9 @@ import whitepaper5 from "../../assets/White Paper  (Nov)-Cover.webp";
 import { useLocation } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 import ComingSoon from "../comingSoon/ComingSoon";
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 
 const Whitepapers = () => {
-  useMetaTags({
-    title: "Whitepapers & Research | NDIS Digital Transformation | TesseractApps",
-    description: "Download free whitepapers on NDIS digital transformation, workforce management best practices, and care sector innovation for 2025-2030."
-  });
   const location = useLocation();
   // const { data } = location.state || {};
   // console.log(data);
@@ -52,6 +48,10 @@ const Whitepapers = () => {
   };
   return (
     <div id="whitepapers-page-container">
+      <SEO
+        title="Whitepapers & Research | NDIS Digital Transformation | TesseractApps"
+        description="Download free whitepapers on NDIS digital transformation, workforce management best practices, and care sector innovation for 2025-2030."
+      />
       <div className="heading">{data?.heading}</div>
       <div id="whitepapers-subheading" className="subheading">
         {data?.subHeading}

@@ -2,13 +2,9 @@ import "./BlogStyles.css";
 import { ourBlogDummyData } from "../../utils/DummyData";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 
 const Blog = () => {
-  useMetaTags({
-    title: "TesseractApps Blog | NDIS Industry Insights & Tips | Australia",
-    description: "Expert articles on NDIS compliance, workforce management, digital transformation, and care sector innovation. Stay informed with industry updates and practical tips."
-  });
   const navigate = useNavigate();
   const [categoryFilter, setCategoryFilter] = useState("All");
   const [blogsData, setBlogsData] = useState(ourBlogDummyData);
@@ -20,8 +16,8 @@ const Blog = () => {
       categoryFilter === "All"
         ? ourBlogDummyData
         : ourBlogDummyData.filter((blog) =>
-            blog?.categories?.includes(categoryFilter)
-          )
+          blog?.categories?.includes(categoryFilter)
+        )
     ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
     // Sort by date in descending order
     setBlogsData(filteredData);
@@ -29,6 +25,10 @@ const Blog = () => {
   const categories = ["All", "NDIS", "Aged Care", "Events", "Business"];
   return (
     <div id="blog-container">
+      <SEO
+        title="TesseractApps Blog | NDIS Industry Insights & Tips | Australia"
+        description="Expert articles on NDIS compliance, workforce management, digital transformation, and care sector innovation. Stay informed with industry updates and practical tips."
+      />
       <div className="heading">BLOG</div>
       <div className="subheading" id="blog-sub-heading">
         Insights, industry updates, and practical tips.
@@ -44,9 +44,8 @@ const Blog = () => {
         {categories.map((category) => (
           <div
             key={category}
-            className={`category-filter ${
-              categoryFilter === category ? "active-filter" : ""
-            }`}
+            className={`category-filter ${categoryFilter === category ? "active-filter" : ""
+              }`}
             onClick={() => handleCategoryFilter(category)}
           >
             {category}

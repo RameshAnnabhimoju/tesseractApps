@@ -7,13 +7,9 @@ import ourStoryImage4 from "../../assets/our-story-4.webp";
 import ourStoryImage5 from "../../assets/our-story-5.webp";
 
 import { useEffect } from "react";
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 
 const OurStory = () => {
-  useMetaTags({
-    title: "Our Story | TesseractApps Journey from 2022 to Today | NDIS Software",
-    description: "Discover how TesseractApps evolved from a 2022 conversation about NDIS compliance challenges to a fully operational workforce management platform helping care providers across Australia."
-  });
   // const imageRef = useRef<HTMLImageElement | null>(null);
   // console.log(window.innerWidth);
   // useEffect(() => {
@@ -43,6 +39,10 @@ const OurStory = () => {
   }, []);
   return (
     <div id="our-story-container">
+      <SEO
+        title="Our Story | TesseractApps Journey from 2022 to Today | NDIS Software"
+        description="Discover how TesseractApps evolved from a 2022 conversation about NDIS compliance challenges to a fully operational workforce management platform helping care providers across Australia."
+      />
       {window.innerWidth > 800 && (
         <>
           <div id="our-story-title" className="subheading">

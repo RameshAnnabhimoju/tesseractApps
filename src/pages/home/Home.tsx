@@ -4,7 +4,7 @@ import HomeHeroComponent from "../../components/homeHeroComponent/HomeHeroCompon
 // import MirroredArcsComponent from "../../components/mirroredArcsComponent/MirroredArcsComponent";
 // import VideoComponent from "../../components/videoComponent/VideoComponent";
 import "./HomeStyles.css";
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 
 // All below-fold components are lazy-loaded — they don't block the initial render
 const FeaturesComponent = lazy(
@@ -33,13 +33,12 @@ const OurBlogComponent = lazy(
 );
 
 const Home = () => {
-  useMetaTags({
-    title: "TesseractApps | NDIS Software & Workforce Management Platform Australia",
-    description: "TesseractApps is Australia's leading NDIS software solution for workforce management, rostering, compliance, and billing. Streamline your care operations with our all-in-one Salesforce-based platform. Free trial available."
-  });
-
   return (
     <div>
+      <SEO
+        title="TesseractApps | NDIS Software & Workforce Management Platform Australia"
+        description="TesseractApps is Australia's leading NDIS software solution for workforce management, rostering, compliance, and billing. Streamline your care operations with our all-in-one Salesforce-based platform. Free trial available."
+      />
       <HomeHeroComponent />
       {/* Single Suspense boundary covers all below-fold components */}
       <Suspense fallback={null}>

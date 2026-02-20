@@ -4,13 +4,9 @@ import "./BlogPostStyles.css";
 import blog5 from "../../assets/expo-canberra1.webp"; // replace with actual expo image
 import blog6 from "../../assets/expo-canberra2.webp";
 import blogVideo from "../../assets/Canberra Expo 2025.mp4"; // replace with actual expo image
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 
 const CanberraNDISExpoBlog = () => {
-  useMetaTags({
-    title: "TesseractApps at Canberra NDIS Expo | Event Recap | Australia",
-    description: "TesseractApps connects with Canberra's NDIS community at the expo. Read about our conversations with providers and insights from the Australian disability sector."
-  });
   // const navigate = useNavigate();
   // function handleClick(name: string) {
   //   appNavigate(name, navigate);
@@ -18,6 +14,11 @@ const CanberraNDISExpoBlog = () => {
 
   return (
     <div className="blog-container">
+      <SEO
+        title="TesseractApps at Canberra NDIS Expo | Event Recap | Australia"
+        description="TesseractApps connects with Canberra's NDIS community at the expo. Read about our conversations with providers and insights from the Australian disability sector."
+        type="article"
+      />
       <img loading="lazy"
         src={blog5}
         alt="TesseractApps at Canberra NDIS Expo"

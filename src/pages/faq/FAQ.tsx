@@ -6,13 +6,9 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 // import { useState } from "react";
 import ArrowDown from "../../assets/arrow_down.svg";
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 
 const FAQ = () => {
-  useMetaTags({
-    title: "Help Center | FAQs & Support Resources | TesseractApps",
-    description: "Find answers to common questions about TesseractApps. Browse FAQs, guides, and support resources to get the most from your NDIS software platform."
-  });
   // const [expanded, setExpanded] = useState(-1);
 
   // const handleExpansion = (index: number) => {
@@ -26,6 +22,10 @@ const FAQ = () => {
   // };
   return (
     <div id="faq-page-container">
+      <SEO
+        title="Help Center | FAQs & Support Resources | TesseractApps"
+        description="Find answers to common questions about TesseractApps. Browse FAQs, guides, and support resources to get the most from your NDIS software platform."
+      />
       <div className="heading">Help Center</div>
       <div className="subheading">Get Answers and Support </div>
       <div className="text" id="faq-page-text">

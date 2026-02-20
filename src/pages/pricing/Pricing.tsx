@@ -18,17 +18,15 @@ import p3 from "../../assets/p3.webp";
 // import p4 from "../../assets/p4.webp";
 import p5 from "../../assets/p6.webp";
 import pricingStar from "../../assets/pricing-star.webp";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  FormControlLabel,
-  Switch,
-  Typography,
-} from "@mui/material";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import Typography from "@mui/material/Typography";
 import React from "react";
 import { useAppContext } from "../../contexts/AppContext";
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 // import useAppNavigate from "../../hooks/useAppNavigate";
 // import { AppNavigate } from "../../routes/AppNavigate";
 // type PricingDataTickItemTypes = {
@@ -40,10 +38,6 @@ import { useMetaTags } from "../../utils/useMetaTags";
 //   data4?: { value: boolean; text: string };
 // };
 const Pricing = () => {
-  useMetaTags({
-    title: "TesseractApps Pricing | NDIS Software Plans & Packages | Australia",
-    description: "View TesseractApps pricing plans for NDIS providers. Choose from Starter, Standard, Professional, or Premium packages. 7-day free trial, no credit card required. Get 10% off with full accounting suite."
-  });
   const imageArr1 = [p1, p2];
   const imageArr2 = [p3, p5];
   // const navigate = useNavigate();
@@ -97,6 +91,10 @@ const Pricing = () => {
   // const categories = ["ndis", "ict"];
   return (
     <div id="pricing-container">
+      <SEO
+        title="TesseractApps Pricing | NDIS Software Plans & Packages | Australia"
+        description="View TesseractApps pricing plans for NDIS providers. Choose from Starter, Standard, Professional, or Premium packages. 7-day free trial, no credit card required. Get 10% off with full accounting suite."
+      />
       <div id="pricing-her-container">
         <div id="paricing-hero-images-container">
           {imageArr1.map((image) => (
