@@ -351,6 +351,15 @@ const FooterComponent = () => {
             >
               Blog
             </div>
+            <a
+              className="footer-text"
+              href="/rss.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              RSS Feed
+            </a>
           </div>
 
           <div className="footer-column">
@@ -437,21 +446,24 @@ const FooterComponent = () => {
             src={iso27001}
             alt="ISO 27001 certification badge"
             className="footer-award-image footer-award-image2"
-            
+            width="638"
+            height="100"
             decoding="async"
           />
           <img loading="lazy"
             src={iso9001}
             alt="ISO 9001 certification badge"
             className="footer-award-image footer-award-image2"
-            
+            width="638"
+            height="100"
             decoding="async"
           />
           <img loading="lazy"
             src={localAward}
             alt="Local Business Award trophy"
             className="footer-award-image"
-            
+            width="528"
+            height="120"
             decoding="async"
           />
         </div>
@@ -487,7 +499,8 @@ const FooterComponent = () => {
               src={facebook}
               alt="Visit TesseractApps on Facebook"
               className="footer-social-icon"
-              
+              width="24"
+              height="24"
               decoding="async"
               onClick={() => HandleSocialLinksClick("facebook")}
             ></img>
@@ -495,7 +508,8 @@ const FooterComponent = () => {
               src={instagram}
               alt="Visit TesseractApps on Instagram"
               className="footer-social-icon"
-              
+              width="24"
+              height="24"
               decoding="async"
               onClick={() => HandleSocialLinksClick("instagram")}
             ></img>
@@ -503,7 +517,8 @@ const FooterComponent = () => {
               src={linkedin}
               alt="Visit TesseractApps on LinkedIn"
               className="footer-social-icon"
-              
+              width="24"
+              height="24"
               decoding="async"
               onClick={() => HandleSocialLinksClick("linkedin")}
             ></img>
@@ -511,7 +526,8 @@ const FooterComponent = () => {
               src={youtube}
               alt="Visit TesseractApps on YouTube"
               className="footer-social-icon"
-              
+              width="24"
+              height="24"
               decoding="async"
               onClick={() => HandleSocialLinksClick("youtube")}
             ></img>
@@ -527,13 +543,15 @@ const FooterComponent = () => {
             <img loading="lazy"
               src={flagsImag1}
               alt="Aboriginal and Torres Strait Islander flags"
-              
+              width="47"
+              height="33"
               decoding="async"
             />
             <img loading="lazy"
               src={flagsImag2}
               alt="Australian national flag"
-              
+              width="48"
+              height="33"
               decoding="async"
             />
           </div>{" "}

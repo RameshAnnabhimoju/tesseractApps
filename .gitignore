@@ -25,3 +25,6 @@ dist-ssr
 
 tesseractWebsite
 tesseractWebsite.pub
+.claude/settings.local.json
+.claude/settings.local.json
+stats.html

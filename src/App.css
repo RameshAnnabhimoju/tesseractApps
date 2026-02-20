@@ -55,9 +55,9 @@
     cursor: pointer;
     border-radius: 50%;
     padding: 6px;
-    background-color: rgb(236, 236, 236);
-    max-height: 42px;
-    max-width: 42px;
+    background-color: rgba(236, 236, 236, 0.429);
+    height: 30px;
+    width: 30px;
   }
   .arrow-container:hover {
     background-color: var(--color-secondary);

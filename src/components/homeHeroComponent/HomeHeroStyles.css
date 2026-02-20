@@ -78,7 +78,13 @@
   color: var(--color-text-gray);
 }
 #home-tesseract-logo {
-  margin-top: 115px;
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  background-image: url('/svg-logos/T Blue.svg');
+  background-repeat: no-repeat;
+  background-size: 400%;
+  background-position: 50% 50%;
 }
 @media (max-width: 1280px) {
   .hero-backround-image {

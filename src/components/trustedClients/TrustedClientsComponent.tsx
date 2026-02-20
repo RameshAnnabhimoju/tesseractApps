@@ -22,28 +22,11 @@ import company21 from "../../assets/Company-YDCS-.webp";
 
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import { useEffect, useRef, useState } from "react";
 
-const TrustedClientsComponent = () => {
-  const companiesImages = [
-    // company1,
-    company2,
-    company10,
-    company13,
-    company4,
-    company5,
-    // company7,
-    company8,
-    company9,
-    company14,
-    // company15,
-    company16,
-    company17,
-    // company18,
-    company19,
-    company20,
-    company21,
-  ];
-
+// Inner component: contains useKeenSlider — only mounts when shell is in view
+// Deferring mount until intersection avoids the offsetWidth reflow during initial page load.
+const TrustedClientsSlider = ({ companiesImages }: { companiesImages: string[] }) => {
   const animation = { duration: 20000, easing: (t: number) => t };
 
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
@@ -80,23 +63,71 @@ const TrustedClientsComponent = () => {
   });
 
   return (
-    <div id="trusted-clients-container">
+    <div ref={sliderRef} className="keen-slider clients-swiper">
+      {companiesImages.map((logo, index) => (
+        <div key={index} className="keen-slider__slide">
+          <img loading="lazy"
+            src={logo}
+            alt={`Client logo ${index + 1}`}
+            className="clients-slider-image"
+
+            decoding="async"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const TrustedClientsComponent = () => {
+  const companiesImages = [
+    // company1,
+    company2,
+    company10,
+    company13,
+    company4,
+    company5,
+    // company7,
+    company8,
+    company9,
+    company14,
+    // company15,
+    company16,
+    company17,
+    // company18,
+    company19,
+    company20,
+    company21,
+  ];
+
+  const shellRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = shellRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect(); // one-shot: init slider once, never re-observe
+        }
+      },
+      { rootMargin: "200px" } // pre-init 200px before entering viewport
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div id="trusted-clients-container" ref={shellRef}>
       <div className="heading trusted-clients-heading">
         Our Most <br /> Trusted Clients
       </div>
-      <div ref={sliderRef} className="keen-slider clients-swiper">
-        {companiesImages.map((logo, index) => (
-          <div key={index} className="keen-slider__slide">
-            <img loading="lazy"
-              src={logo}
-              alt={`Client logo ${index + 1}`}
-              className="clients-slider-image"
-              
-              decoding="async"
-            />
-          </div>
-        ))}
-      </div>
+      {isInView
+        ? <TrustedClientsSlider companiesImages={companiesImages} />
+        : <div style={{ minHeight: "120px" }} aria-hidden="true" />
+      }
     </div>
   );
 };

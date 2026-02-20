@@ -59,10 +59,9 @@ export default defineConfig({
           ) {
             return 'vendor-react';
           }
-          // vendor-ui removed to allow granular splitting of MUI
-          // if (id.includes('node_modules/@mui/') || id.includes('node_modules/@emotion/')) {
-          //   return 'vendor-ui';
-          // }
+          if (id.includes('node_modules/@mui/') || id.includes('node_modules/@emotion/')) {
+            return 'vendor-ui';
+          }
           if (id.includes('node_modules/keen-slider/')) {
             return 'vendor-slider';
           }

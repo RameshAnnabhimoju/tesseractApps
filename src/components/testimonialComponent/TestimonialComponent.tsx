@@ -27,6 +27,8 @@ const TestimonialComponent = () => {
                     src={star}
                     alt="star"
                     className="star-image"
+                    width="14"
+                    height="14"
                   />
                 ))}
               </div>
@@ -48,6 +50,8 @@ const TestimonialComponent = () => {
                   src={item.authorImage}
                   alt="author"
                   className="author-image"
+                  width="40"
+                  height="40"
                 />
                 <div className="author-details">
                   <div className="author-name">{item.author}</div>

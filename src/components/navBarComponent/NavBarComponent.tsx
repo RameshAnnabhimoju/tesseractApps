@@ -1,17 +1,15 @@
 // import logo_small from "../../assets/tesseract_logo_small.webp";
 import search from "../../assets/search.svg";
-import plus from "../../assets/plus.svg";
-import profile from "../../assets/person.svg";
-import australia from "../../assets/australia.webp";
+// import plus from "../../assets/plus.svg";
+// import profile from "../../assets/person.svg";
+// import australia from "../../assets/australia.webp";
+import { PhoneCall } from 'lucide-react';
 import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { RefObject } from "react";
 import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
 import { navBarDummyData } from "../../utils/NavData";
-import { Drawer } from "@mui/material";
-import menuIcon from "../../assets/menu.webp";
-import closeIcon from "../../assets/close.webp";
 interface PopupPosition {
   top: number;
   left: number;
@@ -20,7 +18,7 @@ import ArrowDown from "../../assets/arrow_down.svg";
 // import { AppNavigate } from "../../routes/AppNavigate";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowUp from "../arrows/ArrowUp";
-import signupImage from "../../assets/signup.webp";
+// import signupImage from "../../assets/signup.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import { useAppContext } from "../../contexts/AppContext";
 import AppLogo from "../appLogo/AppLogo";
@@ -166,17 +164,6 @@ const NavBarComponent = ({
       ? setShowSearch(value)
       : setShowSearch(!showSearch);
   };
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (inputRef.current)
-        inputRef.current.setAttribute("style", "width: 200px;");
-    }, 0); // slight delay ensures transition triggers
-
-    return () => clearTimeout(timeout);
-  }, [showSearch]);
-
   // useEffect(() => {}, [showSearch]);
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
@@ -194,8 +181,8 @@ const NavBarComponent = ({
     let centerX = rect.left + rect.width / 2;
 
     setPopupPosition({
-      top: 120, // right below nav-link
-      left: centerX, // center X position
+      top: rect.bottom + 6, // just below the nav link
+      left: centerX,
     });
     setPopupOpen(true);
     const name = event.currentTarget.id;
@@ -223,6 +210,19 @@ const NavBarComponent = ({
   };
   const [toggleDrawer, setToggleDrawer] = useState(false);
   const [expanded, setExpanded] = useState(-1);
+
+  // Lock body scroll and handle Escape key when mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = toggleDrawer ? "hidden" : "";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setToggleDrawer(false);
+    };
+    if (toggleDrawer) document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [toggleDrawer]);
 
   const handleExpansion = (index: number) => {
     setExpanded((prevExpanded) => {
@@ -306,54 +306,64 @@ const NavBarComponent = ({
         TesseractApps
       </div> */}
       <AppLogo />
-      <img loading="lazy"
-        src={menuIcon}
-        alt="Open navigation menu"
+      <div
         id="nav-menu-icon"
-        onClick={() => {
-          setToggleDrawer(!toggleDrawer);
-        }}
-      />
+        onClick={() => setToggleDrawer(!toggleDrawer)}
+        aria-label="Open navigation menu"
+        role="button"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 6H20M4 12H20M4 18H20"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
 
-      <Drawer
+      {/* Backdrop — clicking it closes the drawer */}
+      {toggleDrawer && (
+        <div
+          id="nav-drawer-backdrop"
+          onClick={() => setToggleDrawer(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Native CSS drawer — replaces MUI Drawer to remove vendor-ui from initial bundle */}
+      <div
         id="nav-menu-drawer"
-        anchor="right"
-        open={toggleDrawer}
-        ModalProps={{
-          BackdropProps: {
-            sx: {
-              backdropFilter: "blur(4px)",
-              backgroundColor: "rgba(0, 0, 0, 0.4)",
-            },
-          },
-        }}
+        className={toggleDrawer ? "open" : ""}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
       >
         <div id="nav-menu-card">
           <div id="nav-menu-header">
-            <div
-              className={
-                "navbar-requestDemo" +
-                (toggleDrawer ? " drawer-request-demo" : "")
-              }
-              onClick={() => handleBookADemo(true)}
-            >
-              <div className="navbar-requestDemo-text">Book a Demo</div>
-              <div className="navbar-requestDemo-icon-container">
-                <img loading="lazy"
-                  src={plus}
-                  alt="Open demo request form"
-                  className="navbar-requestDemo-icon"
-                />
-              </div>
-            </div>
-            <img loading="lazy"
-              src={closeIcon}
-              alt="Close navigation menu"
+            <AppLogo />
+            <button
               id="nav-drawer-close"
-              onClick={() => {
-                setToggleDrawer(false);
-              }}
-            />
+              onClick={() => setToggleDrawer(false)}
+              aria-label="Close navigation menu"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M18 6L6 18M6 6L18 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
           <div id="nav-menu-links">
             {NAV_LINKS.map((label, index) => {
@@ -401,7 +411,7 @@ const NavBarComponent = ({
                               {navBarDummyData["Product"].map(
                                 (value, index) => (
                                   <div key={value.heading + index}>
-                                    <div>{value.heading}</div>
+                                    <div className="nav-accordion-group-heading">{value.heading}</div>
                                     {value.links.map((link, innerIndex) => (
                                       <div
                                         key={link.title + innerIndex}
@@ -587,40 +597,30 @@ const NavBarComponent = ({
               }
             })}
           </div>
-          <div id="nav-menu-icons">
-            <button id="navbar-login" onClick={signupHandler}>
-              <img loading="lazy"
-                src={signupImage}
-                alt="Sign up"
-                id="navbar-profile-icon"
-              />{" "}
-              Sign Up
-            </button>
-            <button id="navbar-login" onClick={loginHandler}>
-              <img loading="lazy"
-                src={profile}
-                alt="Sign in"
-                id="navbar-profile-icon"
-              />{" "}
-              Sign In
-            </button>
-            <img loading="lazy"
-              src={australia}
-              alt="navbar-country-icon"
-              id="navbar-country-icon"
-            />
+          <div id="nav-menu-footer">
+            <div id="nav-menu-ctas">
+              <div
+                className="navbar-tryItFree nav-drawer-btn"
+                onClick={() => { handleSignup(true); setToggleDrawer(false); }}
+              >
+                <span className="navbar-requestDemo-text">Try For Free</span>
+              </div>
+              <div
+                className="navbar-requestDemo nav-drawer-btn"
+                onClick={() => { handleBookADemo(true); setToggleDrawer(false); }}
+              >
+                <span className="navbar-requestDemo-text">Book a Demo</span>
+                <PhoneCall className="navbar-requestDemo-icon" />
+              </div>
+            </div>
+            <div id="nav-menu-auth">
+              {/* <button className="nav-auth-btn nav-auth-btn--primary" onClick={signupHandler}>Sign Up</button> */}
+              <button className="nav-auth-btn nav-auth-btn--secondary" onClick={loginHandler}>Sign In</button>
+            </div>
           </div>
         </div>
-      </Drawer>
+      </div>
       <div id="navbar-links">
-        <div id="navbar-links-logins">
-          <div className="nav-link-logins" onClick={loginHandler}>
-            Sign in
-          </div>
-          <div className="nav-link-logins" onClick={signupHandler}>
-            Sign up
-          </div>
-        </div>
         <div id="navbar-links-links">
           {NAV_LINKS.map((label, index) => {
             const shouldHavePopup = DROPDOWN_LINKS.includes(label);
@@ -672,13 +672,7 @@ const NavBarComponent = ({
             onClick={() => handleBookADemo(true)}
           >
             <div className="navbar-requestDemo-text">Book a Demo</div>
-            <div className="navbar-requestDemo-icon-container">
-              <img loading="lazy"
-                src={plus}
-                alt="Open demo request form"
-                className="navbar-requestDemo-icon"
-              />
-            </div>
+              <PhoneCall className="navbar-requestDemo-icon" />
           </div>
 
           {/* <button id="navbar-login" onClick={signupHandler}>
@@ -708,6 +702,14 @@ const NavBarComponent = ({
           alt="navbar-country-icon"
           id="navbar-country-icon"
         /> */}
+        </div>
+        <div id="navbar-links-logins">
+          <div className="nav-link-logins" onClick={loginHandler}>
+            Sign in
+          </div>
+          {/* <div className="nav-link-logins" onClick={signupHandler}>
+            Sign up
+          </div> */}
         </div>
       </div>
 
@@ -899,7 +901,7 @@ const NavBarComponent = ({
         isOpen={showSearch}
         onClose={handleSearchIcon}
         containerRef={portalContainerRef}
-        position={{ top: 120, left: window.innerWidth / 2 }}
+        position={{ top: 78, left: window.innerWidth / 2 }}
         showTriangle={false}
         backgroundColor="white"
       >

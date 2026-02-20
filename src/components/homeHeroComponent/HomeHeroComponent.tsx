@@ -1,7 +1,7 @@
 // import VideoComponent from "../videoComponent/VideoComponent";
 import "./HomeHeroStyles.css";
 // Logo served from public/ so the preload link in index.html matches the exact URL
-const logo_small = "/tesseract_logo_small.webp";
+// const logo_small = "/svg-logos/T Blue.svg";
 // import ios from "../../assets/mobile_ios.webp";
 // import android from "../../assets/mobile_android.webp";
 // import facebook from "../../assets/facebook.webp";
@@ -35,7 +35,7 @@ const HomeHeroComponent = () => {
       /> */}
       <HeroArcsLeftComponent pendulums={homeLeftArcsData} />
       <div id="home-text-container">
-        <img
+        {/* <img
           loading="eager"
           fetchPriority="high"
           src={logo_small}
@@ -43,8 +43,9 @@ const HomeHeroComponent = () => {
           id="home-tesseract-logo"
           width="59"
           height="59"
-        />
-        <h1 id="home-text-heading">End-to-End Workforce Management Software</h1>
+        /> */}
+        <div id="home-tesseract-logo" role="img" aria-label="Tesseract Apps Logo" />
+        <h1 id="home-text-heading">End-to-End Workforce <br /> Management Software</h1>
         <h2 id="home-text-subText">
           TesseractApps streamlines compliance, team management, NDIS-related care and service delivery for providers, all on a secure, scalable platform.
         </h2>

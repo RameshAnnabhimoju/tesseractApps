@@ -1,6 +1,7 @@
 import "./OurBlogStyles.css";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import { useEffect, useRef, useState } from "react";
 
 // import image3 from "../../assets/image2.webp";
 // import image4 from "../../assets/image3.webp";
@@ -11,7 +12,9 @@ import { useNavigate } from "react-router-dom";
 import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowRight from "../arrows/ArrowRight";
 
-const OurBlogComponent = () => {
+// Inner component: contains useKeenSlider — only mounts when shell is in view
+// Deferring mount until intersection avoids the offsetWidth reflow during initial page load.
+const OurBlogSlider = () => {
   const getPerView = () => {
     if (typeof window === "undefined") return 4;
     if (window.innerWidth <= 570) return 1;
@@ -50,9 +53,7 @@ const OurBlogComponent = () => {
 
   const navigate = useNavigate();
   return (
-    <div id="ourBlog-container">
-      <div className="heading">OUR BLOG</div>
-      <div className="subheading">Most Recent Updates and Research</div>
+    <>
       <div className="ourBlog-buttons">
         <div
           className="arrow-container ourBlog-button"
@@ -117,6 +118,38 @@ const OurBlogComponent = () => {
             );
           })}
       </div>
+    </>
+  );
+};
+
+const OurBlogComponent = () => {
+  const shellRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = shellRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect(); // one-shot: init slider once, never re-observe
+        }
+      },
+      { rootMargin: "200px" } // pre-init 200px before entering viewport
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div id="ourBlog-container" ref={shellRef}>
+      <div className="heading">OUR BLOG</div>
+      <div className="subheading">Most Recent Updates and Research</div>
+      {isInView
+        ? <OurBlogSlider />
+        : <div style={{ minHeight: "300px" }} aria-hidden="true" />
+      }
     </div>
   );
 };
