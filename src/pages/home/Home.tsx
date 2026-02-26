@@ -40,7 +40,6 @@ const Home = () => {
         description="TesseractApps is Australia's leading NDIS software solution for workforce management, rostering, compliance, and billing. Streamline your care operations with our all-in-one Salesforce-based platform. Free trial available."
       />
       <HomeHeroComponent />
-      {/* Single Suspense boundary covers all below-fold components */}
       <Suspense fallback={null}>
         {/* <MirroredArcsComponent /> */}
         <FeaturesComponent />

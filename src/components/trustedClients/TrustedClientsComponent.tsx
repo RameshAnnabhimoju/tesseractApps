@@ -1,23 +1,23 @@
 import "./TrustedClientsStyles.css";
 // import company1 from "../../assets/company-1.webp";
-import company2 from "../../assets/company-2.webp";
+import company2 from "../../assets/thumbs/company-2-thumb.webp";
 // import company3 from "../../assets/company-3.webp";
-import company4 from "../../assets/company-4.webp";
-import company5 from "../../assets/company-5.webp";
+import company4 from "../../assets/thumbs/company-4-thumb.webp";
+import company5 from "../../assets/thumbs/company-5-thumb.webp";
 // import company6 from "../../assets/company-6.webp";
 // import company7 from "../../assets/company-7.webp";
-import company8 from "../../assets/ANA Logo.webp";
-import company9 from "../../assets/FRAMILY VENTURES Final.webp";
-import company10 from "../../assets/PINNACLE Final.webp";
-import company13 from "../../assets/logo13.webp";
-import company14 from "../../assets/NEXUS Final.webp";
+import company8 from "../../assets/thumbs/ANA Logo-thumb.webp";
+import company9 from "../../assets/thumbs/FRAMILY VENTURES Final-thumb.webp";
+import company10 from "../../assets/thumbs/PINNACLE Final-thumb.webp";
+import company13 from "../../assets/thumbs/logo13-thumb.webp";
+import company14 from "../../assets/thumbs/NEXUS Final-thumb.webp";
 // import company15 from "../../assets/Bright Path Psychosocial & disability Services Pty Ltd.webp";
-import company16 from "../../assets/Blessing Care and Support Pty Ltd.webp";
-import company17 from "../../assets/Clear Choice Clinic Pty Ltd.webp";
+import company16 from "../../assets/thumbs/Blessing Care-thumb.webp";
+import company17 from "../../assets/thumbs/Clear Choice-thumb.webp";
 // import company18 from "../../assets/I've Got You Empowerment Pty Ltd.webp";
-import company19 from "../../assets/ImprovedAbility.webp";
-import company20 from "../../assets/RCG-Logo_2[12038376].webp";
-import company21 from "../../assets/Company-YDCS-.webp";
+import company19 from "../../assets/thumbs/ImprovedAbility-thumb.webp";
+import company20 from "../../assets/thumbs/RCG-Logo-thumb.webp";
+import company21 from "../../assets/thumbs/Company-YDCS-thumb.webp";
 // import company19 from "../../assets/Aussie Care Health Services Pty Ltd.webp";
 
 import { useKeenSlider } from "keen-slider/react";
@@ -70,7 +70,8 @@ const TrustedClientsSlider = ({ companiesImages }: { companiesImages: string[] }
             src={logo}
             alt={`Client logo ${index + 1}`}
             className="clients-slider-image"
-
+            width="200"
+            height="120"
             decoding="async"
           />
         </div>

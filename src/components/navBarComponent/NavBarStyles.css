@@ -95,9 +95,11 @@
 }
 
 /* ─── Search icon ────────────────────────────────────────────────────────── */
+#navbar-search {
+  cursor: pointer;
+}
 #navbar-search-icon {
   width: 19px;
-  cursor: pointer;
   background-color: var(--color-primary);
   border-radius: 50%;
   padding: 8px;

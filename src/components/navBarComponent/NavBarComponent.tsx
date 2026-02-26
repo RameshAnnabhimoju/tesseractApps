@@ -1,9 +1,9 @@
 // import logo_small from "../../assets/tesseract_logo_small.webp";
-import search from "../../assets/search.svg";
+// import search from "../../assets/search.svg";
 // import plus from "../../assets/plus.svg";
 // import profile from "../../assets/person.svg";
 // import australia from "../../assets/australia.webp";
-import { PhoneCall } from 'lucide-react';
+import { PhoneCall, Search } from 'lucide-react';
 import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
 import { useEffect, useState } from "react";
@@ -650,11 +650,9 @@ const NavBarComponent = ({
             );
           })}
           <div id="navbar-search">
-            <img loading="lazy"
-              src={search}
-              alt="Open search"
-              id="navbar-search-icon"
-              onClick={() => handleSearchIcon(true)}
+            <Search
+              className="navbar-search-icon"
+              onClick={() => handleSearchIcon()}
             />
           </div>
 

@@ -84,8 +84,10 @@ const OurBlogSlider = () => {
               >
                 <img loading="lazy"
                   className="ourBlog-image"
-                  src={data.image}
+                  src={data.thumbnail ?? data.image}
                   alt="ourBlog Image"
+                  width="400"
+                  height="210"
                 />
                 <div className="ourBlog-attributes-container">
                   <div className="ourBlog-attributes">{data?.date}</div>
@@ -99,9 +101,11 @@ const OurBlogSlider = () => {
                 <div className="ourBlog-footer">
                   <div className="ourBlog-author">
                     <img loading="lazy"
-                      src={data.authorImage}
+                      src={data.authorImageThumb ?? data.authorImage}
                       alt="author Image"
                       className="ourBlog-author-image"
+                      width="45"
+                      height="45"
                     />
                     <div className="ourBlog-author-name">{data?.author}</div>
                   </div>
@@ -111,6 +115,8 @@ const OurBlogSlider = () => {
                       className="ourBlog-right-arrow"
                       src={rightArrow}
                       alt="arrow Image"
+                      width="30"
+                      height="30"
                     />
                   </div>
                 </div>

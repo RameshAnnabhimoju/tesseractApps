@@ -1,0 +1,1482 @@
+{
+  "name": "blog-automation",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "generate-blog",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "d11be2db-9e37-4d53-8a19-63f5655a0cca",
+      "name": "Trigger A: Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        304
+      ],
+      "webhookId": "tesseract-blog-pipeline"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 22 * * 0"
+            }
+          ]
+        }
+      },
+      "id": "bc6f16c2-6d3c-441b-bb16-8e6b0f550d48",
+      "name": "Trigger B: Schedule (Mon 9am AEST)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1120,
+        112
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "a545757b-cf97-42db-b54f-a37477eaa0c2",
+      "name": "Trigger C: Manual",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        496
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Normalise input regardless of which trigger fired.\n// Webhook passes $json.body.* — Schedule and Manual have empty $json.\nconst body = $json.body || {};\n\nconst hasTriggerFields = body.keywords !== undefined || body.forceTitle !== undefined || body.category !== undefined;\nconst triggerSource = hasTriggerFields ? 'webhook' : ($execution?.mode === 'manual' ? 'manual' : 'schedule');\n\nconst inputKeywordsArray = Array.isArray(body.keywords) ? body.keywords : [];\nconst inputKeywords = inputKeywordsArray.join(', ');\nconst forceTitle = (body.forceTitle || '').trim();\nconst category = (body.category || 'NDIS').trim();\nconst author = (body.author || 'Belle Bai').trim();\nconst hasInputKeywords = inputKeywordsArray.length > 0;\n\nreturn [{ json: { triggerSource, inputKeywords, forceTitle, category, author, hasInputKeywords } }];"
+      },
+      "id": "a02ef82f-da20-438b-9348-0b9e2a0119a7",
+      "name": "① Code: Normalise Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -896,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://arpycced.api.sanity.io/v2021-06-07/data/query/production",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "*[_type==\"blogPost\"]|order(publishedAt desc)[0...60]{\"slug\":slug.current}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "22112fbc-c0b0-43f1-9df1-4bdaa88e9181",
+      "name": "② HTTP: Fetch Existing Slugs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -672,
+        304
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TJJv6q8p9GmOYxyA",
+          "name": "wns-sanity-header"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const normalised = $('① Code: Normalise Input').first().json;\nconst sanityResponse = $input.first().json;\n\nlet dynamicSlugs = [];\ntry {\n  dynamicSlugs = (sanityResponse.result || []).map(r => r?.slug).filter(Boolean);\n} catch(e) { dynamicSlugs = []; }\n\nconst staticSlugs = [\n  'protecting-participant-data','future-proofing-disability-services',\n  'hidden-costs-workforce-management','sydney-disability-workability-expo-2025',\n  'canberra-ndis-expo','beyond-compliance-care-quality',\n  'manual-rostering-hidden-costs','future-proof-ndis-organisation-2025',\n  'top-3-compliance-myths-busted','common-payroll-pitfalls-ndis',\n  'melbourne-expo-2025','ndis-compliance-audit-failures-2026'\n];\n\nconst existingBlogSlugs = [...new Set([...dynamicSlugs, ...staticSlugs])].join(', ');\n\nconst internalPages = [\n  { anchor:'smart rostering software', url:'/roster-management', topic:'rostering scheduling' },\n  { anchor:'timesheet management', url:'/timesheet', topic:'timesheet time attendance' },\n  { anchor:'NDIS participant management', url:'/participant-management', topic:'participant management NDIS' },\n  { anchor:'HR operations software', url:'/hr-operations', topic:'HR onboarding staff management' },\n  { anchor:'incident management system', url:'/incident-management', topic:'incident reporting compliance' },\n  { anchor:'digital forms and document management', url:'/forms', topic:'forms documents digital' },\n  { anchor:'care management platform', url:'/', topic:'care management software NDIS' },\n  { anchor:'NDIS compliance tools', url:'/admin-console', topic:'compliance admin NDIS' },\n  { anchor:'Xero payroll integration', url:'/accounting', topic:'payroll accounting integration' },\n  { anchor:'e-signature for care providers', url:'/t-sign', topic:'e-signature documents' },\n  { anchor:'NDIS workforce management', url:'/ndis-industry', topic:'NDIS workforce' },\n  { anchor:'aged care software', url:'/aged-care-services', topic:'aged care management' },\n  { anchor:'allied health practice management', url:'/allied-health-services', topic:'allied health' },\n  { anchor:'disability support software', url:'/disability-support-ndis', topic:'disability support' },\n  { anchor:'learning and training platform', url:'/t-learning-hub', topic:'training learning staff' }\n];\n\nreturn [{ json: {\n  triggerSource: normalised.triggerSource,\n  inputKeywords: normalised.inputKeywords,\n  forceTitle: normalised.forceTitle,\n  category: normalised.category,\n  author: normalised.author,\n  hasInputKeywords: normalised.hasInputKeywords,\n  companyContext: 'TesseractApps is an Australian B2B SaaS company providing care management and workforce management software for NDIS providers, aged care services, disability support organisations, and allied health practices. Core features: smart rostering & scheduling, timesheet & time-attendance, HR operations & onboarding, participant management, incident management & reporting, payroll integration (Xero), e-signature (T-Sign), forms & document management, compliance tracking, T-Learning Hub training platform. Customers are Australian care sector operators from small NDIS providers to large enterprise aged care groups.',\n  siteUrl: 'https://tesseractapps.com',\n  internalPagesJson: JSON.stringify(internalPages),\n  existingBlogSlugs,\n  fallbackImageAssetRef: 'image-fallback-tesseract-default'\n}}];"
+      },
+      "id": "87e7d38a-a8a4-4d90-8e6c-e54074f4833e",
+      "name": "③ Code: Set Pipeline Variables",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -448,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.hasInputKeywords }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "3578c7ad-9e2f-4f90-9e1f-c0b5f1beda3f",
+      "name": "④ IF: Keywords Provided?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        -224,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a senior SEO content strategist specialising in the Australian disability and aged care sector.\n\nCompany context: {{ $('③ Code: Set Pipeline Variables').first().json.companyContext }}\nTarget category: {{ $('③ Code: Set Pipeline Variables').first().json.category }}\nInput keywords from team: {{ $('③ Code: Set Pipeline Variables').first().json.inputKeywords }}\nForce exact title (use verbatim if non-empty): {{ $('③ Code: Set Pipeline Variables').first().json.forceTitle }}\nAlready published — DO NOT duplicate these slugs: {{ $('③ Code: Set Pipeline Variables').first().json.existingBlogSlugs }}\n\nBuild the best SEO blog topic using the team's keywords as foundation. If forceTitle is non-empty, use it exactly as the title and derive slug from it.\n\nReturn ONLY valid JSON, no preamble, no markdown fences:\n{\"title\":\"SEO title 50-65 chars\",\"slug\":\"url-friendly-slug\",\"metaDescription\":\"145-158 char meta desc with primary keyword near start\",\"primaryKeyword\":\"exact phrase to optimise for\",\"secondaryKeywords\":[\"supporting term 1\",\"supporting term 2\",\"supporting term 3\"],\"lsiKeywords\":[\"lsi1\",\"lsi2\",\"lsi3\",\"lsi4\",\"lsi5\"],\"searchIntent\":\"informational\",\"searchVolumeTier\":\"medium\",\"angle\":\"Editorial angle in one sentence\",\"targetAudience\":\"specific role or job title\",\"contentType\":\"guide\",\"estimatedWordCount\":1600}\n",
+        "batching": {}
+      },
+      "id": "d909bf5e-f540-4901-bea1-9ce617ce7555",
+      "name": "⑤a Chain: Topic from Keywords",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "06010f86-0c0b-47c1-bb5d-5c165f0b0d1c",
+      "name": "Gemini: Topic from Keywords",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        80,
+        224
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "N68jByDfxkR7KKdp",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a senior SEO content strategist specialising in the Australian disability and aged care sector.\n\nCompany context: {{ $('③ Code: Set Pipeline Variables').first().json.companyContext }}\nTarget category: {{ $('③ Code: Set Pipeline Variables').first().json.category }}\nAlready published — DO NOT duplicate these slugs: {{ $('③ Code: Set Pipeline Variables').first().json.existingBlogSlugs }}\n\nIdentify ONE high-value blog topic for Australian NDIS providers or care operators. It must:\n- Have genuine search demand from care sector professionals\n- Address current pain points: NDIS pricing changes, workforce shortages, compliance audits, aged care reforms, digital transformation\n- Have informational or problem-solving search intent\n- Naturally connect to TesseractApps product features (but keep content educational)\n- NOT duplicate any of the already-published slugs above\n\nReturn ONLY valid JSON, no preamble, no markdown fences:\n{\"title\":\"SEO title 50-65 chars\",\"slug\":\"url-friendly-slug\",\"metaDescription\":\"145-158 char meta desc with primary keyword near start\",\"primaryKeyword\":\"exact phrase to optimise for\",\"secondaryKeywords\":[\"supporting term 1\",\"supporting term 2\",\"supporting term 3\"],\"lsiKeywords\":[\"lsi1\",\"lsi2\",\"lsi3\",\"lsi4\",\"lsi5\"],\"searchIntent\":\"informational\",\"searchVolumeTier\":\"medium\",\"angle\":\"Editorial angle in one sentence\",\"targetAudience\":\"specific role or job title\",\"contentType\":\"guide\",\"estimatedWordCount\":1600}\n",
+        "batching": {}
+      },
+      "id": "0b5c3603-98ad-45e6-acc0-545fd64dac34",
+      "name": "⑤b Chain: Auto Research Topic",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        0,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "21ccefd2-2ac8-4989-aede-11736c3adc89",
+      "name": "Gemini: Auto Research Topic",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        80,
+        736
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "N68jByDfxkR7KKdp",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst raw = data?.text || data?.output || data?.content?.[0]?.text || '';\nif (!raw) throw new Error('Empty response from topic LLM call — check Gemini credential');\n\nconst cleaned = raw.replace(/```json\\n?/gi,'').replace(/```\\n?/g,'').trim();\n\nfunction extractJson(str) {\n  const start = str.indexOf('{');\n  if (start === -1) return null;\n  let depth = 0;\n  for (let i = start; i < str.length; i++) {\n    if (str[i] === '{') depth++;\n    else if (str[i] === '}') {\n      depth--;\n      if (depth === 0) return str.slice(start, i + 1);\n    }\n  }\n  return null;\n}\n\nlet topic;\ntry {\n  topic = JSON.parse(cleaned);\n} catch(e) {\n  const extracted = extractJson(cleaned);\n  if (extracted) {\n    try { topic = JSON.parse(extracted); }\n    catch(e2) { throw new Error('Topic JSON parse failed after extraction: ' + extracted.slice(0,300)); }\n  } else {\n    throw new Error('Topic JSON parse failed — no JSON object found. Raw: ' + cleaned.slice(0,300));\n  }\n}\n\ntopic.imageAltText = `${topic.title} | TesseractApps`;\n\nreturn [{ json: topic }];\n"
+      },
+      "id": "6f62020c-18a9-4058-b036-661be9c31218",
+      "name": "⑥ Code: Parse Topic JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a senior SEO strategist. Create a comprehensive content brief for the following blog post.\n\nTitle: {{ $('⑥ Code: Parse Topic JSON').first().json.title }}\nPrimary keyword: {{ $('⑥ Code: Parse Topic JSON').first().json.primaryKeyword }}\nLSI keywords: {{ $('⑥ Code: Parse Topic JSON').first().json.lsiKeywords.join(', ') }}\nSearch intent: {{ $('⑥ Code: Parse Topic JSON').first().json.searchIntent }}\nContent type: {{ $('⑥ Code: Parse Topic JSON').first().json.contentType }}\nAngle: {{ $('⑥ Code: Parse Topic JSON').first().json.angle }}\nTarget audience: {{ $('⑥ Code: Parse Topic JSON').first().json.targetAudience }}\nTarget word count: {{ $('⑥ Code: Parse Topic JSON').first().json.estimatedWordCount }}\nCategory: {{ $('③ Code: Set Pipeline Variables').first().json.category }}\n\nAvailable internal links — embed the 4-5 most relevant in the content plan:\n{{ $('③ Code: Set Pipeline Variables').first().json.internalPagesJson }}\n\nReturn ONLY valid JSON, no preamble, no markdown fences:\n{\"h1\":\"The actual H1 heading for the page\",\"intro\":\"2-3 sentence hook — lead with a problem or striking stat\",\"sections\":[{\"h2\":\"Section heading that includes a keyword variation\",\"notes\":\"What to cover, tone, what to avoid\",\"h3s\":[\"subheading 1\",\"subheading 2\"],\"internalLink\":{\"anchor\":\"anchor text matching internal pages list\",\"url\":\"/page-path\"}}],\"keywordPlacement\":{\"primaryKeyword\":[\"intro paragraph\",\"first H2\",\"conclusion\"],\"lsiPlacements\":[{\"keyword\":\"lsi keyword\",\"section\":\"where it should appear\"}]},\"externalSources\":[{\"name\":\"Real Australian government or authoritative source\",\"type\":\"government\",\"relevance\":\"why cite this\"}],\"statsToInclude\":[\"A real or realistic stat\",\"Another supporting data point\"],\"editorialStance\":\"The clear opinion or position this post takes\",\"ctaSection\":\"Which section gets the soft CTA and what it says\",\"schemaType\":\"Article\",\"faqItems\":[{\"q\":\"Frequently asked question\",\"a\":\"Concise answer under 60 words\"}]}\n",
+        "batching": {}
+      },
+      "id": "b5307b50-5219-4389-9663-0e8fe5c40f45",
+      "name": "⑦ Chain: Generate SEO Brief",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        576,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "c8808099-688d-4f94-8045-6d4f6c7eadeb",
+      "name": "Gemini: SEO Brief",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        656,
+        368
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "N68jByDfxkR7KKdp",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst raw = data?.text || data?.output || data?.content?.[0]?.text || '';\nif (!raw) throw new Error('Empty response from SEO brief LLM call');\n\nconst cleaned = raw.replace(/```json\\n?/gi,'').replace(/```\\n?/g,'').trim();\n\n// Extract outermost JSON object using balanced-brace tracking.\n// Greedy regex /{[\\s\\S]*}/ fails when Gemini appends trailing text after the JSON.\nfunction extractJson(str) {\n  const start = str.indexOf('{');\n  if (start === -1) return null;\n  let depth = 0;\n  for (let i = start; i < str.length; i++) {\n    if (str[i] === '{') depth++;\n    else if (str[i] === '}') {\n      depth--;\n      if (depth === 0) return str.slice(start, i + 1);\n    }\n  }\n  return null;\n}\n\nlet brief;\ntry {\n  brief = JSON.parse(cleaned);\n} catch(e) {\n  const extracted = extractJson(cleaned);\n  if (extracted) {\n    try { brief = JSON.parse(extracted); }\n    catch(e2) { throw new Error('Brief JSON parse failed after extraction: ' + extracted.slice(0,300)); }\n  } else {\n    throw new Error('Brief JSON parse failed — no JSON object found. Raw: ' + cleaned.slice(0,300));\n  }\n}\n\nreturn [{ json: brief }];\n"
+      },
+      "id": "144172e2-47c9-4af4-bac8-53415ec7a5b4",
+      "name": "⑧ Code: Parse SEO Brief JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        928,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const topic = $('⑥ Code: Parse Topic JSON').first().json;\nconst brief = $input.first().json;\nconst vars = $('③ Code: Set Pipeline Variables').first().json;\n\nconst sectionText = (brief.sections || []).map((s, i) => {\n  let t = `Section ${i+1}: ${s.h2}\\n  What to cover: ${s.notes}`;\n  if (s.h3s && s.h3s.length) t += `\\n  Subheadings: ${s.h3s.join(' | ')}`;\n  if (s.internalLink) t += `\\n  Embed link: [${s.internalLink.anchor}](${vars.siteUrl}${s.internalLink.url})`;\n  return t;\n}).join('\\n\\n');\n\nconst lsiText = (brief.keywordPlacement?.lsiPlacements || []).map(p => `  - \"${p.keyword}\" → in ${p.section}`).join('\\n');\nconst sourcesText = (brief.externalSources || []).map(s => `  - ${s.name} (${s.type}): ${s.relevance}`).join('\\n');\nconst statsText = (brief.statsToInclude || []).map(s => `  - ${s}`).join('\\n');\nconst allInternalLinks = (brief.sections || []).filter(s => s.internalLink).map(s => `[${s.internalLink.anchor}](${vars.siteUrl}${s.internalLink.url})`);\n\nconst prompt = `You are Belle Bai, Marketing Executive at TesseractApps — an Australian care management software company. You have 8 years working with NDIS providers, aged care operators, and disability support organisations across Australia. You write with authority, empathy, and a genuine point of view.\n\n## YOUR WRITING BRIEF\n\nTitle: ${topic.title}\nH1: ${brief.h1 || topic.title}\nPrimary keyword: ${topic.primaryKeyword}\nLSI keywords: ${(topic.lsiKeywords || []).join(', ')}\nSearch intent: ${topic.searchIntent}\nContent type: ${topic.contentType}\nTarget audience: ${topic.targetAudience}\nEditorial stance: ${brief.editorialStance}\nIntro hook: ${brief.intro}\nTarget word count: ${topic.estimatedWordCount} words\nCategory: ${vars.category}\n\n## SECTION STRUCTURE\n${sectionText}\n\n## KEYWORD PLACEMENT\nPrimary keyword: ${(brief.keywordPlacement?.primaryKeyword || []).join(', ')}\nLSI placements:\n${lsiText}\n\n## EXTERNAL SOURCES TO REFERENCE\n${sourcesText}\n\n## STATS TO WEAVE IN\n${statsText}\n\n## CTA GUIDANCE\n${brief.ctaSection}\n\n## INTERNAL LINKS TO EMBED\n${allInternalLinks.join('\\n')}\n(embed only where they flow naturally — max 5)\n\n---\n\n## NON-NEGOTIABLE WRITING RULES\n\n1. HUMAN VOICE — Write as Belle Bai. Use \"we\", \"I've seen\", \"in our experience\". Share genuine opinions.\n2. ORIGINAL THOUGHT — Have a real point of view. If the sector is doing something wrong, say so.\n3. AUSTRALIAN ENGLISH — organise, labour, practise, behaviour, recognise, centre, colour. Always.\n4. SEO DONE RIGHT — Primary keyword in first 100 words, in at least one H2, and in conclusion. Spread LSI keywords naturally. Never keyword-stuff.\n5. INTERNAL LINKS — Embed as markdown [anchor](https://tesseractapps.com/page). Only where it genuinely helps. Max 5.\n6. EXTERNAL CREDIBILITY — Reference NDIS Commission, Aged Care Quality and Safety Commission, NDIS Pricing Arrangements, Fair Work Act, or other real Australian sources. By name only — no invented URLs.\n7. STRUCTURE — Follow H2/H3 structure exactly. 2-4 solid paragraphs per section. No filler.\n8. TONE — Expert but human. Serious when needed, conversational when appropriate. Zero corporate jargon.\n9. SOFT CTA — ONE brief mention of TesseractApps in the specified section only. Never a hard sales pitch.\n10. START DIRECTLY — Begin with the intro paragraph. No title heading. No \"Introduction:\". Hook the reader immediately.\n11. END WELL — Conclusion reinforces editorial stance, uses primary keyword, leaves reader with an insight.\n\n---\n\nWrite the complete blog post in markdown now. Do NOT include the H1 title. Do NOT include frontmatter or JSON. Aim for ${topic.estimatedWordCount} words.`;\n\nreturn [{ json: { prompt, topic, brief, vars } }];"
+      },
+      "id": "e8034a6d-5698-481f-8132-faf0027ba968",
+      "name": "⑨ Code: Build Writing Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1152,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.prompt }}\n",
+        "batching": {}
+      },
+      "id": "29f35f8a-a77f-4872-8c2b-abef2eaae933",
+      "name": "⑩ Chain: Write Full Blog",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        1376,
+        32
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "277e6cff-0ddf-418a-9ff7-f652a4406b6f",
+      "name": "Gemini: Write Full Blog",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1456,
+        256
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "N68jByDfxkR7KKdp",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\n// chainLlm returns { text: '...' } — this is the correct shape to check\nconst contentRaw = data?.text || data?.output || data?.content?.[0]?.text || '';\n\nif (!contentRaw || contentRaw.length < 300) {\n  throw new Error('Blog content empty or too short: ' + (contentRaw || '').slice(0,100));\n}\n\nconst topic = $('⑥ Code: Parse Topic JSON').first().json;\n\nconst wordCount = contentRaw.split(/\\s+/).filter(w => w.length > 0).length;\nconst internalLinks = (contentRaw.match(/\\(https:\\/\\/tesseractapps\\.com/g) || []).length;\nconst h2Count = (contentRaw.match(/^## /gm) || []).length;\nconst primaryKw = (topic.primaryKeyword || '').toLowerCase();\nconst primaryKwCount = primaryKw ? (contentRaw.toLowerCase().split(primaryKw).length - 1) : 0;\nconst density = wordCount > 0 ? parseFloat(((primaryKwCount / wordCount) * 100).toFixed(2)) : 0;\n\nlet score = 0;\nif (wordCount >= 1200) score += 20;\nif (wordCount >= 1500) score += 10;\nif (h2Count >= 5)      score += 20;\nif (h2Count >= 7)      score += 5;\nif (internalLinks >= 2 && internalLinks <= 6) score += 20;\nif (primaryKwCount >= 3) score += 15;\nif (density >= 0.4 && density <= 2.5) score += 10;\n\nreturn [{ json: { contentMarkdown: contentRaw, seoScore: score, wordCount, h2Count, internalLinks, primaryKwCount, keywordDensity: density, needsRewrite: score < 60 } }];"
+      },
+      "id": "cf300614-22a6-4de7-8a17-57b45a2912f3",
+      "name": "⑪ Code: SEO Quality Check",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1728,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c2",
+              "leftValue": "={{ $json.needsRewrite }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ec485e76-1b61-4f29-aec0-531de64131b6",
+      "name": "⑫ IF: Needs SEO Rewrite?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1952,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=This blog post scored {{ $('⑪ Code: SEO Quality Check').first().json.seoScore }}/100 on SEO quality check. It needs improvement.\n\nSpecific issues to fix:\n- Word count: {{ $('⑪ Code: SEO Quality Check').first().json.wordCount }} words — target is 1,400+\n- H2 sections found: {{ $('⑪ Code: SEO Quality Check').first().json.h2Count }} — target is 6 or more\n- Internal links embedded: {{ $('⑪ Code: SEO Quality Check').first().json.internalLinks }} — target is 2-5\n- Primary keyword \"{{ $('⑥ Code: Parse Topic JSON').first().json.primaryKeyword }}\" used {{ $('⑪ Code: SEO Quality Check').first().json.primaryKwCount }} times — target is 4-8\n- Keyword density: {{ $('⑪ Code: SEO Quality Check').first().json.keywordDensity }}% — target is 0.5-2.0%\n\nAvailable internal links to embed naturally:\n{{ $('③ Code: Set Pipeline Variables').first().json.internalPagesJson }}\n\nOriginal content:\n{{ $('⑪ Code: SEO Quality Check').first().json.contentMarkdown }}\n\nRewrite rules:\n1. Fix ONLY the SEO issues identified — preserve the human voice, Australian English, tone, and all factual content\n2. Add H2 sections by splitting long sections or adding a relevant new angle — never add padding\n3. Expand word count only where content genuinely adds value\n4. Embed internal links naturally using the anchor text from the list above\n5. Use the primary keyword more but only where it reads naturally\n\nReturn ONLY the improved markdown — no H1 title, no frontmatter, no JSON wrapper.\n",
+        "batching": {}
+      },
+      "id": "b1839357-8703-44f8-bbd8-84b71abbc396",
+      "name": "⑫a Chain: SEO Rewrite",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        2176,
+        16
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b2933eb4-8aca-4a13-8915-b8997d89fae8",
+      "name": "Gemini: SEO Rewrite",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        2256,
+        240
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "N68jByDfxkR7KKdp",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const inputData = $input.first().json;\nlet finalContent = '';\nlet wasRewritten = false;\n\n// From ⑫a Chain: SEO Rewrite — chainLlm returns { text: '...' }\nif (inputData?.text || inputData?.output) {\n  finalContent = inputData.text || inputData.output;\n  wasRewritten = true;\n}\n// From ⑫ IF false branch — SEO quality check shape: { contentMarkdown, needsRewrite, ... }\nelse if (inputData?.contentMarkdown) {\n  finalContent = inputData.contentMarkdown;\n  wasRewritten = false;\n}\n// Hard fallback\nelse {\n  finalContent = $('⑪ Code: SEO Quality Check').first().json.contentMarkdown || '';\n  wasRewritten = false;\n}\n\nif (!finalContent) throw new Error('Final content is empty after merge');\n\nreturn [{ json: { finalContent, wasRewritten } }];"
+      },
+      "id": "193243af-35d1-410b-83d8-750d567ff1d0",
+      "name": "⑬ Code: Merge Final Content",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2528,
+        144
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const vars = $('③ Code: Set Pipeline Variables').first().json;\nconst topic = $input.first().json;\n\n// Build a specific query from the actual blog topic — primaryKeyword + angle gives Pexels the best signal.\n// Fallback to category-level query only when topic fields are missing.\nconst primaryKeyword = (topic.primaryKeyword || '').trim();\nconst angle = (topic.angle || '').trim();\n\nlet imageQuery = '';\nif (primaryKeyword) {\n  // Combine keyword + a sanitised excerpt of the angle for extra specificity\n  const angleSnippet = angle.split(' ').slice(0, 5).join(' ');\n  imageQuery = angleSnippet ? `${primaryKeyword} ${angleSnippet}` : primaryKeyword;\n} else {\n  // Last-resort fallback: category map\n  const category = vars.category || 'NDIS';\n  const queryMap = {\n    'NDIS': 'disability care professional Australia',\n    'Aged Care': 'aged care nursing professional team',\n    'Workforce': 'healthcare workforce management office',\n    'Compliance': 'compliance audit professional meeting',\n    'Rostering': 'workforce scheduling technology office',\n    'Allied Health': 'allied health clinic professional therapy'\n  };\n  imageQuery = queryMap[category] || 'healthcare professional office Australia';\n}\n\n// Always use page 1 — Pexels ranks by relevance, result #1 on page 1 is most relevant.\nreturn [{ json: { imageQuery, fallbackImageAssetRef: vars.fallbackImageAssetRef } }];"
+      },
+      "id": "d268daa4-a91c-474a-80fc-d53c71e43300",
+      "name": "IMG-1 Code: Build Image Query",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        928,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.pexels.com/v1/search?query={{ encodeURIComponent($json.imageQuery) }}&orientation=landscape&per_page=1&page=1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "145a2530-9b40-493a-ae58-5ef0075159a8",
+      "name": "IMG-2 HTTP: Pexels Search",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1152,
+        512
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "dqcNC8Fvoc4vSDQD",
+          "name": "Pexels"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst fallbackRef = $('IMG-1 Code: Build Image Query').first().json.fallbackImageAssetRef;\n\nconst photos = data?.photos || [];\nif (photos.length === 0) {\n  return [{ json: { usesFallback: true, fallbackImageAssetRef: fallbackRef, photoUrl: null } }];\n}\n\nconst photo = photos[0];\nconst photoUrl = photo?.src?.large2x || photo?.src?.original || null;\nif (!photoUrl) {\n  return [{ json: { usesFallback: true, fallbackImageAssetRef: fallbackRef, photoUrl: null } }];\n}\n\nreturn [{ json: { usesFallback: false, fallbackImageAssetRef: fallbackRef, photoUrl, pexelsPhotoId: photo.id, photographer: photo.photographer || '' } }];"
+      },
+      "id": "5417cf0a-73f3-480c-9c72-5138bca849e2",
+      "name": "IMG-3 Code: Extract Photo URL",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c3",
+              "leftValue": "={{ $json.usesFallback }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "96aff7ca-37e2-4cab-a90d-8db3178f4a10",
+      "name": "IMG-4 IF: Has Photo URL?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1728,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.photoUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "402f0b5a-9f22-459f-a1f8-6168be269dc8",
+      "name": "IMG-5 HTTP: Download Image Binary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1952,
+        432
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://arpycced.api.sanity.io/v2021-06-07/assets/images/production?filename={{ $('⑥ Code: Parse Topic JSON').first().json.slug }}.jpg",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "image/jpeg"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "d2659ca1-3dfc-4759-98a1-e6618288249c",
+      "name": "IMG-6 HTTP: Upload Image to Sanity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2240,
+        432
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TJJv6q8p9GmOYxyA",
+          "name": "wns-sanity-header"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "jsCode": "const data = $input.first().json;\nconst topic = $('⑥ Code: Parse Topic JSON').first().json;\nconst vars = $('③ Code: Set Pipeline Variables').first().json;\n\nlet assetRef, imageSource;\n\nif (data?.document?._id) {\n  assetRef = data.document._id;\n  imageSource = 'pexels';\n} else if (data?.fallbackImageAssetRef) {\n  assetRef = data.fallbackImageAssetRef;\n  imageSource = 'fallback';\n} else {\n  assetRef = vars.fallbackImageAssetRef;\n  imageSource = 'fallback-upload-error';\n}\n\nconst altText = topic.imageAltText || `${topic.title} | TesseractApps`;\n\nreturn [{ json: { assetRef, altText, imageSource } }];"
+      },
+      "id": "977b8f82-bba4-4001-8b19-cbe7787ef5c1",
+      "name": "IMG-7 Code: Extract Asset ID",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2528,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "options": {}
+      },
+      "id": "ddfe0de2-cd8b-4e0e-aa6f-3d565234d1ad",
+      "name": "⑭ Merge: Content + Image",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2752,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const merged = $input.first().json;\nconst topic = $('⑥ Code: Parse Topic JSON').first().json;\nconst brief = $('⑧ Code: Parse SEO Brief JSON').first().json;\nconst seoCheck = $('⑪ Code: SEO Quality Check').first().json;\nconst vars = $('③ Code: Set Pipeline Variables').first().json;\n\nconst { finalContent, wasRewritten } = merged;\nconst assetRef = merged.assetRef || vars.fallbackImageAssetRef;\nconst altText = merged.altText || `${topic.title} | TesseractApps`;\nconst imageSource = merged.imageSource || 'fallback';\n\n// ── Markdown → Sanity Portable Text ──────────────────────────────────\nfunction parseInline(text, bk) {\n  const markDefs = [];\n  const linkRegex = /\\[([^\\]]+)\\]\\(([^)]+)\\)/g;\n  const parts = [];\n  let last = 0, m;\n  while ((m = linkRegex.exec(text)) !== null) {\n    if (m.index > last) parts.push({ type:'text', text:text.slice(last, m.index) });\n    const lk = `lnk-${bk}-${markDefs.length}`;\n    markDefs.push({ _key:lk, _type:'link', href:m[2] });\n    parts.push({ type:'link', text:m[1], lk });\n    last = m.index + m[0].length;\n  }\n  if (last < text.length) parts.push({ type:'text', text:text.slice(last) });\n  const children = [];\n  parts.forEach((p, pi) => {\n    if (p.type === 'link') {\n      children.push({ _type:'span', _key:`sp-${bk}-lnk-${pi}`, text:p.text, marks:[p.lk] });\n    } else {\n      p.text.split(/(\\*\\*[^*]+\\*\\*)/).forEach((chunk, ci) => {\n        if (!chunk) return;\n        const isBold = chunk.startsWith('**') && chunk.endsWith('**');\n        children.push({ _type:'span', _key:`sp-${bk}-${pi}-${ci}`, text:isBold ? chunk.slice(2,-2) : chunk, marks:isBold ? ['strong'] : [] });\n      });\n    }\n  });\n  return { children: children.filter(c => c.text.length > 0), markDefs };\n}\n\nfunction mdToBlocks(md) {\n  const blocks = [];\n  const lines = md.split('\\n');\n  let i = 0, idx = 0;\n  while (i < lines.length) {\n    const line = lines[i];\n    const t = line.trim();\n    if (!t) { i++; continue; }\n    const bk = `blk${idx++}`;\n    if (t.startsWith('#### ')) { blocks.push({ _type:'block', _key:bk, style:'h4', children:[{_type:'span',_key:`sp-${bk}`,text:t.slice(5),marks:[]}], markDefs:[] }); i++; continue; }\n    if (t.startsWith('### '))  { blocks.push({ _type:'block', _key:bk, style:'h3', children:[{_type:'span',_key:`sp-${bk}`,text:t.slice(4),marks:[]}], markDefs:[] }); i++; continue; }\n    if (t.startsWith('## '))   { blocks.push({ _type:'block', _key:bk, style:'h2', children:[{_type:'span',_key:`sp-${bk}`,text:t.slice(3),marks:[]}], markDefs:[] }); i++; continue; }\n    if (t.startsWith('# '))    { blocks.push({ _type:'block', _key:bk, style:'h1', children:[{_type:'span',_key:`sp-${bk}`,text:t.slice(2),marks:[]}], markDefs:[] }); i++; continue; }\n    if (t.match(/^[-*]{3,}$/)) { i++; continue; }\n    if (t.startsWith('> ')) { const {children,markDefs} = parseInline(t.slice(2),bk); blocks.push({ _type:'block', _key:bk, style:'blockquote', children, markDefs }); i++; continue; }\n    if (t.match(/^[-*+] /)) {\n      while (i < lines.length && lines[i].trim().match(/^[-*+] /)) {\n        const ibk = `blk${idx++}`;\n        const {children,markDefs} = parseInline(lines[i].trim().replace(/^[-*+] /,''), ibk);\n        blocks.push({ _type:'block', _key:ibk, style:'normal', listItem:'bullet', level:1, children, markDefs }); i++;\n      }\n      continue;\n    }\n    if (t.match(/^\\d+[.)]/) ) {\n      while (i < lines.length && lines[i].trim().match(/^\\d+[.)] /)) {\n        const ibk = `blk${idx++}`;\n        const {children,markDefs} = parseInline(lines[i].trim().replace(/^\\d+[.)] /,''), ibk);\n        blocks.push({ _type:'block', _key:ibk, style:'normal', listItem:'number', level:1, children, markDefs }); i++;\n      }\n      continue;\n    }\n    const paraLines = [];\n    while (i < lines.length && lines[i].trim() && !lines[i].trim().match(/^#{1,4} /) && !lines[i].trim().match(/^[-*+] /) && !lines[i].trim().match(/^\\d+[.)] /) && !lines[i].trim().match(/^[-*]{3,}$/) && !lines[i].trim().startsWith('> ')) {\n      paraLines.push(lines[i].trim()); i++;\n    }\n    const paraText = paraLines.join(' ');\n    if (paraText) { const {children,markDefs} = parseInline(paraText, bk); blocks.push({ _type:'block', _key:bk, style:'normal', children, markDefs }); }\n  }\n  return blocks;\n}\n\nconst faqBlocks = (brief.faqItems || []).flatMap((item, i) => [\n  { _type:'block', _key:`fq${i}`, style:'h3', children:[{_type:'span',_key:`fqs${i}`,text:item.q,marks:[]}], markDefs:[] },\n  { _type:'block', _key:`fa${i}`, style:'normal', children:[{_type:'span',_key:`fas${i}`,text:item.a,marks:[]}], markDefs:[] }\n]);\n\nconst allBlocks = [...mdToBlocks(finalContent), ...faqBlocks];\n\n// ── JSON-LD Schema ────────────────────────────────────────────────────\nconst today = new Date().toISOString().split('T')[0];\nconst schemaType = brief.schemaType || 'Article';\nlet schemaMarkup;\n\nif (schemaType === 'FAQPage' && (brief.faqItems||[]).length > 0) {\n  schemaMarkup = JSON.stringify({ '@context':'https://schema.org', '@type':'FAQPage', mainEntity: brief.faqItems.map(f => ({ '@type':'Question', name:f.q, acceptedAnswer:{'@type':'Answer',text:f.a} })) });\n} else if (schemaType === 'HowTo') {\n  schemaMarkup = JSON.stringify({ '@context':'https://schema.org', '@type':'HowTo', name:topic.title, description:topic.metaDescription, step:(brief.sections||[]).map((s,i)=>({'@type':'HowToStep',position:i+1,name:s.h2,text:s.notes||s.h2})) });\n} else {\n  schemaMarkup = JSON.stringify({ '@context':'https://schema.org', '@type':'Article', headline:topic.title, description:topic.metaDescription, author:{'@type':'Person',name:vars.author}, publisher:{'@type':'Organization',name:'TesseractApps',url:vars.siteUrl,logo:{'@type':'ImageObject',url:`${vars.siteUrl}/tesseract_logo.webp`}}, datePublished:today, dateModified:today, mainEntityOfPage:{'@type':'WebPage','@id':`${vars.siteUrl}/blog/${topic.slug}`}, image:{'@type':'ImageObject',url:`${vars.siteUrl}/blog/${topic.slug}/og.jpg`} });\n}\n\nconst finalWordCount = finalContent.split(/\\s+/).filter(w=>w.length>0).length;\nconst finalInternalLinks = (finalContent.match(/\\(https:\\/\\/tesseractapps\\.com/g)||[]).length;\nconst docId = `drafts.blogPost-${topic.slug}-${Date.now()}`;\n\nconst sanityDoc = {\n  _type: 'blogPost',\n  _id: docId,\n  mainImage: { _type:'image', asset:{ _type:'reference', _ref:assetRef }, alt:altText },\n  title: topic.title,\n  slug: { _type:'slug', current:topic.slug },\n  category: vars.category,\n  excerpt: topic.metaDescription,\n  publishedAt: new Date().toISOString(),\nprimaryKeyword: topic.primaryKeyword || '',\nsecondaryKeywords: topic.secondaryKeywords || [],\nlsiKeywords: topic.lsiKeywords || [],\n  seo: { _type:'seo', metaTitle:topic.title, metaDescription:topic.metaDescription, ogTitle:topic.title, ogDescription:topic.metaDescription, ogImage: { _type: 'image', asset: { _type: 'reference', _ref: assetRef } }, schemaMarkup },\n  body: allBlocks,\n  references: (brief.externalSources||[]).map(s => ({ _type:'object', _key:`ref-${Math.random().toString(36).slice(2,8)}`, title:s.name, url:s.url||'' })),\n  automationMeta: { generatedAt:new Date().toISOString(), wordCount:finalWordCount, internalLinks:finalInternalLinks, seoScore:seoCheck.seoScore, wasRewritten, schemaType, searchIntent:topic.searchIntent, contentType:topic.contentType, triggerSource:vars.triggerSource, imageSource }\n};\n\nreturn [{ json: { mutationPayload:{ mutations:[{ createOrReplace:sanityDoc }] }, sanityDoc, topic, brief, finalWordCount, finalInternalLinks, seoScore:seoCheck.seoScore, docId } }];"
+      },
+      "id": "8c44b81e-c88f-4118-8a7c-7f603406c05f",
+      "name": "⑮ Code: Build Sanity Document",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2976,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://arpycced.api.sanity.io/v2021-06-07/data/mutate/production",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.mutationPayload) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "422d05d3-544d-49d8-9640-0e165baf29a3",
+      "name": "⑯ HTTP: Create Sanity Draft",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3200,
+        304
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TJJv6q8p9GmOYxyA",
+          "name": "wns-sanity-header"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "sendAndWait",
+        "fromEmail": "aakarshgoyal23@gmail.com",
+        "toEmail": "aakarsh.goyal.23cse@bmu.edu.in",
+        "subject": "=[Blog Draft Ready for Review] {{ $('⑥ Code: Parse Topic JSON').first().json.title }}",
+        "message": "=<div style=\"font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f4f5f7\"><div style=\"background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb\"><div style=\"background:#111827;padding:20px 28px\"><p style=\"margin:0;font-size:11px;font-weight:700;color:#9ca3af;letter-spacing:0.1em;text-transform:uppercase\">TesseractApps · Blog Automation</p><h1 style=\"margin:6px 0 0;font-size:19px;font-weight:700;color:#ffffff;line-height:1.35\">{{ $('⑥ Code: Parse Topic JSON').first().json.title }}</h1></div><div style=\"padding:24px 28px\"><p style=\"color:#4b5563;font-size:13px;line-height:1.6;margin:0 0 20px\">{{ $('⑥ Code: Parse Topic JSON').first().json.metaDescription }}</p><table style=\"width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px\"><tr style=\"border-bottom:1px solid #f3f4f6\"><td style=\"padding:8px 0;color:#9ca3af;width:150px\">Category</td><td style=\"padding:8px 0;font-weight:600;color:#111827\">{{ $('③ Code: Set Pipeline Variables').first().json.category }}</td></tr><tr style=\"border-bottom:1px solid #f3f4f6\"><td style=\"padding:8px 0;color:#9ca3af\">Author</td><td style=\"padding:8px 0;font-weight:600;color:#111827\">{{ $('③ Code: Set Pipeline Variables').first().json.author }}</td></tr><tr style=\"border-bottom:1px solid #f3f4f6\"><td style=\"padding:8px 0;color:#9ca3af\">Primary Keyword</td><td style=\"padding:8px 0;font-weight:600;color:#111827\">{{ $('⑥ Code: Parse Topic JSON').first().json.primaryKeyword }}</td></tr><tr style=\"border-bottom:1px solid #f3f4f6\"><td style=\"padding:8px 0;color:#9ca3af\">Word Count</td><td style=\"padding:8px 0;font-weight:600;color:#111827\">{{ $('⑮ Code: Build Sanity Document').first().json.finalWordCount }} words</td></tr><tr style=\"border-bottom:1px solid #f3f4f6\"><td style=\"padding:8px 0;color:#9ca3af\">SEO Score</td><td style=\"padding:8px 0;font-weight:700;color:#111827\">{{ $('⑮ Code: Build Sanity Document').first().json.seoScore }}/100</td></tr><tr style=\"border-bottom:1px solid #f3f4f6\"><td style=\"padding:8px 0;color:#9ca3af\">Internal Links</td><td style=\"padding:8px 0;font-weight:600;color:#111827\">{{ $('⑮ Code: Build Sanity Document').first().json.finalInternalLinks }} embedded</td></tr><tr><td style=\"padding:8px 0;color:#9ca3af\">URL Slug</td><td style=\"padding:8px 0;font-weight:600;color:#111827\">/blog/{{ $('⑥ Code: Parse Topic JSON').first().json.slug }}</td></tr></table><div style=\"background:#f9fafb;border-left:3px solid #6366f1;padding:12px 16px;border-radius:0 6px 6px 0;margin-bottom:24px\"><p style=\"margin:0 0 3px;font-size:10px;font-weight:700;color:#6366f1;text-transform:uppercase;letter-spacing:0.08em\">Editorial Stance</p><p style=\"margin:0;font-size:13px;color:#374151;line-height:1.5\">{{ $('⑧ Code: Parse SEO Brief JSON').first().json.editorialStance }}</p></div><a href=\"https://arpycced.sanity.studio/desk/blog\" style=\"display:inline-block;background:#111827;color:#ffffff;padding:12px 24px;border-radius:7px;text-decoration:none;font-weight:600;font-size:14px;margin-bottom:20px\">Review in Sanity Studio →</a><p style=\"color:#9ca3af;font-size:12px;margin:0;line-height:1.6\">Draft is live in Sanity. Use the <strong>Approve</strong> or <strong>Reject</strong> buttons below to complete review.</p></div></div></div>",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "disapproveLabel": "Reject — Needs Rework"
+          }
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        3424,
+        304
+      ],
+      "id": "94067946-6918-4166-8119-0810edc5abc3",
+      "name": "⑰ Email: Send Approval Request",
+      "webhookId": "tesseract-blog-approval",
+      "credentials": {
+        "smtp": {
+          "id": "QX0DJsJY9p3uqyPY",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "c4",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        3648,
+        304
+      ],
+      "id": "525444d9-71fd-40ba-a8f6-795b5865caab",
+      "name": "⑱ IF: Was Approved?"
+    },
+    {
+      "parameters": {
+        "jsCode": "const doc = $('⑮ Code: Build Sanity Document').first().json;\nconst draftId = doc.docId;\nconst publishedId = draftId.replace('drafts.', '');\nconst sanityDoc = { ...doc.sanityDoc, _id: publishedId };\nconst mutationPayload = { mutations: [{ createOrReplace: sanityDoc }, { delete: { id: draftId } }] };\nreturn [{ json: { mutationPayload, publishedId, draftId } }];"
+      },
+      "id": "c31e6a26-c433-4cd5-8ea2-b1bc7edc3e81",
+      "name": "⑲ Code: Build Publish Mutation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3872,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://arpycced.api.sanity.io/v2021-06-07/data/mutate/production",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.mutationPayload) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "9bb20121-54a2-41f1-8351-00f530ea1a94",
+      "name": "⑲b HTTP: Publish to Sanity",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4096,
+        208
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TJJv6q8p9GmOYxyA",
+          "name": "wns-sanity-header"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c5",
+              "leftValue": "={{ $('③ Code: Set Pipeline Variables').first().json.triggerSource }}",
+              "rightValue": "webhook",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "13fc9bd3-9908-41e3-8338-9afddd9ee68d",
+      "name": "⑲c IF: Webhook Source? (Approve)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        4320,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"status\": \"published\",\n  \"title\": \"{{ $('⑥ Code: Parse Topic JSON').first().json.title }}\",\n  \"slug\": \"/blog/{{ $('⑥ Code: Parse Topic JSON').first().json.slug }}\",\n  \"category\": \"{{ $('③ Code: Set Pipeline Variables').first().json.category }}\",\n  \"wordCount\": {{ $('⑮ Code: Build Sanity Document').first().json.finalWordCount }},\n  \"seoScore\": {{ $('⑮ Code: Build Sanity Document').first().json.seoScore }},\n  \"studioUrl\": \"https://arpycced.sanity.studio/desk/blog\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "7e05d3a8-500f-46f9-8fa0-6637bde9efd6",
+      "name": "⑲d Respond: Published",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        4544,
+        208
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const doc = $('⑮ Code: Build Sanity Document').first().json;\nconst draftId = doc.docId;\nconst mutationPayload = { mutations: [{ patch: { id: draftId, set: { needsRework: true, rejectionNote: `Rejected by reviewer on ${new Date().toISOString()}. Please revise in Sanity Studio before publishing.`, status: 'needs-rework' } } }] };\nreturn [{ json: { mutationPayload, draftId } }];"
+      },
+      "id": "c47c2f08-574f-4e44-90fa-fbebe2e8547e",
+      "name": "⑳a Code: Build Reject Patch",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3872,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://arpycced.api.sanity.io/v2021-06-07/data/mutate/production",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.mutationPayload) }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "id": "b9e1ccc0-dcff-4fce-a7d8-5361d39e2b4e",
+      "name": "⑳b HTTP: Patch Sanity — needsRework",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4096,
+        400
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TJJv6q8p9GmOYxyA",
+          "name": "wns-sanity-header"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "aakarshgoyal23@gmail.com",
+        "toEmail": "aakarsh.goyal.23cse@bmu.edu.in",
+        "subject": "=[Blog Flagged for Rework] {{ $('⑥ Code: Parse Topic JSON').first().json.title }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        4320,
+        400
+      ],
+      "id": "cf5738fd-0d60-4c42-9da4-559aa622ce23",
+      "name": "⑳c Email: Notify Rework",
+      "webhookId": "623c9af1-fcea-434a-81cc-c8d5343f9ee0",
+      "credentials": {
+        "smtp": {
+          "id": "QX0DJsJY9p3uqyPY",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "c6",
+              "leftValue": "={{ $('③ Code: Set Pipeline Variables').first().json.triggerSource }}",
+              "rightValue": "webhook",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "07410081-d1d4-42fb-b658-424a83050df5",
+      "name": "⑳d IF: Webhook Source? (Reject)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        4544,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"status\": \"rejected\",\n  \"message\": \"Draft flagged for rework — an editor will revise and publish manually\",\n  \"slug\": \"/blog/{{ $('⑥ Code: Parse Topic JSON').first().json.slug }}\",\n  \"docId\": \"{{ $('⑮ Code: Build Sanity Document').first().json.docId }}\",\n  \"studioUrl\": \"https://arpycced.sanity.studio/desk/blog\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "id": "f1749dd0-1ff2-4304-a884-b37522d5356b",
+      "name": "⑳e Respond: Rejected",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        4768,
+        400
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Trigger A: Webhook": {
+      "main": [
+        [
+          {
+            "node": "① Code: Normalise Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger B: Schedule (Mon 9am AEST)": {
+      "main": [
+        [
+          {
+            "node": "① Code: Normalise Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trigger C: Manual": {
+      "main": [
+        [
+          {
+            "node": "① Code: Normalise Input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "① Code: Normalise Input": {
+      "main": [
+        [
+          {
+            "node": "② HTTP: Fetch Existing Slugs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "② HTTP: Fetch Existing Slugs": {
+      "main": [
+        [
+          {
+            "node": "③ Code: Set Pipeline Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "③ Code: Set Pipeline Variables": {
+      "main": [
+        [
+          {
+            "node": "④ IF: Keywords Provided?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "④ IF: Keywords Provided?": {
+      "main": [
+        [
+          {
+            "node": "⑤a Chain: Topic from Keywords",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "⑤b Chain: Auto Research Topic",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini: Topic from Keywords": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "⑤a Chain: Topic from Keywords",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑤a Chain: Topic from Keywords": {
+      "main": [
+        [
+          {
+            "node": "⑥ Code: Parse Topic JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini: Auto Research Topic": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "⑤b Chain: Auto Research Topic",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑤b Chain: Auto Research Topic": {
+      "main": [
+        [
+          {
+            "node": "⑥ Code: Parse Topic JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑥ Code: Parse Topic JSON": {
+      "main": [
+        [
+          {
+            "node": "⑦ Chain: Generate SEO Brief",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IMG-1 Code: Build Image Query",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini: SEO Brief": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "⑦ Chain: Generate SEO Brief",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑦ Chain: Generate SEO Brief": {
+      "main": [
+        [
+          {
+            "node": "⑧ Code: Parse SEO Brief JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑧ Code: Parse SEO Brief JSON": {
+      "main": [
+        [
+          {
+            "node": "⑨ Code: Build Writing Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑨ Code: Build Writing Prompt": {
+      "main": [
+        [
+          {
+            "node": "⑩ Chain: Write Full Blog",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini: Write Full Blog": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "⑩ Chain: Write Full Blog",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑩ Chain: Write Full Blog": {
+      "main": [
+        [
+          {
+            "node": "⑪ Code: SEO Quality Check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑪ Code: SEO Quality Check": {
+      "main": [
+        [
+          {
+            "node": "⑫ IF: Needs SEO Rewrite?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑫ IF: Needs SEO Rewrite?": {
+      "main": [
+        [
+          {
+            "node": "⑫a Chain: SEO Rewrite",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "⑬ Code: Merge Final Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gemini: SEO Rewrite": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "⑫a Chain: SEO Rewrite",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑫a Chain: SEO Rewrite": {
+      "main": [
+        [
+          {
+            "node": "⑬ Code: Merge Final Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑬ Code: Merge Final Content": {
+      "main": [
+        [
+          {
+            "node": "⑭ Merge: Content + Image",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "IMG-1 Code: Build Image Query": {
+      "main": [
+        [
+          {
+            "node": "IMG-2 HTTP: Pexels Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IMG-2 HTTP: Pexels Search": {
+      "main": [
+        [
+          {
+            "node": "IMG-3 Code: Extract Photo URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IMG-3 Code: Extract Photo URL": {
+      "main": [
+        [
+          {
+            "node": "IMG-4 IF: Has Photo URL?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IMG-4 IF: Has Photo URL?": {
+      "main": [
+        [
+          {
+            "node": "IMG-5 HTTP: Download Image Binary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IMG-7 Code: Extract Asset ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IMG-5 HTTP: Download Image Binary": {
+      "main": [
+        [
+          {
+            "node": "IMG-6 HTTP: Upload Image to Sanity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IMG-6 HTTP: Upload Image to Sanity": {
+      "main": [
+        [
+          {
+            "node": "IMG-7 Code: Extract Asset ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IMG-7 Code: Extract Asset ID": {
+      "main": [
+        [
+          {
+            "node": "⑭ Merge: Content + Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑭ Merge: Content + Image": {
+      "main": [
+        [
+          {
+            "node": "⑮ Code: Build Sanity Document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑮ Code: Build Sanity Document": {
+      "main": [
+        [
+          {
+            "node": "⑯ HTTP: Create Sanity Draft",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑯ HTTP: Create Sanity Draft": {
+      "main": [
+        [
+          {
+            "node": "⑰ Email: Send Approval Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑰ Email: Send Approval Request": {
+      "main": [
+        [
+          {
+            "node": "⑱ IF: Was Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑱ IF: Was Approved?": {
+      "main": [
+        [
+          {
+            "node": "⑲ Code: Build Publish Mutation",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "⑳a Code: Build Reject Patch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑲ Code: Build Publish Mutation": {
+      "main": [
+        [
+          {
+            "node": "⑲b HTTP: Publish to Sanity",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑲b HTTP: Publish to Sanity": {
+      "main": [
+        [
+          {
+            "node": "⑲c IF: Webhook Source? (Approve)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑲c IF: Webhook Source? (Approve)": {
+      "main": [
+        [
+          {
+            "node": "⑲d Respond: Published",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑳a Code: Build Reject Patch": {
+      "main": [
+        [
+          {
+            "node": "⑳b HTTP: Patch Sanity — needsRework",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑳b HTTP: Patch Sanity — needsRework": {
+      "main": [
+        [
+          {
+            "node": "⑳c Email: Notify Rework",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑳c Email: Notify Rework": {
+      "main": [
+        [
+          {
+            "node": "⑳d IF: Webhook Source? (Reject)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "⑳d IF: Webhook Source? (Reject)": {
+      "main": [
+        [
+          {
+            "node": "⑳e Respond: Rejected",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "5ed26f2e-4cae-4286-89b6-74292793e90c",
+  "meta": {
+    "instanceId": "251ce9b2ec80147e094da6666c494994ddbaa4bbf494b64b8430ad4a24aee238"
+  },
+  "id": "LeNkefxrKcq74V73Fo2UP",
+  "tags": [
+    {
+      "updatedAt": "2026-02-21T14:51:20.330Z",
+      "createdAt": "2026-02-21T14:51:20.330Z",
+      "id": "4nK4SOasLkZc5p34",
+      "name": "automation"
+    },
+    {
+      "updatedAt": "2026-02-21T14:51:20.316Z",
+      "createdAt": "2026-02-21T14:51:20.316Z",
+      "id": "H7sKZvYTHF5P05gK",
+      "name": "seo"
+    },
+    {
+      "updatedAt": "2026-02-21T14:51:20.282Z",
+      "createdAt": "2026-02-21T14:51:20.282Z",
+      "id": "UZVZAtRRpwvOfpWR",
+      "name": "content"
+    },
+    {
+      "updatedAt": "2026-02-21T14:51:20.348Z",
+      "createdAt": "2026-02-21T14:51:20.348Z",
+      "id": "UyxZCcam0hDt3KzI",
+      "name": "sanity"
+    },
+    {
+      "updatedAt": "2026-02-21T14:51:20.020Z",
+      "createdAt": "2026-02-21T14:51:20.020Z",
+      "id": "a7khGhFYLhYgVJV4",
+      "name": "blog"
+    }
+  ]
+}
