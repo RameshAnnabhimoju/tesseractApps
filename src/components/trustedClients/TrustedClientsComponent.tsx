@@ -19,6 +19,7 @@ import company19 from "../../assets/thumbs/ImprovedAbility-thumb.webp";
 import company20 from "../../assets/thumbs/RCG-Logo-thumb.webp";
 import company21 from "../../assets/thumbs/Company-YDCS-thumb.webp";
 // import company19 from "../../assets/Aussie Care Health Services Pty Ltd.webp";
+import company22 from "../../assets/KS PNG Logo.webp";
 
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
@@ -99,6 +100,7 @@ const TrustedClientsComponent = () => {
     company19,
     company20,
     company21,
+    company22
   ];
 
   const shellRef = useRef<HTMLDivElement>(null);
