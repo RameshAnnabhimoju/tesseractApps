@@ -381,6 +381,7 @@ const BookADemo = () => {
             <div id="bookADemo-Buttons-Container">
               {currentStep != 0 && (
                 <button
+                  type="button"
                   className="bookADemo-Button-alt"
                   onClick={handlePrevious}
                 >
@@ -391,6 +392,7 @@ const BookADemo = () => {
               {currentStep != 0 &&
                 bookADemoFormData[currentStep].multiSelect && (
                   <button
+                    type="button"
                     className="bookADemo-Button"
                     onClick={handleNext}
                   >
@@ -398,17 +400,23 @@ const BookADemo = () => {
                   </button>
                 )}
 
-              {Object.values(formData).every((value) => {
-                if (Array.isArray(value)) {
-                  return value.length > 0; // arrays must have at least one selection
-                }
-                return value.trim() !== ""; // strings must not be empty
-              }) &&
-                currentStep > 5 && (
-                  <button className="bookADemo-Button" onClick={handleSubmit}>
-                    Submit
-                  </button>
-                )}
+              {currentStep === bookADemoFormData.length - 1 && (
+                <button
+                  type="submit"
+                  className="bookADemo-Button"
+                  onClick={handleSubmit}
+                  disabled={
+                    !formData.firstName.trim() ||
+                    !formData.lastName.trim() ||
+                    !formData.email.trim() ||
+                    !formData.phoneNumber.trim() ||
+                    !formData.companyName.trim() ||
+                    !formData.schedule.trim()
+                  }
+                >
+                  Submit
+                </button>
+              )}
             </div>
           </div>
         </div>
