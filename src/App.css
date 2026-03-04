@@ -91,6 +91,27 @@
 body {
   margin: 0;
 }
+
+/* ── Full-page loader (Suspense fallback + Sanity fetch) ── */
+.app-page-loader {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes app-spin {
+  to { transform: rotate(360deg); }
+}
+
+.app-page-spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 4px solid #e8edf4;
+  border-top-color: var(--color-primary);
+  animation: app-spin 0.75s linear infinite;
+}
 /* XS: Extra Small (<360px) */
 @media (max-width: 359px) {
 }

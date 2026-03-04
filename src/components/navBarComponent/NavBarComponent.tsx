@@ -8,7 +8,7 @@ import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
 import { useEffect, useState } from "react";
 import { RefObject } from "react";
-import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
 import { navBarDummyData } from "../../utils/NavData";
 interface PopupPosition {
   top: number;
@@ -16,7 +16,6 @@ interface PopupPosition {
 }
 import ArrowDown from "../../assets/arrow_down.svg";
 // import { AppNavigate } from "../../routes/AppNavigate";
-import ArrowLeft from "../arrows/ArrowLeft";
 import ArrowUp from "../arrows/ArrowUp";
 // import signupImage from "../../assets/signup.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
@@ -33,7 +32,6 @@ const NavBarComponent = ({
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
-  const navigate = useNavigate();
   const appNavigate = useAppNavigate();
   const [showSearch, setShowSearch] = useState(false);
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
@@ -269,14 +267,13 @@ const NavBarComponent = ({
       return updated;
     });
   };
-  const navType = useNavigationType();
-  const canGoBack = navType !== "POP";
+  useNavigationType();
   return (
     <nav
       // className={`navbar-container ${showHeader ? "visible" : "hidden"}`}
       id="navbar-container"
     >
-      {pathname.split("/")[1] && canGoBack && (
+      {/* {pathname.split("/")[1] && canGoBack && (
         // <img loading="lazy"
         //   id="nav-back"
         //   src={BackArrow}
@@ -291,7 +288,7 @@ const NavBarComponent = ({
         >
           <ArrowLeft />
         </div>
-      )}
+      )} */}
       {showScroll && (
         <div
           className="arrow-container"

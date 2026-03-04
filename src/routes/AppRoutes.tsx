@@ -2,6 +2,8 @@
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useAppContext } from "../contexts/AppContext";
+import "../pages/blog/BlogStyles.css";
+import "../pages/blogPost/BlogPostPageStyles.css";
 
 // Home stays as eager import — it is the "/" route and must render immediately
 import Home from "../pages/home/Home";
@@ -42,6 +44,8 @@ const Blog9 = lazy(() => import("../pages/blogPost/Blog9"));
 const Blog10 = lazy(() => import("../pages/blogPost/Blog10"));
 const Blog11 = lazy(() => import("../pages/blogPost/Blog11"));
 const NDISComplianceBlog = lazy(() => import("../pages/blogPost/NDISComplianceBlog"));
+const BlogPostPage = lazy(() => import("../pages/blogPost/BlogPostPage"));
+const StudioPage = lazy(() => import("../pages/studio/StudioPage"));
 // import BookADemoPage from "../pages/bookADemo/BookADemo";
 
 const AppRoutes = () => {
@@ -89,10 +93,49 @@ const AppRoutes = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div className="app-page-loader"><div className="app-page-spinner" /></div>}>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/blogs" element={<Blog />} />
+        {/* Blog listing — own Suspense so skeleton shows directly */}
+        <Route
+          path="/blogs"
+          element={
+            <Suspense fallback={
+              <div className="bl-page">
+                <div className="bl-hero">
+                  <div className="bl-hero-overlay" />
+                  <div className="bl-hero-content">
+                    <div className="bl-hero-label">OUR BLOG</div>
+                    <h1 className="bl-hero-title">Insights &amp; Industry Updates</h1>
+                  </div>
+                </div>
+                <div className="bl-outer">
+                  <div className="bl-grid">
+                    {[0,1,2,3,4,5].map((i) => (
+                      <div key={i} className="bl-skeleton-card">
+                        <div className="bl-skeleton-image" />
+                        <div className="bl-skeleton-body">
+                          <div className="bl-skeleton-line bl-skeleton-line--meta" />
+                          <div className="bl-skeleton-line bl-skeleton-line--title1" />
+                          <div className="bl-skeleton-line bl-skeleton-line--title2" />
+                          <div className="bl-skeleton-line bl-skeleton-line--ex1" />
+                          <div className="bl-skeleton-line bl-skeleton-line--ex2" />
+                          <div className="bl-skeleton-line bl-skeleton-line--ex3" />
+                          <div className="bl-skeleton-footer">
+                            <div className="bl-skeleton-line bl-skeleton-line--avatar" />
+                            <div className="bl-skeleton-line bl-skeleton-line--author" />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            }>
+              <Blog />
+            </Suspense>
+          }
+        />
         <Route path="/requestDemo" element={<RequestADemo />} />
         <Route path="/salesPage" element={<SalesPage />} />
         <Route path="/pricing" element={<Pricing />} />
@@ -102,7 +145,6 @@ const AppRoutes = () => {
         <Route path="/time-management" element={<SubPage />} />
         <Route path="/hr-management" element={<SubPage />} />
         <Route path="/communication" element={<SubPage />} />
-        <Route path="/blogs" element={<ItemsPage />} />
         <Route path="/case-studies" element={<ItemsPage />} />
         <Route path="/whitepapers" element={<Whitepapers />} />
         <Route path="/support-documentation" element={<ItemsPage />} />
@@ -174,6 +216,31 @@ const AppRoutes = () => {
         <Route path="/wyzed" element={<ProductDetails />} />
         <Route path="/release-notes" element={<ReleaseNotes />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
+        {/* Sanity CMS dynamic blog posts — own Suspense so skeleton shows directly */}
+        <Route
+          path="/blog/:slug"
+          element={
+            <Suspense fallback={
+              <div className="bpp-page">
+                <div className="bpp-skeleton-hero" />
+                <div className="bpp-skeleton-outer">
+                  <div className="bpp-skeleton-header" />
+                  <div className="bpp-skeleton-grid">
+                    <div className="bpp-skeleton-block bpp-skeleton-article" />
+                    <div className="bpp-skeleton-sidebar">
+                      <div className="bpp-skeleton-sidebar-card" />
+                      <div className="bpp-skeleton-sidebar-card" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }>
+              <BlogPostPage />
+            </Suspense>
+          }
+        />
+        {/* Sanity Studio — embedded at /studio */}
+        <Route path="/studio/*" element={<StudioPage />} />
         {/* any remaining single-route pages */}
         <Route path="/details" element={<Details />} />
 
