@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { client } from '../sanity/lib/client'
 import { BLOG_POST_BY_SLUG_QUERY } from '../sanity/lib/queries'
+import { sanityConfigError } from '../sanity/env'
 import type { BlogPostDocument } from '../../sanity.types'
 
 type UseSanityBlogPostResult = {
@@ -15,6 +16,13 @@ export function useSanityBlogPost(slug: string): UseSanityBlogPostResult {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (!client) {
+      setPost(null)
+      setLoading(false)
+      setError(sanityConfigError ?? 'Sanity is not configured. Error loading blogs.')
+      return
+    }
+
     if (!slug) {
       setLoading(false)
       return

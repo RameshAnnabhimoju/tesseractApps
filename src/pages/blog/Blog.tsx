@@ -89,7 +89,7 @@ const Blog = () => {
         )}
 
         {error && (
-          <div className="bl-empty">Could not load posts. Please try again later.</div>
+          <div className="bl-empty">Can&apos;t load blogs. Error loading blogs.</div>
         )}
 
         {!loading && !error && blogsData.length === 0 && (

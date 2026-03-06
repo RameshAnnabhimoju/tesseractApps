@@ -22,6 +22,14 @@ const asyncCssPlugin = {
 
 // https://vite.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      // Force the ESM build of keen-slider/react so it imports React as a
+      // proper ESM peer rather than using the CJS require() wrapper which
+      // causes a duplicate React instance at runtime.
+      'keen-slider/react': 'keen-slider/react.es.js',
+    },
+  },
   plugins: [
     react(),
     viteCompression({
@@ -38,63 +46,8 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     sourcemap: false,
-    modulePreload: {
-      resolveDependencies: (_filename, deps) => {
-        // Only preload vendor-react — required immediately on every page.
-        // vendor-ui (MUI/Emotion), vendor-slider, and page chunks are only used
-        // by lazy-loaded routes/components; preloading them wastes 64+ KB on
-        // every page load where those features are never used.
-        return deps.filter(dep => dep.includes('vendor-react'));
-      },
-    },
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          // --- Vendor chunks ---
-          if (
-            id.includes('node_modules/react/') ||
-            id.includes('node_modules/react-dom/') ||
-            id.includes('node_modules/react-router-dom/') ||
-            id.includes('node_modules/react-helmet-async/')
-          ) {
-            return 'vendor-react';
-          }
-          if (id.includes('node_modules/@mui/') || id.includes('node_modules/@emotion/')) {
-            return 'vendor-ui';
-          }
-          if (id.includes('node_modules/keen-slider/')) {
-            return 'vendor-slider';
-          }
-
-          // --- Page chunks: group related lazy-loaded pages together ---
-          if (id.includes('/pages/blogPost/')) {
-            return 'pages-blog-posts';
-          }
-          if (id.includes('/pages/byRole/') || id.includes('/pages/byIndustry/')) {
-            return 'pages-solutions';
-          }
-          if (id.includes('/pages/productDetails/') || id.includes('/pages/SubPage/')) {
-            return 'pages-product';
-          }
-          if (
-            id.includes('/pages/ourStory/') ||
-            id.includes('/pages/about/') ||
-            id.includes('/pages/AboutUsSubPages/') ||
-            id.includes('/pages/teams/') ||
-            id.includes('/pages/careers/')
-          ) {
-            return 'pages-about';
-          }
-          if (
-            id.includes('/pages/PrivacyPolicy/') ||
-            id.includes('/pages/TermsAndConditions/') ||
-            id.includes('/pages/comingSoon/') ||
-            id.includes('/pages/ReleaseNotes/') ||
-            id.includes('/pages/whitepapers/')
-          ) {
-            return 'pages-utility';
-          }
-        },
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.names?.[0]?.split('.').pop() || ''
           if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(extType)) {

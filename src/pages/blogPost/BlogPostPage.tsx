@@ -35,11 +35,23 @@ export default function BlogPostPage() {
     return (
       <div className="bpp-page">
         <div className="bpp-not-found">
-          <h1>Post not found</h1>
-          <p>
-            This post doesn&apos;t exist or has been unpublished.{' '}
-            <Link to="/blogs" className="bpp-back-link">Back to blog</Link>
-          </p>
+          {error ? (
+            <>
+              <h1>Can&apos;t load blog</h1>
+              <p>
+                Error loading blogs.{' '}
+                <Link to="/blogs" className="bpp-back-link">Back to blog</Link>
+              </p>
+            </>
+          ) : (
+            <>
+              <h1>Post not found</h1>
+              <p>
+                This post doesn&apos;t exist or has been unpublished.{' '}
+                <Link to="/blogs" className="bpp-back-link">Back to blog</Link>
+              </p>
+            </>
+          )}
         </div>
       </div>
     )

@@ -141,7 +141,7 @@ const OurBlogSlider = ({ posts }: { posts: BlogListItem[] }) => {
 const OurBlogComponent = () => {
   const shellRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const { data: posts, loading } = useSanityBlogList();
+  const { data: posts, loading, error } = useSanityBlogList();
 
   useEffect(() => {
     const el = shellRef.current;
@@ -158,6 +158,16 @@ const OurBlogComponent = () => {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  if (!loading && error) {
+    return (
+      <div id="ourBlog-container" ref={shellRef}>
+        <div className="heading">OUR BLOG</div>
+        <div className="subheading">Most Recent Updates and Research</div>
+            <div className="ourBlog-error">Error loading blogs.</div>
+      </div>
+    );
+  }
 
   if (!loading && posts.length === 0) return null;
 

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 interface SEOProps {
     title: string;
@@ -27,6 +27,46 @@ interface SEOProps {
 
 const SITE_URL = "https://www.tesseractapps.com.au";
 const TWITTER_SITE = "@TesseractApps";
+const SEO_MANAGED_ATTR = "data-seo-managed";
+
+const upsertMeta = (selector: string, attrs: Record<string, string>) => {
+    const head = document.head;
+    let el = head.querySelector(selector) as HTMLMetaElement | null;
+    if (!el) {
+        el = document.createElement("meta");
+        head.appendChild(el);
+    }
+    Object.entries(attrs).forEach(([key, value]) => {
+        el!.setAttribute(key, value);
+    });
+    el.setAttribute(SEO_MANAGED_ATTR, "true");
+};
+
+const upsertCanonical = (href: string) => {
+    const head = document.head;
+    let el = head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!el) {
+        el = document.createElement("link");
+        el.setAttribute("rel", "canonical");
+        head.appendChild(el);
+    }
+    el.setAttribute("href", href);
+    el.setAttribute(SEO_MANAGED_ATTR, "true");
+};
+
+const clearManagedScripts = () => {
+    document
+        .querySelectorAll(`script[type=\"application/ld+json\"][${SEO_MANAGED_ATTR}=\"true\"]`)
+        .forEach((node) => node.parentNode?.removeChild(node));
+};
+
+const appendManagedJsonLd = (jsonText: string) => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute(SEO_MANAGED_ATTR, "true");
+    script.text = jsonText;
+    document.head.appendChild(script);
+};
 
 const SEO = ({
     title,
@@ -69,63 +109,107 @@ const SEO = ({
         }
     })();
 
-    return (
-        <Helmet>
-            {/* ── Standard ── */}
-            <title>{title}</title>
-            <meta name="description" content={description} />
-            {noIndex && <meta name="robots" content="noindex, nofollow" />}
+    useEffect(() => {
+        document.title = title;
 
-            {/* ── Canonical ── */}
-            <link rel="canonical" href={canonicalUrl} />
+        upsertMeta('meta[name="description"]', { name: "description", content: description });
+        upsertMeta('meta[name="robots"]', {
+            name: "robots",
+            content: noIndex ? "noindex, nofollow" : "index, follow",
+        });
+        upsertCanonical(canonicalUrl);
 
-            {/* ── Open Graph (base) ── */}
-            <meta property="og:type" content={type} />
-            <meta property="og:url" content={currentUrl} />
-            <meta property="og:title" content={resolvedOgTitle} />
-            <meta property="og:description" content={resolvedOgDescription} />
-            <meta property="og:image" content={imageUrl} />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-            {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
-            <meta property="og:site_name" content="TesseractApps" />
+        upsertMeta('meta[property="og:type"]', { property: "og:type", content: type });
+        upsertMeta('meta[property="og:url"]', { property: "og:url", content: currentUrl });
+        upsertMeta('meta[property="og:title"]', { property: "og:title", content: resolvedOgTitle });
+        upsertMeta('meta[property="og:description"]', {
+            property: "og:description",
+            content: resolvedOgDescription,
+        });
+        upsertMeta('meta[property="og:image"]', { property: "og:image", content: imageUrl });
+        upsertMeta('meta[property="og:image:width"]', { property: "og:image:width", content: "1200" });
+        upsertMeta('meta[property="og:image:height"]', { property: "og:image:height", content: "630" });
+        upsertMeta('meta[property="og:site_name"]', { property: "og:site_name", content: "TesseractApps" });
+        if (imageAlt) {
+            upsertMeta('meta[property="og:image:alt"]', {
+                property: "og:image:alt",
+                content: imageAlt,
+            });
+        }
 
-            {/* ── Open Graph (article) ── */}
-            {type === "article" && publishedAt && (
-                <meta property="article:published_time" content={publishedAt} />
-            )}
-            {type === "article" && author && (
-                <meta property="article:author" content={author} />
-            )}
-            {type === "article" && section && (
-                <meta property="article:section" content={section} />
-            )}
-            {type === "article" && tags?.map((tag) => (
-                <meta key={tag} property="article:tag" content={tag} />
-            ))}
+        if (type === "article" && publishedAt) {
+            upsertMeta('meta[property="article:published_time"]', {
+                property: "article:published_time",
+                content: publishedAt,
+            });
+        }
+        if (type === "article" && author) {
+            upsertMeta('meta[property="article:author"]', { property: "article:author", content: author });
+        }
+        if (type === "article" && section) {
+            upsertMeta('meta[property="article:section"]', { property: "article:section", content: section });
+        }
 
-            {/* ── Twitter Card ── */}
-            <meta name="twitter:card" content={twitterCard} />
-            <meta name="twitter:site" content={TWITTER_SITE} />
-            {twitterCreator && <meta name="twitter:creator" content={twitterCreator} />}
-            <meta name="twitter:title" content={resolvedOgTitle} />
-            <meta name="twitter:description" content={resolvedOgDescription} />
-            <meta name="twitter:image" content={imageUrl} />
-            {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
+        document
+            .querySelectorAll(`meta[property=\"article:tag\"][${SEO_MANAGED_ATTR}=\"true\"]`)
+            .forEach((node) => node.parentNode?.removeChild(node));
+        if (type === "article" && tags?.length) {
+            tags.forEach((tag) => {
+                const m = document.createElement("meta");
+                m.setAttribute("property", "article:tag");
+                m.setAttribute("content", tag);
+                m.setAttribute(SEO_MANAGED_ATTR, "true");
+                document.head.appendChild(m);
+            });
+        }
 
-            {/* ── Structured Data — Sanity JSON-LD string ── */}
-            {safeSchemaMarkup && (
-                <script type="application/ld+json">{safeSchemaMarkup}</script>
-            )}
+        upsertMeta('meta[name="twitter:card"]', { name: "twitter:card", content: twitterCard });
+        upsertMeta('meta[name="twitter:site"]', { name: "twitter:site", content: TWITTER_SITE });
+        if (twitterCreator) {
+            upsertMeta('meta[name="twitter:creator"]', { name: "twitter:creator", content: twitterCreator });
+        }
+        upsertMeta('meta[name="twitter:title"]', { name: "twitter:title", content: resolvedOgTitle });
+        upsertMeta('meta[name="twitter:description"]', {
+            name: "twitter:description",
+            content: resolvedOgDescription,
+        });
+        upsertMeta('meta[name="twitter:image"]', { name: "twitter:image", content: imageUrl });
+        if (imageAlt) {
+            upsertMeta('meta[name="twitter:image:alt"]', {
+                name: "twitter:image:alt",
+                content: imageAlt,
+            });
+        }
 
-            {/* ── Structured Data — programmatic object ── */}
-            {structuredData && (
-                <script type="application/ld+json">
-                    {JSON.stringify(structuredData)}
-                </script>
-            )}
-        </Helmet>
-    );
+        clearManagedScripts();
+        if (safeSchemaMarkup) {
+            appendManagedJsonLd(safeSchemaMarkup);
+        }
+        if (structuredData) {
+            appendManagedJsonLd(JSON.stringify(structuredData));
+        }
+    }, [
+        author,
+        canonicalUrl,
+        currentUrl,
+        description,
+        imageAlt,
+        imageUrl,
+        noIndex,
+        publishedAt,
+        resolvedOgDescription,
+        resolvedOgTitle,
+        safeSchemaMarkup,
+        section,
+        structuredData,
+        tags,
+        title,
+        twitterCard,
+        twitterCreator,
+        type,
+    ]);
+
+    return null;
 };
 
 export default SEO;

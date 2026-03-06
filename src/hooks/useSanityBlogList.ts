@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { client } from '../sanity/lib/client'
 import { BLOG_CATEGORY_QUERY, BLOG_LIST_QUERY } from '../sanity/lib/queries'
+import { sanityConfigError } from '../sanity/env'
 import type { BlogListItem } from '../../sanity.types'
 
 // Module-level cache: prevents redundant fetches when multiple components
@@ -31,6 +32,13 @@ export function useSanityBlogList({
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    if (!client) {
+      setData([])
+      setLoading(false)
+      setError(sanityConfigError ?? 'Sanity is not configured. Error loading blogs.')
+      return
+    }
+
     // Serve from cache immediately — no loading state shown on repeated mounts
     if (cache.has(cacheKey)) {
       setData(cache.get(cacheKey)!)

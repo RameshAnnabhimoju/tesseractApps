@@ -187,6 +187,17 @@
   min-height: 300px;
 }
 
+.ourBlog-error {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #dde4ed;
+  color: var(--color-text-gray2);
+  font-size: 16px;
+  font-weight: 500;
+}
+
 /* ── Responsive ── */
 @media (max-width: 450px) {
   .ourBlog-card {
