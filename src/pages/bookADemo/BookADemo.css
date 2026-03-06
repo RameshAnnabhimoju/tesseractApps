@@ -59,7 +59,9 @@
   display: grid;
   grid-template-columns: 350px 1fr;
   grid-template-rows: 100vh;
+  grid-template-rows: 100dvh;
   height: 100vh;
+  height: 100dvh;
   width: 100%;
   overflow: hidden;
 }
@@ -771,6 +773,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
   }
 

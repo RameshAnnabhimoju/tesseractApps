@@ -133,9 +133,9 @@ const FooterComponent = () => {
   function handleProductDataClick(name: string) {
     // console.log(name);
     if (name == "Careers")
-      return appNavigate("About", { targetId: "about-careers-heading" });
+      return appNavigate("/careers");
     if (name == "Contact Us")
-      return appNavigate("About", { targetId: "contact-info-text-container" });
+      return appNavigate("About", { targetId: "about-contact-section" });
     if (name) return appNavigate(name);
   }
   const productLinks = footerProductsData;

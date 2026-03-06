@@ -364,7 +364,28 @@ const NavBarComponent = ({
               </svg>
             </button>
           </div>
-          <div id="nav-menu-links">
+          <div id="nav-menu-ctas">
+              <div
+                className="navbar-tryItFree nav-drawer-btn"
+                onClick={() => {
+                  appNavigate("/signup");
+                  setToggleDrawer(false);
+                }}
+              >
+                <span className="navbar-requestDemo-text">Begin Your Journey</span>
+              </div>
+              <div
+                className="navbar-requestDemo nav-drawer-btn"
+                onClick={() => {
+                  appNavigate("/book-a-demo");
+                  setToggleDrawer(false);
+                }}
+              >
+                <span className="navbar-requestDemo-text">Book a Demo</span>
+                <PhoneCall className="navbar-requestDemo-icon" />
+              </div>
+            </div>
+        <div id="nav-menu-links">
             {NAV_LINKS.map((label, index) => {
               if (label != "Pricing" && label != "About") {
                 return (
@@ -597,27 +618,6 @@ const NavBarComponent = ({
             })}
           </div>
           <div id="nav-menu-footer">
-            <div id="nav-menu-ctas">
-              <div
-                className="navbar-tryItFree nav-drawer-btn"
-                onClick={() => {
-                  appNavigate("/signup");
-                  setToggleDrawer(false);
-                }}
-              >
-                <span className="navbar-requestDemo-text">Begin Your Journey</span>
-              </div>
-              <div
-                className="navbar-requestDemo nav-drawer-btn"
-                onClick={() => {
-                  appNavigate("/book-a-demo");
-                  setToggleDrawer(false);
-                }}
-              >
-                <span className="navbar-requestDemo-text">Book a Demo</span>
-                <PhoneCall className="navbar-requestDemo-icon" />
-              </div>
-            </div>
             <div id="nav-menu-auth">
               {/* <button className="nav-auth-btn nav-auth-btn--primary" onClick={signupHandler}>Sign Up</button> */}
               <button className="nav-auth-btn nav-auth-btn--secondary" onClick={loginHandler}>Sign In</button>

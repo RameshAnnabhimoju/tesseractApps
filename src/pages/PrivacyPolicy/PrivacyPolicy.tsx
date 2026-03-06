@@ -564,7 +564,7 @@ const PrivacyPolicy = () => {
       </div>
       <div className="text privacy-policy-text">Phone: 1300 252 808</div>
       <div className="text privacy-policy-text">
-        Address: TesseractApps, Bruce ACT 2617
+        Address: TesseractApps, Phillip ACT 2606
       </div>
     </div>
   );

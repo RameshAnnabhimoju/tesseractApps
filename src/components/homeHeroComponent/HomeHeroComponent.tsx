@@ -15,16 +15,9 @@ import "./HomeHeroStyles.css";
 import HeroArcsLeftComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import HeroArcsRightComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import { homeLeftArcsData, homeRightArcsData } from "../../utils/DummyData";
-import { useAppContext } from "../../contexts/AppContext.tsx";
-// import { useNavigate } from "react-router-dom";
+import useAppNavigate from "../../hooks/useAppNavigate";
 const HomeHeroComponent = () => {
-  // const navigate = useNavigate();
-  const { handleSignup } = useAppContext();
-  const HandleClick = (name: string) => {
-    if (name == "Signup") {
-      handleSignup(true);
-    }
-  };
+  const appNavigate = useAppNavigate();
   return (
     <div id="home-hero-container">
       {/* <VideoComponent /> */}
@@ -49,7 +42,7 @@ const HomeHeroComponent = () => {
         <h2 id="home-text-subText">
           TesseractApps streamlines compliance, team management, NDIS-related care and service delivery for providers, all on a secure, scalable platform.
         </h2>
-        <div className="cta-button" onClick={() => HandleClick("Signup")}>
+        <div className="cta-button" onClick={() => appNavigate("/signup")}>
           <div>Begin Your Journey</div>
           {/* <ArrowRight className="arrow-icon" /> */}
         </div>
