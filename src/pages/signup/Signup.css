@@ -1,12 +1,12 @@
 /* ─────────────────────────────────────────
-   FONT — Inter, matches site design system
+   FONT — Inter site-wide, override MUI Roboto
 ───────────────────────────────────────── */
 #signup-container,
+#signup-success-screen,
 #signup-close-btn {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-/* Force Inter on MUI Stepper labels */
 #signup-stepper-wrapper .MuiStepLabel-label {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
@@ -38,236 +38,540 @@
 }
 
 /* ─────────────────────────────────────────
-   LAYOUT — two-column split
+   PAGE WRAPPER
+───────────────────────────────────────── */
+#signup-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────
+   ROOT LAYOUT — sidebar + content
 ───────────────────────────────────────── */
 #signup-container {
   display: grid;
-  grid-template-columns: 38% 62%;
+  grid-template-columns: 320px 1fr;
   grid-template-rows: 100vh;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  position: relative;
 }
 
 /* ─────────────────────────────────────────
-   LEFT PANEL
+   LEFT SIDEBAR
 ───────────────────────────────────────── */
-#signup-text-section {
-  background-color: var(--color-secondary);
+#signup-sidebar {
+  background: linear-gradient(170deg, #002a52 0%, #003566 60%, #00274d 100%);
   display: flex;
   flex-direction: column;
-  padding: 48px 52px;
+  padding: 28px 24px 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #signup-navbar-logo {
   cursor: pointer;
-  max-width: 160px;
-  margin-bottom: 32px;
+  max-width: 130px;
+  margin-bottom: 24px;
   display: block;
   flex-shrink: 0;
 }
 
-#signup-step-label {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  margin-bottom: 20px;
-  flex-shrink: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-#signup-left-content {
-  flex-shrink: 0;
-}
-
-#signup-headline {
-  font-weight: 800;
-  font-size: 1.75rem;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  margin-bottom: 28px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-#signup-trust-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+#signup-sidebar-body {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  flex: 1;
+  padding-bottom: 28px;
 }
 
-#signup-trust-bullets li {
-  font-size: 0.9375rem;
+/* Step context */
+#signup-sidebar-step-tag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 8px;
+}
+
+#signup-sidebar-headline {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 8px;
+}
+
+#signup-sidebar-sub {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "Inter", sans-serif;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+/* ─── Trust badges ─── */
+#signup-trust-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+
+.signup-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Inter", sans-serif;
+}
+
+.signup-trust-badge-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ─── Service pathway ─── */
+#signup-pathway-heading {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 8px;
+}
+
+#signup-pathway-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#signup-pathway-list li {
+  font-size: 0.75rem;
   font-weight: 400;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.82);
-  padding-left: 26px;
+  color: rgba(255, 255, 255, 0.65);
+  padding-left: 16px;
   position: relative;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", sans-serif;
+  line-height: 1.4;
 }
 
-#signup-trust-bullets li::before {
-  content: "✓";
+#signup-pathway-list li::before {
+  content: "›";
   position: absolute;
   left: 0;
-  top: 0;
   color: var(--color-primary);
   font-weight: 700;
   font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+/* ─── Help section ─── */
+#signup-sidebar-help {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: auto;
+}
+
+#signup-sidebar-help-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 4px;
+}
+
+#signup-sidebar-help-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+#signup-sidebar-help-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  text-decoration: none;
+  transition: background 0.18s;
+}
+
+#signup-sidebar-help-btn:hover {
+  background: rgba(12, 120, 186, 0.85);
 }
 
 /* ─────────────────────────────────────────
-   RIGHT PANEL — flex column, footer fixed
+   RIGHT CONTENT PANEL
 ───────────────────────────────────────── */
 #signup-form-section {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  box-sizing: border-box;
   overflow: hidden;
-  background: white;
+  background: #ffffff;
 }
 
 #signup-stepper-wrapper {
   flex-shrink: 0;
-  padding: 36px 64px 24px;
+  padding: 20px 64px 0;
 }
 
 #signup-form-scroll-area {
   flex: 1;
   overflow-y: auto;
-  padding: 0 64px 24px;
+  padding: 20px 64px 16px;
+}
+
+/* ─── Step question + hint ─── */
+.signup-form-question {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  color: var(--color-secondary);
+  letter-spacing: -0.025em;
+  margin-bottom: 6px;
+  font-family: "Inter", sans-serif;
+}
+
+.signup-form-hint {
+  font-size: 0.875rem;
+  color: var(--color-text-gray);
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
 }
 
 /* ─────────────────────────────────────────
-   FORM FIELDS
+   FORM FIELDS — shared input styles
 ───────────────────────────────────────── */
-.signup-form-field {
+.su-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  width: 100%;
+  gap: 6px;
 }
 
-.signup-form-label {
+.su-field-industry {
+  margin-top: 18px;
+}
+
+.su-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-gray2);
+  font-family: "Inter", sans-serif;
+}
+
+.su-required {
+  color: var(--color-primary);
+  margin-left: 2px;
+}
+
+.su-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--color-text-dark-gray);
-  margin-bottom: 8px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-.signup-required {
-  color: #ef4444;
-}
-
-.signup-form-input {
-  width: 100%;
-  padding: 11px 14px;
+  background: #ffffff;
   border: 1.5px solid #dde4ed;
-  border-radius: 6px;
-  font-size: 0.9375rem;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f8fafc;
+  border-radius: 8px;
   outline: none;
   transition: border-color 0.18s, box-shadow 0.18s;
-  box-sizing: border-box;
-  color: var(--color-text-dark-gray);
 }
 
-.signup-form-input:focus {
+.su-input:focus {
   border-color: var(--color-primary);
-  background: white;
-  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.08);
+  box-shadow: 0 0 0 3px rgba(12, 120, 186, 0.08);
 }
 
-.signup-form-input.error {
-  border-color: #ef4444;
-  background-color: #fef2f2;
+.su-input-error {
+  border-color: #e0302a !important;
+  box-shadow: 0 0 0 3px rgba(224, 48, 42, 0.08) !important;
 }
 
-.signup-other-input {
+.su-error {
+  font-size: 0.6875rem;
+  color: #e0302a;
+  font-family: "Inter", sans-serif;
+}
+
+.su-error-cards {
+  display: block;
   margin-top: 10px;
 }
 
-.signup-error-text {
-  font-size: 0.75rem;
-  color: #ef4444;
-  margin-top: 5px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+.su-error-terms {
+  display: block;
+  margin-top: 6px;
 }
 
 /* ─────────────────────────────────────────
-   SELECTION CHIPS
+   STEP 0 — ABN row + industry cards
 ───────────────────────────────────────── */
-.signup-select-options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+#signup-abn-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
-.signup-select-option {
+#signup-industry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Option cards (mirror BookADemo card style) */
+.signup-option-card {
+  position: relative;
+  background: #ffffff;
   border: 1.5px solid #dde4ed;
-  border-radius: 8px;
-  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 18px 16px;
   cursor: pointer;
-  padding: 11px 20px;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  color: var(--color-text-dark-gray);
-  transition: all 0.18s ease;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
   -webkit-user-select: none;
   user-select: none;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-.signup-select-option:hover {
-  border-color: var(--color-primary);
-  background-color: #eef6fc;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(12, 120, 186, 0.1);
-}
-
-.signup-select-option.selected {
-  background-color: rgba(12, 120, 186, 0.08);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-.signup-checkbox-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
+  min-height: 110px;
+  box-sizing: border-box;
 }
 
-.signup-checkbox-label {
+.signup-option-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(12, 120, 186, 0.1);
+  transform: translateY(-2px);
+}
+
+.signup-option-card.selected {
+  border-color: var(--color-primary);
+  background: rgba(12, 120, 186, 0.04);
+  box-shadow: 0 4px 16px rgba(12, 120, 186, 0.12);
+}
+
+.signup-card-radio {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #c8d3e0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.9375rem;
-  color: var(--color-text-dark-gray);
-  cursor: pointer;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  justify-content: center;
+  transition: border-color 0.18s;
+  flex-shrink: 0;
 }
 
-.signup-checkbox-input {
+.signup-option-card.selected .signup-card-radio {
+  border-color: var(--color-primary);
+}
+
+.signup-radio-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.18s;
+}
+
+.signup-radio-dot.selected {
+  background: var(--color-primary);
+}
+
+.signup-card-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 9px;
+  background: rgba(12, 120, 186, 0.09);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+
+.signup-option-card.selected .signup-card-icon-wrap {
+  background: rgba(12, 120, 186, 0.14);
+}
+
+.signup-card-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  font-family: "Inter", sans-serif;
+  line-height: 1.3;
+}
+
+.signup-option-card.selected .signup-card-title {
+  color: var(--color-primary);
+}
+
+.signup-card-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-gray);
+  font-family: "Inter", sans-serif;
+  line-height: 1.4;
+}
+
+/* ABN help link */
+#signup-abn-help-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  margin-top: 14px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.18s;
+}
+
+#signup-abn-help-link:hover {
+  color: var(--color-secondary);
+}
+
+/* ─────────────────────────────────────────
+   STEP 1 — Personal Details
+───────────────────────────────────────── */
+#signup-step0,
+#signup-step1,
+#signup-step2 {
+  display: flex;
+  flex-direction: column;
+}
+
+#signup-name-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+#signup-step1 .su-field {
+  margin-bottom: 14px;
+}
+
+/* ─────────────────────────────────────────
+   STEP 2 — Review & Confirm
+───────────────────────────────────────── */
+#signup-review-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.signup-review-block {
+  background: #f8fafc;
+  border: 1.5px solid #dde4ed;
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.signup-review-block-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
+}
+
+.signup-review-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.signup-review-row:last-child {
+  margin-bottom: 0;
+}
+
+.signup-review-key {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-gray);
+  font-family: "Inter", sans-serif;
+  white-space: nowrap;
+}
+
+.signup-review-val {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-dark-gray);
+  font-family: "Inter", sans-serif;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* Terms */
+#signup-terms-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--color-text-dark-gray);
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+}
+
+.signup-terms-checkbox {
   width: 16px;
   height: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
   cursor: pointer;
   accent-color: var(--color-primary);
 }
 
+.signup-terms-link {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ─────────────────────────────────────────
-   FOOTER — always visible, never scrolls away
+   FOOTER — always visible
 ───────────────────────────────────────── */
 #signup-buttons-container {
   flex-shrink: 0;
@@ -294,7 +598,7 @@
 }
 
 .signup-btn-primary:hover:not(:disabled) {
-  background-color: rgba(var(--color-primary-rgb), 0.88);
+  background-color: rgba(12, 120, 186, 0.88);
 }
 
 .signup-btn-primary:disabled {
@@ -344,7 +648,107 @@
 }
 
 /* ─────────────────────────────────────────
-   TABLET  (≤ 1024px) — stack vertically
+   SUCCESS SCREEN
+───────────────────────────────────────── */
+#signup-success-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  padding: 40px 24px;
+  box-sizing: border-box;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#signup-success-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 560px;
+}
+
+#signup-success-icon {
+  margin-bottom: 20px;
+}
+
+#signup-success-title {
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+
+#signup-success-message {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text-gray);
+  margin-bottom: 8px;
+  max-width: 480px;
+}
+
+#signup-success-phone {
+  font-size: 0.9375rem;
+  color: var(--color-text-dark-gray);
+  margin-bottom: 28px;
+}
+
+#signup-success-actions {
+  margin-bottom: 36px;
+}
+
+#signup-what-next-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-gray);
+  margin-bottom: 16px;
+}
+
+#signup-success-steps {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.signup-next-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 130px;
+}
+
+.signup-next-step-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(12, 120, 186, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-next-step-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.signup-next-step-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-gray);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ─────────────────────────────────────────
+   TABLET  (≤ 1024px)
 ───────────────────────────────────────── */
 @media (max-width: 1024px) {
   #signup-container {
@@ -354,11 +758,12 @@
     overflow: hidden;
   }
 
-  #signup-text-section {
-    padding: 16px 24px;
+  /* Slim nav bar — logo only, all sidebar content hidden */
+  #signup-sidebar {
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    padding: 18px 28px;
+    gap: 0;
     overflow: hidden;
   }
 
@@ -368,35 +773,60 @@
     flex-shrink: 0;
   }
 
-  #signup-left-content {
+  #signup-sidebar-body {
     display: none;
   }
 
-  #signup-step-label {
-    flex: 1;
-    margin-bottom: 0;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  #signup-form-section {
-    overflow: hidden;
-  }
-
+  /* Stepper — tighter, smaller text & icons */
   #signup-stepper-wrapper {
-    padding: 20px 28px 16px;
+    padding: 14px 28px 0;
+  }
+
+  #signup-stepper-wrapper .MuiStepper-root {
+    gap: 0;
+  }
+
+  #signup-stepper-wrapper .MuiStepLabel-label {
+    font-size: 0.6875rem !important;
+    margin-top: 4px !important;
+  }
+
+  #signup-stepper-wrapper .MuiStepIcon-root {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.625rem !important;
+  }
+
+  #signup-stepper-wrapper .MuiStepIcon-text {
+    font-size: 0.5625rem !important;
+  }
+
+  #signup-stepper-wrapper .MuiStepConnector-line {
+    border-top-width: 1.5px;
   }
 
   #signup-form-scroll-area {
-    padding: 0 28px 16px;
+    padding: 16px 28px 16px;
   }
 
+  /* Footer — centred layout */
   #signup-buttons-container {
     padding: 14px 28px 20px;
+    justify-content: center;
+  }
+
+  .signup-btn-secondary {
+    flex: none;
+    width: auto;
+  }
+
+  .signup-cancel-link {
+    margin-left: 20px;
+  }
+
+  #signup-abn-row,
+  #signup-review-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -411,9 +841,8 @@
     padding: 5px 11px;
   }
 
-  #signup-text-section {
-    padding: 12px 14px;
-    gap: 10px;
+  #signup-sidebar {
+    padding: 16px 18px;
   }
 
   #signup-navbar-logo {
@@ -421,35 +850,55 @@
   }
 
   #signup-stepper-wrapper {
-    padding: 12px 16px 10px;
+    padding: 10px 16px 0;
+  }
+
+  #signup-stepper-wrapper .MuiStepLabel-label {
+    font-size: 0.625rem !important;
   }
 
   #signup-form-scroll-area {
-    padding: 0 16px 12px;
+    padding: 12px 16px 12px;
   }
 
-  .signup-select-option {
-    width: 100%;
-    text-align: center;
-    padding: 12px 14px;
+  .signup-form-question {
+    font-size: 1.125rem;
+  }
+
+  #signup-industry-grid,
+  #signup-name-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .signup-option-card {
+    min-height: unset;
+    padding: 16px 16px 14px;
+  }
+
+  .su-input {
     font-size: 0.875rem;
   }
 
-  .signup-form-input {
-    font-size: 0.875rem;
-  }
-
+  /* Footer — stack: [Back] [Primary] on one row, Cancel below */
   #signup-buttons-container {
-    padding: 10px 16px 14px;
-    gap: 8px;
+    padding: 12px 16px 16px;
+    gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .signup-btn-primary,
-  .signup-btn-secondary {
+  .signup-btn-primary {
     flex: 1;
-    text-align: center;
-    padding: 11px 8px;
+    min-width: 0;
+    padding: 11px 12px;
+    font-size: 0.875rem;
+  }
+
+  .signup-btn-secondary {
+    flex: none;
+    width: auto;
+    padding: 11px 20px;
     font-size: 0.875rem;
   }
 
@@ -460,61 +909,33 @@
     text-align: center;
     padding: 2px 0;
   }
-}
 
-/* ─────────────────────────────────────────
-   SUCCESS SCREEN
-───────────────────────────────────────── */
-#signup-success-container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-secondary);
-  height: 100vh;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px 24px;
-  box-sizing: border-box;
-}
+  #signup-success-title {
+    font-size: 1.75rem;
+  }
 
-.signup-success-image {
-  max-width: 130px;
-  margin-bottom: 24px;
-}
+  #signup-success-steps {
+    gap: 16px;
+  }
 
-.signup-success-image-man {
-  max-width: 220px;
-  margin-top: 40px;
-}
-
-#signup-success-title {
-  font-weight: 700;
-  font-size: 2rem;
-  color: white;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}
-
-#signup-success-message {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.82);
-  max-width: 540px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  .signup-next-step {
+    width: 100px;
+  }
 }
 
 /* ─────────────────────────────────────────
    SMALL MOBILE  (≤ 480px)
 ───────────────────────────────────────── */
 @media (max-width: 480px) {
-  #signup-text-section {
-    padding: 10px 12px;
+  #signup-sidebar {
+    padding: 14px 14px;
   }
 
   #signup-navbar-logo {
     max-width: 80px;
+  }
+
+  #signup-stepper-wrapper .MuiStepLabel-label {
+    font-size: 0.5625rem !important;
   }
 }

@@ -46,31 +46,21 @@ const Blog11 = lazy(() => import("../pages/blogPost/Blog11"));
 const NDISComplianceBlog = lazy(() => import("../pages/blogPost/NDISComplianceBlog"));
 const BlogPostPage = lazy(() => import("../pages/blogPost/BlogPostPage"));
 const StudioPage = lazy(() => import("../pages/studio/StudioPage"));
-// import BookADemoPage from "../pages/bookADemo/BookADemo";
+const BookADemo = lazy(() => import("../pages/bookADemo/BookADemo"));
+const Signup = lazy(() => import("../pages/signup/Signup"));
 
 const AppRoutes = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const {
     getRoute,
-    handleSignup,
-    handleBookADemo,
     setCloseRoute,
     setExpoBanner,
   } = useAppContext();
 
   useEffect(() => {
-    // const prevPath = sessionStorage.getItem("prevPath");
     const cleanPath = location.pathname.replace(/\/$/, "");
-    // If the route already has state data, do nothing
-    console.log("AppROute => cleanPath => ", cleanPath);
-    if (cleanPath == "/book-a-demo") {
-      handleBookADemo(true);
-      return;
-    } else if (cleanPath == "/signup") {
-      handleSignup(true);
-      return;
-    } else if (cleanPath == "/expo") {
+    if (cleanPath === "/expo") {
       setExpoBanner(true);
       return;
     }
@@ -78,18 +68,13 @@ const AppRoutes = () => {
     if ((location.state as any)?.data) return;
     sessionStorage.setItem("prevPath", location.pathname);
 
-    // Lookup route config by path
     const routeConfig = getRoute(cleanPath);
-    // If config has data, inject it into the current history entry
     if (routeConfig?.data) {
-      // replace: true — avoid adding a duplicate history entry
       navigate(cleanPath, {
         replace: true,
         state: { data: routeConfig.data },
       });
     }
-
-    // only run when pathname changes; getRoute is stable in AppContext (useMemo)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
   return (
@@ -244,8 +229,8 @@ const AppRoutes = () => {
         {/* any remaining single-route pages */}
         <Route path="/details" element={<Details />} />
 
-        {/* <Route path="/book-a-demo" element={<BookADemoPage />} /> */}
-        {/* <Route path="/sign-up" element={<BookADemoPage />} /> */}
+        <Route path="/book-a-demo" element={<BookADemo />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Suspense>
   );

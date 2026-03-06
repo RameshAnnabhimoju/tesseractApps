@@ -418,8 +418,8 @@ const post4 = {
   readingTime: 3,
   featured: false,
   seo: {
-    metaTitle: 'NDIS Compliance Guide | Provider Requirements | TesseractApps',
-    metaDescription: 'Essential NDIS compliance guide for providers. Understand Quality and Safeguards requirements, documentation needs, and how technology can help you stay compliant.',
+    metaTitle: 'Sydney Disability & WorkAbility Expo 2025 | TesseractApps',
+    metaDescription: 'TesseractApps at the Sydney Disability & WorkAbility Expo 2025. Connecting with NDIS providers, support coordinators, and the disability community.',
     noIndex: false,
   },
   body: [

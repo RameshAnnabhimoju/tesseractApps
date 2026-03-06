@@ -19,7 +19,6 @@ import ArrowDown from "../../assets/arrow_down.svg";
 import ArrowUp from "../arrows/ArrowUp";
 // import signupImage from "../../assets/signup.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
-import { useAppContext } from "../../contexts/AppContext";
 import AppLogo from "../appLogo/AppLogo";
 
 const NavBarComponent = ({
@@ -27,7 +26,6 @@ const NavBarComponent = ({
 }: {
   portalContainerRef: RefObject<HTMLDivElement | null>;
 }) => {
-  const { handleBookADemo, handleSignup } = useAppContext();
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -198,7 +196,11 @@ const NavBarComponent = ({
     handleSearch(name);
     setToggleDrawer(false);
     if (name && name == "Free Trial Sign-Up") {
-      handleSignup(true);
+      appNavigate("/signup");
+      return;
+    }
+    if (name && name == "Book a Demo") {
+      appNavigate("/book-a-demo");
       return;
     }
     console.log("Name:", name);
@@ -237,7 +239,7 @@ const NavBarComponent = ({
     closePopup();
   };
   const signupHandler = () => {
-    handleSignup();
+    appNavigate("/signup");
     closePopup();
   };
   const [showScroll, setShowScroll] = useState(false);
@@ -598,13 +600,19 @@ const NavBarComponent = ({
             <div id="nav-menu-ctas">
               <div
                 className="navbar-tryItFree nav-drawer-btn"
-                onClick={() => { handleSignup(true); setToggleDrawer(false); }}
+                onClick={() => {
+                  appNavigate("/signup");
+                  setToggleDrawer(false);
+                }}
               >
                 <span className="navbar-requestDemo-text">Try For Free</span>
               </div>
               <div
                 className="navbar-requestDemo nav-drawer-btn"
-                onClick={() => { handleBookADemo(true); setToggleDrawer(false); }}
+                onClick={() => {
+                  appNavigate("/book-a-demo");
+                  setToggleDrawer(false);
+                }}
               >
                 <span className="navbar-requestDemo-text">Book a Demo</span>
                 <PhoneCall className="navbar-requestDemo-icon" />
@@ -655,16 +663,14 @@ const NavBarComponent = ({
 
           <div
             className="navbar-tryItFree"
-            onClick={() => {
-              handleSignup(true);
-            }}
+            onClick={() => appNavigate("/signup")}
           >
             <div className="navbar-requestDemo-text">Try For Free</div>
           </div>
 
           <div
             className="navbar-requestDemo"
-            onClick={() => handleBookADemo(true)}
+            onClick={() => appNavigate("/book-a-demo")}
           >
             <div className="navbar-requestDemo-text">Book a Demo</div>
               <PhoneCall className="navbar-requestDemo-icon" />
