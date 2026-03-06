@@ -50,7 +50,7 @@ const HomeHeroComponent = () => {
           TesseractApps streamlines compliance, team management, NDIS-related care and service delivery for providers, all on a secure, scalable platform.
         </h2>
         <div className="cta-button" onClick={() => HandleClick("Signup")}>
-          <div>Try For Free</div>
+          <div>Begin Your Journey</div>
           {/* <ArrowRight className="arrow-icon" /> */}
         </div>
         <div id="home-button-subtext">

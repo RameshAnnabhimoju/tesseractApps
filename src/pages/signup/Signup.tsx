@@ -262,13 +262,19 @@ const Signup = () => {
 
           {/* ── Left Sidebar ── */}
           <div id="signup-sidebar">
-            <img
-              src={logo_small}
-              alt="TesseractApps logo"
-              id="signup-navbar-logo"
+            <button
+              type="button"
+              id="signup-navbar-logo-btn"
               onClick={() => navigate("/")}
-            />
-
+              aria-label="Go to home page"
+              style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
+            >
+              <img
+                src={logo_small}
+                alt="TesseractApps logo"
+                id="signup-navbar-logo"
+              />
+            </button>
             <div id="signup-sidebar-body">
               {/* Step context */}
               <div id="signup-sidebar-step-tag">{ctx.tag}</div>
@@ -307,7 +313,7 @@ const Signup = () => {
               <div id="signup-sidebar-help">
                 <div id="signup-sidebar-help-title">Need help?</div>
                 <div id="signup-sidebar-help-text">
-                  Our team is available Mon–Fri, 9am–5pm AEST.
+                  Our team is available Mon – Fri, 9:00AM – 5:30PM AEST.
                 </div>
                 <a href="tel:1300252808" id="signup-sidebar-help-btn">
                   <Phone size={13} />
@@ -405,14 +411,6 @@ const Signup = () => {
                       <span className="su-error su-error-cards">{formErrors.industry}</span>
                     )}
                   </div>
-
-                  <button
-                    type="button"
-                    id="signup-abn-help-link"
-                    onClick={() => window.open("https://abr.business.gov.au/", "_blank")}
-                  >
-                    Need help with ABN verification? <ChevronRight size={13} />
-                  </button>
                 </div>
               )}
 

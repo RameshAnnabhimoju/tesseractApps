@@ -242,8 +242,11 @@ const BookADemo = () => {
               alt="TesseractApps logo"
               id="bookADemo-navbar-logo"
               onClick={handleLogoClick}
+              onKeyDown={(e) => e.key === "Enter" && handleLogoClick()}
+              tabIndex={0}
+              role="button"
+              style={{ cursor: "pointer" }}
             />
-
             <div id="bookADemo-sidebar-body">
               {/* Step context — changes per step */}
               <div id="bookADemo-sidebar-step-tag">{STEP_CONTEXT[currentStep].tag}</div>
@@ -356,56 +359,52 @@ const BookADemo = () => {
                 </>
               )}
 
-              {/* Step 2 — details + schedule */}
-              {isLastStep(currentStep) && (
-                <div id="bookADemo-details-layout">
-                  <div id="bookADemo-details-left">
-                    <div className="bookADemo-details-section-label">Organisation Details</div>
-                    <div id="bookADemo-name-row">
-                      <div className="bk-field">
-                        <label className="bk-label" htmlFor="firstName">First Name <span className="bk-required">*</span></label>
-                        <input className={"bk-input" + (formErrors.firstName ? " bk-input-error" : "")} id="firstName" type="text" placeholder="Jane" onChange={handleInputChange} />
-                        {formErrors.firstName && <span className="bk-error">{formErrors.firstName}</span>}
-                      </div>
-                      <div className="bk-field">
-                        <label className="bk-label" htmlFor="lastName">Last Name <span className="bk-required">*</span></label>
-                        <input className={"bk-input" + (formErrors.lastName ? " bk-input-error" : "")} id="lastName" type="text" placeholder="Doe" onChange={handleInputChange} />
-                        {formErrors.lastName && <span className="bk-error">{formErrors.lastName}</span>}
-                      </div>
-                    </div>
-                    <div className="bk-field">
-                      <label className="bk-label" htmlFor="email">Work Email <span className="bk-required">*</span></label>
-                      <input className={"bk-input" + (formErrors.email ? " bk-input-error" : "")} id="email" type="email" placeholder="jane@organisation.com" onChange={handleInputChange} />
-                      {formErrors.email && <span className="bk-error">{formErrors.email}</span>}
-                    </div>
-                    <div className="bk-field">
-                      <label className="bk-label" htmlFor="companyName">Organisation Name <span className="bk-required">*</span></label>
-                      <input className={"bk-input" + (formErrors.companyName ? " bk-input-error" : "")} id="companyName" type="text" placeholder="Healthcare Services Inc." onChange={handleInputChange} />
-                      {formErrors.companyName && <span className="bk-error">{formErrors.companyName}</span>}
-                    </div>
-                    <div className="bk-field">
-                      <label className="bk-label" htmlFor="notes">Anything else? <span className="bk-optional">(optional)</span></label>
-                      <textarea className="bk-input bk-textarea" id="notes" placeholder="Specific features you'd like to see..." rows={3} onChange={handleInputChange} />
-                    </div>
-                             <div id="bookADemo-social-proof">
-                      <div id="bookADemo-social-proof-text">
-                        Join <strong>500+ professionals</strong> who upgraded their workflow this month.
-                      </div>
-                    </div>
-                  </div>
-                  <div id="bookADemo-details-right">
-                    <div className="bookADemo-details-section-label">Select Preffered Date &amp; Time</div>
-                    <CalendarPicker
-                      onChange={(iso) => {
-                        setFormData((prev) => ({ ...prev, schedule: iso }));
-                        if (iso) setFormErrors((prev) => ({ ...prev, schedule: undefined }));
-                      }}
-                    />
-                    {formErrors.schedule && <span className="bk-error">{formErrors.schedule}</span>}
-           
+          {/* Step 2 — details + schedule */}
+          {isLastStep(currentStep) && (
+            <div id="bookADemo-details-layout">
+              <div id="bookADemo-details-left">
+                <div className="bk-field">
+                  <label className="bk-label" htmlFor="firstName">First Name <span className="bk-required">*</span></label>
+                  <input className={"bk-input" + (formErrors.firstName ? " bk-input-error" : "")} id="firstName" type="text" placeholder="Jane" value={formData.firstName} onChange={handleInputChange} />
+                  {formErrors.firstName && <span className="bk-error">{formErrors.firstName}</span>}
+                </div>
+                <div className="bk-field">
+                  <label className="bk-label" htmlFor="lastName">Last Name <span className="bk-required">*</span></label>
+                  <input className={"bk-input" + (formErrors.lastName ? " bk-input-error" : "")} id="lastName" type="text" placeholder="Doe" value={formData.lastName} onChange={handleInputChange} />
+                  {formErrors.lastName && <span className="bk-error">{formErrors.lastName}</span>}
+                </div>
+                <div className="bk-field">
+                  <label className="bk-label" htmlFor="email">Work Email <span className="bk-required">*</span></label>
+                  <input className={"bk-input" + (formErrors.email ? " bk-input-error" : "")} id="email" type="email" placeholder="jane@organisation.com" value={formData.email} onChange={handleInputChange} />
+                  {formErrors.email && <span className="bk-error">{formErrors.email}</span>}
+                </div>
+                <div className="bk-field">
+                  <label className="bk-label" htmlFor="companyName">Organisation Name <span className="bk-required">*</span></label>
+                  <input className={"bk-input" + (formErrors.companyName ? " bk-input-error" : "")} id="companyName" type="text" placeholder="Healthcare Services Inc." value={formData.companyName} onChange={handleInputChange} />
+                  {formErrors.companyName && <span className="bk-error">{formErrors.companyName}</span>}
+                </div>
+                <div className="bk-field">
+                  <label className="bk-label" htmlFor="notes">Anything else? <span className="bk-optional">(optional)</span></label>
+                  <textarea className="bk-input bk-textarea" id="notes" placeholder="Specific features you'd like to see..." rows={3} value={formData.notes} onChange={handleInputChange} />
+                </div>
+                <div id="bookADemo-social-proof">
+                  <div id="bookADemo-social-proof-text">
+                    Join <strong>500+ professionals</strong> who upgraded their workflow this month.
                   </div>
                 </div>
-              )}
+              </div>
+              <div id="bookADemo-details-right">
+                <div className="bookADemo-details-section-label">Select Preferred Date &amp; Time</div>
+                <CalendarPicker
+                  onChange={(iso) => {
+                    setFormData((prev) => ({ ...prev, schedule: iso }));
+                    if (iso) setFormErrors((prev) => ({ ...prev, schedule: undefined }));
+                  }}
+                />
+                {formErrors.schedule && <span className="bk-error">{formErrors.schedule}</span>}
+              </div>
+            </div>
+          )}
             </div>
 
             {/* Footer */}

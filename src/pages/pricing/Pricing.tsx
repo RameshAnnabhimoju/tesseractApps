@@ -115,7 +115,7 @@ const Pricing = () => {
               className="cta-button pricing-button-primary button-contain"
               onClick={handleTryItFree}
             >
-              Try For Free
+              Begin Your Journey
             </button>
           </div>
           <h2 className="pricing-hero-bottom-text">

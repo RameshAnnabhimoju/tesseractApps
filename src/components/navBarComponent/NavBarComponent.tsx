@@ -605,7 +605,7 @@ const NavBarComponent = ({
                   setToggleDrawer(false);
                 }}
               >
-                <span className="navbar-requestDemo-text">Try For Free</span>
+                <span className="navbar-requestDemo-text">Begin Your Journey</span>
               </div>
               <div
                 className="navbar-requestDemo nav-drawer-btn"
@@ -665,7 +665,7 @@ const NavBarComponent = ({
             className="navbar-tryItFree"
             onClick={() => appNavigate("/signup")}
           >
-            <div className="navbar-requestDemo-text">Try For Free</div>
+            <div className="navbar-requestDemo-text">Begin Your Journey</div>
           </div>
 
           <div

@@ -9205,10 +9205,10 @@ export const homeRightArcsData = [
     label: "Participant Management",
   },
 ];
-import popupImage1 from "../assets/popup-image1.webp";
-import popupImage2 from "../assets/popup-image2.webp";
-import popupImage3 from "../assets/popup-image3.webp";
-import popupImage4 from "../assets/popup-image4.webp";
+// import popupImage1 from "../assets/popup-image1.webp";
+// import popupImage2 from "../assets/popup-image2.webp";
+// import popupImage3 from "../assets/popup-image3.webp";
+// import popupImage4 from "../assets/popup-image4.webp";
 
 export const bookADemoFormData = [
   {

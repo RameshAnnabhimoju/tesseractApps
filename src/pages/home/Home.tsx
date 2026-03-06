@@ -1,5 +1,5 @@
 // import FaqComponent from "../../components/faqComponent/FaqComponent";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import HomeHeroComponent from "../../components/homeHeroComponent/HomeHeroComponent";
 // import MirroredArcsComponent from "../../components/mirroredArcsComponent/MirroredArcsComponent";
 // import VideoComponent from "../../components/videoComponent/VideoComponent";
@@ -33,8 +33,15 @@ const OurBlogComponent = lazy(
 );
 
 const Home = () => {
+  useEffect(() => {
+    document.body.classList.add("home-font-scope");
+    return () => {
+      document.body.classList.remove("home-font-scope");
+    };
+  }, []);
+
   return (
-    <div>
+    <div className="home-page">
       <SEO
         title="TesseractApps | NDIS Software & Workforce Management Platform Australia"
         description="TesseractApps is Australia's leading NDIS software solution for workforce management, rostering, compliance, and billing. Streamline your care operations with our all-in-one Salesforce-based platform. Free trial available."
