@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(xargs:*)",
+      "Read(//d/whatnextstudio/tesseractApps/**)",
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Bash(python3:*)",
+      "Bash(sort:*)",
+      "Bash(find:*)",
+      "Bash(du:*)",
+      "Bash(npx tsc:*)",
+      "Bash(echo:*)",
+      "Bash(dir:*)",
+      "Bash(git -C \"D:/whatnextstudio/tesseractApps\" status)",
+      "Bash(git -C \"D:/whatnextstudio/tesseractApps\" ls-files src/assets/)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps status)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps ls-files src/assets/)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps cat-file:*)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show HEAD:src/utils/DummyData.ts)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps ls-files src/utils/)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show HEAD:src/utils/DummyData.tsx)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps log --oneline -5 HEAD)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show b392d6c:src/utils/DummyData.tsx)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show HEAD:src/components/featuresComponent/FeaturesComponent.tsx)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show HEAD:src/components/howItWorksComponent/HowItWorksComponent.tsx)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show HEAD:src/components/trustedClients/TrustedClientsComponent.tsx)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show HEAD:src/components/testimonialComponent/TestimonialComponent.tsx)",
+      "Bash(git -C D:/whatnextstudio/tesseractApps show HEAD:src/components/ourBlogComponent/OurBlogComponent.tsx)",
+      "Bash(tr:*)",
+      "Bash(node -e:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:api.unsplash.com)"
+    ]
+  }
+}

@@ -1,15 +1,13 @@
 import "./CareersStyles.css";
-import { useMetaTags } from "../../utils/useMetaTags";
+import SEO from "../../components/common/SEO";
 
 const Careers = () => {
-  useMetaTags({
-    title: "Careers at TesseractApps | Join Our Team | Australian Tech Jobs",
-    description:
-      "Join TesseractApps and help shape the future of care and workforce technology. We're looking for passionate individuals who want to make a real impact through innovation.",
-  });
-
   return (
     <div id="careers-container">
+      <SEO
+        title="Careers at TesseractApps | Join Our Team | Australian Tech Jobs"
+        description="Join TesseractApps and help shape the future of care and workforce technology. We're looking for passionate individuals who want to make a real impact through innovation."
+      />
       <div className="heading">CAREERS</div>
       <div className="subheading">
         Join Us in Shaping the Future of Care and Workforce Technology
