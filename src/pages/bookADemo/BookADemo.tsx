@@ -1,6 +1,5 @@
 import "./BookADemo.css";
 import { Dialog, Stepper, Step, StepLabel } from "@mui/material";
-import closeIcon from "../../assets/close.webp";
 import Slide from "@mui/material/Slide";
 import { useEffect, useState } from "react";
 import { bookADemoFormData } from "../../utils/DummyData";
@@ -19,12 +18,9 @@ import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 
 type formDataType = {
-  organisaitionType: string;
+  organisationType: string;
   teamRoles: string[];
-  staff: string;
-  currentRoles: string[];
-  features: string[];
-  goal: string;
+  goals: string[];
   firstName: string;
   lastName: string;
   email: string;
@@ -32,13 +28,11 @@ type formDataType = {
   companyName: string;
   schedule: string;
 };
+
 const formEmptyData: formDataType = {
-  organisaitionType: "",
+  organisationType: "",
   teamRoles: [],
-  staff: "",
-  currentRoles: [],
-  features: [],
-  goal: "",
+  goals: [],
   firstName: "",
   lastName: "",
   email: "",
@@ -46,78 +40,71 @@ const formEmptyData: formDataType = {
   companyName: "",
   schedule: "",
 };
+
+const isLastStep = (step: number) => step === bookADemoFormData.length - 1;
+const isFirstStep = (step: number) => step === 0;
+
 const BookADemo = () => {
   const { bookADemo, handleBookADemo, closeRoute } = useAppContext();
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   console.log("Book a demo current location ", location.pathname);
-  //   if (location.pathname == "/book-a-demo") {
-  //     setCloseRoute("/");
-  //   } else {
-  //     setCloseRoute(location.pathname);
-  //   }
-  // }, []);
+
   useEffect(() => {
     if (bookADemo) navigate("/book-a-demo", { replace: true });
   }, [bookADemo]);
-  const alertInitialData = {
-    heading: "",
-    text: "",
-    type: "success",
-    isOpen: false,
-  };
+
+  const alertInitialData = { heading: "", text: "", type: "success", isOpen: false };
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState(formEmptyData);
   const [alertData, setAlertData] = useState(alertInitialData);
-
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const resetForm = () => {
     setCurrentStep(0);
     setFormData(formEmptyData);
     setAlertData(alertInitialData);
     setShowSuccess(false);
-    setTimeout(() => {
-      handleBookADemo(false);
-    }, 1);
+    setTimeout(() => handleBookADemo(false), 1);
   };
-  const isSelected = (
-    formData: formDataType,
-    id: keyof formDataType,
-    value: string
-  ): boolean => {
-    const fieldValue = formData[id];
-    if (typeof fieldValue === "string") {
-      return fieldValue === value;
-    }
-    if (Array.isArray(fieldValue)) {
-      return fieldValue.includes(value);
-    }
+
+  const handleClose = () => {
+    navigate(closeRoute !== "" ? closeRoute : "/", { replace: true });
+    resetForm();
+  };
+
+  const handleLogoClick = () => {
+    navigate("/");
+    setTimeout(() => handleBookADemo(false), 100);
+  };
+
+  const isSelected = (data: formDataType, id: keyof formDataType, value: string): boolean => {
+    const fieldValue = data[id];
+    if (typeof fieldValue === "string") return fieldValue === value;
+    if (Array.isArray(fieldValue)) return fieldValue.includes(value);
     return false;
   };
 
   const handlePrevious = () => {
-    if (currentStep !== 0) {
-      setCurrentStep((prev) => prev - 1);
-    }
+    if (!isFirstStep(currentStep)) setCurrentStep((p) => p - 1);
   };
 
   const handleNext = () => {
-    setCurrentStep((prev) => prev + 1);
+    const step = bookADemoFormData[currentStep];
+    if (step.multiSelect) {
+      const val = formData[step.id as keyof formDataType];
+      if (Array.isArray(val) && val.length === 0) {
+        setAlertData({ ...alertData, heading: "Please select at least one option", text: "Select one or more options to continue.", type: "fail", isOpen: true });
+        return;
+      }
+    }
+    if (!isLastStep(currentStep)) setCurrentStep((p) => p + 1);
   };
 
-  const handleOptionSelect = (
-    value: string,
-    id: string,
-    multiselect: boolean
-  ) => {
+  const handleOptionSelect = (value: string, id: string, multiselect: boolean) => {
     if (!value || !id) return;
-
     setFormData((prev) => {
       const fieldValue = prev[id as keyof formDataType];
-
       if (multiselect && Array.isArray(fieldValue)) {
-        // toggle selection
         return {
           ...prev,
           [id]: isSelected(prev, id as keyof formDataType, value)
@@ -125,40 +112,26 @@ const BookADemo = () => {
             : [...fieldValue, value],
         };
       }
-
-      // single select
       return { ...prev, [id]: value };
     });
-
-    // Auto-advance for single select
-    if (!multiselect) {
+    // Single-select: auto-advance but don't advance past the last step
+    if (!multiselect && !isLastStep(currentStep)) {
       handleNext();
     }
   };
 
-  // console.log(formData);
-  const currentId = bookADemoFormData[currentStep]?.id as
-    | keyof formDataType
-    | undefined;
-
-  const handleInputChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const value = event.target.value;
-    const id = event.target.id;
-    // console.log(id, value);
-    setFormData((prev) => ({ ...prev, [id]: value }));
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [event.target.id]: event.target.value }));
   };
+
   const handleSubmit = () => {
-    window.dataLayer.push({
+    setIsSubmitting(true);
+    window.dataLayer?.push({
       event: "book_demo_form_submit",
       user_data: {
         email: formData.email,
         phone_number: formData.phoneNumber,
-        address: {
-          first_name: formData.firstName,
-          last_name: formData.lastName,
-        },
+        address: { first_name: formData.firstName, last_name: formData.lastName },
       },
     });
 
@@ -170,30 +143,17 @@ const BookADemo = () => {
         email: formData.email,
         phone: formData.phoneNumber,
         organisation: formData.companyName,
-        role: formData.teamRoles.join(", "),
-        areas: formData.features.join(", "),
+        role: Array.isArray(formData.teamRoles) ? formData.teamRoles.join(", ") : formData.teamRoles,
+        areas: Array.isArray(formData.goals) ? formData.goals.join(", ") : formData.goals,
         preferredTime: formData.schedule,
       })
     )
-      .then((response) => {
-        console.log("Email sent successfully:", response);
+      .then(() => {
         confirmationMail();
-        // alert("Thank you for your request! We will be in touch soon.");
-        // setAlertData({
-        //   ...alertData,
-        //   heading: "Request Submitted",
-        //   text: "Thank you for your request! We will be in touch soon.",
-        //   type: "success",
-        //   isOpen: true,
-        // });
         setShowSuccess(true);
       })
       .catch((error) => {
         console.error("Error sending email:", error);
-        // alert(
-        //   "There was an error sending your request. Please try again later."
-        // );
-        setShowSuccess(false);
         setAlertData({
           ...alertData,
           heading: "Request Failed",
@@ -201,132 +161,100 @@ const BookADemo = () => {
           type: "fail",
           isOpen: true,
         });
-      });
+      })
+      .finally(() => setIsSubmitting(false));
   };
+
   const confirmationMail = () => {
     const scheduledDate = new Date(formData.schedule);
-
-// Date: dd/mm/yyyy
-const date = scheduledDate.toLocaleDateString('en-AU', {
-  day: '2-digit',
-  month: '2-digit',
-  year: 'numeric'
-});
-
-// Time: hh:mm AM/PM (12 hour)
-const time = scheduledDate.toLocaleTimeString('en-AU', {
-  hour: '2-digit',
-  minute: '2-digit',
-  hour12: true
-}).toUpperCase();;
-
+    const date = scheduledDate.toLocaleDateString("en-AU", { day: "2-digit", month: "2-digit", year: "numeric" });
+    const time = scheduledDate.toLocaleTimeString("en-AU", { hour: "2-digit", minute: "2-digit", hour12: true }).toUpperCase();
     sendEmail(
       formData.firstName,
       formData.email,
       bookDemoConfirmationEmailTemplate.subject,
-      bookDemoConfirmationEmailTemplate.text(formData.firstName,date,time),
-      bookDemoConfirmationEmailTemplate.html(formData.firstName,date,time)
-    )
-      .then((response) => {
-        console.log("Confirmation email sent successfully:", response);
-      })
-      .catch((error) => {
-        console.error("Error sending confirmation email:", error);
-      });
-  };
-  const getVisualStep = (internalStep: number) => {
-    if (internalStep <= 3) return 0; // Organisation (Steps 0-3)
-    if (internalStep <= 5) return 1; // Needs (Steps 4-5)
-    return 2; // Contact (Step 6)
+      bookDemoConfirmationEmailTemplate.text(formData.firstName, date, time),
+      bookDemoConfirmationEmailTemplate.html(formData.firstName, date, time)
+    ).catch((error) => console.error("Error sending confirmation email:", error));
   };
 
-  const hiddenSteps = ["Organisation", "Needs", "Contact"];
-
-  const handleLogoClick = () => {
-    navigate("/");
-    setTimeout(() => {
-      handleBookADemo(false);
-    }, 100);
+  const getVisualStep = (step: number) => {
+    if (step === 0) return 0;
+    if (step <= 2) return 1;
+    return 2;
   };
+
+  const currentId = bookADemoFormData[currentStep]?.id as keyof formDataType | undefined;
+  const stepData = bookADemoFormData[currentStep];
+  const isSubmitDisabled =
+    !formData.firstName.trim() ||
+    !formData.lastName.trim() ||
+    !formData.email.trim() ||
+    !formData.phoneNumber.trim() ||
+    !formData.companyName.trim() ||
+    !formData.schedule.trim();
+
   return (
     <Dialog
       open={bookADemo}
-      onClose={() => {
-        setCurrentStep(0);
-        handleBookADemo(false);
-      }}
+      onClose={handleClose}
       fullScreen
       slots={{ transition: Slide }}
       slotProps={{ transition: { direction: "up" } }}
-      sx={{ '& .MuiDialog-paper': { padding: 0, margin: 0, overflow: 'hidden' } }}
+      sx={{ "& .MuiDialog-paper": { padding: 0, margin: 0, overflow: "hidden" } }}
     >
       <Alert setAlertData={setAlertData} alertData={alertData} />
 
-      <img loading="lazy"
-        src={closeIcon}
-        alt="close icon"
-        id="dialog-close-icon"
-        style={
-          showSuccess ? { filter: "invert(1)" } : { filter: "invert(0)" }
-        }
-        onClick={() => {
-          console.log("Book a Demo Close Route ", closeRoute);
-          if (closeRoute != "") {
-            navigate(closeRoute, { replace: true });
-          } else {
-            navigate("/", { replace: true });
-          }
-          resetForm();
-        }}
-      />
+      <button type="button" id="dialog-close-btn" onClick={handleClose}>
+        ✕ Close
+      </button>
 
       {showSuccess ? (
         <div id="bookADemo-Success-Container">
-          <img loading="lazy"
-            src={image1}
-            alt="success image"
-            className="bookADemo-Success-image"
-          />
-          <div id="bookADemo-Success-Title">
-            Successfully Sent
-          </div>
+          <img loading="lazy" src={image1} alt="success image" className="bookADemo-Success-image" />
+          <div id="bookADemo-Success-Title">Successfully Sent</div>
           <div id="bookADemo-success-message">
-            Thank you! Your demo has been successfully booked. Our team will
-            contact you shortly to confirm the details.
+            Thank you! Your demo has been successfully booked. Our team will contact you shortly to confirm the details.
           </div>
-          <img loading="lazy"
-            src={image2}
-            alt="success image2"
-            className="bookADemo-Success-image bookADemo-Success-image-man"
-          />
+          <img loading="lazy" src={image2} alt="success" className="bookADemo-Success-image bookADemo-Success-image-man" />
         </div>
       ) : (
         <div id="bookADemo-container">
 
           {/* Left Panel */}
           <div id="bookADemo-text-section">
-            <img loading="lazy"
-              src={logo_small}
-              alt="tesseract logo"
-              id="bookADemo-navbar-logo"
-              onClick={handleLogoClick}
-            />
-            <div id="bookADemo-text">{bookADemoFormData[currentStep].text}</div>
-            <div id="bookADemo-subText">
-              {bookADemoFormData[currentStep].subText}
+            <img loading="lazy" src={logo_small} alt="tesseract logo" id="bookADemo-navbar-logo" onClick={handleLogoClick} />
+
+            {/* Desktop-only: static trust content */}
+            <div id="bookADemo-left-content">
+              <div id="bookADemo-headline">
+                A personalised demo<br />built around your team
+              </div>
+              <ul id="bookADemo-trust-bullets">
+                <li>Tailored to your organisation type</li>
+                <li>30-minute walkthrough, no sales pressure</li>
+                <li>Used by NDIS, Aged Care &amp; Allied Health providers</li>
+              </ul>
             </div>
-            <img loading="lazy"
-              src={bookADemoFormData[currentStep].image}
-              alt="book-a-demo-visual"
-              id="bookADemo-image"
-            />
+
+            {/* Image — desktop only, pushed to bottom */}
+            <div id="bookADemo-image-wrap">
+              <img loading="lazy" src={stepData.image} alt="book-a-demo-visual" id="bookADemo-image" />
+            </div>
           </div>
 
           {/* Right Panel */}
           <div id="bookADemo-form-section">
-            <div style={{ width: '100%', marginBottom: '40px' }}>
+            {/* Stepper */}
+            <div id="bookADemo-stepper-wrapper">
+          <div id="bookADemo-form-question-container">
+                <div id="bookADemo-form-question">{stepData.question}</div>
+              {"hint" in stepData && stepData.hint && (
+                <div id="bookADemo-form-multiple">{stepData.hint}</div>
+              )}
+          </div>
               <Stepper activeStep={getVisualStep(currentStep)} alternativeLabel>
-                {hiddenSteps.map((label) => (
+                {["Organisation", "Team & Goals", "Your Details"].map((label) => (
                   <Step key={label}>
                     <StepLabel>{label}</StepLabel>
                   </Step>
@@ -334,105 +262,89 @@ const time = scheduledDate.toLocaleTimeString('en-AU', {
               </Stepper>
             </div>
 
-            <div id="bookADemo-form-question">
-              {bookADemoFormData[currentStep].question}
-            </div>
-            {bookADemoFormData[currentStep].multiSelect && (
-              <div id="bookADemo-form-multiple">Select Multiple</div>
-            )}
+            {/* Scrollable content area */}
+            <div id="bookADemo-form-scroll-area">
 
-            <div id="bookADemo-form-fields-container">
-              {bookADemoFormData[currentStep].fields.map((field, index) => (
-                <React.Fragment key={field.displayName + index}>
-                  {field.type == "option" ? (
-                    <div
-                      className={
-                        "bookADemo-field-select" +
-                        (currentId &&
-                          isSelected(formData, currentId, field.value)
-                          ? " selected"
-                          : "")
-                      }
-                      onClick={() =>
-                        handleOptionSelect(
-                          field.value,
-                          bookADemoFormData[currentStep].id ?? "",
-                          bookADemoFormData[currentStep].multiSelect ?? false
-                        )
-                      }
-                      data-value={field.value}
-                    >
-                      {field.displayName}
-                    </div>
-                  ) : field.displayName == "Pick a date & time" ? (
-                    <TextField
-                      className="bookADemo-textInput"
-                      id={field?.id}
-                      label={field.displayName}
-                      variant="outlined"
-                      type="datetime-local"
-                      slotProps={{
-                        inputLabel: {
-                          shrink: true,
-                        },
-                      }}
-                      onChange={handleInputChange}
-                      fullWidth
-                    />
-                  ) : (
-                    <TextField
-                      className="bookADemo-textInput"
-                      id={field?.id}
-                      label={field.displayName}
-                      variant="outlined"
-                      type="text"
-                      onChange={handleInputChange}
-                      fullWidth
-                    />
-                  )}
-                </React.Fragment>
-              ))}
+              <div id="bookADemo-form-fields-container">
+                {stepData.fields.map((field, index) => (
+                  <React.Fragment key={field.displayName + index}>
+                    {field.type === "option" ? (
+                      <div
+                        className={
+                          "bookADemo-field-select" +
+                          (currentId && isSelected(formData, currentId, field.value) ? " selected" : "")
+                        }
+                        onClick={() =>
+                          handleOptionSelect(
+                            field.value,
+                            stepData.id ?? "",
+                            stepData.multiSelect ?? false
+                          )
+                        }
+                      >
+                        {field.displayName}
+                      </div>
+                    ) : field.displayName === "Pick a date & time" ? (
+                      <TextField
+                        className="bookADemo-textInput"
+                        id={field?.id}
+                        label={field.displayName}
+                        variant="outlined"
+                        type="datetime-local"
+                        slotProps={{ inputLabel: { shrink: true } }}
+                        onChange={handleInputChange}
+                        fullWidth
+                      />
+                    ) : (
+                      <TextField
+                        className="bookADemo-textInput"
+                        id={field?.id}
+                        label={field.displayName}
+                        variant="outlined"
+                        type="text"
+                        onChange={handleInputChange}
+                        fullWidth
+                      />
+                    )}
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
 
+            {/* Fixed footer: always Previous + Next/Submit + Cancel */}
             <div id="bookADemo-Buttons-Container">
-              {currentStep != 0 && (
-                <button
-                  type="button"
-                  className="bookADemo-Button-alt"
-                  onClick={handlePrevious}
-                >
-                  Previous
-                </button>
-              )}
+              <button
+                type="button"
+                className="bookADemo-Button-alt"
+                onClick={handlePrevious}
+                disabled={isFirstStep(currentStep)}
+                aria-label="Previous step"
+              >
+                Previous
+              </button>
 
-              {currentStep != 0 &&
-                bookADemoFormData[currentStep].multiSelect && (
-                  <button
-                    type="button"
-                    className="bookADemo-Button"
-                    onClick={handleNext}
-                  >
-                    Next
-                  </button>
-                )}
-
-              {currentStep === bookADemoFormData.length - 1 && (
+              {isLastStep(currentStep) ? (
                 <button
                   type="submit"
                   className="bookADemo-Button"
                   onClick={handleSubmit}
-                  disabled={
-                    !formData.firstName.trim() ||
-                    !formData.lastName.trim() ||
-                    !formData.email.trim() ||
-                    !formData.phoneNumber.trim() ||
-                    !formData.companyName.trim() ||
-                    !formData.schedule.trim()
-                  }
+                  disabled={isSubmitDisabled || isSubmitting}
                 >
-                  Submit
+                  {isSubmitting ? "Submitting…" : "Submit"}
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="bookADemo-Button"
+                  onClick={handleNext}
+                >
+                  Next
                 </button>
               )}
+
+              <button type="button" className="bookADemo-cancel-link" onClick={handleClose}>
+                Cancel
+              </button>
             </div>
           </div>
         </div>
