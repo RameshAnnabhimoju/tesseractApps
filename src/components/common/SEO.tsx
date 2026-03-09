@@ -25,7 +25,7 @@ interface SEOProps {
     schemaMarkup?: string;
 }
 
-const SITE_URL = "https://www.tesseractapps.com.au";
+const SITE_URL = "https://tesseractapps.com.au";
 const TWITTER_SITE = "@TesseractApps";
 const SEO_MANAGED_ATTR = "data-seo-managed";
 

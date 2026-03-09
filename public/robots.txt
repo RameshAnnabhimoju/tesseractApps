@@ -1,3 +1,5 @@
+Sitemap: https://tesseractapps.com.au/sitemap.xml
+
 # Default rules for all crawlers
 User-agent: *
 Disallow: /api/
@@ -16,7 +18,7 @@ Allow: /tesseract_logo.webp
 
 # Allow all public content pages
 Allow: /blogs
-Allow: /blogPost*
+Allow: /blog/
 Allow: /product
 Allow: /pricing
 Allow: /about
@@ -26,26 +28,10 @@ Allow: /careers
 Allow: /contact-us
 Allow: /help-center
 Allow: /privacy-policy
-Allow: /terms-and-Conditions
+Allow: /terms-and-conditions
 Allow: /case-studies
 Allow: /whitepapers
 Allow: /release-notes
-
-# Admin and API should remain protected
-User-agent: *
-Disallow: /api/
-Disallow: /admin/
-Disallow: /addBlog
-Disallow: /requestDemo
-Disallow: /salesPage
-Disallow: /details
-Disallow: /coming-soon
-Disallow: /*.json
-Disallow: /*?*
-Allow: /
-Allow: /assets/
-Allow: /vite.svg
-Allow: /tesseract_logo.webp
 
 # Explicitly allow AI bots to crawl public content for GEO
 # We want them to index our blogs, product pages, and documentation

@@ -1,9 +1,9 @@
 # About TesseractApps
 
-TesseractApps is a professional business website offering technology services and solutions. Our platform showcases our expertise in modern web development, enterprise applications, and digital innovation.
-
-## Core Technologies
-React 19, TypeScript, Vite, Material-UI, GSAP animations, React Router
+TesseractApps is an Australian B2B SaaS company helping care providers modernise their operations. The platform is built on Salesforce infrastructure and holds ISO 27001 and ISO 9001 certifications.
 
 ## Target Audience
-NDIS Providers, Aged Care, Allied Health, Disability Support Services.
+NDIS Providers, Aged Care Services, Allied Health Professionals, Disability Support Services, Home & Community Care.
+
+## Certifications
+ISO 27001 (Information Security), ISO 9001 (Quality Management)

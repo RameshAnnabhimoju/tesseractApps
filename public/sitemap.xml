@@ -1,436 +1,385 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
   <url>
-    <loc>https://www.tesseractapps.com/</loc>
-    <lastmod>2026-02-17T09:52:04.710Z</lastmod>
+    <loc>https://tesseractapps.com.au/</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/product</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/product</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/scheduling</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/scheduling</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/time-management</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/time-management</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/hr-management</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/hr-management</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/communication</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/communication</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/roster-management</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/roster-management</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/timesheet</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/timesheet</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/admin-console</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/admin-console</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/access-control-panel</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/access-control-panel</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/hr-operations</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/hr-operations</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/t-sign</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/t-sign</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/clock-in-and-clock-out</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/clock-in-and-clock-out</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/participant-management</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/participant-management</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/incident-management</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/incident-management</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/role-based-dashboard</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/role-based-dashboard</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/Documents</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/documents</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/chat</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/chat</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/my-profile</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/my-profile</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/forms</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/forms</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/accounting</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/accounting</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/t-learning-hub</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/t-learning-hub</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/salesforce-integration</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/salesforce-integration</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/xero</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/xero</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/wyzed</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/wyzed</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/ndis-industry</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/ndis-industry</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/ict-industry</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/ict-industry</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/retail-hospitality</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/retail-hospitality</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/multi-site-businesses</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/multi-site-businesses</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/construction</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/construction</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/manufacturing</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/manufacturing</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/disability-support-ndis</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/disability-support-ndis</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/support-coordination</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/support-coordination</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/aged-care-services</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/aged-care-services</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/child-care-services</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/child-care-services</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/allied-health-services</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/allied-health-services</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/home-community-care-services</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/home-community-care-services</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/administrator</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/administrator</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/roster-manager</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/roster-manager</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/ndis-staff</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/ndis-staff</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/hr-manager</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/hr-manager</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/accountant</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/accountant</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/participant</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/participant</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/small-businesses</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/small-businesses</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/enterprise</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/enterprise</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/franchise</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/franchise</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/startups</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/startups</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/compliance</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/compliance</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/employee-engagement</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/employee-engagement</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/time-efficiency</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/time-efficiency</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/cost-optimisation</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/cost-optimisation</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/blogs</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/blogs</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/whitepapers</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/whitepapers</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/help-center</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/help-center</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/release-notes</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/release-notes</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/protecting-participant-data</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/privacy-policy</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/future-proofing-disability-services</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/terms-and-conditions</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/hidden-costs-workforce-management</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/pricing</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/sydney-disability-workability-expo-2025</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/about</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/canberra-ndis-expo</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/our-story</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/beyond-compliance-care-quality</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/team</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/manual-rostering-hidden-costs</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/careers</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tesseractapps.com/future-proof-ndis-organisation-2025</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
+    <loc>https://tesseractapps.com.au/contact-us</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://www.tesseractapps.com/top-3-compliance-myths-busted</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/common-payroll-pitfalls-ndis</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/melbourne-expo-2025</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/ndis-compliance-audit-failures-2026</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/privacy-policy</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/terms-and-Conditions</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/book-a-demo</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/signup</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.tesseractapps.com/coming-soon</loc>
-    <lastmod>2026-02-17T09:52:04.711Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+
+
 </urlset>
