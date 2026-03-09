@@ -1,12 +1,14 @@
 # TesseractApps - Home
 
-TesseractApps is a technology company providing innovative software solutions and applications. We specialize in modern web development using React, TypeScript, and cutting-edge web technologies to deliver high-performance, user-centric applications.
+TesseractApps is an Australian SaaS company providing all-in-one workforce management and compliance software purpose-built for NDIS providers, aged care, allied health, and disability support organisations.
 
 ## Value Proposition
-Automating compliance, rostering, and operations to reduce costs and risk for NDIS, Aged Care, and Allied Health providers.
+Automate rostering, timesheets, payroll, participant management, and NDIS compliance — replacing manual spreadsheets and disconnected tools with a single integrated platform.
 
 ## Key Features
-- Smart Rostering
-- NDIS Compliance
-- Time & Attendance
+- Smart Rostering & Scheduling
+- NDIS Compliance Automation
+- Time & Attendance (Clock In/Out)
 - Participant Management
+- Incident Management
+- HR Operations & Document Signing

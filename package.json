@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/gen-home-thumbs.mjs && node scripts/gen-llms-docs.mjs",
+    "prebuild": "node scripts/gen-home-thumbs.mjs && node scripts/gen-llms-docs.mjs && node scripts/generate-sitemap.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",

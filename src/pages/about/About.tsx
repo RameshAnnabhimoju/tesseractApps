@@ -1,6 +1,6 @@
 import "./About.css";
-import aboutOurCompanyImage from "../../assets/about-our-company.webp";
-import aboutOurTeamImage from "../../assets/Team 1.webp";
+// import aboutOurCompanyImage from "../../assets/about-our-company.webp";
+// import aboutOurTeamImage from "../../assets/Team 1.webp";
 import RevanthImage from "../../assets/REVANTH-CEO.webp";
 import tomImage from "../../assets/3.webp";
 import KranthiImage from "../../assets/KRANTHI KAKKERLA - CO FOUNDER.webp";
@@ -22,9 +22,6 @@ import {
   Clock,
   Mail,
   MapPin,
-  DollarSign,
-  Home,
-  TrendingUp,
   Send,
 } from "lucide-react";
 import useAppNavigate from "../../hooks/useAppNavigate";
