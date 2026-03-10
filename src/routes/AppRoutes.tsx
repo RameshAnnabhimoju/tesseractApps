@@ -153,7 +153,7 @@ const AppRoutes = () => {
         <Route path="/melbourne-expo-2025" element={<Blog11 />} />
         <Route path="/ndis-compliance-audit-failures-2026" element={<NDISComplianceBlog />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-Conditions" element={<TermsAndConditions />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/administrator" element={<ByRole />} />
         <Route path="/roster-manager" element={<ByRole />} />
         <Route path="/ndis-staff" element={<ByRole />} />
@@ -190,7 +190,7 @@ const AppRoutes = () => {
         <Route path="/participant-management" element={<ProductDetails />} />
         <Route path="/incident-management" element={<ProductDetails />} />
         <Route path="/role-based-dashboard" element={<ProductDetails />} />
-        <Route path="/Documents" element={<ProductDetails />} />
+        <Route path="/documents" element={<ProductDetails />} />
         <Route path="/chat" element={<ProductDetails />} />
         <Route path="/my-profile" element={<ProductDetails />} />
         <Route path="/forms" element={<ProductDetails />} />

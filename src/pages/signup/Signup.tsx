@@ -3,7 +3,7 @@ import { useState } from "react";
 import React from "react";
 import Alert from "../../components/alert/Alert";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
-import logo_small from "../../assets/popup-logo.webp";
+import logo_white from "../../../public/svg-logos/white-logo.svg";
 import { Box, Step, StepLabel, Stepper } from "@mui/material";
 import {
   signupConfirmationEmailTemplate,
@@ -12,7 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import {
   Users, Heart, Home, Stethoscope,
-  ChevronRight, CheckCircle, Phone, BookOpen,
+  ChevronRight, CheckCircle, Phone,
   ShieldCheck, Clock, Star,
 } from "lucide-react";
 
@@ -74,24 +74,6 @@ const PATHWAY_STEPS = [
   "Audit Evidence",
 ];
 
-/* ── Step context for sidebar ── */
-const STEP_CONTEXT = [
-  {
-    tag: "Step 1 of 3",
-    headline: "Verify your\norganisation",
-    sub: "Enter your ABN and company details to get started.",
-  },
-  {
-    tag: "Step 2 of 3",
-    headline: "Your contact\ndetails",
-    sub: "So we know who to set up in the platform.",
-  },
-  {
-    tag: "Step 3 of 3",
-    headline: "Review &\nconfirm",
-    sub: "Check your details before we activate your access.",
-  },
-];
 
 const TOTAL_STEPS = 3;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -207,8 +189,6 @@ const Signup = () => {
       .finally(() => setIsSubmitting(false));
   };
 
-  const ctx = STEP_CONTEXT[activeStep];
-
   return (
     <div id="signup-page">
       <Alert setAlertData={setAlertData} alertData={alertData} />
@@ -258,7 +238,7 @@ const Signup = () => {
               style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
             >
               <img
-                src={logo_small}
+                src={logo_white}
                 alt="TesseractApps logo"
                 id="signup-navbar-logo"
               />

@@ -3,7 +3,7 @@
 // import plus from "../../assets/plus.svg";
 // import profile from "../../assets/person.svg";
 // import australia from "../../assets/australia.webp";
-import { PhoneCall, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
 import { useEffect, useState } from "react";

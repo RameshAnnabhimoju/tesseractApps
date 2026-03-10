@@ -2,7 +2,7 @@ import "./BookADemo.css";
 import { Stepper, Step, StepLabel } from "@mui/material";
 import { useState } from "react";
 import { bookADemoFormData } from "../../utils/DummyData";
-import logo_small from "../../assets/popup-logo.webp";
+import logo_white from "../../../public/svg-logos/white-logo.svg";
 import React from "react";
 import { sendEmail, sendTextEmail } from "../../services/AppService";
 import Alert from "../../components/alert/Alert";
@@ -244,7 +244,7 @@ const BookADemo = () => {
           {/* ── Left Sidebar ── */}
           <div id="bookADemo-sidebar">
             <img
-              src={logo_small}
+              src={logo_white}
               alt="TesseractApps logo"
               id="bookADemo-navbar-logo"
               onClick={handleLogoClick}
