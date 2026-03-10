@@ -59,19 +59,19 @@ const INDUSTRY_OPTIONS = [
 
 /* ── Service pathway steps (sidebar) ── */
 const PATHWAY_STEPS = [
-  "Client intake & onboarding",
-  "NDIS plan management",
-  "Support coordination",
-  "Service agreements & consent",
-  "Shift scheduling & rostering",
-  "Progress notes & care plans",
-  "Incident reporting",
-  "Invoice generation & bulk billing",
-  "PRODA / PACE claiming",
-  "Funding tracking & budgets",
-  "Compliance & audit trails",
-  "Reporting & analytics",
-  "Staff credentialing & compliance",
+  "Intake",
+  "Service Agreement",
+  "Funding Allocation",
+  "Roster Planning",
+  "Service Delivery",
+  "Case Notes",
+  "Incident Management",
+  "Timesheets",
+  "Payroll",
+  "NDIS Claims & Invoicing",
+  "Reconciliation",
+  "Reporting",
+  "Audit Evidence",
 ];
 
 /* ── Step context for sidebar ── */
@@ -124,7 +124,7 @@ const Signup = () => {
       if (!formData.lastName.trim()) errors.lastName = "Last name is required";
       if (!formData.email.trim()) errors.email = "Work email is required";
       else if (!EMAIL_RE.test(formData.email.trim())) errors.email = "Enter a valid email address";
-      if (!formData.phone.trim()) errors.phone = "Phone number is required";
+      // phone is optional
     } else if (step === 2) {
       if (!formData.termsAccepted) errors.termsAccepted = "You must accept the terms to continue";
     }
@@ -226,37 +226,25 @@ const Signup = () => {
             </div>
             <div id="signup-success-title">You're all set!</div>
             <div id="signup-success-message">
-              Your account is being activated. Our team will send your login credentials to{" "}
-              <strong>{formData.email}</strong> within 1 business day.
+              Thank you for choosing TesseractApps. We've received your details and are setting up your account.
+              Keep an eye on your inbox — we'll send you an email with your login details and next steps shortly.
+            </div>
+            <div id="signup-success-help-heading">Need help?</div>
+            <div id="signup-success-help-text">
+              If you have any questions or considerations while we set things up, please don't hesitate to reach out to our team.
             </div>
             <div id="signup-success-phone">
-              Need help? Call us on <strong>1300 252 808</strong>
+              <Phone size={16} />
+              <strong>1300 252 808</strong>
             </div>
             <div id="signup-success-actions">
               <button type="button" className="signup-btn-primary" onClick={handleClose}>
                 Back to Home
               </button>
             </div>
-            <div id="signup-what-next-heading">What happens next?</div>
-            <div id="signup-success-steps">
-              <div className="signup-next-step">
-                <div className="signup-next-step-icon"><CheckCircle size={22} /></div>
-                <div className="signup-next-step-label">Account Created</div>
-                <div className="signup-next-step-desc">Your profile is set up instantly</div>
-              </div>
-              <div className="signup-next-step">
-                <div className="signup-next-step-icon"><Phone size={22} /></div>
-                <div className="signup-next-step-label">Onboarding Call</div>
-                <div className="signup-next-step-desc">We'll walk you through setup</div>
-              </div>
-              <div className="signup-next-step">
-                <div className="signup-next-step-icon"><BookOpen size={22} /></div>
-                <div className="signup-next-step-label">Go Live</div>
-                <div className="signup-next-step-desc">Start managing your services</div>
-              </div>
-            </div>
           </div>
         </div>
+
       ) : (
         <div id="signup-container">
 
@@ -277,32 +265,33 @@ const Signup = () => {
             </button>
             <div id="signup-sidebar-body">
               {/* Step context */}
-              <div id="signup-sidebar-step-tag">{ctx.tag}</div>
+              {/* <div id="signup-sidebar-step-tag">{ctx.tag}</div>
               <div id="signup-sidebar-headline">
                 {ctx.headline.split("\n").map((line, i) => (
                   <span key={i}>{line}{i === 0 && <br />}</span>
                 ))}
               </div>
-              <div id="signup-sidebar-sub">{ctx.sub}</div>
+              <div id="signup-sidebar-sub">{ctx.sub}</div> */}
 
               {/* Trust badges */}
               <div id="signup-trust-badges">
                 <div className="signup-trust-badge">
                   <ShieldCheck size={15} className="signup-trust-badge-icon" />
-                  <span>No credit card required</span>
+                  <span>No credit card</span>
                 </div>
                 <div className="signup-trust-badge">
                   <Clock size={15} className="signup-trust-badge-icon" />
-                  <span>7-Day Full Access</span>
+                  <span>7-Day Access</span>
                 </div>
                 <div className="signup-trust-badge">
                   <Star size={15} className="signup-trust-badge-icon" />
-                  <span>Trusted by 500+ providers</span>
+                  <span>Trusted Provider</span>
                 </div>
               </div>
 
               {/* Service Pathway */}
               <div id="signup-pathway-heading">Your Service Pathway</div>
+              <div id="signup-pathway-subheading">End-to-End Operations Covered</div>
               <ul id="signup-pathway-list">
                 {PATHWAY_STEPS.map((step) => (
                   <li key={step}>{step}</li>
@@ -313,11 +302,11 @@ const Signup = () => {
               <div id="signup-sidebar-help">
                 <div id="signup-sidebar-help-title">Need help?</div>
                 <div id="signup-sidebar-help-text">
-                  Our team is available Mon – Fri, 9:00AM – 5:30PM AEST.
+                  Our NDIS specialists are ready to assist you with your setup.
                 </div>
                 <a href="tel:1300252808" id="signup-sidebar-help-btn">
                   <Phone size={13} />
-                  <span>1300 252 808</span>
+                  <span>Book a Call</span>
                 </a>
               </div>
             </div>
@@ -345,13 +334,17 @@ const Signup = () => {
               {/* ── Step 0: Company Verification ── */}
               {activeStep === 0 && (
                 <div id="signup-step0">
-                  <div className="signup-form-question">Tell us about your organisation</div>
-                  <div className="signup-form-hint">We use your ABN to verify your business.</div>
+                  <div className="signup-form-question">Congratulations!</div>
+                  <div className="signup-form-hint">
+                    Your journey to simpler NDIS operations starts here. Let's verify your company to get you started.
+                    We need a few details about your business entity.
+                  </div>
 
                   <div id="signup-abn-row">
                     <div className="su-field">
                       <label className="su-label" htmlFor="abn">
-                        ABN <span className="su-required">*</span>
+                        ABN Number <span className="su-required">*</span>
+                        <span className="su-label-note"> — Verified via ABR</span>
                       </label>
                       <input
                         className={"su-input" + (formErrors.abn ? " su-input-error" : "")}
@@ -381,7 +374,7 @@ const Signup = () => {
 
                   <div className="su-field su-field-industry">
                     <label className="su-label">
-                      Industry <span className="su-required">*</span>
+                      Industry Served <span className="su-required">*</span>
                     </label>
                     <div id="signup-industry-grid">
                       {INDUSTRY_OPTIONS.map((opt) => {
@@ -417,7 +410,7 @@ const Signup = () => {
               {/* ── Step 1: Personal Details ── */}
               {activeStep === 1 && (
                 <div id="signup-step1">
-                  <div className="signup-form-question">Your contact details</div>
+                  <div className="signup-form-question">Tell us a bit about yourself</div>
                   <div className="signup-form-hint">
                     We'll use these to set up your account and send login credentials.
                   </div>
@@ -470,7 +463,7 @@ const Signup = () => {
 
                   <div className="su-field">
                     <label className="su-label" htmlFor="phone">
-                      Phone Number <span className="su-required">*</span>
+                      Phone Number
                     </label>
                     <input
                       className={"su-input" + (formErrors.phone ? " su-input-error" : "")}
@@ -488,10 +481,11 @@ const Signup = () => {
               {/* ── Step 2: Review & Confirm ── */}
               {activeStep === 2 && (
                 <div id="signup-step2">
-                  <div className="signup-form-question">Review your details</div>
+                  <div className="signup-form-question">Almost there!</div>
                   <div className="signup-form-hint">
-                    Please check everything looks correct before we activate your access.
+                    Ready to start your journey? We've got everything we need. Just a quick review and you're ready to go!
                   </div>
+                  <div id="signup-review-heading">Review your details</div>
 
                   <div id="signup-review-grid">
                     {/* Company block */}
@@ -554,6 +548,13 @@ const Signup = () => {
               )}
 
             </div>
+
+            {/* Security note on step 1 */}
+            {activeStep === 1 && (
+              <div id="signup-security-note">
+                Your data is securely processed and encrypted.
+              </div>
+            )}
 
             {/* Footer */}
             <div id="signup-buttons-container">

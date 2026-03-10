@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import {
   Users, Heart, Home, Building, Building2,
   User, Stethoscope,
-  ChevronRight, CheckCircle, Mail, Phone, Monitor,
+  ChevronRight, CheckCircle, Mail,
 } from "lucide-react";
 import CalendarPicker from "../../components/bookADemo/CalendarPicker";
 import sidebarIllustration from "../../assets/popup-image1.webp";
@@ -220,12 +220,10 @@ const BookADemo = () => {
                 <div className="bookADemo-next-step-desc">Invite and intro guide sent.</div>
               </div>
               <div className="bookADemo-next-step">
-                <div className="bookADemo-next-step-icon"><Phone size={22} /></div>
                 <div className="bookADemo-next-step-label">Join Call</div>
                 <div className="bookADemo-next-step-desc">Use the link at your time.</div>
               </div>
               <div className="bookADemo-next-step">
-                <div className="bookADemo-next-step-icon"><Monitor size={22} /></div>
                 <div className="bookADemo-next-step-label">Live Demo</div>
                 <div className="bookADemo-next-step-desc">Expert walkthrough of platform.</div>
               </div>
@@ -245,7 +243,6 @@ const BookADemo = () => {
               onKeyDown={(e) => e.key === "Enter" && handleLogoClick()}
               tabIndex={0}
               role="button"
-              style={{ cursor: "pointer" }}
             />
             <div id="bookADemo-sidebar-body">
               {/* Step context — changes per step */}
@@ -291,9 +288,9 @@ const BookADemo = () => {
               </button>
 
               {/* Illustration — lively visual pushed to bottom */}
-              <div id="bookADemo-sidebar-illustration">
+              {/* <div id="bookADemo-sidebar-illustration">
                 <img src={sidebarIllustration} alt="" aria-hidden="true" id="bookADemo-sidebar-illustration-img" />
-              </div>
+              </div> */}
             </div>
           </div>
 
