@@ -9219,7 +9219,7 @@ export const bookADemoFormData = [
     multiSelect: false,
     fields: [
       { id: "", type: "option", value: "NDIS Provider", displayName: "NDIS Provider", description: "Specialised support for National Disability Insurance Scheme participants.", icon: "Users" },
-      { id: "", type: "option", value: "Aged Care Service", displayName: "Aged Care Service", description: "In-home and residential care services for older Australians.", icon: "Heart" },
+      { id: "", type: "option", value: "Support Coordination", displayName: "Support Coordination", description: "Support coordinators and LAC providers.", icon: "Heart" },
       { id: "", type: "option", value: "Allied Health", displayName: "Allied Health", description: "Physiotherapy, occupational therapy, and clinical health practices.", icon: "Stethoscope" },
       { id: "", type: "option", value: "SIL", displayName: "SIL", description: "Supported Independent Living and specialist disability accommodation.", icon: "Home" },
     ],
@@ -9227,7 +9227,7 @@ export const bookADemoFormData = [
   {
     text: "Staff Size",
     question: "Select your team size",
-    hint: "This helps us configure the demo to match your organisation size.",
+    hint: "This helps us customize the modules and user roles for your organisation’s specific needs.",
     id: "staff",
     multiSelect: false,
     fields: [
@@ -9238,9 +9238,9 @@ export const bookADemoFormData = [
     ],
   },
   {
-    text: "Your Details",
+    text: "Service Type",
     question: "Let’s lock in a time",
-    hint: "Complete your details and select a slot that works for you.",
+    hint: "Complete your details and select a slot that works for you. We’ll prepare a personalised walkthrough based on your needs.",
     id: "",
     multiSelect: false,
     fields: [

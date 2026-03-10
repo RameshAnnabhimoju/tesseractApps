@@ -95,7 +95,18 @@
   padding-bottom: 28px;
 }
 
-/* ─── Step context label (changes per step) ─── */
+/* ─── "Book Your Demo" heading ─── */
+#bookADemo-sidebar-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 6px;
+}
+
+/* ─── Step counter ─── */
 #bookADemo-sidebar-step-tag {
   font-size: 0.6875rem;
   font-weight: 700;
@@ -103,25 +114,7 @@
   text-transform: uppercase;
   color: var(--color-primary);
   font-family: "Inter", sans-serif;
-  margin-bottom: 10px;
-}
-
-#bookADemo-sidebar-headline {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  font-family: "Inter", sans-serif;
-  margin-bottom: 12px;
-}
-
-#bookADemo-sidebar-sub {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.55);
-  font-family: "Inter", sans-serif;
-  line-height: 1.6;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 
 /* ─── Progress ─── */
@@ -154,9 +147,9 @@
 }
 
 /* Progress width per step (avoids inline style) */
-.progress-step-0 { width: 33%; }
-.progress-step-1 { width: 66%; }
-.progress-step-2 { width: 100%; }
+.progress-step-0 { width: 0%; }
+.progress-step-1 { width: 33%; }
+.progress-step-2 { width: 66%; }
 
 /* ─── Trust bullets ─── */
 #bookADemo-sidebar-bullets {
@@ -616,6 +609,18 @@
   cursor: not-allowed;
 }
 
+.bookADemo-Button--outline {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.bookADemo-Button--outline:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
 .bookADemo-btn-icon {
   margin-left: 4px;
   vertical-align: middle;
@@ -711,6 +716,10 @@
 }
 
 #bookADemo-success-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 44px;
 }
 
