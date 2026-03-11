@@ -14,7 +14,7 @@ import "./HomeHeroStyles.css";
 // import ArrowRight from "../arrows/ArrowRight";
 import HeroArcsLeftComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
 import HeroArcsRightComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
-import { homeLeftArcsData, homeRightArcsData } from "../../utils/DummyData";
+import { homeLeftArcsData, homeRightArcsData } from "../../data/homeArcsData";
 import useAppNavigate from "../../hooks/useAppNavigate";
 const HomeHeroComponent = () => {
   const appNavigate = useAppNavigate();

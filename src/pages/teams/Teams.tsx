@@ -1,5 +1,5 @@
 import "./TeamsStyles.css";
-import { teamsPageData } from "../../utils/DummyData";
+import { teamsPageData } from "../../data/teamData";
 import SEO from "../../components/common/SEO";
 
 const Teams = () => {

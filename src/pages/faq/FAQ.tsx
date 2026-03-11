@@ -1,5 +1,5 @@
 import "./FAQStyles.css";
-import { faqPageDummyData } from "../../utils/DummyData";
+import { faqPageDummyData } from "../../data/faqData";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";

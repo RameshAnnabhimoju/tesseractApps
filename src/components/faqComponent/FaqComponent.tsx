@@ -5,7 +5,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import ArrowDown from "../../assets/arrow_down.svg";
-import { accordiaDummyData } from "../../utils/DummyData";
+import { accordiaDummyData } from "../../data/faqData";
 const FaqComponent = () => {
   const [expanded, setExpanded] = useState(-1);
 

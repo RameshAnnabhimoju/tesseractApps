@@ -1,5 +1,5 @@
 import "./AboutSelectedToolStyles.css";
-import { aboutSelectedToolDummyData } from "../../utils/DummyData";
+import { aboutSelectedToolDummyData } from "../../data/aboutSelectedToolData";
 import { useEffect, useState } from "react";
 import dividerLine from "../../assets/divider_line.webp";
 // import { useNavigate } from "react-router-dom";

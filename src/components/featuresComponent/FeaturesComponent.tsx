@@ -3,7 +3,7 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { featuresDummyData } from "../../utils/DummyData";
+import { featuresDummyData } from "../../data/featuresData";
 import useAppNavigate from "../../hooks/useAppNavigate";
 // import { AppNavigate } from "../../routes/AppNavigate";
 import ArrowLeft from "../arrows/ArrowLeft";

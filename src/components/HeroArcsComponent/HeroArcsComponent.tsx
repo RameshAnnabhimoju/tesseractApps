@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useAppNavigate } from "../../hooks/useAppNavigate";
+import useAppNavigate from "../../hooks/useAppNavigate";
 
 // --- geometry helpers ---
 const toRad = (deg: number) => ((deg - 90) * Math.PI) / 180;

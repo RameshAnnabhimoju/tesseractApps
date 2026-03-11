@@ -7,7 +7,7 @@ import { useAppContext } from "../contexts/AppContext";
  * Hook that returns a function to navigate by path or friendly name.
  * Usage: const appNavigate = useAppNavigate(); appNavigate("Pricing", { replace: false, defaultRoute: true });
  */
-export const useAppNavigate = () => {
+const useAppNavigate = () => {
   const navigate = useNavigate();
   const { getRoute, getRouteByName } = useAppContext();
 
@@ -21,8 +21,6 @@ export const useAppNavigate = () => {
         defaultRoute = true,
         targetId = "",
       } = opts || {};
-      console.log("useAppNavigate targetId", targetId);
-
       // try path first, then friendly name
       let config = getRoute(key);
       if (!config) config = getRouteByName(key);

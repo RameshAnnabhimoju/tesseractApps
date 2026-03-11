@@ -55,15 +55,10 @@ const AppRoutes = () => {
   const {
     getRoute,
     setCloseRoute,
-    setExpoBanner,
   } = useAppContext();
 
   useEffect(() => {
     const cleanPath = location.pathname.replace(/\/$/, "");
-    if (cleanPath === "/expo") {
-      setExpoBanner(true);
-      return;
-    }
     setCloseRoute(cleanPath || "/");
     if ((location.state as any)?.data) return;
     sessionStorage.setItem("prevPath", location.pathname);

@@ -1,5 +1,5 @@
 import "./PricingStyles.css";
-import { pricingCardsDummyData, pricingDummyData } from "../../utils/DummyData";
+import { pricingCardsDummyData, pricingDummyData } from "../../data/pricingData";
 import { useState } from "react";
 import tick from "../../assets/ok.svg";
 import tickBlue from "../../assets/tick-blue.svg";

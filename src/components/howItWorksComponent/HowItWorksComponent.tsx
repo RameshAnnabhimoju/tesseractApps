@@ -1,5 +1,5 @@
 import "./HowItWorksStyles.css";
-import { howItWorksDummyData } from "../../utils/DummyData";
+import { howItWorksDummyData } from "../../data/howItWorksData";
 // import dividerLine from "../../assets/divider_line.webp";
 const HowItWorksComponent = () => {
   return (

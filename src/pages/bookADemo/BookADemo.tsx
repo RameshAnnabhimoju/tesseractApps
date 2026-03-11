@@ -1,7 +1,7 @@
 import "./BookADemo.css";
 import { Stepper, Step, StepLabel } from "@mui/material";
 import { useState } from "react";
-import { bookADemoFormData } from "../../utils/DummyData";
+import { bookADemoFormData } from "../../data/formData";
 import logo_white from "../../../public/svg-logos/white-logo.svg";
 import React from "react";
 import { sendEmail, sendTextEmail } from "../../services/AppService";

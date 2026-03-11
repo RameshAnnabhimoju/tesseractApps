@@ -1,7 +1,7 @@
 import "./TestimonialStyles.css";
 import "keen-slider/keen-slider.min.css";
 // import { useKeenSlider } from "keen-slider/react";
-import { testimonialDummyData } from "../../utils/DummyData";
+import { testimonialDummyData } from "../../data/testimonialData";
 // import leftArrow from "../../assets/Blue arrow.webp";
 // import rightArrow from "../../assets/white arrow.webp";
 import star from "../../assets/star.webp";

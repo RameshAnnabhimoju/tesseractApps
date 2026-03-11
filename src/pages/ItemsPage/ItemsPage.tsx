@@ -1,5 +1,5 @@
 import "./ItemsPageStyles.css";
-import { ourBlogDummyData } from "../../utils/DummyData";
+import { ourBlogDummyData } from "../../data/blogData";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 const ItemsPage = () => {

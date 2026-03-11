@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 
 const AppLogo = () => {
-  const { handleBookADemo, handleSignup, setExpoBanner } = useAppContext();
+  const { handleBookADemo, handleSignup } = useAppContext();
   const navigate = useNavigate();
   const handleClick = () => {
     handleBookADemo(false);
     handleSignup(false);
-    setExpoBanner(false);
     navigate("/");
   };
   return (
