@@ -9,7 +9,8 @@
       "Read(//d/whatnextstudio/tesseractApps/**)",
       "Bash(git -C /d/whatnextstudio/tesseractApps log --name-status)",
       "Bash(__NEW_LINE_af63b5c3869265b7__ echo:*)",
-      "Bash(\"d:/whatnextstudio/tesseractApps/src/utils/emailTemplates.ts.tmp\")"
+      "Bash(\"d:/whatnextstudio/tesseractApps/src/utils/emailTemplates.ts.tmp\")",
+      "Bash(done)"
     ],
     "additionalDirectories": [
       "C:\\Users\\Aakarsh Goyal\\.claude\\projects\\d--whatnextstudio-tesseractApps\\memory"

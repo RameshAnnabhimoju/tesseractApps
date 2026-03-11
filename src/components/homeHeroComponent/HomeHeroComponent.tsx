@@ -12,8 +12,8 @@ import "./HomeHeroStyles.css";
 // import heroImage1 from "../../assets/heroBackground-1.webp";
 // import heroImage2 from "../../assets/heroBackground-2.webp";
 // import ArrowRight from "../arrows/ArrowRight";
-import HeroArcsLeftComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
-import HeroArcsRightComponent from "../HeroArcsComponent/HeroArcsComponent.tsx";
+import HeroArcsLeftComponent from "../heroArcsComponent/HeroArcsComponent.tsx";
+import HeroArcsRightComponent from "../heroArcsComponent/HeroArcsComponent.tsx";
 import { homeLeftArcsData, homeRightArcsData } from "../../data/homeArcsData";
 import useAppNavigate from "../../hooks/useAppNavigate";
 const HomeHeroComponent = () => {

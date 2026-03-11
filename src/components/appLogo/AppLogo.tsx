@@ -1,4 +1,4 @@
-import "./AppLogo.css";
+import "./AppLogoStyles.css";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../../contexts/AppContext";
 

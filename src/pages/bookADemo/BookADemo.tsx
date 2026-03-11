@@ -1,4 +1,4 @@
-import "./BookADemo.css";
+import "./BookADemoStyles.css";
 import { Stepper, Step, StepLabel } from "@mui/material";
 import { useState } from "react";
 import { bookADemoFormData } from "../../data/formData";

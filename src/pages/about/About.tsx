@@ -1,4 +1,4 @@
-import "./About.css";
+import "./AboutStyles.css";
 // import aboutOurCompanyImage from "../../assets/about-our-company.webp";
 // import aboutOurTeamImage from "../../assets/Team 1.webp";
 import RevanthImage from "../../assets/REVANTH-CEO.webp";

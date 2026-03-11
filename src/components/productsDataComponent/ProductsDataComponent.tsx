@@ -1,5 +1,5 @@
 // import { useNavigate } from "react-router-dom";
-import "./productsDataStyles.css";
+import "./ProductsDataStyles.css";
 // import { AppNavigate } from "../../routes/AppNavigate";
 import DetailsHeroComponent from "../detailsHeroComponent/DetailsHeroComponent";
 import useAppNavigate from "../../hooks/useAppNavigate";

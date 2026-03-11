@@ -3,7 +3,7 @@ import "./ProductDetailsStyles.css";
 import DetailsDataComponent from "../../components/detailsDataComponent/DetailsDataComponent";
 import DetailsHeroComponent from "../../components/detailsHeroComponent/DetailsHeroComponent";
 import AboutSelectedToolComponent from "../../components/aboutSelectedToolComponent/AboutSelectedToolComponent";
-import FaqProductComponent from "../../components/faqProductComponent/faqProductComponent";
+import FaqProductComponent from "../../components/faqProductComponent/FaqProductComponent";
 import { useAppContext } from "../../contexts/AppContext";
 import ComingSoon from "../comingSoon/ComingSoon";
 import { getMetaTags } from "../../utils/metaTagsConfig";

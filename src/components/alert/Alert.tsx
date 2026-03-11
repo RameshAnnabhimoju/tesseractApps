@@ -1,6 +1,6 @@
 import Mail from "../svgs/Mail";
 import close from "../../assets/close.webp";
-import "./Alert.css";
+import "./AlertStyles.css";
 import ReactDOM from "react-dom";
 import Success from "../svgs/Success";
 import Fail from "../svgs/Fail";

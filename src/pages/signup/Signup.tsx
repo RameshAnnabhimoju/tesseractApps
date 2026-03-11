@@ -1,4 +1,4 @@
-import "./Signup.css";
+import "./SignupStyles.css";
 import { useState } from "react";
 import React from "react";
 import Alert from "../../components/alert/Alert";

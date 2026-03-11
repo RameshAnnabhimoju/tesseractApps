@@ -97,7 +97,6 @@ const AboutSelectedToolComponent = ({
       </div> */}
       <div
         id="selected-tool-data-container"
-        style={data.type == 2 ? { gap: "60px" } : {}}
       >
         {data.points &&
           data.points?.map((subdata, index) => {
@@ -111,11 +110,8 @@ const AboutSelectedToolComponent = ({
                   />
                 )}
                 <div
-                  style={
-                    data.type == 2
-                      ? { backgroundColor: subdata.dot.outer, padding: "40px" }
-                      : {}
-                  }
+                  className={data.type == 2 ? "selected-tool-card-inner" : ""}
+                  style={data.type == 2 ? { backgroundColor: subdata.dot.outer } : {}}
                 >
                   {data.type != 2 && (
                     <svg viewBox="0 0 48 48" width="40" height="40">
