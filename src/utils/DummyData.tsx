@@ -282,7 +282,7 @@ export const pricingCardsDummyData = {
         "Freedom of choice for providers beginning their journey in the care industry. Suitable for 5–10 users.",
       Pricing: 9.99,
       timePeriod: "Per user/month",
-      cta: "Try For Free",
+      cta: "Begin Your Journey",
       featuresText:
         "Get the essentials to manage participants, shifts, and invoices.",
       features: [
@@ -305,7 +305,7 @@ export const pricingCardsDummyData = {
         "For providers serious about growth and looking to streamline multiple business operations. Ideal for those frustrated with current payroll and HR integration. ",
       Pricing: 19.99,
       timePeriod: "Per user/month",
-      cta: "Try For Free",
+      cta: "Begin Your Journey",
       featuresText:
         "Add smarter rostering, funds tracking, and incident logging. .",
       features: [
@@ -326,7 +326,7 @@ export const pricingCardsDummyData = {
         "For providers with established systems seeking advanced scheduling, compliance, and HR tools to scale confidently. ",
       Pricing: 29.99,
       timePeriod: "Per user/month",
-      cta: "Try For Free",
+      cta: "Begin Your Journey",
       featuresText:
         "Advanced scheduling, compliance, and HR tools to scale confidently ",
       features: [
@@ -353,7 +353,7 @@ export const pricingCardsDummyData = {
         " For established providers seeking a complete, custom solution to manage all business operations. ",
       Pricing: 39.99,
       timePeriod: "Per user/month",
-      cta: "Try For Free",
+      cta: "Begin Your Journey",
       featuresText:
         "Full‑featured platform with custom dashboards and enterprise‑grade support. ",
       features: [
@@ -2168,7 +2168,7 @@ import howItWorksImage3 from "../assets/howItWorks3.webp";
 export const howItWorksDummyData = [
   {
     id: 1,
-    title: "Try For Free",
+    title: "Begin Your Journey",
     image: howItWorksImage2,
     description:
       "Sign up in a few clicks and enjoy 7 days of full access. No pressure, just explore at your pace. ",
@@ -2355,7 +2355,7 @@ export const SubPagesDummyData = {
       image: "",
       backgroundColor: "var(--color-secondary)",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -3392,7 +3392,7 @@ export const byRoleData = {
       page: "Administrator",
       description: `Run your organisation efficiently using TesseractApps. Manage modules, users, and settings from a secure dashboard, maintaining compliance and protecting sensitive data. `,
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -3514,7 +3514,7 @@ export const byRoleData = {
       description:
         "Manage your workforce efficiently using TesseractApps. Plan shifts, track attendance, and optimise staff allocation from a single secure platform. Maintain coverage, reduce conflicts, and ensure compliance. ",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -3615,7 +3615,7 @@ export const byRoleData = {
       description:
         "Manage your financial processes efficiently using TesseractApps. Track payroll, invoices, budgets, and reporting from a single secure platform. Ensure accuracy, compliance, and full financial visibility. ",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -3721,7 +3721,7 @@ export const byRoleData = {
       description:
         "Manage your daily tasks efficiently using TesseractApps. Access schedules, update participant records, and track sessions from a single secure platform. Stay compliant, organised, and connected to your team. ",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -3829,7 +3829,7 @@ export const byRoleData = {
       description:
         "Manage your workforce efficiently using TesseractApps. Oversee recruitment, onboarding, leave, and staff development from one secure platform. Ensure compliance, track performance, and optimise HR processes. ",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -3936,7 +3936,7 @@ export const byRoleData = {
       description:
         "Manage your services and personal information using TesseractApps. View your schedules, track support sessions, and access documents securely on one platform. Stay informed and engaged in your care journey.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -4041,7 +4041,7 @@ export const byIndustryData = {
         "TesseractApps provides a secure, integrated platform designed for NDIS organisations. From participant management to rostering, payroll, and compliance, we simplify your operations, allowing you to focus on quality care. ",
       page: "NDIS Industry",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.   ",
       },
     },
@@ -4713,7 +4713,7 @@ export const byCareData = {
       description:
         "TesseractApps is designed for NDIS disability support organisations, simplifying operations and ensuring compliance. From participant management and rostering to compliance tracking and payroll, our platform helps you deliver quality care while remaining fully NDIS-compliant.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.  ",
       },
     },
@@ -4835,7 +4835,7 @@ export const byCareData = {
       description:
         "Manage participant goals, track progress, connect with providers, and ensure compliance.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.  ",
       },
     },
@@ -6385,7 +6385,7 @@ export const productsDetailsData = {
       description:
         "Efficiently plan, approve, and manage shifts with TesseractApps. Keep your workforce organised, reduce conflicts, and ensure proper coverage across all sites.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -6532,7 +6532,7 @@ export const productsDetailsData = {
         "Efficiently record, approve, and manage staff hours with TesseractApps. Ensure accurate payroll, reduce errors, and stay compliant.",
       image: timesheetNew, // Replace with actual image import
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -6673,7 +6673,7 @@ export const productsDetailsData = {
       description:
         "Manage your organisation efficiently using TesseractApps. Oversee users, modules, settings, and compliance from one secure dashboard.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -6805,7 +6805,7 @@ export const productsDetailsData = {
       description:
         "Control who can access what with TesseractApps. Assign roles, scale permissions, and monitor activity to keep your organisation secure and compliant efficiently.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -6948,7 +6948,7 @@ export const productsDetailsData = {
       description:
         "Oversee recruitment, onboarding, staff records, and performance using TesseractApps. Keep all HR processes in one secure platform, ensuring accuracy, compliance, and operational efficiency.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -7091,7 +7091,7 @@ export const productsDetailsData = {
       description:
         "Digitally sign and manage documents using TesseractApps. Maintain compliance, streamline approvals, and ensure accurate audit trails for all critical records.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -7223,7 +7223,7 @@ export const productsDetailsData = {
       description:
         "Digitally record staff start and end times with TesseractApps. Ensure accurate attendance, streamline payroll, and easily maintain compliance.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -7366,7 +7366,7 @@ export const productsDetailsData = {
       description:
         "Track participant information, support plans, and service delivery using TesseractApps. Ensure accurate records, improve care quality, and maintain compliance with ease.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -7498,7 +7498,7 @@ export const productsDetailsData = {
       description:
         "Track, manage, and report incidents using TesseractApps. Ensure staff and participant safety, maintain compliance, and keep accurate real-time records.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -7630,7 +7630,7 @@ export const productsDetailsData = {
       description:
         "Centralise all your Documents using TesseractApps. Keep care plans, agreements, policies, and records organised, secure, and easily accessible at all times.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -7763,7 +7763,7 @@ export const productsDetailsData = {
       description:
         "Access real-time insights and manage workflows efficiently using TesseractApps. Track performance, compliance, and tasks specific to each role, all from one secure, centralised dashboard.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -7917,7 +7917,7 @@ export const productsDetailsData = {
       description:
         "Send messages, share files, and collaborate securely with your team. TesseractApps ChaT keeps communication private, organised, and integrated with your workflows.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -8060,7 +8060,7 @@ export const productsDetailsData = {
       description:
         "Keep your personal and work details up-to-date with TesseractApps. Access schedules, leave balances, certifications, and preferences through a single, secure portal.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -8181,7 +8181,7 @@ export const productsDetailsData = {
       description:
         "Create, manage, and submit digital forms using TesseractApps. Capture participant information, staff records, and operational data efficiently and accurately with TesseractApps.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -8324,7 +8324,7 @@ export const productsDetailsData = {
       description:
         "Manage payroll, track budgets, and process invoices efficiently using TesseractApps. Integrate finance workflows with rostering, HR, and participant management to ensure accuracy and compliance.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -8466,7 +8466,7 @@ export const productsDetailsData = {
       description:
         "Provide staff with accessible, personalised training using TesseractApps. Track progress, ensure compliance, and support professional development across your organisation efficiently.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -8597,7 +8597,7 @@ export const productsDetailsData = {
       description:
         "TesseractApps is built on Salesforce, providing a secure, scalable, and reliable platform to manage staff, participants, and operations across your organisation.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -8712,7 +8712,7 @@ export const productsDetailsData = {
       description:
         "TesseractApps integrates with Xero to offer accurate, secure, and efficient payroll and financial management for your organisation.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -8827,7 +8827,7 @@ export const productsDetailsData = {
       description:
         "TesseractApps integrates with Wyzed to provide role-based training, track progress, and maintain compliance across your organisation.",
       cta: {
-        buttons: [{ title: "Try For Free", navigate: "Signup" }],
+        buttons: [{ title: "Begin Your Journey", navigate: "Signup" }],
         conclusion: "No credit card is required.",
       },
     },
@@ -9219,7 +9219,7 @@ export const bookADemoFormData = [
     multiSelect: false,
     fields: [
       { id: "", type: "option", value: "NDIS Provider", displayName: "NDIS Provider", description: "Specialised support for National Disability Insurance Scheme participants.", icon: "Users" },
-      { id: "", type: "option", value: "Aged Care Service", displayName: "Aged Care Service", description: "In-home and residential care services for older Australians.", icon: "Heart" },
+      { id: "", type: "option", value: "Support Coordination", displayName: "Support Coordination", description: "Support coordinators and LAC providers.", icon: "Heart" },
       { id: "", type: "option", value: "Allied Health", displayName: "Allied Health", description: "Physiotherapy, occupational therapy, and clinical health practices.", icon: "Stethoscope" },
       { id: "", type: "option", value: "SIL", displayName: "SIL", description: "Supported Independent Living and specialist disability accommodation.", icon: "Home" },
     ],
@@ -9227,7 +9227,7 @@ export const bookADemoFormData = [
   {
     text: "Staff Size",
     question: "Select your team size",
-    hint: "This helps us configure the demo to match your organisation size.",
+    hint: "This helps us customize the modules and user roles for your organisation’s specific needs.",
     id: "staff",
     multiSelect: false,
     fields: [
@@ -9238,9 +9238,9 @@ export const bookADemoFormData = [
     ],
   },
   {
-    text: "Your Details",
+    text: "Service Type",
     question: "Let’s lock in a time",
-    hint: "Complete your details and select a slot that works for you.",
+    hint: "Complete your details and select a slot that works for you. We’ll prepare a personalised walkthrough based on your needs.",
     id: "",
     multiSelect: false,
     fields: [

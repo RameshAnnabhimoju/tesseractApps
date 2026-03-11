@@ -92,9 +92,21 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding-bottom: 28px;
 }
 
-/* ─── Step context label (changes per step) ─── */
+/* ─── "Book Your Demo" heading ─── */
+#bookADemo-sidebar-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 6px;
+}
+
+/* ─── Step counter ─── */
 #bookADemo-sidebar-step-tag {
   font-size: 0.6875rem;
   font-weight: 700;
@@ -102,25 +114,7 @@
   text-transform: uppercase;
   color: var(--color-primary);
   font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
-}
-
-#bookADemo-sidebar-headline {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  font-family: "Inter", sans-serif;
-  margin-bottom: 10px;
-}
-
-#bookADemo-sidebar-sub {
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.55);
-  font-family: "Inter", sans-serif;
-  line-height: 1.55;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 /* ─── Progress ─── */
@@ -153,22 +147,22 @@
 }
 
 /* Progress width per step (avoids inline style) */
-.progress-step-0 { width: 33%; }
-.progress-step-1 { width: 66%; }
-.progress-step-2 { width: 100%; }
+.progress-step-0 { width: 0%; }
+.progress-step-1 { width: 33%; }
+.progress-step-2 { width: 66%; }
 
 /* ─── Trust bullets ─── */
 #bookADemo-sidebar-bullets {
   list-style: none;
   padding: 0;
-  margin: 0 0 22px;
+  margin: 0 0 26px;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 11px;
 }
 
 #bookADemo-sidebar-bullets li {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.75);
   padding-left: 20px;
@@ -191,8 +185,8 @@
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 12px;
-  padding: 16px 18px;
-  margin-bottom: 18px;
+  padding: 18px 20px;
+  margin-bottom: 22px;
   flex-shrink: 0;
 }
 
@@ -314,22 +308,22 @@
 
 #bookADemo-form-question {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.25;
   color: var(--color-secondary);
   letter-spacing: -0.025em;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-family: "Inter", sans-serif;
   text-align: center;
 }
 
 #bookADemo-form-hint {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--color-text-gray);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-family: "Inter", sans-serif;
   line-height: 1.5;
-    text-align: center;
+  text-align: center;
 }
 
 /* ─────────────────────────────────────────
@@ -421,7 +415,7 @@
 }
 
 .bookADemo-card-title {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-secondary);
   font-family: "Inter", sans-serif;
@@ -433,7 +427,7 @@
 }
 
 .bookADemo-card-desc {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: var(--color-text-gray);
   font-family: "Inter", sans-serif;
   line-height: 1.45;
@@ -504,8 +498,8 @@
 .bk-input {
   width: 100%;
   box-sizing: border-box;
-  padding: 9px 12px;
-  font-size: 0.9375rem;
+  padding: 11px 14px;
+  font-size: 1rem;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--color-text-dark-gray);
   background: #ffffff;
@@ -615,6 +609,18 @@
   cursor: not-allowed;
 }
 
+.bookADemo-Button--outline {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.bookADemo-Button--outline:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
 .bookADemo-btn-icon {
   margin-left: 4px;
   vertical-align: middle;
@@ -710,6 +716,10 @@
 }
 
 #bookADemo-success-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 44px;
 }
 

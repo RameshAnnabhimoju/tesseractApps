@@ -98,40 +98,40 @@
   text-transform: uppercase;
   color: var(--color-primary);
   font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 #signup-sidebar-headline {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.03em;
   line-height: 1.2;
   font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 #signup-sidebar-sub {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.55);
   font-family: "Inter", sans-serif;
-  line-height: 1.55;
-  margin-bottom: 18px;
+  line-height: 1.6;
+  margin-bottom: 22px;
 }
 
 /* ─── Trust badges ─── */
 #signup-trust-badges {
   display: flex;
   flex-direction: column;
-  gap: 7px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 26px;
 }
 
 .signup-trust-badge {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   font-family: "Inter", sans-serif;
@@ -150,20 +150,28 @@
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
   font-family: "Inter", sans-serif;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+#signup-pathway-subheading {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 10px;
 }
 
 #signup-pathway-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px;
+  margin: 0 0 26px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 7px;
 }
 
 #signup-pathway-list li {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.65);
   padding-left: 16px;
@@ -251,18 +259,20 @@
 /* ─── Step question + hint ─── */
 .signup-form-question {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.25;
   color: var(--color-secondary);
   letter-spacing: -0.025em;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   font-family: "Inter", sans-serif;
+  text-align: center;
 }
 
 .signup-form-hint {
-  font-size: 0.875rem;
+  font-size: 1rem;
+    text-align: center;
   color: var(--color-text-gray);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   font-family: "Inter", sans-serif;
   line-height: 1.5;
 }
@@ -294,11 +304,20 @@
   margin-left: 2px;
 }
 
+.su-label-note {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-text-gray);
+  font-size: 0.6875rem;
+  margin-left: 4px;
+}
+
 .su-input {
   width: 100%;
   box-sizing: border-box;
-  padding: 9px 12px;
-  font-size: 0.9375rem;
+  padding: 11px 14px;
+  font-size: 1rem;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--color-text-dark-gray);
   background: #ffffff;
@@ -428,7 +447,7 @@
 }
 
 .signup-card-title {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-secondary);
   font-family: "Inter", sans-serif;
@@ -440,7 +459,7 @@
 }
 
 .signup-card-desc {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--color-text-gray);
   font-family: "Inter", sans-serif;
   line-height: 1.4;
@@ -490,9 +509,28 @@
   margin-bottom: 14px;
 }
 
+/* Security note */
+#signup-security-note {
+  font-size: 0.8125rem;
+  color: var(--color-text-gray);
+  text-align: center;
+  padding: 8px 0 4px;
+  font-family: "Inter", sans-serif;
+}
+
 /* ─────────────────────────────────────────
    STEP 2 — Review & Confirm
 ───────────────────────────────────────── */
+#signup-review-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-gray);
+  font-family: "Inter", sans-serif;
+  margin-bottom: 12px;
+}
+
 #signup-review-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -692,10 +730,33 @@
   max-width: 480px;
 }
 
-#signup-success-phone {
+#signup-success-help-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  font-family: "Inter", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+#signup-success-help-text {
   font-size: 0.9375rem;
-  color: var(--color-text-dark-gray);
+  color: var(--color-text-gray);
+  line-height: 1.6;
+  max-width: 440px;
+  text-align: center;
+  margin-bottom: 14px;
+  font-family: "Inter", sans-serif;
+}
+
+#signup-success-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.125rem;
+  color: var(--color-secondary);
   margin-bottom: 28px;
+  font-family: "Inter", sans-serif;
 }
 
 #signup-success-actions {

@@ -3,7 +3,7 @@
 // import plus from "../../assets/plus.svg";
 // import profile from "../../assets/person.svg";
 // import australia from "../../assets/australia.webp";
-import { PhoneCall, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
 import { useEffect, useState } from "react";
@@ -382,7 +382,6 @@ const NavBarComponent = ({
                 }}
               >
                 <span className="navbar-requestDemo-text">Book a Demo</span>
-                <PhoneCall className="navbar-requestDemo-icon" />
               </div>
             </div>
         <div id="nav-menu-links">
@@ -673,7 +672,6 @@ const NavBarComponent = ({
             onClick={() => appNavigate("/book-a-demo")}
           >
             <div className="navbar-requestDemo-text">Book a Demo</div>
-              <PhoneCall className="navbar-requestDemo-icon" />
           </div>
 
           {/* <button id="navbar-login" onClick={signupHandler}>

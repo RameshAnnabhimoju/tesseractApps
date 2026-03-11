@@ -2,11 +2,9 @@ import "./About.css";
 // import aboutOurCompanyImage from "../../assets/about-our-company.webp";
 // import aboutOurTeamImage from "../../assets/Team 1.webp";
 import RevanthImage from "../../assets/REVANTH-CEO.webp";
-import tomImage from "../../assets/3.webp";
 import KranthiImage from "../../assets/KRANTHI KAKKERLA - CO FOUNDER.webp";
 import BelleBaiImage from "../../assets/11.webp";
 import darshanImage from "../../assets/5.webp";
-import sushimithaImage from "../../assets/7.webp";
 import maheshwariImage from "../../assets/8.webp";
 import deepakrajImage from "../../assets/4.webp";
 import meghnaImage from "../../assets/13.webp";
@@ -30,10 +28,8 @@ const teamMembers = [
   { name: "Revanth", role: "Founder & CEO", image: RevanthImage },
   { name: "Kranthi", role: "Co-Founder", image: KranthiImage },
   { name: "Bec McFarland", role: "HR Manager", image: BecImage },
-  { name: "Tomer Doron", role: "Solutions Consultant", image: tomImage },
   { name: "Belle Bai", role: "Marketing Executive", image: BelleBaiImage },
   { name: "Darshan Shelat", role: "Solutions Consultant", image: darshanImage },
-  { name: "Sushmitha", role: "Team Manager", image: sushimithaImage },
   { name: "Maheshwari", role: "Operations Manager", image: maheshwariImage },
   { name: "Deepakraj", role: "Software Engineer", image: deepakrajImage },
   { name: "Meghna", role: "Accounts Manager", image: meghnaImage },

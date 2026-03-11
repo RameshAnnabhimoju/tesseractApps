@@ -150,3 +150,11 @@ export const BLOG_FEATURED_QUERY = `
 export const BLOG_COUNT_QUERY = `
   count(*[_type == "blogPost" && status == "published"])
 `
+
+// Distinct categories that have at least one published post
+export const BLOG_CATEGORIES_QUERY = `
+  *[_type == "category" && count(*[_type == "blogPost" && status == "published" && references(^._id)]) > 0] {
+    _id,
+    title
+  } | order(title asc)
+`
