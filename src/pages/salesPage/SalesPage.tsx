@@ -1,5 +1,5 @@
 import "./SalesPageStyles.css";
-import { sendEmail, sendTextEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/appService";
 import { useState } from "react";
 import Alert from "../../components/alert/Alert";
 import {
@@ -52,7 +52,6 @@ const SalesPage = () => {
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) {
     const { name, value } = event.target;
-    console.log("Input changed:", name, value);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -60,8 +59,6 @@ const SalesPage = () => {
   }
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // Here you would typically handle form submission, e.g., send data to a server
-    console.log("Form submitted:", formData);
 
     if (!checkbox) {
       alert("Please agree to the Privacy Policy before submitting.");
@@ -115,10 +112,8 @@ const SalesPage = () => {
           preferredTime: formData.preferredTime,
         })
       )
-        .then((response) => {
-          console.log("Email sent successfully:", response);
+        .then(() => {
           confirmationMail();
-          // alert("Thank you for your request! We will be in touch soon.");
           setAlertData({
             ...alertData,
             heading: "Request Submitted",
@@ -142,8 +137,6 @@ const SalesPage = () => {
         });
     }
 
-    // Reset the form after submission
-    // setFormData(demoFormInitialState);
   }
   const confirmationMail = () => {
     sendEmail(
@@ -153,9 +146,6 @@ const SalesPage = () => {
       expertTalkConfirmationEmailTemplate.text(formData.fullName),
       expertTalkConfirmationEmailTemplate.html(formData.fullName)
     )
-      .then((response) => {
-        console.log("Confirmation email sent successfully:", response);
-      })
       .catch((error) => {
         console.error("Error sending confirmation email:", error);
       });

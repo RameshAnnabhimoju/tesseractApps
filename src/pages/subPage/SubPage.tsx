@@ -4,7 +4,7 @@ import DetailsDataComponent from "../../components/detailsDataComponent/DetailsD
 import DetailsHeroComponent from "../../components/detailsHeroComponent/DetailsHeroComponent";
 import ProductsDataComponent from "../../components/productsDataComponent/ProductsDataComponent";
 import { useAppContext } from "../../contexts/AppContext";
-import { getMetaTags } from "../../utils/metaTagsConfig";
+import { getMetaTags } from "../../data/metaTagsConfig";
 import ComingSoon from "../comingSoon/ComingSoon";
 import SEO from "../../components/common/SEO";
 import "./SubPageStyles.css";

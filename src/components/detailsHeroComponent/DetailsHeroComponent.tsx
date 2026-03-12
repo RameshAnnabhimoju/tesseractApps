@@ -1,8 +1,6 @@
-// import { useNavigate } from "react-router-dom";
 import "./DetailsHeroStyles.css";
 import { useAppContext } from "../../contexts/AppContext";
 import productHeroImage from "../../assets/productHeroImage.webp";
-// import { AppNavigate } from "../../routes/AppNavigate";
 interface DeatailsHeroType {
   data?: {
     page: string;
@@ -39,10 +37,8 @@ const DetailsHeroComponent = ({
     "Forms",
     "Accounting",
   ];
-  // const navigate = useNavigate();
   const { handleSignup, handleBookADemo } = useAppContext();
   const handlectaClick = (name: string) => {
-    // console.log("cta click", name);
     if (name == "Signup") {
       handleSignup(true);
     }
@@ -50,7 +46,6 @@ const DetailsHeroComponent = ({
       handleBookADemo(true);
     }
   };
-  // console.log(data.page);
   return (
     <div
       id="details-hero-container"

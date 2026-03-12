@@ -8,11 +8,9 @@ import flagsImag2 from "../../assets/flagImage2.webp";
 import localAward from "../../assets/2025_CANB_WINNER_LBA.webp";
 import iso27001 from "../../assets/JAS-ANZ ISMS.webp";
 import iso9001 from "../../assets/JAS-ANZ QMS.webp";
-import { footerProductsData } from "../../utils/NavData";
-// import { useNavigate } from "react-router-dom";
-// import { AppNavigate } from "../../routes/AppNavigate";
+import { footerProductsData } from "../../data/navData";
 import { useState } from "react";
-import { sendEmail, sendTextEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/appService";
 import Alert from "../alert/Alert";
 import {
   newsletterConfirmationEmailTemplate,
@@ -23,7 +21,6 @@ import { useAppContext } from "../../contexts/AppContext";
 const FooterComponent = () => {
   const appNavigate = useAppNavigate();
   const { handleBookADemo, handleSignup } = useAppContext();
-  // const navigate = useNavigate();
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const alertInitialData = {
     heading: "",
@@ -34,14 +31,12 @@ const FooterComponent = () => {
   const [alertData, setAlertData] = useState(alertInitialData);
   const handleNewsletterSubscribe = () => {
     if (newsletterEmail) {
-      // Here you can add the logic to handle the newsletter subscription
       sendTextEmail(
         newsletterSubscriptionEmailTemplate.email,
         newsletterSubscriptionEmailTemplate.subject,
         newsletterSubscriptionEmailTemplate.body(newsletterEmail),
       )
-        .then((response) => {
-          console.log("Email sent successfully:", response);
+        .then(() => {
           confirmationMail();
           // alert("Thank you for subscribing to our newsletter!");
           setAlertData({
@@ -65,7 +60,6 @@ const FooterComponent = () => {
             isOpen: true,
           });
         });
-      // console.log("Subscribed with email:", newsletterEmail);
       setNewsletterEmail(""); // Clear the input after subscribing
     } else {
       alert("Please enter a valid email address.");
@@ -79,9 +73,6 @@ const FooterComponent = () => {
       newsletterConfirmationEmailTemplate.text(newsletterEmail.split("@")[0]),
       newsletterConfirmationEmailTemplate.html(newsletterEmail.split("@")[0]),
     )
-      .then((response) => {
-        console.log("Confirmation email sent successfully:", response);
-      })
       .catch((error) => {
         console.error("Error sending confirmation email:", error);
       });
@@ -131,7 +122,6 @@ const FooterComponent = () => {
     if (name) appNavigate(name);
   }
   function handleProductDataClick(name: string) {
-    // console.log(name);
     if (name == "Careers")
       return appNavigate("/careers");
     if (name == "Contact Us")
@@ -309,7 +299,6 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                // handleProductDataClick("Sign Up");
                 handleSignup(true);
               }}
             >
@@ -383,7 +372,6 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                // handleProductDataClick("Book a Demo");
                 handleBookADemo(true);
               }}
             >

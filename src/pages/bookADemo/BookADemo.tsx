@@ -4,7 +4,7 @@ import { useState } from "react";
 import { bookADemoFormData } from "../../data/formData";
 import logo_white from "../../../public/svg-logos/white-logo.svg";
 import React from "react";
-import { sendEmail, sendTextEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/appService";
 import Alert from "../../components/alert/Alert";
 import {
   bookDemoConfirmationEmailTemplate,

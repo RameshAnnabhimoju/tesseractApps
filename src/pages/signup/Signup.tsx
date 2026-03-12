@@ -2,7 +2,7 @@ import "./SignupStyles.css";
 import { useState } from "react";
 import React from "react";
 import Alert from "../../components/alert/Alert";
-import { sendEmail, sendTextEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/appService";
 import logo_white from "../../../public/svg-logos/white-logo.svg";
 import { Box, Step, StepLabel, Stepper } from "@mui/material";
 import {

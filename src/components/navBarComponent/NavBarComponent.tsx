@@ -1,23 +1,16 @@
-// import logo_small from "../../assets/tesseract_logo_small.webp";
-// import search from "../../assets/search.svg";
-// import plus from "../../assets/plus.svg";
-// import profile from "../../assets/person.svg";
-// import australia from "../../assets/australia.webp";
 import { Search } from 'lucide-react';
 import Popup from "../popupComponent/PopupComponent";
 import "./NavBarStyles.css";
 import { useEffect, useState } from "react";
 import { RefObject } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
-import { navBarDummyData } from "../../utils/NavData";
+import { navBarDummyData } from "../../data/navData";
 interface PopupPosition {
   top: number;
   left: number;
 }
 import ArrowDown from "../../assets/arrow_down.svg";
-// import { AppNavigate } from "../../routes/AppNavigate";
 import ArrowUp from "../arrows/ArrowUp";
-// import signupImage from "../../assets/signup.webp";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import AppLogo from "../appLogo/AppLogo";
 
@@ -40,8 +33,6 @@ const NavBarComponent = ({
   >("");
   const DROPDOWN_LINKS = ["Product", "Solutions", "Resources"];
   const NAV_LINKS = ["Product", "Pricing", "About", "Solutions", "Resources"];
-  // const [showHeader, setShowHeader] = useState(true);
-  // const [lastScrollY, setLastScrollY] = useState(0);
 
   // useEffect(() => {
   // const handleScroll = () => {
@@ -64,7 +55,6 @@ const NavBarComponent = ({
   // }, [lastScrollY]);
   useEffect(() => {
     const currentPath = pathname.split("/")[1];
-    // console.log("Current Path:", currentPath);
     if (currentPath == "" || currentPath == "coming-soon") {
       setActiveLink("");
     }
@@ -160,7 +150,6 @@ const NavBarComponent = ({
       ? setShowSearch(value)
       : setShowSearch(!showSearch);
   };
-  // useEffect(() => {}, [showSearch]);
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
     setToggleDrawer(false);
@@ -203,7 +192,6 @@ const NavBarComponent = ({
       appNavigate("/book-a-demo");
       return;
     }
-    console.log("Name:", name);
     if (name) {
       appNavigate(name);
     }

@@ -1,9 +1,7 @@
 import "./ContactInformationCard.css";
-// import { useNavigate } from "react-router-dom";
 import contactUsImage from "../../assets/contactUsImage.webp";
 import { useAppContext } from "../../contexts/AppContext";
 const ContactInformationCard = () => {
-  // const navigate = useNavigate();
   const { handleBookADemo } = useAppContext();
   const handleButtonClick = () => {
     handleBookADemo(true);

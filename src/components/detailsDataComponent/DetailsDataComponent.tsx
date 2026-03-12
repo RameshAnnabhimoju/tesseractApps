@@ -22,7 +22,6 @@ const DetailsDataComponent = ({
   },
   componentType,
 }: detailsDataType) => {
-  // console.log(data.images);
   return (
     <div
       id={

@@ -6,7 +6,7 @@ import DetailsDataComponent from "../../components/detailsDataComponent/DetailsD
 import FaqProductComponent from "../../components/faqProductComponent/FaqProductComponent";
 import { useAppContext } from "../../contexts/AppContext";
 import ComingSoon from "../comingSoon/ComingSoon";
-import { getMetaTags } from "../../utils/metaTagsConfig";
+import { getMetaTags } from "../../data/metaTagsConfig";
 import SEO from "../../components/common/SEO";
 interface byroleTypes {
   data: {

@@ -6,7 +6,6 @@ import accountingImage from "../assets/Role Accounting.webp";
 import participantsImage from "../assets/Role Participants.webp";
 import one from "../assets/01.webp";
 import two from "../assets/02.webp";
-import three from "../assets/03.webp";
 
 const dots = {
   dot1: { outer: "#E6EEFF", middle: "#B4CCFF", inner: "#2563EB" },

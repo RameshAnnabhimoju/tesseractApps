@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./RequestADemoStyles.css";
-import { sendEmail, sendTextEmail } from "../../services/AppService";
+import { sendEmail, sendTextEmail } from "../../services/appService";
 import Alert from "../../components/alert/Alert";
 import {
   bookDemoConfirmationEmailTemplate,
@@ -52,7 +52,6 @@ const RequestADemo = () => {
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) {
     const { name, value } = event.target;
-    console.log("Input changed:", name, value);
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -61,8 +60,6 @@ const RequestADemo = () => {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // Here you would typically handle form submission, e.g., send data to a server
-    console.log("Form submitted:", formData);
 
     if (!checkbox) {
       alert("Please agree to the Privacy Policy before submitting.");
@@ -116,10 +113,8 @@ const RequestADemo = () => {
           preferredTime: formData.preferredTime,
         })
       )
-        .then((response) => {
-          console.log("Email sent successfully:", response);
+        .then(() => {
           confirmationMail();
-          // alert("Thank you for your request! We will be in touch soon.");
           setAlertData({
             ...alertData,
             heading: "Request Submitted",
@@ -143,8 +138,6 @@ const RequestADemo = () => {
         });
     }
 
-    // Reset the form after submission
-    // setFormData(demoFormInitialState);
   }
   const confirmationMail = () => {
     const scheduledDate = new Date(formData.preferredTime);
@@ -173,9 +166,6 @@ const RequestADemo = () => {
       bookDemoConfirmationEmailTemplate.text(formData.fullName, date, time),
       bookDemoConfirmationEmailTemplate.html(formData.fullName, date, time)
     )
-      .then((response) => {
-        console.log("Confirmation email sent successfully:", response);
-      })
       .catch((error) => {
         console.error("Error sending confirmation email:", error);
       });

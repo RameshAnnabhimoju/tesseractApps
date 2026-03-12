@@ -1,17 +1,4 @@
-// import VideoComponent from "../videoComponent/VideoComponent";
 import "./HomeHeroStyles.css";
-// Logo served from public/ so the preload link in index.html matches the exact URL
-// const logo_small = "/svg-logos/T Blue.svg";
-// import ios from "../../assets/mobile_ios.webp";
-// import android from "../../assets/mobile_android.webp";
-// import facebook from "../../assets/facebook.webp";
-// import youtube from "../../assets/youtube.webp";
-// import linkedin from "../../assets/linkedin.webp";
-// import instagram from "../../assets/instagram.webp";
-// import { AppNavigate } from "../../routes/AppNavigate";
-// import heroImage1 from "../../assets/heroBackground-1.webp";
-// import heroImage2 from "../../assets/heroBackground-2.webp";
-// import ArrowRight from "../arrows/ArrowRight";
 import HeroArcsLeftComponent from "../heroArcsComponent/HeroArcsComponent.tsx";
 import HeroArcsRightComponent from "../heroArcsComponent/HeroArcsComponent.tsx";
 import { homeLeftArcsData, homeRightArcsData } from "../../data/homeArcsData";

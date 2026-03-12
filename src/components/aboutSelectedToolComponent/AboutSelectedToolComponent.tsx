@@ -2,7 +2,6 @@ import "./AboutSelectedToolStyles.css";
 import { aboutSelectedToolDummyData } from "../../data/aboutSelectedToolData";
 import { useEffect, useState } from "react";
 import dividerLine from "../../assets/divider_line.webp";
-// import { useNavigate } from "react-router-dom";
 import useAppNavigate from "../../hooks/useAppNavigate";
 interface aboutSelectedToolType {
   data?: {
@@ -81,9 +80,7 @@ const AboutSelectedToolComponent = ({
     return () => window.removeEventListener("resize", handleResize);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // const navigate = useNavigate();
   const handleCtaClick = (name: string) => {
-    console.log("cta click ", name);
     appNavigate(name);
   };
   return (
