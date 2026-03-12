@@ -1,8 +1,5 @@
-// import FaqComponent from "../../components/faqComponent/FaqComponent";
 import { Suspense, lazy, useEffect } from "react";
 import HomeHeroComponent from "../../components/homeHeroComponent/HomeHeroComponent";
-// import MirroredArcsComponent from "../../components/mirroredArcsComponent/MirroredArcsComponent";
-// import VideoComponent from "../../components/videoComponent/VideoComponent";
 import "./HomeStyles.css";
 import SEO from "../../components/common/SEO";
 

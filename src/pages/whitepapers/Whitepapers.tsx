@@ -4,9 +4,7 @@ import pdf2 from "../../assets/White Paper Aug 2025.pdf";
 import pdf3 from "../../assets/White Paper Sep 2025.pdf";
 import pdf4 from "../../assets/Whitepaper July 2025.pdf";
 import pdf5 from "../../assets/White Paper  (Nov).pdf";
-// import whitepaper1 from "../../assets/whitepaper1.webp";
 import whitepaper2 from "../../assets/White Paper Aug 2025_page-0001.webp";
-// import whitepaper3 from "../../assets/whitepaper-3.webp";
 import whitepaper4 from "../../assets/Whitepaper July 2025-images-0.webp";
 import whitepaper5 from "../../assets/White Paper  (Nov)-Cover.webp";
 import { useLocation } from "react-router-dom";
@@ -17,7 +15,6 @@ import SEO from "../../components/common/SEO";
 const Whitepapers = () => {
   const location = useLocation();
   // const { data } = location.state || {};
-  // console.log(data);
   const { getRoute } = useAppContext();
   const path = location.pathname.replace(/\/$/, "");
   const data = (location.state as any)?.data ?? getRoute(path)?.data ?? null;

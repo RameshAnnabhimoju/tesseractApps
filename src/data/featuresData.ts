@@ -1,22 +1,17 @@
 import RosterManagementImageF from "../assets/features-Roster Management.webp";
 import TimesheetImage from "../assets/Time sheet.webp";
 import AdminConsoleImage from "../assets/Admin.webp";
-// import HRImage from "../assets/HR.webp";
 import HRImageF from "../assets/features-HR.webp";
 import ParticipantsImage from "../assets/Participants Management.webp";
 import ChatImage from "../assets/Chat and Notification.webp";
-// import RepoImage from "../assets/Documents.webp";
 import RepoImageF from "../assets/features-Repository.webp";
-// import AccountingImage from "../assets/accounting.webp";
 import AccountingImageF from "../assets/features-Accounting.webp";
 import IncidentImage from "../assets/Incident Management.webp";
 import ClockImage from "../assets/clock in clock out2.webp";
 import ComplianceImage from "../assets/complaince and safe guard.webp";
-// import AccessImage from "../assets/Access control panel.webp";
 import AccessImageF from "../assets/features-Access control panel.webp";
 import Forms from "../assets/Form.webp";
 import TSign from "../assets/T sign.webp";
-// import Profile from "../assets/My profile.webp";
 import ProfileF from "../assets/features-My profile.webp";
 import Role from "../assets/Role base dashboard.webp";
 

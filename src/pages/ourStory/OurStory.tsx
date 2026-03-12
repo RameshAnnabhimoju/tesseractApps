@@ -11,7 +11,6 @@ import SEO from "../../components/common/SEO";
 
 const OurStory = () => {
   // const imageRef = useRef<HTMLImageElement | null>(null);
-  // console.log(window.innerWidth);
   // useEffect(() => {
   //   if (window.innerWidth > 800 && imageRef.current) {
   //     const imageBottom =

@@ -1,6 +1,4 @@
-// import { useNavigate } from "react-router-dom";
 import "./ProductsDataStyles.css";
-// import { AppNavigate } from "../../routes/AppNavigate";
 import DetailsHeroComponent from "../detailsHeroComponent/DetailsHeroComponent";
 import useAppNavigate from "../../hooks/useAppNavigate";
 interface ProductsDataTypes {
@@ -11,10 +9,8 @@ interface ProductsDataTypes {
   };
 }
 const ProductsDataComponent = ({ data }: ProductsDataTypes) => {
-  // const navigate = useNavigate();
   const appNavigate = useAppNavigate();
   function handleProductDataClick(name: string) {
-    // console.log(name);
     appNavigate(name);
   }
   const backgroundColors = [

@@ -4,7 +4,6 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-// import { useState } from "react";
 import ArrowDown from "../../assets/arrow_down.svg";
 import SEO from "../../components/common/SEO";
 

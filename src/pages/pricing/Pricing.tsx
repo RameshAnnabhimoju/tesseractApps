@@ -6,16 +6,13 @@ import tickBlue from "../../assets/tick-blue.svg";
 import tickBlack from "../../assets/tick-black.svg";
 import remove from "../../assets/remove.webp";
 import ArrowDown from "../../assets/arrow_down.svg";
-// import tick_white from "../../assets/tick_white.svg";
 import call from "../../assets/call.svg";
 import mark_email from "../../assets/mark_email.svg";
 import { Link } from "react-router-dom";
 import ContactInformationCard from "../../components/contactInformationCard/ContactInformationCard";
-// import priceBg from "../../assets/price bg.webp";
 import p1 from "../../assets/p1.webp";
 import p2 from "../../assets/p2.webp";
 import p3 from "../../assets/p3.webp";
-// import p4 from "../../assets/p4.webp";
 import p5 from "../../assets/p6.webp";
 import pricingStar from "../../assets/pricing-star.webp";
 import Accordion from "@mui/material/Accordion";
@@ -27,8 +24,6 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import { useAppContext } from "../../contexts/AppContext";
 import SEO from "../../components/common/SEO";
-// import useAppNavigate from "../../hooks/useAppNavigate";
-// import { AppNavigate } from "../../routes/AppNavigate";
 // type PricingDataTickItemTypes = {
 //   title: string;
 //   subTitle: string;
@@ -40,7 +35,6 @@ import SEO from "../../components/common/SEO";
 const Pricing = () => {
   const imageArr1 = [p1, p2];
   const imageArr2 = [p3, p5];
-  // const navigate = useNavigate();
   const { handleBookADemo, handleSignup } = useAppContext();
   const handleBookADemoClick = () => {
     handleBookADemo(true);

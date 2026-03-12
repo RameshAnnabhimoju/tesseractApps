@@ -1,6 +1,4 @@
 import "./AboutStyles.css";
-// import aboutOurCompanyImage from "../../assets/about-our-company.webp";
-// import aboutOurTeamImage from "../../assets/Team 1.webp";
 import RevanthImage from "../../assets/REVANTH-CEO.webp";
 import KranthiImage from "../../assets/KRANTHI KAKKERLA - CO FOUNDER.webp";
 import BelleBaiImage from "../../assets/11.webp";
