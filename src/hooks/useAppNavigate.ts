@@ -26,10 +26,13 @@ const useAppNavigate = () => {
       if (!config) config = getRouteByName(key);
 
       if (!config) {
+        if (key === "Signup") {
+          navigate("/signup", { replace });
+          return true;
+        }
         if (
           defaultRoute &&
           key !== "Solutions" &&
-          key !== "Signup" &&
           key !== "Resources"
         ) {
           navigate("/coming-soon", { replace });
