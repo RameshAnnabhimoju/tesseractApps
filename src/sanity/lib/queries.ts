@@ -106,11 +106,6 @@ export const BLOG_POST_BY_SLUG_QUERY = `
   }
 `
 
-// All published slugs
-export const BLOG_SLUGS_QUERY = `
-  *[_type == "blogPost" && status == "published"].slug.current
-`
-
 // Posts filtered by category title (case-insensitive, matches UI display values like "NDIS")
 export const BLOG_CATEGORY_QUERY = `
   *[_type == "blogPost" && status == "published" && lower(category->title) == lower($category)]
@@ -127,28 +122,6 @@ export const BLOG_CATEGORY_QUERY = `
     ${mainImageFragment},
     ${authorFragment}
   }
-`
-
-// Featured posts — maximum 3
-export const BLOG_FEATURED_QUERY = `
-  *[_type == "blogPost" && status == "published" && featured == true]
-  | order(publishedAt desc)[0...3] {
-    _id,
-    title,
-    slug,
-    excerpt,
-    publishedAt,
-    ${categoryFragment},
-    tags,
-    readingTime,
-    ${mainImageFragment},
-    ${authorFragment}
-  }
-`
-
-// Total count of published posts
-export const BLOG_COUNT_QUERY = `
-  count(*[_type == "blogPost" && status == "published"])
 `
 
 // Distinct categories that have at least one published post
