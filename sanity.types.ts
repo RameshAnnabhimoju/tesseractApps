@@ -68,19 +68,20 @@ export type ReleaseNote = {
 
 export type PricingPlan = {
   _id: string
-  tierName: string
-  tagline: string
-  description: string
-  industryTab: 'ndis' | 'ict' | 'retailAndHospitality' | 'multiSiteBusinesses' | 'manufacturing' | 'construction'
+  id: string
   order: number
-  pricingMode: 'perUser' | 'contactUs' | 'freeTrial'
-  pricePerUser?: number
-  pricingLabel?: string
-  ctaLabel: string
-  featuresHeading?: string
-  features: string[]
-  optionalAddons?: string[]
-  isHighlighted: boolean
+  label: string
+  tagline: string
+  staffRange: string
+  badge: string
+  accentColor: string
+  bestFor: string
+  whatYouNeed: string
+  automationHeading: string
+  automationBody: string
+  commercial: string[]
+  supports: string[]
+  cta: string
 }
 
 export type JobTag = {

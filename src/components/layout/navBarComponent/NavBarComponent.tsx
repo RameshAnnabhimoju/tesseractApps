@@ -279,15 +279,7 @@ const NavBarComponent = ({
           <ArrowLeft />
         </div>
       )} */}
-      {showScroll && (
-        <div
-          className="arrow-container"
-          id="scroll-to-top"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          <ArrowUp />
-        </div>
-      )}
+
       {/* <div id="navbar-logo" onClick={() => navigate("/")}>
         <img loading="lazy" src={logo_small} alt="tesseract logo" />
         TesseractApps
@@ -740,24 +732,19 @@ const NavBarComponent = ({
           {selectedLink && selectedLink == "Product" && (
             <div id="popup-nav-products-container">
               {navBarDummyData["Product"].map((value, index) => (
-                <>
-                  <div
-                    className="nav-inner-heading"
-                    key={value.heading + index}
-                  >
-                    {value.heading}
-                  </div>
-                  {value.links.map((link, innerIndex) => (
+                <div key={value.heading + index} className="nav-product-group">
+                  <div className="nav-inner-heading">{value.heading}</div>
+                  {value.links.filter(link => link.title).map((link, innerIndex) => (
                     <div
                       key={link.title + innerIndex}
                       className="nav-inner-container"
                       onClick={() => popupLinkClickHandler(link.title)}
                     >
                       <div className="nav-title">{link.title}</div>
-                      <div className="nav-sub-title">{link.subTitle}</div>
+                      {link.subTitle && <div className="nav-sub-title">{link.subTitle}</div>}
                     </div>
                   ))}
-                </>
+                </div>
               ))}
               {/* {Array.isArray(navBarDummyData[selectedLink][1]) &&
                 navBarDummyData[selectedLink][1].map((value) => (

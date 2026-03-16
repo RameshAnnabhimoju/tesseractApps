@@ -167,24 +167,25 @@ export const RELEASE_NOTES_QUERY = `
   }
 `
 
-// Pricing Plans — fetch all, filter by industryTab client-side
+// Pricing Plans — all stages ordered by display order
 export const PRICING_PLANS_QUERY = `
   *[_type == "pricingPlan"]
   | order(order asc) {
     _id,
-    tierName,
-    tagline,
-    description,
-    industryTab,
+    "id": id.current,
     order,
-    pricingMode,
-    pricePerUser,
-    pricingLabel,
-    ctaLabel,
-    featuresHeading,
-    features,
-    optionalAddons,
-    isHighlighted
+    label,
+    tagline,
+    staffRange,
+    badge,
+    accentColor,
+    bestFor,
+    whatYouNeed,
+    automationHeading,
+    automationBody,
+    commercial,
+    supports,
+    cta
   }
 `
 

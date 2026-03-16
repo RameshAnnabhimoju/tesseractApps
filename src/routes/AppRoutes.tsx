@@ -194,7 +194,7 @@ const AppRoutes = () => {
         <Route path="/salesforce-integration" element={<ProductDetails />} />
         <Route path="/xero" element={<ProductDetails />} />
         <Route path="/wyzed" element={<ProductDetails />} />
-        <Route path="/release-notes" element={<ReleaseNotes />} />
+        <Route path="/changelog" element={<ReleaseNotes />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         {/* Sanity CMS dynamic blog posts — own Suspense so skeleton shows directly */}
         <Route

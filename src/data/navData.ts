@@ -34,28 +34,11 @@ export const navBarDummyData = {
             ],
         },
         {
-            heading: "Forms & Communication ",
-            links: [
-                { title: "Forms", subTitle: "Custom Forms" },
-                {
-                    title: "ChaT",
-                    subTitle: "Secure Communication",
-                },
-            ],
-        },
-        {
             heading: "HR & Workforce",
             links: [
                 { title: "HR Operations", subTitle: "HR Suite" },
                 { title: "Role based Dashboard", subTitle: "Smart Dashboards" },
                 { title: "My Profile", subTitle: "My Account" },
-            ],
-        },
-        {
-            heading: "Finance & Accounting ",
-            links: [
-                { title: "Accounting", subTitle: "Finance" },
-                { title: "", subTitle: "" },
             ],
         },
         {
@@ -67,30 +50,41 @@ export const navBarDummyData = {
             ],
         },
         {
-            heading: "Learning & Training",
-            links: [
-                { title: "T Learning Hub", subTitle: "Learning Hub" },
-                { title: "", subTitle: "" },
-            ],
-        },
-        {
-            heading: "Administration & Access",
-            links: [
-                { title: "Admin Console", subTitle: "System Oversight" },
-                { title: "Access Control Panel", subTitle: "Access Rights" },
-                { title: "Documents" },
-                { title: "", subTitle: "" },
-                { title: "", subTitle: "" },
-                { title: "", subTitle: "" },
-            ],
-        },
-
-        {
             heading: "Integrations",
             links: [
                 { title: "Salesforce", subTitle: "Integration" },
                 { title: "Xero", subTitle: "Integration" },
                 { title: "Wyzed", subTitle: "Integration" },
+            ],
+        },
+                {
+            heading: "Administration & Access",
+            links: [
+                { title: "Admin Console", subTitle: "System Oversight" },
+                { title: "Access Control Panel", subTitle: "Access Rights" },
+                { title: "Documents" },
+            ],
+        },
+        {
+            heading: "Forms & Communication ",
+            links: [
+                { title: "Forms", subTitle: "Custom Forms" },
+                {
+                    title: "ChaT",
+                    subTitle: "Secure Communication",
+                },
+            ],
+        },
+        {
+            heading: "Finance & Accounting ",
+            links: [
+                { title: "Accounting", subTitle: "Finance" }
+            ],
+        },
+        {
+            heading: "Learning & Training",
+            links: [
+                { title: "T Learning Hub", subTitle: "Learning Hub" },
             ],
         },
     ],

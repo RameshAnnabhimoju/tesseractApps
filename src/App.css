@@ -23,7 +23,6 @@
     margin-top: 25px;
     margin-bottom: 10px;
     text-transform: uppercase;
-    font-family: "roboto", sans-serif;
     /* margin-top: 50px; */
   }
   .subheading {
@@ -31,7 +30,6 @@
     font-weight: 700;
     text-align: center;
     margin: 10px auto;
-    font-family: "roboto", sans-serif;
   }
   .text {
     font-size: 20px;

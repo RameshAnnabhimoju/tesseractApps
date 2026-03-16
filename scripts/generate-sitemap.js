@@ -70,7 +70,7 @@ const STATIC_PAGES = [
   { loc: '/blogs' },
   { loc: '/whitepapers' },
   { loc: '/help-center' },
-  { loc: '/release-notes' },
+  { loc: '/changelog' },
   { loc: '/privacy-policy' },
   { loc: '/terms-and-conditions' },
   { loc: '/pricing' },

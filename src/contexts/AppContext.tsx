@@ -69,7 +69,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
         name: "Terms & Conditions",
         path: "/terms-and-Conditions",
       },
-      "/release-notes": { name: "Changelog", path: "/release-notes" },
+      "/changelog": { name: "Changelog", path: "/changelog" },
       "/careers": { name: "Careers", path: "/careers" },
       "/about": { name: "About", path: "/about" },
       "/help-center": { name: "Help Center", path: "/help-center" },
