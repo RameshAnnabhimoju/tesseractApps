@@ -1,16 +1,9 @@
 import "./AboutStyles.css";
-import RevanthImage from "../../../assets/REVANTH-CEO.webp";
-import KranthiImage from "../../../assets/KRANTHI KAKKERLA - CO FOUNDER.webp";
-import BelleBaiImage from "../../../assets/11.webp";
-import darshanImage from "../../../assets/5.webp";
-import maheshwariImage from "../../../assets/8.webp";
-import deepakrajImage from "../../../assets/4.webp";
-import meghnaImage from "../../../assets/13.webp";
-import saiKrishnaImage from "../../../assets/2.webp";
-import BecImage from "../../../assets/16.webp";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import SEO from "../../../components/common/SEO";
+import { useSanityTeamMembers } from "../../../hooks/useSanityTeamMembers";
+import SanityImage from "../../../components/sanity/sanity-image";
 import {
   Target,
   Telescope,
@@ -22,21 +15,10 @@ import {
 } from "lucide-react";
 import useAppNavigate from "../../../hooks/useAppNavigate";
 
-const teamMembers = [
-  { name: "Revanth", role: "Founder & CEO", image: RevanthImage },
-  { name: "Kranthi", role: "Co-Founder", image: KranthiImage },
-  { name: "Bec McFarland", role: "HR Manager", image: BecImage },
-  { name: "Belle Bai", role: "Marketing Executive", image: BelleBaiImage },
-  { name: "Darshan Shelat", role: "Solutions Consultant", image: darshanImage },
-  { name: "Maheshwari", role: "Operations Manager", image: maheshwariImage },
-  { name: "Deepakraj", role: "Software Engineer", image: deepakrajImage },
-  { name: "Meghna", role: "Accounts Manager", image: meghnaImage },
-  { name: "Sai Krishna", role: "Test Engineer", image: saiKrishnaImage },
-];
-
 const About = () => {
   const location = useLocation();
   const appNavigate = useAppNavigate();
+  const { data: teamMembers, loading: teamLoading } = useSanityTeamMembers();
 
   useEffect(() => {
     const targetId = location.state?.targetId;
@@ -144,20 +126,32 @@ const About = () => {
           /> */}
           {/* <div id="about-team-grid-label">Management</div> */}
           <div id="about-team-grid">
-            {teamMembers.map((member) => (
-              <div className="about-team-card" key={member.name}>
-                <img
-                  loading="lazy"
-                  src={member.image}
-                  alt={member.name}
-                  className="about-team-card-image"
-                />
-                <div className="about-team-card-body">
-                  <div className="about-team-card-name">{member.name}</div>
-                  <div className="about-team-card-role">{member.role}</div>
-                </div>
-              </div>
-            ))}
+            {teamLoading
+              ? [0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                  <div key={i} className="about-team-card about-team-card--skeleton">
+                    <div className="about-team-card-image about-skeleton-image" />
+                    <div className="about-team-card-body">
+                      <div className="about-skeleton-line about-skeleton-line--name" />
+                      <div className="about-skeleton-line about-skeleton-line--role" />
+                    </div>
+                  </div>
+                ))
+              : teamMembers.map((member) => (
+                  <div className="about-team-card" key={member._id}>
+                    <SanityImage
+                      src={member.photo}
+                      alt={member.photo?.alt ?? member.name}
+                      className="about-team-card-image"
+                      width={300}
+                      height={400}
+                      loading="lazy"
+                    />
+                    <div className="about-team-card-body">
+                      <div className="about-team-card-name">{member.name}</div>
+                      <div className="about-team-card-role">{member.role}</div>
+                    </div>
+                  </div>
+                ))}
           </div>
         </section>
 

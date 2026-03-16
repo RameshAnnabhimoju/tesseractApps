@@ -286,10 +286,10 @@ const FooterComponent = () => {
             <div
               className="footer-text"
               onClick={() => {
-                handleProductDataClick("Release Notes");
+                handleProductDataClick("Changelog");
               }}
             >
-              Release Notes
+              Changelog
             </div>
           </div>
           <div id="footer-column-3" className="footer-column">

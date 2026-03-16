@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"d:/whatnextstudio/tesseractApps/src/pages/marketing/about/AboutStyles.css\")",
+      "Bash(\"d:/whatnextstudio/tesseractApps/src/pages/legal/releaseNotes/ReleaseNotesStyles.css\")",
+      "Bash(\"d:/whatnextstudio/tesseractApps/src/pages/marketing/pricing/PricingStyles.css\")",
+      "Bash(\"d:/whatnextstudio/tesseractApps/src/pages/marketing/careers/CareersStyles.css\")",
+      "Bash(node scripts/seed-sanity-entities.mjs)"
+    ]
+  }
+}

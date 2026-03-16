@@ -1,5 +1,6 @@
 import "./PricingStyles.css";
-import { pricingCardsDummyData, pricingDummyData } from "../../../data/pricingData";
+import { pricingDummyData } from "../../../data/pricingData";
+import { useSanityPricingPlans } from "../../../hooks/useSanityPricingPlans";
 import { useState } from "react";
 import tick from "../../../assets/ok.svg";
 import tickBlue from "../../../assets/tick-blue.svg";
@@ -44,6 +45,8 @@ const Pricing = () => {
     | "manufacturing"
     | "construction"
   >("ndis");
+  const { data: allPlans, loading: plansLoading } = useSanityPricingPlans();
+  const pricingPlans = allPlans.filter((p) => p.industryTab === selectedTab);
   // const [userCount, setUserCount] = useState(0);
 
   function handleFooterActions(name: string) {
@@ -200,137 +203,76 @@ const Pricing = () => {
       </div>
       {/* <img loading="lazy" src={priceBg} alt="price" id="price-bg" /> */}
 
-      {pricingCardsDummyData[selectedTab].length > 0 && (
+      {(plansLoading || pricingPlans.length > 0) && (
         <div id="pricing-data-container">
           <div id="pricing-cards-container">
-            {pricingCardsDummyData[selectedTab].length > 0 &&
-              pricingCardsDummyData[selectedTab].map((data, index) => {
-                return (
+            {plansLoading
+              ? [0, 1, 2, 3].map((i) => (
+                  <div key={i} className="pricing-card pricing-card--skeleton" />
+                ))
+              : pricingPlans.map((plan) => (
                   <div
-                    className={
-                      index == 1 && selectedTab == "ndis"
-                        ? "pricing-card-selected"
-                        : "pricing-card"
-                    }
-                    key={index + data.title}
+                    className={plan.isHighlighted ? "pricing-card-selected" : "pricing-card"}
+                    key={plan._id}
                   >
-                    {index == 1 && selectedTab == "ndis" ? (
+                    {plan.isHighlighted ? (
                       <div id="pricing-most-popular-container">
-                        <img loading="lazy"
+                        <img
+                          loading="lazy"
                           src={pricingStar}
-                          alt="pricing start"
+                          alt="pricing star"
                           id="pricing-most-popular-star"
                         />{" "}
-                        <div className="pricing-card-tag"> MOST POPULAR</div>
+                        <div className="pricing-card-tag">MOST POPULAR</div>
                       </div>
                     ) : (
-                      <div style={{ height: "10px" }}></div>
+                      <div className="pricing-card-spacer" />
                     )}
-                    <div
-                      className={
-                        "pricing-card-title" + (index == 1 ? "-selected" : "")
-                      }
-                    >
-                      {data.title}
+                    <div className={`pricing-card-title${plan.isHighlighted ? "-selected" : ""}`}>
+                      {plan.tierName}
                     </div>
-                    <div
-                      className={
-                        "pricing-card-sub-title" +
-                        (index == 1 ? "-selected" : "")
-                      }
-                    >
-                      {data.subTitle}
+                    <div className={`pricing-card-sub-title${plan.isHighlighted ? "-selected" : ""}`}>
+                      {plan.tagline}
                     </div>
-                    <div
-                      className={
-                        "pricing-card-description" +
-                        (index == 1 ? "-selected" : "")
-                      }
-                    >
-                      {data.description}
+                    <div className={`pricing-card-description${plan.isHighlighted ? "-selected" : ""}`}>
+                      {plan.description}
                     </div>
-                    <div
-                      className={
-                        "pricing-card-pricing" + (index == 1 ? "-selected" : "")
-                      }
-                    >
-                      {data.Pricing > 0
-                        ? "$" +
-                        (toggleSwitch
-                          ? (data.Pricing * 0.9).toFixed(2)
-                          : data.Pricing)
+                    <div className={`pricing-card-pricing${plan.isHighlighted ? "-selected" : ""}`}>
+                      {plan.pricingMode === "perUser" && plan.pricePerUser != null
+                        ? "$" + (toggleSwitch ? (plan.pricePerUser * 0.9).toFixed(2) : plan.pricePerUser)
                         : ""}
                     </div>
-                    <div
-                      className={
-                        "pricing-card-time-period" +
-                        (index == 1 ? "-selected" : "")
-                      }
-                    >
-                      {data.timePeriod}
+                    <div className={`pricing-card-time-period${plan.isHighlighted ? "-selected" : ""}`}>
+                      {plan.pricingLabel ?? ""}
                     </div>
-                    <div className="pricing-minimum-number">
-                      minimum 5 users
-                    </div>
+                    {plan.featuresHeading && (
+                      <div className="pricing-minimum-number">{plan.featuresHeading}</div>
+                    )}
                     <button
                       className="cta-button pricing-button-primary"
                       onClick={handleTryItFree}
                     >
-                      {data.cta}
+                      {plan.ctaLabel}
                     </button>
-                    <div className={"features-container "}>
-                      {data.features.map((feature, fIndex) => {
-                        return (
-                          <div
-                            key={fIndex}
-                            className="pricing-tick-data-container"
-                          >
-                            <div className="pricing-tick-icon-container">
-                              <img loading="lazy"
-                                src={index == 1 ? tickBlue : tickBlack}
-                                alt="pricing-tick-icon"
-                                className="pricing-tick-icon"
-                              />
-                            </div>
-                            <div
-                              className={
-                                "pricing-feature-data" +
-                                (index == 1 ? "-selected" : "")
-                              }
-                            >
-                              {feature}
-                            </div>
+                    <div className="features-container">
+                      {plan.features.map((feature) => (
+                        <div key={feature} className="pricing-tick-data-container">
+                          <div className="pricing-tick-icon-container">
+                            <img
+                              loading="lazy"
+                              src={plan.isHighlighted ? tickBlue : tickBlack}
+                              alt="pricing-tick-icon"
+                              className="pricing-tick-icon"
+                            />
                           </div>
-                        );
-                      })}
-                      {/* {data.optionalAddons.length > 0 && (
-                        <div className="pricing-optional-addon-container">
-                          <div
-                            className={
-                              "pricing-optional-addon-subheading" +
-                              (index == 1 ? "-selected" : "")
-                            }
-                          >
-                            Optional Addons
+                          <div className={`pricing-feature-data${plan.isHighlighted ? "-selected" : ""}`}>
+                            {feature}
                           </div>
-                          {data.optionalAddons.map((addOn, index2) => (
-                            <div
-                              key={index2 + addOn}
-                              className={
-                                "pricing-feature-data pricing-optional-addon" +
-                                (index == 1 ? "-selected" : "")
-                              }
-                            >
-                              {addOn}
-                            </div>
-                          ))}
                         </div>
-                      )} */}
+                      ))}
                     </div>
                     <Link
-                      className={
-                        "pricing-more-info" + (index == 1 ? "-selected" : "")
-                      }
+                      className={`pricing-more-info${plan.isHighlighted ? "-selected" : ""}`}
                       to="#"
                       onClick={(e) => {
                         e.preventDefault();
@@ -342,8 +284,7 @@ const Pricing = () => {
                       More Information
                     </Link>
                   </div>
-                );
-              })}
+                ))}
           </div>
           <div id="pricing-data-accordian-container">
             {(
@@ -377,24 +318,12 @@ const Pricing = () => {
                   <AccordionDetails>
                     <div className="pricing-sticky-header">
                       <div className="pricing-sticky-empty-header"></div>
-                      {pricingCardsDummyData[selectedTab].length > 0 &&
-                        pricingCardsDummyData[selectedTab].map(
-                          (data, index) => {
-                            return (
-                              <div
-                                key={index + data.title}
-                                className="pricing-sticky-card"
-                              >
-                                <div className="pricing-card-title">
-                                  {data.title}
-                                </div>
-                                <div className="pricing-card-sub-title">
-                                  {data.subTitle}
-                                </div>
-                              </div>
-                            );
-                          }
-                        )}
+                      {pricingPlans.map((plan) => (
+                        <div key={plan._id} className="pricing-sticky-card">
+                          <div className="pricing-card-title">{plan.tierName}</div>
+                          <div className="pricing-card-sub-title">{plan.tagline}</div>
+                        </div>
+                      ))}
                     </div>
 
                     {data.data.map((dataItem) => (
@@ -452,7 +381,6 @@ const Pricing = () => {
                               {dataItem.subTitle}
                             </div>
                           </div>
-                          {/* <div className="pricing-data-tick-container"> */}
                           {dataItem.data1 !== undefined && (
                             <PricingDataItem
                               data={dataItem.data1}
@@ -479,7 +407,6 @@ const Pricing = () => {
                               className="pricing-data-item"
                             />
                           )}
-                          {/* </div> */}
                         </div>
                       </Typography>
                     ))}

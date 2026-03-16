@@ -131,3 +131,75 @@ export const BLOG_CATEGORIES_QUERY = `
     title
   } | order(title asc)
 `
+
+// Team Members — visible only, ordered by display order
+export const TEAM_MEMBERS_QUERY = `
+  *[_type == "teamMember" && isVisible == true]
+  | order(order asc) {
+    _id,
+    name,
+    role,
+    department,
+    order,
+    photo {
+      asset->{ _id, url, metadata { lqip, dimensions } },
+      alt,
+      hotspot,
+      crop
+    }
+  }
+`
+
+// Release Notes — all, newest first
+export const RELEASE_NOTES_QUERY = `
+  *[_type == "releaseNote"]
+  | order(releaseDate desc) {
+    _id,
+    version,
+    releaseDate,
+    releaseType,
+    changes[] {
+      _key,
+      title,
+      category,
+      description
+    }
+  }
+`
+
+// Pricing Plans — fetch all, filter by industryTab client-side
+export const PRICING_PLANS_QUERY = `
+  *[_type == "pricingPlan"]
+  | order(order asc) {
+    _id,
+    tierName,
+    tagline,
+    description,
+    industryTab,
+    order,
+    pricingMode,
+    pricePerUser,
+    pricingLabel,
+    ctaLabel,
+    featuresHeading,
+    features,
+    optionalAddons,
+    isHighlighted
+  }
+`
+
+// Job Listings — open only, ordered by display order
+export const JOB_LISTINGS_QUERY = `
+  *[_type == "jobListing" && isOpen == true]
+  | order(order asc) {
+    _id,
+    title,
+    isOpen,
+    order,
+    tags,
+    summary,
+    sections,
+    contactEmail,
+    contactName
+  }
+`

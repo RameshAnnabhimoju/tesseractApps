@@ -38,6 +38,81 @@ export type SanitySlug = {
   current: string
 }
 
+// ── Manual additions (pre-typegen) ──────────────────────────────
+
+export type TeamMember = {
+  _id: string
+  name: string
+  role: string
+  department?: string
+  order: number
+  isVisible: boolean
+  photo: SanityImageObject & { alt: string }
+}
+
+export type ReleaseNoteChange = {
+  _key: string
+  title: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  description?: any[]
+  category?: 'New Feature' | 'Enhancement' | 'Bug Fix' | 'Mobile' | 'Accounting' | 'Integration'
+}
+
+export type ReleaseNote = {
+  _id: string
+  version: string
+  releaseDate: string
+  releaseType: 'major' | 'minor' | 'patch'
+  changes: ReleaseNoteChange[]
+}
+
+export type PricingPlan = {
+  _id: string
+  tierName: string
+  tagline: string
+  description: string
+  industryTab: 'ndis' | 'ict' | 'retailAndHospitality' | 'multiSiteBusinesses' | 'manufacturing' | 'construction'
+  order: number
+  pricingMode: 'perUser' | 'contactUs' | 'freeTrial'
+  pricePerUser?: number
+  pricingLabel?: string
+  ctaLabel: string
+  featuresHeading?: string
+  features: string[]
+  optionalAddons?: string[]
+  isHighlighted: boolean
+}
+
+export type JobTag = {
+  icon: 'dollar' | 'home' | 'trending' | 'users' | 'zap' | 'heart' | 'map'
+  label: string
+}
+
+export type JobSection = {
+  heading: string
+  layout: 'prose' | 'list' | 'two-col' | 'inline-list'
+  body?: string
+  items?: string[]
+  col1Heading?: string
+  col1Items?: string[]
+  col2Heading?: string
+  col2Items?: string[]
+}
+
+export type JobListing = {
+  _id: string
+  title: string
+  isOpen: boolean
+  order: number
+  tags?: JobTag[]
+  summary: string
+  sections?: JobSection[]
+  contactEmail: string
+  contactName: string
+}
+
+// ────────────────────────────────────────────────────────────────
+
 export type SeoFields = {
   metaTitle?: string
   metaDescription?: string
