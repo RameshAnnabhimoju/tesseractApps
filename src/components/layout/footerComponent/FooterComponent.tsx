@@ -116,13 +116,6 @@ const FooterComponent = () => {
     if (name) appNavigate(name);
   }
 
-  function handleProductDataClick(name: string) {
-    if (name === "Careers") return appNavigate("/careers");
-    if (name === "Contact Us")
-      return appNavigate("About", { targetId: "about-contact-section" });
-    if (name) return appNavigate(name);
-  }
-
   const nav = navBarDummyData;
 
   return (
