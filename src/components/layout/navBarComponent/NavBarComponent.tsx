@@ -5,12 +5,14 @@ import { useEffect, useState } from "react";
 import { RefObject } from "react";
 import { useLocation, useNavigationType } from "react-router-dom";
 import { navBarDummyData } from "../../../data/navData";
+import type { NavGroup, NavLink } from "../../../data/navData";
+import { useSanityCapabilityNav } from "../../../hooks/useSanityCapabilityNav";
+import { useSanitySolutionNav } from "../../../hooks/useSanitySolutionNav";
 interface PopupPosition {
   top: number;
   left: number;
 }
 import ArrowDown from "../../../assets/arrow_down.svg";
-import ArrowUp from "../../ui/arrows/ArrowUp";
 import useAppNavigate from "../../../hooks/useAppNavigate";
 import AppLogo from "../../layout/appLogo/AppLogo";
 
@@ -29,10 +31,57 @@ const NavBarComponent = ({
   const [searchTerm, setSearchTerm] = useState("");
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<
-    "About" | "Product" | "Solutions" | "Pricing" | "Resources" | ""
+    "About" | "Platform" | "Capabilities" | "Solutions" | "Pricing" | "Resources" | ""
   >("");
-  const DROPDOWN_LINKS = ["Product", "Solutions", "Resources"];
-  const NAV_LINKS = ["Product", "Pricing", "About", "Solutions", "Resources"];
+  const DROPDOWN_LINKS = ["Capabilities", "Solutions", "Resources"];
+  const NAV_LINKS = ["Platform", "Capabilities", "Pricing", "Solutions", "Resources", "About"];
+  const CAP_IDX = NAV_LINKS.indexOf("Capabilities");
+  const SOL_IDX = NAV_LINKS.indexOf("Solutions");
+  const RES_IDX = NAV_LINKS.indexOf("Resources");
+
+  // Live Sanity nav data — falls back to navData.ts while loading (no flash)
+  const { links: capLinks, loading: capLoading } = useSanityCapabilityNav();
+  const { links: solLinks, loading: solLoading } = useSanitySolutionNav();
+
+  // Capabilities: group live Sanity links by navGroup; fall back to hardcoded while loading
+  const capNavGroups: NavGroup[] = (!capLoading && capLinks.length > 0)
+    ? (() => {
+        const groupMap = new Map<string, NavLink[]>();
+        capLinks.forEach((link) => {
+          if (!groupMap.has(link.navGroup)) groupMap.set(link.navGroup, []);
+          groupMap.get(link.navGroup)!.push({
+            title: link.title,
+            subTitle: link.heroSubtitle,
+            href: `/capabilities/${link.slug.current}`,
+          });
+        });
+        return Array.from(groupMap.entries()).map(([heading, links]) => ({ heading, links }));
+      })()
+    : navBarDummyData["Capabilities"];
+
+  // Solutions: group live Sanity links by navCategory; fall back to hardcoded while loading
+  const solNavCategories: Record<string, NavLink[]> = (!solLoading && solLinks.length > 0)
+    ? (() => {
+        const catMap: Record<string, NavLink[]> = {
+          "BY CARE TYPE": [],
+          "BY ROLE": [],
+          "BY STAGE": [],
+        };
+        solLinks.forEach((link) => {
+          if (catMap[link.navCategory]) {
+            catMap[link.navCategory].push({
+              title: link.title,
+              subTitle: link.heroSubtitle,
+              href: `/solutions/${link.slug.current}`,
+            });
+          }
+        });
+        // Do not fallback to navBarDummyData for empty categories to avoid coming-soon links
+        // if (catMap["BY ROLE"].length === 0) catMap["BY ROLE"] = navBarDummyData["Solutions"]["BY ROLE"];
+        // if (catMap["BY STAGE"].length === 0) catMap["BY STAGE"] = navBarDummyData["Solutions"]["BY STAGE"];
+        return catMap;
+      })()
+    : navBarDummyData["Solutions"];
 
   // useEffect(() => {
   // const handleScroll = () => {
@@ -69,31 +118,14 @@ const NavBarComponent = ({
     ) {
       setActiveLink("About");
     }
-    if (
-      currentPath == "product" ||
-      currentPath == "roster-management" ||
-      currentPath == "clock-in-and-clock-out" ||
-      currentPath == "forms" ||
-      currentPath == "timesheet" ||
-      currentPath == "participant-management" ||
-      currentPath == "accounting" ||
-      currentPath == "admin-console" ||
-      currentPath == "incident-management" ||
-      currentPath == "t-learning-hub" ||
-      currentPath == "access-control-panel" ||
-      currentPath == "incident-management" ||
-      currentPath == "chat" ||
-      currentPath == "hr-operations" ||
-      currentPath == "role-based-dashboard" ||
-      currentPath == "t-sign" ||
-      currentPath == "salesforce-integration" ||
-      currentPath == "xero" ||
-      currentPath == "wyzed" ||
-      currentPath == "my-profile"
-    ) {
-      setActiveLink("Product");
+    if (currentPath == "platform") {
+      setActiveLink("Platform");
+    }
+    if (currentPath == "capabilities") {
+      setActiveLink("Capabilities");
     }
     if (
+      currentPath == "solutions" ||
       currentPath == "ndis-industry" ||
       currentPath == "ict-industry" ||
       currentPath == "administrator" ||
@@ -230,16 +262,7 @@ const NavBarComponent = ({
     appNavigate("/signup");
     closePopup();
   };
-  const [showScroll, setShowScroll] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScroll(window.scrollY > 1000);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
   const popularSearchClickHandler = (value: string) => {
     setSearchTerm(value);
   };
@@ -366,7 +389,7 @@ const NavBarComponent = ({
             </div>
         <div id="nav-menu-links">
             {NAV_LINKS.map((label, index) => {
-              if (label != "Pricing" && label != "About") {
+              if (label != "Pricing" && label != "About" && label != "Platform") {
                 return (
                   <div key={label} className="nav-accordion">
                     <div
@@ -393,21 +416,9 @@ const NavBarComponent = ({
                       }
                     >
                       <div className="nav-accordion-content">
-                        {expanded == 0 &&
-                          Array.isArray(navBarDummyData["Product"]) && (
+                        {expanded == CAP_IDX && (
                             <>
-                              <div
-                                key="Product"
-                                id="Product"
-                                className="nav-inner-container"
-                                onClick={handleNavClick}
-                              >
-                                <div className="nav-title">
-                                  Products Overview
-                                </div>
-                                <div className="nav-sub-title">Learn More</div>
-                              </div>
-                              {navBarDummyData["Product"].map(
+                              {capNavGroups.map(
                                 (value, index) => (
                                   <div key={value.heading + index}>
                                     <div className="nav-accordion-group-heading">{value.heading}</div>
@@ -415,9 +426,14 @@ const NavBarComponent = ({
                                       <div
                                         key={link.title + innerIndex}
                                         className="nav-inner-container"
-                                        onClick={() =>
-                                          popupLinkClickHandler(link.title)
-                                        }
+                                        onClick={() => {
+                                          if (link.href) {
+                                            appNavigate(link.href);
+                                            setToggleDrawer(false);
+                                          } else {
+                                            popupLinkClickHandler(link.title);
+                                          }
+                                        }}
                                       >
                                         <div className="nav-title">
                                           {link.title}
@@ -432,13 +448,20 @@ const NavBarComponent = ({
                               )}
                             </>
                           )}
-                        {expanded == 4 &&
+                        {expanded == RES_IDX &&
                           Array.isArray(navBarDummyData["Resources"]) &&
                           navBarDummyData["Resources"].map((value, index) => (
                             <div
                               key={value.title + index}
                               className="nav-inner-container"
-                              onClick={() => popupLinkClickHandler(value.title)}
+                              onClick={() => {
+                                if (value.href) {
+                                  appNavigate(value.href);
+                                  setToggleDrawer(false);
+                                } else {
+                                  popupLinkClickHandler(value.title);
+                                }
+                              }}
                             >
                               <div className="nav-title">{value.title}</div>
                               <div className="nav-sub-title">
@@ -446,140 +469,48 @@ const NavBarComponent = ({
                               </div>
                             </div>
                           ))}
-                        {expanded == 3 && (
+                        {expanded == SOL_IDX && (
                           <div id="nav-menu-solutions">
-                            <div>
-                              <div className="services-heading">
-                                BY INDUSTRY
-                              </div>
-                              {Array.isArray(
-                                navBarDummyData["Solutions"]["BY INDUSTRY"]
-                              ) &&
-                                navBarDummyData["Solutions"]["BY INDUSTRY"].map(
-                                  (value, index) => (
+                            {(["BY CARE TYPE", "BY ROLE", "BY STAGE"] as const).map((cat) => (
+                              <div key={cat}>
+                                <div className="services-heading">{cat}</div>
+                                {Array.isArray(solNavCategories[cat]) &&
+                                  solNavCategories[cat].map((value, index) => (
                                     <div
                                       key={value.title + index}
                                       className="nav-inner-container"
-                                      onClick={() =>
-                                        popupLinkClickHandler(value.title)
-                                      }
+                                      onClick={() => {
+                                        if (value.href) {
+                                          appNavigate(value.href);
+                                          setToggleDrawer(false);
+                                        } else {
+                                          popupLinkClickHandler(value.title);
+                                        }
+                                      }}
                                     >
-                                      <div className="nav-title">
-                                        {value.title}
-                                      </div>
-                                      <div className="nav-sub-title">
-                                        {value.subTitle}
-                                      </div>
+                                      <div className="nav-title">{value.title}</div>
+                                      <div className="nav-sub-title">{value.subTitle}</div>
                                     </div>
-                                  )
-                                )}
-                            </div>
-                            <div>
-                              <div className="services-heading">BY CARE</div>
-                              {Array.isArray(
-                                navBarDummyData["Solutions"]["BY CARE"]
-                              ) &&
-                                navBarDummyData["Solutions"]["BY CARE"].map(
-                                  (value, index) => (
-                                    <div
-                                      key={value.title + index}
-                                      className="nav-inner-container"
-                                      onClick={() =>
-                                        popupLinkClickHandler(value.title)
-                                      }
-                                    >
-                                      <div className="nav-title">
-                                        {value.title}
-                                      </div>
-                                      <div className="nav-sub-title">
-                                        {value.subTitle}
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                            </div>
-                            <div>
-                              <div className="services-heading">BY ROLE</div>
-                              {Array.isArray(
-                                navBarDummyData["Solutions"]["BY ROLE"]
-                              ) &&
-                                navBarDummyData["Solutions"]["BY ROLE"].map(
-                                  (value, index) => (
-                                    <div
-                                      key={value.title + index}
-                                      className="nav-inner-container"
-                                      onClick={() =>
-                                        popupLinkClickHandler(value.title)
-                                      }
-                                    >
-                                      <div className="nav-title">
-                                        {value.title}
-                                      </div>
-                                      <div className="nav-sub-title">
-                                        {value.subTitle}
-                                      </div>
-                                    </div>
-                                  )
-                                )}
-                            </div>
-                            <div>
-                              <div className="services-heading">
-                                BY BUSINESS TYPE
+                                  ))}
                               </div>
-                              {Array.isArray(
-                                navBarDummyData["Solutions"]["BY BUSINESS TYPE"]
-                              ) &&
-                                navBarDummyData["Solutions"][
-                                  "BY BUSINESS TYPE"
-                                ].map((value, index) => (
-                                  <div
-                                    key={value.title + index}
-                                    className="nav-inner-container"
-                                    onClick={() =>
-                                      popupLinkClickHandler(value.title)
-                                    }
-                                  >
-                                    <div className="nav-title">
-                                      {value.title}
-                                    </div>
-                                    <div className="nav-sub-title">
-                                      {value.subTitle}
-                                    </div>
-                                  </div>
-                                ))}
-                            </div>
-                            <div>
-                              <div className="services-heading">
-                                BY BUSINESS PROBLEM
-                              </div>
-                              {Array.isArray(
-                                navBarDummyData["Solutions"][
-                                "BY BUSINESS PROBLEM"
-                                ]
-                              ) &&
-                                navBarDummyData["Solutions"][
-                                  "BY BUSINESS PROBLEM"
-                                ].map((value, index) => (
-                                  <div
-                                    key={value.title + index}
-                                    className="nav-inner-container"
-                                    onClick={() =>
-                                      popupLinkClickHandler(value.title)
-                                    }
-                                  >
-                                    <div className="nav-title">
-                                      {value.title}
-                                    </div>
-                                    <div className="nav-sub-title">
-                                      {value.subTitle}
-                                    </div>
-                                  </div>
-                                ))}
-                            </div>
+                            ))}
                           </div>
                         )}
                       </div>
                     </div>
+                  </div>
+                );
+              } else if (label == "Platform") {
+                return (
+                  <div
+                    className="nav-menu-link no-dropdown"
+                    key={label}
+                    onClick={() => {
+                      appNavigate("/platform");
+                      setToggleDrawer(false);
+                    }}
+                  >
+                    {label}
                   </div>
                 );
               } else {
@@ -706,7 +637,7 @@ const NavBarComponent = ({
         <div id="popup-nav-container">
           {selectedLink &&
             selectedLink != "Solutions" &&
-            selectedLink != "Product" &&
+            selectedLink != "Capabilities" &&
             Object.prototype.hasOwnProperty.call(
               navBarDummyData,
               selectedLink
@@ -718,27 +649,42 @@ const NavBarComponent = ({
               navBarDummyData[selectedLink as keyof typeof navBarDummyData] as {
                 title: string;
                 subTitle: string;
+                href?: string;
               }[]
             ).map((value, index) => (
               <div
                 key={value.title + index}
                 className="nav-inner-container"
-                onClick={() => popupLinkClickHandler(value.title)}
+                onClick={() => {
+                  if (value.href) {
+                    appNavigate(value.href);
+                    closePopup();
+                  } else {
+                    popupLinkClickHandler(value.title);
+                  }
+                }}
               >
                 <div className="nav-title">{value.title}</div>
                 <div className="nav-sub-title">{value.subTitle}</div>
               </div>
             ))}
-          {selectedLink && selectedLink == "Product" && (
+          {selectedLink && selectedLink == "Capabilities" && (
             <div id="popup-nav-products-container">
-              {navBarDummyData["Product"].map((value, index) => (
+              {capNavGroups.map((value, index) => (
                 <div key={value.heading + index} className="nav-product-group">
                   <div className="nav-inner-heading">{value.heading}</div>
                   {value.links.filter(link => link.title).map((link, innerIndex) => (
                     <div
                       key={link.title + innerIndex}
                       className="nav-inner-container"
-                      onClick={() => popupLinkClickHandler(link.title)}
+                      onClick={() => {
+                        if (link.href) {
+                          appNavigate(link.href);
+                          closePopup();
+                        } else {
+                          popupLinkClickHandler(link.title);
+                        }
+                      }}
                     >
                       <div className="nav-title">{link.title}</div>
                       {link.subTitle && <div className="nav-sub-title">{link.subTitle}</div>}
@@ -746,117 +692,34 @@ const NavBarComponent = ({
                   ))}
                 </div>
               ))}
-              {/* {Array.isArray(navBarDummyData[selectedLink][1]) &&
-                navBarDummyData[selectedLink][1].map((value) => (
-                  <div
-                    key={value.title}
-                    className="nav-inner-container"
-                    onClick={() => popupLinkClickHandler(value.title)}
-                  >
-                    <div className="nav-title">{value.title}</div>
-                    <div className="nav-sub-title">{value.subTitle}</div>
-                  </div>
-                ))}
-              {Array.isArray(navBarDummyData[selectedLink][2]) &&
-                navBarDummyData[selectedLink][2].map((value) => (
-                  <div
-                    key={value.title}
-                    className="nav-inner-container"
-                    onClick={() => popupLinkClickHandler(value.title)}
-                  >
-                    <div className="nav-title">{value.title}</div>
-                    <div className="nav-sub-title">{value.subTitle}</div>
-                  </div>
-                ))} */}
             </div>
           )}
 
           {selectedLink && selectedLink == "Solutions" && (
             <div id="popup-nav-services-container">
-              <div>
-                <div className="services-heading">BY INDUSTRY</div>
-                {Array.isArray(navBarDummyData[selectedLink]["BY INDUSTRY"]) &&
-                  navBarDummyData[selectedLink]["BY INDUSTRY"].map(
-                    (value, index) => (
+              {(["BY CARE TYPE", "BY ROLE", "BY STAGE"] as const).map((cat) => (
+                <div key={cat}>
+                  <div className="services-heading">{cat}</div>
+                  {Array.isArray(solNavCategories[cat]) &&
+                    solNavCategories[cat].map((value, index) => (
                       <div
                         key={value.title + index}
                         className="nav-inner-container"
-                        onClick={() => popupLinkClickHandler(value.title)}
+                        onClick={() => {
+                          if (value.href) {
+                            appNavigate(value.href);
+                            closePopup();
+                          } else {
+                            popupLinkClickHandler(value.title);
+                          }
+                        }}
                       >
                         <div className="nav-title">{value.title}</div>
                         <div className="nav-sub-title">{value.subTitle}</div>
                       </div>
-                    )
-                  )}
-              </div>
-              <div>
-                <div className="services-heading">BY CARE</div>
-                {Array.isArray(navBarDummyData[selectedLink]["BY CARE"]) &&
-                  navBarDummyData[selectedLink]["BY CARE"].map(
-                    (value, index) => (
-                      <div
-                        key={value.title + index}
-                        className="nav-inner-container"
-                        onClick={() => popupLinkClickHandler(value.title)}
-                      >
-                        <div className="nav-title">{value.title}</div>
-                        <div className="nav-sub-title">{value.subTitle}</div>
-                      </div>
-                    )
-                  )}
-              </div>
-              <div>
-                <div className="services-heading">BY ROLE</div>
-                {Array.isArray(navBarDummyData[selectedLink]["BY ROLE"]) &&
-                  navBarDummyData[selectedLink]["BY ROLE"].map(
-                    (value, index) => (
-                      <div
-                        key={value.title + index}
-                        className="nav-inner-container"
-                        onClick={() => popupLinkClickHandler(value.title)}
-                      >
-                        <div className="nav-title">{value.title}</div>
-                        <div className="nav-sub-title">{value.subTitle}</div>
-                      </div>
-                    )
-                  )}
-              </div>
-              <div>
-                <div className="services-heading">BY BUSINESS TYPE</div>
-                {Array.isArray(
-                  navBarDummyData[selectedLink]["BY BUSINESS TYPE"]
-                ) &&
-                  navBarDummyData[selectedLink]["BY BUSINESS TYPE"].map(
-                    (value, index) => (
-                      <div
-                        key={value.title + index}
-                        className="nav-inner-container"
-                        onClick={() => popupLinkClickHandler(value.title)}
-                      >
-                        <div className="nav-title">{value.title}</div>
-                        <div className="nav-sub-title">{value.subTitle}</div>
-                      </div>
-                    )
-                  )}
-              </div>
-              <div>
-                <div className="services-heading">BY BUSINESS PROBLEM</div>
-                {Array.isArray(
-                  navBarDummyData[selectedLink]["BY BUSINESS PROBLEM"]
-                ) &&
-                  navBarDummyData[selectedLink]["BY BUSINESS PROBLEM"].map(
-                    (value, index) => (
-                      <div
-                        key={value.title + index}
-                        className="nav-inner-container"
-                        onClick={() => popupLinkClickHandler(value.title)}
-                      >
-                        <div className="nav-title">{value.title}</div>
-                        <div className="nav-sub-title">{value.subTitle}</div>
-                      </div>
-                    )
-                  )}
-              </div>
+                    ))}
+                </div>
+              ))}
             </div>
           )}
           {selectedLink == "navbar-profile-icon" && (

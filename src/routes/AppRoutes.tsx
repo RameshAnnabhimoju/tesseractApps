@@ -4,16 +4,23 @@ import { lazy, Suspense, useEffect } from "react";
 import { useAppContext } from "../contexts/AppContext";
 import "../pages/blog/BlogStyles.css";
 import "../pages/blogPost/BlogPostPageStyles.css";
+import "../pages/capabilities/CapabilityPageStyles.css";
+import "../pages/solutions/solutionPage/SolutionPageStyles.css";
+import "../pages/competitors/CompetitorPageStyles.css";
 
 // Home stays as eager import — it is the "/" route and must render immediately
 import Home from "../pages/home/Home";
+const HomeV2 = lazy(() => import("../pages/home/HomeV2"));
+const HomeV3 = lazy(() => import("../pages/home/HomeV3"));
+const HomeV4 = lazy(() => import("../pages/home/HomeV4"));
 
 // All other pages are lazy-loaded — they only download when the user navigates to them
 const Blog = lazy(() => import("../pages/blog/Blog"));
+const CapabilityPage = lazy(() => import("../pages/capabilities/CapabilityPage"));
+const Platform = lazy(() => import("../pages/platform/Platform"));
 const Details = lazy(() => import("../pages/products/details/Details"));
 const Pricing = lazy(() => import("../pages/marketing/pricing/Pricing"));
 const RequestADemo = lazy(() => import("../pages/forms/requestADemo/RequestADemo"));
-const AddBlog = lazy(() => import("../pages/resources/addBlog/AddBlog"));
 const SubPage = lazy(() => import("../pages/products/subPage/SubPage"));
 const ItemsPage = lazy(() => import("../pages/resources/itemsPage/ItemsPage"));
 const OurStory = lazy(() => import("../pages/marketing/ourStory/OurStory"));
@@ -22,32 +29,19 @@ const FAQ = lazy(() => import("../pages/resources/faq/FAQ"));
 const Teams = lazy(() => import("../pages/resources/teams/Teams"));
 const Careers = lazy(() => import("../pages/marketing/careers/Careers"));
 const ContactInformation = lazy(() => import("../pages/forms/contactInformation/ContactInformation"));
-const Blogpost = lazy(() => import("../pages/blogPost/Blogpost"));
-const FutureProofingBlog = lazy(() => import("../pages/blogPost/FutureProofingBlog"));
-const Blog4 = lazy(() => import("../pages/blogPost/Blog4"));
-const Blog5 = lazy(() => import("../pages/blogPost/Blog5"));
-const CanberraNDISExpoBlog = lazy(() => import("../pages/blogPost/CanberraNDISExpoBlog"));
-const BeyondComplianceBlog = lazy(() => import("../pages/blogPost/BeyondComplianceBlog"));
-const ManualRosteringBlog = lazy(() => import("../pages/blogPost/ManualRosteringBlog"));
 const PrivacyPolicy = lazy(() => import("../pages/legal/privacyPolicy/PrivacyPolicy"));
 const TermsAndConditions = lazy(() => import("../pages/legal/termsAndConditions/TermsAndConditions"));
-const ByRole = lazy(() => import("../pages/solutions/byRole/ByRole"));
-const ByIndustry = lazy(() => import("../pages/solutions/byIndustry/ByIndustry"));
-const ProductDetails = lazy(() => import("../pages/products/productDetails/ProductDetails"));
 const ReleaseNotes = lazy(() => import("../pages/legal/releaseNotes/ReleaseNotes"));
 const ComingSoon = lazy(() => import("../pages/marketing/comingSoon/ComingSoon"));
 const SalesPage = lazy(() => import("../pages/forms/salesPage/SalesPage"));
 const About = lazy(() => import("../pages/marketing/about/About"));
 const Whitepapers = lazy(() => import("../pages/resources/whitepapers/Whitepapers"));
-const Blog8 = lazy(() => import("../pages/blogPost/Blog8"));
-const Blog9 = lazy(() => import("../pages/blogPost/Blog9"));
-const Blog10 = lazy(() => import("../pages/blogPost/Blog10"));
-const Blog11 = lazy(() => import("../pages/blogPost/Blog11"));
-const NDISComplianceBlog = lazy(() => import("../pages/blogPost/NDISComplianceBlog"));
 const BlogPostPage = lazy(() => import("../pages/blogPost/BlogPostPage"));
 const StudioPage = lazy(() => import("../pages/studio/StudioPage"));
 const BookADemo = lazy(() => import("../pages/forms/bookADemo/BookADemo"));
 const Signup = lazy(() => import("../pages/forms/signup/Signup"));
+const SolutionPage = lazy(() => import("../pages/solutions/solutionPage/SolutionPage"));
+const CompetitorPage = lazy(() => import("../pages/competitors/CompetitorPage"));
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -58,6 +52,11 @@ const AppRoutes = () => {
   } = useAppContext();
 
   useEffect(() => {
+    // Redirect uppercase URLs to lowercase (e.g. /TESSERACT-VS-SHIFTCARE → /tesseract-vs-shiftcare)
+    if (location.pathname !== location.pathname.toLowerCase()) {
+      navigate(location.pathname.toLowerCase() + location.search + location.hash, { replace: true });
+      return;
+    }
     const cleanPath = location.pathname.replace(/\/$/, "");
     setCloseRoute(cleanPath || "/");
     if ((location.state as any)?.data) return;
@@ -76,6 +75,9 @@ const AppRoutes = () => {
     <Suspense fallback={<div className="app-page-loader"><div className="app-page-spinner" /></div>}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home-v2" element={<HomeV2 />} />
+        <Route path="/home-v3" element={<HomeV3 />} />
+        <Route path="/home-v4" element={<HomeV4 />} />
         {/* Blog listing — own Suspense so skeleton shows directly */}
         <Route
           path="/blogs"
@@ -91,7 +93,7 @@ const AppRoutes = () => {
                 </div>
                 <div className="bl-outer">
                   <div className="bl-grid">
-                    {[0,1,2,3,4,5].map((i) => (
+                    {[0, 1, 2, 3, 4, 5].map((i) => (
                       <div key={i} className="bl-skeleton-card">
                         <div className="bl-skeleton-image" />
                         <div className="bl-skeleton-body">
@@ -119,7 +121,82 @@ const AppRoutes = () => {
         <Route path="/requestDemo" element={<RequestADemo />} />
         <Route path="/salesPage" element={<SalesPage />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/addBlog" element={<AddBlog />} />
+        <Route path="/platform" element={<Platform />} />
+        <Route
+          path="/capabilities/:slug"
+          element={
+            <Suspense fallback={
+              <div id="cap-page">
+                <div className="cap-skeleton-hero" />
+                <div className="cap-outer">
+                  <div className="cap-skeleton-section">
+                    <div className="cap-skeleton cap-skeleton-label" />
+                    <div className="cap-skeleton cap-skeleton-heading" />
+                    <div className="cap-skeleton cap-skeleton-line cap-skeleton-line--full" />
+                    <div className="cap-skeleton cap-skeleton-line cap-skeleton-line--lg" />
+                    <div className="cap-skeleton cap-skeleton-line cap-skeleton-line--md" />
+                  </div>
+                </div>
+              </div>
+            }>
+              <CapabilityPage />
+            </Suspense>
+          }
+        />
+        {/* Sanity CMS dynamic solution pages */}
+        <Route
+          path="/solutions/:slug"
+          element={
+            <Suspense fallback={
+              <div id="sol-page">
+                <div className="sol-skeleton-hero" />
+                <div className="sol-outer">
+                  <div className="sol-skeleton-section">
+                    <div className="sol-skeleton sol-skeleton-label" />
+                    <div className="sol-skeleton sol-skeleton-heading" />
+                    <div className="sol-skeleton sol-skeleton-line sol-skeleton-line--full" />
+                    <div className="sol-skeleton sol-skeleton-line sol-skeleton-line--lg" />
+                    <div className="sol-skeleton sol-skeleton-line sol-skeleton-line--md" />
+                  </div>
+                </div>
+              </div>
+            }>
+              <SolutionPage />
+            </Suspense>
+          }
+        />
+        {/* Sanity CMS dynamic competitor comparison pages */}
+        <Route
+          path="/tesseract-vs/:slug"
+          element={
+            <Suspense fallback={
+              <div id="cmp-page">
+                <div className="cmp-skeleton-hero" />
+                <div className="cmp-outer">
+                  <div className="cmp-skeleton-section">
+                    <div className="cmp-skeleton cmp-skeleton-label" />
+                    <div className="cmp-skeleton cmp-skeleton-heading" />
+                    <div className="cmp-skeleton cmp-skeleton-line cmp-skeleton-line--full" />
+                    <div className="cmp-skeleton cmp-skeleton-line cmp-skeleton-line--lg" />
+                    <div className="cmp-skeleton cmp-skeleton-line cmp-skeleton-line--md" />
+                  </div>
+                  <div className="cmp-skeleton-section">
+                    <div className="cmp-skeleton cmp-skeleton-label" />
+                    <div className="cmp-skeleton cmp-skeleton-heading" />
+                    <div className="cmp-skeleton-choice-grid">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <div key={i} className="cmp-skeleton cmp-skeleton-card" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="cmp-skeleton-cta" />
+              </div>
+            }>
+              <CompetitorPage />
+            </Suspense>
+          }
+        />
         <Route path="/product" element={<SubPage />} />
         <Route path="/scheduling" element={<SubPage />} />
         <Route path="/time-management" element={<SubPage />} />
@@ -135,65 +212,8 @@ const AppRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/contact-us" element={<ContactInformation />} />
-        <Route path="/protecting-participant-data" element={<Blogpost />} />
-        <Route path="/future-proofing-disability-services" element={<FutureProofingBlog />} />
-        <Route path="/hidden-costs-workforce-management" element={<Blog4 />} />
-        <Route path="/sydney-disability-workability-expo-2025" element={<Blog5 />} />
-        <Route path="/canberra-ndis-expo" element={<CanberraNDISExpoBlog />} />
-        <Route path="/beyond-compliance-care-quality" element={<BeyondComplianceBlog />} />
-        <Route path="/manual-rostering-hidden-costs" element={<ManualRosteringBlog />} />
-        <Route path="/future-proof-ndis-organisation-2025" element={<Blog8 />} />
-        <Route path="/top-3-compliance-myths-busted" element={<Blog9 />} />
-        <Route path="/common-payroll-pitfalls-ndis" element={<Blog10 />} />
-        <Route path="/melbourne-expo-2025" element={<Blog11 />} />
-        <Route path="/ndis-compliance-audit-failures-2026" element={<NDISComplianceBlog />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/administrator" element={<ByRole />} />
-        <Route path="/roster-manager" element={<ByRole />} />
-        <Route path="/ndis-staff" element={<ByRole />} />
-        <Route path="/hr-manager" element={<ByRole />} />
-        <Route path="/accountant" element={<ByRole />} />
-        <Route path="/participant" element={<ByRole />} />
-        <Route path="/ndis-industry" element={<ByIndustry />} />
-        <Route path="/ict-industry" element={<ByIndustry />} />
-        <Route path="/retail-hospitality" element={<ByIndustry />} />
-        <Route path="/multi-site-businesses" element={<ByIndustry />} />
-        <Route path="/construction" element={<ByIndustry />} />
-        <Route path="/manufacturing" element={<ByIndustry />} />
-        <Route path="/disability-support-ndis" element={<ByIndustry />} />
-        <Route path="/support-coordination" element={<ByIndustry />} />
-        <Route path="/aged-care-services" element={<ByIndustry />} />
-        <Route path="/child-care-services" element={<ByIndustry />} />
-        <Route path="/allied-health-services" element={<ByIndustry />} />
-        <Route path="/home-community-care-services" element={<ByIndustry />} />
-        <Route path="/small-businesses" element={<ByIndustry />} />
-        <Route path="/enterprise" element={<ByIndustry />} />
-        <Route path="/franchise" element={<ByIndustry />} />
-        <Route path="/startups" element={<ByIndustry />} />
-        <Route path="/compliance" element={<ByIndustry />} />
-        <Route path="/employee-engagement" element={<ByIndustry />} />
-        <Route path="/time-efficiency" element={<ByIndustry />} />
-        <Route path="/cost-optimisation" element={<ByIndustry />} />
-        <Route path="/roster-management" element={<ProductDetails />} />
-        <Route path="/timesheet" element={<ProductDetails />} />
-        <Route path="/admin-console" element={<ProductDetails />} />
-        <Route path="/access-control-panel" element={<ProductDetails />} />
-        <Route path="/hr-operations" element={<ProductDetails />} />
-        <Route path="/t-sign" element={<ProductDetails />} />
-        <Route path="/clock-in-and-clock-out" element={<ProductDetails />} />
-        <Route path="/participant-management" element={<ProductDetails />} />
-        <Route path="/incident-management" element={<ProductDetails />} />
-        <Route path="/role-based-dashboard" element={<ProductDetails />} />
-        <Route path="/documents" element={<ProductDetails />} />
-        <Route path="/chat" element={<ProductDetails />} />
-        <Route path="/my-profile" element={<ProductDetails />} />
-        <Route path="/forms" element={<ProductDetails />} />
-        <Route path="/accounting" element={<ProductDetails />} />
-        <Route path="/t-learning-hub" element={<ProductDetails />} />
-        <Route path="/salesforce-integration" element={<ProductDetails />} />
-        <Route path="/xero" element={<ProductDetails />} />
-        <Route path="/wyzed" element={<ProductDetails />} />
         <Route path="/changelog" element={<ReleaseNotes />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         {/* Sanity CMS dynamic blog posts — own Suspense so skeleton shows directly */}

@@ -4,7 +4,7 @@ import { useSanityReleaseNotes } from "../../../hooks/useSanityReleaseNotes";
 import PortableText from "../../../components/sanity/portable-text";
 import { useState, useMemo } from "react";
 import { Zap, Bug, Wrench, Smartphone, Calculator, Plug, Grid2X2 } from "lucide-react";
-import type { ReleaseNoteChange } from "../../../sanity.types";
+import type { ReleaseNoteChange } from "../../../../sanity.types";
 
 type Category =
   | "All"
