@@ -12,7 +12,11 @@
     "sanity": "sanity",
     "typegen": "sanity typegen generate",
     "studio": "sanity dev",
-    "seed": "node scripts/seed-sanity.mjs"
+    "seed": "node scripts/seed-sanity.mjs",
+    "seed:capabilities": "node scripts/seed-capability-pages.mjs",
+    "seed:solutions": "node scripts/seed-solution-pages.mjs",
+    "seed:entities": "node scripts/seed-sanity-entities.mjs",
+    "seed:competitors": "node scripts/seed-competitor-pages.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -24,8 +28,10 @@
     "@sanity/image-url": "^2.0.3",
     "@sanity/vision": "^5.12.0",
     "axios": "^1.10.0",
+    "framer-motion": "^12.38.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.575.0",
+    "ogl": "^1.0.11",
     "react": "19.2.2",
     "react-dom": "19.2.2",
     "react-router-dom": "^7.5.3",
