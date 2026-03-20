@@ -255,3 +255,108 @@ export type BlogListItem = Pick<
   | 'mainImage'
   | 'author'
 >
+
+// ── Capability Pages ──────────────────────────────────────────────────────────
+
+export type CapabilityNavGroup =
+  | 'Workforce'
+  | 'Participant & Care'
+  | 'Finance'
+  | 'Operational Intelligence'
+
+/** Lightweight reference used in relatedCapabilities and nav queries */
+export type CapabilityNavLink = {
+  _id: string
+  title: string
+  slug: SanitySlug
+  navGroup: CapabilityNavGroup
+  heroSubtitle?: string
+}
+
+/** Full document returned by CAPABILITY_PAGE_BY_SLUG_QUERY */
+export type CapabilityPageDocument = {
+  _id: string
+  _type: 'capabilityPage'
+  title: string
+  slug: SanitySlug
+  navGroup: CapabilityNavGroup
+  order: number
+  heroHeading: string
+  heroSubtitle?: string
+  problemStatement: string
+  whatMattersMost: string[]
+  howWeSolveThis: string
+  whatYouGet: string[]
+  isThisRightForYou: string[]
+  relatedCapabilities?: CapabilityNavLink[]
+  seo?: SeoFields
+}
+
+// ── Solution Pages ────────────────────────────────────────────────────────────
+
+export type SolutionNavCategory = 'BY CARE TYPE' | 'BY ROLE' | 'BY STAGE'
+
+/** Lightweight reference used in relatedSolutions and nav queries */
+export type SolutionNavLink = {
+  _id: string
+  title: string
+  slug: SanitySlug
+  navCategory: SolutionNavCategory
+  heroSubtitle?: string
+}
+
+/** Full document returned by SOLUTION_PAGE_BY_SLUG_QUERY */
+export type SolutionPageDocument = {
+  _id: string
+  _type: 'solutionPage'
+  title: string
+  slug: SanitySlug
+  navCategory: SolutionNavCategory
+  order: number
+  heroHeading: string
+  heroSubtitle?: string
+  whoIsThisFor: string
+  keyBenefits: string[]
+  howWeSupport: string
+  whatYouGet: string[]
+  isThisRightForYou: string[]
+  relatedSolutions?: SolutionNavLink[]
+  seo?: SeoFields
+}
+
+// ── Competitor Pages ──────────────────────────────────────────────────────────
+
+/** Lightweight shape returned by COMPETITOR_NAV_QUERY */
+export type CompetitorNavItem = {
+  _id: string
+  title: string
+  slug: SanitySlug
+  competitorName: string
+  order: number
+}
+
+/** Full document returned by COMPETITOR_PAGE_BY_SLUG_QUERY */
+export type CompetitorPageDocument = {
+  _id: string
+  _type: 'competitorPage'
+  title: string
+  slug: SanitySlug
+  competitorName: string
+  order: number
+  heroHeading: string
+  heroSubtitle?: string
+  aboutHeading?: string
+  aboutBody: string
+  aboutTrustBadges?: string[]
+  awardBadges?: { label: string; sub?: string }[]
+  comparisonCategories?: {
+    title: string
+    rows: { feature: string; us: boolean; them: 'yes' | 'no' | 'partial' }[]
+  }[]
+  switchSteps?: { title: string; body?: string }[]
+  rightChoiceHeading?: string
+  rightChoiceItems: string[]
+  ctaHeading?: string
+  ctaDescription?: string
+  seo?: SeoFields
+}

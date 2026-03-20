@@ -204,3 +204,151 @@ export const JOB_LISTINGS_QUERY = `
     contactName
   }
 `
+
+// Capability Pages — single page by slug (full content for page render)
+export const CAPABILITY_PAGE_BY_SLUG_QUERY = `
+  *[_type == "capabilityPage" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    navGroup,
+    order,
+    heroHeading,
+    heroSubtitle,
+    problemStatement,
+    whatMattersMost,
+    howWeSolveThis,
+    whatYouGet,
+    isThisRightForYou,
+    relatedCapabilities[]-> {
+      _id,
+      title,
+      slug,
+      navGroup,
+      heroSubtitle
+    },
+    seo {
+      metaTitle,
+      metaDescription,
+      openGraphTitle,
+      openGraphDescription,
+      openGraphImage {
+        asset->{ url }
+      },
+      canonicalUrl,
+      noIndex,
+      schemaMarkup
+    }
+  }
+`
+
+// Capability Pages — nav index (lightweight, for mega-menu population)
+export const CAPABILITY_NAV_QUERY = `
+  *[_type == "capabilityPage"]
+  | order(navGroup asc, order asc) {
+    _id,
+    title,
+    slug,
+    navGroup,
+    order,
+    heroSubtitle
+  }
+`
+
+// Solution Pages — full document by slug
+export const SOLUTION_PAGE_BY_SLUG_QUERY = `
+  *[_type == "solutionPage" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    navCategory,
+    order,
+    heroHeading,
+    heroSubtitle,
+    whoIsThisFor,
+    keyBenefits,
+    howWeSupport,
+    whatYouGet,
+    isThisRightForYou,
+    relatedSolutions[]-> {
+      _id,
+      title,
+      slug,
+      navCategory,
+      heroSubtitle
+    },
+    seo {
+      metaTitle,
+      metaDescription,
+      openGraphTitle,
+      openGraphDescription,
+      openGraphImage { asset->{ url } },
+      canonicalUrl,
+      noIndex,
+      schemaMarkup
+    }
+  }
+`
+
+// Solution Pages — nav index (lightweight, for mega-menu population)
+export const SOLUTION_PAGE_NAV_QUERY = `
+  *[_type == "solutionPage"]
+  | order(navCategory asc, order asc) {
+    _id,
+    title,
+    slug,
+    navCategory,
+    order,
+    heroSubtitle
+  }
+`
+
+// Competitor Pages — full document by slug (for /compare/:slug page render)
+export const COMPETITOR_PAGE_BY_SLUG_QUERY = `
+  *[_type == "competitorPage" && slug.current == $slug][0] {
+    _id,
+    title,
+    slug,
+    competitorName,
+    order,
+    heroHeading,
+    heroSubtitle,
+    aboutHeading,
+    aboutBody,
+    aboutTrustBadges,
+    awardBadges[] { label, sub },
+    comparisonCategories[] {
+      title,
+      rows[] { feature, us, them }
+    },
+    switchSteps[] { title, body },
+    rightChoiceHeading,
+    rightChoiceItems,
+    ctaHeading,
+    ctaDescription,
+    seo {
+      metaTitle,
+      metaDescription,
+      openGraphTitle,
+      openGraphDescription,
+      openGraphImage {
+        asset->{ url }
+      },
+      canonicalUrl,
+      noIndex,
+      schemaMarkup
+    }
+  }
+`
+
+// Competitor Pages — nav index (lightweight, for sitemap / index page)
+export const COMPETITOR_NAV_QUERY = `
+  *[_type == "competitorPage"]
+  | order(order asc) {
+    _id,
+    title,
+    slug,
+    competitorName,
+    order
+  }
+`
