@@ -1,0 +1,146 @@
+# Unused Images Report
+
+This report lists all images that are not referenced in the final production bundle. This means they are either never imported, or only imported by unused components.
+
+## In `src/assets/` (136 unused images found)
+- `src/assets/01.webp`
+- `src/assets/02.webp`
+- `src/assets/03.webp`
+- `src/assets/11.webp`
+- `src/assets/13.webp`
+- `src/assets/15.webp`
+- `src/assets/16.webp`
+- `src/assets/2.webp`
+- `src/assets/3.webp`
+- `src/assets/4.webp`
+- `src/assets/5.webp`
+- `src/assets/7.webp`
+- `src/assets/8.webp`
+- `src/assets/about-our-company.webp`
+- `src/assets/aged_Care_Services-removebg-preview.webp`
+- `src/assets/Allied_Health_Practices-removebg-preview.webp`
+- `src/assets/arrow_down.svg`
+- `src/assets/australia.webp`
+- `src/assets/Beyond Compliance_ How TesseractApps NDIS Software Elevates Care Quality and Staff Experience.webp`
+- `src/assets/Blessing Care and Support Pty Ltd.webp`
+- `src/assets/blog1.webp`
+- `src/assets/blog2.webp`
+- `src/assets/blog3.webp`
+- `src/assets/Blog5Image1.webp`
+- `src/assets/Blog5Image2.webp`
+- `src/assets/Blog5Image3.webp`
+- `src/assets/bookADemoSuccess.webp`
+- `src/assets/bookADemoSuccessMan.webp`
+- `src/assets/call.svg`
+- `src/assets/Childcare_Services-removebg-preview.webp`
+- `src/assets/Clear Choice Clinic Pty Ltd.webp`
+- `src/assets/close.webp`
+- `src/assets/company-2.webp`
+- `src/assets/Company-YDCS-.webp`
+- `src/assets/Construction-removebg-preview.webp`
+- `src/assets/Cost_Optimisation-removebg-preview.webp`
+- `src/assets/Cover page for Avoid These Common Payroll Pitfalls A Guide for NDIS Provider.webp`
+- `src/assets/Cover page for Top 3 Compliance Myths Busted-DESKTOP-VQ2C97V.webp`
+- `src/assets/delete_bin.svg`
+- `src/assets/Disability Support.webp`
+- `src/assets/divider_line.webp`
+- `src/assets/dot4.webp`
+- `src/assets/Employee Engagement.webp`
+- `src/assets/Enterprise-removebg-preview.webp`
+- `src/assets/expo-banner-2.webp`
+- `src/assets/expo-banner-oct.webp`
+- `src/assets/expo-canberra1.webp`
+- `src/assets/expo-canberra2.webp`
+- `src/assets/facebook.webp`
+- `src/assets/flagImage1.webp`
+- `src/assets/flagImage2.webp`
+- `src/assets/Forms.webp`
+- `src/assets/Franchises-removebg-preview.webp`
+- `src/assets/gift-icon.svg`
+- `src/assets/hero-Account  Management.webp`
+- `src/assets/hero-Human  Resources.webp`
+- `src/assets/hero-Incident  Register.webp`
+- `src/assets/hero-Participants.webp`
+- `src/assets/hero-Payroll 2.webp`
+- `src/assets/hero-Performance  Management.webp`
+- `src/assets/hero-Roster  Management.webp`
+- `src/assets/hero-T Sign.webp`
+- `src/assets/Home___Community_Care-removebg-preview.webp`
+- `src/assets/ICT Industry.webp`
+- `src/assets/image-icon.svg`
+- `src/assets/image1.webp`
+- `src/assets/instagram.webp`
+- `src/assets/linkedin.webp`
+- `src/assets/location-icon.svg`
+- `src/assets/m.webp`
+- `src/assets/Manufacturing-removebg-preview.webp`
+- `src/assets/Manufacturing.webp`
+- `src/assets/mark_email.svg`
+- `src/assets/MelbourneExpo.webp`
+- `src/assets/menu.webp`
+- `src/assets/mobile_insets.webp`
+- `src/assets/Multi-site Businesses.webp`
+- `src/assets/NDIS Industry.webp`
+- `src/assets/ok.svg`
+- `src/assets/ompliance-removebg-preview.webp`
+- `src/assets/ourStory1.webp`
+- `src/assets/ourStory2.webp`
+- `src/assets/ourStory3.webp`
+- `src/assets/ourStory4.webp`
+- `src/assets/ourStory5.webp`
+- `src/assets/p1.webp`
+- `src/assets/p2.webp`
+- `src/assets/p3.webp`
+- `src/assets/p6.webp`
+- `src/assets/person.svg`
+- `src/assets/plus.svg`
+- `src/assets/popup-image1.webp`
+- `src/assets/popup-image2.webp`
+- `src/assets/popup-image3.webp`
+- `src/assets/popup-image4.webp`
+- `src/assets/popup-logo.webp`
+- `src/assets/pricing-background-6.webp`
+- `src/assets/pricing-star.webp`
+- `src/assets/Product Roster management.webp`
+- `src/assets/RCG-Logo_2[12038376].webp`
+- `src/assets/remove.webp`
+- `src/assets/Retail & Hospitality.webp`
+- `src/assets/REVANTH-CEO.webp`
+- `src/assets/REVANTH.webp`
+- `src/assets/Role Administrator.webp`
+- `src/assets/Role HR manager.webp`
+- `src/assets/Role NDIS staff.webp`
+- `src/assets/Role Participants.webp`
+- `src/assets/search.svg`
+- `src/assets/Sign in Sign out.webp`
+- `src/assets/Signin-background.webp`
+- `src/assets/signup.webp`
+- `src/assets/Small Businesses.webp`
+- `src/assets/star.webp`
+- `src/assets/Startups-removebg-preview.webp`
+- `src/assets/Team 1.webp`
+- `src/assets/tesseract_logo.webp`
+- `src/assets/tesseract_logo_small.webp`
+- `src/assets/text_format.svg`
+- `src/assets/thumbs/author-belle-thumb.webp`
+- `src/assets/thumbs/blog1-thumb.webp`
+- `src/assets/thumbs/blog2-thumb.webp`
+- `src/assets/thumbs/blog3-thumb.webp`
+- `src/assets/thumbs/Blog5Image3-thumb.webp`
+- `src/assets/thumbs/company-2-thumb.webp`
+- `src/assets/thumbs/expo-canberra1-thumb.webp`
+- `src/assets/thumbs/MelbourneExpo-thumb.webp`
+- `src/assets/thumbs/RCG-Logo-thumb.webp`
+- `src/assets/tick-black.svg`
+- `src/assets/tick-blue.svg`
+- `src/assets/Time_Efficiency-removebg-preview.webp`
+- `src/assets/V.webp`
+- `src/assets/white arrow.webp`
+- `src/assets/Why Manual Rostering Is Costing You More Than You Think.webp`
+- `src/assets/Why NDIS Providers Fail Compliance Audits in 2026 _ How to Fix It.webp`
+- `src/assets/youtube.webp`
+
+## In `public/` (3 unused images found)
+- `public/svg-logos/Full Logo White.svg`
+- `public/svg-logos/white-logo.svg`
+- `public/vite.svg`
