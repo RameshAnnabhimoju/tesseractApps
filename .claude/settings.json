@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls src/assets/*.webp src/assets/*.png)",
+      "Bash(xargs -I{} basename {})"
+    ]
+  }
+}

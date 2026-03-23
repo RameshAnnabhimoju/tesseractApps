@@ -6,10 +6,19 @@
  * Outputs go to src/assets/thumbs/ — import those in components instead of originals.
  */
 
-import sharp from "sharp";
 import { existsSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+
+// sharp is a devDependency — not installed in Vercel/AWS production builds.
+// Thumbs are committed to git so this script is a no-op when sharp is absent.
+let sharp;
+try {
+  sharp = (await import("sharp")).default;
+} catch {
+  console.log("gen-home-thumbs: sharp not available, skipping (thumbs are pre-committed).");
+  process.exit(0);
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const assetsDir = join(__dirname, "../src/assets");
