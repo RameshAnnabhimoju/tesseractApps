@@ -1,16 +1,19 @@
 /**
- * Sanity Seed Script — Capability Pages (9 documents)
+ * Sanity Seed Script — Capability Pages (19 documents)
  *
  * Usage:
  *   1. Add your write token to .env.local:
  *        SANITY_API_WRITE_TOKEN=skXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
  *   2. Run:
+ *        npm run seed:capabilities
+ *      or directly:
  *        node scripts/seed-capability-pages.mjs
  *
  * Notes:
  *   - Safe to run multiple times (uses _id-based upserts via createOrReplace)
- *   - relatedCapabilities use deterministic _id refs — all 9 docs must exist for refs to resolve
- *   - After seeding, visit /studio → Capability Page to review and adjust relatedCapabilities
+ *   - relatedCapabilities use deterministic _id refs — all docs must exist for refs to resolve
+ *   - Two-pass: Pass 1 creates all docs without relatedCapabilities, Pass 2 patches them
+ *   - Content is aligned to the Final Edition - March 2026 capability spec
  */
 
 import { createClient } from '@sanity/client'
@@ -76,531 +79,746 @@ function ref(id) {
   return { _key: key(), _type: 'reference', _ref: id }
 }
 
+function makeDoc({
+  id,
+  title,
+  slug,
+  navGroup,
+  order,
+  metaDescription,
+  heroHeading,
+  problem,
+  whatMattersMost,
+  howWeSolveThis,
+  whatYouGet,
+  isThisRightForYou,
+  related,
+}) {
+  return {
+    _id: id,
+    _type: 'capabilityPage',
+    title,
+    slug: { _type: 'slug', current: slug },
+    navGroup,
+    order,
+    heroHeading,
+    heroSubtitle: metaDescription,
+    problemStatement: problem,
+    whatMattersMost,
+    howWeSolveThis,
+    whatYouGet,
+    isThisRightForYou,
+    relatedCapabilities: related.map((r) => ref(r)),
+    seo: {
+      _type: 'seo',
+      metaTitle: `TesseractApps | ${title}`,
+      metaDescription,
+    },
+  }
+}
+
 // ---------------------------------------------------------------------------
-// ── CAPABILITY PAGES — 9 documents ──────────────────────────────────────────
+// Capability IDs (stable across re-runs)
+// ---------------------------------------------------------------------------
+
+const IDS = {
+  roster: 'capability-rostering-scheduling',
+  timesheets: 'capability-timesheets-payroll-alignment',
+  workforce: 'capability-workforce-management',
+  participant: 'capability-participant-management',
+  incidents: 'capability-incidents-sirs',
+  compliance: 'capability-compliance-audit-readiness',
+  claiming: 'capability-ndis-claiming-invoicing',
+  accounting: 'capability-accounting-financial-reporting',
+  dashboards: 'capability-dashboards-reporting',
+  clock: 'capability-clock-in-out',
+  portal: 'capability-staff-self-service-portal',
+  learning: 'capability-t-learning-hub',
+  chat: 'capability-chat-secure-messaging',
+  tsign: 'capability-t-sign-digital-signatures',
+  voice: 'capability-voice-notes',
+  quote: 'capability-quote-generator',
+  xero: 'capability-xero-integration',
+  workflow: 'capability-t-workflow-automation',
+  salesforce: 'capability-salesforce-native-architecture',
+}
+
+// ---------------------------------------------------------------------------
+// 19 Capability pages aligned to provided spec
 // ---------------------------------------------------------------------------
 
 const capabilityPages = [
-
-  // ── 1. Rostering & Scheduling ────────────────────────────────────────────
-  {
-    _id: 'capability-rostering-scheduling',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.roster,
     title: 'Rostering & Scheduling',
-    slug: { _type: 'slug', current: 'rostering-scheduling' },
+    slug: 'rostering-scheduling',
     navGroup: 'Workforce',
     order: 1,
+    metaDescription: 'NDIS Rostering & Scheduling Software | Auto-schedule by qualifications, manage SIL sleepovers, broadcast open shifts, enforce SCHADS rules.',
     heroHeading: 'Rostering That Actually Works for Disability Services.',
-    heroSubtitle: 'Auto-schedule by qualifications, fill gaps instantly, manage SIL sleepovers, and enforce SCHADS rules — without the spreadsheets.',
-    problemStatement: `A support worker calls in sick at 6am. You have 23 shifts to cover across 4 sites. Your roster is a spreadsheet. Your qualification records are in a filing cabinet. You have 90 minutes.
-
-This is the daily reality for most NDIS roster managers. The problem isn't effort — it's that the tools they're using weren't built for disability services. They were built for hospitality, retail, or generic shift work. NDIS rostering has credential requirements, participant matching rules, SCHADS Award obligations, SIL sleepover classifications, and last-minute complexity that generic tools simply cannot handle.
-
-The result: overtime, compliance exposure, staff burnout, and participant continuity breakdowns.`,
+    problem: 'A support worker calls in sick at 6am. You are working through a contact list while cross-referencing qualifications in one system, availability in another, and Award rules in your head. Meanwhile, a shift is uncovered.',
     whatMattersMost: [
-      'Every shift filled by a qualified, credentialed support worker — automatically',
+      'Every shift filled by a qualified, credentialed support worker automatically',
       'SIL sleepovers and active nights managed without spreadsheet gymnastics',
+      'Open shifts filled in minutes, not hours of phone calls',
       'SCHADS Award rules enforced at the point of scheduling, not discovered at payroll',
-      'Broadcast open shifts to available, qualified workers instantly',
-      'Participant preferences and support worker history respected in every assignment',
-      'Roster changes trigger real-time notifications — no phone trees required',
+      'Cross-facility coverage that does not rely on one coordinator memory',
     ],
-    howWeSolveThis: `TesseractApps auto-schedules by matching participants to support workers based on qualifications, availability, participant preferences, and SCHADS obligations — before a roster manager even looks at the screen.
-
-When a shift gap opens, the system identifies qualified, available workers and broadcasts the open shift immediately. Managers approve or adjust. Workers confirm from the app. The roster is live.
-
-SIL sleepovers and active night shifts are classified correctly at the point of creation — not reinterpreted at payroll. SCHADS rules are embedded in the scheduling engine, not enforced afterwards. Credential expiry warnings surface before a credentialed worker is rostered, not after they've already worked the shift.`,
+    howWeSolveThis: 'TesseractApps matches participants to support workers based on qualifications, availability, location, and preferences. Open shifts broadcast instantly to eligible workers on mobile. SIL rosters handle sleepovers, active nights, and handover periods as native shift types. SCHADS rules run in the background and flag overtime triggers before publish.',
     whatYouGet: [
-      'Auto-scheduling engine matched to qualifications, availability, and participant needs',
-      'Open shift broadcast with instant worker notification and app-based confirmation',
-      'SIL sleepover and active night classification built into the scheduling flow',
-      'SCHADS Award engine — penalty rates, break rules, and overtime enforced at scheduling',
-      'Credential expiry tracking with pre-scheduling warnings',
-      'Participant preference profiles linked to roster assignments',
-      'Real-time roster change notifications for all affected workers',
-      'Multi-site roster visibility from a single dashboard',
+      'Auto-scheduling engine matched to credentials and participant needs',
+      'SIL roster templates with sleepover, active night, and handover management',
+      'Open shift broadcasting to qualified workers via mobile app',
+      'Credential gate with no valid credential no shift assignment',
+      'Cross-facility views for multi-site workforce pools',
+      'SCHADS compliance layer for minimum engagements, overtime caps, break rules',
+      'Drag and drop roster builder for manual adjustments',
+      'Participant preference matching for continuity of support',
     ],
     isThisRightForYou: [
       'You spend more than 2 hours per week manually filling roster gaps',
-      'You have had a compliance incident because a worker lacked current credentials',
-      'Your roster is built in a spreadsheet or a generic scheduling tool',
-      'You manage SIL or overnight shifts and tracking classifications is manual',
-      'Workers regularly find out about roster changes by phone or text message',
+      'SIL sleepovers create payroll headaches every fortnight',
+      'You have had a shift covered by a worker missing a required credential',
+      'Your roster coordinator is the single point of failure for scheduling',
+      'You run services across multiple sites with a shared workforce',
     ],
-    relatedCapabilities: [
-      ref('capability-timesheets-payroll'),
-      ref('capability-workforce-management'),
-      ref('capability-compliance-audit'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Rostering & Scheduling Software | TesseractApps',
-      metaDescription: 'Auto-schedule by qualifications, manage SIL sleepovers, broadcast open shifts, and enforce SCHADS rules. Built for NDIS disability support providers.',
-    },
-  },
+    related: [IDS.timesheets, IDS.workforce, IDS.compliance],
+  }),
 
-  // ── 2. Timesheets & Payroll Alignment ────────────────────────────────────
-  {
-    _id: 'capability-timesheets-payroll',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.timesheets,
     title: 'Timesheets & Payroll Alignment',
-    slug: { _type: 'slug', current: 'timesheets-payroll' },
+    slug: 'timesheets-payroll-alignment',
     navGroup: 'Workforce',
     order: 2,
-    heroHeading: 'Timesheets That Feed Payroll Correctly. Every Time.',
-    heroSubtitle: 'Connect rostered hours to worked hours to payroll-ready data — with SCHADS Award classification built in, not bolted on.',
-    problemStatement: `Payroll errors in disability services are not calculation mistakes. They are classification mistakes. A sleepover processed as an active shift. A Saturday shift paid at the wrong SCHADS penalty rate. A casual worker's hours miscategorised because the timesheet system didn't know they were employed under the Social, Community, Home Care and Disability Services Industry Award.
-
-Most providers are running timesheets in one system, SCHADS classification in someone's head, and payroll in a third platform. The reconciliation happens in a spreadsheet. The errors surface at month end — or at an audit.`,
+    metaDescription: 'Geo-verified clock-ins, built-in SCHADS Award interpretation, and 3-layer reconciliation eliminate manual timesheet calculations.',
+    heroHeading: 'Stop Calculating SCHADS by Hand.',
+    problem: 'Your payroll officer manually interprets casual loadings, overtime thresholds, sleepover rates, broken shift allowances, and public holiday penalties every pay run. One miscalculation creates underpayment or overpayment risk.',
     whatMattersMost: [
-      'Timesheets that automatically inherit SCHADS classification from the rostered shift',
-      'Worked hours compared to rostered hours with variance flagging before approval',
-      'Bulk timesheet approval without losing individual audit trail',
-      'Clock-in/out data feeding timesheet records with geolocation verification',
-      'Payroll export that maps directly to your payroll platform without manual translation',
-      'Leave management integrated into timesheet calculations',
+      'SCHADS Award rates calculated automatically including loadings and penalties',
+      'Every clock-in verified by GPS so timesheets reflect reality',
+      'Roster hours reconciled against timesheet hours before payroll runs',
+      'Payroll data flows to payroll systems without rekeying',
+      'Discrepancies surfaced before they become underpayment claims',
     ],
-    howWeSolveThis: `In TesseractApps, a timesheet is not a separate record — it is the worked record of a rostered shift. When a shift is created with a SCHADS classification, that classification carries through to the timesheet and into the payroll export. There is no re-entry, no manual mapping, no interpretation layer.
-
-Worked hours are compared to rostered hours automatically. Variances over a configurable threshold surface for manager review before the timesheet is approved. Clock-in and clock-out data from the mobile app reconciles against the rostered shift in real time.
-
-At payroll run, a clean, mapped export feeds your payroll system. SCHADS penalty rates, leave entitlements, and ordinary hour classifications are already resolved.`,
+    howWeSolveThis: 'Support workers clock in and out on mobile. GPS confirms location. The system applies SCHADS rules automatically and identifies broken shifts, sleepover allowances, and loadings. Before payroll, 3-layer reconciliation compares rostered and worked hours, flags variances, and requires exception sign-off.',
     whatYouGet: [
-      'SCHADS-aware timesheet generation from rostered shift data',
-      'Rostered vs worked hours variance detection and flagging',
-      'Bulk timesheet approval with individual audit trail preservation',
-      'Mobile clock-in/out integration with GPS verification',
-      'Leave management integrated into timesheet calculations',
-      'Payroll-ready export mapped to your payroll platform',
-      'Overtime and penalty rate visibility before payroll run',
-      'Fortnightly and weekly payroll cycle support',
+      'Geo-verified mobile clock in and out with configurable location radius',
+      'Full SCHADS Award engine including sleepover and broken shift support',
+      '3-layer reconciliation from roster to timesheet to claim to payment',
+      'Automated exception flagging for early starts, late finishes, and missed breaks',
+      'Direct payroll connection without CSV rekeying',
+      'Approval workflows with delegation',
+      'Historical audit trail for timesheet changes and overrides',
     ],
     isThisRightForYou: [
-      'Your payroll team spends hours reconciling timesheets to rostered shifts each pay run',
-      'You have had SCHADS classification errors surface at payroll or audit',
-      'Timesheets and rostering live in separate systems with no automatic connection',
-      'Your payroll export requires manual reformatting before it can be imported',
-      'You have no automatic way to detect when a worker\'s hours don\'t match their roster',
+      'Payroll spends more than a day per fortnight on manual SCHADS calculations',
+      'You have had underpayment risk or concern',
+      'Support workers submit paper or unverified timesheets',
+      'Timesheet discrepancies appear after payroll already runs',
     ],
-    relatedCapabilities: [
-      ref('capability-rostering-scheduling'),
-      ref('capability-workforce-management'),
-      ref('capability-ndis-claiming'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Timesheets & Payroll Alignment Software | TesseractApps',
-      metaDescription: 'SCHADS-aware timesheets connected directly to rostering and payroll. Variance detection, bulk approval, and clean payroll export for NDIS providers.',
-    },
-  },
+    related: [IDS.roster, IDS.claiming, IDS.accounting],
+  }),
 
-  // ── 3. Workforce Management ───────────────────────────────────────────────
-  {
-    _id: 'capability-workforce-management',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.workforce,
     title: 'Workforce Management',
-    slug: { _type: 'slug', current: 'workforce-management' },
+    slug: 'workforce-management',
     navGroup: 'Workforce',
     order: 3,
-    heroHeading: 'Your Entire Workforce. One Platform. Full Visibility.',
-    heroSubtitle: 'Staff records, credential tracking, leave management, recruitment, and HR operations — unified so nothing falls through the cracks.',
-    problemStatement: `The average NDIS provider manages a workforce that is 60–80% casual and part-time. Staff come and go. Credentials expire. Leave balances accumulate. Onboarding is ad-hoc. Training compliance is tracked in spreadsheets or not at all.
-
-The consequence is not just administrative — it is operational. An expired Working With Children Check isn't discovered until the worker is already rostered. A leave request is approved without checking the roster impact. A new starter goes live in the system before their police check clears.
-
-Workforce management in disability services requires a connected view of every worker record, qualification, availability, and operational status — not a collection of disconnected spreadsheets.`,
+    metaDescription: 'Manage the full support worker lifecycle including onboarding, credentials, leave, training compliance, and expiry alerts.',
+    heroHeading: 'Your Workforce, Under Control.',
+    problem: 'A support worker with an expired first aid certificate is a compliance risk. A support worker you do not know has an expired first aid certificate is a crisis waiting to happen. With workers across sites, manual tracking guarantees something slips.',
     whatMattersMost: [
-      'Every worker\'s credential status visible before they are rostered',
-      'Onboarding checklists that enforce compliance gates before system access is granted',
-      'Leave requests that show roster impact at the point of submission',
-      'Credential expiry alerts that surface with enough lead time to act',
-      'Recruitment pipeline tracked from application through to first roster',
-      'Training completion linked directly to credential records',
+      'Every credential tracked with automated expiry alerts at 90 days, 30 days, and expiry',
+      'Onboarding workflows that get support workers job-ready faster',
+      'Leave balances and availability visible to roster coordinators in real time',
+      'Training compliance monitored across the workforce',
+      'One profile per worker with qualifications, training, incidents, and performance',
     ],
-    howWeSolveThis: `TesseractApps maintains a single worker record that connects qualifications, availability, leave, roster history, and operational status. Every time a worker is rostered, the system checks their credential status in real time. Expired credentials block scheduling — not after the fact, at the point of entry.
-
-Onboarding checklists are configurable and gate-controlled. A new worker cannot be rostered until their compliance requirements are met. Leave requests are submitted through the app and show the approving manager exactly which shifts are affected before approval.
-
-Credential expiry alerts fire at configurable lead times. Training completions from the integrated LMS update credential records automatically.`,
+    howWeSolveThis: 'TesseractApps manages the support worker lifecycle in a single profile. Onboarding workflows guide document submission, verification, and mandatory training. Alerts notify managers before credentials expire and prevent rostering with lapsed credentials. Leave integrates with rostering to block availability automatically.',
     whatYouGet: [
-      'Centralised worker records with real-time credential and availability status',
-      'Configurable onboarding checklists with compliance gates before rostering access',
-      'Leave management integrated with roster impact visibility',
-      'Credential expiry alerts at configurable lead times',
-      'Recruitment pipeline from job posting through to onboarding',
-      'Training completion integration with credential record updates',
-      'Worker performance tracking and shift history',
-      'Role-based access controls for manager and worker-level permissions',
+      'Centralised worker profiles with qualifications and credential history',
+      'Automated credential expiry alerts at 90 day, 30 day, and expiry milestones',
+      'Configurable onboarding workflows with document upload and verification',
+      'Leave management integrated with rostering and availability',
+      'Training compliance tracking with completion and renewal reminders',
+      'Qualification matrix showing workforce coverage gaps',
+      'Bulk credential reporting for audit preparation',
     ],
     isThisRightForYou: [
-      'You have discovered an expired credential only after the worker was already rostered',
-      'Your onboarding process has no system-level compliance gates',
-      'Leave requests are approved without visibility of roster impact',
-      'Credential tracking is managed in a spreadsheet outside your main system',
-      'You have no automated way to track training completions against credential requirements',
+      'You track credentials in spreadsheets or shared drives',
+      'A lapsed credential has slipped through to a participant-facing shift',
+      'Onboarding a new support worker takes more than a week of admin effort',
+      'You cannot produce a credential compliance report in under five minutes',
     ],
-    relatedCapabilities: [
-      ref('capability-rostering-scheduling'),
-      ref('capability-timesheets-payroll'),
-      ref('capability-compliance-audit'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Workforce Management Software | TesseractApps',
-      metaDescription: 'Manage staff records, credentials, leave, onboarding, and recruitment in one platform. Built for NDIS disability support providers.',
-    },
-  },
+    related: [IDS.roster, IDS.compliance, IDS.dashboards],
+  }),
 
-  // ── 4. Participant Management ─────────────────────────────────────────────
-  {
-    _id: 'capability-participant-management',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.clock,
+    title: 'Clock In/Out',
+    slug: 'clock-in-out',
+    navGroup: 'Workforce',
+    order: 4,
+    metaDescription: 'GPS-verified mobile clock in and out for NDIS support workers with accurate time capture at point of service.',
+    heroHeading: 'Know Exactly When and Where Every Shift Starts',
+    problem: 'Support workers arrive at participant locations, but you have no way to verify when they arrived, where they were, or whether the shift matched the roster. Paper timesheets create disputes and unverified hours create payroll risk.',
+    whatMattersMost: [
+      'GPS-verified clock in and out at participant locations',
+      'Real-time visibility of who is on shift and where',
+      'Automatic flagging of early starts, late finishes, and no-shows',
+      'Seamless connection to timesheets and payroll',
+      'Configurable geofence radius for different service types',
+    ],
+    howWeSolveThis: 'Support workers clock in and out on mobile. GPS verifies they are at the correct participant location. Exact start and end times create an auditable shift record. Variances from rostered shifts are flagged for review and data flows directly to timesheets without manual entry.',
+    whatYouGet: [
+      'Mobile clock in and out with GPS location verification',
+      'Configurable geofence radius by participant or site',
+      'Real-time shift status dashboard for coordinators',
+      'Automatic variance detection for early starts, late finishes, and missed clock-ins',
+      'Offline mode with sync when connectivity returns',
+      'Direct integration with timesheets and payroll processing',
+      'Photo verification option for high-security environments',
+    ],
+    isThisRightForYou: [
+      'Support workers submit paper or unverified digital timesheets',
+      'You cannot confirm whether a worker was at the participant location during a shift',
+      'Timesheet disputes consume coordinator time every pay cycle',
+      'You need GPS evidence for audit or plan manager reporting',
+    ],
+    related: [IDS.timesheets, IDS.roster, IDS.workforce],
+  }),
+
+  makeDoc({
+    id: IDS.portal,
+    title: 'Staff Self-Service Portal',
+    slug: 'staff-self-service-portal',
+    navGroup: 'Workforce',
+    order: 5,
+    metaDescription: 'Empower support workers with shift visibility, document uploads, leave requests, and credential management from one portal.',
+    heroHeading: 'Give Your Team the Tools to Manage Themselves',
+    problem: 'Support workers call the office for shift details, leave balances, payslip queries, and credential renewals. Every call pulls coordinators from higher-value work. Workers feel disconnected and coordinators feel overwhelmed.',
+    whatMattersMost: [
+      'Support workers can view upcoming shifts and availability',
+      'Leave requests submitted and approved without calls or email chains',
+      'Credential and document uploads managed directly by workers',
+      'Payslip and timesheet visibility without admin involvement',
+      'Reduced routine administrative burden on office staff',
+    ],
+    howWeSolveThis: 'The Staff Self-Service Portal gives each support worker one place to manage schedule, leave, credentials, timesheets, and notifications from mobile. Coordinators handle exceptions instead of routine inquiries.',
+    whatYouGet: [
+      'Personal dashboard with upcoming shifts and schedule changes',
+      'Leave request submission and approval tracking',
+      'Credential and document upload with expiry notifications',
+      'Timesheet review and approval visibility',
+      'Shift swap requests with qualification validation',
+      'Push notifications for roster changes, approvals, and reminders',
+      'Availability management linked to rostering',
+    ],
+    isThisRightForYou: [
+      'Support workers regularly contact the office for basic schedule information',
+      'Leave requests are managed through email, text, or phone calls',
+      'Credential renewals require admin staff to chase workers',
+      'You want to reduce routine administrative workload on coordinators',
+    ],
+    related: [IDS.workforce, IDS.roster, IDS.clock],
+  }),
+
+  makeDoc({
+    id: IDS.learning,
+    title: 'T Learning Hub',
+    slug: 't-learning-hub',
+    navGroup: 'Workforce',
+    order: 6,
+    metaDescription: 'Mandatory training, compliance courses, and professional development for support workers tracked and linked to credentials.',
+    heroHeading: 'Training That Tracks Itself',
+    problem: 'Workers need mandatory training, but completion, expiry, and evidence are often scattered across spreadsheets, inboxes, and folders. That creates exposure during rostering and audits.',
+    whatMattersMost: [
+      'Mandatory training assigned and tracked to completion',
+      'Training completion linked directly to credential records',
+      'Automated reminders before training expires',
+      'Central library of compliance and development content',
+      'Training evidence available instantly for audits',
+    ],
+    howWeSolveThis: 'T Learning Hub centralises course assignment, completion, and expiry tracking by role and service type. Completion updates credential profiles automatically. Managers get an at-a-glance training compliance view.',
+    whatYouGet: [
+      'Centralised training library with mandatory and optional courses',
+      'Role-based training assignment by position and service type',
+      'Automatic credential update on course completion',
+      'Training expiry alerts at configurable intervals',
+      'Compliance dashboard showing workforce training status',
+      'Support for video, document, and assessment-based training',
+      'Audit-ready training records with completion evidence',
+    ],
+    isThisRightForYou: [
+      'You track training completion in spreadsheets or shared drives',
+      'A worker has been rostered without completing mandatory training',
+      'You cannot produce a workforce training compliance report in under five minutes',
+      'Training records are not linked to credential or rostering systems',
+    ],
+    related: [IDS.workforce, IDS.compliance, IDS.portal],
+  }),
+
+  makeDoc({
+    id: IDS.participant,
     title: 'Participant Management',
-    slug: { _type: 'slug', current: 'participant-management' },
+    slug: 'participant-management',
     navGroup: 'Participant & Care',
     order: 1,
-    heroHeading: 'Every Participant. Every Plan. One Complete Record.',
-    heroSubtitle: 'Participant profiles, support plans, goal tracking, case notes, and NDIS budget visibility — connected and accessible from anywhere.',
-    problemStatement: `Participant records in most NDIS providers are fragmented. The support plan is in a PDF. The case notes are in a separate system. The NDIS budget is tracked in a spreadsheet. The risk assessment is in a filing cabinet. The support worker going to the shift has access to none of it.
-
-This fragmentation creates safety risk and compliance exposure. When a participant's support needs change, the update may reach the care coordinator but not the support worker. When an NDIS audit requests a complete participant record, it has to be assembled from four different places.
-
-Good participant management is not about storing more data — it is about making the right data available to the right person at the right time.`,
+    metaDescription: 'Centralised participant profiles, care plans, goal tracking, progress notes, funding balances, and support requests in one audit-ready system.',
+    heroHeading: 'Every Participant. Every Detail. One Place.',
+    problem: 'Participant information is scattered across emails, paper files, care planning tools, and billing systems that do not connect. Coordinators spend hours searching for information that should be immediately available.',
     whatMattersMost: [
-      'A single participant record that support workers, coordinators, and managers all work from',
-      'Support plans and care instructions accessible to the assigned support worker on shift',
-      'NDIS budget tracking that shows remaining funds in real time',
-      'Goal tracking that captures progress against NDIS plan goals over time',
-      'Case notes that are structured, searchable, and attached to the participant record',
-      'Risk assessments and behaviour support plans visible before a shift begins',
+      'Complete participant profile from referral to goals and funding balances',
+      'Service agreements and support plans accessible in one workspace',
+      'Progress notes structured for compliance and linked to goals',
+      'Real-time funding balance visibility by support category',
+      'Support requests and case notes creating continuous audit-ready records',
     ],
-    howWeSolveThis: `TesseractApps creates a single participant record that connects every touchpoint: support plan, goals, case notes, risk assessments, budget tracking, shift history, and incident records. Every support worker assigned to a participant sees the information relevant to their role — no more, no less.
-
-Case notes are structured for searchability and compliance. Budget tracking is automatic — as service agreements are delivered and invoices raised, the remaining NDIS budget updates in real time. Goal progress is captured through structured note types that map directly to NDIS plan goals.
-
-When an audit occurs, the complete participant record is assembled and exportable from a single location.`,
+    howWeSolveThis: 'TesseractApps gives each participant a single comprehensive profile. Care plans, goals, notes, and budgets are connected. Funding balances update as services are delivered and claimed, giving coordinators real-time budget visibility.',
     whatYouGet: [
-      'Unified participant profiles with support plans, goals, and risk assessments',
-      'Role-appropriate participant record access for support workers, coordinators, and managers',
-      'NDIS budget tracking with real-time remaining funds visibility',
-      'Structured case notes linked to participant goals and shift records',
-      'Risk assessment and behaviour support plan access before shift commencement',
-      'Goal progress tracking aligned to NDIS plan objectives',
-      'Audit-ready participant record export',
-      'Participant app access for goal tracking and communication',
+      'Centralised participant profiles from referral through ongoing support',
+      'Care plan and goal management with progress tracking',
+      'Structured progress notes linked to funding categories and outcomes',
+      'Real-time funding visibility by support category and plan period',
+      'Service agreement management with delivery tracking',
+      'Document storage with version control and access permissions',
+      'Audit-ready records with timestamped and attributed entries',
     ],
     isThisRightForYou: [
-      'Support workers go to shifts without access to current care instructions or risk assessments',
-      'Your NDIS budget tracking happens in a spreadsheet outside your main system',
-      'Case notes are stored in a system separate from the participant profile',
-      'Assembling a complete participant record for an audit takes significant manual effort',
-      'Goal progress is not systematically captured in a way that maps to the NDIS plan',
+      'Participant information lives in more than two systems',
+      'Coordinators cannot check funding balance without finance intervention',
+      'Progress notes are not consistently linked to participant goals',
+      'Preparing for a plan review takes more than an hour of collation',
     ],
-    relatedCapabilities: [
-      ref('capability-incidents-sirs'),
-      ref('capability-compliance-audit'),
-      ref('capability-ndis-claiming'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Participant Management Software | TesseractApps',
-      metaDescription: 'Unified participant records with support plans, goal tracking, NDIS budget visibility, and structured case notes. Built for NDIS disability support providers.',
-    },
-  },
+    related: [IDS.incidents, IDS.claiming, IDS.compliance],
+  }),
 
-  // ── 5. Incidents & SIRS ───────────────────────────────────────────────────
-  {
-    _id: 'capability-incidents-sirs',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.incidents,
     title: 'Incidents & SIRS',
-    slug: { _type: 'slug', current: 'incidents-sirs' },
+    slug: 'incidents-sirs',
     navGroup: 'Participant & Care',
     order: 2,
-    heroHeading: 'Incident Reporting That Meets NDIS Practice Standards.',
-    heroSubtitle: 'Capture, classify, escalate, and report incidents with built-in SIRS compliance — so nothing is missed and no deadline is breached.',
-    problemStatement: `The NDIS Commission's Serious Incident Response Scheme (SIRS) requires registered providers to report certain incidents within 24 hours. Others must be reported within 5 days. The classification of which incidents are reportable, and within what timeframe, is not always straightforward — and the consequences of getting it wrong range from regulatory action to registration suspension.
-
-Most providers manage incident reporting through a combination of email, paper forms, and manual tracking in spreadsheets. When an incident occurs on a Friday afternoon, the classification decision and notification chain often falls to whoever is available — not whoever has the right information.
-
-The result is late notifications, misclassified incidents, and audit findings that should have been preventable.`,
+    metaDescription: 'Mobile incident logging, automatic SIRS classification, escalation workflows, CAPA management, and NDIS Commission reporting support.',
+    heroHeading: 'Never Miss a SIRS Deadline Again.',
+    problem: 'A support worker witnesses an incident in the evening, records it on paper, and it reaches a coordinator days later. By then, the 24-hour reporting window may be closed.',
     whatMattersMost: [
-      'Incidents classified at the point of entry against NDIS SIRS categories',
-      'Automatic escalation workflows triggered by incident classification',
-      'Reporting deadlines tracked and visible — 24-hour and 5-day thresholds surfaced',
-      'Support worker incident reporting from mobile app, not a paper form',
-      'Manager review and sign-off workflow built into the incident record',
-      'Audit-ready incident register exportable in NDIS Commission format',
+      'Incidents captured at point of occurrence on mobile with guided prompts',
+      'SIRS classification applied automatically based on type and severity',
+      'Reportable incidents escalated immediately to the right people',
+      'Investigations tracked from assignment through CAPA completion',
+      'Complete incident register ready for NDIS Commission expectations',
     ],
-    howWeSolveThis: `TesseractApps guides the person lodging an incident through a classification workflow at the point of entry. Based on the incident type and participant impact, the system assigns the correct SIRS category and triggers the appropriate notification chain.
-
-Reporting deadlines are tracked from the moment the incident is classified. A 24-hour reportable incident surfaces with a visible countdown to the compliance deadline. Managers and compliance leads receive automatic notifications aligned to the escalation workflow.
-
-The incident register is always current, exportable, and structured for NDIS Commission reporting. When an audit occurs, the incident history for any participant or worker is available immediately — not assembled from email threads.`,
+    howWeSolveThis: 'Support workers log incidents immediately on mobile. The system classifies each incident against SIRS categories, determines reportability, and triggers escalation workflows. Managers are notified instantly and investigation workflows manage root cause and CAPA completion.',
     whatYouGet: [
-      'SIRS-aligned incident classification at point of entry',
-      'Automatic escalation workflows triggered by incident type and severity',
-      'Reporting deadline tracking — 24-hour and 5-day thresholds with visible countdowns',
-      'Mobile incident reporting for support workers in the field',
-      'Manager review and sign-off workflow within the incident record',
-      'Incident register always current and exportable for NDIS Commission reporting',
-      'Incident trend analysis and reporting for quality improvement',
-      'Participant-level and worker-level incident history',
+      'Mobile incident logging with guided fields and severity classification',
+      'Automatic SIRS alignment identifying reportable incidents',
+      'Escalation engine with configurable notification rules',
+      'Investigation workflows with assignment and evidence collection',
+      'CAPA management tracked to completion',
+      'Incident analytics for trends and repeat events',
+      'NDIS Commission reporting support with submission-aligned outputs',
     ],
     isThisRightForYou: [
-      'You have missed a SIRS reporting deadline or are not confident you have correctly classified all reportable incidents',
-      'Incident reports are currently captured on paper or via email',
-      'Your incident register is maintained separately from your participant and worker records',
-      'You have no automatic escalation workflow when a serious incident is lodged',
-      'Preparing an incident summary for an audit requires manual collation from multiple sources',
+      'You have missed or nearly missed a 24-hour reporting deadline',
+      'Incident reports arrive days after the event',
+      'Investigation outcomes and CAPA actions are tracked in email or spreadsheets',
+      'Your SIRS process depends on individual knowledge rather than system guidance',
     ],
-    relatedCapabilities: [
-      ref('capability-participant-management'),
-      ref('capability-compliance-audit'),
-      ref('capability-dashboards-reporting'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Incident Reporting & SIRS Compliance Software | TesseractApps',
-      metaDescription: 'SIRS-aligned incident classification, automatic escalation, and reporting deadline tracking. Audit-ready incident register for NDIS registered providers.',
-    },
-  },
+    related: [IDS.compliance, IDS.participant, IDS.dashboards],
+  }),
 
-  // ── 6. Compliance & Audit Readiness ──────────────────────────────────────
-  {
-    _id: 'capability-compliance-audit',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.compliance,
     title: 'Compliance & Audit Readiness',
-    slug: { _type: 'slug', current: 'compliance-audit' },
+    slug: 'compliance-audit-readiness',
     navGroup: 'Participant & Care',
     order: 3,
-    heroHeading: 'Always Audit Ready. Not Just Before the Auditor Arrives.',
-    heroSubtitle: 'Compliance evidence is generated by your daily operations — not assembled in a panic when the NDIS Commission announces a review.',
-    problemStatement: `NDIS audits do not fail because providers are not trying to comply. They fail because compliance evidence is fragmented, manual, or assembled under pressure. The evidence that an auditor needs — credential records, incident logs, participant support plans, shift notes, policy acknowledgements — exists somewhere in the organisation. Retrieving it, formatting it, and presenting it coherently under a two-week audit timeline is a crisis management exercise, not a business process.
-
-The NDIS Practice Standards require evidence of systematic compliance across 27 quality indicators. Most providers can demonstrate intent. Far fewer can demonstrate systematic, documented compliance across all 27 — because the systems generating that evidence were never designed to talk to each other.`,
+    metaDescription: 'Embedded credential tracking, documentation integrity, approval workflows, and comprehensive audit trails keep providers continuously audit-ready.',
+    heroHeading: 'Audit-Ready Every Day, Not Just Audit Week.',
+    problem: 'Providers may be compliant most of the time, but proving it under audit means pulling records from multiple systems, chasing verbal approvals, and hoping nothing slipped through.',
     whatMattersMost: [
-      'Compliance evidence generated automatically by operational activity — not assembled retrospectively',
-      'NDIS Practice Standards mapped to operational processes so gaps are visible in advance',
-      'Credential and policy acknowledgement tracking with audit-ready export',
-      'Incident, complaint, and feedback records structured for auditor review',
-      'Support plans and risk assessments version-controlled and timestamped',
-      'Audit mode — a single export that packages all required evidence by quality indicator',
+      'Credential compliance visible in real time',
+      'Every document change tracked with who, what, when, and why',
+      'Approval workflows enforcing sign-off before actions take effect',
+      'Continuous compliance monitoring replacing audit scramble preparation',
+      'Evidence trails that exist because the system generates them automatically',
     ],
-    howWeSolveThis: `TesseractApps generates compliance evidence as a by-product of daily operations. Every shift note, incident record, credential check, timesheet approval, and case note is timestamped, attributed, and stored in an audit-ready format.
-
-The NDIS Practice Standards framework is mapped within the platform. Compliance indicators are tracked against operational activity — not against a separate checklist. Gaps surface before an audit, not during one.
-
-When an audit is scheduled, the audit export packages evidence by quality indicator. Credential records, incident registers, participant records, and policy acknowledgements are formatted for auditor review without manual assembly.`,
+    howWeSolveThis: 'Compliance in TesseractApps is embedded across operations. Credential checks occur at rostering. Timesheet approvals create trails automatically. Incident workflows enforce escalation. Document changes are versioned and attributed. Audits retrieve evidence rather than assembling it.',
     whatYouGet: [
-      'NDIS Practice Standards compliance framework mapped to operational processes',
-      'Compliance gap visibility — indicators tracked against live operational activity',
-      'Automated credential, policy, and training acknowledgement tracking',
-      'Timestamped, attributed records for every operational action',
-      'Audit export packaged by quality indicator — no manual assembly',
-      'Version-controlled support plans and risk assessments',
-      'Complaint and feedback register structured for audit review',
-      'Compliance dashboard showing status across all 27 NDIS quality indicators',
+      'Embedded credential tracking across rostering, workforce, and participant management',
+      'Documentation integrity with version control and timestamp validation',
+      'Configurable approval workflows for timesheets, incidents, service changes, and spend',
+      'Comprehensive audit trails generated through normal operations',
+      'Compliance dashboards showing real-time status across credentials and documentation',
+      'Bulk evidence export for audit submissions',
     ],
     isThisRightForYou: [
-      'You have experienced an audit finding that you believe was preventable',
-      'Preparing evidence for an NDIS audit currently takes weeks of manual work',
-      'You are not confident you could evidence compliance across all 27 NDIS Practice Standards quality indicators today',
-      'Credential, incident, and participant records are stored in different systems',
-      'Your compliance monitoring is reactive rather than continuous',
+      'Audit preparation consumes more than a week of senior staff time',
+      'You have had preventable audit findings',
+      'Compliance monitoring between audits is manual or inconsistent',
+      'You operate high-scrutiny services such as SIL and restrictive practices',
     ],
-    relatedCapabilities: [
-      ref('capability-incidents-sirs'),
-      ref('capability-participant-management'),
-      ref('capability-dashboards-reporting'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Compliance & Audit Readiness Software | TesseractApps',
-      metaDescription: 'Continuous compliance evidence generated by daily operations. NDIS Practice Standards mapped to processes. Audit-ready export for registered providers.',
-    },
-  },
+    related: [IDS.workforce, IDS.incidents, IDS.participant],
+  }),
 
-  // ── 7. NDIS Claiming & Invoicing ──────────────────────────────────────────
-  {
-    _id: 'capability-ndis-claiming',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.chat,
+    title: 'ChaT - Secure Messaging',
+    slug: 'chat-secure-messaging',
+    navGroup: 'Participant & Care',
+    order: 4,
+    metaDescription: 'NDIS-compliant secure messaging between support workers, coordinators, and teams without unmanaged consumer apps.',
+    heroHeading: 'Operational Messaging That Stays on the Record',
+    problem: 'Teams use consumer messaging and personal email for operational decisions. Participant information ends up in channels without auditability or platform control.',
+    whatMattersMost: [
+      'Secure auditable messaging for operational communication',
+      'Participant information remains in a controlled platform',
+      'Group messaging by team, site, or service type',
+      'Communication linked to shifts, participants, and incidents',
+      'No reliance on personal messaging apps for work operations',
+    ],
+    howWeSolveThis: 'ChaT provides secure encrypted operational messaging linked to relevant records inside TesseractApps. Team channels organise communication by site and service function with searchable audit trails.',
+    whatYouGet: [
+      'Encrypted one-to-one and group messaging',
+      'Team channels by site, service type, and function',
+      'Message linking to shifts, participants, and incident records',
+      'File and image sharing within the secure platform',
+      'Read receipts and delivery confirmation',
+      'Message search and retrieval for audit purposes',
+      'Mobile and desktop access',
+    ],
+    isThisRightForYou: [
+      'Your team uses personal messaging for operational communication',
+      'Participant-sensitive information is shared on uncontrolled platforms',
+      'You cannot retrieve communication records during investigations',
+      'You need auditable communication trails for compliance',
+    ],
+    related: [IDS.compliance, IDS.incidents, IDS.portal],
+  }),
+
+  makeDoc({
+    id: IDS.tsign,
+    title: 'T-Sign - Digital Signatures',
+    slug: 't-sign-digital-signatures',
+    navGroup: 'Participant & Care',
+    order: 5,
+    metaDescription: 'Collect legally binding digital signatures on service agreements, consent forms, and compliance documents without paper workflows.',
+    heroHeading: 'Signatures Without the Paper Chase',
+    problem: 'Service agreements and consents sit in inboxes waiting to be printed, signed, scanned, and filed. Version control is inconsistent and signature collection is slow.',
+    whatMattersMost: [
+      'Service agreements and consent forms signed digitally',
+      'Signature requests sent and tracked within the platform',
+      'Signed documents automatically filed against participant or worker records',
+      'Version control ensuring correct document versions are signed',
+      'Legal validity equivalent to wet signatures',
+    ],
+    howWeSolveThis: 'T-Sign sends signature requests directly from participant and worker records. Signed documents are timestamped, filed automatically, and linked to the source record for retrieval and audit.',
+    whatYouGet: [
+      'Digital signature collection on agreements, consent, and policy documents',
+      'Signature requests from participant and worker profiles',
+      'Automatic filing to relevant records on completion',
+      'Signature tracking for pending, completed, and overdue items',
+      'Multi-party signing support',
+      'Legally compliant signatures with full audit trail',
+      'Template library for frequently signed documents',
+    ],
+    isThisRightForYou: [
+      'Service agreements are printed and scanned manually',
+      'Consent signatures take days or weeks to collect',
+      'Signed documents are not consistently filed against records',
+      'You need faster and auditable document execution',
+    ],
+    related: [IDS.participant, IDS.compliance, IDS.portal],
+  }),
+
+  makeDoc({
+    id: IDS.voice,
+    title: 'Voice Notes',
+    slug: 'voice-notes',
+    navGroup: 'Participant & Care',
+    order: 6,
+    metaDescription: 'Capture progress notes by voice on mobile, transcribe automatically, and link to participant records in real time.',
+    heroHeading: 'Speak It. It Is Recorded.',
+    problem: 'Typing detailed progress notes on mobile is slow and error-prone. Notes are deferred, abbreviated, or skipped after long shifts.',
+    whatMattersMost: [
+      'Progress notes captured by voice at point of service',
+      'Automatic transcription linked to participant records',
+      'Notes structured for compliance and linked to goals and funding',
+      'Reduced documentation burden on support workers',
+      'Higher quality notes than manual typing',
+    ],
+    howWeSolveThis: 'Voice Notes captures spoken notes from mobile, transcribes automatically, and links notes to participant goals and funding categories. Coordinators can review and approve for quality control.',
+    whatYouGet: [
+      'Voice-to-text progress note capture on mobile',
+      'Automatic transcription with review and edit capability',
+      'Notes linked to participant profiles, goals, and funding categories',
+      'Coordinator review and approval workflow',
+      'Searchable note archive for audits and plan reviews',
+      'Offline recording with sync on reconnect',
+      'Multilingual support for diverse teams',
+    ],
+    isThisRightForYou: [
+      'Support workers defer or abbreviate progress notes',
+      'Progress note quality is inconsistent across workforce',
+      'Documentation compliance is a recurring audit finding',
+      'Workers spend excessive time typing notes on mobile',
+    ],
+    related: [IDS.participant, IDS.compliance, IDS.clock],
+  }),
+
+  makeDoc({
+    id: IDS.claiming,
     title: 'NDIS Claiming & Invoicing',
-    slug: { _type: 'slug', current: 'ndis-claiming' },
+    slug: 'ndis-claiming-invoicing',
     navGroup: 'Finance',
     order: 1,
-    heroHeading: 'NDIS Claims Submitted Correctly. Cash Flow Protected.',
-    heroSubtitle: 'Service delivery generates claim-ready data automatically. No double entry. No claim errors. No revenue leaking through the cracks.',
-    problemStatement: `NDIS claiming is where operational errors become financial losses. A shift delivered at the wrong support category. An invoice raised for a participant whose plan has expired. A claim rejected by the NDIA because the line item code doesn't match the registered support category.
-
-Most providers manage claiming through a combination of manual timesheet review, spreadsheet-based NDIS price guide lookups, and bulk invoice exports that require revalidation before submission. The person doing this work is often a finance coordinator who is also managing Xero, chasing creditor invoices, and preparing month-end reports.
-
-NDIS claiming errors don't just delay revenue — they create compliance exposure. Overbilling, even inadvertently, is a reportable issue under NDIS legislation.`,
+    metaDescription: 'Funding category alignment, budget tracking, and 3-layer reconciliation reduce rejections and revenue leakage.',
+    heroHeading: 'Claim Every Dollar You Have Earned.',
+    problem: 'Finance teams often cross-reference rosters, timesheets, and claims manually. Some delivered shifts are never claimed, and some claims are rejected for incorrect line-item or funding alignment.',
     whatMattersMost: [
-      'Service delivery data flows directly into claim generation — no re-entry',
-      'NDIS price guide line item validation at the point of service booking',
-      'Plan expiry and budget utilisation checks before claims are submitted',
-      'Bulk invoice generation with per-claim audit trail',
-      'Claim error detection before submission to the NDIA portal',
-      'Participant service agreement management with budget tracking',
+      'Services delivered are services claimed with no unbilled shifts',
+      'Claim rejections reduced with pre-submission validation',
+      'Budget tracking by participant plan period and support category in real time',
+      '3-layer reconciliation catches discrepancies early',
+      'PACE-aligned claiming that keeps providers ahead of changes',
     ],
-    howWeSolveThis: `In TesseractApps, the path from service delivery to NDIS claim is automated. When a shift is completed and approved, the system generates a claim-ready line item using the correct NDIS support category, line item code, and price guide rate — cross-referenced against the participant's current service agreement.
-
-Budget utilisation is tracked in real time. Before a claim is raised, the system checks that the participant has sufficient plan funding in the relevant category. Plan expiry warnings surface before delivery occurs, not after an invoice is rejected.
-
-Bulk invoice generation creates individual per-participant invoices with full audit trail. The export is formatted for NDIS portal submission.`,
+    howWeSolveThis: 'TesseractApps connects claiming to verified service delivery, approved timesheets, and participant plans. Claims are generated with correct category mapping and validated before submission. Reconciliation layers ensure every dollar is accounted for.',
     whatYouGet: [
-      'Automated claim generation from approved service delivery records',
-      'NDIS price guide line item validation at the point of service booking',
-      'Real-time participant budget tracking and utilisation visibility',
-      'Plan expiry and funding category checks before claim submission',
-      'Bulk invoice generation with individual audit trail per claim',
-      'NDIS portal-ready claim export format',
-      'Service agreement management with budget allocation by support category',
-      'Claim error detection and validation before submission',
+      'Automated claim generation from approved timesheets mapped to funding categories',
+      'Pre-submission validation against price guides and participant budgets',
+      '3-layer reconciliation from roster to timesheet to claim to payment',
+      'Real-time budget tracking by participant and support category',
+      'Claim rejection analytics for recurring root causes',
+      'PACE-aligned workflows with bulk claiming support',
     ],
     isThisRightForYou: [
-      'Your claiming process requires manual re-entry of service delivery data',
-      'You have had NDIS claims rejected due to incorrect line item codes or support categories',
-      'Budget utilisation tracking is done in a spreadsheet separate from your operational systems',
-      'Your finance team spends significant time reconciling service delivery to claims before submission',
-      'You have submitted a claim for a participant whose NDIS plan had expired without realising it',
+      'You reconcile claims against service records manually',
+      'Claim rejection rate is above 2 percent',
+      'You have discovered shifts delivered but never invoiced',
+      'Participant funding balances are tracked in spreadsheets',
     ],
-    relatedCapabilities: [
-      ref('capability-accounting-reporting'),
-      ref('capability-participant-management'),
-      ref('capability-timesheets-payroll'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Claiming & Invoicing Software | TesseractApps',
-      metaDescription: 'Automated NDIS claim generation from service delivery. Price guide validation, budget tracking, and portal-ready export for NDIS registered providers.',
-    },
-  },
+    related: [IDS.timesheets, IDS.accounting, IDS.participant],
+  }),
 
-  // ── 8. Accounting & Financial Reporting ───────────────────────────────────
-  {
-    _id: 'capability-accounting-reporting',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.accounting,
     title: 'Accounting & Financial Reporting',
-    slug: { _type: 'slug', current: 'accounting-reporting' },
+    slug: 'accounting-financial-reporting',
     navGroup: 'Finance',
     order: 2,
-    heroHeading: 'Financial Reporting That Reflects Your Operations — Not Your Spreadsheets.',
-    heroSubtitle: 'Connect NDIS revenue, payroll costs, and operational expenditure in one financial view. Know your margin. Manage your cash flow.',
-    problemStatement: `NDIS providers operate in a fundamentally different financial environment to most businesses. Revenue is participant-driven, constrained by NDIS price guide rates, and delivered through service agreements that can change mid-year. Costs are primarily workforce-driven — casual, award-regulated, and variable.
-
-The result is a financial picture that most accounting platforms were not designed to produce. MYOB and Xero are excellent at bookkeeping. They are not equipped to show you the margin by participant, the cost per hour of care delivered, or the revenue at risk from expiring plan funding — because they don't have the operational data that generates those numbers.
-
-Providers who make decisions from their accounting system alone are making decisions with incomplete information.`,
+    metaDescription: 'Xero integration, margin tracking, revenue leakage identification, and service-line reporting built for NDIS providers.',
+    heroHeading: 'See Where Your Money Goes. And Where It Does Not.',
+    problem: 'Operational data and financials often live in separate systems. Reconciliation lags and profitability by service line is uncertain until well after month-end.',
     whatMattersMost: [
-      'Revenue visibility by participant, care type, and support category — not just by invoice',
-      'Cost visibility by shift, worker, and service line — not just by payroll run',
-      'Margin analysis that connects NDIS revenue to workforce costs in real time',
-      'Cash flow forecasting informed by service agreement delivery trajectories',
-      'Xero integration that pushes clean, categorised data — not raw transactions',
-      'Financial reporting at the level of detail an operations manager, finance manager, and board each need',
+      'Manual reconciliation between systems eliminated',
+      'Real-time margin visibility by service stream site and participant group',
+      'Xero integration removing double entry',
+      'Native payroll and accounting available at Enterprise stage',
+      'Board-level reporting from live operational data',
     ],
-    howWeSolveThis: `TesseractApps maintains the operational data layer — participant service agreements, shift delivery records, timesheet approvals, and payroll-classified hours — and surfaces financial reporting built on that foundation.
-
-Revenue is tracked by participant, support category, and service line. Costs are tracked by shift, worker classification, and SCHADS rate. Margin is visible at the service line level, not just at the entity level.
-
-Xero integration synchronises clean, categorised financial data — not raw transactions. The chart of accounts mapping is configurable. Invoices, payroll journals, and operational costs push through with the level of categorisation that makes your accounting meaningful.`,
+    howWeSolveThis: 'TesseractApps connects budgets, invoices, payroll, and claiming in one system. Xero users get automatic sync. Margin analytics identify under-recovered costs and revenue leakage. Enterprise can activate native payroll and accounting for full consolidation.',
     whatYouGet: [
-      'Revenue reporting by participant, care type, and NDIS support category',
-      'Cost reporting by shift, worker, and service line',
-      'Margin analysis connecting NDIS revenue to workforce costs',
-      'Cash flow forecasting from service agreement delivery trajectories',
-      'Xero integration with configurable chart of accounts mapping',
-      'Payroll journal export with SCHADS classification detail',
-      'Financial dashboards at operations, finance, and executive levels',
-      'Exportable financial reports in formats suitable for board and external reporting',
+      'Xero integration with automatic general ledger sync',
+      'Native payroll and accounting at Enterprise for consolidation',
+      'Margin tracking by service line, location, and participant group',
+      'Revenue leakage identification including unbilled and unclaimed services',
+      'Financial dashboards with real-time revenue cost and margin views',
+      'Service line profitability reporting for strategic decisions',
     ],
     isThisRightForYou: [
-      'You cannot quickly identify which participants or service lines are margin-positive or margin-negative',
-      'Your financial reporting requires manual data extraction from multiple systems before it is usable',
-      'Your Xero integration pushes raw transactions that require significant manual categorisation',
-      'You have limited visibility of cash flow risk from expiring NDIS plan funding',
-      'Your board reporting is prepared from spreadsheets built from multiple system extracts',
+      'You manually transfer data between operational and accounting systems',
+      'Financial reporting takes more than a day to compile',
+      'You cannot see margins by service stream or site in real time',
+      'You operate multiple entities and need consolidated reporting',
     ],
-    relatedCapabilities: [
-      ref('capability-ndis-claiming'),
-      ref('capability-dashboards-reporting'),
-      ref('capability-timesheets-payroll'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Accounting & Financial Reporting Software | TesseractApps',
-      metaDescription: 'Financial reporting built on operational data. Revenue by participant, cost by shift, margin by service line. Xero integration for NDIS providers.',
-    },
-  },
+    related: [IDS.claiming, IDS.timesheets, IDS.dashboards],
+  }),
 
-  // ── 9. Dashboards & Reporting ─────────────────────────────────────────────
-  {
-    _id: 'capability-dashboards-reporting',
-    _type: 'capabilityPage',
+  makeDoc({
+    id: IDS.quote,
+    title: 'Quote Generator',
+    slug: 'quote-generator',
+    navGroup: 'Finance',
+    order: 3,
+    metaDescription: 'Generate NDIS service quotes aligned to price guides, funding categories, and participant plans in minutes.',
+    heroHeading: 'Quote Accurately. Every Time.',
+    problem: 'Quoting often requires manual cross-reference of price guides, funding categories, and hours. Errors create disputes and leakage while turnaround time remains slow.',
+    whatMattersMost: [
+      'Quotes generated from current NDIS price guide rates',
+      'Funding category alignment built into quote creation',
+      'Professional quote documents ready for participants and plan managers',
+      'Quote-to-service-agreement conversion without re-entry',
+      'Historical quote tracking for reporting and analysis',
+    ],
+    howWeSolveThis: 'Quote Generator pulls current price guide rates and participant funding to produce accurate quotes quickly. Approved quotes convert directly into service agreements with no duplicate data entry.',
+    whatYouGet: [
+      'Automated quote generation from NDIS price guide rates',
+      'Funding category and support item alignment',
+      'Professional quote document templates',
+      'Direct quote-to-service-agreement conversion',
+      'Quote versioning and approval workflows',
+      'Historical quote analytics and conversion tracking',
+      'Bulk quoting for multi-participant proposals',
+    ],
+    isThisRightForYou: [
+      'Quoting takes more than 15 minutes per participant',
+      'You have sent quotes with incorrect NDIS rates',
+      'Approved quotes are manually re-entered to create agreements',
+      'You lack visibility into quote conversion patterns',
+    ],
+    related: [IDS.claiming, IDS.participant, IDS.accounting],
+  }),
+
+  makeDoc({
+    id: IDS.xero,
+    title: 'Xero Integration',
+    slug: 'xero-integration',
+    navGroup: 'Finance',
+    order: 4,
+    metaDescription: 'Bi-directional Xero integration syncing invoices, payments, and finance data without manual CSV workflows.',
+    heroHeading: 'Your Books. Always in Sync.',
+    problem: 'Operational systems and Xero often require manual export-import cycles. Double-entry introduces errors and delays real-time financial visibility.',
+    whatMattersMost: [
+      'Invoices and payments synced to Xero automatically',
+      'No manual CSV exports or re-entry',
+      'Chart of accounts mapped to NDIS service categories',
+      'Real-time financial position instead of month-end lag',
+      'Error reduction through elimination of manual transfer steps',
+    ],
+    howWeSolveThis: 'TesseractApps connects directly to Xero. Claim-generated invoices sync to the ledger, payments are matched, and accounts mapping aligns operational categories to finance structure.',
+    whatYouGet: [
+      'Bi-directional sync between TesseractApps and Xero',
+      'Automatic invoice posting to general ledger',
+      'Payment matching and reconciliation',
+      'Chart of accounts mapping to NDIS service categories',
+      'Real-time dashboards reflecting synced financial data',
+      'Error logging and sync status monitoring',
+      'Configurable sync frequency and approval rules',
+    ],
+    isThisRightForYou: [
+      'Finance manually transfers data between systems and Xero',
+      'Invoice reconciliation takes more than a day each month',
+      'Manual imports create data-entry errors',
+      'You need real-time financial visibility without month-end delays',
+    ],
+    related: [IDS.accounting, IDS.claiming, IDS.dashboards],
+  }),
+
+  makeDoc({
+    id: IDS.dashboards,
     title: 'Dashboards & Reporting',
-    slug: { _type: 'slug', current: 'dashboards-reporting' },
+    slug: 'dashboards-reporting',
     navGroup: 'Operational Intelligence',
     order: 1,
-    heroHeading: 'One Source of Truth. Every Role. Every Decision.',
-    heroSubtitle: 'Role-calibrated dashboards that surface the operational, compliance, and financial information each person needs — without the noise.',
-    problemStatement: `Most NDIS providers have data. They do not have visibility. Timesheets are in one system. Incidents are in another. Participant records are in a third. Financial data is in Xero. The operations manager compiles a weekly status report from three exports and a spreadsheet. The compliance lead finds out about an overdue incident closure from the support coordinator. The finance manager discovers a billing shortfall at month end.
-
-The problem is not that the data doesn't exist. The problem is that it exists in silos, surfaces reactively, and reaches the wrong person at the wrong time. Dashboards that show everyone the same thing solve nothing. The operations manager needs roster coverage. The compliance lead needs overdue incident actions. The finance manager needs billing status.`,
+    metaDescription: 'Role-specific dashboards for support workers, managers, compliance, finance, and executives with real-time operational visibility.',
+    heroHeading: 'The Right Data. The Right Person. Right Now.',
+    problem: 'Teams either have too much data without clarity or too little data for confidence. Reports are manually compiled, emailed, and stale by the time decisions are made.',
     whatMattersMost: [
-      'Role-calibrated dashboards — each user sees what they need, not everything',
-      'Operational dashboards showing roster coverage, shift gaps, and attendance in real time',
-      'Compliance dashboards showing overdue actions, expiring credentials, and incident status',
-      'Financial dashboards showing billing status, budget utilisation, and cash flow position',
-      'Executive dashboards with cross-site operational and financial summary',
-      'Exportable reports that can be scheduled and distributed without manual intervention',
+      'Role-specific dashboards so each role sees what matters',
+      'Real-time data refresh from live operations',
+      'Executive reporting without manual compilation',
+      'Drill-down from organisation to site to individual',
+      'One source of truth across workforce compliance and finance',
     ],
-    howWeSolveThis: `TesseractApps surfaces operational, compliance, and financial data through role-calibrated dashboards. Each role in the platform — support worker, coordinator, roster manager, compliance lead, finance manager, operations manager, and executive — sees a dashboard configured for their function.
-
-Roster managers see shift coverage, open gaps, and attendance status. Compliance leads see overdue incident actions, expiring credentials, and quality indicator status. Finance managers see billing status, participant budget utilisation, and cash flow trajectory. Executives see multi-site operational performance in a single view.
-
-Reports are exportable, schedulable, and configurable. There is no manual extraction — the report is generated from live operational data on demand.`,
+    howWeSolveThis: 'TesseractApps delivers role-specific dashboards from the same real-time data layer. Support workers, roster managers, compliance leads, finance managers, and executives each get purpose-built views linked to action.',
     whatYouGet: [
-      'Role-calibrated dashboards for each function: operations, compliance, finance, executive',
-      'Real-time roster coverage, shift gaps, and attendance dashboards for operations',
-      'Compliance status dashboard — overdue actions, expiring credentials, incident pipeline',
-      'Financial dashboard — billing status, budget utilisation, cash flow position',
-      'Executive multi-site performance dashboard',
-      'Schedulable and exportable reports from live operational data',
-      'Cross-module reporting connecting workforce, participant, and financial data',
-      'Configurable KPI widgets and custom report builder',
+      'Support worker dashboard for shifts, credential status, and reminders',
+      'Roster manager dashboard for coverage, overtime, and expiries',
+      'Compliance dashboard for incidents, CAPA, and audit readiness',
+      'Finance dashboard for claiming pipeline and reconciliation exceptions',
+      'Executive dashboard for margin, compliance posture, and workforce KPIs',
     ],
     isThisRightForYou: [
-      'Your operations manager compiles a weekly status report manually from multiple system exports',
-      'Compliance issues surface reactively rather than being visible in advance',
-      'Financial reporting requires manual data assembly before it is usable',
-      'Different roles in your organisation have no tailored view of the information they need',
-      'You have no single view of operational performance across multiple sites or service lines',
+      'Different roles do not have role-specific visibility',
+      'Executive reporting is manually compiled from multiple sources',
+      'Compliance monitoring still relies on spreadsheets',
+      'Finance lacks real-time labour cost and margin visibility',
     ],
-    relatedCapabilities: [
-      ref('capability-compliance-audit'),
-      ref('capability-accounting-reporting'),
-      ref('capability-incidents-sirs'),
-    ],
-    seo: {
-      _type: 'seo',
-      metaTitle: 'NDIS Operational Dashboards & Reporting Software | TesseractApps',
-      metaDescription: 'Role-calibrated dashboards for operations, compliance, finance, and executives. Live operational reporting for NDIS disability support providers.',
-    },
-  },
+    related: [IDS.compliance, IDS.claiming, IDS.accounting],
+  }),
 
+  makeDoc({
+    id: IDS.workflow,
+    title: 'T Workflow Automation',
+    slug: 't-workflow-automation',
+    navGroup: 'Operational Intelligence',
+    order: 2,
+    metaDescription: 'Automate onboarding, approvals, escalations, and compliance tasks with configurable rules and human oversight.',
+    heroHeading: 'Automate the Process. Keep the Control.',
+    problem: 'Operational workflows often live in staff memory. Onboarding, escalation, and approvals depend on individuals remembering what should happen next.',
+    whatMattersMost: [
+      'Workflows defined once and enforced consistently',
+      'Automated triggers for onboarding escalations approvals and compliance tasks',
+      'Configurable rules without technical complexity',
+      'Human oversight preserved while routing is automated',
+      'Workflow analytics showing bottlenecks and completion rates',
+    ],
+    howWeSolveThis: 'T Workflow Automation lets providers define triggers, steps, approvals, and escalation rules for repeatable operations. Automation handles routing and reminders while staff retain decision authority.',
+    whatYouGet: [
+      'Visual workflow builder with drag and drop configuration',
+      'Pre-built templates for onboarding incidents and claims',
+      'Configurable triggers by event date and condition',
+      'Approval routing with delegation and escalation',
+      'SLA tracking with automated reminders',
+      'Workflow analytics for cycle time and completion rates',
+      'TFlow cross-module orchestration at Enterprise stage',
+    ],
+    isThisRightForYou: [
+      'Critical processes depend on individual memory not documented workflows',
+      'Onboarding requires manual tracking across multiple steps and days',
+      'Escalations and approvals are inconsistent between managers',
+      'You need consistency without adding operational headcount',
+    ],
+    related: [IDS.dashboards, IDS.compliance, IDS.incidents],
+  }),
+
+  makeDoc({
+    id: IDS.salesforce,
+    title: 'Salesforce Native Architecture',
+    slug: 'salesforce-native-architecture',
+    navGroup: 'Operational Intelligence',
+    order: 3,
+    metaDescription: 'Built natively on Salesforce Hyperforce with Australian data residency, ISO certifications, and enterprise-grade reliability.',
+    heroHeading: 'Enterprise Infrastructure. Purpose-Built Application.',
+    problem: 'Providers evaluating platforms need confidence in scalability, security, data residency, and integration capability. Lightweight stacks often fail under governance and scale pressure.',
+    whatMattersMost: [
+      'Enterprise-grade infrastructure trusted by government and healthcare',
+      'Australian data residency for data sovereignty obligations',
+      'ISO 27001 and ISO 9001 certified operations',
+      '99.9% uptime SLA with disaster recovery and failover',
+      'Native integration capability with enterprise systems',
+    ],
+    howWeSolveThis: 'TesseractApps runs natively on Salesforce Hyperforce as a purpose-built application. Data is hosted in Australia and protected with enterprise security and compliance controls while the application remains NDIS-specific.',
+    whatYouGet: [
+      'Salesforce Hyperforce infrastructure with Australian data residency',
+      'ISO 27001 information security certification support',
+      'ISO 9001 quality management certification support',
+      '99.9% uptime SLA with automated failover',
+      'Role-based access with comprehensive audit trails',
+      'API access for custom integrations and exchange',
+      'Regular security updates and compliance patches',
+      'Scalable architecture without performance degradation',
+    ],
+    isThisRightForYou: [
+      'Your IT team requires enterprise-grade security documentation',
+      'Australian data residency is mandatory',
+      'You need to scale without infrastructure migration',
+      'Integration with existing enterprise systems is required',
+    ],
+    related: [IDS.dashboards, IDS.compliance, IDS.workflow],
+  }),
 ]
 
 // ---------------------------------------------------------------------------
-// ── MAIN — two-pass seeding ─────────────────────────────────────────────────
-// Pass 1: create all documents without relatedCapabilities (avoids circular refs)
-// Pass 2: patch relatedCapabilities onto each document now that all exist
+// MAIN — two-pass seeding
 // ---------------------------------------------------------------------------
 
 async function seed() {
   console.log(`\n🌱  Seeding capability pages into dataset "${dataset}" on project "${projectId}"...\n`)
 
-  // ── Pass 1: create all docs without relatedCapabilities ──────────────────
   console.log(`── Pass 1: Create base documents (${capabilityPages.length}) ──────────────`)
 
   let created = 0
@@ -623,7 +841,6 @@ async function seed() {
     process.exit(1)
   }
 
-  // ── Pass 2: patch relatedCapabilities now that all docs exist ────────────
   console.log(`\n── Pass 2: Patch relatedCapabilities ───────────────────────────`)
 
   let patched = 0
@@ -647,12 +864,7 @@ async function seed() {
   console.log(`\n📊  Done: ${created} documents created, ${patched} patched with related capabilities, ${patchErrors} patch errors.\n`)
 
   if (patchErrors === 0) {
-    console.log('🎉  All 9 capability page documents seeded successfully!')
-    console.log('')
-    console.log('Next steps:')
-    console.log('  → Navigate to /capabilities/rostering-scheduling to verify the first page')
-    console.log('  → Go to /studio → Capability Page to review content and adjust relatedCapabilities')
-    console.log('  → Run this script again at any time — it is fully idempotent')
+    console.log('🎉  All 19 capability page documents seeded successfully!')
     console.log('')
     console.log('All capability routes:')
     capabilityPages.forEach(doc => {

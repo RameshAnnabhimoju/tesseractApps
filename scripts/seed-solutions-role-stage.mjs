@@ -364,7 +364,7 @@ Structure is most critical at your size. Growth without structure creates the in
     ],
     seo: {
       _type: 'seo',
-      metaTitle: 'NDIS Provider Software for Start-Up Organisations | TesseractApps',
+      metaTitle: 'NDIS Provider Software for Start Organisations | TesseractApps',
       metaDescription: 'Structure from day one for early-stage NDIS providers. Compliant rostering, participant records, incident reporting, and NDIS claiming. Founding Cohort pricing available.',
     },
   },
@@ -379,7 +379,7 @@ Structure is most critical at your size. Growth without structure creates the in
     order: 2,
     heroHeading: 'Growth Exposes Every Gap. Close Them Before They Cost You.',
     heroSubtitle: 'SCHADS payroll automation, operational dashboards, and the structure growing NDIS providers need — $39.99/seat/month.',
-    whoIsThisFor: `You've moved past the start-up hustle. You have a team, participants who depend on you, and enough complexity that early-stage tools are straining. Payroll is your biggest headache. You're spending more time managing the business than delivering services.
+    whoIsThisFor: `You've moved past the start hustle. You have a team, participants who depend on you, and enough complexity that early-stage tools are straining. Payroll is your biggest headache. You're spending more time managing the business than delivering services.
 
 You are experiencing workforce expansion, payroll pressure, and increasing reporting needs. You need control, reporting clarity, payroll alignment, and manager accountability. Your rostering that worked at 10 staff is falling apart at 30.`,
     keyBenefits: [
