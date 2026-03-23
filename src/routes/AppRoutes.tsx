@@ -10,7 +10,7 @@ import "../pages/competitors/CompetitorPageStyles.css";
 
 // Home stays as eager import — it is the "/" route and must render immediately
 import Home from "../pages/home/Home";
-const HomeV2 = lazy(() => import("../pages/home/HomeV2"));
+const HomeV2 = lazy(() => import("../../discarded/HomeV2"));
 const HomeV4 = lazy(() => import("../pages/home/HomeV4"));
 
 // All other pages are lazy-loaded — they only download when the user navigates to them

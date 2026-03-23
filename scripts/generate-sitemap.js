@@ -1,14 +1,20 @@
 import { createClient } from '@sanity/client';
 import fs from 'fs';
 import path from 'path';
+import { loadEnv } from 'vite';
 
 const SITE_URL = 'https://tesseractapps.com.au';
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 
-// --- Sanity client (uses same env vars as the app, but via process.env for Node) ---
-const projectId = process.env.VITE_SANITY_PROJECT_ID;
-const dataset = process.env.VITE_SANITY_DATASET ?? 'production';
-const apiVersion = process.env.VITE_SANITY_API_VERSION ?? '2024-01-01';
+// --- Sanity client ---
+// Node scripts do not automatically load .env.local like Vite runtime does,
+// so we load env files explicitly and then allow real process env to override.
+const mode = process.env.NODE_ENV || 'production';
+const env = loadEnv(mode, process.cwd(), '');
+
+const projectId = process.env.VITE_SANITY_PROJECT_ID || env.VITE_SANITY_PROJECT_ID;
+const dataset = process.env.VITE_SANITY_DATASET || env.VITE_SANITY_DATASET || 'production';
+const apiVersion = process.env.VITE_SANITY_API_VERSION || env.VITE_SANITY_API_VERSION || '2024-01-01';
 
 // --- Static site pages (not blog posts) for sitemap only ---
 const STATIC_PAGES = [
