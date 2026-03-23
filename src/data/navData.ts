@@ -181,7 +181,7 @@ export const navBarDummyData: {
             { title: "Support Worker", subTitle: "Role", href: "/solutions/support-worker" },
         ],
         "BY STAGE": [
-            { title: "Start-Up", subTitle: "1–15 staff", href: "/solutions/start" },
+            { title: "Start", subTitle: "1–15 staff", href: "/solutions/start" },
             { title: "Growing", subTitle: "15–60 staff", href: "/solutions/growth" },
             { title: "Scaling", subTitle: "60–120 staff", href: "/solutions/scale" },
             { title: "Enterprise", subTitle: "120+ staff", href: "/solutions/enterprise" },

@@ -1,6 +1,5 @@
 // src/contexts/AppContext.tsx
 import { createContext, useContext, ReactNode, useMemo, useState } from "react";
-import { itemsPageDummyData } from "../data/itemsData";
 import { productsDetailsData } from "../data/productsData";
 import { SubPagesDummyData } from "../data/subPagesData";
 
@@ -63,23 +62,17 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/capabilities/ndis-claiming": { name: "NDIS Claiming & Invoicing", path: "/capabilities/ndis-claiming" },
       "/capabilities/accounting-reporting": { name: "Accounting & Financial Reporting", path: "/capabilities/accounting-reporting" },
       "/capabilities/dashboards-reporting": { name: "Dashboards & Reporting", path: "/capabilities/dashboards-reporting" },
-      "/blogs": {
-        name: "Blog",
-        path: "/blogs",
-        data: itemsPageDummyData["Blog"],
-      },
-      "/whitepapers": {
-        name: "Whitepapers",
-        path: "/whitepapers",
-        data: itemsPageDummyData["Whitepapers"],
-      },
+      "/blogs": { name: "Blog", path: "/blogs" },
+      "/whitepapers": { name: "Whitepapers", path: "/whitepapers" },
+      "/case-studies": { name: "Case Studies", path: "/case-studies" },
+      "/webinars": { name: "Webinars", path: "/webinars" },
       "/contact-us": { name: "Contact Us", path: "/contact-us" },
       "/privacy-policy": { name: "Privacy Policy", path: "/privacy-policy" },
       "/terms-and-Conditions": {
         name: "Terms & Conditions",
         path: "/terms-and-Conditions",
       },
-      "/changelog": { name: "Changelog", path: "/changelog" },
+      "/changelog": { name: "Release Notes", path: "/changelog" },
       "/careers": { name: "Careers", path: "/careers" },
       "/about": { name: "About", path: "/about" },
       "/help-center": { name: "Help Center", path: "/help-center" },

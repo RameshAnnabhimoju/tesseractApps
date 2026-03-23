@@ -1,175 +1,92 @@
 import "./FAQStyles.css";
-import { faqPageDummyData } from "../../../data/faqData";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ArrowDown from "../../../assets/arrow_down.svg";
+import { Link } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
 
-const FAQ = () => {
-  // const [expanded, setExpanded] = useState(-1);
+const HELP_CENTRE_SECTIONS = [
+  {
+    title: "Getting Started",
+    items: [
+      "Platform onboarding checklist",
+      "Role setup and access basics",
+      "First week implementation milestones",
+    ],
+  },
+  {
+    title: "Product Guides",
+    items: [
+      "Rostering and scheduling workflows",
+      "Timesheets, claiming, and payroll alignment",
+      "Compliance evidence and incident handling",
+    ],
+  },
+  {
+    title: "Troubleshooting",
+    items: [
+      "Common setup and data issues",
+      "Permission and user access troubleshooting",
+      "Escalation paths for urgent blockers",
+    ],
+  },
+  {
+    title: "Support Channels",
+    items: [
+      "Business-hours support queue",
+      "Guided implementation support",
+      "Release update communications",
+    ],
+  },
+];
 
-  // const handleExpansion = (index: number) => {
-  //   setExpanded((prevExpanded) => {
-  //     if (prevExpanded === index) {
-  //       return -1; // Collapse the currently expanded item
-  //     } else {
-  //       return index; // Expand the clicked item
-  //     }
-  //   });
-  // };
+const FAQ = () => {
   return (
-    <div id="faq-page-container">
+    <div>
       <SEO
         title="Help Center | FAQs & Support Resources | TesseractApps"
         description="Find answers to common questions about TesseractApps. Browse FAQs, guides, and support resources to get the most from your NDIS software platform."
       />
-      <div className="heading">Help Center</div>
-      <div className="subheading">Get Answers and Support </div>
-      <div className="text" id="faq-page-text">
-        Find guides, FAQs, and resources to help you get the most from
-        TesseractApps.
-      </div>
-      <div id="faq-page-data-container">
-        {faqPageDummyData.map((data, index) => {
-          return (
-            <>
-              <div className="faq-section">{data.section}</div>
-              {/* <div id="faq-accordian-container"> */}
-              {data.data &&
-                data.data.map((subData, subindex) => {
-                  return (
-                    <div key={index + subindex * 3}>
-                      <div className="faq-title">{subData.title}</div>
-                      <div id="faq-accordian-container">
-                        {subData.faq.map(
-                          (
-                            faqdata: {
-                              question: string;
-                              answer: string;
-                              points?: string[];
-                              conclusion?: string;
-                            },
-                            faqindex
-                          ) => {
-                            return (
-                              <Accordion
-                                key={subindex + faqindex}
-                                className="faq-page-accordian"
-                                elevation={0}
-                                square
-                                // expanded={expanded === index}
-                                // onChange={() => handleExpansion(index)}
 
-                                sx={{
-                                  backgroundColor: "#eaeaea",
-                                  marginBottom: "5px",
-                                }}
-                              >
-                                <AccordionSummary
-                                  expandIcon={
-                                    <img loading="lazy" src={ArrowDown} alt="arrow" />
-                                  }
-                                >
-                                  <Typography
-                                    sx={{ fontSize: "26px", fontWeight: 600 }}
-                                    component="span"
-                                  >
-                                    {faqdata.question}
-                                  </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                  <Typography
-                                    sx={{
-                                      fontSize: "18px",
-                                      fontWeight: 400,
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    {faqdata.answer}
-                                  </Typography>
-                                  <Typography
-                                    sx={{
-                                      fontSize: "18px",
-                                      fontWeight: 400,
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    {faqdata.points &&
-                                      faqdata.points.map(
-                                        (pointsData, pointsindex) => {
-                                          return (
-                                            <ul key={pointsindex}>
-                                              <li>{pointsData}</li>
-                                            </ul>
-                                          );
-                                        }
-                                      )}
-                                  </Typography>
-                                  <Typography
-                                    sx={{
-                                      fontSize: "18px",
-                                      fontWeight: 400,
-                                      marginTop: "10px",
-                                      textAlign: "left",
-                                    }}
-                                  >
-                                    {faqdata.conclusion}
-                                  </Typography>
-                                </AccordionDetails>
-                              </Accordion>
-                            );
-                          }
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              {data.faq &&
-                data.faq.map((faqdata, index) => {
-                  return (
-                    <Accordion
-                      key={index}
-                      className="faq-page-accordian"
-                      elevation={0}
-                      square
-                      // expanded={expanded === index}
-                      // onChange={() => handleExpansion(index)}
-                      sx={{
-                        backgroundColor: "#eaeaea",
-                        marginBottom: "5px",
-                      }}
-                    >
-                      <AccordionSummary
-                        expandIcon={<img loading="lazy" src={ArrowDown} alt="arrow" />}
-                      >
-                        <Typography
-                          sx={{ fontSize: "26px", fontWeight: 600 }}
-                          component="span"
-                        >
-                          {faqdata.question}
-                        </Typography>
-                      </AccordionSummary>
-                      <AccordionDetails>
-                        <Typography
-                          sx={{
-                            fontSize: "18px",
-                            fontWeight: 400,
-                            textAlign: "left",
-                          }}
-                        >
-                          {faqdata.answer}
-                        </Typography>
-                      </AccordionDetails>
-                    </Accordion>
-                  );
-                })}
-              {/* </div> */}
-            </>
-          );
-        })}
-      </div>
+      {/* ── Hero ── */}
+      <section id="hc-hero">
+        <div id="hc-hero-inner">
+          <div id="hc-hero-label">Help Centre</div>
+          <h1 id="hc-hero-heading">Support Resources Built for Care Teams</h1>
+          <p id="hc-hero-sub">
+            The help centre is now structured around implementation support, product guidance,
+            and issue resolution, in line with the final resource strategy.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Content ── */}
+      <section id="hc-content">
+        <div id="hc-outer">
+          <div id="hc-section-label">Support Framework</div>
+          <h2 id="hc-section-heading">How support content is organised</h2>
+
+          <div id="hc-grid">
+            {HELP_CENTRE_SECTIONS.map((section) => (
+              <article key={section.title} className="hc-card">
+                <h3 className="hc-card-title">{section.title}</h3>
+                <ul className="hc-list">
+                  {section.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div id="hc-resource-links">
+            <h3 id="hc-resource-links-heading">Related resources</h3>
+            <div id="hc-link-row">
+              <Link to="/blogs" className="hc-resource-link">Blog</Link>
+              <Link to="/whitepapers" className="hc-resource-link">Whitepapers</Link>
+              <Link to="/changelog" className="hc-resource-link">Release Notes</Link>
+              <Link to="/contact-us" className="hc-resource-link">Contact Support</Link>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

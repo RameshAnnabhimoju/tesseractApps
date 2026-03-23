@@ -204,7 +204,7 @@ const FooterComponent = () => {
           ))}
           <div className="footer-text" onClick={() => appNavigate("/terms-and-conditions")}>Terms &amp; Conditions</div>
           <div className="footer-text" onClick={() => appNavigate("/privacy-policy")}>Privacy Policy</div>
-          <div className="footer-text" onClick={() => appNavigate("/changelog")}>Changelog</div>
+          <div className="footer-text" onClick={() => appNavigate("/changelog")}>Release Notes</div>
         </div>
 
         {/* Resources + Support + Get Started */}
@@ -219,6 +219,8 @@ const FooterComponent = () => {
               {link.title}
             </div>
           ))}
+          <div className="footer-text" onClick={() => appNavigate("/case-studies")}>Case Studies</div>
+          <div className="footer-text" onClick={() => appNavigate("/changelog")}>Release Notes</div>
           <a
             className="footer-text"
             href="/rss.xml"

@@ -85,15 +85,15 @@ const ReleaseNotes = () => {
   return (
     <div id="cl-page">
       <SEO
-        title="Changelog | Product Updates & New Features | TesseractApps"
+        title="Release Notes | Product Updates & New Features | TesseractApps"
         description="Stay updated with TesseractApps latest features and improvements. Browse the full changelog for all platform updates, bug fixes, and new functionality."
       />
 
       {/* ── Hero ── */}
       <section id="cl-hero">
         <div id="cl-hero-inner">
-          <div id="cl-hero-label">Changelog</div>
-          <h1 id="cl-hero-heading">What's New in TesseractApps</h1>
+          <div id="cl-hero-label">Release Notes</div>
+          <h1 id="cl-hero-heading">Latest Product Updates in TesseractApps</h1>
           <p id="cl-hero-sub">
             Every update, improvement, and fix — documented in one place. Stay up to date with everything we ship.
           </p>

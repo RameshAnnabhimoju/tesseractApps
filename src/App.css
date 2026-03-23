@@ -1,5 +1,4 @@
 :root {
-  overflow-x: hidden;
   max-width: 1920px;
   font-family: "Inter", sans-serif;
 
@@ -86,11 +85,34 @@
     text-decoration: underline;
   }
 }
-html,
+html {
+  margin: 0;
+  max-width: 100%;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
   max-width: 100%;
+}
+
+main[role="main"] {
+  padding-top: 68px;
+}
+
+@media (max-width: 500px) {
+  main[role="main"] {
+    padding-top: 60px;
+  }
+}
+
+/* ── MUI font override — force Inter across all MUI components ── */
+.MuiTypography-root,
+.MuiAccordion-root,
+.MuiAccordionSummary-root,
+.MuiAccordionDetails-root,
+.MuiButtonBase-root {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
 }
 
 /* ── Full-page loader (Suspense fallback + Sanity fetch) ── */

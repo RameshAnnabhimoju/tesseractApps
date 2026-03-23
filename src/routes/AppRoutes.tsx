@@ -15,16 +15,18 @@ const HomeV4 = lazy(() => import("../pages/home/HomeV4"));
 
 // All other pages are lazy-loaded — they only download when the user navigates to them
 const Blog = lazy(() => import("../pages/blog/Blog"));
+const CapabilitiesListing = lazy(() => import("../pages/capabilities/CapabilitiesListing"));
 const CapabilityPage = lazy(() => import("../pages/capabilities/CapabilityPage"));
 const Platform = lazy(() => import("../pages/platform/Platform"));
 const Details = lazy(() => import("../pages/products/details/Details"));
 const Pricing = lazy(() => import("../pages/marketing/pricing/Pricing"));
 const RequestADemo = lazy(() => import("../pages/forms/requestADemo/RequestADemo"));
 const SubPage = lazy(() => import("../pages/products/subPage/SubPage"));
-const ItemsPage = lazy(() => import("../pages/resources/itemsPage/ItemsPage"));
 const OurStory = lazy(() => import("../pages/marketing/ourStory/OurStory"));
 const AboutUsSubPage = lazy(() => import("../pages/resources/aboutUsSubPages/AboutUsSubPage"));
 const FAQ = lazy(() => import("../pages/resources/faq/FAQ"));
+const CaseStudies = lazy(() => import("../pages/resources/caseStudies/CaseStudies"));
+const Webinars = lazy(() => import("../pages/resources/webinars/Webinars"));
 const Teams = lazy(() => import("../pages/resources/teams/Teams"));
 const Careers = lazy(() => import("../pages/marketing/careers/Careers"));
 const ContactInformation = lazy(() => import("../pages/forms/contactInformation/ContactInformation"));
@@ -39,8 +41,10 @@ const BlogPostPage = lazy(() => import("../pages/blogPost/BlogPostPage"));
 const StudioPage = lazy(() => import("../pages/studio/StudioPage"));
 const BookADemo = lazy(() => import("../pages/forms/bookADemo/BookADemo"));
 const Signup = lazy(() => import("../pages/forms/signup/Signup"));
+const SolutionsListing = lazy(() => import("../pages/solutions/SolutionsListing"));
 const SolutionPage = lazy(() => import("../pages/solutions/solutionPage/SolutionPage"));
 const CompetitorPage = lazy(() => import("../pages/competitors/CompetitorPage"));
+const NotFound = lazy(() => import("../pages/notFound/NotFound"));
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -73,9 +77,9 @@ const AppRoutes = () => {
   return (
     <Suspense fallback={<div className="app-page-loader"><div className="app-page-spinner" /></div>}>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomeV4 />} />
         <Route path="/home-v2" element={<HomeV2 />} />
-        <Route path="/home-v4" element={<HomeV4 />} />
+        <Route path="/home-v4" element={<Home />} />
         {/* Blog listing — own Suspense so skeleton shows directly */}
         <Route
           path="/blogs"
@@ -120,6 +124,7 @@ const AppRoutes = () => {
         <Route path="/salesPage" element={<SalesPage />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/platform" element={<Platform />} />
+        <Route path="/capabilities" element={<CapabilitiesListing />} />
         <Route
           path="/capabilities/:slug"
           element={
@@ -141,6 +146,7 @@ const AppRoutes = () => {
             </Suspense>
           }
         />
+        <Route path="/solutions" element={<SolutionsListing />} />
         {/* Sanity CMS dynamic solution pages */}
         <Route
           path="/solutions/:slug"
@@ -200,9 +206,10 @@ const AppRoutes = () => {
         <Route path="/time-management" element={<SubPage />} />
         <Route path="/hr-management" element={<SubPage />} />
         <Route path="/communication" element={<SubPage />} />
-        <Route path="/case-studies" element={<ItemsPage />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/webinars" element={<Webinars />} />
         <Route path="/whitepapers" element={<Whitepapers />} />
-        <Route path="/support-documentation" element={<ItemsPage />} />
+        <Route path="/support-documentation" element={<FAQ />} />
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/our-mission-and-vision" element={<AboutUsSubPage />} />
         <Route path="/help-center" element={<FAQ />} />
@@ -244,6 +251,8 @@ const AppRoutes = () => {
 
         <Route path="/book-a-demo" element={<BookADemo />} />
         <Route path="/signup" element={<Signup />} />
+        {/* Catch-all 404 */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

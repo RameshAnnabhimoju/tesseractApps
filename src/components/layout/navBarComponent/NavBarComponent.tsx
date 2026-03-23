@@ -162,7 +162,10 @@ const NavBarComponent = ({
       currentPath == "blogs" ||
       currentPath == "faq" ||
       currentPath == "whitepapers" ||
-      currentPath == "help-center"
+      currentPath == "help-center" ||
+      currentPath == "case-studies" ||
+      currentPath == "webinars" ||
+      currentPath == "changelog"
     ) {
       setActiveLink("Resources");
     }
@@ -263,9 +266,6 @@ const NavBarComponent = ({
     closePopup();
   };
 
-  const popularSearchClickHandler = (value: string) => {
-    setSearchTerm(value);
-  };
   const handleSearch = (name: string) => {
     if (name) {
       addSearch(name);
@@ -631,7 +631,6 @@ const NavBarComponent = ({
         containerRef={portalContainerRef}
         position={popupPosition}
         onMouseLeave={closePopup}
-        backgroundColor="white"
         currentLink={selectedLink}
       >
         <div id="popup-nav-container">
@@ -738,141 +737,177 @@ const NavBarComponent = ({
         isOpen={showSearch}
         onClose={handleSearchIcon}
         containerRef={portalContainerRef}
-        position={{ top: 78, left: window.innerWidth / 2 }}
+        position={{ top: 68, left: window.innerWidth / 2 }}
         showTriangle={false}
-        backgroundColor="white"
       >
         <div id="search-popup-container">
-          <header id="search-popup-header">
-            <div id="search-popup-header-text">Search at Tesseract</div>
-            <div
-              id="search-popup-close"
-              onClick={() => handleSearchIcon(false)}
-            >
-              &times;
+          {/* Header */}
+          <div id="search-popup-header">
+            <div id="search-popup-input-wrap">
+              <svg id="search-popup-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+              </svg>
+              <input
+                id="search-popup-input"
+                type="text"
+                placeholder="Search capabilities, solutions, features…"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                autoFocus
+              />
+              {searchTerm.length > 0 && (
+                <button id="search-popup-clear" onClick={() => setSearchTerm("")} aria-label="Clear search">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+              )}
             </div>
-          </header>
-          <input
-            id="search-popup-input"
-            type="text"
-            placeholder="Search..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          {searchTerm.length == 0 ? (
-            <div>
-              <div id="search-popup-popular">
-                <div className="search-popup-title">Popular Searches</div>
-                <div id="search-popup-popular-list">
-                  <div
-                    className="search-popup-popular-item"
-                    onClick={() => popularSearchClickHandler("Accounting")}
-                  >
-                    Accounting
-                  </div>
-                  <div
-                    className="search-popup-popular-item"
-                    onClick={() =>
-                      popularSearchClickHandler("Roster Management")
-                    }
-                  >
-                    Roster Management
-                  </div>
-                  <div
-                    className="search-popup-popular-item"
-                    onClick={() => popularSearchClickHandler("HR")}
-                  >
-                    HR
-                  </div>
-                </div>
-              </div>
-              <div id="search-popup-recent">
-                <div className="search-popup-title">Recent</div>
-                <div id="search-popup-recent-list">
-                  {searchHistory.map((item, index) => (
-                    <div
-                      key={item + index}
-                      className="search-popup-recent-item"
-                      onClick={() => popularSearchClickHandler(item)}
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ) : (
-            <div id="search-popup-results-container">
-              {searchTerm.length > 0 &&
-                searchKeywords
-                  .filter((keyword) =>
-                    keyword.toLowerCase().includes(searchTerm.toLowerCase())
-                  )
-                  .sort((a, b) => {
-                    const aIndex = a
-                      .toLowerCase()
-                      .indexOf(searchTerm.toLowerCase());
-                    const bIndex = b
-                      .toLowerCase()
-                      .indexOf(searchTerm.toLowerCase());
+            <button id="search-popup-close" onClick={() => handleSearchIcon(false)} aria-label="Close search">
+              Cancel
+            </button>
+          </div>
 
-                    if (aIndex === bIndex) {
-                      return a.localeCompare(b);
-                    }
-                    return aIndex - bIndex;
-                  })
-                  .map((keyword, index) => {
-                    const regex = new RegExp(`(${searchTerm})`, "ig");
-                    const parts = keyword.split(regex);
-
-                    return (
-                      <div
-                        className="search-popup-result"
-                        key={keyword + index}
-                        onClick={() => popupLinkClickHandler(keyword)}
+          {/* Body */}
+          <div id="search-popup-body">
+            {searchTerm.length === 0 ? (
+              <>
+                {/* Popular */}
+                <div className="search-popup-section">
+                  <div className="search-popup-section-label">Popular searches</div>
+                  <div id="search-popup-popular-list">
+                    {["Rostering & Scheduling", "NDIS Claiming & Invoicing", "Participant Management", "Accounting & Financial Reporting", "Dashboards & Reporting"].map((term) => (
+                      <button
+                        key={term}
+                        className="search-popup-chip"
+                        onClick={() => {
+                          const item = SEARCH_ITEMS.find((s) => s.label === term);
+                          if (item) { handleSearchIcon(false); setSearchTerm(""); addSearch(term); appNavigate(item.path); }
+                        }}
                       >
-                        {parts.map((part, index) =>
-                          regex.test(part) ? (
-                            <b key={part + index}>{part}</b> // preserves original case
-                          ) : (
-                            <span key={index}>{part}</span>
-                          )
-                        )}
+                        {term}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Recent */}
+                {searchHistory.length > 0 && (
+                  <div className="search-popup-section">
+                    <div className="search-popup-section-label">Recent</div>
+                    <div id="search-popup-recent-list">
+                      {[...searchHistory].reverse().map((item, index) => (
+                        <button
+                          key={item + index}
+                          className="search-popup-recent-item"
+                          onClick={() => setSearchTerm(item)}
+                        >
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                          </svg>
+                          {item}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div id="search-popup-results-container">
+                {(() => {
+                  const q = searchTerm.toLowerCase();
+                  const results = SEARCH_ITEMS
+                    .filter((item) => item.label.toLowerCase().includes(q))
+                    .sort((a, b) => {
+                      const ai = a.label.toLowerCase().indexOf(q);
+                      const bi = b.label.toLowerCase().indexOf(q);
+                      return ai === bi ? a.label.localeCompare(b.label) : ai - bi;
+                    });
+                  if (results.length === 0) {
+                    return (
+                      <div id="search-popup-empty">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c4cdd6" strokeWidth="1.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        <div id="search-popup-empty-text">No results for "<strong>{searchTerm}</strong>"</div>
+                        <div id="search-popup-empty-sub">Try a different keyword</div>
                       </div>
                     );
-                  })}
-            </div>
-          )}
+                  }
+                  return results.map((item, index) => {
+                    const regex = new RegExp(`(${searchTerm})`, "ig");
+                    const parts = item.label.split(regex);
+                    return (
+                      <button
+                        className="search-popup-result"
+                        key={item.path + index}
+                        onClick={() => {
+                          handleSearchIcon(false);
+                          setSearchTerm("");
+                          addSearch(item.label);
+                          setToggleDrawer(false);
+                          appNavigate(item.path);
+                        }}
+                      >
+                        <svg className="search-result-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                        <span>
+                          {parts.map((part, i) =>
+                            regex.test(part)
+                              ? <mark key={i} className="search-highlight">{part}</mark>
+                              : <span key={i}>{part}</span>
+                          )}
+                        </span>
+                        <svg className="search-result-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+                          <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                      </button>
+                    );
+                  });
+                })()}
+              </div>
+            )}
+          </div>
         </div>
       </Popup>
     </nav>
   );
 };
-const searchKeywords = [
-  "Our Story",
-  "Product",
-  "Roster Management",
-  "Timesheet",
-  "Admin Console",
-  "Access Control Panel",
-  "HR Operations",
-  "T-Sign",
-  "Clock In & Clock Out",
-  "Participant Management",
-  "Incident Management",
-  "Documents",
-  "Role based Dashboard",
-  "My Profile",
-  "Forms",
-  "Accounting",
-  "T Learning Hub",
-  "ChaT",
-  "Administrator",
-  "Roster Manager",
-  "NDIS Staff",
-  "Accountant",
-  "Participant",
-  "NDIS Industry",
-  "ICT Industry",
+const SEARCH_ITEMS: { label: string; path: string }[] = [
+  // Capabilities
+  { label: "Rostering & Scheduling",           path: "/capabilities/rostering-scheduling" },
+  { label: "Timesheets & Payroll",             path: "/capabilities/timesheets-payroll" },
+  { label: "Workforce Management",             path: "/capabilities/workforce-management" },
+  { label: "Participant Management",           path: "/capabilities/participant-management" },
+  { label: "Incidents & SIRS",                path: "/capabilities/incidents-sirs" },
+  { label: "Compliance & Audit Readiness",    path: "/capabilities/compliance-audit" },
+  { label: "NDIS Claiming & Invoicing",       path: "/capabilities/ndis-claiming" },
+  { label: "Accounting & Financial Reporting",path: "/capabilities/accounting-reporting" },
+  { label: "Dashboards & Reporting",          path: "/capabilities/dashboards-reporting" },
+  { label: "T-Sign",                           path: "/t-sign" },
+  { label: "Clock In & Clock Out",             path: "/clock-in-and-clock-out" },
+  { label: "T Learning Hub",                  path: "/t-learning-hub" },
+  { label: "ChaT",                             path: "/chat" },
+  { label: "Xero Integration",                path: "/xero" },
+  { label: "Salesforce Architecture",         path: "/salesforce-integration" },
+  // Solutions
+  { label: "Disability Support (NDIS)",       path: "/solutions/disability-support-ndis" },
+  { label: "Support Coordination",            path: "/solutions/support-coordination" },
+  { label: "Allied Health",                   path: "/solutions/allied-health-services" },
+  { label: "SIL",                             path: "/solutions/sil" },
+  { label: "Operations Manager",              path: "/solutions/operations-manager" },
+  { label: "Compliance Lead",                 path: "/solutions/compliance-lead" },
+  { label: "Finance Manager",                 path: "/solutions/finance-manager" },
+  { label: "Support Worker",                  path: "/solutions/support-worker" },
+  // Pages
+  { label: "Pricing",                          path: "/pricing" },
+  { label: "Platform",                         path: "/platform" },
+  { label: "Blog",                             path: "/blogs" },
+  { label: "Case Studies",                     path: "/case-studies" },
+  { label: "Webinars",                         path: "/webinars" },
+  { label: "Whitepapers",                      path: "/whitepapers" },
+  { label: "Help Centre",                      path: "/help-center" },
+  { label: "Release Notes",                    path: "/changelog" },
+  { label: "Our Story",                        path: "/our-story" },
+  { label: "Careers",                          path: "/careers" },
+  { label: "Contact Us",                       path: "/contact-us" },
+  { label: "Book a Demo",                      path: "/book-a-demo" },
 ];
 export default NavBarComponent;
