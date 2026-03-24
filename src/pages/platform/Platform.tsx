@@ -194,16 +194,17 @@ const Platform = () => {
               className="pl-btn-primary"
               onClick={() => navigate("/book-a-demo")}
             >
-              Book a Provider Maturity Review
+              Book a Demo
             </button>
             <button
               type="button"
               className="pl-btn-secondary"
               onClick={() => navigate("/signup")}
             >
-              Start Your Provider Setup
+              Begin Your Journey
             </button>
           </div>
+          <p className="pl-cta-sub-note">Book a Provider Maturity Review &nbsp;·&nbsp; Clear next steps, no pressure.</p>
           {/* Stat row */}
           <div id="pl-hero-stats">
             {HERO_STATS.map((s) => (
@@ -452,7 +453,7 @@ const Platform = () => {
                 className="pl-btn-primary"
                 onClick={() => navigate("/book-a-demo")}
               >
-                Book a Provider Maturity Review
+                Book a Demo
               </button>
               <button
                 type="button"
@@ -462,6 +463,7 @@ const Platform = () => {
                 Begin Your Journey
               </button>
             </div>
+            <p className="pl-cta-sub-note">Book a Provider Maturity Review &nbsp;·&nbsp; Clear next steps, no pressure.</p>
           </div>
         </div>
       </section>

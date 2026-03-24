@@ -118,6 +118,7 @@ const AppRoutes = () => {
             </Suspense>
           }
         />
+        <Route path="/requestdemo" element={<RequestADemo />} />
         <Route path="/requestDemo" element={<RequestADemo />} />
         <Route path="/salesPage" element={<SalesPage />} />
         <Route path="/pricing" element={<Pricing />} />
@@ -211,6 +212,7 @@ const AppRoutes = () => {
         <Route path="/our-story" element={<OurStory />} />
         <Route path="/our-mission-and-vision" element={<AboutUsSubPage />} />
         <Route path="/help-center" element={<FAQ />} />
+        <Route path="/help-centre" element={<FAQ />} />
         <Route path="/team" element={<Teams />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />

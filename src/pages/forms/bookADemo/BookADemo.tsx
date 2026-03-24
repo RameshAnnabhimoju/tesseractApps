@@ -85,7 +85,7 @@ const BookADemo = () => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleClose = () => navigate("/");
+  const handleClose = () => navigate(-1);
 
   const handleLogoClick = () => navigate("/");
 

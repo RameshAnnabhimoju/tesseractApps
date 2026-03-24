@@ -101,6 +101,7 @@
   cursor: pointer;
   transition: border-color 0.18s ease, background 0.18s ease, transform 0.12s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 .hv4-btn-outline:hover {
   border-color: var(--color-primary, #0c78ba);
@@ -984,6 +985,19 @@
   border-left: 3px solid var(--color-primary, #0c78ba);
 }
 
+.hv4-why-now-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.hv4-why-now-sub {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin: 0;
+}
+
 /* Risk chart visual */
 .hv4-why-now-visual {
   position: relative;
@@ -1516,6 +1530,8 @@
   gap: 16px;
   box-shadow: 0 2px 12px rgba(0,42,82,0.06);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 100%;
+  box-sizing: border-box;
 }
 .hv4-testimonial-card:hover {
   box-shadow: 0 6px 24px rgba(0,42,82,0.11);
@@ -1524,6 +1540,7 @@
 .hv4-testimonial-stars {
   display: flex;
   gap: 3px;
+  flex-shrink: 0;
 }
 .hv4-testimonial-stars img {
   display: block;
@@ -1534,6 +1551,21 @@
   color: #3a4a5c;
   margin: 0;
   flex: 1;
+  min-height: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+.hv4-testimonial-text::-webkit-scrollbar {
+  width: 4px;
+}
+.hv4-testimonial-text::-webkit-scrollbar-track {
+  background: transparent;
+}
+.hv4-testimonial-text::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
 }
 .hv4-testimonial-author {
   display: flex;

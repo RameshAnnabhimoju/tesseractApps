@@ -319,7 +319,7 @@ export default function HomeV4() {
                 <div className="hv4-card-dot hv4-card-dot--red" />
                 <div className="hv4-card-dot hv4-card-dot--amber" />
                 <div className="hv4-card-dot hv4-card-dot--green" />
-                <span className="hv4-card-title">TesseractApps Platform</span>
+                <span className="hv4-card-title">TesseractApps</span>
               </div>
               <div className="hv4-card-body">
                 <div className="hv4-card-modules">
@@ -551,9 +551,15 @@ export default function HomeV4() {
                   The providers building their operational foundation now are the ones who will navigate
                   what's ahead with confidence.
                 </p>
-                <button type="button" className="hv4-btn-primary" onClick={() => navigate("/book-a-demo")}>
-                  Book a Provider Maturity Review
-                </button>
+                <div className="hv4-why-now-ctas">
+                  <button type="button" className="hv4-btn-primary" onClick={() => navigate("/book-a-demo")}>
+                    Book a Demo
+                  </button>
+                  <button type="button" className="hv4-btn-outline" onClick={() => navigate("/signup")}>
+                    Begin Your Journey <IconArrowRight />
+                  </button>
+                </div>
+                <p className="hv4-why-now-sub">Book a Provider Maturity Review &nbsp;·&nbsp; Clear next steps, no pressure.</p>
               </div>
 
               <div className="hv4-why-now-visual" aria-hidden="true">

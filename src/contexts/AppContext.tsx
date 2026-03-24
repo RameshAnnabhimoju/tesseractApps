@@ -49,6 +49,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/pricing": { name: "Pricing", path: "/pricing" },
       "/platform": { name: "Platform", path: "/platform" },
       "/requestDemo": { name: "Book a Demo", path: "/requestDemo" },
+      "/requestdemo": { name: "Book a Demo", path: "/requestdemo" },
       "/book-a-demo": { name: "Book a Demo", path: "/book-a-demo" },
       "/signup": { name: "SignUp", path: "/signup" },
 
@@ -71,14 +72,15 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/webinars": { name: "Webinars", path: "/webinars" },
       "/contact-us": { name: "Contact Us", path: "/contact-us" },
       "/privacy-policy": { name: "Privacy Policy", path: "/privacy-policy" },
-      "/terms-and-Conditions": {
+      "/terms-and-conditions": {
         name: "Terms & Conditions",
-        path: "/terms-and-Conditions",
+        path: "/terms-and-conditions",
       },
       "/changelog": { name: "Release Notes", path: "/changelog" },
       "/careers": { name: "Careers", path: "/careers" },
       "/about": { name: "About", path: "/about" },
-      "/help-center": { name: "Help Center", path: "/help-center" },
+      "/help-center": { name: "Help Centre", path: "/help-center" },
+      "/help-centre": { name: "Help Centre", path: "/help-centre" },
 
       // ------------------- By Care (active — Sanity CMS, no hardcoded data) -------------------
       "/solutions/disability-support-ndis": {

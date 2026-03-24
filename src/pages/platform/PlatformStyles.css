@@ -118,7 +118,13 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 56px;
+  margin-bottom: 12px;
+}
+
+.pl-cta-sub-note {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin: 0 0 44px;
 }
 
 .pl-btn-primary {
@@ -695,6 +701,13 @@
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+#pl-cta .pl-cta-sub-note {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  text-align: center;
 }
 
 /* ── Responsive ── */

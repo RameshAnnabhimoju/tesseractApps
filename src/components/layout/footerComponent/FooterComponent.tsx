@@ -190,18 +190,12 @@ const FooterComponent = () => {
           ))}
         </div>
 
-        {/* Company (About nav group + legal) */}
+        {/* Company */}
         <div className="footer-column">
           <div className="footer-heading">Company</div>
-          {nav.About.map((link) => (
-            <div
-              key={link.title}
-              className="footer-text"
-              onClick={() => link.href && appNavigate(link.href)}
-            >
-              {link.title}
-            </div>
-          ))}
+          <div className="footer-text" onClick={() => appNavigate("/about")}>About Us</div>
+          <div className="footer-text" onClick={() => appNavigate("/careers")}>Careers</div>
+          <div className="footer-text" onClick={() => appNavigate("/contact-us")}>Contact Us</div>
           <div className="footer-text" onClick={() => appNavigate("/terms-and-conditions")}>Terms &amp; Conditions</div>
           <div className="footer-text" onClick={() => appNavigate("/privacy-policy")}>Privacy Policy</div>
           <div className="footer-text" onClick={() => appNavigate("/changelog")}>Release Notes</div>
@@ -220,7 +214,6 @@ const FooterComponent = () => {
             </div>
           ))}
           <div className="footer-text" onClick={() => appNavigate("/case-studies")}>Case Studies</div>
-          <div className="footer-text" onClick={() => appNavigate("/changelog")}>Release Notes</div>
           <a
             className="footer-text"
             href="/rss.xml"
@@ -231,8 +224,8 @@ const FooterComponent = () => {
           </a>
 
           <div className="footer-heading footer-support-heading">Support</div>
-          <div className="footer-text" onClick={() => appNavigate("/help-center")}>Help Centre</div>
-          <div className="footer-text" onClick={() => appNavigate("/help-center")}>FAQs</div>
+          <div className="footer-text" onClick={() => appNavigate("/help-centre")}>Help Centre</div>
+          <div className="footer-text" onClick={() => appNavigate("/help-centre")}>FAQs</div>
           <div className="footer-text" onClick={() => appNavigate("/book-a-demo")}>Book a Demo</div>
 
           <div className="footer-heading footer-support-heading">Get Started</div>

@@ -90,7 +90,7 @@ const Signup = () => {
   const [isSubmitting, setIsSubmitting]   = useState(false);
   const [alertData, setAlertData]         = useState(alertInitialData);
 
-  const handleClose = () => navigate("/");
+  const handleClose = () => navigate(-1);
 
   /* ── Validation per step ── */
   const validateStep = (step: number): boolean => {
