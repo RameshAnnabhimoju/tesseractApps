@@ -58,7 +58,7 @@ const FLIP_STAGES: Stage[] = [
     id: "growth",
     label: "Growth",
     tagline: "Operational Control",
-    staffRange: "16–60 staff",
+    staffRange: "15–60 staff",
     bestFor:
       "Providers experiencing workforce expansion, payroll pressure, and increasing reporting needs.",
     whatYouNeed: "Control, reporting clarity, payroll alignment, and manager accountability.",
@@ -80,7 +80,7 @@ const FLIP_STAGES: Stage[] = [
     id: "scale",
     label: "Scale",
     tagline: "Governance & Oversight",
-    staffRange: "61–120 staff",
+    staffRange: "60–120 staff",
     bestFor:
       "Multi-site providers, SIL providers, and organisations managing increasing governance pressure.",
     whatYouNeed: "Oversight, accountability, approvals, audit trails, and compliance control.",
@@ -102,7 +102,7 @@ const FLIP_STAGES: Stage[] = [
     id: "enterprise",
     label: "Enterprise",
     tagline: "Consolidation & Executive Visibility",
-    staffRange: "121+ staff",
+    staffRange: "120+ staff",
     bestFor:
       "Executive teams requiring financial consolidation, multi-entity oversight, and board-level reporting.",
     whatYouNeed:
@@ -721,7 +721,7 @@ const Pricing = () => {
             <h2 id="pr-cta-heading">See how TesseractApps works for your organisation.</h2>
             <p id="pr-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck.
+              30 minutes. Live platform — not a slide deck. Clear next steps, no pressure.
             </p>
             <div id="pr-cta-actions">
               <button

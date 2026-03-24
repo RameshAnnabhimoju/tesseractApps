@@ -281,10 +281,9 @@
   border: 1px solid rgba(0, 42, 82, 0.09);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06),
               0 12px 28px -4px rgba(0, 42, 82, 0.13);
-  max-height: 560px;
   width: max-content;
-  overflow-y: auto;
-  overflow-x: hidden;
+  max-width: min(1140px, calc(100vw - 32px));
+  overflow: visible;
   box-sizing: border-box;
   animation: nb-dropdown-in 0.16s ease both;
 }
@@ -335,12 +334,13 @@
 .nav-inner-container:hover .nav-title  { color: var(--color-primary); }
 .nav-inner-container:hover .nav-sub-title { color: var(--color-text-gray2); }
 
-/* Solutions: 3 wider columns */
+/* Solutions: 3 equal columns, bounded by parent max-width */
 #popup-nav-services-container {
   display: grid;
-  grid-template-columns: repeat(3, 260px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
   padding: 6px;
+  width: min(820px, calc(100vw - 48px));
   align-items: flex-start;
 }
 #popup-nav-services-container > div {
@@ -350,12 +350,13 @@
   border-right: 1px solid rgba(0, 42, 82, 0.07);
 }
 
-/* Products: 4 columns × 2 rows */
+/* Products: 4 equal columns, bounded by parent max-width */
 #popup-nav-products-container {
   display: grid;
-  grid-template-columns: repeat(4, 160px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   padding: 6px;
+  width: min(1100px, calc(100vw - 48px));
   align-items: flex-start;
 }
 .nav-product-group {

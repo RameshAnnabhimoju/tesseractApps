@@ -6,9 +6,9 @@ import SEO from "../../components/common/SEO";
 
 const ARCHITECTURE_IMPROVEMENTS = [
   { title: "More automation", desc: "Routine operational steps handled by the system." },
-  { title: "More governance", desc: "Approval workflows and enforcement rules deepen." },
-  { title: "More reporting", desc: "Executive, compliance, finance, and operational views." },
-  { title: "More clarity", desc: "One source of truth across every site and service line." },
+  { title: "More governance structure", desc: "Approval workflows and enforcement rules deepen." },
+  { title: "More reporting granularity", desc: "Executive, compliance, finance, and operational views." },
+  { title: "More operational clarity", desc: "One source of truth across every site and service line." },
 ];
 
 const ARCHITECTURE_PERMANENCE = [
@@ -28,7 +28,7 @@ type MaturityStage = {
 const MATURITY_STAGES: MaturityStage[] = [
   {
     stage: "Start",
-    staffRange: "1–14 staff",
+    staffRange: "1–15 staff",
     focusWord: "STRUCTURE",
     focus:
       "Visibility & structure. Compliant rostering, participant records, incident logging, and NDIS claiming from day one. Simplified navigation. No governance overhead — just the foundation done right.",
@@ -444,7 +444,7 @@ const Platform = () => {
             <h2 id="pl-cta-heading">See how TesseractApps works for your organisation.</h2>
             <p id="pl-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity
-              stage. 30 minutes. Live platform — not a slide deck.
+              stage. 30 minutes. Live platform — not a slide deck. Clear next steps, no pressure.
             </p>
             <div id="pl-cta-actions">
               <button

@@ -182,8 +182,8 @@ export const navBarDummyData: {
         ],
         "BY STAGE": [
             { title: "Start", subTitle: "1–15 staff", href: "/solutions/start" },
-            { title: "Growing", subTitle: "15–60 staff", href: "/solutions/growth" },
-            { title: "Scaling", subTitle: "60–120 staff", href: "/solutions/scale" },
+            { title: "Growth", subTitle: "15–60 staff", href: "/solutions/growth" },
+            { title: "Scale", subTitle: "60–120 staff", href: "/solutions/scale" },
             { title: "Enterprise", subTitle: "120+ staff", href: "/solutions/enterprise" },
         ],
     },
@@ -192,7 +192,7 @@ export const navBarDummyData: {
     Resources: [
         { title: "Blog", subTitle: "Insights & Updates", href: "/blogs" },
         { title: "Whitepapers", subTitle: "Research", href: "/whitepapers" },
-        { title: "Help Centre", subTitle: "Support", href: "/help-center" },
+        { title: "Help Centre", subTitle: "Support", href: "/help-centre" },
     ],
 
     // ── About ──────────────────────────────────────────────────────────────

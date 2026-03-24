@@ -6,6 +6,8 @@ import useAppNavigate from "../../hooks/useAppNavigate";
 import { useSanityBlogList } from "../../hooks/useSanityBlogList";
 import { urlFor } from "../../sanity/lib/image";
 import { formatDate } from "../../utils/formatDate";
+import { testimonialDummyData } from "../../data/testimonialData";
+import starIcon from "../../assets/star.webp";
 import company2 from "../../assets/thumbs/company-2-thumb.webp";
 import company4 from "../../assets/thumbs/company-4-thumb.webp";
 import company5 from "../../assets/thumbs/company-5-thumb.webp";
@@ -121,22 +123,24 @@ const CAPABILITIES = [
   { icon: <IconWorkforce />, label: "Workforce Management", href: "/capabilities/workforce-management", desc: "Credential tracking with automated expiry alerts. Onboarding workflows. Leave management integrated with rostering." },
   { icon: <IconParticipant />, label: "Participant Management", href: "/capabilities/participant-management", desc: "Centralised profiles. Care plans linked to goals. Real-time funding visibility by support category." },
   { icon: <IconIncidents />, label: "Incidents & SIRS", href: "/capabilities/incidents-sirs", desc: "Mobile incident logging. Automatic SIRS classification and escalation. CAPA tracking completion." },
-  { icon: <IconCompliance />, label: "Compliance & Audit", href: "/capabilities/compliance-audit", desc: "Embedded compliance across every function. Continuous monitoring. Evidence retrieved, not assembled." },
-  { icon: <IconClaiming />, label: "NDIS Claiming", href: "/capabilities/ndis-claiming", desc: "Claims generated from verified delivery. Pre-submission validation. Budget tracking in real time." },
+  { icon: <IconCompliance />, label: "Compliance & Audit Readiness", href: "/capabilities/compliance-audit", desc: "Embedded compliance across every function. Continuous monitoring. Evidence retrieved, not assembled." },
+  { icon: <IconClaiming />, label: "NDIS Claiming & Invoicing", href: "/capabilities/ndis-claiming", desc: "Claims generated from verified delivery. Pre-submission validation. Budget tracking in real time." },
   { icon: <IconDashboard />, label: "Dashboards & Reporting", href: "/capabilities/dashboards-reporting", desc: "Role-specific dashboards from support worker to CEO. One source of truth across every function." },
 ];
 
 const FLOW_STEPS = [
   { n: "01", label: "Intake", desc: "Participant referral received. Profile created with demographics, support needs, and risk information." },
   { n: "02", label: "Service Agreement", desc: "Agreement created, linked to participant plan. Funding categories and budgets mapped." },
-  { n: "03", label: "Roster Planning", desc: "Shifts created matching qualified workers to needs. SCHADS rules enforced at scheduling." },
-  { n: "04", label: "Shift Delivery", desc: "Support worker clocks in via mobile with GPS. Service delivered. Clock out recorded." },
-  { n: "05", label: "Case Notes", desc: "Progress notes captured on mobile at point of service. Linked to goals and funding categories." },
-  { n: "06", label: "Incident Reporting", desc: "Any incident logged immediately. SIRS classification applied. Escalation triggered automatically." },
-  { n: "07", label: "Timesheet & Payroll", desc: "Worked hours reconciled against roster. SCHADS Award interpretation applied. Payroll data ready." },
-  { n: "08", label: "Invoice & Claim", desc: "NDIS claims generated from verified delivery. Pre-validated against participant budgets." },
-  { n: "09", label: "Reconciliation", desc: "3-Layer Reconciliation: roster-to-timesheet, timesheet-to-claim, claim-to-payment." },
-  { n: "10", label: "Audit Evidence", desc: "Every action creates a timestamped, attributed audit trail. Evidence retrieved, not assembled." },
+  { n: "03", label: "Funding Allocation", desc: "Budget allocated by support category and plan period. Real-time balance tracking begins." },
+  { n: "04", label: "Roster Planning", desc: "Shifts created matching qualified, credentialed support workers to participant needs. SCHADS rules enforced at scheduling." },
+  { n: "05", label: "Shift Delivery", desc: "Support worker clocks in via mobile with GPS verification. Service delivered. Clock out recorded." },
+  { n: "06", label: "Case Notes & Progress", desc: "Progress notes captured on mobile at point of service. Linked to participant goals and funding categories." },
+  { n: "07", label: "Incident Reporting", desc: "Any incident logged immediately on mobile. SIRS classification applied. Escalation triggered automatically." },
+  { n: "08", label: "Timesheet & Payroll", desc: "Worked hours reconciled against roster. SCHADS Award interpretation applied automatically. Payroll data ready." },
+  { n: "09", label: "Invoice & Claim", desc: "NDIS claims generated from verified delivery. Pre-validated against participant budgets and price guides." },
+  { n: "10", label: "Reconciliation", desc: "3-Layer Reconciliation: roster-to-timesheet, timesheet-to-claim, claim-to-payment. Every dollar accounted for." },
+  { n: "11", label: "Reporting", desc: "Role-specific dashboards surface real-time data. Executive, compliance, finance, and operational views." },
+  { n: "12", label: "Audit Evidence", desc: "Every action creates a timestamped, attributed audit trail. Evidence retrieved, not assembled." },
 ];
 
 const MATURITY_STAGES = [
@@ -145,7 +149,7 @@ const MATURITY_STAGES = [
     range: "1–15 staff",
     focus: "STRUCTURE",
     color: "#10b981",
-    desc: "Build your compliance foundation. Compliant rostering, participant records, incident reporting, and NDIS claiming from day one.",
+    desc: "Build your compliance foundation. Compliant rostering, participant records, incident reporting, and NDIS claiming from day one. Founding Cohort pricing available.",
     href: "/solutions/start",
   },
   {
@@ -153,7 +157,7 @@ const MATURITY_STAGES = [
     range: "15–60 staff",
     focus: "CONTROL",
     color: "#0c78ba",
-    desc: "Stabilise payroll and operations. Automate SCHADS interpretation, connect timesheets to invoicing, and gain real-time oversight.",
+    desc: "Stabilise payroll and operations. Automate SCHADS interpretation, connect timesheets to invoicing, and gain real-time oversight across your workforce.",
     href: "/solutions/growth",
   },
   {
@@ -161,7 +165,7 @@ const MATURITY_STAGES = [
     range: "60–120 staff",
     focus: "GOVERNANCE",
     color: "#7c3aed",
-    desc: "Enforce governance across every site. Approval workflows, automated SIRS escalation, multi-site consistency.",
+    desc: "Enforce governance across every site. Approval workflows, automated SIRS escalation, multi-site consistency. The platform enforces the rules you set.",
     href: "/solutions/scale",
   },
   {
@@ -169,7 +173,7 @@ const MATURITY_STAGES = [
     range: "120+ staff",
     focus: "CONSOLIDATION",
     color: "#002a52",
-    desc: "Consolidate finance, payroll, and board reporting. Unify multi-site operations and surface data leadership needs.",
+    desc: "Consolidate finance, payroll, and board reporting. Unify multi-site operations and surface the data your leadership needs to act.",
     href: "/solutions/enterprise",
   },
 ];
@@ -399,7 +403,7 @@ export default function HomeV4() {
             <h2 className="hv4-section-h2">Where are you on your provider journey?</h2>
             <p className="hv4-section-sub">
               Every NDIS provider follows a maturity path. TesseractApps is built around it — so the platform
-              meets you where you are and grows with you. Same architecture at every stage. You never start again.
+              meets you where you are and grows with you. Same architecture at every stage. Configuration deepens. You never start again.
             </p>
 
             <div className="hv4-maturity-grid">
@@ -481,7 +485,7 @@ export default function HomeV4() {
             </div>
 
             <p className="hv4-flow-footer">
-              Every step generates data that feeds the next. When an auditor asks a question —
+              Every step generates data that feeds the next. When an auditor, plan manager, or board member asks a question —
               the answer already exists in the system.
             </p>
           </div>
@@ -638,6 +642,45 @@ export default function HomeV4() {
               <a href="/solutions/start" className="hv4-cap-extra-link">
                 <IconParticipant /> Find Your Stage — Start | Growth | Scale | Enterprise
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Section: Testimonials ─────────────────────────────────────── */}
+        <section id="hv4-testimonials">
+          <div className="hv4-section-inner">
+            <div className="hv4-section-label">What Providers Say</div>
+            <h2 className="hv4-section-h2">Real Stories. Real Results.</h2>
+            <p className="hv4-section-sub">
+              Trusted by NDIS providers across Australia.
+            </p>
+            <div className="hv4-testimonials-grid">
+              {testimonialDummyData.map((item) => (
+                <div key={item.id} className="hv4-testimonial-card">
+                  <div className="hv4-testimonial-stars">
+                    {Array.from({ length: item.rating }, (_, i) => (
+                      <img key={i} src={starIcon} alt="" width="14" height="14" loading="lazy" />
+                    ))}
+                  </div>
+                  <p className="hv4-testimonial-text">{item.testimonial}</p>
+                  <div className="hv4-testimonial-author">
+                    <img
+                      src={item.authorImage}
+                      alt={item.author}
+                      className="hv4-testimonial-avatar"
+                      width="44"
+                      height="44"
+                      loading="lazy"
+                    />
+                    <div className="hv4-testimonial-author-info">
+                      <div className="hv4-testimonial-author-name">{item.author}</div>
+                      {item.authorTitle && (
+                        <div className="hv4-testimonial-author-title">{item.authorTitle}</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

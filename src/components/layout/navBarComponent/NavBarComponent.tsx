@@ -185,11 +185,15 @@ const NavBarComponent = ({
       ? setShowSearch(value)
       : setShowSearch(!showSearch);
   };
+  const NAV_ROUTES: Record<string, string> = {
+    Capabilities: "/capabilities",
+    Solutions: "/solutions",
+  };
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
     setToggleDrawer(false);
     if (name) {
-      appNavigate(name);
+      appNavigate(NAV_ROUTES[name] ?? name);
     }
   };
   const handleNavPopupClick = (event: React.MouseEvent<HTMLDivElement>) => {

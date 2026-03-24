@@ -52,6 +52,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/book-a-demo": { name: "Book a Demo", path: "/book-a-demo" },
       "/signup": { name: "SignUp", path: "/signup" },
 
+      "/capabilities": { name: "Capabilities", path: "/capabilities" },
+      "/solutions": { name: "Solutions", path: "/solutions" },
+
       // ------------------- Capability pages -------------------
       "/capabilities/rostering-scheduling": { name: "Rostering & Scheduling", path: "/capabilities/rostering-scheduling" },
       "/capabilities/timesheets-payroll": { name: "Timesheets & Payroll Alignment", path: "/capabilities/timesheets-payroll" },
