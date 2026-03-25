@@ -28,6 +28,7 @@ tesseractWebsite.pub
 .claude/settings.local.json
 stats.html
 
-# Generated image thumbnails (rebuilt by prebuild script)
-src/assets/thumbs/
+# Generated image thumbnails — committed so Vercel/AWS builds work without sharp
+# src/assets/thumbs/
 temp
+/discarded

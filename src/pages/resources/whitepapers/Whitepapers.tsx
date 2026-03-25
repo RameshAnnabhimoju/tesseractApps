@@ -1,100 +1,73 @@
 import "./WhitepapersStyles.css";
-import pdf from "../../../assets/Digital Transformation in Disability Services A Roadmap for 2025–2030.pdf";
-import pdf2 from "../../../assets/White Paper Aug 2025.pdf";
-import pdf3 from "../../../assets/White Paper Sep 2025.pdf";
-import pdf4 from "../../../assets/Whitepaper July 2025.pdf";
-import pdf5 from "../../../assets/White Paper  (Nov).pdf";
-import whitepaper2 from "../../../assets/White Paper Aug 2025_page-0001.webp";
-import whitepaper4 from "../../../assets/Whitepaper July 2025-images-0.webp";
-import whitepaper5 from "../../../assets/White Paper  (Nov)-Cover.webp";
-import { useLocation } from "react-router-dom";
-import { useAppContext } from "../../../contexts/AppContext";
-import ComingSoon from "../../marketing/comingSoon/ComingSoon";
+import { Link } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
 
+const WHITEPAPERS = [
+  {
+    id: "wp-ndis-ops",
+    title: "Modern NDIS Operations Playbook",
+    description:
+      "A practical guide to reducing operational friction across rostering, compliance evidence, and participant delivery.",
+    audience: "Operations and Service Managers",
+    status: "Planned for 2026",
+  },
+  {
+    id: "wp-compliance",
+    title: "Audit Readiness Without Spreadsheet Overload",
+    description:
+      "A framework for building clear, defensible audit trails while cutting manual handoffs and duplicate entry.",
+    audience: "Compliance and Quality Leads",
+    status: "Planned for 2026",
+  },
+  {
+    id: "wp-finance",
+    title: "Scaling Claims and Payroll Together",
+    description:
+      "How growth-stage providers can align timesheets, claiming, and payroll decisions to protect margin and trust.",
+    audience: "Finance and Payroll Teams",
+    status: "Planned for 2026",
+  },
+];
+
 const Whitepapers = () => {
-  const location = useLocation();
-  // const { data } = location.state || {};
-  const { getRoute } = useAppContext();
-  const path = location.pathname.replace(/\/$/, "");
-  const data = (location.state as any)?.data ?? getRoute(path)?.data ?? null;
-  if (!data) {
-    return <ComingSoon />;
-  }
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const id = event.currentTarget.id;
-    switch (id) {
-      case "whitepaper-1":
-        window.open(pdf, "_blank");
-        break;
-      case "whitepaper-2":
-        window.open(pdf2, "_blank");
-        break;
-      case "whitepaper-3":
-        window.open(pdf3, "_blank");
-        break;
-      case "whitepaper-4":
-        window.open(pdf4, "_blank");
-        break;
-      case "whitepaper-5":
-        window.open(pdf5, "_blank");
-        break;
-      default:
-        break;
-    }
-  };
   return (
-    <div id="whitepapers-page-container">
+    <div>
       <SEO
         title="Whitepapers & Research | NDIS Digital Transformation | TesseractApps"
         description="Download free whitepapers on NDIS digital transformation, workforce management best practices, and care sector innovation for 2025-2030."
       />
-      <div className="heading">{data?.heading}</div>
-      <div id="whitepapers-subheading" className="subheading">
-        {data?.subHeading}
-      </div>
-      <div id="whitepapers-text" className="text">
-        {data?.text}
-      </div>
 
-      <div id="whitepapers-item-container">
-        {/* <img loading="lazy"
-          id="whitepaper-1"
-          src={whitepaper1}
-          alt="whitepaper-1"
-          onClick={handleClick}
-          className="whitepaper-item"
-        /> */}
-        <img loading="lazy"
-          id="whitepaper-2"
-          src={whitepaper2}
-          alt="whitepaper-2"
-          onClick={handleClick}
-          className="whitepaper-item"
-        />
-        {/* <img loading="lazy"
-          id="whitepaper-3"
-          src={whitepaper3}
-          alt="whitepaper-3"
-          onClick={handleClick}
-          className="whitepaper-item"
-        /> */}
-        <img loading="lazy"
-          id="whitepaper-4"
-          src={whitepaper4}
-          alt="whitepaper-4"
-          onClick={handleClick}
-          className="whitepaper-item"
-        />
-        <img loading="lazy"
-          id="whitepaper-5"
-          src={whitepaper5}
-          alt="whitepaper-5"
-          onClick={handleClick}
-          className="whitepaper-item"
-        />
-      </div>
-      {/* <object data={pdf} type="application/pdf" width="50%" height="600px" /> */}
+      {/* ── Hero ── */}
+      <section id="wp-hero">
+        <div id="wp-hero-inner">
+          <div id="wp-hero-label">Whitepapers & Research</div>
+          <h1 id="wp-hero-heading">Research and Decision Guides for Care Leaders</h1>
+          <p id="wp-hero-sub">
+            The final resource strategy positions whitepapers as high-value decision assets.
+            Explore the current publishing pipeline and request early access.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Content ── */}
+      <section id="wp-content">
+        <div id="wp-outer">
+          <div id="wp-section-label">Available Downloads</div>
+          <div id="wp-section-heading">2026 whitepaper roadmap</div>
+
+          <div id="wp-grid">
+            {WHITEPAPERS.map((wp) => (
+              <article key={wp.id} className="wp-card">
+                <div className="wp-card-status">{wp.status}</div>
+                <h3 className="wp-card-title">{wp.title}</h3>
+                <p className="wp-card-description">{wp.description}</p>
+                <div className="wp-card-audience">Best for: {wp.audience}</div>
+                <Link to="/contact-us" className="wp-card-cta">Request whitepaper access</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
