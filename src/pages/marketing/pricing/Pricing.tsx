@@ -2,7 +2,8 @@ import "./PricingStyles.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
-import { ChevronDown, ChevronUp, Phone, Mail, Play } from "lucide-react";
+import { ChevronDown, ChevronUp, Phone, Mail, Play, Download } from "lucide-react";
+import featuresPdf from "../../../assets/tesseract-features.pdf";
 import HeroArcsLeftComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import HeroArcsRightComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import { homeLeftArcsData, homeRightArcsData } from "../../../data/homeArcsData";
@@ -403,6 +404,7 @@ function StartVideo({ videoId, stageName }: { videoId?: string; stageName: strin
 const Pricing = () => {
   const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<"growth" | "scale" | "enterprise">("growth");
 
   return (
     <div id="pr-page">
@@ -451,6 +453,14 @@ const Pricing = () => {
             >
               Begin Your Journey
             </button>
+            <a
+              href={featuresPdf}
+              download="TesseractApps-Features.pdf"
+              className="pr-btn-download"
+            >
+              <Download size={15} />
+              Download Features PDF
+            </a>
           </div>
         </div>
         <HeroArcsRightComponent pendulums={homeRightArcsData} />
@@ -543,7 +553,7 @@ const Pricing = () => {
       </section>
 
       {/* ── Find Your Stage (flip cards) ── */}
-      <section id="pr-stages">
+      {/* <section id="pr-stages">
         <div className="pr-outer">
           <div className="pr-label-wrapper">
             <div className="pr-label pr-label--dark">Find Your Stage</div>
@@ -564,7 +574,7 @@ const Pricing = () => {
           </div>
           <p className="pr-flip-hint-text">Hover or tap a card to explore each stage.</p>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Paid Plans Comparison ── */}
       <section id="pr-paid-compare">
@@ -580,48 +590,126 @@ const Pricing = () => {
             organisation matures.
           </p>
 
-          <div className="pr-paid-stage-grid" aria-label="Paid plans overview">
-            {PAID_STAGE_ORDER.map((id) => {
-              const stage = PAID_STAGE_LOOKUP[id];
-              return (
-                <article key={id} className={`pr-paid-stage-card pr-paid-stage-card--${id}`}>
-                  <div className="pr-paid-stage-top">
-                    <div className="pr-paid-plan-name">{stage.label}</div>
-                    <div className="pr-paid-plan-tag">{stage.tagline}</div>
-                    <div className="pr-paid-plan-badge">{stage.badge}</div>
-                  </div>
-                  <div className="pr-paid-stage-range">{stage.staffRange}</div>
-                  <ul className="pr-paid-stage-commercial">
-                    {stage.commercial.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="pr-paid-lanes" aria-label="Detailed paid plan comparison">
-            {PAID_COMPARISON_ROWS.map((row) => (
-              <article key={row.label} className="pr-paid-lane">
-                <div className="pr-paid-row-label">{row.label}</div>
-                <div className="pr-paid-lane-grid">
-                  {row.values.map((value, index) => (
-                    <div className="pr-paid-lane-cell" key={`${row.label}-${PAID_STAGE_ORDER[index]}`}>
-                      {Array.isArray(value) ? (
-                        <ul className="pr-paid-cell-list">
-                          {value.map((item) => (
+          {/* ── Desktop: unified sticky-header table ── */}
+          <div className="pr-cmp-table-wrap" aria-label="Paid plans comparison">
+            <table className="pr-cmp-table">
+              <thead>
+                <tr className="pr-cmp-head-row">
+                  <th className="pr-cmp-th pr-cmp-th--label" scope="col" aria-label="Category" />
+                  {PAID_STAGE_ORDER.map((id) => {
+                    const stage = PAID_STAGE_LOOKUP[id];
+                    return (
+                      <th
+                        key={id}
+                        className={`pr-cmp-th pr-cmp-th--plan pr-cmp-th--${id}`}
+                        scope="col"
+                      >
+                        <div className="pr-cmp-plan-name">{stage.label}</div>
+                        <div className="pr-cmp-plan-tag">{stage.tagline}</div>
+                        <div className="pr-cmp-plan-badge">{stage.badge}</div>
+                        <div className="pr-cmp-plan-range">{stage.staffRange}</div>
+                        <ul className="pr-cmp-plan-commercial">
+                          {stage.commercial.map((item) => (
                             <li key={item}>{item}</li>
                           ))}
                         </ul>
-                      ) : (
-                        <p className="pr-paid-cell-text">{value}</p>
-                      )}
-                    </div>
-                  ))}
+                      </th>
+                    );
+                  })}
+                </tr>
+              </thead>
+              <tbody>
+                {PAID_COMPARISON_ROWS.map((row, rowIndex) => (
+                  <tr
+                    key={row.label}
+                    className={`pr-cmp-row${rowIndex % 2 === 0 ? " pr-cmp-row--alt" : ""}`}
+                  >
+                    <th className="pr-cmp-td pr-cmp-td--label" scope="row">
+                      {row.label}
+                    </th>
+                    {row.values.map((value, colIndex) => (
+                      <td
+                        className={`pr-cmp-td pr-cmp-td--${PAID_STAGE_ORDER[colIndex]}`}
+                        key={`${row.label}-${PAID_STAGE_ORDER[colIndex]}`}
+                      >
+                        {Array.isArray(value) ? (
+                          <ul className="pr-cmp-cell-list">
+                            {value.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="pr-cmp-cell-text">{value}</p>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* ── Mobile: plan-selector tabs + single-plan card ── */}
+          <div className="pr-cmp-mobile" aria-label="Paid plans comparison">
+            <div className="pr-cmp-tabs" role="tablist">
+              {PAID_STAGE_ORDER.map((id) => (
+                <button
+                  key={id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === id ? "true" : "false"}
+                  className={`pr-cmp-tab pr-cmp-tab--${id}${activeTab === id ? " pr-cmp-tab--active" : ""}`}
+                  onClick={() => setActiveTab(id)}
+                >
+                  {PAID_STAGE_LOOKUP[id].label}
+                </button>
+              ))}
+            </div>
+
+            {(() => {
+              const stage = PAID_STAGE_LOOKUP[activeTab];
+              const colIndex = PAID_STAGE_ORDER.indexOf(activeTab);
+              return (
+                <div
+                  key={activeTab}
+                  className={`pr-cmp-mobile-card pr-cmp-mobile-card--${activeTab}`}
+                  role="tabpanel"
+                >
+                  <div className="pr-cmp-mobile-card-header">
+                    <div className="pr-cmp-plan-badge">{stage.badge}</div>
+                    <div className="pr-cmp-plan-name">{stage.label}</div>
+                    <div className="pr-cmp-plan-tag">{stage.tagline}</div>
+                    <div className="pr-cmp-plan-range">{stage.staffRange}</div>
+                    <ul className="pr-cmp-plan-commercial">
+                      {stage.commercial.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <dl className="pr-cmp-mobile-rows">
+                    {PAID_COMPARISON_ROWS.map((row, i) => (
+                      <div
+                        key={row.label}
+                        className={`pr-cmp-mobile-row${i % 2 === 0 ? " pr-cmp-mobile-row--alt" : ""}`}
+                      >
+                        <dt className="pr-cmp-mobile-row-label">{row.label}</dt>
+                        <dd className="pr-cmp-mobile-row-value">
+                          {Array.isArray(row.values[colIndex]) ? (
+                            <ul className="pr-cmp-cell-list">
+                              {(row.values[colIndex] as string[]).map((item) => (
+                                <li key={item}>{item}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p className="pr-cmp-cell-text">{row.values[colIndex] as string}</p>
+                          )}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
-              </article>
-            ))}
+              );
+            })()}
           </div>
         </div>
       </section>

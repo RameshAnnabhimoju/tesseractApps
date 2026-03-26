@@ -9,7 +9,7 @@ import "../pages/solutions/solutionPage/SolutionPageStyles.css";
 import "../pages/competitors/CompetitorPageStyles.css";
 
 // Home stays as eager import — it is the "/" route and must render immediately
-import Home from "../pages/home/Home";
+// import Home from "../pages/home/Home";
 const HomeV4 = lazy(() => import("../pages/home/HomeV4"));
 
 // All other pages are lazy-loaded — they only download when the user navigates to them
@@ -77,7 +77,7 @@ const AppRoutes = () => {
     <Suspense fallback={<div className="app-page-loader"><div className="app-page-spinner" /></div>}>
       <Routes>
         <Route path="/" element={<HomeV4 />} />
-        <Route path="/home-v4" element={<Home />} />
+        {/* <Route path="/home-v4" element={<Home />} /> */}
         {/* Blog listing — own Suspense so skeleton shows directly */}
         <Route
           path="/blogs"

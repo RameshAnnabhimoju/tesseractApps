@@ -47,7 +47,7 @@ const MATURITY_STAGES: MaturityStage[] = [
     staffRange: "60–120 staff",
     focusWord: "GOVERNANCE",
     focus:
-      "Governance & enforcement. Approval workflows for rosters, expenditure, and escalations. SIRS automation. Multi-site audit trail depth. Executive reporting surfaces activated.",
+      "Governance & enforcement. Approval workflows for rosters, expenditure, and escalations. Multi-site audit trail depth. Executive reporting surfaces activated.",
     accentColor: "#7c3aed",
   },
   {

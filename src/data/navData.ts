@@ -8,7 +8,7 @@ export const footerProductsData = {
     ],
     1: [
         "Participant Management",
-        "Incidents & SIRS",
+        "Incidents",
         "Compliance & Audit Readiness",
         "Dashboards & Reporting",
         "T-Sign",
@@ -90,9 +90,9 @@ export const navBarDummyData: {
                     href: "/capabilities/participant-management",
                 },
                 {
-                    title: "Incidents & SIRS",
+                    title: "Incidents",
                     subTitle: "Incident Reporting",
-                    href: "/capabilities/incidents-sirs",
+                    href: "/capabilities/incidents",
                 },
                 {
                     title: "Compliance & Audit Readiness",

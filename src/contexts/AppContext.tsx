@@ -61,7 +61,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/capabilities/timesheets-payroll": { name: "Timesheets & Payroll Alignment", path: "/capabilities/timesheets-payroll" },
       "/capabilities/workforce-management": { name: "Workforce Management", path: "/capabilities/workforce-management" },
       "/capabilities/participant-management": { name: "Participant Management", path: "/capabilities/participant-management" },
-      "/capabilities/incidents-sirs": { name: "Incidents & SIRS", path: "/capabilities/incidents-sirs" },
+      "/capabilities/incidents": { name: "Incidents", path: "/capabilities/incidents" },
       "/capabilities/compliance-audit": { name: "Compliance & Audit Readiness", path: "/capabilities/compliance-audit" },
       "/capabilities/ndis-claiming": { name: "NDIS Claiming & Invoicing", path: "/capabilities/ndis-claiming" },
       "/capabilities/accounting-reporting": { name: "Accounting & Financial Reporting", path: "/capabilities/accounting-reporting" },
