@@ -149,6 +149,7 @@ const CompetitorPage = () => {
                 Begin Your Journey
               </button>
             </div>
+            <p className="cmp-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
           </div>
 
           {/* Right: VS card */}
@@ -311,7 +312,7 @@ const CompetitorPage = () => {
             <div id="cmp-cta-links">
               <Link to="/book-a-demo" className="cmp-cta-link">Book a Provider Maturity Review</Link>
               <span className="cmp-cta-divider">·</span>
-              <Link to="/signup" className="cmp-cta-link">Start Your Provider Setup</Link>
+              <Link to="/signup" className="cmp-cta-link">Begin Your Journey</Link>
             </div>
           </div>
         </div>

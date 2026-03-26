@@ -204,7 +204,7 @@ const Platform = () => {
               Begin Your Journey
             </button>
           </div>
-          <p className="pl-cta-sub-note">Book a Provider Maturity Review &nbsp;·&nbsp; Clear next steps, no pressure.</p>
+          <p className="pl-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
           {/* Stat row */}
           <div id="pl-hero-stats">
             {HERO_STATS.map((s) => (
@@ -445,25 +445,25 @@ const Platform = () => {
             <h2 id="pl-cta-heading">See how TesseractApps works for your organisation.</h2>
             <p id="pl-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity
-              stage. 30 minutes. Live platform — not a slide deck. Clear next steps, no pressure.
+              stage. 30 minutes. Live platform — not a slide deck. Start your provider setup.
             </p>
-            <div id="pl-cta-actions">
-              <button
-                type="button"
-                className="pl-btn-primary"
-                onClick={() => navigate("/book-a-demo")}
-              >
-                Book a Demo
-              </button>
-              <button
-                type="button"
-                className="pl-btn-secondary"
-                onClick={() => navigate("/signup")}
-              >
-                Begin Your Journey
-              </button>
-            </div>
-            <p className="pl-cta-sub-note">Book a Provider Maturity Review &nbsp;·&nbsp; Clear next steps, no pressure.</p>
+        <div className="sll-cta-actions">
+            <button
+              type="button"
+              className="sll-btn-primary"
+              onClick={() => navigate("/book-a-demo")}
+            >
+              Book a Demo
+            </button>
+            <button
+              type="button"
+              className="sll-btn-outline"
+              onClick={() => navigate("/signup")}
+            >
+              Begin Your Journey
+            </button>
+          </div>
+          <p className="sll-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
           </div>
         </div>
       </section>

@@ -462,6 +462,7 @@ const Pricing = () => {
               Download Features PDF
             </a>
           </div>
+          <p className="pr-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
         </div>
         <HeroArcsRightComponent pendulums={homeRightArcsData} />
       </section>
@@ -531,18 +532,19 @@ const Pricing = () => {
                 <button
                   type="button"
                   className="pr-btn-primary"
-                  onClick={() => navigate("/signup")}
+                  onClick={() => navigate("/book-a-demo")}
                 >
-                  Start Your Provider Setup
+                  Book a Demo
                 </button>
                 <button
                   type="button"
                   className="pr-btn-secondary--dark"
-                  onClick={() => navigate("/book-a-demo")}
+                  onClick={() => navigate("/signup")}
                 >
-                  Book a Maturity Review
+                  Begin Your Journey
                 </button>
               </div>
+              <p className="pr-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
             </div>
 
             <div id="pr-featured-right">
@@ -809,7 +811,7 @@ const Pricing = () => {
             <h2 id="pr-cta-heading">See how TesseractApps works for your organisation.</h2>
             <p id="pr-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck. Clear next steps, no pressure.
+              30 minutes. Live platform — not a slide deck. Start your provider setup.
             </p>
             <div id="pr-cta-actions">
               <button
@@ -827,6 +829,7 @@ const Pricing = () => {
                 Begin Your Journey
               </button>
             </div>
+            <p className="pr-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
           </div>
         </div>
       </section>

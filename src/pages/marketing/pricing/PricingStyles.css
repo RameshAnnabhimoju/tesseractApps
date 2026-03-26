@@ -252,6 +252,16 @@
   border-color: rgba(0, 42, 82, 0.5);
   background: rgba(0, 42, 82, 0.04);
 }
+.pr-cta-sub-note {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 8px 0 0;
+  text-align: center;
+}
+#pr-cta-banner .pr-cta-sub-note {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 12px 0 0;
+}
 
 /* ══════════════════════════════════════════
    START  —  featured horizontal card
@@ -376,6 +386,10 @@
   gap: 12px;
   flex-wrap: wrap;
   padding-top: 4px;
+}
+#pr-featured-left .pr-cta-sub-note {
+  text-align: left;
+  margin-top: 6px;
 }
 
 /* Right side — video panel */
@@ -707,7 +721,7 @@
    PAID COMPARISON  —  Growth / Scale / Enterprise
 ══════════════════════════════════════════ */
 #pr-paid-compare {
-  padding: 0 0 88px;
+  padding: 56px 0 88px;
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
@@ -1370,7 +1384,7 @@
 
   #pr-stages { padding: 48px 0 64px; }
 
-  #pr-paid-compare { padding: 0 0 64px; }
+  #pr-paid-compare { padding: 44px 0 64px; }
 
   #pr-why { padding: 40px 0; }
   .pr-compare-col { padding: 18px 20px; }
@@ -1409,7 +1423,7 @@
   .pr-accordion-header { padding: 16px 16px 14px; }
   .pr-accordion-body-inner { padding: 0 16px 16px; }
 
-  #pr-paid-compare { padding: 0 0 48px; }
+  #pr-paid-compare { padding: 36px 0 48px; }
 
   #pr-why { padding: 32px 0; }
   .pr-compare-col { padding: 16px; }

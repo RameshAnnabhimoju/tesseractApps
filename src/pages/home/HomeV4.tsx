@@ -300,9 +300,10 @@ export default function HomeV4() {
                 Book a Demo
               </button>
               <button type="button" className="hv4-btn-outline" onClick={() => navigate("/signup")}>
-                Begin Your Journey <IconArrowRight />
+                Begin Your Journey
               </button>
             </div>
+            <p className="hv4-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
 
             {/* Trust line */}
             <p className="hv4-hero-trust">
@@ -523,9 +524,10 @@ export default function HomeV4() {
                 Book a Demo
               </button>
               <button type="button" className="hv4-btn-outline" onClick={() => navigate("/signup")}>
-                Begin Your Journey <IconArrowRight />
+                Begin Your Journey
               </button>
             </div>
+            <p className="hv4-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
             <p className="hv4-start-guarantee">
               <IconCheck /> Money-back guarantee on all plans
             </p>
@@ -558,10 +560,10 @@ export default function HomeV4() {
                     Book a Demo
                   </button>
                   <button type="button" className="hv4-btn-outline" onClick={() => navigate("/signup")}>
-                    Begin Your Journey <IconArrowRight />
+                    Begin Your Journey
                   </button>
                 </div>
-                <p className="hv4-why-now-sub">Book a Provider Maturity Review &nbsp;·&nbsp; Clear next steps, no pressure.</p>
+                <p className="hv4-why-now-sub">Book a Provider Maturity Review. Start your provider setup.</p>
               </div>
 
               <div className="hv4-why-now-visual" aria-hidden="true">
@@ -787,19 +789,19 @@ export default function HomeV4() {
             <h2 className="hv4-cta-h2">See how TesseractApps works for your organisation.</h2>
             <p className="hv4-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck. Clear next steps, no pressure.
+              30 minutes. Live platform — not a slide deck. Start your provider setup.
             </p>
             <div className="hv4-cta-actions">
               <button type="button" className="hv4-btn-white" onClick={() => navigate("/book-a-demo")}>
                 Book a Demo
               </button>
               <button type="button" className="hv4-btn-outline-white" onClick={() => navigate("/signup")}>
-                Begin Your Journey <IconArrowRight />
+                Begin Your Journey
               </button>
             </div>
             <p className="hv4-cta-sub2">
               <IconCheck /> Book a Provider Maturity Review &nbsp;·&nbsp;
-              <IconCheck /> Start Your Provider Setup &nbsp;·&nbsp;
+              <IconCheck /> Begin Your Journey &nbsp;·&nbsp;
               <IconCheck /> Money-back guarantee
             </p>
           </div>

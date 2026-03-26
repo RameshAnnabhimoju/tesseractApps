@@ -316,6 +316,13 @@
 }
 @media (max-width: 960px) { .hv4-hero-ctas { justify-content: center; } }
 
+.hv4-cta-sub-note {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 4px 0 0;
+  text-align: center;
+}
+@media (max-width: 960px) { .hv4-cta-sub-note { text-align: center; } }
 .hv4-hero-trust {
   display: flex;
   align-items: center;
