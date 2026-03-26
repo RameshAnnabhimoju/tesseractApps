@@ -1,6 +1,6 @@
 import "./ContactInformationStyles.css";
 import SEO from "../../../components/common/SEO";
-import { Phone, Mail, MapPin, Clock, Send, CalendarCheck } from "lucide-react";
+import { Phone, MapPin, Clock, Send, CalendarCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const ContactInformation = () => {

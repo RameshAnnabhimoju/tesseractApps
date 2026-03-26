@@ -10,6 +10,7 @@ import { pricingPlanType } from './pricingPlanType'
 import { releaseNoteType } from './releaseNoteType'
 import { seoType } from './seoType'
 import { teamMemberType } from './teamMemberType'
+import { whitepapersType } from './whitepapersType'
 
 export const schemaTypes = [
   seoType,
@@ -24,4 +25,5 @@ export const schemaTypes = [
   jobListingType,
   solutionPageType,
   competitorPageType,
+  whitepapersType,
 ]

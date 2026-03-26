@@ -1,5 +1,5 @@
 import "./PricingStyles.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
 import { ChevronDown, ChevronUp, Phone, Mail, Play, Download } from "lucide-react";
@@ -195,174 +195,174 @@ const PAID_COMPARISON_ROWS = [
 
 // ── Flip Card ──────────────────────────────────────────────────────────────
 
-function FlipCard({ stage, onCtaClick }: { stage: Stage; onCtaClick: () => void }) {
-  const [flipped, setFlipped] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth < 900 : false
-  );
+// function FlipCard({ stage, onCtaClick }: { stage: Stage; onCtaClick: () => void }) {
+//   const [flipped, setFlipped] = useState(false);
+//   const [videoPlaying, setVideoPlaying] = useState(false);
+//   const [open, setOpen] = useState(false);
+//   const [isMobile, setIsMobile] = useState(() =>
+//     typeof window !== "undefined" ? window.innerWidth < 900 : false
+//   );
 
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 899px)");
-    const handler = (e: MediaQueryListEvent) => {
-      setIsMobile(e.matches);
-      if (!e.matches) setOpen(false);
-    };
-    mq.addEventListener("change", handler);
-    setIsMobile(mq.matches);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+//   useEffect(() => {
+//     const mq = window.matchMedia("(max-width: 899px)");
+//     const handler = (e: MediaQueryListEvent) => {
+//       setIsMobile(e.matches);
+//       if (!e.matches) setOpen(false);
+//     };
+//     mq.addEventListener("change", handler);
+//     setIsMobile(mq.matches);
+//     return () => mq.removeEventListener("change", handler);
+//   }, []);
 
-  // ── Mobile: single accordion card ─────────────────────────────────────
-  if (isMobile) {
-    return (
-      <div className="pr-accordion-card">
-        {/* Always-visible header */}
-        <button
-          type="button"
-          className="pr-accordion-header"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <div className="pr-accordion-header-left">
-            <div className="pr-flip-badge">{stage.badge}</div>
-            <h3 className="pr-flip-name">{stage.label}</h3>
-            <p className="pr-flip-tagline">{stage.tagline}</p>
-            <p className="pr-flip-range">{stage.staffRange}</p>
-            <div className="pr-flip-commercial">
-              {stage.commercial.map((line) => (
-                <div key={line} className="pr-flip-commercial-item">
-                  <span className="pr-flip-dot" />
-                  {line}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="pr-accordion-chevron">
-            {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-          </div>
-        </button>
+//   // ── Mobile: single accordion card ─────────────────────────────────────
+//   if (isMobile) {
+//     return (
+//       <div className="pr-accordion-card">
+//         {/* Always-visible header */}
+//         <button
+//           type="button"
+//           className="pr-accordion-header"
+//           onClick={() => setOpen((v) => !v)}
+//         >
+//           <div className="pr-accordion-header-left">
+//             <div className="pr-flip-badge">{stage.badge}</div>
+//             <h3 className="pr-flip-name">{stage.label}</h3>
+//             <p className="pr-flip-tagline">{stage.tagline}</p>
+//             <p className="pr-flip-range">{stage.staffRange}</p>
+//             <div className="pr-flip-commercial">
+//               {stage.commercial.map((line) => (
+//                 <div key={line} className="pr-flip-commercial-item">
+//                   <span className="pr-flip-dot" />
+//                   {line}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//           <div className="pr-accordion-chevron">
+//             {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+//           </div>
+//         </button>
 
-        {/* Expandable details */}
-        <div className={`pr-accordion-body${open ? " pr-accordion-body--open" : ""}`}>
-          <div className="pr-accordion-body-inner">
-            <p className="pr-accordion-best-for">{stage.bestFor}</p>
-            <div className="pr-flip-back-label">What you need</div>
-            <p className="pr-accordion-what-you-need">{stage.whatYouNeed}</p>
-            <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
-            <ul className="pr-flip-supports">
-              {stage.supports.map((item) => (
-                <li key={item} className="pr-flip-supports-item">
-                  <span className="pr-flip-dot" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="pr-flip-back-label pr-flip-back-label--mt">Automation focus</div>
-            <p className="pr-flip-automation-heading">{stage.automationHeading}</p>
-            <button
-              type="button"
-              className="pr-flip-cta"
-              onClick={(e) => {
-                e.stopPropagation();
-                onCtaClick();
-              }}
-            >
-              Book a Demo
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+//         {/* Expandable details */}
+//         <div className={`pr-accordion-body${open ? " pr-accordion-body--open" : ""}`}>
+//           <div className="pr-accordion-body-inner">
+//             <p className="pr-accordion-best-for">{stage.bestFor}</p>
+//             <div className="pr-flip-back-label">What you need</div>
+//             <p className="pr-accordion-what-you-need">{stage.whatYouNeed}</p>
+//             <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
+//             <ul className="pr-flip-supports">
+//               {stage.supports.map((item) => (
+//                 <li key={item} className="pr-flip-supports-item">
+//                   <span className="pr-flip-dot" />
+//                   {item}
+//                 </li>
+//               ))}
+//             </ul>
+//             <div className="pr-flip-back-label pr-flip-back-label--mt">Automation focus</div>
+//             <p className="pr-flip-automation-heading">{stage.automationHeading}</p>
+//             <button
+//               type="button"
+//               className="pr-flip-cta"
+//               onClick={(e) => {
+//                 e.stopPropagation();
+//                 onCtaClick();
+//               }}
+//             >
+//               Book a Demo
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
 
-  // ── Desktop: 3D flip card ──────────────────────────────────────────────
-  return (
-    <div
-      className={`pr-flip-card${flipped ? " pr-flip-card--flipped" : ""}`}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => {
-        setFlipped(false);
-        setVideoPlaying(false);
-      }}
-      onClick={() => setFlipped((f) => !f)}
-    >
-      <div className="pr-flip-card-inner">
-        {/* Front */}
-        <div className="pr-flip-card-front">
-          <div className="pr-flip-badge">{stage.badge}</div>
-          <h3 className="pr-flip-name">{stage.label}</h3>
-          <p className="pr-flip-tagline">{stage.tagline}</p>
-          <p className="pr-flip-range">{stage.staffRange}</p>
-          <div className="pr-flip-commercial">
-            {stage.commercial.map((line) => (
-              <div key={line} className="pr-flip-commercial-item">
-                <span className="pr-flip-dot" />
-                {line}
-              </div>
-            ))}
-          </div>
-          <p className="pr-flip-best-for">{stage.bestFor}</p>
-          <div className="pr-flip-hint">See what's included →</div>
-        </div>
+//   // ── Desktop: 3D flip card ──────────────────────────────────────────────
+//   return (
+//     <div
+//       className={`pr-flip-card${flipped ? " pr-flip-card--flipped" : ""}`}
+//       onMouseEnter={() => setFlipped(true)}
+//       onMouseLeave={() => {
+//         setFlipped(false);
+//         setVideoPlaying(false);
+//       }}
+//       onClick={() => setFlipped((f) => !f)}
+//     >
+//       <div className="pr-flip-card-inner">
+//         {/* Front */}
+//         <div className="pr-flip-card-front">
+//           <div className="pr-flip-badge">{stage.badge}</div>
+//           <h3 className="pr-flip-name">{stage.label}</h3>
+//           <p className="pr-flip-tagline">{stage.tagline}</p>
+//           <p className="pr-flip-range">{stage.staffRange}</p>
+//           <div className="pr-flip-commercial">
+//             {stage.commercial.map((line) => (
+//               <div key={line} className="pr-flip-commercial-item">
+//                 <span className="pr-flip-dot" />
+//                 {line}
+//               </div>
+//             ))}
+//           </div>
+//           <p className="pr-flip-best-for">{stage.bestFor}</p>
+//           <div className="pr-flip-hint">See what's included →</div>
+//         </div>
 
-        {/* Back */}
-        <div className="pr-flip-card-back">
-          <div className="pr-flip-back-label">What you need</div>
-          <p className="pr-flip-what-you-need">{stage.whatYouNeed}</p>
-          <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
-          <ul className="pr-flip-supports">
-            {stage.supports.map((item) => (
-              <li key={item} className="pr-flip-supports-item">
-                <span className="pr-flip-dot" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="pr-flip-automation-heading pr-flip-automation-heading--footer">
-            {stage.automationHeading}
-          </p>
-          <div className="pr-flip-back-actions">
-            {stage.videoId && (
-              videoPlaying ? (
-                <div className="pr-video-frame">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${stage.videoId}?autoplay=1`}
-                    title={`${stage.label} Overview`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <button
-                  type="button"
-                  className="pr-flip-video-btn pr-flip-video-btn--active"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setVideoPlaying(true);
-                  }}
-                >
-                  <Play size={12} fill="currentColor" />
-                  Watch {stage.label} Overview
-                </button>
-              )
-            )}
-            <button
-              type="button"
-              className="pr-flip-cta"
-              onClick={(e) => {
-                e.stopPropagation();
-                onCtaClick();
-              }}
-            >
-              Book a Demo
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+//         {/* Back */}
+//         <div className="pr-flip-card-back">
+//           <div className="pr-flip-back-label">What you need</div>
+//           <p className="pr-flip-what-you-need">{stage.whatYouNeed}</p>
+//           <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
+//           <ul className="pr-flip-supports">
+//             {stage.supports.map((item) => (
+//               <li key={item} className="pr-flip-supports-item">
+//                 <span className="pr-flip-dot" />
+//                 {item}
+//               </li>
+//             ))}
+//           </ul>
+//           <p className="pr-flip-automation-heading pr-flip-automation-heading--footer">
+//             {stage.automationHeading}
+//           </p>
+//           <div className="pr-flip-back-actions">
+//             {stage.videoId && (
+//               videoPlaying ? (
+//                 <div className="pr-video-frame">
+//                   <iframe
+//                     src={`https://www.youtube.com/embed/${stage.videoId}?autoplay=1`}
+//                     title={`${stage.label} Overview`}
+//                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//                     allowFullScreen
+//                   />
+//                 </div>
+//               ) : (
+//                 <button
+//                   type="button"
+//                   className="pr-flip-video-btn pr-flip-video-btn--active"
+//                   onClick={(e) => {
+//                     e.stopPropagation();
+//                     setVideoPlaying(true);
+//                   }}
+//                 >
+//                   <Play size={12} fill="currentColor" />
+//                   Watch {stage.label} Overview
+//                 </button>
+//               )
+//             )}
+//             <button
+//               type="button"
+//               className="pr-flip-cta"
+//               onClick={(e) => {
+//                 e.stopPropagation();
+//                 onCtaClick();
+//               }}
+//             >
+//               Book a Demo
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 // ── Start featured video ───────────────────────────────────────────────────
 

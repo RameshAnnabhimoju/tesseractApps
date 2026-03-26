@@ -352,3 +352,28 @@ export const COMPETITOR_NAV_QUERY = `
     order
   }
 `
+
+// Whitepapers — published and coming_soon, featured first then newest
+export const WHITEPAPERS_QUERY = `
+  *[_type == "whitepaper" && status in ["published", "coming_soon"]]
+  | order(featured desc, publishedAt desc) {
+    _id,
+    title,
+    slug,
+    status,
+    excerpt,
+    audience,
+    publishedAt,
+    gated,
+    tags,
+    featured,
+    pdfFile {
+      asset->{ _id, url }
+    },
+    coverImage {
+      asset->{ _id, url, metadata { lqip, dimensions } },
+      alt
+    },
+    seo { metaTitle, metaDescription }
+  }
+`
