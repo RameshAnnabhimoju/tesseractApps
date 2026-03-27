@@ -69,6 +69,7 @@ export const BLOG_POST_BY_SLUG_QUERY = `
     tags,
     excerpt,
     publishedAt,
+    _updatedAt,
     ${mainImageFragment},
     body,
     seo {

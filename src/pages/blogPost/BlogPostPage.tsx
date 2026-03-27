@@ -58,7 +58,7 @@ export default function BlogPostPage() {
   }
 
   const seo = post.seo
-  const siteUrl = 'https://www.tesseractapps.com.au'
+  const siteUrl = 'https://tesseractapps.com.au'
   const postUrl = `${siteUrl}/blog/${post.slug?.current ?? ''}`
 
   const metaTitle = seo?.metaTitle ?? post.title ?? ''
@@ -77,6 +77,7 @@ export default function BlogPostPage() {
     description: post.excerpt,
     url: postUrl,
     datePublished: post.publishedAt,
+    ...(post._updatedAt && { dateModified: post._updatedAt }),
     ...(post.mainImage && { image: ogImage }),
     ...(post.author?.name && {
       author: {
@@ -153,7 +154,7 @@ export default function BlogPostPage() {
             <p className="bpp-excerpt">{post.excerpt}</p>
           )}
 
-          {/* <div className="bpp-meta">
+          <div className="bpp-meta">
             {post.author && (
               <div className="bpp-author">
                 {post.author.avatar?.asset && (
@@ -185,7 +186,7 @@ export default function BlogPostPage() {
                 <span className="bpp-reading-time">{post.readingTime} min read</span>
               </>
             )}
-          </div> */}
+          </div>
 
           {post.tags && post.tags.length > 0 && (
             <div className="bpp-tags">

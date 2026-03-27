@@ -2,6 +2,7 @@ import "./CompetitorPageStyles.css";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSanityCompetitorPage } from "../../hooks/useSanityCompetitorPage";
 import SEO from "../../components/common/SEO";
+import { buildBreadcrumbSchema, buildGraphSchema } from "../../utils/schemaHelpers";
 
 // ── SVG Icons ─────────────────────────────────────────────────────────────────
 
@@ -104,15 +105,26 @@ const CompetitorPage = () => {
 
   const metaTitle = page.seo?.metaTitle ?? `TesseractApps vs ${page.competitorName} | NDIS Software Comparison`;
   const metaDescription = page.seo?.metaDescription ?? page.heroSubtitle ?? "";
+  const pageUrl = `https://tesseractapps.com.au/tesseract-vs/${slug}`;
+
+  const structuredData = buildGraphSchema(
+    buildBreadcrumbSchema([
+      { name: "Home", url: "https://tesseractapps.com.au" },
+      { name: "Comparisons", url: "https://tesseractapps.com.au/product" },
+      { name: `TesseractApps vs ${page.competitorName}`, url: pageUrl },
+    ])
+  );
 
   return (
     <div id="cmp-page">
       <SEO
         title={metaTitle}
         description={metaDescription}
-        canonical={page.seo?.canonicalUrl}
+        url={pageUrl}
+        canonical={page.seo?.canonicalUrl ?? pageUrl}
         noIndex={page.seo?.noIndex}
         schemaMarkup={page.seo?.schemaMarkup}
+        structuredData={structuredData}
       />
 
       {/* ── Hero ──────────────────────────────────────────────────────────── */}

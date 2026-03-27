@@ -2,6 +2,7 @@ import "./CapabilityPageStyles.css";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSanityCapabilityPage } from "../../hooks/useSanityCapabilityPage";
 import SEO from "../../components/common/SEO";
+import { buildBreadcrumbSchema, buildSoftwareSchema, buildGraphSchema } from "../../utils/schemaHelpers";
 
 // ── Skeleton ────────────────────────────────────────────────────────────────
 
@@ -100,6 +101,20 @@ const CapabilityPage = () => {
 
   const metaTitle = page.seo?.metaTitle ?? `${page.heroHeading} | TesseractApps`;
   const metaDescription = page.seo?.metaDescription ?? page.heroSubtitle ?? "";
+  const pageUrl = `https://tesseractapps.com.au/capabilities/${slug}`;
+
+  const structuredData = buildGraphSchema(
+    buildBreadcrumbSchema([
+      { name: "Home", url: "https://tesseractapps.com.au" },
+      { name: "Capabilities", url: "https://tesseractapps.com.au/product" },
+      { name: page.title, url: pageUrl },
+    ]),
+    buildSoftwareSchema({
+      name: `${page.heroHeading} — TesseractApps`,
+      description: page.heroSubtitle ?? page.problemStatement ?? metaDescription,
+      features: page.whatYouGet,
+    })
+  );
 
   // Split howWeSolveThis into sentences for the proof panel (first 3)
   const proofPoints = page.howWeSolveThis
@@ -109,7 +124,15 @@ const CapabilityPage = () => {
 
   return (
     <div id="cap-page">
-      <SEO title={metaTitle} description={metaDescription} />
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        url={pageUrl}
+        canonical={page.seo?.canonicalUrl ?? pageUrl}
+        noIndex={page.seo?.noIndex}
+        schemaMarkup={page.seo?.schemaMarkup}
+        structuredData={structuredData}
+      />
 
       {/* ── Hero ── */}
       <section id="cap-hero">

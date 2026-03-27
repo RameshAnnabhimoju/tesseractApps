@@ -206,6 +206,7 @@ export type BlockContentType = Array<
 export type BlogPostDocument = {
   _id: string
   _type: 'blogPost'
+  _updatedAt?: string
   title?: string
   slug?: SanitySlug
   status?: 'draft' | 'published' | 'archived'
