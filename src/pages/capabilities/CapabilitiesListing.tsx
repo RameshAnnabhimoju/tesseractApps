@@ -143,22 +143,23 @@ const CapabilitiesListing = () => {
             Your demo is configured for your care type, team size, and provider
             maturity stage. 30 minutes. Live platform — not a slide deck.
           </p>
-          <div className="cpl-cta-actions">
+    <div className="sll-cta-actions">
             <button
               type="button"
-              className="cpl-btn-primary"
+              className="sll-btn-primary"
               onClick={() => navigate("/book-a-demo")}
             >
               Book a Demo
             </button>
             <button
               type="button"
-              className="cpl-btn-outline"
+              className="sll-btn-outline"
               onClick={() => navigate("/signup")}
             >
               Begin Your Journey
             </button>
           </div>
+          <p className="sll-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
         </div>
       </section>
     </div>

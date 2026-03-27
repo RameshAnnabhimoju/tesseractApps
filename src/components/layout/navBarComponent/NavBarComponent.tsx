@@ -880,7 +880,7 @@ const SEARCH_ITEMS: { label: string; path: string }[] = [
   { label: "Timesheets & Payroll",             path: "/capabilities/timesheets-payroll" },
   { label: "Workforce Management",             path: "/capabilities/workforce-management" },
   { label: "Participant Management",           path: "/capabilities/participant-management" },
-  { label: "Incidents & SIRS",                path: "/capabilities/incidents-sirs" },
+  { label: "Incidents",                path: "/capabilities/incidents" },
   { label: "Compliance & Audit Readiness",    path: "/capabilities/compliance-audit" },
   { label: "NDIS Claiming & Invoicing",       path: "/capabilities/ndis-claiming" },
   { label: "Accounting & Financial Reporting",path: "/capabilities/accounting-reporting" },

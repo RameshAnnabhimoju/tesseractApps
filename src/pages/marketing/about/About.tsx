@@ -68,7 +68,7 @@ const About = () => {
       <section id="about-hero">
         <div id="about-hero-inner">
           <div id="about-hero-label">About TesseractApps</div>
-          <h1 id="about-hero-heading">We can't do what you do — but we can help you with software</h1>
+          <h1 id="about-hero-heading">We can't do what you do, but we can help you with software</h1>
           <p id="about-hero-sub">
             The Difference We Bring. TesseractApps started with a simple insight: care providers weren't struggling with care, they were struggling with systems. We built technology to remove that burden.
           </p>
@@ -208,7 +208,7 @@ const About = () => {
             )}
             {!jobsLoading && jobs.length === 0 && (
               <p id="about-careers-bottom-text">
-                No open roles at the moment — but we'd love to hear from you.{" "}
+                No open roles at the moment, but we'd love to hear from you.{" "}
                 <a
                   href="mailto:careers@tesseractapps.com?subject=Career%20Opportunity%20Enquiry"
                   className="about-contact-link"

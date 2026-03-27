@@ -518,6 +518,12 @@
   border-color: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.06);
 }
+.cap-cta-sub-note {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 12px 0 0;
+  text-align: center;
+}
 
 /* ── Not found state ── */
 

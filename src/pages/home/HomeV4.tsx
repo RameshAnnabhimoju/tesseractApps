@@ -122,7 +122,7 @@ const CAPABILITIES = [
   { icon: <IconPayroll />, label: "Timesheets & Payroll", href: "/capabilities/timesheets-payroll", desc: "Geo-verified clock-ins. Built-in SCHADS Award engine. 3-Layer Reconciliation before payroll runs." },
   { icon: <IconWorkforce />, label: "Workforce Management", href: "/capabilities/workforce-management", desc: "Credential tracking with automated expiry alerts. Onboarding workflows. Leave management integrated with rostering." },
   { icon: <IconParticipant />, label: "Participant Management", href: "/capabilities/participant-management", desc: "Centralised profiles. Care plans linked to goals. Real-time funding visibility by support category." },
-  { icon: <IconIncidents />, label: "Incidents & SIRS", href: "/capabilities/incidents-sirs", desc: "Mobile incident logging. Automatic SIRS classification and escalation. CAPA tracking completion." },
+  { icon: <IconIncidents />, label: "Incidents", href: "/capabilities/incidents", desc: "Mobile incident logging." },
   { icon: <IconCompliance />, label: "Compliance & Audit Readiness", href: "/capabilities/compliance-audit", desc: "Embedded compliance across every function. Continuous monitoring. Evidence retrieved, not assembled." },
   { icon: <IconClaiming />, label: "NDIS Claiming & Invoicing", href: "/capabilities/ndis-claiming", desc: "Claims generated from verified delivery. Pre-submission validation. Budget tracking in real time." },
   { icon: <IconDashboard />, label: "Dashboards & Reporting", href: "/capabilities/dashboards-reporting", desc: "Role-specific dashboards from support worker to CEO. One source of truth across every function." },
@@ -135,7 +135,7 @@ const FLOW_STEPS = [
   { n: "04", label: "Roster Planning", desc: "Shifts created matching qualified, credentialed support workers to participant needs. SCHADS rules enforced at scheduling." },
   { n: "05", label: "Shift Delivery", desc: "Support worker clocks in via mobile with GPS verification. Service delivered. Clock out recorded." },
   { n: "06", label: "Case Notes & Progress", desc: "Progress notes captured on mobile at point of service. Linked to participant goals and funding categories." },
-  { n: "07", label: "Incident Reporting", desc: "Any incident logged immediately on mobile. SIRS classification applied. Escalation triggered automatically." },
+  { n: "07", label: "Incident Reporting", desc: "Any incident logged immediately on mobile. Escalation triggered automatically." },
   { n: "08", label: "Timesheet & Payroll", desc: "Worked hours reconciled against roster. SCHADS Award interpretation applied automatically. Payroll data ready." },
   { n: "09", label: "Invoice & Claim", desc: "NDIS claims generated from verified delivery. Pre-validated against participant budgets and price guides." },
   { n: "10", label: "Reconciliation", desc: "3-Layer Reconciliation: roster-to-timesheet, timesheet-to-claim, claim-to-payment. Every dollar accounted for." },
@@ -165,7 +165,7 @@ const MATURITY_STAGES = [
     range: "60–120 staff",
     focus: "GOVERNANCE",
     color: "#7c3aed",
-    desc: "Enforce governance across every site. Approval workflows, automated SIRS escalation, multi-site consistency. The platform enforces the rules you set.",
+    desc: "Enforce governance across every site. Approval workflows & multi-site consistency. The platform enforces the rules you set.",
     href: "/solutions/scale",
   },
   {
@@ -180,7 +180,7 @@ const MATURITY_STAGES = [
 
 const PROBLEMS = [
   { label: "Rostering–Payroll gap", desc: "Running rostering in one system and payroll in another — and they never agree.", href: "/capabilities/rostering-scheduling" },
-  { label: "Incident trail gaps", desc: "Can't confidently tell the NDIS Commission when an incident was reported, escalated, and resolved.", href: "/capabilities/incidents-sirs" },
+  { label: "Incident trail gaps", desc: "Can't confidently tell the NDIS Commission when an incident was reported, escalated, and resolved.", href: "/capabilities/incidents" },
   { label: "SCHADS risk", desc: "Your SCHADS interpretation lives in someone's head — payroll errors surface weeks later.", href: "/capabilities/timesheets-payroll" },
   { label: "Revenue leakage", desc: "Submitting NDIS claims manually and reconciling against spreadsheets.", href: "/capabilities/ndis-claiming" },
   { label: "Audit anxiety", desc: "Compliance documentation scattered across email, shared drives, and filing cabinets.", href: "/capabilities/compliance-audit" },
@@ -300,9 +300,10 @@ export default function HomeV4() {
                 Book a Demo
               </button>
               <button type="button" className="hv4-btn-outline" onClick={() => navigate("/signup")}>
-                Begin Your Journey <IconArrowRight />
+                Begin Your Journey
               </button>
             </div>
+            <p className="hv4-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
 
             {/* Trust line */}
             <p className="hv4-hero-trust">
@@ -377,6 +378,61 @@ export default function HomeV4() {
           </div>
         </section>
 
+                {/* ── Section 3: Operational Flow ────────────────────────────────── */}
+        <section id="hv4-flow" ref={flowRef} className={flowInView ? "hv4-fade-in" : "hv4-fade-pre"}>
+          <div className="hv4-section-inner">
+            <div className="hv4-section-label hv4-section-label--light">How It Works</div>
+            <h2 className="hv4-section-h2 hv4-section-h2--light">From intake to audit evidence — one connected flow.</h2>
+            <p className="hv4-section-sub hv4-section-sub--light">
+              Every step in your NDIS operations connects to the next. No re-entry. No reconciliation gaps.
+              No data lost between systems.
+            </p>
+
+            <div className="hv4-flow-layout">
+              {/* Step list */}
+              <div className="hv4-flow-list">
+                {FLOW_STEPS.map((step, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    className={`hv4-flow-item${activeStep === i ? " hv4-flow-item--active" : ""}`}
+                    onClick={() => setActiveStep(i)}
+                  >
+                    <span className="hv4-flow-num">{step.n}</span>
+                    <span className="hv4-flow-label">{step.label}</span>
+                    <span className="hv4-flow-chevron"><IconChevronRight /></span>
+                  </button>
+                ))}
+              </div>
+
+              {/* Active step detail */}
+              <div className="hv4-flow-detail">
+                <div className="hv4-flow-detail-inner">
+                  <div className="hv4-flow-detail-num">{FLOW_STEPS[activeStep].n}</div>
+                  <h3 className="hv4-flow-detail-label">{FLOW_STEPS[activeStep].label}</h3>
+                  <p className="hv4-flow-detail-desc">{FLOW_STEPS[activeStep].desc}</p>
+                  <div className="hv4-flow-progress">
+                    {FLOW_STEPS.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        className={`hv4-flow-dot${activeStep === i ? " hv4-flow-dot--active" : ""}`}
+                        onClick={() => setActiveStep(i)}
+                        aria-label={`Step ${i + 1}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p className="hv4-flow-footer">
+              Every step generates data that feeds the next. When an auditor, plan manager, or board member asks a question —
+              the answer already exists in the system.
+            </p>
+          </div>
+        </section>
+
         {/* ── Section: Stats ─────────────────────────────────────────────── */}
         <section id="hv4-stats" ref={statsRef}>
           <div className="hv4-stats-inner">
@@ -436,60 +492,7 @@ export default function HomeV4() {
           </div>
         </section>
 
-        {/* ── Section 3: Operational Flow ────────────────────────────────── */}
-        <section id="hv4-flow" ref={flowRef} className={flowInView ? "hv4-fade-in" : "hv4-fade-pre"}>
-          <div className="hv4-section-inner">
-            <div className="hv4-section-label hv4-section-label--light">How It Works</div>
-            <h2 className="hv4-section-h2 hv4-section-h2--light">From intake to audit evidence — one connected flow.</h2>
-            <p className="hv4-section-sub hv4-section-sub--light">
-              Every step in your NDIS operations connects to the next. No re-entry. No reconciliation gaps.
-              No data lost between systems.
-            </p>
 
-            <div className="hv4-flow-layout">
-              {/* Step list */}
-              <div className="hv4-flow-list">
-                {FLOW_STEPS.map((step, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    className={`hv4-flow-item${activeStep === i ? " hv4-flow-item--active" : ""}`}
-                    onClick={() => setActiveStep(i)}
-                  >
-                    <span className="hv4-flow-num">{step.n}</span>
-                    <span className="hv4-flow-label">{step.label}</span>
-                    <span className="hv4-flow-chevron"><IconChevronRight /></span>
-                  </button>
-                ))}
-              </div>
-
-              {/* Active step detail */}
-              <div className="hv4-flow-detail">
-                <div className="hv4-flow-detail-inner">
-                  <div className="hv4-flow-detail-num">{FLOW_STEPS[activeStep].n}</div>
-                  <h3 className="hv4-flow-detail-label">{FLOW_STEPS[activeStep].label}</h3>
-                  <p className="hv4-flow-detail-desc">{FLOW_STEPS[activeStep].desc}</p>
-                  <div className="hv4-flow-progress">
-                    {FLOW_STEPS.map((_, i) => (
-                      <button
-                        key={i}
-                        type="button"
-                        className={`hv4-flow-dot${activeStep === i ? " hv4-flow-dot--active" : ""}`}
-                        onClick={() => setActiveStep(i)}
-                        aria-label={`Step ${i + 1}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <p className="hv4-flow-footer">
-              Every step generates data that feeds the next. When an auditor, plan manager, or board member asks a question —
-              the answer already exists in the system.
-            </p>
-          </div>
-        </section>
 
         {/* ── Section 4: Getting Started ─────────────────────────────────── */}
         <section id="hv4-start">
@@ -521,9 +524,10 @@ export default function HomeV4() {
                 Book a Demo
               </button>
               <button type="button" className="hv4-btn-outline" onClick={() => navigate("/signup")}>
-                Begin Your Journey <IconArrowRight />
+                Begin Your Journey
               </button>
             </div>
+            <p className="hv4-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
             <p className="hv4-start-guarantee">
               <IconCheck /> Money-back guarantee on all plans
             </p>
@@ -556,10 +560,10 @@ export default function HomeV4() {
                     Book a Demo
                   </button>
                   <button type="button" className="hv4-btn-outline" onClick={() => navigate("/signup")}>
-                    Begin Your Journey <IconArrowRight />
+                    Begin Your Journey
                   </button>
                 </div>
-                <p className="hv4-why-now-sub">Book a Provider Maturity Review &nbsp;·&nbsp; Clear next steps, no pressure.</p>
+                <p className="hv4-why-now-sub">Book a Provider Maturity Review. Start your provider setup.</p>
               </div>
 
               <div className="hv4-why-now-visual" aria-hidden="true">
@@ -785,19 +789,19 @@ export default function HomeV4() {
             <h2 className="hv4-cta-h2">See how TesseractApps works for your organisation.</h2>
             <p className="hv4-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck. Clear next steps, no pressure.
+              30 minutes. Live platform — not a slide deck. Start your provider setup.
             </p>
             <div className="hv4-cta-actions">
               <button type="button" className="hv4-btn-white" onClick={() => navigate("/book-a-demo")}>
                 Book a Demo
               </button>
               <button type="button" className="hv4-btn-outline-white" onClick={() => navigate("/signup")}>
-                Begin Your Journey <IconArrowRight />
+                Begin Your Journey
               </button>
             </div>
             <p className="hv4-cta-sub2">
               <IconCheck /> Book a Provider Maturity Review &nbsp;·&nbsp;
-              <IconCheck /> Start Your Provider Setup &nbsp;·&nbsp;
+              <IconCheck /> Begin Your Journey &nbsp;·&nbsp;
               <IconCheck /> Money-back guarantee
             </p>
           </div>

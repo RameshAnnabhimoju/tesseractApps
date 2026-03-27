@@ -63,6 +63,13 @@
   max-width: 640px;
   margin: 0 0 48px;
 }
+/* In centered sections the sub must auto-center its max-width block */
+#hv4-start .hv4-section-sub,
+#hv4-testimonials .hv4-section-sub,
+#hv4-cta .hv4-section-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
 .hv4-section-sub--light { color: rgba(255,255,255,0.72); }
 
 /* ── Buttons ───────────────────────────────────────────────────────────────── */
@@ -309,6 +316,13 @@
 }
 @media (max-width: 960px) { .hv4-hero-ctas { justify-content: center; } }
 
+.hv4-cta-sub-note {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 4px 0 0;
+  text-align: center;
+}
+@media (max-width: 960px) { .hv4-cta-sub-note { text-align: center; } }
 .hv4-hero-trust {
   display: flex;
   align-items: center;
@@ -865,6 +879,11 @@
   background: linear-gradient(160deg, #f5fdfe 0%, #eef6fd 100%);
   text-align: center;
 }
+#hv4-start .hv4-section-h2 {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .hv4-start-steps {
   display: grid;
@@ -903,7 +922,7 @@
   background: rgba(12,120,186,0.2);
 }
 @media (min-width: 881px) {
-  .hv4-start-step:not(:last-child) .hv4-start-connector { display: block; top: 56px; right: -1px; }
+  .hv4-start-step:not(:last-child) .hv4-start-connector { display: block; top: 62px; right: -1px; }
 }
 
 .hv4-start-num {
@@ -1513,12 +1532,17 @@
 #hv4-testimonials {
   background: #f8fafc;
   padding: 80px 0;
+  text-align: center;
 }
+/* Override: testimonial cards themselves must stay left-aligned */
+.hv4-testimonial-card,
+.hv4-testimonial-text,
+.hv4-testimonial-author { text-align: left; }
 .hv4-testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 40px;
+  text-align: left;
 }
 .hv4-testimonial-card {
   background: #ffffff;
@@ -1595,6 +1619,12 @@
 }
 
 @media (max-width: 900px) {
+  .hv4-testimonials-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 560px) {
   .hv4-testimonials-grid {
     grid-template-columns: 1fr;
     gap: 16px;

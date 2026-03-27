@@ -1,8 +1,9 @@
 import "./PricingStyles.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
-import { ChevronDown, ChevronUp, Phone, Mail, Play } from "lucide-react";
+import { ChevronDown, ChevronUp, Phone, Mail, Play, Download } from "lucide-react";
+import featuresPdf from "../../../assets/tesseract-features.pdf";
 import HeroArcsLeftComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import HeroArcsRightComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import { homeLeftArcsData, homeRightArcsData } from "../../../data/homeArcsData";
@@ -194,174 +195,174 @@ const PAID_COMPARISON_ROWS = [
 
 // ── Flip Card ──────────────────────────────────────────────────────────────
 
-function FlipCard({ stage, onCtaClick }: { stage: Stage; onCtaClick: () => void }) {
-  const [flipped, setFlipped] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined" ? window.innerWidth < 900 : false
-  );
+// function FlipCard({ stage, onCtaClick }: { stage: Stage; onCtaClick: () => void }) {
+//   const [flipped, setFlipped] = useState(false);
+//   const [videoPlaying, setVideoPlaying] = useState(false);
+//   const [open, setOpen] = useState(false);
+//   const [isMobile, setIsMobile] = useState(() =>
+//     typeof window !== "undefined" ? window.innerWidth < 900 : false
+//   );
 
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 899px)");
-    const handler = (e: MediaQueryListEvent) => {
-      setIsMobile(e.matches);
-      if (!e.matches) setOpen(false);
-    };
-    mq.addEventListener("change", handler);
-    setIsMobile(mq.matches);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+//   useEffect(() => {
+//     const mq = window.matchMedia("(max-width: 899px)");
+//     const handler = (e: MediaQueryListEvent) => {
+//       setIsMobile(e.matches);
+//       if (!e.matches) setOpen(false);
+//     };
+//     mq.addEventListener("change", handler);
+//     setIsMobile(mq.matches);
+//     return () => mq.removeEventListener("change", handler);
+//   }, []);
 
-  // ── Mobile: single accordion card ─────────────────────────────────────
-  if (isMobile) {
-    return (
-      <div className="pr-accordion-card">
-        {/* Always-visible header */}
-        <button
-          type="button"
-          className="pr-accordion-header"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <div className="pr-accordion-header-left">
-            <div className="pr-flip-badge">{stage.badge}</div>
-            <h3 className="pr-flip-name">{stage.label}</h3>
-            <p className="pr-flip-tagline">{stage.tagline}</p>
-            <p className="pr-flip-range">{stage.staffRange}</p>
-            <div className="pr-flip-commercial">
-              {stage.commercial.map((line) => (
-                <div key={line} className="pr-flip-commercial-item">
-                  <span className="pr-flip-dot" />
-                  {line}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="pr-accordion-chevron">
-            {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-          </div>
-        </button>
+//   // ── Mobile: single accordion card ─────────────────────────────────────
+//   if (isMobile) {
+//     return (
+//       <div className="pr-accordion-card">
+//         {/* Always-visible header */}
+//         <button
+//           type="button"
+//           className="pr-accordion-header"
+//           onClick={() => setOpen((v) => !v)}
+//         >
+//           <div className="pr-accordion-header-left">
+//             <div className="pr-flip-badge">{stage.badge}</div>
+//             <h3 className="pr-flip-name">{stage.label}</h3>
+//             <p className="pr-flip-tagline">{stage.tagline}</p>
+//             <p className="pr-flip-range">{stage.staffRange}</p>
+//             <div className="pr-flip-commercial">
+//               {stage.commercial.map((line) => (
+//                 <div key={line} className="pr-flip-commercial-item">
+//                   <span className="pr-flip-dot" />
+//                   {line}
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
+//           <div className="pr-accordion-chevron">
+//             {open ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+//           </div>
+//         </button>
 
-        {/* Expandable details */}
-        <div className={`pr-accordion-body${open ? " pr-accordion-body--open" : ""}`}>
-          <div className="pr-accordion-body-inner">
-            <p className="pr-accordion-best-for">{stage.bestFor}</p>
-            <div className="pr-flip-back-label">What you need</div>
-            <p className="pr-accordion-what-you-need">{stage.whatYouNeed}</p>
-            <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
-            <ul className="pr-flip-supports">
-              {stage.supports.map((item) => (
-                <li key={item} className="pr-flip-supports-item">
-                  <span className="pr-flip-dot" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="pr-flip-back-label pr-flip-back-label--mt">Automation focus</div>
-            <p className="pr-flip-automation-heading">{stage.automationHeading}</p>
-            <button
-              type="button"
-              className="pr-flip-cta"
-              onClick={(e) => {
-                e.stopPropagation();
-                onCtaClick();
-              }}
-            >
-              Book a Demo
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+//         {/* Expandable details */}
+//         <div className={`pr-accordion-body${open ? " pr-accordion-body--open" : ""}`}>
+//           <div className="pr-accordion-body-inner">
+//             <p className="pr-accordion-best-for">{stage.bestFor}</p>
+//             <div className="pr-flip-back-label">What you need</div>
+//             <p className="pr-accordion-what-you-need">{stage.whatYouNeed}</p>
+//             <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
+//             <ul className="pr-flip-supports">
+//               {stage.supports.map((item) => (
+//                 <li key={item} className="pr-flip-supports-item">
+//                   <span className="pr-flip-dot" />
+//                   {item}
+//                 </li>
+//               ))}
+//             </ul>
+//             <div className="pr-flip-back-label pr-flip-back-label--mt">Automation focus</div>
+//             <p className="pr-flip-automation-heading">{stage.automationHeading}</p>
+//             <button
+//               type="button"
+//               className="pr-flip-cta"
+//               onClick={(e) => {
+//                 e.stopPropagation();
+//                 onCtaClick();
+//               }}
+//             >
+//               Book a Demo
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
 
-  // ── Desktop: 3D flip card ──────────────────────────────────────────────
-  return (
-    <div
-      className={`pr-flip-card${flipped ? " pr-flip-card--flipped" : ""}`}
-      onMouseEnter={() => setFlipped(true)}
-      onMouseLeave={() => {
-        setFlipped(false);
-        setVideoPlaying(false);
-      }}
-      onClick={() => setFlipped((f) => !f)}
-    >
-      <div className="pr-flip-card-inner">
-        {/* Front */}
-        <div className="pr-flip-card-front">
-          <div className="pr-flip-badge">{stage.badge}</div>
-          <h3 className="pr-flip-name">{stage.label}</h3>
-          <p className="pr-flip-tagline">{stage.tagline}</p>
-          <p className="pr-flip-range">{stage.staffRange}</p>
-          <div className="pr-flip-commercial">
-            {stage.commercial.map((line) => (
-              <div key={line} className="pr-flip-commercial-item">
-                <span className="pr-flip-dot" />
-                {line}
-              </div>
-            ))}
-          </div>
-          <p className="pr-flip-best-for">{stage.bestFor}</p>
-          <div className="pr-flip-hint">See what's included →</div>
-        </div>
+//   // ── Desktop: 3D flip card ──────────────────────────────────────────────
+//   return (
+//     <div
+//       className={`pr-flip-card${flipped ? " pr-flip-card--flipped" : ""}`}
+//       onMouseEnter={() => setFlipped(true)}
+//       onMouseLeave={() => {
+//         setFlipped(false);
+//         setVideoPlaying(false);
+//       }}
+//       onClick={() => setFlipped((f) => !f)}
+//     >
+//       <div className="pr-flip-card-inner">
+//         {/* Front */}
+//         <div className="pr-flip-card-front">
+//           <div className="pr-flip-badge">{stage.badge}</div>
+//           <h3 className="pr-flip-name">{stage.label}</h3>
+//           <p className="pr-flip-tagline">{stage.tagline}</p>
+//           <p className="pr-flip-range">{stage.staffRange}</p>
+//           <div className="pr-flip-commercial">
+//             {stage.commercial.map((line) => (
+//               <div key={line} className="pr-flip-commercial-item">
+//                 <span className="pr-flip-dot" />
+//                 {line}
+//               </div>
+//             ))}
+//           </div>
+//           <p className="pr-flip-best-for">{stage.bestFor}</p>
+//           <div className="pr-flip-hint">See what's included →</div>
+//         </div>
 
-        {/* Back */}
-        <div className="pr-flip-card-back">
-          <div className="pr-flip-back-label">What you need</div>
-          <p className="pr-flip-what-you-need">{stage.whatYouNeed}</p>
-          <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
-          <ul className="pr-flip-supports">
-            {stage.supports.map((item) => (
-              <li key={item} className="pr-flip-supports-item">
-                <span className="pr-flip-dot" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="pr-flip-automation-heading pr-flip-automation-heading--footer">
-            {stage.automationHeading}
-          </p>
-          <div className="pr-flip-back-actions">
-            {stage.videoId && (
-              videoPlaying ? (
-                <div className="pr-video-frame">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${stage.videoId}?autoplay=1`}
-                    title={`${stage.label} Overview`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
-                </div>
-              ) : (
-                <button
-                  type="button"
-                  className="pr-flip-video-btn pr-flip-video-btn--active"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setVideoPlaying(true);
-                  }}
-                >
-                  <Play size={12} fill="currentColor" />
-                  Watch {stage.label} Overview
-                </button>
-              )
-            )}
-            <button
-              type="button"
-              className="pr-flip-cta"
-              onClick={(e) => {
-                e.stopPropagation();
-                onCtaClick();
-              }}
-            >
-              Book a Demo
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+//         {/* Back */}
+//         <div className="pr-flip-card-back">
+//           <div className="pr-flip-back-label">What you need</div>
+//           <p className="pr-flip-what-you-need">{stage.whatYouNeed}</p>
+//           <div className="pr-flip-back-label pr-flip-back-label--mt">What this stage supports</div>
+//           <ul className="pr-flip-supports">
+//             {stage.supports.map((item) => (
+//               <li key={item} className="pr-flip-supports-item">
+//                 <span className="pr-flip-dot" />
+//                 {item}
+//               </li>
+//             ))}
+//           </ul>
+//           <p className="pr-flip-automation-heading pr-flip-automation-heading--footer">
+//             {stage.automationHeading}
+//           </p>
+//           <div className="pr-flip-back-actions">
+//             {stage.videoId && (
+//               videoPlaying ? (
+//                 <div className="pr-video-frame">
+//                   <iframe
+//                     src={`https://www.youtube.com/embed/${stage.videoId}?autoplay=1`}
+//                     title={`${stage.label} Overview`}
+//                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//                     allowFullScreen
+//                   />
+//                 </div>
+//               ) : (
+//                 <button
+//                   type="button"
+//                   className="pr-flip-video-btn pr-flip-video-btn--active"
+//                   onClick={(e) => {
+//                     e.stopPropagation();
+//                     setVideoPlaying(true);
+//                   }}
+//                 >
+//                   <Play size={12} fill="currentColor" />
+//                   Watch {stage.label} Overview
+//                 </button>
+//               )
+//             )}
+//             <button
+//               type="button"
+//               className="pr-flip-cta"
+//               onClick={(e) => {
+//                 e.stopPropagation();
+//                 onCtaClick();
+//               }}
+//             >
+//               Book a Demo
+//             </button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 // ── Start featured video ───────────────────────────────────────────────────
 
@@ -403,6 +404,7 @@ function StartVideo({ videoId, stageName }: { videoId?: string; stageName: strin
 const Pricing = () => {
   const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<"growth" | "scale" | "enterprise">("growth");
 
   return (
     <div id="pr-page">
@@ -451,7 +453,16 @@ const Pricing = () => {
             >
               Begin Your Journey
             </button>
+            <a
+              href={featuresPdf}
+              download="TesseractApps-Features.pdf"
+              className="pr-btn-download"
+            >
+              <Download size={15} />
+              Download Features PDF
+            </a>
           </div>
+          <p className="pr-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
         </div>
         <HeroArcsRightComponent pendulums={homeRightArcsData} />
       </section>
@@ -521,18 +532,19 @@ const Pricing = () => {
                 <button
                   type="button"
                   className="pr-btn-primary"
-                  onClick={() => navigate("/signup")}
+                  onClick={() => navigate("/book-a-demo")}
                 >
-                  Start Your Provider Setup
+                  Book a Demo
                 </button>
                 <button
                   type="button"
                   className="pr-btn-secondary--dark"
-                  onClick={() => navigate("/book-a-demo")}
+                  onClick={() => navigate("/signup")}
                 >
-                  Book a Maturity Review
+                  Begin Your Journey
                 </button>
               </div>
+              <p className="pr-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
             </div>
 
             <div id="pr-featured-right">
@@ -543,7 +555,7 @@ const Pricing = () => {
       </section>
 
       {/* ── Find Your Stage (flip cards) ── */}
-      <section id="pr-stages">
+      {/* <section id="pr-stages">
         <div className="pr-outer">
           <div className="pr-label-wrapper">
             <div className="pr-label pr-label--dark">Find Your Stage</div>
@@ -564,7 +576,7 @@ const Pricing = () => {
           </div>
           <p className="pr-flip-hint-text">Hover or tap a card to explore each stage.</p>
         </div>
-      </section>
+      </section> */}
 
       {/* ── Paid Plans Comparison ── */}
       <section id="pr-paid-compare">
@@ -580,48 +592,126 @@ const Pricing = () => {
             organisation matures.
           </p>
 
-          <div className="pr-paid-stage-grid" aria-label="Paid plans overview">
-            {PAID_STAGE_ORDER.map((id) => {
-              const stage = PAID_STAGE_LOOKUP[id];
-              return (
-                <article key={id} className={`pr-paid-stage-card pr-paid-stage-card--${id}`}>
-                  <div className="pr-paid-stage-top">
-                    <div className="pr-paid-plan-name">{stage.label}</div>
-                    <div className="pr-paid-plan-tag">{stage.tagline}</div>
-                    <div className="pr-paid-plan-badge">{stage.badge}</div>
-                  </div>
-                  <div className="pr-paid-stage-range">{stage.staffRange}</div>
-                  <ul className="pr-paid-stage-commercial">
-                    {stage.commercial.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="pr-paid-lanes" aria-label="Detailed paid plan comparison">
-            {PAID_COMPARISON_ROWS.map((row) => (
-              <article key={row.label} className="pr-paid-lane">
-                <div className="pr-paid-row-label">{row.label}</div>
-                <div className="pr-paid-lane-grid">
-                  {row.values.map((value, index) => (
-                    <div className="pr-paid-lane-cell" key={`${row.label}-${PAID_STAGE_ORDER[index]}`}>
-                      {Array.isArray(value) ? (
-                        <ul className="pr-paid-cell-list">
-                          {value.map((item) => (
+          {/* ── Desktop: unified sticky-header table ── */}
+          <div className="pr-cmp-table-wrap" aria-label="Paid plans comparison">
+            <table className="pr-cmp-table">
+              <thead>
+                <tr className="pr-cmp-head-row">
+                  <th className="pr-cmp-th pr-cmp-th--label" scope="col" aria-label="Category" />
+                  {PAID_STAGE_ORDER.map((id) => {
+                    const stage = PAID_STAGE_LOOKUP[id];
+                    return (
+                      <th
+                        key={id}
+                        className={`pr-cmp-th pr-cmp-th--plan pr-cmp-th--${id}`}
+                        scope="col"
+                      >
+                        <div className="pr-cmp-plan-name">{stage.label}</div>
+                        <div className="pr-cmp-plan-tag">{stage.tagline}</div>
+                        <div className="pr-cmp-plan-badge">{stage.badge}</div>
+                        <div className="pr-cmp-plan-range">{stage.staffRange}</div>
+                        <ul className="pr-cmp-plan-commercial">
+                          {stage.commercial.map((item) => (
                             <li key={item}>{item}</li>
                           ))}
                         </ul>
-                      ) : (
-                        <p className="pr-paid-cell-text">{value}</p>
-                      )}
-                    </div>
-                  ))}
+                      </th>
+                    );
+                  })}
+                </tr>
+              </thead>
+              <tbody>
+                {PAID_COMPARISON_ROWS.map((row, rowIndex) => (
+                  <tr
+                    key={row.label}
+                    className={`pr-cmp-row${rowIndex % 2 === 0 ? " pr-cmp-row--alt" : ""}`}
+                  >
+                    <th className="pr-cmp-td pr-cmp-td--label" scope="row">
+                      {row.label}
+                    </th>
+                    {row.values.map((value, colIndex) => (
+                      <td
+                        className={`pr-cmp-td pr-cmp-td--${PAID_STAGE_ORDER[colIndex]}`}
+                        key={`${row.label}-${PAID_STAGE_ORDER[colIndex]}`}
+                      >
+                        {Array.isArray(value) ? (
+                          <ul className="pr-cmp-cell-list">
+                            {value.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="pr-cmp-cell-text">{value}</p>
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* ── Mobile: plan-selector tabs + single-plan card ── */}
+          <div className="pr-cmp-mobile" aria-label="Paid plans comparison">
+            <div className="pr-cmp-tabs" role="tablist">
+              {PAID_STAGE_ORDER.map((id) => (
+                <button
+                  key={id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === id ? "true" : "false"}
+                  className={`pr-cmp-tab pr-cmp-tab--${id}${activeTab === id ? " pr-cmp-tab--active" : ""}`}
+                  onClick={() => setActiveTab(id)}
+                >
+                  {PAID_STAGE_LOOKUP[id].label}
+                </button>
+              ))}
+            </div>
+
+            {(() => {
+              const stage = PAID_STAGE_LOOKUP[activeTab];
+              const colIndex = PAID_STAGE_ORDER.indexOf(activeTab);
+              return (
+                <div
+                  key={activeTab}
+                  className={`pr-cmp-mobile-card pr-cmp-mobile-card--${activeTab}`}
+                  role="tabpanel"
+                >
+                  <div className="pr-cmp-mobile-card-header">
+                    <div className="pr-cmp-plan-badge">{stage.badge}</div>
+                    <div className="pr-cmp-plan-name">{stage.label}</div>
+                    <div className="pr-cmp-plan-tag">{stage.tagline}</div>
+                    <div className="pr-cmp-plan-range">{stage.staffRange}</div>
+                    <ul className="pr-cmp-plan-commercial">
+                      {stage.commercial.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <dl className="pr-cmp-mobile-rows">
+                    {PAID_COMPARISON_ROWS.map((row, i) => (
+                      <div
+                        key={row.label}
+                        className={`pr-cmp-mobile-row${i % 2 === 0 ? " pr-cmp-mobile-row--alt" : ""}`}
+                      >
+                        <dt className="pr-cmp-mobile-row-label">{row.label}</dt>
+                        <dd className="pr-cmp-mobile-row-value">
+                          {Array.isArray(row.values[colIndex]) ? (
+                            <ul className="pr-cmp-cell-list">
+                              {(row.values[colIndex] as string[]).map((item) => (
+                                <li key={item}>{item}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p className="pr-cmp-cell-text">{row.values[colIndex] as string}</p>
+                          )}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
                 </div>
-              </article>
-            ))}
+              );
+            })()}
           </div>
         </div>
       </section>
@@ -721,7 +811,7 @@ const Pricing = () => {
             <h2 id="pr-cta-heading">See how TesseractApps works for your organisation.</h2>
             <p id="pr-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck. Clear next steps, no pressure.
+              30 minutes. Live platform — not a slide deck. Start your provider setup.
             </p>
             <div id="pr-cta-actions">
               <button
@@ -739,6 +829,7 @@ const Pricing = () => {
                 Begin Your Journey
               </button>
             </div>
+            <p className="pr-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
           </div>
         </div>
       </section>

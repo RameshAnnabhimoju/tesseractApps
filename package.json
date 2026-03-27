@@ -5,18 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/gen-home-thumbs.mjs && node scripts/gen-llms-docs.mjs && node scripts/generate-sitemap.js",
+    "prebuild": "node scripts/gen-llms-docs.mjs && node scripts/generate-sitemap.js",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "sanity": "sanity",
     "typegen": "sanity typegen generate",
-    "studio": "sanity dev",
-    "seed": "node scripts/seed-sanity.mjs",
-    "seed:capabilities": "node scripts/seed-capability-pages.mjs",
-    "seed:solutions": "node scripts/seed-solution-pages.mjs",
-    "seed:entities": "node scripts/seed-sanity-entities.mjs",
-    "seed:competitors": "node scripts/seed-competitor-pages.mjs"
+    "studio": "sanity dev"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

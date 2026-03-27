@@ -293,6 +293,12 @@
 .cpl-btn-outline:hover {
   background: rgba(255,255,255,0.12);
 }
+.cpl-cta-sub-note {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 12px 0 0;
+  text-align: center;
+}
 
 /* ─────────────────────────────────────────
    SKELETON
