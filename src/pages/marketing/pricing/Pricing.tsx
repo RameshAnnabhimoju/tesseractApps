@@ -124,37 +124,6 @@ const FLIP_STAGES: Stage[] = [
   },
 ];
 
-const FAQS = [
-  {
-    q: "Why is the price stable across Growth, Scale, and Enterprise?",
-    a: "TesseractApps operates on one unified architecture. Pricing is not based on feature tiers. As organisations grow, governance depth, workflow controls, reporting visibility, and automation expand in line with operational maturity.",
-  },
-  {
-    q: "Do I pay extra for workflow automation or governance tools?",
-    a: "No separate feature-based surcharges apply. The platform is unified. What changes is the level of governance configuration and automation exposure appropriate to the organisation's maturity stage.",
-  },
-  {
-    q: "Are there setup fees?",
-    a: "Yes. Setup fees apply to configure the platform around your organisation's operational structure, workflows, governance needs, and onboarding requirements.",
-  },
-  {
-    q: "Can user numbers flex as our workforce changes?",
-    a: "Yes. Flex user allowances support workforce movement while maintaining pricing consistency and governance control.",
-  },
-  {
-    q: "Is there a minimum commitment?",
-    a: "Start supports early-stage providers for up to 18 months during operational formation. Growth and Scale operate under 3-year agreements. Enterprise agreements are typically 3–5 years.",
-  },
-  {
-    q: "What if we grow faster than expected?",
-    a: "The platform is designed to evolve with you. As workforce size, service complexity, and governance exposure increase, deeper operational controls, reporting, and workflow automation are activated.",
-  },
-  {
-    q: "Do we get access to the whole platform immediately?",
-    a: "TesseractApps operates on one unified architecture. What changes by stage is the level of workflow enforcement, reporting visibility, automation depth, and governance exposure.",
-  },
-];
-
 const PAID_STAGE_ORDER: Array<"growth" | "scale" | "enterprise"> = [
   "growth",
   "scale",
@@ -403,7 +372,6 @@ function StartVideo({ videoId, stageName }: { videoId?: string; stageName: strin
 
 const Pricing = () => {
   const navigate = useNavigate();
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"growth" | "scale" | "enterprise">("growth");
 
   return (
