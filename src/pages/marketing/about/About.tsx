@@ -1,10 +1,8 @@
 import "./AboutStyles.css";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import React from "react";
 import SEO from "../../../components/common/SEO";
 import { useSanityTeamMembers } from "../../../hooks/useSanityTeamMembers";
-import { useSanityJobListings } from "../../../hooks/useSanityJobListings";
 import SanityImage from "../../../components/sanity/sanity-image";
 import {
   Target,
@@ -14,30 +12,24 @@ import {
   Mail,
   MapPin,
   Send,
-  Zap,
-  Users,
-  TrendingUp,
-  Home,
-  DollarSign,
-  Heart,
 } from "lucide-react";
 import useAppNavigate from "../../../hooks/useAppNavigate";
 
-const ICON_MAP: Record<string, React.ReactNode> = {
-  dollar: <DollarSign size={13} strokeWidth={2.5} />,
-  home: <Home size={13} strokeWidth={2.5} />,
-  trending: <TrendingUp size={13} strokeWidth={2.5} />,
-  users: <Users size={13} strokeWidth={2.5} />,
-  zap: <Zap size={13} strokeWidth={2.5} />,
-  heart: <Heart size={13} strokeWidth={2.5} />,
-  map: <MapPin size={13} strokeWidth={2.5} />,
-};
+// const ICON_MAP: Record<string, React.ReactNode> = {
+//   dollar: <DollarSign size={13} strokeWidth={2.5} />,
+//   home: <Home size={13} strokeWidth={2.5} />,
+//   trending: <TrendingUp size={13} strokeWidth={2.5} />,
+//   users: <Users size={13} strokeWidth={2.5} />,
+//   zap: <Zap size={13} strokeWidth={2.5} />,
+//   heart: <Heart size={13} strokeWidth={2.5} />,
+//   map: <MapPin size={13} strokeWidth={2.5} />,
+// };
 
 const About = () => {
   const location = useLocation();
   const appNavigate = useAppNavigate();
   const { data: teamMembers, loading: teamLoading } = useSanityTeamMembers();
-  const { data: jobs, loading: jobsLoading } = useSanityJobListings();
+  // const { data: jobs, loading: jobsLoading } = useSanityJobListings();
 
   useEffect(() => {
     const targetId = location.state?.targetId;
@@ -93,24 +85,20 @@ const About = () => {
             <div id="about-story-text">
               <div id="about-story-timeline">
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">2022 – Founded</div>
+                  <div className="about-timeline-year">2023 – Founded</div>
                   <p className="about-timeline-desc">We started by listening to the people who deliver care every day.</p>
                 </div>
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">2023 – Platform Development</div>
+                  <div className="about-timeline-year">2024 – Platform Development</div>
                   <p className="about-timeline-desc">Built our platform with real providers in real workflows. Every feature tested, refined, and simplified.</p>
                 </div>
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">Mid 2024 – T NDIS Beta Launch</div>
+                  <div className="about-timeline-year">2025 – T NDIS Beta Launch</div>
                   <p className="about-timeline-desc">Provider feedback shaped the platform into a practical, daily operational system.</p>
                 </div>
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">January 2025 – Market-Ready</div>
+                  <div className="about-timeline-year">Market-Ready</div>
                   <p className="about-timeline-desc">TesseractApps became fully operational and ready to serve providers.</p>
-                </div>
-                <div className="about-timeline-item">
-                  <div className="about-timeline-year">Today</div>
-                  <p className="about-timeline-desc">Our Salesforce-based platform helps providers save time, reduce errors, and stay compliant.</p>
                 </div>
               </div>
               <p id="about-story-commitment">
@@ -195,7 +183,7 @@ const About = () => {
         </section>
 
         {/* ── Careers ── */}
-        <section id="about-careers-section">
+        {/* <section id="about-careers-section">
           <div className="about-section-label">Join Us</div>
           <h2 id="about-careers-heading">Careers</h2>
           <p id="about-careers-sub">
@@ -295,7 +283,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* ── Contact ── */}
         <section id="about-contact-section">

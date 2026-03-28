@@ -91,6 +91,14 @@ export const solutionPageType = defineType({
       validation: (Rule) => Rule.max(300),
     }),
 
+    defineField({
+      name: 'navSubtitle',
+      title: 'Nav Subtitle',
+      type: 'string',
+      description: 'Short text shown below the title in the navbar mega-menu (1 line, ~50 chars)',
+      validation: (Rule) => Rule.max(80),
+    }),
+
     // ── Main content sections ─────────────────────────────────────────────────
     defineField({
       name: 'whoIsThisFor',

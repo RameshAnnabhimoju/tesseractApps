@@ -4,7 +4,7 @@ import { COMPETITOR_PAGE_BY_SLUG_QUERY } from '../sanity/lib/queries'
 import { sanityConfigError } from '../sanity/env'
 import type { CompetitorPageDocument } from '../../sanity.types'
 
-// Module-level cache — prevents redundant fetches when navigating back to a
+// Module-level cache, prevents redundant fetches when navigating back to a
 // previously visited competitor page within the same session.
 const cache = new Map<string, CompetitorPageDocument>()
 
@@ -34,7 +34,7 @@ export function useSanityCompetitorPage(slug: string): UseSanityCompetitorPageRe
       return
     }
 
-    // Serve from cache immediately — no loading state shown on repeated visits
+    // Serve from cache immediately, no loading state shown on repeated visits
     if (cache.has(slug)) {
       setPage(cache.get(slug)!)
       setLoading(false)

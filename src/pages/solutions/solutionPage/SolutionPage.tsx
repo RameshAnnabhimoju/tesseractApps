@@ -2,6 +2,7 @@ import "./SolutionPageStyles.css";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSanitySolutionPage } from "../../../hooks/useSanitySolutionPage";
 import SEO from "../../../components/common/SEO";
+import { buildBreadcrumbSchema, buildGraphSchema } from "../../../utils/schemaHelpers";
 
 // ── Skeleton ─────────────────────────────────────────────────────────────────
 
@@ -102,6 +103,15 @@ const SolutionPage = () => {
 
   const metaTitle = page.seo?.metaTitle ?? `${page.heroHeading} | TesseractApps`;
   const metaDescription = page.seo?.metaDescription ?? page.heroSubtitle ?? "";
+  const pageUrl = `https://tesseractapps.com.au/solutions/${slug}`;
+
+  const structuredData = buildGraphSchema(
+    buildBreadcrumbSchema([
+      { name: "Home", url: "https://tesseractapps.com.au" },
+      { name: "Solutions", url: "https://tesseractapps.com.au/product" },
+      { name: page.title, url: pageUrl },
+    ])
+  );
 
   // First 3 sentences from howWeSupport for the proof panel
   const proofPoints = page.howWeSupport
@@ -111,7 +121,15 @@ const SolutionPage = () => {
 
   return (
     <div id="sol-page">
-      <SEO title={metaTitle} description={metaDescription} />
+      <SEO
+        title={metaTitle}
+        description={metaDescription}
+        url={pageUrl}
+        canonical={page.seo?.canonicalUrl ?? pageUrl}
+        noIndex={page.seo?.noIndex}
+        schemaMarkup={page.seo?.schemaMarkup}
+        structuredData={structuredData}
+      />
 
       {/* ── Hero ── */}
       <section id="sol-hero">
@@ -166,7 +184,7 @@ const SolutionPage = () => {
       <section className="sol-section sol-section--light">
         <div className="sol-outer">
           <div className="sol-section-label">How We Support You</div>
-          <h2 className="sol-section-heading">One connected solution — built for NDIS providers.</h2>
+          <h2 className="sol-section-heading">One connected solution, built for NDIS providers.</h2>
           <div className="sol-solve-layout">
             <div className="sol-solve-text">
               {page.howWeSupport.split("\n\n").map((para, i) => (
@@ -210,7 +228,7 @@ const SolutionPage = () => {
       <section className="sol-section sol-section--light">
         <div className="sol-outer">
           <div className="sol-section-label">Is This Right for You?</div>
-          <h2 className="sol-section-heading">Answer yes to any of these — this is for you.</h2>
+          <h2 className="sol-section-heading">Answer yes to any of these, this is for you.</h2>
           <div className="sol-qualify-list">
             {page.isThisRightForYou.map((item) => (
               <div key={item} className="sol-qualify-item">
@@ -264,7 +282,7 @@ const SolutionPage = () => {
             </h2>
             <p id="sol-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck.
+              30 minutes. Live platform, not a slide deck.
             </p>
     <div className="sll-cta-actions">
             <button

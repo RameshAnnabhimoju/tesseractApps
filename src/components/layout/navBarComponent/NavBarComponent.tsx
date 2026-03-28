@@ -31,10 +31,10 @@ const NavBarComponent = ({
   const [searchTerm, setSearchTerm] = useState("");
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<
-    "About" | "Platform" | "Capabilities" | "Solutions" | "Pricing" | "Resources" | ""
+    "About" | "Platform" | "Capabilities" | "Solutions" | "Pricing" | "Resources" | "Contact Us" | ""
   >("");
   const DROPDOWN_LINKS = ["Capabilities", "Solutions", "Resources"];
-  const NAV_LINKS = ["Platform", "Capabilities", "Pricing", "Solutions", "Resources", "About"];
+  const NAV_LINKS = ["Platform", "Capabilities", "Pricing", "Solutions", "Resources", "About", "Contact Us"];
   const CAP_IDX = NAV_LINKS.indexOf("Capabilities");
   const SOL_IDX = NAV_LINKS.indexOf("Solutions");
   const RES_IDX = NAV_LINKS.indexOf("Resources");
@@ -51,7 +51,7 @@ const NavBarComponent = ({
           if (!groupMap.has(link.navGroup)) groupMap.set(link.navGroup, []);
           groupMap.get(link.navGroup)!.push({
             title: link.title,
-            subTitle: link.heroSubtitle,
+            subTitle: link.navSubtitle ?? link.heroSubtitle,
             href: `/capabilities/${link.slug.current}`,
           });
         });
@@ -71,7 +71,7 @@ const NavBarComponent = ({
           if (catMap[link.navCategory]) {
             catMap[link.navCategory].push({
               title: link.title,
-              subTitle: link.heroSubtitle,
+              subTitle: link.navSubtitle ?? link.heroSubtitle,
               href: `/solutions/${link.slug.current}`,
             });
           }
@@ -169,6 +169,9 @@ const NavBarComponent = ({
     ) {
       setActiveLink("Resources");
     }
+    if (currentPath == "contact-us") {
+      setActiveLink("Contact Us");
+    }
     if (currentPath == "requestDemo") {
       setActiveLink("");
     }
@@ -188,6 +191,8 @@ const NavBarComponent = ({
   const NAV_ROUTES: Record<string, string> = {
     Capabilities: "/capabilities",
     Solutions: "/solutions",
+    About: "/about",
+    "Contact Us": "/contact-us",
   };
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
@@ -312,12 +317,22 @@ const NavBarComponent = ({
         TesseractApps
       </div> */}
       <AppLogo />
-      <div
-        id="nav-menu-icon"
-        onClick={() => setToggleDrawer(!toggleDrawer)}
-        aria-label="Open navigation menu"
-        role="button"
-      >
+      <div id="nav-mobile-actions">
+        <div
+          id="nav-mobile-search-icon"
+          onClick={() => handleSearchIcon()}
+          aria-label="Search"
+          role="button"
+        >
+          <Search size={20} />
+        </div>
+
+        <div
+          id="nav-menu-icon"
+          onClick={() => setToggleDrawer(!toggleDrawer)}
+          aria-label="Open navigation menu"
+          role="button"
+        >
         <svg
           width="22"
           height="22"
@@ -333,6 +348,7 @@ const NavBarComponent = ({
             strokeLinejoin="round"
           />
         </svg>
+        </div>
       </div>
 
       {/* Backdrop — clicking it closes the drawer */}
@@ -354,7 +370,9 @@ const NavBarComponent = ({
       >
         <div id="nav-menu-card">
           <div id="nav-menu-header">
-            <AppLogo />
+            <div onClick={() => setToggleDrawer(false)}>
+              <AppLogo />
+            </div>
             <button
               id="nav-drawer-close"
               onClick={() => setToggleDrawer(false)}
@@ -393,7 +411,7 @@ const NavBarComponent = ({
             </div>
         <div id="nav-menu-links">
             {NAV_LINKS.map((label, index) => {
-              if (label != "Pricing" && label != "About" && label != "Platform") {
+              if (label != "Pricing" && label != "About" && label != "Platform" && label != "Contact Us") {
                 return (
                   <div key={label} className="nav-accordion">
                     <div
@@ -504,13 +522,13 @@ const NavBarComponent = ({
                     </div>
                   </div>
                 );
-              } else if (label == "Platform") {
+              } else if (label == "Platform" || label == "About" || label == "Contact Us") {
                 return (
                   <div
                     className="nav-menu-link no-dropdown"
                     key={label}
                     onClick={() => {
-                      appNavigate("/platform");
+                      appNavigate(NAV_ROUTES[label] ?? `/${label.toLowerCase().replace(/ /g, "-")}`);
                       setToggleDrawer(false);
                     }}
                   >

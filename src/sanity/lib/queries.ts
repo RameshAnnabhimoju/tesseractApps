@@ -69,6 +69,7 @@ export const BLOG_POST_BY_SLUG_QUERY = `
     tags,
     excerpt,
     publishedAt,
+    _updatedAt,
     ${mainImageFragment},
     body,
     seo {
@@ -251,6 +252,7 @@ export const CAPABILITY_NAV_QUERY = `
     slug,
     navGroup,
     order,
+    navSubtitle,
     heroSubtitle
   }
 `
@@ -299,6 +301,7 @@ export const SOLUTION_PAGE_NAV_QUERY = `
     slug,
     navCategory,
     order,
+    navSubtitle,
     heroSubtitle
   }
 `

@@ -59,6 +59,7 @@ const INDUSTRY_OPTIONS = [
 
 /* ── Service pathway steps (sidebar) ── */
 const PATHWAY_STEPS = [
+  "Referral",
   "Intake",
   "Service Agreement",
   "Funding Allocation",
@@ -207,7 +208,7 @@ const Signup = () => {
             <div id="signup-success-title">You're all set!</div>
             <div id="signup-success-message">
               Thank you for choosing TesseractApps. We've received your details and are setting up your account.
-              Keep an eye on your inbox — we'll send you an email with your login details and next steps shortly.
+              Keep an eye on your inbox, we'll send you an email with your login details and next steps shortly.
             </div>
             <div id="signup-success-help-heading">Need help?</div>
             <div id="signup-success-help-text">
@@ -324,7 +325,7 @@ const Signup = () => {
                     <div className="su-field">
                       <label className="su-label" htmlFor="abn">
                         ABN Number <span className="su-required">*</span>
-                        <span className="su-label-note"> — Verified via ABR</span>
+                        <span className="su-label-note">, Verified via ABR</span>
                       </label>
                       <input
                         className={"su-input" + (formErrors.abn ? " su-input-error" : "")}

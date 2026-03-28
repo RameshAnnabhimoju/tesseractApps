@@ -4,7 +4,7 @@ import { CAPABILITY_PAGE_BY_SLUG_QUERY } from '../sanity/lib/queries'
 import { sanityConfigError } from '../sanity/env'
 import type { CapabilityPageDocument } from '../../sanity.types'
 
-// Module-level cache — prevents redundant fetches when navigating back to a
+// Module-level cache, prevents redundant fetches when navigating back to a
 // previously visited capability page within the same session.
 const cache = new Map<string, CapabilityPageDocument>()
 
@@ -34,7 +34,7 @@ export function useSanityCapabilityPage(slug: string): UseSanityCapabilityPageRe
       return
     }
 
-    // Serve from cache immediately — no loading state shown on repeated visits
+    // Serve from cache immediately, no loading state shown on repeated visits
     if (cache.has(slug)) {
       setPage(cache.get(slug)!)
       setLoading(false)

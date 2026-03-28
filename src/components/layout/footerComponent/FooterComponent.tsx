@@ -8,7 +8,6 @@ import flagsImag2 from "../../../assets/flagImage2.webp";
 import localAward from "../../../assets/2025_CANB_WINNER_LBA.webp";
 import iso27001 from "../../../assets/JAS-ANZ ISMS.webp";
 import iso9001 from "../../../assets/JAS-ANZ QMS.webp";
-import { navBarDummyData } from "../../../data/navData";
 import { useState } from "react";
 import { sendEmail, sendTextEmail } from "../../../services/appService";
 import Alert from "../../ui/alert/Alert";
@@ -17,9 +16,33 @@ import {
   newsletterSubscriptionEmailTemplate,
 } from "../../../utils/emailTemplates";
 import useAppNavigate from "../../../hooks/useAppNavigate";
+import { Link } from "react-router-dom";
+import { useSanityCapabilityNav } from "../../../hooks/useSanityCapabilityNav";
+import { useSanitySolutionNav } from "../../../hooks/useSanitySolutionNav";
 
 const FooterComponent = () => {
   const appNavigate = useAppNavigate();
+  const { links: capLinks } = useSanityCapabilityNav();
+  const { links: solLinks } = useSanitySolutionNav();
+
+  // Group capabilities by navGroup (same logic as navbar)
+  const capGroups: Record<string, { title: string; slug: string }[]> = {};
+  capLinks.forEach((link) => {
+    if (!capGroups[link.navGroup]) capGroups[link.navGroup] = [];
+    capGroups[link.navGroup].push({ title: link.title, slug: link.slug.current });
+  });
+
+  // Group solutions by navCategory (same logic as navbar)
+  const solGroups: Record<string, { title: string; slug: string }[]> = {
+    "BY CARE TYPE": [],
+    "BY ROLE": [],
+    "BY STAGE": [],
+  };
+  solLinks.forEach((link) => {
+    if (solGroups[link.navCategory]) {
+      solGroups[link.navCategory].push({ title: link.title, slug: link.slug.current });
+    }
+  });
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const alertInitialData = {
     heading: "",
@@ -116,8 +139,6 @@ const FooterComponent = () => {
     if (name) appNavigate(name);
   }
 
-  const nav = navBarDummyData;
-
   return (
     <div id="footer-container">
       <Alert setAlertData={setAlertData} alertData={alertData} />
@@ -126,94 +147,77 @@ const FooterComponent = () => {
       <nav id="footer-nav" aria-label="Footer navigation">
         {/* Brand column */}
         <div id="footer-brand">
-          <div id="footer-logo" onClick={() => appNavigate("/")}>
+          <Link id="footer-logo" to="/" aria-label="TesseractApps — home">
             <div id="footer-logo-icon" role="img" aria-label="Tesseract Apps Logo" />
             TesseractApps
-          </div>
+          </Link>
           <p id="footer-brand-tagline">
             Simplifying care management, compliance, and HR for NDIS providers
             across Australia.
           </p>
         </div>
 
-        {/* Capabilities — col A: Workforce + Participant & Care */}
+        {/* Capabilities col A — first two navGroups from Sanity */}
         <div className="footer-column">
-          {nav.Capabilities.slice(0, 2).map((group) => (
-            <div key={group.heading} className="footer-link-group">
-              <div className="footer-heading">{group.heading}</div>
-              {group.links.map((link) => (
-                <div
-                  key={link.title}
-                  className="footer-text"
-                  onClick={() => link.href && appNavigate(link.href)}
-                >
-                  {link.title}
-                </div>
+          {Object.entries(capGroups).slice(0, 2).map(([group, items]) => (
+            <div key={group} className="footer-link-group">
+              <div className="footer-heading">{group}</div>
+              {items.map((item) => (
+                <Link key={item.slug} className="footer-text" to={`/capabilities/${item.slug}`}>
+                  {item.title}
+                </Link>
               ))}
             </div>
           ))}
         </div>
 
-        {/* Capabilities — col B: Finance + Operational Intelligence */}
+        {/* Capabilities col B — remaining navGroups from Sanity */}
         <div className="footer-column">
-          {nav.Capabilities.slice(2).map((group) => (
-            <div key={group.heading} className="footer-link-group">
-              <div className="footer-heading">{group.heading}</div>
-              {group.links.map((link) => (
-                <div
-                  key={link.title}
-                  className="footer-text"
-                  onClick={() => link.href && appNavigate(link.href)}
-                >
-                  {link.title}
-                </div>
+          {Object.entries(capGroups).slice(2).map(([group, items]) => (
+            <div key={group} className="footer-link-group">
+              <div className="footer-heading">{group}</div>
+              {items.map((item) => (
+                <Link key={item.slug} className="footer-text" to={`/capabilities/${item.slug}`}>
+                  {item.title}
+                </Link>
               ))}
             </div>
           ))}
         </div>
 
-        {/* Solutions */}
+        {/* Solutions — grouped by navCategory from Sanity */}
         <div className="footer-column">
-          {Object.entries(nav.Solutions).map(([category, links]) => (
-            <div key={category} className="footer-link-group">
-              <div className="footer-heading">{category}</div>
-              {links.map((link) => (
-                <div
-                  key={link.title}
-                  className="footer-text"
-                  onClick={() => link.href && appNavigate(link.href)}
-                >
-                  {link.title}
-                </div>
-              ))}
-            </div>
+          {Object.entries(solGroups).map(([category, items]) => (
+            items.length > 0 && (
+              <div key={category} className="footer-link-group">
+                <div className="footer-heading">{category}</div>
+                {items.map((item) => (
+                  <Link key={item.slug} className="footer-text" to={`/solutions/${item.slug}`}>
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            )
           ))}
         </div>
 
         {/* Company */}
         <div className="footer-column">
           <div className="footer-heading">Company</div>
-          <div className="footer-text" onClick={() => appNavigate("/about")}>About Us</div>
-          <div className="footer-text" onClick={() => appNavigate("/careers")}>Careers</div>
-          <div className="footer-text" onClick={() => appNavigate("/contact-us")}>Contact Us</div>
-          <div className="footer-text" onClick={() => appNavigate("/terms-and-conditions")}>Terms &amp; Conditions</div>
-          <div className="footer-text" onClick={() => appNavigate("/privacy-policy")}>Privacy Policy</div>
-          <div className="footer-text" onClick={() => appNavigate("/changelog")}>Release Notes</div>
+          <Link className="footer-text" to="/about">About Us</Link>
+          <Link className="footer-text" to="/about">Contact Us</Link>
+          <Link className="footer-text" to="/careers">Careers</Link>
+          <Link className="footer-text" to="/platform">Platform</Link>
+          <Link className="footer-text" to="/terms-and-conditions">Terms &amp; Conditions</Link>
+          <Link className="footer-text" to="/privacy-policy">Privacy Policy</Link>
+          <Link className="footer-text" to="/changelog">Release Notes</Link>
         </div>
 
         {/* Resources + Support + Get Started */}
         <div className="footer-column">
           <div className="footer-heading">Resources</div>
-          {nav.Resources.map((link) => (
-            <div
-              key={link.title}
-              className="footer-text"
-              onClick={() => link.href && appNavigate(link.href)}
-            >
-              {link.title}
-            </div>
-          ))}
-          <div className="footer-text" onClick={() => appNavigate("/case-studies")}>Case Studies</div>
+          <Link className="footer-text" to="/blogs">Blog</Link>
+          <Link className="footer-text" to="/whitepapers">Whitepapers</Link>
           <a
             className="footer-text"
             href="/rss.xml"
@@ -223,15 +227,10 @@ const FooterComponent = () => {
             RSS Feed
           </a>
 
-          <div className="footer-heading footer-support-heading">Support</div>
-          <div className="footer-text" onClick={() => appNavigate("/help-centre")}>Help Centre</div>
-          <div className="footer-text" onClick={() => appNavigate("/help-centre")}>FAQs</div>
-          <div className="footer-text" onClick={() => appNavigate("/book-a-demo")}>Book a Demo</div>
-
           <div className="footer-heading footer-support-heading">Get Started</div>
-          <div className="footer-text" onClick={() => appNavigate("/signup")}>Sign Up</div>
-          <div className="footer-text" onClick={() => appNavigate("/pricing")}>Pricing</div>
-          <div className="footer-text" onClick={() => appNavigate("/requestDemo")}>Request a Demo</div>
+          <Link className="footer-text" to="/signup">Sign Up</Link>
+          <Link className="footer-text" to="/pricing">Pricing</Link>
+          <Link className="footer-text" to="/book-a-demo">Book a Demo</Link>
         </div>
       </nav>
 

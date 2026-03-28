@@ -206,6 +206,7 @@ export type BlockContentType = Array<
 export type BlogPostDocument = {
   _id: string
   _type: 'blogPost'
+  _updatedAt?: string
   title?: string
   slug?: SanitySlug
   status?: 'draft' | 'published' | 'archived'
@@ -270,6 +271,7 @@ export type CapabilityNavLink = {
   title: string
   slug: SanitySlug
   navGroup: CapabilityNavGroup
+  navSubtitle?: string
   heroSubtitle?: string
 }
 
@@ -302,6 +304,7 @@ export type SolutionNavLink = {
   title: string
   slug: SanitySlug
   navCategory: SolutionNavCategory
+  navSubtitle?: string
   heroSubtitle?: string
 }
 

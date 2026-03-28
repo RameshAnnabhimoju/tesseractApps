@@ -22,7 +22,7 @@ export const footerProductsData = {
     ],
 };
 
-// NavLink type — href takes precedence over title-based route lookup
+// NavLink type, href takes precedence over title-based route lookup
 export type NavLink = {
     title: string;
     subTitle?: string;
@@ -44,7 +44,7 @@ export const navBarDummyData: {
 } = {
     // ── Capabilities mega-menu ─────────────────────────────────────────────
     // Groups match the brand document Part 2.2 exactly.
-    // href is used for direct navigation — bypasses the title-to-route lookup.
+    // href is used for direct navigation, bypasses the title-to-route lookup.
     Capabilities: [
         {
             heading: "Workforce",
@@ -164,7 +164,7 @@ export const navBarDummyData: {
     ],
 
     // ── Solutions mega-menu ────────────────────────────────────────────────
-    // Brand document Part 2.3 — hidden items omitted entirely.
+    // Brand document Part 2.3, hidden items omitted entirely.
     // Keys changed from old structure (BY INDUSTRY / BY CARE / BY BUSINESS TYPE / BY BUSINESS PROBLEM)
     // to the new: BY CARE TYPE / BY ROLE / BY STAGE
     Solutions: {
@@ -192,14 +192,12 @@ export const navBarDummyData: {
     Resources: [
         { title: "Blog", subTitle: "Insights & Updates", href: "/blogs" },
         { title: "Whitepapers", subTitle: "Research", href: "/whitepapers" },
-        { title: "Help Centre", subTitle: "Support", href: "/help-centre" },
+        // { title: "Help Centre", subTitle: "Support", href: "/help-centre" },
     ],
 
     // ── About ──────────────────────────────────────────────────────────────
     About: [
-        { title: "Our Story", subTitle: " ", href: "/our-story" },
-        { title: "Our Mission & Vision", subTitle: " ", href: "/our-mission-and-vision" },
-        { title: "Team", subTitle: " ", href: "/team" },
+        { title: "About Us", subTitle: " ", href: "/about" },
         { title: "Careers", subTitle: " ", href: "/careers" },
         { title: "Contact Us", subTitle: " ", href: "/contact-us" },
     ],

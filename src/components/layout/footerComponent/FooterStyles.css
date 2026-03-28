@@ -7,11 +7,11 @@
 
 /* ─── Zone 1: Nav Grid ─────────────────────────────────────────── */
 #footer-nav {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 64px 40px 48px;
   display: grid;
-  grid-template-columns: 200px repeat(5, 1fr);
+  grid-template-columns: 160px repeat(5, 1fr);
   gap: 24px 32px;
 }
 
@@ -225,9 +225,10 @@
 }
 
 .footer-text {
+  display: block;
   font-size: 13px;
   line-height: 1.4;
-  padding: 5px 0;
+  padding: 4px 0;
   color: rgba(255, 255, 255, 0.75);
   font-weight: 300;
   cursor: pointer;
@@ -331,8 +332,8 @@ a.footer-text {
 /* 1200px: tighten columns */
 @media (max-width: 1200px) {
   #footer-nav {
-    grid-template-columns: 180px repeat(5, 1fr);
-    gap: 20px 24px;
+    grid-template-columns: 160px 1.2fr 1.4fr 1fr 1fr;
+    gap: 20px 28px;
     padding: 56px 32px 44px;
   }
 

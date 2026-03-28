@@ -12,9 +12,9 @@ const ARCHITECTURE_IMPROVEMENTS = [
 ];
 
 const ARCHITECTURE_PERMANENCE = [
-  "The foundation never changes — it strengthens.",
-  "Your team never starts again — it advances.",
-  "Your data never fragments — it compounds.",
+  "The foundation never changes, it strengthens.",
+  "Your team never starts again, it advances.",
+  "Your data never fragments, it compounds.",
 ];
 
 type MaturityStage = {
@@ -31,7 +31,7 @@ const MATURITY_STAGES: MaturityStage[] = [
     staffRange: "1–15 staff",
     focusWord: "STRUCTURE",
     focus:
-      "Visibility & structure. Compliant rostering, participant records, incident logging, and NDIS claiming from day one. Simplified navigation. No governance overhead — just the foundation done right.",
+      "Visibility & structure. Compliant rostering, participant records, incident logging, and NDIS claiming from day one. Simplified navigation. No governance overhead, just the foundation done right.",
     accentColor: "#10b981",
   },
   {
@@ -97,7 +97,7 @@ const SECURITY_ITEMS: SecurityItem[] = [
   {
     icon: <IconShield />,
     heading: "Salesforce Hyperforce",
-    body: "TesseractApps runs natively on Salesforce Hyperforce — the same infrastructure trusted by government agencies, financial institutions, and healthcare organisations worldwide.",
+    body: "TesseractApps runs natively on Salesforce Hyperforce, the same infrastructure trusted by government agencies, financial institutions, and healthcare organisations worldwide.",
   },
   {
     icon: <IconGlobe />,
@@ -146,7 +146,7 @@ const ONBOARDING_PHASES: OnboardingPhase[] = [
     phase: 4,
     name: "Training",
     timeframe: "Weeks 4–5",
-    what: "Role-based training ensures every team member — from support worker to finance manager — knows exactly how to use the platform.",
+    what: "Role-based training ensures every team member, from support worker to finance manager, knows exactly how to use the platform.",
   },
   {
     phase: 5,
@@ -157,7 +157,6 @@ const ONBOARDING_PHASES: OnboardingPhase[] = [
 ];
 
 const HERO_STATS = [
-  { value: "250+", label: "NDIS providers" },
   { value: "99.9%", label: "Uptime SLA" },
   { value: "ISO 27001", label: "Certified" },
 ];
@@ -170,8 +169,8 @@ const Platform = () => {
   return (
     <div id="pl-page">
       <SEO
-        title="The Platform | One Architecture for Every NDIS Provider — TesseractApps"
-        description="TesseractApps is built on a single, unified architecture — one data model, one codebase, no migration. The platform deepens as your provider organisation grows."
+        title="The Platform | One Architecture for Every NDIS Provider, TesseractApps"
+        description="TesseractApps is built on a single, unified architecture, one data model, one codebase, no migration. The platform deepens as your provider organisation grows."
       />
 
       {/* ── Hero ── */}
@@ -185,7 +184,7 @@ const Platform = () => {
             of your business operations.
           </h1>
           <p id="pl-hero-sub">
-            NDIS providers don't grow in a straight line — their governance, systems, and
+            NDIS providers don't grow in a straight line - their governance, systems, and
             operational maturity evolve in stages. Your software should evolve the same way.
           </p>
           <div id="pl-hero-ctas">
@@ -274,7 +273,7 @@ const Platform = () => {
         <div className="pl-outer">
           <div className="pl-label">Provider Maturity</div>
           <h2 className="pl-section-heading">
-            Your stage determines configuration — not access.
+            Your stage determines configuration, not access.
           </h2>
           <p className="pl-body-text">
             Every provider operates the same core platform. What changes is the depth of
@@ -333,7 +332,7 @@ const Platform = () => {
             Enterprise-grade infrastructure. Australian hosted.
           </h2>
           <p className="pl-body-text">
-            TesseractApps runs natively on Salesforce Hyperforce — the same infrastructure
+            TesseractApps runs natively on Salesforce Hyperforce, the same infrastructure
             trusted by government agencies, financial institutions, and healthcare organisations
             worldwide.
           </p>
@@ -409,7 +408,7 @@ const Platform = () => {
           <div className="pl-label">Onboarding</div>
           <h2 className="pl-section-heading">From assessment to go-live in weeks.</h2>
           <p className="pl-body-text">
-            Getting onto TesseractApps is a structured process — not a six-month project. Most
+            Getting onto TesseractApps is a structured process, not a six-month project. Most
             providers are fully operational within six weeks.
           </p>
           <div id="pl-phase-stepper">
@@ -445,7 +444,7 @@ const Platform = () => {
             <h2 id="pl-cta-heading">See how TesseractApps works for your organisation.</h2>
             <p id="pl-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity
-              stage. 30 minutes. Live platform — not a slide deck. Start your provider setup.
+              stage. 30 minutes. Live platform, not a slide deck. Start your provider setup.
             </p>
         <div className="sll-cta-actions">
             <button

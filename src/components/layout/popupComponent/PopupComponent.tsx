@@ -57,7 +57,7 @@ const PopupComponent = ({
     void el.offsetWidth;
     const rect = el.getBoundingClientRect();
     const vw = window.innerWidth;
-    const edge = 16;
+    const edge = vw <= 1200 ? 0 : 16;
     if (rect.left < edge) {
       el.style.marginLeft = `${edge - rect.left}px`;
     } else if (rect.right > vw - edge) {

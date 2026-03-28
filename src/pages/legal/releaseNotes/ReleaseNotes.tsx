@@ -95,7 +95,7 @@ const ReleaseNotes = () => {
           <div id="cl-hero-label">Release Notes</div>
           <h1 id="cl-hero-heading">Latest Product Updates in TesseractApps</h1>
           <p id="cl-hero-sub">
-            Every update, improvement, and fix — documented in one place. Stay up to date with everything we ship.
+            Every update, improvement, and fix, documented in one place. Stay up to date with everything we ship.
           </p>
         </div>
       </section>
@@ -162,7 +162,7 @@ const ReleaseNotes = () => {
                 key={note._id}
                 className={`cl-entry${noteIndex === 0 && activeCategory === "All" ? " cl-entry--latest" : ""}`}
               >
-                {/* Left aside — version + date */}
+                {/* Left aside, version + date */}
                 <div className="cl-entry-aside">
                   <div className="cl-version-badge">
                     v{note.version}
