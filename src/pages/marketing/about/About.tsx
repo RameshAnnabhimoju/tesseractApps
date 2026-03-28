@@ -1,10 +1,8 @@
 import "./AboutStyles.css";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import React from "react";
 import SEO from "../../../components/common/SEO";
 import { useSanityTeamMembers } from "../../../hooks/useSanityTeamMembers";
-import { useSanityJobListings } from "../../../hooks/useSanityJobListings";
 import SanityImage from "../../../components/sanity/sanity-image";
 import {
   Target,
@@ -14,30 +12,24 @@ import {
   Mail,
   MapPin,
   Send,
-  Zap,
-  Users,
-  TrendingUp,
-  Home,
-  DollarSign,
-  Heart,
 } from "lucide-react";
 import useAppNavigate from "../../../hooks/useAppNavigate";
 
-const ICON_MAP: Record<string, React.ReactNode> = {
-  dollar: <DollarSign size={13} strokeWidth={2.5} />,
-  home: <Home size={13} strokeWidth={2.5} />,
-  trending: <TrendingUp size={13} strokeWidth={2.5} />,
-  users: <Users size={13} strokeWidth={2.5} />,
-  zap: <Zap size={13} strokeWidth={2.5} />,
-  heart: <Heart size={13} strokeWidth={2.5} />,
-  map: <MapPin size={13} strokeWidth={2.5} />,
-};
+// const ICON_MAP: Record<string, React.ReactNode> = {
+//   dollar: <DollarSign size={13} strokeWidth={2.5} />,
+//   home: <Home size={13} strokeWidth={2.5} />,
+//   trending: <TrendingUp size={13} strokeWidth={2.5} />,
+//   users: <Users size={13} strokeWidth={2.5} />,
+//   zap: <Zap size={13} strokeWidth={2.5} />,
+//   heart: <Heart size={13} strokeWidth={2.5} />,
+//   map: <MapPin size={13} strokeWidth={2.5} />,
+// };
 
 const About = () => {
   const location = useLocation();
   const appNavigate = useAppNavigate();
   const { data: teamMembers, loading: teamLoading } = useSanityTeamMembers();
-  const { data: jobs, loading: jobsLoading } = useSanityJobListings();
+  // const { data: jobs, loading: jobsLoading } = useSanityJobListings();
 
   useEffect(() => {
     const targetId = location.state?.targetId;
@@ -195,7 +187,7 @@ const About = () => {
         </section>
 
         {/* ── Careers ── */}
-        <section id="about-careers-section">
+        {/* <section id="about-careers-section">
           <div className="about-section-label">Join Us</div>
           <h2 id="about-careers-heading">Careers</h2>
           <p id="about-careers-sub">
@@ -295,7 +287,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* ── Contact ── */}
         <section id="about-contact-section">

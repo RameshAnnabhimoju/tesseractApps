@@ -59,6 +59,7 @@ const INDUSTRY_OPTIONS = [
 
 /* ── Service pathway steps (sidebar) ── */
 const PATHWAY_STEPS = [
+  "Referral",
   "Intake",
   "Service Agreement",
   "Funding Allocation",

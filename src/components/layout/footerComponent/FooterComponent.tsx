@@ -8,7 +8,6 @@ import flagsImag2 from "../../../assets/flagImage2.webp";
 import localAward from "../../../assets/2025_CANB_WINNER_LBA.webp";
 import iso27001 from "../../../assets/JAS-ANZ ISMS.webp";
 import iso9001 from "../../../assets/JAS-ANZ QMS.webp";
-import { navBarDummyData } from "../../../data/navData";
 import { useState } from "react";
 import { sendEmail, sendTextEmail } from "../../../services/appService";
 import Alert from "../../ui/alert/Alert";
@@ -18,9 +17,32 @@ import {
 } from "../../../utils/emailTemplates";
 import useAppNavigate from "../../../hooks/useAppNavigate";
 import { Link } from "react-router-dom";
+import { useSanityCapabilityNav } from "../../../hooks/useSanityCapabilityNav";
+import { useSanitySolutionNav } from "../../../hooks/useSanitySolutionNav";
 
 const FooterComponent = () => {
   const appNavigate = useAppNavigate();
+  const { links: capLinks } = useSanityCapabilityNav();
+  const { links: solLinks } = useSanitySolutionNav();
+
+  // Group capabilities by navGroup (same logic as navbar)
+  const capGroups: Record<string, { title: string; slug: string }[]> = {};
+  capLinks.forEach((link) => {
+    if (!capGroups[link.navGroup]) capGroups[link.navGroup] = [];
+    capGroups[link.navGroup].push({ title: link.title, slug: link.slug.current });
+  });
+
+  // Group solutions by navCategory (same logic as navbar)
+  const solGroups: Record<string, { title: string; slug: string }[]> = {
+    "BY CARE TYPE": [],
+    "BY ROLE": [],
+    "BY STAGE": [],
+  };
+  solLinks.forEach((link) => {
+    if (solGroups[link.navCategory]) {
+      solGroups[link.navCategory].push({ title: link.title, slug: link.slug.current });
+    }
+  });
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const alertInitialData = {
     heading: "",
@@ -117,8 +139,6 @@ const FooterComponent = () => {
     if (name) appNavigate(name);
   }
 
-  const nav = navBarDummyData;
-
   return (
     <div id="footer-container">
       <Alert setAlertData={setAlertData} alertData={alertData} />
@@ -137,51 +157,47 @@ const FooterComponent = () => {
           </p>
         </div>
 
-        {/* Capabilities — col A: Workforce + Participant & Care */}
+        {/* Capabilities col A — first two navGroups from Sanity */}
         <div className="footer-column">
-          {nav.Capabilities.slice(0, 2).map((group) => (
-            <div key={group.heading} className="footer-link-group">
-              <div className="footer-heading">{group.heading}</div>
-              {group.links.map((link) => (
-                link.href ? (
-                  <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
-                ) : (
-                  <div key={link.title} className="footer-text">{link.title}</div>
-                )
+          {Object.entries(capGroups).slice(0, 2).map(([group, items]) => (
+            <div key={group} className="footer-link-group">
+              <div className="footer-heading">{group}</div>
+              {items.map((item) => (
+                <Link key={item.slug} className="footer-text" to={`/capabilities/${item.slug}`}>
+                  {item.title}
+                </Link>
               ))}
             </div>
           ))}
         </div>
 
-        {/* Capabilities — col B: Finance + Operational Intelligence */}
+        {/* Capabilities col B — remaining navGroups from Sanity */}
         <div className="footer-column">
-          {nav.Capabilities.slice(2).map((group) => (
-            <div key={group.heading} className="footer-link-group">
-              <div className="footer-heading">{group.heading}</div>
-              {group.links.map((link) => (
-                link.href ? (
-                  <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
-                ) : (
-                  <div key={link.title} className="footer-text">{link.title}</div>
-                )
+          {Object.entries(capGroups).slice(2).map(([group, items]) => (
+            <div key={group} className="footer-link-group">
+              <div className="footer-heading">{group}</div>
+              {items.map((item) => (
+                <Link key={item.slug} className="footer-text" to={`/capabilities/${item.slug}`}>
+                  {item.title}
+                </Link>
               ))}
             </div>
           ))}
         </div>
 
-        {/* Solutions */}
+        {/* Solutions — grouped by navCategory from Sanity */}
         <div className="footer-column">
-          {Object.entries(nav.Solutions).map(([category, links]) => (
-            <div key={category} className="footer-link-group">
-              <div className="footer-heading">{category}</div>
-              {links.map((link) => (
-                link.href ? (
-                  <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
-                ) : (
-                  <div key={link.title} className="footer-text">{link.title}</div>
-                )
-              ))}
-            </div>
+          {Object.entries(solGroups).map(([category, items]) => (
+            items.length > 0 && (
+              <div key={category} className="footer-link-group">
+                <div className="footer-heading">{category}</div>
+                {items.map((item) => (
+                  <Link key={item.slug} className="footer-text" to={`/solutions/${item.slug}`}>
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+            )
           ))}
         </div>
 
@@ -190,7 +206,7 @@ const FooterComponent = () => {
           <div className="footer-heading">Company</div>
           <Link className="footer-text" to="/about">About Us</Link>
           <Link className="footer-text" to="/careers">Careers</Link>
-          <Link className="footer-text" to="/contact-us">Contact Us</Link>
+          <Link className="footer-text" to="/platform">Platform</Link>
           <Link className="footer-text" to="/terms-and-conditions">Terms &amp; Conditions</Link>
           <Link className="footer-text" to="/privacy-policy">Privacy Policy</Link>
           <Link className="footer-text" to="/changelog">Release Notes</Link>
@@ -199,14 +215,9 @@ const FooterComponent = () => {
         {/* Resources + Support + Get Started */}
         <div className="footer-column">
           <div className="footer-heading">Resources</div>
-          {nav.Resources.map((link) => (
-            link.href ? (
-              <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
-            ) : (
-              <div key={link.title} className="footer-text">{link.title}</div>
-            )
-          ))}
-          <Link className="footer-text" to="/case-studies">Case Studies</Link>
+          <Link className="footer-text" to="/blogs">Blog</Link>
+          <Link className="footer-text" to="/whitepapers">Whitepapers</Link>
+          <Link className="footer-text" to="/webinars">Webinars</Link>
           <a
             className="footer-text"
             href="/rss.xml"
@@ -216,15 +227,10 @@ const FooterComponent = () => {
             RSS Feed
           </a>
 
-          <div className="footer-heading footer-support-heading">Support</div>
-          <Link className="footer-text" to="/help-centre">Help Centre</Link>
-          <Link className="footer-text" to="/help-centre">FAQs</Link>
-          <Link className="footer-text" to="/book-a-demo">Book a Demo</Link>
-
           <div className="footer-heading footer-support-heading">Get Started</div>
           <Link className="footer-text" to="/signup">Sign Up</Link>
           <Link className="footer-text" to="/pricing">Pricing</Link>
-          <Link className="footer-text" to="/requestDemo">Request a Demo</Link>
+          <Link className="footer-text" to="/book-a-demo">Book a Demo</Link>
         </div>
       </nav>
 

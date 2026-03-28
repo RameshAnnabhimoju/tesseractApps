@@ -337,9 +337,7 @@ export default function HomeV4() {
 
             {/* Trust line */}
             <p className="hv4-hero-trust">
-              <IconCheck /> Money-back guarantee &nbsp;·&nbsp;
-              <IconCheck /> No credit card required &nbsp;·&nbsp;
-              <IconCheck /> Live in weeks, not months
+              <IconCheck /> No credit card required
             </p>
           </div>
 
@@ -528,7 +526,6 @@ export default function HomeV4() {
         <section id="hv4-start">
           <div className="hv4-section-inner">
             <div className="hv4-section-label">Getting Started</div>
-            <h2 className="hv4-section-h2">Live in weeks, not months.</h2>
             <p className="hv4-section-sub">
               Getting onto TesseractApps is a structured process — not a six-month project.
             </p>
@@ -558,9 +555,6 @@ export default function HomeV4() {
               </button>
             </div>
             <p className="hv4-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
-            <p className="hv4-start-guarantee">
-              <IconCheck /> Money-back guarantee on all plans
-            </p>
           </div>
         </section>
 
@@ -832,7 +826,6 @@ export default function HomeV4() {
             <p className="hv4-cta-sub2">
               <IconCheck /> Book a Provider Maturity Review &nbsp;·&nbsp;
               <IconCheck /> Begin Your Journey &nbsp;·&nbsp;
-              <IconCheck /> Money-back guarantee
             </p>
           </div>
         </section>

@@ -271,6 +271,7 @@ export type CapabilityNavLink = {
   title: string
   slug: SanitySlug
   navGroup: CapabilityNavGroup
+  navSubtitle?: string
   heroSubtitle?: string
 }
 
@@ -303,6 +304,7 @@ export type SolutionNavLink = {
   title: string
   slug: SanitySlug
   navCategory: SolutionNavCategory
+  navSubtitle?: string
   heroSubtitle?: string
 }
 

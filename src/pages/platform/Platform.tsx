@@ -185,7 +185,7 @@ const Platform = () => {
             of your business operations.
           </h1>
           <p id="pl-hero-sub">
-            NDIS providers don't grow in a straight line — their governance, systems, and
+            NDIS providers don't grow in a straight line - their governance, systems, and
             operational maturity evolve in stages. Your software should evolve the same way.
           </p>
           <div id="pl-hero-ctas">

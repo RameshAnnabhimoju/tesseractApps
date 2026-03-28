@@ -160,6 +160,7 @@
   align-items: center;
   padding: 60px 2rem;
   max-width: 680px;
+  width: 100%;
   z-index: 1;
 }
 
@@ -1368,10 +1369,10 @@
   }
   #pr-hero-price { font-size: 2.5rem; }
   #pr-hero-price-meta { align-items: center; }
-  #pr-hero-ctas { flex-direction: column; align-items: center; gap: 10px; }
+  #pr-hero-ctas { flex-direction: column; align-items: stretch; gap: 10px; width: 100%; }
   #pr-hero-ctas .pr-btn-primary,
   #pr-hero-ctas .pr-btn-secondary,
-  #pr-hero-ctas .pr-btn-download { width: 100%; max-width: 360px; }
+  #pr-hero-ctas .pr-btn-download { width: 100%; max-width: 100%; box-sizing: border-box; justify-content: center; }
 
   #pr-start { padding: 56px 0 0; }
   .pr-section-heading { font-size: 1.625rem; }

@@ -51,6 +51,23 @@ const formEmptyData: formDataType = {
   schedule: "",
 };
 
+const PATHWAY_STEPS = [
+  "Referral",
+  "Intake",
+  "Service Agreement",
+  "Funding Allocation",
+  "Roster Planning",
+  "Service Delivery",
+  "Case Notes",
+  "Incident Management",
+  "Timesheets",
+  "Payroll",
+  "NDIS Claims & Invoicing",
+  "Reconciliation",
+  "Reporting",
+  "Audit Evidence",
+];
+
 const isLastStep = (step: number) => step === bookADemoFormData.length - 1;
 const isFirstStep = (step: number) => step === 0;
 
@@ -268,10 +285,15 @@ const BookADemo = () => {
                 <li>No credit card required</li>
                 <li>Full Access to All features for 7 days</li>
               </ul>
-
-              <button type="button" id="bookADemo-why-link" onClick={() => navigate("/")}>
-                Why TesseractApps? <ChevronRight size={14} />
-              </button>
+              
+              {/* Service Pathway */}
+              <div id="bookADemo-pathway-heading">Your Service Pathway</div>
+              <div id="bookADemo-pathway-subheading">End-to-End Operations Covered</div>
+              <ul id="bookADemo-pathway-list">
+                {PATHWAY_STEPS.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ul>
             </div>
           </div>
 

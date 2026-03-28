@@ -192,7 +192,7 @@ export const navBarDummyData: {
     Resources: [
         { title: "Blog", subTitle: "Insights & Updates", href: "/blogs" },
         { title: "Whitepapers", subTitle: "Research", href: "/whitepapers" },
-        { title: "Help Centre", subTitle: "Support", href: "/help-centre" },
+        // { title: "Help Centre", subTitle: "Support", href: "/help-centre" },
     ],
 
     // ── About ──────────────────────────────────────────────────────────────

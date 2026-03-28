@@ -136,6 +136,62 @@ main[role="main"] {
   border-top-color: var(--color-primary);
   animation: app-spin 0.75s linear infinite;
 }
+
+/* ── Shared dark-section CTA block (used across Solutions, Capabilities, Platform, Competitor pages) ── */
+.sll-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sll-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: #0c78ba;
+  color: #fff;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.sll-btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.sll-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.sll-btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.sll-cta-sub-note {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 12px 0 0;
+  text-align: center;
+}
 /* XS: Extra Small (<360px) */
 @media (max-width: 359px) {
 }

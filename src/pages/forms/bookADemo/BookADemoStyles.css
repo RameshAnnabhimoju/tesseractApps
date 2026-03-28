@@ -242,6 +242,52 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+/* ─── Service Pathway ─── */
+#bookADemo-pathway-heading {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 24px;
+  margin-bottom: 4px;
+}
+
+#bookADemo-pathway-subheading {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 10px;
+}
+
+#bookADemo-pathway-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+#bookADemo-pathway-list li {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.4;
+}
+
+#bookADemo-pathway-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
 /* ─── Illustration ─── */
 #bookADemo-sidebar-illustration {
   margin-top: auto;
