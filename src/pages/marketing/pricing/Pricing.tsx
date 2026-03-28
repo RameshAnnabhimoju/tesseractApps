@@ -2,7 +2,7 @@ import "./PricingStyles.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
-import { Play, Download } from "lucide-react";
+import { Download } from "lucide-react";
 import featuresPdf from "../../../assets/tesseract-features.pdf";
 import HeroArcsLeftComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import HeroArcsRightComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
@@ -333,40 +333,6 @@ const PAID_COMPARISON_ROWS = [
 //   );
 // }
 
-// ── Start featured video ───────────────────────────────────────────────────
-
-function StartVideo({ videoId, stageName }: { videoId?: string; stageName: string }) {
-  const [playing, setPlaying] = useState(false);
-
-  if (videoId && playing) {
-    return (
-      <div className="pr-video-frame">
-        <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-          title={`${stageName} Overview`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      </div>
-    );
-  }
-
-  return (
-    <button
-      type="button"
-      className={`pr-video-placeholder${videoId ? " pr-video-placeholder--clickable" : ""}`}
-      onClick={() => videoId && setPlaying(true)}
-      aria-label={`Play ${stageName} Overview`}
-    >
-      <div className="pr-video-play-btn">
-        <Play size={22} fill="currentColor" />
-      </div>
-      <span className="pr-video-label">
-        {videoId ? `Watch ${stageName} Overview` : "Video coming soon"}
-      </span>
-    </button>
-  );
-}
 
 // ── Component ──────────────────────────────────────────────────────────────
 
@@ -515,9 +481,6 @@ const Pricing = () => {
               <p className="pr-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
             </div>
 
-            <div id="pr-featured-right">
-              <StartVideo videoId={START_STAGE.videoId} stageName={START_STAGE.label} />
-            </div>
           </div>
         </div>
       </section>

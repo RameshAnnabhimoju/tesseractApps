@@ -275,7 +275,7 @@
 
 #pr-featured-plan {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  grid-template-columns: 1fr;
   gap: 0;
   border: 1px solid #dde3ec;
   border-top: 4px solid var(--color-primary);

@@ -85,24 +85,20 @@ const About = () => {
             <div id="about-story-text">
               <div id="about-story-timeline">
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">2022 – Founded</div>
+                  <div className="about-timeline-year">2023 – Founded</div>
                   <p className="about-timeline-desc">We started by listening to the people who deliver care every day.</p>
                 </div>
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">2023 – Platform Development</div>
+                  <div className="about-timeline-year">2024 – Platform Development</div>
                   <p className="about-timeline-desc">Built our platform with real providers in real workflows. Every feature tested, refined, and simplified.</p>
                 </div>
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">Mid 2024 – T NDIS Beta Launch</div>
+                  <div className="about-timeline-year">2025 – T NDIS Beta Launch</div>
                   <p className="about-timeline-desc">Provider feedback shaped the platform into a practical, daily operational system.</p>
                 </div>
                 <div className="about-timeline-item">
-                  <div className="about-timeline-year">January 2025 – Market-Ready</div>
+                  <div className="about-timeline-year">Market-Ready</div>
                   <p className="about-timeline-desc">TesseractApps became fully operational and ready to serve providers.</p>
-                </div>
-                <div className="about-timeline-item">
-                  <div className="about-timeline-year">Today</div>
-                  <p className="about-timeline-desc">Our Salesforce-based platform helps providers save time, reduce errors, and stay compliant.</p>
                 </div>
               </div>
               <p id="about-story-commitment">
