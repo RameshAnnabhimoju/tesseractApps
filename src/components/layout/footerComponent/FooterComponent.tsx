@@ -205,6 +205,7 @@ const FooterComponent = () => {
         <div className="footer-column">
           <div className="footer-heading">Company</div>
           <Link className="footer-text" to="/about">About Us</Link>
+          <Link className="footer-text" to="/about">Contact Us</Link>
           <Link className="footer-text" to="/careers">Careers</Link>
           <Link className="footer-text" to="/platform">Platform</Link>
           <Link className="footer-text" to="/terms-and-conditions">Terms &amp; Conditions</Link>

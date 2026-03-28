@@ -197,9 +197,7 @@ export const navBarDummyData: {
 
     // ── About ──────────────────────────────────────────────────────────────
     About: [
-        { title: "Our Story", subTitle: " ", href: "/our-story" },
-        { title: "Our Mission & Vision", subTitle: " ", href: "/our-mission-and-vision" },
-        { title: "Team", subTitle: " ", href: "/team" },
+        { title: "About Us", subTitle: " ", href: "/about" },
         { title: "Careers", subTitle: " ", href: "/careers" },
         { title: "Contact Us", subTitle: " ", href: "/contact-us" },
     ],

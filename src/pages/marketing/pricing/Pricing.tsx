@@ -2,7 +2,7 @@ import "./PricingStyles.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
-import { ChevronDown, ChevronUp, Phone, Mail, Play, Download } from "lucide-react";
+import { Play, Download } from "lucide-react";
 import featuresPdf from "../../../assets/tesseract-features.pdf";
 import HeroArcsLeftComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import HeroArcsRightComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
