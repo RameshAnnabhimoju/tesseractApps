@@ -1,13 +1,16 @@
 // src/pages/home/HomeV4.tsx
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomeV4Styles.css";
 import SEO from "../../components/common/SEO";
 import { buildGraphSchema } from "../../utils/schemaHelpers";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import { useSanityBlogList } from "../../hooks/useSanityBlogList";
+import { useSanityCapabilityNav } from "../../hooks/useSanityCapabilityNav";
 import { urlFor } from "../../sanity/lib/image";
 import { formatDate } from "../../utils/formatDate";
 import { testimonialDummyData } from "../../data/testimonialData";
+import adminConsoleImg from "../../assets/Admin Console N.webp";
 import starIcon from "../../assets/star.webp";
 import company2 from "../../assets/thumbs/company-2-thumb.webp";
 import company4 from "../../assets/thumbs/company-4-thumb.webp";
@@ -76,21 +79,6 @@ const IconChevronRight = () => (
     <path d="M4.5 2.5l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
-const IconRostering = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /><line x1="8" y1="14" x2="8" y2="14" strokeWidth="2" /><line x1="12" y1="14" x2="12" y2="14" strokeWidth="2" /><line x1="12" y1="18" x2="12" y2="18" strokeWidth="2" />
-  </svg>
-);
-const IconPayroll = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" /><path d="M12 6v2m0 8v2M9 9h4.5a1.5 1.5 0 0 1 0 3H10a1.5 1.5 0 0 0 0 3H15" />
-  </svg>
-);
-const IconCompliance = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" />
-  </svg>
-);
 const IconClaiming = () => (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /><polyline points="10 9 9 9 8 9" />
@@ -101,34 +89,8 @@ const IconParticipant = () => (
     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
   </svg>
 );
-const IconIncidents = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
-  </svg>
-);
-const IconDashboard = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <rect x="3" y="3" width="7" height="9" rx="1" /><rect x="14" y="3" width="7" height="5" rx="1" /><rect x="14" y="12" width="7" height="9" rx="1" /><rect x="3" y="16" width="7" height="5" rx="1" />
-  </svg>
-);
-const IconWorkforce = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="9" cy="7" r="4" /><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" /><path d="M19 8v6m-3-3h6" />
-  </svg>
-);
 
 // ─── Data ────────────────────────────────────────────────────────────────────
-const CAPABILITIES = [
-  { icon: <IconRostering />, label: "Rostering & Scheduling", href: "/capabilities/rostering-scheduling", desc: "Auto-schedule qualified workers. Manage SIL sleepovers. Enforce SCHADS at the point of scheduling." },
-  { icon: <IconPayroll />, label: "Timesheets & Payroll", href: "/capabilities/timesheets-payroll", desc: "Geo-verified clock-ins. Built-in SCHADS Award engine. 3-Layer Reconciliation before payroll runs." },
-  { icon: <IconWorkforce />, label: "Workforce Management", href: "/capabilities/workforce-management", desc: "Credential tracking with automated expiry alerts. Onboarding workflows. Leave management integrated with rostering." },
-  { icon: <IconParticipant />, label: "Participant Management", href: "/capabilities/participant-management", desc: "Centralised profiles. Care plans linked to goals. Real-time funding visibility by support category." },
-  { icon: <IconIncidents />, label: "Incidents", href: "/capabilities/incidents", desc: "Mobile incident logging." },
-  { icon: <IconCompliance />, label: "Compliance & Audit Readiness", href: "/capabilities/compliance-audit", desc: "Embedded compliance across every function. Continuous monitoring. Evidence retrieved, not assembled." },
-  { icon: <IconClaiming />, label: "NDIS Claiming & Invoicing", href: "/capabilities/ndis-claiming", desc: "Claims generated from verified delivery. Pre-submission validation. Budget tracking in real time." },
-  { icon: <IconDashboard />, label: "Dashboards & Reporting", href: "/capabilities/dashboards-reporting", desc: "Role-specific dashboards from support worker to CEO. One source of truth across every function." },
-];
-
 const FLOW_STEPS = [
   { n: "01", label: "Intake", desc: "Participant referral received. Profile created with demographics, support needs, and risk information." },
   { n: "02", label: "Service Agreement", desc: "Agreement created, linked to participant plan. Funding categories and budgets mapped." },
@@ -198,7 +160,9 @@ const CLIENT_LOGOS = [
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function HomeV4() {
   const navigate = useAppNavigate();
+  const routerNavigate = useNavigate();
   const { data: blogPosts, loading: blogLoading } = useSanityBlogList({ to: 3 });
+  const { links: capLinks } = useSanityCapabilityNav();
 
   // Stats counter section
   const { ref: statsRef, inView: statsInView } = useInView(0.2);
@@ -333,7 +297,7 @@ export default function HomeV4() {
                 Begin Your Journey
               </button>
             </div>
-            <p className="hv4-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
+            {/* <p className="hv4-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p> */}
 
             {/* Trust line */}
             <p className="hv4-hero-trust">
@@ -341,53 +305,13 @@ export default function HomeV4() {
             </p>
           </div>
 
-          {/* Platform preview card */}
-          <div className="hv4-hero-card-wrap">
-            <div className="hv4-hero-card">
-              <div className="hv4-card-header">
-                <div className="hv4-card-dot hv4-card-dot--red" />
-                <div className="hv4-card-dot hv4-card-dot--amber" />
-                <div className="hv4-card-dot hv4-card-dot--green" />
-                <span className="hv4-card-title">TesseractApps</span>
-              </div>
-              <div className="hv4-card-body">
-                <div className="hv4-card-modules">
-                  {["Rostering", "Payroll", "Compliance", "Claiming", "Incidents", "Dashboards", "Participants", "Workforce"].map((m) => (
-                    <div key={m} className="hv4-card-module">
-                      <span className="hv4-card-module-dot" />
-                      {m}
-                    </div>
-                  ))}
-                </div>
-                <div className="hv4-card-connections" aria-hidden="true">
-                  <svg viewBox="0 0 240 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M40 20 Q120 70 200 20" stroke="rgba(12,120,186,0.3)" strokeWidth="1.2" strokeDasharray="4 3" />
-                    <path d="M40 50 Q120 100 200 50" stroke="rgba(12,120,186,0.2)" strokeWidth="1.2" strokeDasharray="4 3" />
-                    <path d="M40 80 Q120 30 200 80" stroke="rgba(0,42,82,0.15)" strokeWidth="1.2" strokeDasharray="4 3" />
-                    <path d="M40 110 Q120 60 200 110" stroke="rgba(12,120,186,0.25)" strokeWidth="1.2" strokeDasharray="4 3" />
-                    <circle cx="120" cy="70" r="12" fill="#0c78ba" opacity="0.12" />
-                    <circle cx="120" cy="70" r="7" fill="#0c78ba" opacity="0.2" />
-                    <circle cx="120" cy="70" r="3.5" fill="#0c78ba" />
-                  </svg>
-                </div>
-                <div className="hv4-card-stat-row">
-                  <div className="hv4-card-stat">
-                    <span className="hv4-card-stat-n">$39.99</span>
-                    <span className="hv4-card-stat-l">/ seat / mo</span>
-                  </div>
-                  <div className="hv4-card-stat-divider" />
-                  <div className="hv4-card-stat">
-                    <span className="hv4-card-stat-n">99.9%</span>
-                    <span className="hv4-card-stat-l">uptime SLA</span>
-                  </div>
-                  <div className="hv4-card-stat-divider" />
-                  <div className="hv4-card-stat">
-                    <span className="hv4-card-stat-n">16+</span>
-                    <span className="hv4-card-stat-l">modules</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Platform preview image */}
+          <div className="hv4-hero-img-wrap">
+            <img
+              src={adminConsoleImg}
+              alt="TesseractApps Admin Console"
+              className="hv4-hero-img"
+            />
           </div>
         </section>
         </div>{/* /hv4-hero-wrap */}
@@ -495,10 +419,10 @@ export default function HomeV4() {
                 <div
                   key={i}
                   className={`hv4-maturity-card hv4-maturity-card--${s.stage.toLowerCase()}`}
-                  onClick={() => navigate(s.href)}
+                  onClick={() => routerNavigate(s.href)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && navigate(s.href)}
+                  onKeyDown={(e) => e.key === "Enter" && routerNavigate(s.href)}
                 >
                   <div className="hv4-maturity-top">
                     <div className="hv4-maturity-focus">{s.focus}</div>
@@ -621,7 +545,7 @@ export default function HomeV4() {
 
             <div className="hv4-problems-grid">
               {PROBLEMS.map((p, i) => (
-                <div key={i} className="hv4-problem-card" onClick={() => navigate(p.href)} role="button" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && navigate(p.href)}>
+                <div key={i} className="hv4-problem-card" role="button" tabIndex={0}>
                   <div className="hv4-problem-icon-wrap">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                       <circle cx="10" cy="10" r="9" stroke="#e0302a" strokeWidth="1.5" />
@@ -633,7 +557,7 @@ export default function HomeV4() {
                     <h3 className="hv4-problem-label">{p.label}</h3>
                     <p className="hv4-problem-desc">{p.desc}</p>
                   </div>
-                  <div className="hv4-problem-arrow"><IconChevronRight /></div>
+                  {/* <div className="hv4-problem-arrow"><IconChevronRight /></div> */}
                 </div>
               ))}
             </div>
@@ -650,18 +574,17 @@ export default function HomeV4() {
             </p>
 
             <div className="hv4-cap-grid">
-              {CAPABILITIES.map((cap, i) => (
+              {capLinks.slice(0, 8).map((cap) => (
                 <div
-                  key={i}
+                  key={cap._id}
                   className="hv4-cap-card"
-                  onClick={() => navigate(cap.href)}
+                  onClick={() => routerNavigate(`/capabilities/${cap.slug.current}`)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && navigate(cap.href)}
+                  onKeyDown={(e) => e.key === "Enter" && routerNavigate(`/capabilities/${cap.slug.current}`)}
                 >
-                  <div className="hv4-cap-icon">{cap.icon}</div>
-                  <h3 className="hv4-cap-label">{cap.label}</h3>
-                  <p className="hv4-cap-desc">{cap.desc}</p>
+                  <h3 className="hv4-cap-label">{cap.title}</h3>
+                  <p className="hv4-cap-desc">{cap.navSubtitle ?? cap.heroSubtitle ?? ""}</p>
                   <div className="hv4-cap-link">
                     Explore <IconArrowRight />
                   </div>
@@ -669,13 +592,19 @@ export default function HomeV4() {
               ))}
             </div>
 
-            <div className="hv4-cap-extras">
-              <a href="/pricing" className="hv4-cap-extra-link">
-                <IconClaiming /> Pricing, $39.99/seat/month. No feature gating.
-              </a>
-              <a href="/solutions/start" className="hv4-cap-extra-link">
-                <IconParticipant /> Find Your Stage, Start | Growth | Scale | Enterprise
-              </a>
+            <div className="hv4-cap-footer">
+              <div className="hv4-cap-extras">
+                <a href="/pricing" className="hv4-cap-extra-link">
+                  Pricing<IconClaiming /> 
+                </a>
+                <a href="/pricing" className="hv4-cap-extra-link">
+                   Find Your Stage<IconParticipant />
+                </a>
+                <a href="/pricing" className="hv4-cap-extra-link">
+                   View all capabilities<IconArrowRight />
+                </a>
+              </div>
+              <div className="hv4-cap-footer-spacer" />
             </div>
           </div>
         </section>

@@ -82,6 +82,12 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/help-center": { name: "Help Centre", path: "/help-center" },
       "/help-centre": { name: "Help Centre", path: "/help-centre" },
 
+      // ------------------- By Stage (active, Sanity CMS, no hardcoded data) -------------------
+      "/solutions/start": { name: "Start", path: "/solutions/start" },
+      "/solutions/growth": { name: "Growth", path: "/solutions/growth" },
+      "/solutions/scale": { name: "Scale", path: "/solutions/scale" },
+      "/solutions/enterprise": { name: "Enterprise", path: "/solutions/enterprise" },
+
       // ------------------- By Care (active, Sanity CMS, no hardcoded data) -------------------
       "/solutions/disability-support-ndis": {
         name: "Disability Support (NDIS Providers)",
