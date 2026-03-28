@@ -184,7 +184,7 @@ const SolutionPage = () => {
       <section className="sol-section sol-section--light">
         <div className="sol-outer">
           <div className="sol-section-label">How We Support You</div>
-          <h2 className="sol-section-heading">One connected solution — built for NDIS providers.</h2>
+          <h2 className="sol-section-heading">One connected solution, built for NDIS providers.</h2>
           <div className="sol-solve-layout">
             <div className="sol-solve-text">
               {page.howWeSupport.split("\n\n").map((para, i) => (
@@ -228,7 +228,7 @@ const SolutionPage = () => {
       <section className="sol-section sol-section--light">
         <div className="sol-outer">
           <div className="sol-section-label">Is This Right for You?</div>
-          <h2 className="sol-section-heading">Answer yes to any of these — this is for you.</h2>
+          <h2 className="sol-section-heading">Answer yes to any of these, this is for you.</h2>
           <div className="sol-qualify-list">
             {page.isThisRightForYou.map((item) => (
               <div key={item} className="sol-qualify-item">
@@ -282,7 +282,7 @@ const SolutionPage = () => {
             </h2>
             <p id="sol-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck.
+              30 minutes. Live platform, not a slide deck.
             </p>
     <div className="sll-cta-actions">
             <button

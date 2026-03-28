@@ -82,7 +82,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       "/help-center": { name: "Help Centre", path: "/help-center" },
       "/help-centre": { name: "Help Centre", path: "/help-centre" },
 
-      // ------------------- By Care (active — Sanity CMS, no hardcoded data) -------------------
+      // ------------------- By Care (active, Sanity CMS, no hardcoded data) -------------------
       "/solutions/disability-support-ndis": {
         name: "Disability Support (NDIS Providers)",
         path: "/solutions/disability-support-ndis",

@@ -462,7 +462,7 @@ const PrivacyPolicy = () => {
               policy, please contact our Privacy Officer:
             </p>
             <div className="pp-contact-block">
-              <p><strong>Privacy Officer — TesseractApps Pty Ltd</strong></p>
+              <p><strong>Privacy Officer, TesseractApps Pty Ltd</strong></p>
               <p>Email: <a href="mailto:privacy@tesseractapps.com">privacy@tesseractapps.com</a></p>
               <p>General Enquiries: <a href="mailto:sales@tesseractapps.com">sales@tesseractapps.com</a></p>
               <p>Phone: 1300 252 808</p>

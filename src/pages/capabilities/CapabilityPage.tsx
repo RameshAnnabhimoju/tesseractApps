@@ -110,7 +110,7 @@ const CapabilityPage = () => {
       { name: page.title, url: pageUrl },
     ]),
     buildSoftwareSchema({
-      name: `${page.heroHeading} — TesseractApps`,
+      name: `${page.heroHeading}, TesseractApps`,
       description: page.heroSubtitle ?? page.problemStatement ?? metaDescription,
       features: page.whatYouGet,
     })
@@ -187,7 +187,7 @@ const CapabilityPage = () => {
       <section className="cap-section cap-section--light">
         <div className="cap-outer">
           <div className="cap-section-label">How We Solve This</div>
-          <h2 className="cap-section-heading">One connected solution — built for NDIS providers.</h2>
+          <h2 className="cap-section-heading">One connected solution, built for NDIS providers.</h2>
           <div className="cap-solve-layout">
             <div className="cap-solve-text">
               {page.howWeSolveThis.split("\n\n").map((para, i) => (
@@ -231,7 +231,7 @@ const CapabilityPage = () => {
       <section className="cap-section cap-section--light">
         <div className="cap-outer">
           <div className="cap-section-label">Is This Right for You?</div>
-          <h2 className="cap-section-heading">Answer yes to any of these — this is for you.</h2>
+          <h2 className="cap-section-heading">Answer yes to any of these, this is for you.</h2>
           <div className="cap-qualify-list">
             {page.isThisRightForYou.map((item) => (
               <div key={item} className="cap-qualify-item">
@@ -285,7 +285,7 @@ const CapabilityPage = () => {
             </h2>
             <p id="cap-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck.
+              30 minutes. Live platform, not a slide deck.
             </p>
     <div className="sll-cta-actions">
             <button

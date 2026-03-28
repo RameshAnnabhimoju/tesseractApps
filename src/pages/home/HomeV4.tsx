@@ -180,12 +180,12 @@ const MATURITY_STAGES = [
 ];
 
 const PROBLEMS = [
-  { label: "Rostering–Payroll gap", desc: "Running rostering in one system and payroll in another — and they never agree.", href: "/capabilities/rostering-scheduling" },
+  { label: "Rostering–Payroll gap", desc: "Running rostering in one system and payroll in another, and they never agree.", href: "/capabilities/rostering-scheduling" },
   { label: "Incident trail gaps", desc: "Can't confidently tell the NDIS Commission when an incident was reported, escalated, and resolved.", href: "/capabilities/incidents" },
-  { label: "SCHADS risk", desc: "Your SCHADS interpretation lives in someone's head — payroll errors surface weeks later.", href: "/capabilities/timesheets-payroll" },
+  { label: "SCHADS risk", desc: "Your SCHADS interpretation lives in someone's head, payroll errors surface weeks later.", href: "/capabilities/timesheets-payroll" },
   { label: "Revenue leakage", desc: "Submitting NDIS claims manually and reconciling against spreadsheets.", href: "/capabilities/ndis-claiming" },
   { label: "Audit anxiety", desc: "Compliance documentation scattered across email, shared drives, and filing cabinets.", href: "/capabilities/compliance-audit" },
-  { label: "No visibility", desc: "No single view of your operations — every report requires chasing three people.", href: "/capabilities/dashboards-reporting" },
+  { label: "No visibility", desc: "No single view of your operations, every report requires chasing three people.", href: "/capabilities/dashboards-reporting" },
 ];
 
 // ─── Client logo list ─────────────────────────────────────────────────────────
@@ -320,7 +320,7 @@ export default function HomeV4() {
 
             <p className="hv4-hero-sub">
               Stop stitching together disconnected tools. TesseractApps gives NDIS providers a single
-              operational platform — purpose-built, running natively on Salesforce Hyperforce.
+              operational platform, purpose-built, running natively on Salesforce Hyperforce.
               Everything stays connected. Everything stays compliant.
             </p>
 
@@ -410,7 +410,7 @@ export default function HomeV4() {
         <section id="hv4-flow" ref={flowRef} className={flowInView ? "hv4-fade-in" : "hv4-fade-pre"}>
           <div className="hv4-section-inner">
             <div className="hv4-section-label hv4-section-label--light">How It Works</div>
-            <h2 className="hv4-section-h2 hv4-section-h2--light">From intake to audit evidence — one connected flow.</h2>
+            <h2 className="hv4-section-h2 hv4-section-h2--light">From intake to audit evidence, one connected flow.</h2>
             <p className="hv4-section-sub hv4-section-sub--light">
               Every step in your NDIS operations connects to the next. No re-entry. No reconciliation gaps.
               No data lost between systems.
@@ -455,7 +455,7 @@ export default function HomeV4() {
             </div>
 
             <p className="hv4-flow-footer">
-              Every step generates data that feeds the next. When an auditor, plan manager, or board member asks a question —
+              Every step generates data that feeds the next. When an auditor, plan manager, or board member asks a question,
               the answer already exists in the system.
             </p>
           </div>
@@ -486,7 +486,7 @@ export default function HomeV4() {
             <div className="hv4-section-label">Provider Maturity Model</div>
             <h2 className="hv4-section-h2">Where are you on your provider journey?</h2>
             <p className="hv4-section-sub">
-              Every NDIS provider follows a maturity path. TesseractApps is built around it — so the platform
+              Every NDIS provider follows a maturity path. TesseractApps is built around it, so the platform
               meets you where you are and grows with you. Same architecture at every stage. Configuration deepens. You never start again.
             </p>
 
@@ -527,14 +527,14 @@ export default function HomeV4() {
           <div className="hv4-section-inner">
             <div className="hv4-section-label">Getting Started</div>
             <p className="hv4-section-sub">
-              Getting onto TesseractApps is a structured process — not a six-month project.
+              Getting onto TesseractApps is a structured process, not a six-month project.
             </p>
 
             <div className="hv4-start-steps">
               {[
                 { n: "01", title: "Assess", desc: "Book a demo. We evaluate your operations, identify your provider maturity stage, and map the configuration your organisation needs." },
-                { n: "02", title: "Configure", desc: "Your dedicated onboarding team configures TesseractApps to match your operational reality — rostering rules, SCHADS interpretation, claiming workflows." },
-                { n: "03", title: "Migrate & Train", desc: "Your data is migrated with full validation. Role-based training ensures every team member — from support worker to finance manager — is ready." },
+                { n: "02", title: "Configure", desc: "Your dedicated onboarding team configures TesseractApps to match your operational reality, rostering rules, SCHADS interpretation, claiming workflows." },
+                { n: "03", title: "Migrate & Train", desc: "Your data is migrated with full validation. Role-based training ensures every team member, from support worker to finance manager, is ready." },
                 { n: "04", title: "Go Live", desc: "You launch with a dedicated onboarding specialist. Ongoing support from day one. Most providers are fully operational within six weeks." },
               ].map((step, i) => (
                 <div key={i} className="hv4-start-step">
@@ -567,13 +567,13 @@ export default function HomeV4() {
                 <h2 className="hv4-section-h2">The cost of waiting is rising.</h2>
                 <p className="hv4-why-now-body">
                   The NDIS regulatory environment is tightening. Audit frequency is increasing.
-                  The NDIS Commission now expects providers to demonstrate compliance continuously —
+                  The NDIS Commission now expects providers to demonstrate compliance continuously,
                   not scramble to prove it when an auditor arrives.
                 </p>
                 <p className="hv4-why-now-body">
                   Every month you run on disconnected spreadsheets, siloed systems, or manual workarounds,
                   the risk compounds. Gaps in incident reporting, payroll errors under SCHADS, and missing
-                  audit trails do not get easier to fix later — they get more expensive.
+                  audit trails do not get easier to fix later, they get more expensive.
                 </p>
                 <p className="hv4-why-now-emphasis">
                   The providers building their operational foundation now are the ones who will navigate
@@ -671,10 +671,10 @@ export default function HomeV4() {
 
             <div className="hv4-cap-extras">
               <a href="/pricing" className="hv4-cap-extra-link">
-                <IconClaiming /> Pricing — $39.99/seat/month. No feature gating.
+                <IconClaiming /> Pricing, $39.99/seat/month. No feature gating.
               </a>
               <a href="/solutions/start" className="hv4-cap-extra-link">
-                <IconParticipant /> Find Your Stage — Start | Growth | Scale | Enterprise
+                <IconParticipant /> Find Your Stage, Start | Growth | Scale | Enterprise
               </a>
             </div>
           </div>
@@ -813,7 +813,7 @@ export default function HomeV4() {
             <h2 className="hv4-cta-h2">See how TesseractApps works for your organisation.</h2>
             <p className="hv4-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck. Start your provider setup.
+              30 minutes. Live platform, not a slide deck. Start your provider setup.
             </p>
             <div className="hv4-cta-actions">
               <button type="button" className="hv4-btn-white" onClick={() => navigate("/book-a-demo")}>

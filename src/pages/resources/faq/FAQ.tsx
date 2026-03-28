@@ -15,7 +15,7 @@ const NDIS_FAQS = [
   },
   {
     question: "How does TesseractApps help NDIS providers with rostering?",
-    answer: "TesseractApps automates shift scheduling for disability support workers — matching workers to participants based on skills, availability, and NDIS plan requirements. It handles recurring shifts, last-minute changes, and compliance checks (worker screening, certifications) in real time.",
+    answer: "TesseractApps automates shift scheduling for disability support workers, matching workers to participants based on skills, availability, and NDIS plan requirements. It handles recurring shifts, last-minute changes, and compliance checks (worker screening, certifications) in real time.",
   },
   {
     question: "Can support workers use TesseractApps on mobile?",
@@ -23,7 +23,7 @@ const NDIS_FAQS = [
   },
   {
     question: "How does TesseractApps help with NDIS claiming?",
-    answer: "TesseractApps captures service delivery data — timesheets, shift records, and participant notes — and aligns them to NDIS support categories for claiming. It integrates with accounting systems including Xero to streamline the bulk upload and claiming process.",
+    answer: "TesseractApps captures service delivery data, timesheets, shift records, and participant notes, and aligns them to NDIS support categories for claiming. It integrates with accounting systems including Xero to streamline the bulk upload and claiming process.",
   },
   {
     question: "How long does it take to get started with TesseractApps?",
@@ -35,7 +35,7 @@ const NDIS_FAQS = [
   },
   {
     question: "What makes TesseractApps different from other NDIS software?",
-    answer: "Unlike generic workforce tools adapted for the NDIS, TesseractApps was built from the ground up for NDIS providers. It is Salesforce-native, Australian-hosted, and includes NDIS-specific features like participant plan management, NDIS incident reporting, and worker screening compliance — all in a single platform rather than disconnected tools.",
+    answer: "Unlike generic workforce tools adapted for the NDIS, TesseractApps was built from the ground up for NDIS providers. It is Salesforce-native, Australian-hosted, and includes NDIS-specific features like participant plan management, NDIS incident reporting, and worker screening compliance, all in a single platform rather than disconnected tools.",
   },
   {
     question: "Does TesseractApps integrate with Xero and other accounting software?",

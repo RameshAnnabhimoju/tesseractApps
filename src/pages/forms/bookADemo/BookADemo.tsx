@@ -318,7 +318,7 @@ const BookADemo = () => {
                 <div id="bookADemo-form-hint">{stepData.hint}</div>
               )}
 
-              {/* Steps 0 & 1 — option cards */}
+              {/* Steps 0 & 1, option cards */}
               {!isLastStep(currentStep) && (
                 <>
                   <div id="bookADemo-cards-grid">
@@ -359,7 +359,7 @@ const BookADemo = () => {
                 </>
               )}
 
-          {/* Step 2 — details + schedule */}
+          {/* Step 2, details + schedule */}
           {isLastStep(currentStep) && (
             <div id="bookADemo-details-layout">
               <div id="bookADemo-details-left">

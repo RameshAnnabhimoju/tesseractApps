@@ -63,9 +63,9 @@ const FLIP_STAGES: Stage[] = [
     bestFor:
       "Providers experiencing workforce expansion, payroll pressure, and increasing reporting needs.",
     whatYouNeed: "Control, reporting clarity, payroll alignment, and manager accountability.",
-    automationHeading: "Workflow Engine™ — automation begins here.",
+    automationHeading: "T-Flow automation",
     automationBody:
-      "Growth introduces structured automation through Workflow Engine™ using template-driven boards, limited stage edits, and basic triggers. This is where automation begins to save meaningful time in day-to-day workflows such as onboarding, intake routing, document handling, and follow-up actions.",
+      "Growth introduces structured automation through T-Flow automation using template-driven boards, limited stage edits, and basic triggers. This is where automation begins to save meaningful time in day-to-day workflows such as onboarding, intake routing, document handling, and follow-up actions.",
     commercial: ["$39.99 per seat / month", "3-year agreement", "Up to 10% flex user buffer"],
     supports: [
       "Operational dashboards",
@@ -85,9 +85,9 @@ const FLIP_STAGES: Stage[] = [
     bestFor:
       "Multi-site providers, SIL providers, and organisations managing increasing governance pressure.",
     whatYouNeed: "Oversight, accountability, approvals, audit trails, and compliance control.",
-    automationHeading: "Workflow Engine™ becomes a governance tool.",
+    automationHeading: "T-Flow automation becomes a governance tool.",
     automationBody:
-      "At Scale, Workflow Engine™ expands into configurable boards, SLA rules, escalation logic, and workflow analytics. This is where process automation becomes a governance tool — not just an efficiency tool.",
+      "At Scale, T-Flow automation expands into configurable boards, SLA rules, escalation logic, and workflow analytics. This is where process automation becomes a governance tool, not just an efficiency tool.",
     commercial: ["$39.99 per seat / month", "3-year agreement", "Up to 15% flex user buffer"],
     supports: [
       "Approval workflows",
@@ -108,9 +108,9 @@ const FLIP_STAGES: Stage[] = [
       "Executive teams requiring financial consolidation, multi-entity oversight, and board-level reporting.",
     whatYouNeed:
       "One source of truth across operations, finance, workforce, and governance.",
-    automationHeading: "TFlow™ — cross-platform orchestration.",
+    automationHeading: "T-Flow automation",
     automationBody:
-      "Enterprise activates TFlow™ for cross-module automation and gives Workflow Engine™ full orchestration capability across the platform. This supports deeper operational automation, financial control, and governance execution at scale.",
+      "Enterprise activates TFlow for cross-module automation and gives T-Flow automation full orchestration capability across the platform. This supports deeper operational automation, financial control, and governance execution at scale.",
     commercial: ["$39.99 per seat / month", "5-year agreement", "Strategic flex user pools"],
     supports: [
       "Native payroll",
@@ -483,7 +483,7 @@ const Pricing = () => {
                 </div>
                 <h3 id="pr-featured-name">
                   {START_STAGE.label}
-                  <span id="pr-featured-tagline"> — {START_STAGE.tagline}</span>
+                  <span id="pr-featured-tagline"> - {START_STAGE.tagline}</span>
                 </h3>
                 <p id="pr-featured-range">{START_STAGE.staffRange}</p>
               </div>
@@ -739,65 +739,7 @@ const Pricing = () => {
               </div>
             </div>
             <div id="pr-why-footer">
-              TesseractApps grows with you — this is infrastructure, not a simple tool.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ── */}
-      <section id="pr-faq">
-        <div className="pr-outer">
-          <div id="pr-faq-inner">
-            <div id="pr-faq-left">
-              <div className="pr-label pr-label--dark">FAQ</div>
-              <h2 className="pr-section-heading">Common questions</h2>
-              <p className="pr-body-text">Still have questions?</p>
-              <div id="pr-faq-contact">
-                <a href="tel:1300252808" className="pr-contact-row">
-                  <div className="pr-contact-icon">
-                    <Phone size={16} />
-                  </div>
-                  <div>
-                    <div className="pr-contact-value">1300 252 808</div>
-                    <div className="pr-contact-sub">Support Hotline</div>
-                  </div>
-                </a>
-                <a href="mailto:sales@tesseractapps.com" className="pr-contact-row">
-                  <div className="pr-contact-icon">
-                    <Mail size={16} />
-                  </div>
-                  <div>
-                    <div className="pr-contact-value">sales@tesseractapps.com</div>
-                    <div className="pr-contact-sub">Support Email</div>
-                  </div>
-                </a>
-                <button
-                  type="button"
-                  className="pr-btn-primary"
-                  onClick={() => navigate("/book-a-demo")}
-                >
-                  Book a Demo
-                </button>
-              </div>
-            </div>
-            <div id="pr-faq-list">
-              {FAQS.map((faq, i) => (
-                <div
-                  key={i}
-                  className={`pr-faq-item${openFaq === i ? " pr-faq-item--open" : ""}`}
-                >
-                  <button
-                    type="button"
-                    className="pr-faq-q"
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  >
-                    <span>{faq.q}</span>
-                    {openFaq === i ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </button>
-                  {openFaq === i && <div className="pr-faq-a">{faq.a}</div>}
-                </div>
-              ))}
+              TesseractApps grows with you, this is infrastructure, not a simple tool.
             </div>
           </div>
         </div>
@@ -811,7 +753,7 @@ const Pricing = () => {
             <h2 id="pr-cta-heading">See how TesseractApps works for your organisation.</h2>
             <p id="pr-cta-sub">
               Your demo is configured for your care type, team size, and provider maturity stage.
-              30 minutes. Live platform — not a slide deck. Start your provider setup.
+              30 minutes. Live platform, not a slide deck. Start your provider setup.
             </p>
             <div id="pr-cta-actions">
               <button

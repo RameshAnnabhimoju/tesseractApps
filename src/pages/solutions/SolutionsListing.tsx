@@ -78,7 +78,7 @@ const SolutionsListing = () => {
           <div className="sll-hero-label">SOLUTIONS</div>
           <h1 className="sll-hero-title">Solutions</h1>
           <p className="sll-hero-subtitle">
-            Purpose-built for every care type, role, and growth stage — find the
+            Purpose-built for every care type, role, and growth stage, find the
             right fit for your NDIS organisation.
           </p>
         </div>
@@ -148,7 +148,7 @@ const SolutionsListing = () => {
             Find the right solution for your organisation.
           </h2>
           <p className="sll-cta-sub">
-            Whether you manage disability support, aged care, or allied health —
+            Whether you manage disability support, aged care, or allied health,
             we'll show you exactly how TesseractApps fits your operations.
           </p>
           <div className="sll-cta-actions">

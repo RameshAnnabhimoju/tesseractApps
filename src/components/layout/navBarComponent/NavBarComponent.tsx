@@ -365,7 +365,9 @@ const NavBarComponent = ({
       >
         <div id="nav-menu-card">
           <div id="nav-menu-header">
-            <AppLogo />
+            <div onClick={() => setToggleDrawer(false)}>
+              <AppLogo />
+            </div>
             <button
               id="nav-drawer-close"
               onClick={() => setToggleDrawer(false)}

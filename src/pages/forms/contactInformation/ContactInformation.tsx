@@ -89,7 +89,7 @@ const ContactInformation = () => {
           <div id="contact-cta-text">
             <div id="contact-cta-heading">Not ready to talk yet?</div>
             <p id="contact-cta-sub">
-              Start a free 7-day trial or book a personalised demo — no credit
+              Start a free 7-day trial or book a personalised demo, no credit
               card required.
             </p>
           </div>

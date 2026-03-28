@@ -59,7 +59,7 @@ const CapabilitiesListing = () => {
     <div className="cpl-page">
       <SEO
         title="Platform Capabilities | TesseractApps"
-        description="Explore every capability TesseractApps offers — from rostering and payroll to participant management and operational intelligence. Built for NDIS providers."
+        description="Explore every capability TesseractApps offers, from rostering and payroll to participant management and operational intelligence. Built for NDIS providers."
         url="https://www.tesseractapps.com.au/capabilities"
         canonical="https://www.tesseractapps.com.au/capabilities"
         type="website"
@@ -72,8 +72,8 @@ const CapabilitiesListing = () => {
           <div className="cpl-hero-label">PLATFORM</div>
           <h1 className="cpl-hero-title">Capabilities</h1>
           <p className="cpl-hero-subtitle">
-            Everything your NDIS organisation needs — workforce, care, finance,
-            and intelligence — in one connected platform.
+            Everything your NDIS organisation needs, workforce, care, finance,
+            and intelligence, in one connected platform.
           </p>
         </div>
       </div>
@@ -141,7 +141,7 @@ const CapabilitiesListing = () => {
           </h2>
           <p className="cpl-cta-sub">
             Your demo is configured for your care type, team size, and provider
-            maturity stage. 30 minutes. Live platform — not a slide deck.
+            maturity stage. 30 minutes. Live platform, not a slide deck.
           </p>
     <div className="sll-cta-actions">
             <button

@@ -217,7 +217,6 @@ const FooterComponent = () => {
           <div className="footer-heading">Resources</div>
           <Link className="footer-text" to="/blogs">Blog</Link>
           <Link className="footer-text" to="/whitepapers">Whitepapers</Link>
-          <Link className="footer-text" to="/webinars">Webinars</Link>
           <a
             className="footer-text"
             href="/rss.xml"

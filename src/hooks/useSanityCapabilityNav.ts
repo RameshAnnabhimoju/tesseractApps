@@ -3,7 +3,7 @@ import { client } from '../sanity/lib/client'
 import { CAPABILITY_NAV_QUERY } from '../sanity/lib/queries'
 import type { CapabilityNavLink } from '../../sanity.types'
 
-// Module-level cache — fetched once per session, shared across all consumers.
+// Module-level cache, fetched once per session, shared across all consumers.
 let cachedLinks: CapabilityNavLink[] | null = null
 let fetchPromise: Promise<CapabilityNavLink[]> | null = null
 

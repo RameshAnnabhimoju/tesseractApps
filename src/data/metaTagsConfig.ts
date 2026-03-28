@@ -154,7 +154,7 @@ const META_MAP: Record<string, MetaTags> = {
   },
   "/compliance": {
     title: "NDIS Compliance Software | TesseractApps",
-    description: "Continuous NDIS Practice Standards monitoring. Audit-ready evidence retrieved instantly — not assembled at the last minute. ISO 27001 & ISO 9001 certified.",
+    description: "Continuous NDIS Practice Standards monitoring. Audit-ready evidence retrieved instantly, not assembled at the last minute. ISO 27001 & ISO 9001 certified.",
   },
   "/employee-engagement": {
     title: "Employee Engagement – TesseractApps",

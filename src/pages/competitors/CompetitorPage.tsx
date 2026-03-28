@@ -186,7 +186,7 @@ const CompetitorPage = () => {
             {page.aboutHeading ?? `Why NDIS providers choose TesseractApps over ${page.competitorName}`}
           </div>
 
-          {/* Award badges — only rendered if provided */}
+          {/* Award badges, only rendered if provided */}
           {page.awardBadges && page.awardBadges.length > 0 && (
             <div className="cmp-award-row">
               {page.awardBadges.map((b, i) => (
@@ -208,7 +208,7 @@ const CompetitorPage = () => {
         </div>
       </section>
 
-      {/* ── Comparison table — only rendered if provided ─────────────────── */}
+      {/* ── Comparison table, only rendered if provided ─────────────────── */}
       {page.comparisonCategories && page.comparisonCategories.length > 0 && (
         <section id="cmp-table-section">
           <div className="cmp-outer">
@@ -281,7 +281,7 @@ const CompetitorPage = () => {
         </div>
       </section>
 
-      {/* ── Switch steps — only rendered if provided ─────────────────────── */}
+      {/* ── Switch steps, only rendered if provided ─────────────────────── */}
       {page.switchSteps && page.switchSteps.length > 0 && (
         <section id="cmp-switch">
           <div className="cmp-outer">

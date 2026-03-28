@@ -152,7 +152,7 @@ export default function BlogPostPage() {
       )}
 
       <div className="bpp-outer">
-        {/* Header card — pulls up over hero */}
+        {/* Header card, pulls up over hero */}
         <div className={`bpp-header${hasHero ? '' : ' bpp-header--no-hero'}`}>
           {post.category?.title && (
             <div className="bpp-category">{post.category.title}</div>

@@ -33,7 +33,7 @@ const Whitepapers = () => {
           <h1 id="wp-hero-heading">Research and Decision Guides for Care Leaders</h1>
           <p id="wp-hero-sub">
             Free whitepapers on NDIS digital transformation, workforce management, and care sector
-            innovation. Open any whitepaper directly — no form required.
+            innovation. Open any whitepaper directly, no form required.
           </p>
         </div>
       </section>

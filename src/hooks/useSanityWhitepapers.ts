@@ -22,7 +22,7 @@ export interface WhitepaperItem {
   seo?: { metaTitle?: string; metaDescription?: string }
 }
 
-// Module-level cache — prevents redundant fetches across remounts
+// Module-level cache, prevents redundant fetches across remounts
 const cache = new Map<string, WhitepaperItem[]>()
 const CACHE_KEY = 'whitepapers:all'
 

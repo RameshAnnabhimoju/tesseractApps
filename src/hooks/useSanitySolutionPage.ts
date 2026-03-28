@@ -4,7 +4,7 @@ import { SOLUTION_PAGE_BY_SLUG_QUERY } from '../sanity/lib/queries'
 import { sanityConfigError } from '../sanity/env'
 import type { SolutionPageDocument } from '../../sanity.types'
 
-// Module-level cache — prevents redundant fetches when navigating back to a
+// Module-level cache, prevents redundant fetches when navigating back to a
 // previously visited solution page within the same session.
 const cache = new Map<string, SolutionPageDocument>()
 
@@ -34,7 +34,7 @@ export function useSanitySolutionPage(slug: string): UseSanitySolutionPageResult
       return
     }
 
-    // Serve from cache immediately — no loading state shown on repeated visits
+    // Serve from cache immediately, no loading state shown on repeated visits
     if (cache.has(slug)) {
       setPage(cache.get(slug)!)
       setLoading(false)

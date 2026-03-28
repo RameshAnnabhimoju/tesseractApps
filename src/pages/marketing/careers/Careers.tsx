@@ -46,7 +46,7 @@ const Careers = () => {
             <div className="careers-value-card">
               <div className="careers-value-icon"><Zap size={20} strokeWidth={2} /></div>
               <div className="careers-value-title">Own Your Impact</div>
-              <p className="careers-value-text">Work directly influences the product and the clients we serve. No red tape — just meaningful work with real outcomes.</p>
+              <p className="careers-value-text">Work directly influences the product and the clients we serve. No red tape, just meaningful work with real outcomes.</p>
             </div>
             <div className="careers-value-card">
               <div className="careers-value-icon"><Users size={20} strokeWidth={2} /></div>
@@ -56,7 +56,7 @@ const Careers = () => {
             <div className="careers-value-card">
               <div className="careers-value-icon"><TrendingUp size={20} strokeWidth={2} /></div>
               <div className="careers-value-title">Grow With Us</div>
-              <p className="careers-value-text">We're a fast-growing SaaS company in a high-demand sector. Your career grows as we grow — with clear pathways to leadership.</p>
+              <p className="careers-value-text">We're a fast-growing SaaS company in a high-demand sector. Your career grows as we grow, with clear pathways to leadership.</p>
             </div>
             <div className="careers-value-card">
               <div className="careers-value-icon"><Home size={20} strokeWidth={2} /></div>
