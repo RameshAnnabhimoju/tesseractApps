@@ -17,6 +17,7 @@ import {
   newsletterSubscriptionEmailTemplate,
 } from "../../../utils/emailTemplates";
 import useAppNavigate from "../../../hooks/useAppNavigate";
+import { Link } from "react-router-dom";
 
 const FooterComponent = () => {
   const appNavigate = useAppNavigate();
@@ -126,10 +127,10 @@ const FooterComponent = () => {
       <nav id="footer-nav" aria-label="Footer navigation">
         {/* Brand column */}
         <div id="footer-brand">
-          <div id="footer-logo" onClick={() => appNavigate("/")}>
+          <Link id="footer-logo" to="/" aria-label="TesseractApps — home">
             <div id="footer-logo-icon" role="img" aria-label="Tesseract Apps Logo" />
             TesseractApps
-          </div>
+          </Link>
           <p id="footer-brand-tagline">
             Simplifying care management, compliance, and HR for NDIS providers
             across Australia.
@@ -142,13 +143,11 @@ const FooterComponent = () => {
             <div key={group.heading} className="footer-link-group">
               <div className="footer-heading">{group.heading}</div>
               {group.links.map((link) => (
-                <div
-                  key={link.title}
-                  className="footer-text"
-                  onClick={() => link.href && appNavigate(link.href)}
-                >
-                  {link.title}
-                </div>
+                link.href ? (
+                  <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
+                ) : (
+                  <div key={link.title} className="footer-text">{link.title}</div>
+                )
               ))}
             </div>
           ))}
@@ -160,13 +159,11 @@ const FooterComponent = () => {
             <div key={group.heading} className="footer-link-group">
               <div className="footer-heading">{group.heading}</div>
               {group.links.map((link) => (
-                <div
-                  key={link.title}
-                  className="footer-text"
-                  onClick={() => link.href && appNavigate(link.href)}
-                >
-                  {link.title}
-                </div>
+                link.href ? (
+                  <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
+                ) : (
+                  <div key={link.title} className="footer-text">{link.title}</div>
+                )
               ))}
             </div>
           ))}
@@ -178,13 +175,11 @@ const FooterComponent = () => {
             <div key={category} className="footer-link-group">
               <div className="footer-heading">{category}</div>
               {links.map((link) => (
-                <div
-                  key={link.title}
-                  className="footer-text"
-                  onClick={() => link.href && appNavigate(link.href)}
-                >
-                  {link.title}
-                </div>
+                link.href ? (
+                  <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
+                ) : (
+                  <div key={link.title} className="footer-text">{link.title}</div>
+                )
               ))}
             </div>
           ))}
@@ -193,27 +188,25 @@ const FooterComponent = () => {
         {/* Company */}
         <div className="footer-column">
           <div className="footer-heading">Company</div>
-          <div className="footer-text" onClick={() => appNavigate("/about")}>About Us</div>
-          <div className="footer-text" onClick={() => appNavigate("/careers")}>Careers</div>
-          <div className="footer-text" onClick={() => appNavigate("/contact-us")}>Contact Us</div>
-          <div className="footer-text" onClick={() => appNavigate("/terms-and-conditions")}>Terms &amp; Conditions</div>
-          <div className="footer-text" onClick={() => appNavigate("/privacy-policy")}>Privacy Policy</div>
-          <div className="footer-text" onClick={() => appNavigate("/changelog")}>Release Notes</div>
+          <Link className="footer-text" to="/about">About Us</Link>
+          <Link className="footer-text" to="/careers">Careers</Link>
+          <Link className="footer-text" to="/contact-us">Contact Us</Link>
+          <Link className="footer-text" to="/terms-and-conditions">Terms &amp; Conditions</Link>
+          <Link className="footer-text" to="/privacy-policy">Privacy Policy</Link>
+          <Link className="footer-text" to="/changelog">Release Notes</Link>
         </div>
 
         {/* Resources + Support + Get Started */}
         <div className="footer-column">
           <div className="footer-heading">Resources</div>
           {nav.Resources.map((link) => (
-            <div
-              key={link.title}
-              className="footer-text"
-              onClick={() => link.href && appNavigate(link.href)}
-            >
-              {link.title}
-            </div>
+            link.href ? (
+              <Link key={link.title} className="footer-text" to={link.href}>{link.title}</Link>
+            ) : (
+              <div key={link.title} className="footer-text">{link.title}</div>
+            )
           ))}
-          <div className="footer-text" onClick={() => appNavigate("/case-studies")}>Case Studies</div>
+          <Link className="footer-text" to="/case-studies">Case Studies</Link>
           <a
             className="footer-text"
             href="/rss.xml"
@@ -224,14 +217,14 @@ const FooterComponent = () => {
           </a>
 
           <div className="footer-heading footer-support-heading">Support</div>
-          <div className="footer-text" onClick={() => appNavigate("/help-centre")}>Help Centre</div>
-          <div className="footer-text" onClick={() => appNavigate("/help-centre")}>FAQs</div>
-          <div className="footer-text" onClick={() => appNavigate("/book-a-demo")}>Book a Demo</div>
+          <Link className="footer-text" to="/help-centre">Help Centre</Link>
+          <Link className="footer-text" to="/help-centre">FAQs</Link>
+          <Link className="footer-text" to="/book-a-demo">Book a Demo</Link>
 
           <div className="footer-heading footer-support-heading">Get Started</div>
-          <div className="footer-text" onClick={() => appNavigate("/signup")}>Sign Up</div>
-          <div className="footer-text" onClick={() => appNavigate("/pricing")}>Pricing</div>
-          <div className="footer-text" onClick={() => appNavigate("/requestDemo")}>Request a Demo</div>
+          <Link className="footer-text" to="/signup">Sign Up</Link>
+          <Link className="footer-text" to="/pricing">Pricing</Link>
+          <Link className="footer-text" to="/requestDemo">Request a Demo</Link>
         </div>
       </nav>
 

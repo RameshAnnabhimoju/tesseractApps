@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./HomeV4Styles.css";
 import SEO from "../../components/common/SEO";
+import { buildGraphSchema } from "../../utils/schemaHelpers";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import { useSanityBlogList } from "../../hooks/useSanityBlogList";
 import { urlFor } from "../../sanity/lib/image";
@@ -240,11 +241,40 @@ export default function HomeV4() {
   const { ref: whyRef, inView: whyInView } = useInView(0.1);
   const { ref: ctaRef, inView: ctaInView } = useInView(0.1);
 
+  const avgRating = (
+    testimonialDummyData.reduce((sum, t) => sum + t.rating, 0) / testimonialDummyData.length
+  ).toFixed(1);
+
+  const homepageStructuredData = buildGraphSchema(
+    {
+      '@type': 'SoftwareApplication',
+      name: 'TesseractApps',
+      description: 'Purpose-built NDIS provider software connecting rostering, payroll, compliance, and participant management on one platform.',
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web, iOS, Android',
+      offers: { '@type': 'Offer', price: '39.99', priceCurrency: 'AUD' },
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: avgRating,
+        reviewCount: String(testimonialDummyData.length),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      review: testimonialDummyData.map((t) => ({
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: String(t.rating), bestRating: '5' },
+        author: { '@type': 'Organization', name: t.author.trim() },
+        reviewBody: t.testimonial.replace(/^[\u201C"]+|[\u201D"]+$/g, '').trim(),
+      })),
+    }
+  );
+
   return (
     <>
       <SEO
         title="One platform for every NDIS operation | Rostering, Payroll, Compliance & Claiming - TesseractApps"
         description="Purpose-built NDIS operational infrastructure connecting rostering, payroll, compliance, and participant management on one platform. Starting at $39.99/seat/month."
+        structuredData={homepageStructuredData}
       />
 
       <div id="hv4-page">

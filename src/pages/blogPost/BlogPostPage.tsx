@@ -7,6 +7,7 @@ import SanityImage from '../../components/sanity/sanity-image'
 import PortableTextRenderer from '../../components/sanity/portable-text'
 import { urlFor } from '../../sanity/lib/image'
 import { formatDate } from '../../utils/formatDate'
+import { buildBreadcrumbSchema, buildGraphSchema } from '../../utils/schemaHelpers'
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -70,8 +71,13 @@ export default function BlogPostPage() {
     (post.mainImage ? urlFor(post.mainImage).width(1200).height(630).auto('format').url() : undefined)
   const ogImageAlt = post.mainImage?.alt ?? post.title ?? ''
 
-  const autoBlogPostingSchema = !seo?.schemaMarkup ? {
-    '@context': 'https://schema.org',
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', url: siteUrl },
+    { name: 'Blog', url: `${siteUrl}/blogs` },
+    { name: post.title ?? '', url: postUrl },
+  ])
+
+  const blogPostingSchema = !seo?.schemaMarkup ? {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
@@ -93,7 +99,11 @@ export default function BlogPostPage() {
     },
     ...(post.category?.title && { articleSection: post.category.title }),
     ...(post.tags && post.tags.length > 0 && { keywords: post.tags.join(', ') }),
-  } : undefined
+  } : null
+
+  const structuredData = blogPostingSchema
+    ? buildGraphSchema(blogPostingSchema, breadcrumbSchema)
+    : buildGraphSchema(breadcrumbSchema)
 
   const validRelatedPosts = post.relatedPosts?.filter(
     (r) => r.slug?.current && r.slug.current.length > 0
@@ -123,7 +133,7 @@ export default function BlogPostPage() {
         canonical={seo?.canonicalUrl ?? postUrl}
         noIndex={seo?.noIndex ?? false}
         schemaMarkup={seo?.schemaMarkup ?? undefined}
-        structuredData={autoBlogPostingSchema}
+        structuredData={structuredData}
       />
 
       {/* Hero image */}
