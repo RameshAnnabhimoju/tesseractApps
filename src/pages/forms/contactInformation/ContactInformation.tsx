@@ -1,6 +1,6 @@
 import "./ContactInformationStyles.css";
 import SEO from "../../../components/common/SEO";
-import { Phone, MapPin, Clock, Send, CalendarCheck } from "lucide-react";
+import { Phone, MapPin, Clock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const ContactInformation = () => {
@@ -27,8 +27,6 @@ const ContactInformation = () => {
 
       {/* ── Body ── */}
       <div id="contact-outer">
-
-        {/* ── Contact Cards ── */}
         <div id="contact-cards-grid">
 
           <div className="contact-card">
@@ -83,37 +81,35 @@ const ContactInformation = () => {
           </div>
 
         </div>
+      </div>
 
-        {/* ── CTA strip ── */}
-        <div id="contact-cta-strip">
-          <div id="contact-cta-text">
-            <div id="contact-cta-heading">Not ready to talk yet?</div>
-            <p id="contact-cta-sub">
-              Start a free 7-day trial or book a personalised demo, no credit
-              card required.
-            </p>
-          </div>
-          <div id="contact-cta-buttons">
+      {/* ── CTA ── */}
+      <section id="contact-cta-strip">
+        <div id="contact-cta-inner">
+          <h2 id="contact-cta-heading">Not ready to talk yet?</h2>
+          <p id="contact-cta-sub">
+            Start a free 7-day trial or book a personalised demo — no credit
+            card required.
+          </p>
+          <div className="sll-cta-actions">
             <button
               type="button"
-              className="contact-btn-primary"
+              className="sll-btn-primary"
               onClick={() => navigate("/book-a-demo")}
             >
-              <CalendarCheck size={16} strokeWidth={2.5} />
               Book a Demo
             </button>
             <button
               type="button"
-              className="contact-btn-outline"
+              className="sll-btn-outline"
               onClick={() => navigate("/signup")}
             >
-              <Send size={15} strokeWidth={2.5} />
-              Free Trial
+              Begin Your Journey
             </button>
           </div>
+          <p className="sll-cta-sub-note">Book a Provider Maturity Review. Start your provider setup.</p>
         </div>
-
-      </div>
+      </section>
     </div>
   );
 };

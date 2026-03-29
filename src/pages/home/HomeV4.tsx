@@ -593,17 +593,9 @@ export default function HomeV4() {
             </div>
 
             <div className="hv4-cap-footer">
-              <div className="hv4-cap-extras">
-                <a href="/pricing" className="hv4-cap-extra-link">
-                  Pricing<IconClaiming /> 
-                </a>
-                <a href="/pricing" className="hv4-cap-extra-link">
-                   Find Your Stage<IconParticipant />
-                </a>
-                <a href="/pricing" className="hv4-cap-extra-link">
+       <a href="/capabilities" className="hv4-cap-extra-link">
                    View all capabilities<IconArrowRight />
                 </a>
-              </div>
               <div className="hv4-cap-footer-spacer" />
             </div>
           </div>

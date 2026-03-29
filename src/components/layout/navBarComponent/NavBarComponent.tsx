@@ -1,9 +1,9 @@
 import { Search } from 'lucide-react';
 import Popup from "../../layout/popupComponent/PopupComponent";
 import "./NavBarStyles.css";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { RefObject } from "react";
-import { useLocation, useNavigationType } from "react-router-dom";
+import { useLocation, useNavigate, useNavigationType } from "react-router-dom";
 import { navBarDummyData } from "../../../data/navData";
 import type { NavGroup, NavLink } from "../../../data/navData";
 import { useSanityCapabilityNav } from "../../../hooks/useSanityCapabilityNav";
@@ -16,12 +16,62 @@ import ArrowDown from "../../../assets/arrow_down.svg";
 import useAppNavigate from "../../../hooks/useAppNavigate";
 import AppLogo from "../../layout/appLogo/AppLogo";
 
+type SearchItem = { label: string; path: string; category: string };
+
+// Fallback capability items used when Sanity hasn't loaded yet
+const STATIC_CAPABILITY_ITEMS: SearchItem[] = [
+  { label: "Rostering & Scheduling",           path: "/capabilities/rostering-scheduling",  category: "Capability" },
+  { label: "Timesheets & Payroll",             path: "/capabilities/timesheets-payroll",     category: "Capability" },
+  { label: "Workforce Management",             path: "/capabilities/workforce-management",   category: "Capability" },
+  { label: "Participant Management",           path: "/capabilities/participant-management", category: "Capability" },
+  { label: "Incidents",                        path: "/capabilities/incidents",              category: "Capability" },
+  { label: "Compliance & Audit Readiness",     path: "/capabilities/compliance-audit",       category: "Capability" },
+  { label: "NDIS Claiming & Invoicing",        path: "/capabilities/ndis-claiming",          category: "Capability" },
+  { label: "Accounting & Financial Reporting", path: "/capabilities/accounting-reporting",   category: "Capability" },
+  { label: "Dashboards & Reporting",           path: "/capabilities/dashboards-reporting",   category: "Capability" },
+];
+
+// Fallback solution items used when Sanity hasn't loaded yet
+const STATIC_SOLUTION_ITEMS: SearchItem[] = [
+  { label: "Disability Support (NDIS)",  path: "/solutions/disability-support-ndis",  category: "Solution" },
+  { label: "Support Coordination",       path: "/solutions/support-coordination",      category: "Solution" },
+  { label: "Allied Health",              path: "/solutions/allied-health-services",    category: "Solution" },
+  { label: "SIL",                        path: "/solutions/sil",                       category: "Solution" },
+  { label: "Operations Manager",         path: "/solutions/operations-manager",        category: "Solution" },
+  { label: "Compliance Lead",            path: "/solutions/compliance-lead",           category: "Solution" },
+  { label: "Finance Manager",            path: "/solutions/finance-manager",           category: "Solution" },
+  { label: "Support Worker",             path: "/solutions/support-worker",            category: "Solution" },
+  { label: "Start (1–15 staff)",         path: "/solutions/start",                     category: "Solution" },
+  { label: "Growth (15–60 staff)",       path: "/solutions/growth",                    category: "Solution" },
+  { label: "Scale (60–120 staff)",       path: "/solutions/scale",                     category: "Solution" },
+  { label: "Enterprise (120+ staff)",    path: "/solutions/enterprise",                category: "Solution" },
+];
+
+// Static pages — always present regardless of Sanity
+const STATIC_PAGE_ITEMS: SearchItem[] = [
+  { label: "Platform",      path: "/platform",     category: "Page" },
+  { label: "Pricing",       path: "/pricing",      category: "Page" },
+  { label: "About Us",      path: "/about",        category: "Page" },
+  { label: "Our Story",     path: "/our-story",    category: "Page" },
+  { label: "Careers",       path: "/careers",      category: "Page" },
+  { label: "Contact Us",    path: "/contact-us",   category: "Page" },
+  { label: "Book a Demo",   path: "/book-a-demo",  category: "Page" },
+  { label: "Sign Up",       path: "/signup",       category: "Page" },
+  { label: "Blog",          path: "/blogs",        category: "Resource" },
+  { label: "Whitepapers",   path: "/whitepapers",  category: "Resource" },
+  { label: "Case Studies",  path: "/case-studies", category: "Resource" },
+  { label: "Webinars",      path: "/webinars",     category: "Resource" },
+  { label: "Help Centre",   path: "/help-center",  category: "Resource" },
+  { label: "Release Notes", path: "/changelog",    category: "Resource" },
+];
+
 const NavBarComponent = ({
   portalContainerRef,
 }: {
   portalContainerRef: RefObject<HTMLDivElement | null>;
 }) => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
@@ -82,6 +132,43 @@ const NavBarComponent = ({
         return catMap;
       })()
     : navBarDummyData["Solutions"];
+
+  // Dynamic search items built from live Sanity data — always accurate slugs
+  const dynamicSearchItems = useMemo<SearchItem[]>(() => {
+    const items: SearchItem[] = [];
+
+    // Capabilities from live Sanity (slug is ground truth)
+    if (capLinks.length > 0) {
+      capLinks.forEach((link) => {
+        items.push({
+          label: link.title,
+          path: `/capabilities/${link.slug.current}`,
+          category: "Capability",
+        });
+      });
+    } else {
+      // Fallback: only the 9 hardcoded capability pages that exist in AppRoutes
+      STATIC_CAPABILITY_ITEMS.forEach((item) => items.push(item));
+    }
+
+    // Solutions from live Sanity
+    if (solLinks.length > 0) {
+      solLinks.forEach((link) => {
+        items.push({
+          label: link.title,
+          path: `/solutions/${link.slug.current}`,
+          category: "Solution",
+        });
+      });
+    } else {
+      STATIC_SOLUTION_ITEMS.forEach((item) => items.push(item));
+    }
+
+    // Static pages — always appended
+    STATIC_PAGE_ITEMS.forEach((item) => items.push(item));
+
+    return items;
+  }, [capLinks, solLinks]);
 
   // useEffect(() => {
   // const handleScroll = () => {
@@ -801,8 +888,8 @@ const NavBarComponent = ({
                         key={term}
                         className="search-popup-chip"
                         onClick={() => {
-                          const item = SEARCH_ITEMS.find((s) => s.label === term);
-                          if (item) { handleSearchIcon(false); setSearchTerm(""); addSearch(term); appNavigate(item.path); }
+                          const item = dynamicSearchItems.find((s) => s.label === term);
+                          if (item) { handleSearchIcon(false); setSearchTerm(""); addSearch(term); navigate(item.path); }
                         }}
                       >
                         {term}
@@ -836,7 +923,7 @@ const NavBarComponent = ({
               <div id="search-popup-results-container">
                 {(() => {
                   const q = searchTerm.toLowerCase();
-                  const results = SEARCH_ITEMS
+                  const results = dynamicSearchItems
                     .filter((item) => item.label.toLowerCase().includes(q))
                     .sort((a, b) => {
                       const ai = a.label.toLowerCase().indexOf(q);
@@ -853,8 +940,9 @@ const NavBarComponent = ({
                     );
                   }
                   return results.map((item, index) => {
-                    const regex = new RegExp(`(${searchTerm})`, "ig");
-                    const parts = item.label.split(regex);
+                    const escaped = searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+                    const splitRe = new RegExp(`(${escaped})`, "ig");
+                    const parts = item.label.split(splitRe);
                     return (
                       <button
                         className="search-popup-result"
@@ -864,19 +952,20 @@ const NavBarComponent = ({
                           setSearchTerm("");
                           addSearch(item.label);
                           setToggleDrawer(false);
-                          appNavigate(item.path);
+                          navigate(item.path);
                         }}
                       >
                         <svg className="search-result-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                           <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
                         </svg>
-                        <span>
+                        <span className="search-result-label">
                           {parts.map((part, i) =>
-                            regex.test(part)
+                            part.toLowerCase() === searchTerm.toLowerCase()
                               ? <mark key={i} className="search-highlight">{part}</mark>
-                              : <span key={i}>{part}</span>
+                              : part
                           )}
                         </span>
+                        <span className="search-result-category">{item.category}</span>
                         <svg className="search-result-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
                           <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -892,44 +981,4 @@ const NavBarComponent = ({
     </nav>
   );
 };
-const SEARCH_ITEMS: { label: string; path: string }[] = [
-  // Capabilities
-  { label: "Rostering & Scheduling",           path: "/capabilities/rostering-scheduling" },
-  { label: "Timesheets & Payroll",             path: "/capabilities/timesheets-payroll" },
-  { label: "Workforce Management",             path: "/capabilities/workforce-management" },
-  { label: "Participant Management",           path: "/capabilities/participant-management" },
-  { label: "Incidents",                path: "/capabilities/incidents" },
-  { label: "Compliance & Audit Readiness",    path: "/capabilities/compliance-audit" },
-  { label: "NDIS Claiming & Invoicing",       path: "/capabilities/ndis-claiming" },
-  { label: "Accounting & Financial Reporting",path: "/capabilities/accounting-reporting" },
-  { label: "Dashboards & Reporting",          path: "/capabilities/dashboards-reporting" },
-  { label: "T-Sign",                           path: "/t-sign" },
-  { label: "Clock In & Clock Out",             path: "/clock-in-and-clock-out" },
-  { label: "T Learning Hub",                  path: "/t-learning-hub" },
-  { label: "ChaT",                             path: "/chat" },
-  { label: "Xero Integration",                path: "/xero" },
-  { label: "Salesforce Architecture",         path: "/salesforce-integration" },
-  // Solutions
-  { label: "Disability Support (NDIS)",       path: "/solutions/disability-support-ndis" },
-  { label: "Support Coordination",            path: "/solutions/support-coordination" },
-  { label: "Allied Health",                   path: "/solutions/allied-health-services" },
-  { label: "SIL",                             path: "/solutions/sil" },
-  { label: "Operations Manager",              path: "/solutions/operations-manager" },
-  { label: "Compliance Lead",                 path: "/solutions/compliance-lead" },
-  { label: "Finance Manager",                 path: "/solutions/finance-manager" },
-  { label: "Support Worker",                  path: "/solutions/support-worker" },
-  // Pages
-  { label: "Pricing",                          path: "/pricing" },
-  { label: "Platform",                         path: "/platform" },
-  { label: "Blog",                             path: "/blogs" },
-  { label: "Case Studies",                     path: "/case-studies" },
-  { label: "Webinars",                         path: "/webinars" },
-  { label: "Whitepapers",                      path: "/whitepapers" },
-  { label: "Help Centre",                      path: "/help-center" },
-  { label: "Release Notes",                    path: "/changelog" },
-  { label: "Our Story",                        path: "/our-story" },
-  { label: "Careers",                          path: "/careers" },
-  { label: "Contact Us",                       path: "/contact-us" },
-  { label: "Book a Demo",                      path: "/book-a-demo" },
-];
 export default NavBarComponent;
