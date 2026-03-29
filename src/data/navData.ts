@@ -67,17 +67,17 @@ export const navBarDummyData: {
                 {
                     title: "Clock In/Out",
                     subTitle: "Attendance",
-                    href: "/clock-in-and-clock-out",
+                    href: "/coming-soon",
                 },
                 {
                     title: "Staff Self-Service Portal",
                     subTitle: "My Profile",
-                    href: "/my-profile",
+                    href: "/coming-soon",
                 },
                 {
                     title: "T Learning Hub",
                     subTitle: "Learning Hub",
-                    href: "/t-learning-hub",
+                    href: "/coming-soon",
                 },
             ],
         },
@@ -102,12 +102,12 @@ export const navBarDummyData: {
                 {
                     title: "ChaT",
                     subTitle: "Secure Messaging",
-                    href: "/chat",
+                    href: "/coming-soon",
                 },
                 {
                     title: "T-Sign",
                     subTitle: "Digital Signatures",
-                    href: "/t-sign",
+                    href: "/coming-soon",
                 },
                 {
                     title: "Voice Notes",
@@ -137,7 +137,7 @@ export const navBarDummyData: {
                 {
                     title: "Xero Integration",
                     subTitle: "Integration",
-                    href: "/xero",
+                    href: "/coming-soon",
                 },
             ],
         },
@@ -157,7 +157,7 @@ export const navBarDummyData: {
                 {
                     title: "Salesforce Native Architecture",
                     subTitle: "Integration",
-                    href: "/salesforce-integration",
+                    href: "/coming-soon",
                 },
             ],
         },
