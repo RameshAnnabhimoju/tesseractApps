@@ -26,7 +26,9 @@ import company17 from "../../assets/thumbs/Clear Choice-thumb.webp";
 import company19 from "../../assets/thumbs/ImprovedAbility-thumb.webp";
 import company20 from "../../assets/thumbs/RCG-Logo-thumb.webp";
 import company21 from "../../assets/thumbs/Company-YDCS-thumb.webp";
-import company22 from "../../assets/KS PNG Logo.webp";
+import company22 from "../../assets/thumbs/KS PNG Logo.webp";
+import company23 from "../../assets/thumbs/embrace logo.webp";
+import company24 from "../../assets/thumbs/AveryCareLogo.webp";
 
 // ─── Animated counter hook ────────────────────────────────────────────────────
 function useCountUp(target: number, duration = 1800, active = false) {
@@ -144,7 +146,7 @@ const PROBLEMS = [
 const CLIENT_LOGOS = [
   company2, company10, company13, company4, company5,
   company8, company9, company14, company16, company17,
-  company19, company20, company21, company22,
+  company19, company20, company21, company22,company23,company24
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────

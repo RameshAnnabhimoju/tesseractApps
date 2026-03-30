@@ -52,6 +52,9 @@ const jobs = [
   { src: "ImprovedAbility.webp",                    out: "ImprovedAbility-thumb.webp",width: 400, height: 240, fit: "inside" },
   { src: "RCG-Logo_2[12038376].webp",               out: "RCG-Logo-thumb.webp",       width: 400, height: 240, fit: "inside" },
   { src: "Company-YDCS-.webp",                      out: "Company-YDCS-thumb.webp",   width: 400, height: 240, fit: "inside" },
+  { src: "KS PNG Logo.webp",                      out: "KS PNG Logo.webp",   width: 400, height: 240, fit: "inside" },
+  { src: "embrace logo.webp",                      out: "embrace logo.webp",   width: 400, height: 240, fit: "inside" },
+  { src: "AveryCareLogo.webp",                      out: "AveryCareLogo.webp",   width: 400, height: 240, fit: "inside" },
 ];
 
 let generated = 0;
