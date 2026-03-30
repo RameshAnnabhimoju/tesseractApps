@@ -88,7 +88,7 @@ const ContactInformation = () => {
         <div id="contact-cta-inner">
           <h2 id="contact-cta-heading">Not ready to talk yet?</h2>
           <p id="contact-cta-sub">
-            Start a free 7-day trial or book a personalised demo — no credit
+            Start a free 7-day trial or book a personalised demo, no credit
             card required.
           </p>
           <div className="sll-cta-actions">
