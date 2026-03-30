@@ -347,7 +347,7 @@
   width: 100%;
   max-width: 560px;
   border-radius: 12px;
-  box-shadow: 0 8px 40px rgba(8, 36, 66, 0.14);
+  /* box-shadow: 0 8px 40px rgba(8, 36, 66, 0.14); */
   display: block;
 }
 @media (max-width: 960px) {

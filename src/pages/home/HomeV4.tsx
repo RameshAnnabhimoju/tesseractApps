@@ -10,7 +10,8 @@ import { useSanityCapabilityNav } from "../../hooks/useSanityCapabilityNav";
 import { urlFor } from "../../sanity/lib/image";
 import { formatDate } from "../../utils/formatDate";
 import { testimonialDummyData } from "../../data/testimonialData";
-import adminConsoleImg from "../../assets/Admin Console N.webp";
+// import adminConsoleImg from "../../assets/Admin Console N.webp";
+import dashboardImg from "../../assets/Website-home-image.webp";
 import starIcon from "../../assets/star.webp";
 import company2 from "../../assets/thumbs/company-2-thumb.webp";
 import company4 from "../../assets/thumbs/company-4-thumb.webp";
@@ -297,8 +298,8 @@ export default function HomeV4() {
           {/* Platform preview image */}
           <div className="hv4-hero-img-wrap">
             <img
-              src={adminConsoleImg}
-              alt="TesseractApps Admin Console"
+              src={dashboardImg}
+              alt="TesseractApps Dashboard"
               className="hv4-hero-img"
             />
           </div>
