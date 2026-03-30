@@ -43,6 +43,7 @@ type PendulumConfig = {
   startPos: number; // initial swing position
   initialDirection: number; // initial swing direction
   label: string; // tooltip text
+  slug:string
 };
 
 interface PendulumState {
@@ -272,7 +273,7 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
               onMouseLeave={onLeave(it.id)}
               style={{ cursor: "pointer" }}
               onClick={() => {
-                navigate(it.label);
+                navigate(it.slug);
               }}
             >
               <circle
@@ -293,6 +294,8 @@ const HeroArcsComponent = ({ pendulums }: { pendulums: PendulumConfig[] }) => {
                 style={{
                   pointerEvents: "none",
                   userSelect: "none",
+                  filter: "invert(1)",
+                  transform:"scale(1.2)"
                 }}
               />
             </g>

@@ -32,3 +32,4 @@ stats.html
 # src/assets/thumbs/
 temp
 /discarded
+.env

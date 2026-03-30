@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SEO from "../../../components/common/SEO";
 import { Download } from "lucide-react";
-import featuresPdf from "../../../assets/tesseract-features.pdf";
+import featuresPdf from "../../../assets/TesseractApps-Features-Redesigned 1.pdf";
 import HeroArcsLeftComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import HeroArcsRightComponent from "../../../components/sections/heroArcsComponent/HeroArcsComponent";
 import { homeLeftArcsData, homeRightArcsData } from "../../../data/homeArcsData";
