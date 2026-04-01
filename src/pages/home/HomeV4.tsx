@@ -10,6 +10,7 @@ import { useSanityCapabilityNav } from "../../hooks/useSanityCapabilityNav";
 import { urlFor } from "../../sanity/lib/image";
 import { formatDate } from "../../utils/formatDate";
 import { testimonialDummyData } from "../../data/testimonialData";
+import { accordiaDummyData } from "../../data/faqData";
 // import adminConsoleImg from "../../assets/Admin Console N.webp";
 import dashboardImg from "../../assets/Website-home-image.webp";
 import starIcon from "../../assets/star.webp";
@@ -193,11 +194,23 @@ export default function HomeV4() {
   const { ref: probRef, inView: probInView } = useInView(0.1);
   const { ref: capRef, inView: capInView } = useInView(0.1);
   const { ref: whyRef, inView: whyInView } = useInView(0.1);
+  const { ref: faqRef, inView: faqInView } = useInView(0.1);
   const { ref: ctaRef, inView: ctaInView } = useInView(0.1);
+
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const avgRating = (
     testimonialDummyData.reduce((sum, t) => sum + t.rating, 0) / testimonialDummyData.length
   ).toFixed(1);
+
+  const faqSchemaItems = accordiaDummyData.map((d) => ({
+    '@type': 'Question' as const,
+    name: d.question,
+    acceptedAnswer: {
+      '@type': 'Answer' as const,
+      text: d.answer + (d.points ? ' ' + d.points.join(', ') : ''),
+    },
+  }));
 
   const homepageStructuredData = buildGraphSchema(
     {
@@ -220,13 +233,17 @@ export default function HomeV4() {
         author: { '@type': 'Organization', name: t.author.trim() },
         reviewBody: t.testimonial.replace(/^[\u201C"]+|[\u201D"]+$/g, '').trim(),
       })),
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqSchemaItems,
     }
   );
 
   return (
     <>
       <SEO
-        title="One platform for every NDIS operation | Rostering, Payroll, Compliance & Claiming - TesseractApps"
+        title="#1 NDIS Workforce Management Software | Rostering, Compliance & Payroll — TesseractApps"
         description="Purpose-built NDIS operational infrastructure connecting rostering, payroll, compliance, and participant management on one platform. Starting at $39.99/seat/month."
         structuredData={homepageStructuredData}
       />
@@ -713,7 +730,55 @@ export default function HomeV4() {
           </div>
         </section>
 
-        {/* ── Section 8: Final CTA ───────────────────────────────────────── */}
+        {/* ── Section 8: FAQ ────────────────────────────────────────────── */}
+        <section id="hv4-faq" ref={faqRef} className={faqInView ? "hv4-fade-in" : "hv4-fade-pre"}>
+          <div className="hv4-faq-inner">
+            <div className="hv4-section-label">FAQ</div>
+            <h2 className="hv4-section-h2">Common questions about TesseractApps</h2>
+            <p className="hv4-faq-sub">Everything you need to know before your first demo.</p>
+            <div id="hv4-faq-list" itemScope itemType="https://schema.org/FAQPage">
+              {accordiaDummyData.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <div
+                    key={faq.id}
+                    className={`hv4-faq-item${isOpen ? " hv4-faq-item--open" : ""}`}
+                    itemScope
+                    itemProp="mainEntity"
+                    itemType="https://schema.org/Question"
+                  >
+                    <button
+                      type="button"
+                      className={`hv4-faq-question${isOpen ? " hv4-faq-question--open" : ""}`}
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
+                      aria-expanded={isOpen ? "true" : "false"}
+                    >
+                      <span itemProp="name">{faq.question}</span>
+                      <span className="hv4-faq-chevron" aria-hidden="true">+</span>
+                    </button>
+                    {isOpen && (
+                      <div
+                        className="hv4-faq-answer"
+                        itemScope
+                        itemProp="acceptedAnswer"
+                        itemType="https://schema.org/Answer"
+                      >
+                        <p itemProp="text">{faq.answer}</p>
+                        {faq.points && (
+                          <ul className="hv4-faq-points">
+                            {faq.points.map((pt, i) => <li key={i}>{pt}</li>)}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Section 9: Final CTA ───────────────────────────────────────── */}
         <section id="hv4-cta" ref={ctaRef} className={ctaInView ? "hv4-fade-in" : "hv4-fade-pre"}>
           <div className="hv4-cta-bg" aria-hidden="true">
             <div className="hv4-cta-orb hv4-cta-orb--1" />
