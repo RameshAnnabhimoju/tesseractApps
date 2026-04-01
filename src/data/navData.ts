@@ -1,27 +1,3 @@
-export const footerProductsData = {
-    0: [
-        "Rostering & Scheduling",
-        "Timesheets & Payroll Alignment",
-        "Workforce Management",
-        "NDIS Claiming & Invoicing",
-        "Accounting & Financial Reporting",
-    ],
-    1: [
-        "Participant Management",
-        "Incidents",
-        "Compliance & Audit Readiness",
-        "Dashboards & Reporting",
-        "T-Sign",
-    ],
-    2: [
-        "Clock In/Out",
-        "ChaT",
-        "T Learning Hub",
-        "Xero Integration",
-        "Salesforce Native Architecture",
-    ],
-};
-
 // NavLink type, href takes precedence over title-based route lookup
 export type NavLink = {
     title: string;
