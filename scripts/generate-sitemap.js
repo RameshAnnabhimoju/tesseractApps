@@ -38,6 +38,8 @@ const STATIC_PAGES = [
   { loc: '/book-a-demo' },
   { loc: '/privacy-policy' },
   { loc: '/terms-and-conditions' },
+  { loc: '/ndis-glossary', priority: '0.8' },
+  { loc: '/sitemap', priority: '0.5' },
 ];
 
 // --- Helpers ---

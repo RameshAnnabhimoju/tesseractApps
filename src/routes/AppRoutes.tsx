@@ -43,6 +43,8 @@ const Signup = lazy(() => import("../pages/forms/signup/Signup"));
 const SolutionsListing = lazy(() => import("../pages/solutions/SolutionsListing"));
 const SolutionPage = lazy(() => import("../pages/solutions/solutionPage/SolutionPage"));
 const CompetitorPage = lazy(() => import("../pages/competitors/CompetitorPage"));
+const NDISGlossary = lazy(() => import("../pages/resources/glossary/NDISGlossary"));
+const SitemapPage = lazy(() => import("../pages/resources/sitemapPage/SitemapPage"));
 const NotFound = lazy(() => import("../pages/notFound/NotFound"));
 
 const AppRoutes = () => {
@@ -220,6 +222,8 @@ const AppRoutes = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/changelog" element={<ReleaseNotes />} />
+        <Route path="/ndis-glossary" element={<NDISGlossary />} />
+        <Route path="/sitemap" element={<SitemapPage />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         {/* Sanity CMS dynamic blog posts — own Suspense so skeleton shows directly */}
         <Route
