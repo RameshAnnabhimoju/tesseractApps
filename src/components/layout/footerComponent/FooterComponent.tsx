@@ -314,9 +314,9 @@ const FooterComponent = () => {
           <div id="footer-contact-block">
             <address className="footer-address" itemScope itemType="https://schema.org/PostalAddress">
               <span itemProp="streetAddress">Suite 1, 1 Trevillian Quay</span>,{" "}
-              <span itemProp="addressLocality">Kingston</span>{" "}
+              <span itemProp="addressLocality">Phillip</span>{" "}
               <span itemProp="addressRegion">ACT</span>{" "}
-              <span itemProp="postalCode">2604</span>,{" "}
+              <span itemProp="postalCode">2606</span>,{" "}
               <span itemProp="addressCountry">Australia</span>
             </address>
             <span
