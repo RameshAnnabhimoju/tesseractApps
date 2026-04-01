@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./HomeV4Styles.css";
 import SEO from "../../components/common/SEO";
-import { buildGraphSchema } from "../../utils/schemaHelpers";
+import { buildGraphSchema, buildSpeakableSchema, buildHowToSchema } from "../../utils/schemaHelpers";
 import useAppNavigate from "../../hooks/useAppNavigate";
 import { useSanityBlogList } from "../../hooks/useSanityBlogList";
 import { useSanityCapabilityNav } from "../../hooks/useSanityCapabilityNav";
@@ -237,7 +237,18 @@ export default function HomeV4() {
     {
       '@type': 'FAQPage',
       mainEntity: faqSchemaItems,
-    }
+    },
+    buildSpeakableSchema(['.hv4-hero-h1', '.hv4-hero-sub', '#hv4-faq']),
+    buildHowToSchema(
+      'How to Get Started with TesseractApps',
+      'Getting onto TesseractApps is a structured process, not a six-month project.',
+      [
+        { name: 'Assess', text: 'Book a demo. We evaluate your operations, identify your provider maturity stage, and map the configuration your organisation needs.' },
+        { name: 'Configure', text: 'Your dedicated onboarding team configures TesseractApps to match your operational reality, rostering rules, SCHADS interpretation, claiming workflows.' },
+        { name: 'Migrate & Train', text: 'Your data is migrated with full validation. Role-based training ensures every team member, from support worker to finance manager, is ready.' },
+        { name: 'Go Live', text: 'You launch with a dedicated onboarding specialist. Ongoing support from day one. Most providers are fully operational within six weeks.' },
+      ]
+    ),
   );
 
   return (
@@ -318,6 +329,9 @@ export default function HomeV4() {
               src={dashboardImg}
               alt="TesseractApps Dashboard"
               className="hv4-hero-img"
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
             />
           </div>
         </section>
