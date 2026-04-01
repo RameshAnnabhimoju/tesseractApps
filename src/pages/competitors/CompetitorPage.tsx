@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSanityCompetitorPage } from "../../hooks/useSanityCompetitorPage";
 import SEO from "../../components/common/SEO";
 import { buildBreadcrumbSchema, buildGraphSchema } from "../../utils/schemaHelpers";
+import Breadcrumb from "../../components/common/Breadcrumb";
 
 // ── SVG Icons ─────────────────────────────────────────────────────────────────
 
@@ -131,6 +132,17 @@ const CompetitorPage = () => {
       <section id="cmp-hero">
         <div className="cmp-hero-orb cmp-hero-orb--1" aria-hidden="true" />
         <div className="cmp-hero-orb cmp-hero-orb--2" aria-hidden="true" />
+
+        <div id="cmp-breadcrumb-wrap">
+          <Breadcrumb
+            variant="light"
+            steps={[
+              { name: "Home", href: "/" },
+              { name: "Comparisons", href: "/product" },
+              { name: `TesseractApps vs ${page.competitorName}` },
+            ]}
+          />
+        </div>
 
         <div id="cmp-hero-inner">
           <div id="cmp-hero-text">
