@@ -1,8 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteCompression from 'vite-plugin-compression';
-// @ts-ignore
-import { visualizer } from 'rollup-plugin-visualizer';
 
 // Plugin: converts the bundled stylesheet <link> to async loading
 // so it doesn't block the initial render (eliminates render-blocking CSS)
@@ -41,7 +39,6 @@ export default defineConfig({
       ext: '.br',
     }),
     asyncCssPlugin,
-    visualizer({ open: false }), // Generate bundle analysis
   ],
   build: {
     cssCodeSplit: true,

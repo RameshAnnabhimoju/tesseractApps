@@ -16,7 +16,7 @@ const META_MAP: Record<string, MetaTags> = {
     description: "Explore TesseractApps' full suite of workforce management products.",
   },
   "/roster-management": {
-    title: "NDIS Rostering Software | TesseractApps",
+    title: "NDIS Rostering Software | Automated Shift Scheduling for Care Providers — TesseractApps",
     description: "Auto-schedule NDIS support workers against participant needs. SCHADS Award enforcement at rostering. Manage SIL sleepovers and credentials automatically.",
   },
   "/clock-in-and-clock-out": {
@@ -28,11 +28,11 @@ const META_MAP: Record<string, MetaTags> = {
     description: "Create and manage digital forms for compliance and care delivery.",
   },
   "/timesheet": {
-    title: "NDIS Timesheet & Payroll Software | TesseractApps",
+    title: "NDIS Timesheet Software | Automated Timesheets for Care Providers — TesseractApps",
     description: "Automate NDIS timesheets with built-in SCHADS Award interpretation. 3-layer reconciliation before payroll runs. Geo-verified clock-ins reduce payroll errors.",
   },
   "/participant-management": {
-    title: "NDIS Participant Management Software | TesseractApps",
+    title: "NDIS Participant Management Software | Track Plans, Goals & NDIS Services — TesseractApps",
     description: "Centralised NDIS participant profiles with care plans, real-time funding visibility & goal tracking. NDIS compliant. Purpose-built for Australian providers.",
   },
   "/accounting": {
@@ -44,7 +44,7 @@ const META_MAP: Record<string, MetaTags> = {
     description: "Centralised administration and control for your organisation.",
   },
   "/incident-management": {
-    title: "NDIS Incident Management Software | TesseractApps",
+    title: "NDIS Incident Management Software | Practice Standards Compliant — TesseractApps",
     description: "Mobile NDIS incident logging with automatic escalation triggers. Timestamped audit trails satisfy NDIS Quality and Safeguards Commission reporting requirements.",
   },
   "/t-learning-hub": {
@@ -89,7 +89,7 @@ const META_MAP: Record<string, MetaTags> = {
   },
   // Industry / Solutions
   "/ndis-industry": {
-    title: "NDIS Provider Software | TesseractApps",
+    title: "NDIS Provider Software | Purpose-Built for NDIS Compliance & Operations — TesseractApps",
     description: "NDIS-native platform connecting rostering, payroll, compliance & claiming. Quality and Safeguards compliant. Award-winning. Free demo available.",
   },
   "/ict-industry": {
@@ -113,11 +113,11 @@ const META_MAP: Record<string, MetaTags> = {
     description: "Streamline workforce management for manufacturing operations.",
   },
   "/disability-support-ndis": {
-    title: "Disability Support Worker Software | TesseractApps",
+    title: "Disability Support Worker Scheduling Software | NDIS Compliant — TesseractApps",
     description: "Schedule NDIS disability support workers with SCHADS Award enforcement. Geo-verified clock-ins, participant management & automated claiming. Australian-built.",
   },
   "/support-coordination": {
-    title: "NDIS Support Coordination Software | TesseractApps",
+    title: "NDIS Support Coordination Software | Manage Participants & Plans — TesseractApps",
     description: "Purpose-built tools for NDIS Support Coordinators. Manage participant plans, track service bookings, and stay on top of funding in one centralised platform.",
   },
   "/aged-care-services": {
@@ -153,7 +153,7 @@ const META_MAP: Record<string, MetaTags> = {
     description: "Get your workforce operations right from day one with TesseractApps.",
   },
   "/compliance": {
-    title: "NDIS Compliance Software | TesseractApps",
+    title: "NDIS Compliance Software | Automated Practice Standards & Audit Tracking — TesseractApps",
     description: "Continuous NDIS Practice Standards monitoring. Audit-ready evidence retrieved instantly, not assembled at the last minute. ISO 27001 & ISO 9001 certified.",
   },
   "/employee-engagement": {
@@ -192,6 +192,11 @@ const META_MAP: Record<string, MetaTags> = {
   "/participant": {
     title: "For Participants – TesseractApps",
     description: "Participant-facing tools for NDIS and care service delivery.",
+  },
+  // Pricing
+  "/pricing": {
+    title: "NDIS Software Pricing | Transparent Plans for Every NDIS Provider — TesseractApps",
+    description: "Simple, transparent NDIS software pricing from $39.99/seat/month. Choose the plan that matches your provider stage — Emerging, Scaling, or Established.",
   },
 };
 

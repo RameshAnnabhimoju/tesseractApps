@@ -1553,6 +1553,70 @@
   margin: 0;
 }
 
+/* ── NDIS Pillar Pages ───────────────────────────────────────────────────── */
+#hv4-ndis-solutions {
+  padding: 80px 0;
+  background: var(--color-background-gradient);
+  text-align: center;
+}
+.hv4-ndis-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  text-align: left;
+}
+.hv4-ndis-pillar-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px 24px;
+  background: #fff;
+  border: 1px solid #e5eaf0;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+}
+.hv4-ndis-pillar-card:hover {
+  box-shadow: 0 8px 28px rgba(12, 120, 186, 0.1);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+.hv4-ndis-pillar-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin: 0;
+}
+.hv4-ndis-pillar-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-gray);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+.hv4-ndis-pillar-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 4px;
+}
+@media (max-width: 960px) {
+  .hv4-ndis-pillar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .hv4-ndis-pillar-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 /* ── Testimonials ─────────────────────────────────────────────────────────── */
 #hv4-testimonials {
   background: #f8fafc;
@@ -1656,3 +1720,128 @@
   }
 }
 .hv4-cta-sub2 svg { color: #10b981; }
+
+/* ── FAQ Section ─────────────────────────────────────────────────────────── */
+#hv4-faq {
+  padding: 96px 24px;
+  background: #fff;
+}
+.hv4-faq-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+.hv4-faq-inner .hv4-section-h2 {
+  margin-bottom: 8px;
+}
+.hv4-faq-sub {
+  font-size: 1rem;
+  color: var(--color-text-gray);
+  margin: 0 0 40px;
+  line-height: 1.6;
+}
+#hv4-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e5eaf0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.hv4-faq-item {
+  background: #fff;
+  border-bottom: 1px solid #e5eaf0;
+  transition: background 0.15s;
+}
+.hv4-faq-item:last-child {
+  border-bottom: none;
+}
+.hv4-faq-item--open {
+  background: #f5faff;
+  border-left: 3px solid var(--color-primary);
+}
+.hv4-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9875rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-align: left;
+  line-height: 1.45;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+.hv4-faq-question:hover {
+  color: var(--color-primary);
+}
+.hv4-faq-question--open {
+  color: var(--color-primary);
+}
+.hv4-faq-chevron {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #edf2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-text-gray);
+  line-height: 1;
+  transition: background 0.15s, color 0.15s, transform 0.2s;
+}
+.hv4-faq-question--open .hv4-faq-chevron {
+  background: var(--color-primary);
+  color: #fff;
+  transform: rotate(45deg);
+}
+.hv4-faq-answer {
+  padding: 0 28px 22px 28px;
+  font-size: 0.9375rem;
+  color: var(--color-text-gray);
+  line-height: 1.75;
+}
+.hv4-faq-answer p {
+  margin: 0 0 8px;
+}
+.hv4-faq-answer p:last-child {
+  margin-bottom: 0;
+}
+.hv4-faq-points {
+  margin: 10px 0 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hv4-faq-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--color-text-gray);
+}
+.hv4-faq-points li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-top: 8px;
+}
+@media (max-width: 600px) {
+  #hv4-faq { padding: 64px 16px; }
+  .hv4-faq-question { padding: 18px 20px; font-size: 0.9375rem; gap: 14px; }
+  .hv4-faq-answer { padding: 0 20px 18px; }
+  .hv4-faq-chevron { width: 24px; height: 24px; font-size: 1rem; }
+}

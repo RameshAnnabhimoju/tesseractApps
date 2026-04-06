@@ -84,8 +84,9 @@ The embedded Sanity Studio is available at **<http://localhost:5173/studio>**.
 | `npm run seed:solutions` | Seed solution pages into Sanity |
 | `npm run seed:entities` | Seed authors, categories, and other entities |
 | `npm run seed:competitors` | Seed competitor comparison pages |
+| `npm run prebuild` | Prerender static HTML pages for SEO (runs automatically in `build`) |
 
-> **Note:** `npm run build` runs prebuild scripts automatically (`gen-home-thumbs.mjs`, `gen-llms-docs.mjs`, `generate-sitemap.js`) before compiling.
+> **Note:** `npm run build` runs prebuild scripts automatically (`gen-home-thumbs.mjs`, `gen-llms-docs.mjs`, `generate-sitemap.js`, `prerender-pages.mjs`) before compiling.
 
 ---
 
@@ -178,13 +179,6 @@ The site is deployed as a SPA. All routes must rewrite to `/index.html`.
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
 ```
-
-### Required environment variables in Vercel
-
-| Variable | Description |
-| --- | --- |
-| `VITE_SANITY_PROJECT_ID` | Your Sanity project ID |
-| `VITE_SANITY_DATASET` | Usually `production` |
 
 ### Build command
 

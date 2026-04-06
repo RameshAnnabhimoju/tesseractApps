@@ -8,6 +8,7 @@ import PortableTextRenderer from '../../components/sanity/portable-text'
 import { urlFor } from '../../sanity/lib/image'
 import { formatDate } from '../../utils/formatDate'
 import { buildBreadcrumbSchema, buildGraphSchema } from '../../utils/schemaHelpers'
+import Breadcrumb from '../../components/common/Breadcrumb'
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -135,6 +136,18 @@ export default function BlogPostPage() {
         schemaMarkup={seo?.schemaMarkup ?? undefined}
         structuredData={structuredData}
       />
+
+      {/* Breadcrumb */}
+      <div className="bpp-breadcrumb-wrap">
+        <Breadcrumb
+          variant="dark"
+          steps={[
+            { name: 'Home', href: '/' },
+            { name: 'Blog', href: '/blogs' },
+            { name: post.title ?? '' },
+          ]}
+        />
+      </div>
 
       {/* Hero image */}
       {hasHero && (
