@@ -1,4 +1,5 @@
 import "./SignupStyles.css";
+import SEO from "../../../components/common/SEO";
 import { useState } from "react";
 import React from "react";
 import Alert from "../../../components/ui/alert/Alert";
@@ -192,6 +193,12 @@ const Signup = () => {
 
   return (
     <div id="signup-page">
+      <SEO
+        title="Get Started | TesseractApps NDIS Software"
+        description="Create your TesseractApps account and start managing your NDIS workforce with ease. Streamline rostering, compliance, and participant management."
+        canonical="https://tesseractapps.com.au/signup"
+        noIndex={true}
+      />
       <Alert setAlertData={setAlertData} alertData={alertData} />
 
       <button type="button" id="signup-close-btn" onClick={handleClose}>

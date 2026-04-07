@@ -176,6 +176,7 @@ const RequestADemo = () => {
       <SEO
         title="Book a Demo | See TesseractApps in Action | NDIS Software Australia"
         description="Book a free demo of TesseractApps NDIS software. See how our platform can streamline your rostering, compliance, and participant management. No obligation."
+        noIndex={true}
       />
       <Alert setAlertData={setAlertData} alertData={alertData} />
       <div className="heading">Book a Demo</div>

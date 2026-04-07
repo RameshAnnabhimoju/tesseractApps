@@ -1,5 +1,5 @@
 import "./SolutionPageStyles.css";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, Navigate } from "react-router-dom";
 import { useSanitySolutionPage } from "../../../hooks/useSanitySolutionPage";
 import { useSanityBlogList } from "../../../hooks/useSanityBlogList";
 import SEO from "../../../components/common/SEO";
@@ -95,15 +95,7 @@ const SolutionPage = () => {
   }
 
   if (!page) {
-    return (
-      <div id="sol-page">
-        <div id="sol-not-found">
-          <h2>Solution not found</h2>
-          <p>This solution page doesn't exist or hasn't been published yet.</p>
-          <Link to="/">Return to homepage</Link>
-        </div>
-      </div>
-    );
+    return <Navigate to="/not-found" replace />;
   }
 
   const metaTitle = page.seo?.metaTitle ?? `${page.heroHeading} | TesseractApps`;

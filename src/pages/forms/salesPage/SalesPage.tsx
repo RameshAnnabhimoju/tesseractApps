@@ -155,6 +155,7 @@ const SalesPage = () => {
       <SEO
         title="Talk to an Expert | Sales Enquiry | TesseractApps"
         description="Speak directly with our NDIS software specialists. Contact TesseractApps sales team for expert advice on workforce management solutions for your care business."
+        noIndex={true}
       />
       <Alert setAlertData={setAlertData} alertData={alertData} />
       <div className="heading">Talk to an expert</div>

@@ -1,5 +1,5 @@
 import "./CompetitorPageStyles.css";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, Navigate } from "react-router-dom";
 import { useSanityCompetitorPage } from "../../hooks/useSanityCompetitorPage";
 import SEO from "../../components/common/SEO";
 import { buildBreadcrumbSchema, buildGraphSchema } from "../../utils/schemaHelpers";
@@ -93,15 +93,7 @@ const CompetitorPage = () => {
   }
 
   if (!page) {
-    return (
-      <div id="cmp-page">
-        <div id="cmp-not-found">
-          <h2>Comparison page not found</h2>
-          <p>We couldn't find a comparison page for this competitor.</p>
-          <Link to="/">Return to home</Link>
-        </div>
-      </div>
-    );
+    return <Navigate to="/not-found" replace />;
   }
 
   const metaTitle = page.seo?.metaTitle ?? `TesseractApps vs ${page.competitorName} | NDIS Software Comparison`;

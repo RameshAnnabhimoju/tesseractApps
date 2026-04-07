@@ -8,6 +8,7 @@ const ComingSoon = () => {
       <SEO
         title="Coming Soon | New Features | TesseractApps"
         description="Exciting new features coming soon to TesseractApps. Stay tuned for platform updates that will enhance your NDIS workforce management experience."
+        noIndex={true}
       />
       <img loading="lazy"
         src={comingSoonImage}

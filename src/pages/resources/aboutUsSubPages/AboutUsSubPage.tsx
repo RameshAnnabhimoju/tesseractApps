@@ -1,8 +1,9 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 import "./AboutUsSubPageStyles.css";
 
 const AboutUsSubPage = () => {
   const location = useLocation();
+  if (!location.state?.data) return <Navigate to="/about" replace />;
   const { data } = location.state;
   return (
     <div id="about-us-page-container">

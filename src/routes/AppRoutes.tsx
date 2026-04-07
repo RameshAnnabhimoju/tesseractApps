@@ -62,6 +62,11 @@ const AppRoutes = () => {
       return;
     }
     const cleanPath = location.pathname.replace(/\/$/, "");
+    // Redirect trailing slash URLs to their canonical non-slash equivalent
+    if (location.pathname !== cleanPath && cleanPath !== "") {
+      navigate(cleanPath + location.search + location.hash, { replace: true });
+      return;
+    }
     setCloseRoute(cleanPath || "/");
     if ((location.state as any)?.data) return;
     sessionStorage.setItem("prevPath", location.pathname);
