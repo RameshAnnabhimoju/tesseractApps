@@ -43,8 +43,22 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     sourcemap: false,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
+        manualChunks(id) {
+          // Sanity CMS client — stable, no React context, safe to isolate
+          if (
+            id.includes('node_modules/@sanity/client') ||
+            id.includes('node_modules/@sanity/image-url')
+          ) {
+            return 'vendor-sanity-client';
+          }
+          // PortableText renderer — blog posts only, no React context
+          if (id.includes('node_modules/@portabletext')) {
+            return 'vendor-portable-text';
+          }
+        },
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.names?.[0]?.split('.').pop() || ''
           if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(extType)) {
