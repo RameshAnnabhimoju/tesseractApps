@@ -54,10 +54,6 @@ export default defineConfig({
           ) {
             return 'vendor-sanity-client';
           }
-          // PortableText renderer — blog posts only, no React context
-          if (id.includes('node_modules/@portabletext')) {
-            return 'vendor-portable-text';
-          }
         },
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.names?.[0]?.split('.').pop() || ''

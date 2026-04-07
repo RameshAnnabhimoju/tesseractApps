@@ -1,7 +1,7 @@
-// src/pages/home/HomeV4.tsx
+// src/pages/home/Home.tsx
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./HomeV4Styles.css";
+import "./HomeStyles.css";
 import SEO from "../../components/common/SEO";
 import { buildGraphSchema, buildSpeakableSchema, buildHowToSchema } from "../../utils/schemaHelpers";
 import useAppNavigate from "../../hooks/useAppNavigate";
@@ -151,7 +151,7 @@ const CLIENT_LOGOS = [
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
-export default function HomeV4() {
+export default function Home() {
   const navigate = useAppNavigate();
   const routerNavigate = useNavigate();
   const { data: blogPosts, loading: blogLoading } = useSanityBlogList({ to: 3 });

@@ -8,7 +8,7 @@ import "../pages/capabilities/CapabilityPageStyles.css";
 import "../pages/solutions/solutionPage/SolutionPageStyles.css";
 import "../pages/competitors/CompetitorPageStyles.css";
 
-import HomeV4 from "../pages/home/HomeV4";
+import Home from "../pages/home/Home";
 
 const Platform = lazy(() => import("../pages/platform/Platform"));
 const Pricing = lazy(() => import("../pages/marketing/pricing/Pricing"));
@@ -70,7 +70,7 @@ const AppRoutes = () => {
   return (
     <Suspense fallback={<div className="app-page-loader"><div className="app-page-spinner" /></div>}>
       <Routes>
-        <Route path="/" element={<HomeV4 />} />
+        <Route path="/" element={<Home />} />
         <Route path="/book-a-demo" element={<BookADemo />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/pricing" element={<Pricing />} />
