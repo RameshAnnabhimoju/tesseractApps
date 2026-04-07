@@ -3,7 +3,7 @@ import SEO from "../../../components/common/SEO";
 import { Stepper, Step, StepLabel } from "@mui/material";
 import { useState } from "react";
 import { bookADemoFormData } from "../../../data/formData";
-import logo_white from "../../../../public/svg-logos/white_logo.svg";
+const logo_white = "/svg-logos/white_logo.svg";
 import React from "react";
 import { sendEmail, sendTextEmail } from "../../../services/appService";
 import Alert from "../../../components/ui/alert/Alert";
