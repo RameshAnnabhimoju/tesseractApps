@@ -26,6 +26,8 @@ export default defineConfig({
       // proper ESM peer rather than using the CJS require() wrapper which
       // causes a duplicate React instance at runtime.
       'keen-slider/react': 'keen-slider/react.es.js',
+      'react-dom$': 'react-dom/profiling',
+      'scheduler/tracing': 'scheduler/tracing-profiling',
     },
   },
   plugins: [
