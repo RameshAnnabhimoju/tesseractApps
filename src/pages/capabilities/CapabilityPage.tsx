@@ -1,5 +1,5 @@
 import "./CapabilityPageStyles.css";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate, Navigate } from "react-router-dom";
 import { useSanityCapabilityPage } from "../../hooks/useSanityCapabilityPage";
 import { useSanityBlogList } from "../../hooks/useSanityBlogList";
 import SEO from "../../components/common/SEO";
@@ -93,15 +93,7 @@ const CapabilityPage = () => {
   }
 
   if (!page) {
-    return (
-      <div id="cap-page">
-        <div id="cap-not-found">
-          <h2>Capability not found</h2>
-          <p>This capability page doesn't exist or hasn't been published yet.</p>
-          <Link to="/">Return to homepage</Link>
-        </div>
-      </div>
-    );
+    return <Navigate to="/not-found" replace />;
   }
 
   const metaTitle = page.seo?.metaTitle ?? `${page.heroHeading} | TesseractApps`;

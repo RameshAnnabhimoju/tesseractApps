@@ -1,5 +1,5 @@
 import './BlogPostPageStyles.css'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, Navigate } from 'react-router-dom'
 import { useSanityBlogPost } from '../../hooks/useSanityBlogPost'
 import { useSanityBlogList } from '../../hooks/useSanityBlogList'
 import SEO from '../../components/common/SEO'
@@ -33,30 +33,22 @@ export default function BlogPostPage() {
     )
   }
 
-  if (error || !post) {
+  if (error) {
     return (
       <div className="bpp-page">
         <div className="bpp-not-found">
-          {error ? (
-            <>
-              <h1>Can&apos;t load blog</h1>
-              <p>
-                Error loading blogs.{' '}
-                <Link to="/blogs" className="bpp-back-link">Back to blog</Link>
-              </p>
-            </>
-          ) : (
-            <>
-              <h1>Post not found</h1>
-              <p>
-                This post doesn&apos;t exist or has been unpublished.{' '}
-                <Link to="/blogs" className="bpp-back-link">Back to blog</Link>
-              </p>
-            </>
-          )}
+          <h1>Can&apos;t load blog</h1>
+          <p>
+            Error loading blogs.{' '}
+            <Link to="/blogs" className="bpp-back-link">Back to blog</Link>
+          </p>
         </div>
       </div>
     )
+  }
+
+  if (!post) {
+    return <Navigate to="/not-found" replace />
   }
 
   const seo = post.seo

@@ -26,6 +26,8 @@ export default defineConfig({
       // proper ESM peer rather than using the CJS require() wrapper which
       // causes a duplicate React instance at runtime.
       'keen-slider/react': 'keen-slider/react.es.js',
+      'react-dom$': 'react-dom/profiling',
+      'scheduler/tracing': 'scheduler/tracing-profiling',
     },
   },
   plugins: [
@@ -43,8 +45,18 @@ export default defineConfig({
   build: {
     cssCodeSplit: true,
     sourcemap: false,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
+        manualChunks(id) {
+          // Sanity CMS client — stable, no React context, safe to isolate
+          if (
+            id.includes('node_modules/@sanity/client') ||
+            id.includes('node_modules/@sanity/image-url')
+          ) {
+            return 'vendor-sanity-client';
+          }
+        },
         assetFileNames: (assetInfo) => {
           const extType = assetInfo.names?.[0]?.split('.').pop() || ''
           if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(extType)) {

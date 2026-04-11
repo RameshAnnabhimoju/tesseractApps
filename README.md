@@ -109,7 +109,7 @@ src/
 │   ├── useSanityBlogList.ts    # Blog list hook with module-level cache
 │   └── useSanityBlogPost.ts    # Single post hook
 ├── pages/
-│   ├── home/                   # HomeV4 — main homepage
+│   ├── home/                   # Home — main homepage
 │   ├── platform/               # Platform page
 │   ├── marketing/pricing/      # Pricing page
 │   ├── capabilities/           # Capabilities listing + dynamic CMS pages
@@ -206,7 +206,7 @@ dist
 
 - **No Tailwind** — plain CSS per component with namespaced class prefixes (`hv4-`, `pl-`, `pr-`, `cap-`, `sol-`, `cmp-`)
 - **CSS variables** — `--color-primary`, `--color-secondary`, `--color-background-light-gray`, `--color-text-gray` etc.
-- **Site container standard** — `1140px` max-width (Platform, Pricing) / `1200px` (HomeV4)
+- **Site container standard** — `1140px` max-width (Platform, Pricing) / `1200px` (Home)
 - **SPA limitations** — no SSR, no ISR, no draft preview. Sanity client uses `perspective: 'published'` to prevent draft leaks.
 - **Blog cache** — module-level `Map` cache in `useSanityBlogList` prevents re-fetching on re-mount
 - **Close buttons** on `/book-a-demo` and `/signup` use `navigate(-1)` — returns to the page the user came from
