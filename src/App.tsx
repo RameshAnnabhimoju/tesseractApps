@@ -6,7 +6,7 @@ import FooterComponent from "./components/layout/footerComponent/FooterComponent
 import AppRoutes from "./routes/AppRoutes";
 import GTMLoader from "./components/analytics/GTMLoader";
 
-const FULLSCREEN_ROUTES: string[] = [];
+const FULLSCREEN_ROUTES: string[] = ["/book-a-demo", "/signup"];
 
 function AppInner() {
   const location = useLocation();
