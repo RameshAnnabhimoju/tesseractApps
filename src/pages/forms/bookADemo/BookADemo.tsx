@@ -72,8 +72,6 @@ const PATHWAY_STEPS = [
 const isLastStep = (step: number) => step === bookADemoFormData.length - 1;
 const isFirstStep = (step: number) => step === 0;
 
-const PROGRESS_PCT = [0, 33, 66];
-
 const BookADemo = () => {
   const navigate = useNavigate();
 
