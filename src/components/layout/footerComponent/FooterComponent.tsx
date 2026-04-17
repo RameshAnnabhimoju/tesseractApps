@@ -90,11 +90,11 @@ const FooterComponent = () => {
 
   const confirmationMail = () => {
     sendEmail(
-      newsletterEmail.split("@")[0],
+      "Subscriber",
       newsletterEmail,
       newsletterConfirmationEmailTemplate.subject,
-      newsletterConfirmationEmailTemplate.text(newsletterEmail.split("@")[0]),
-      newsletterConfirmationEmailTemplate.html(newsletterEmail.split("@")[0]),
+      newsletterConfirmationEmailTemplate.text(),
+      newsletterConfirmationEmailTemplate.html(),
     ).catch((error) => {
       console.error("Error sending confirmation email:", error);
     });

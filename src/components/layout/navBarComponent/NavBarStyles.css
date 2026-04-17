@@ -616,6 +616,9 @@
 .search-popup-result:hover .search-result-category { background: rgba(12, 120, 186, 0.08); color: var(--color-primary); }
 .search-result-arrow { flex-shrink: 0; opacity: 0; color: var(--color-primary); transition: opacity 0.12s ease; margin-left: 4px; }
 .search-popup-result:hover .search-result-arrow { opacity: 1; }
+.search-popup-result--active { background: rgba(12, 120, 186, 0.06); color: var(--color-primary); }
+.search-popup-result--active .search-result-category { background: rgba(12, 120, 186, 0.08); color: var(--color-primary); }
+.search-popup-result--active .search-result-arrow { opacity: 1; }
 
 .search-highlight {
   background: rgba(12, 120, 186, 0.12);

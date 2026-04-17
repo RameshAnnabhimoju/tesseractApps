@@ -292,10 +292,10 @@ const Signup = () => {
                 <div id="signup-sidebar-help-text">
                   Our NDIS specialists are ready to assist you with your setup.
                 </div>
-                <a href="tel:1300252808" id="signup-sidebar-help-btn">
+                <span id="signup-sidebar-help-btn">
                   <Phone size={13} />
-                  <span>Book a Call</span>
-                </a>
+                  <span>1300 252 808</span>
+                </span>
               </div>
             </div>
           </div>
@@ -523,7 +523,7 @@ const Signup = () => {
                       I agree to the{" "}
                       <a href="/terms-and-Conditions" target="_blank" className="signup-terms-link">Terms of Service</a>
                       {" "}and{" "}
-                      <a href="/privacy-policy" target="_blank" className="signup-terms-link">Privacy Policy</a>
+                      <a href="/privacy-policy" target="_blank" className="signup-terms-link">Privacy Policy</a>*
                     </span>
                   </label>
                   {formErrors.termsAccepted && (

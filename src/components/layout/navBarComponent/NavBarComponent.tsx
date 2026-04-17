@@ -79,6 +79,7 @@ const NavBarComponent = ({
   const [showSearch, setShowSearch] = useState(false);
   const [searchHistory, setSearchHistory] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchHighlightIndex, setSearchHighlightIndex] = useState(-1);
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<
     "About" | "Platform" | "Capabilities" | "Solutions" | "Pricing" | "Resources" | "Contact Us" | ""
@@ -861,8 +862,35 @@ const NavBarComponent = ({
                 type="text"
                 placeholder="Search capabilities, solutions, features…"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => { setSearchTerm(e.target.value); setSearchHighlightIndex(-1); }}
                 autoFocus
+                onKeyDown={(e) => {
+                  if (searchTerm.length === 0) return;
+                  const q = searchTerm.toLowerCase();
+                  const results = dynamicSearchItems
+                    .filter((item) => item.label.toLowerCase().includes(q))
+                    .sort((a, b) => {
+                      const ai = a.label.toLowerCase().indexOf(q);
+                      const bi = b.label.toLowerCase().indexOf(q);
+                      return ai === bi ? a.label.localeCompare(b.label) : ai - bi;
+                    });
+                  if (results.length === 0) return;
+                  if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    setSearchHighlightIndex((prev) => Math.min(prev + 1, results.length - 1));
+                  } else if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    setSearchHighlightIndex((prev) => Math.max(prev - 1, 0));
+                  } else if (e.key === "Enter" && searchHighlightIndex >= 0) {
+                    const item = results[searchHighlightIndex];
+                    handleSearchIcon(false);
+                    setSearchTerm("");
+                    setSearchHighlightIndex(-1);
+                    addSearch(item.label);
+                    setToggleDrawer(false);
+                    navigate(item.path);
+                  }
+                }}
               />
               {searchTerm.length > 0 && (
                 <button id="search-popup-clear" onClick={() => setSearchTerm("")} aria-label="Clear search">
@@ -907,7 +935,17 @@ const NavBarComponent = ({
                         <button
                           key={item + index}
                           className="search-popup-recent-item"
-                          onClick={() => setSearchTerm(item)}
+                          onClick={() => {
+                            const found = dynamicSearchItems.find((s) => s.label === item);
+                            if (found) {
+                              handleSearchIcon(false);
+                              setSearchTerm("");
+                              setToggleDrawer(false);
+                              navigate(found.path);
+                            } else {
+                              setSearchTerm(item);
+                            }
+                          }}
                         >
                           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
@@ -945,11 +983,12 @@ const NavBarComponent = ({
                     const parts = item.label.split(splitRe);
                     return (
                       <button
-                        className="search-popup-result"
+                        className={"search-popup-result" + (searchHighlightIndex === index ? " search-popup-result--active" : "")}
                         key={item.path + index}
                         onClick={() => {
                           handleSearchIcon(false);
                           setSearchTerm("");
+                          setSearchHighlightIndex(-1);
                           addSearch(item.label);
                           setToggleDrawer(false);
                           navigate(item.path);
