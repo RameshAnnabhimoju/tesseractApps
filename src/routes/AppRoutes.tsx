@@ -26,7 +26,6 @@ const SolutionPage = lazy(() => import("../pages/solutions/solutionPage/Solution
 const ContactInformation = lazy(() => import("../pages/forms/contactInformation/ContactInformation"));
 const About = lazy(() => import("../pages/marketing/about/About"));
 const Whitepapers = lazy(() => import("../pages/resources/whitepapers/Whitepapers"));
-const StudioPage = lazy(() => import("../pages/studio/StudioPage"));
 const BookADemo = lazy(() => import("../pages/forms/bookADemo/BookADemo"));
 const Signup = lazy(() => import("../pages/forms/signup/Signup"));
 const CompetitorPage = lazy(() => import("../pages/competitors/CompetitorPage"));
@@ -230,9 +229,6 @@ const AppRoutes = () => {
             </Suspense>
           }
         />
-
-        {/* Sanity Studio — embedded at /studio */}
-        <Route path="/studio/*" element={<Suspense fallback={pageSpinner}><StudioPage /></Suspense>} />
 
         {/* Catch-all 404 */}
         <Route path="*" element={<Suspense fallback={pageSpinner}><NotFound /></Suspense>} />

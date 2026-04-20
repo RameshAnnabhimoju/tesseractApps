@@ -106,7 +106,6 @@ const BookADemo = () => {
   const handleClose = () => navigate(-1);
 
   const handleLogoClick = () => navigate("/");
-  const handleBackToHome = () => navigate("/");
 
   const isSelected = (id: keyof formDataType, value: string): boolean => {
     const fieldValue = formData[id];
