@@ -1,3 +1,17 @@
+type feedbackTypes = {
+  name: string;
+  email: string;
+  type: string;
+  message: string;
+};
+
+export const feedbackEmailTemplate = {
+  email: "marketing@tesseractapps.com",
+  subject: "Website Feedback – TesseractApps",
+  body: ({ name, email, type, message }: feedbackTypes) =>
+    `New feedback received from the website.\n\nName: ${name}\nEmail: ${email}\nType: ${type}\n\nMessage:\n${message}\n\nTeam TesseractApps\n`,
+};
+
 export const newsletterConfirmationEmailTemplate = {
   subject: "Thank You for Subscribing to TesseractApps!",
   text: () => `Hi there,

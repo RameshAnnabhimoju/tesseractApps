@@ -31,6 +31,8 @@ const Signup = lazy(() => import("../pages/forms/signup/Signup"));
 const CompetitorPage = lazy(() => import("../pages/competitors/CompetitorPage"));
 const NDISGlossary = lazy(() => import("../pages/resources/glossary/NDISGlossary"));
 const SitemapPage = lazy(() => import("../pages/resources/sitemapPage/SitemapPage"));
+const LMS = lazy(() => import("../pages/lms/LMS"));
+const WorkflowEngine = lazy(() => import("../pages/workflowEngine/WorkflowEngine"));
 const NotFound = lazy(() => import("../pages/notFound/NotFound"));
 
 const AppRoutes = () => {
@@ -77,6 +79,8 @@ const AppRoutes = () => {
         <Route path="/signup" element={<Suspense fallback={pageSpinner}><Signup /></Suspense>} />
         <Route path="/pricing" element={<Suspense fallback={pageSpinner}><Pricing /></Suspense>} />
         <Route path="/platform" element={<Suspense fallback={pageSpinner}><Platform /></Suspense>} />
+        <Route path="/learning-management" element={<Suspense fallback={pageSpinner}><LMS /></Suspense>} />
+        <Route path="/workflow-engine" element={<Suspense fallback={pageSpinner}><WorkflowEngine /></Suspense>} />
         <Route path="/capabilities" element={<Suspense fallback={pageSpinner}><CapabilitiesListing /></Suspense>} />
         <Route path="/solutions" element={<Suspense fallback={pageSpinner}><SolutionsListing /></Suspense>} />
         <Route path="/whitepapers" element={<Suspense fallback={pageSpinner}><Whitepapers /></Suspense>} />
