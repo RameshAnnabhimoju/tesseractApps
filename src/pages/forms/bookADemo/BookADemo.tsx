@@ -1,6 +1,6 @@
 import "./BookADemoStyles.css";
 import SEO from "../../../components/common/SEO";
-import { Stepper, Step, StepLabel } from "@mui/material";
+import FormStepper from "../../../components/ui/formStepper/FormStepper";
 import { useState } from "react";
 import { bookADemoFormData } from "../../../data/formData";
 const logo_white = "/svg-logos/white_logo.svg";
@@ -229,7 +229,7 @@ const BookADemo = () => {
             </div>
             <div id="bookADemo-success-actions">
               <button type="button" className="bookADemo-Button" onClick={handleClose}>
-                Back to Home
+                Close
               </button>
               {formData.schedule && (() => {
                 // formData.schedule is local ISO "YYYY-MM-DDTHH:MM" — keep as floating time (no Z)
@@ -323,13 +323,10 @@ const BookADemo = () => {
 
             {/* Stepper */}
             <div id="bookADemo-stepper-wrapper">
-              <Stepper activeStep={currentStep} alternativeLabel>
-                {["Organisation", "Staff Size", "Service Type"].map((label) => (
-                  <Step key={label}>
-                    <StepLabel>{label}</StepLabel>
-                  </Step>
-                ))}
-              </Stepper>
+              <FormStepper
+                steps={["Organisation", "Staff Size", "Service Type"]}
+                activeStep={currentStep}
+              />
             </div>
 
             {/* Scrollable content */}

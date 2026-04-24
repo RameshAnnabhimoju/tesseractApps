@@ -3,8 +3,8 @@ import SEO from "../../../components/common/SEO";
 import { Phone, MapPin, Clock, Mail, MessageSquare, CheckCircle, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import { sendTextEmail } from "../../../services/appService";
-import { feedbackEmailTemplate } from "../../../utils/emailTemplates";
+import { sendEmail, sendTextEmail } from "../../../services/appService";
+import { feedbackEmailTemplate, feedbackConfirmationEmailTemplate } from "../../../utils/emailTemplates";
 import Alert from "../../../components/ui/alert/Alert";
 
 type FeedbackForm = { name: string; email: string; type: string; message: string };
@@ -57,7 +57,16 @@ const ContactInformation = () => {
         message: feedback.message,
       })
     )
-      .then(() => setFeedbackSuccess(true))
+      .then(() => {
+        setFeedbackSuccess(true);
+        sendEmail(
+          feedback.name,
+          feedback.email,
+          feedbackConfirmationEmailTemplate.subject,
+          feedbackConfirmationEmailTemplate.text(feedback.name),
+          feedbackConfirmationEmailTemplate.html(feedback.name),
+        ).catch((err) => console.error("Feedback confirmation email error:", err));
+      })
       .catch(() =>
         setAlertData({
           heading: "Submission Failed",
@@ -258,6 +267,15 @@ const ContactInformation = () => {
                   id="message" placeholder="Tell us what you think…" rows={5}
                   value={feedback.message} onChange={handleFeedbackChange}
                 />
+                <span className={
+                  "cf-char-hint" +
+                  (feedback.message.trim().length === 0 ? "" :
+                   feedback.message.trim().length < 10 ? " cf-char-hint--warn" : " cf-char-hint--ok")
+                }>
+                  {feedback.message.trim().length < 10
+                    ? `Minimum 10 characters (${feedback.message.trim().length}/10)`
+                    : `${feedback.message.trim().length} characters`}
+                </span>
                 {feedbackErrors.message && <span className="cf-error">{feedbackErrors.message}</span>}
               </div>
               <button
