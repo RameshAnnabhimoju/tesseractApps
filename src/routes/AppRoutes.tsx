@@ -2,11 +2,6 @@
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useAppContext } from "../contexts/AppContext";
-import "../pages/blog/BlogStyles.css";
-import "../pages/blogPost/BlogPostPageStyles.css";
-import "../pages/capabilities/CapabilityPageStyles.css";
-import "../pages/solutions/solutionPage/SolutionPageStyles.css";
-import "../pages/competitors/CompetitorPageStyles.css";
 
 import Home from "../pages/home/Home";
 

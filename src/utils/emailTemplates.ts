@@ -12,6 +12,31 @@ export const feedbackEmailTemplate = {
     `New feedback received from the website.\n\nName: ${name}\nEmail: ${email}\nType: ${type}\n\nMessage:\n${message}\n\nTeam TesseractApps\n`,
 };
 
+export const feedbackConfirmationEmailTemplate = {
+  subject: "We've Received Your Feedback — TesseractApps",
+  text: (name: string) => `Hi ${name},
+
+Thank you for reaching out! We've received your feedback and our team will review it shortly.
+
+If you have any urgent questions, feel free to contact us at:
+  Phone: 1300 252 808
+  Email: marketing@tesseractapps.com
+
+Warm regards,
+Team TesseractApps
+Website: www.tesseractapps.com.au
+Phone: 1300 252 808 | Email: marketing@tesseractapps.com`,
+  html: (name: string) => `
+    <div style="font-family:Arial,sans-serif;color:#222;max-width:600px">
+      <p>Hi ${name},</p>
+      <p>Thank you for reaching out! We've received your feedback and our team will review it shortly.</p>
+      <p>If you have any urgent questions, feel free to contact us at <a href="mailto:marketing@tesseractapps.com">marketing@tesseractapps.com</a> or call <a href="tel:1300252808">1300 252 808</a>.</p>
+      <p>Warm regards,<br/><strong>Team TesseractApps</strong></p>
+      <p>Website: <a href="https://www.tesseractapps.com.au">www.tesseractapps.com.au</a><br/>
+      Phone: <a href="tel:1300252808">1300 252 808</a> | Email: <a href="mailto:marketing@tesseractapps.com">marketing@tesseractapps.com</a></p>
+    </div>`,
+};
+
 export const newsletterConfirmationEmailTemplate = {
   subject: "Thank You for Subscribing to TesseractApps!",
   text: () => `Hi there,
@@ -26,7 +51,7 @@ Welcome to the TesseractApps community!
 
 Best regards,
 Team TesseractApps
-Website: www.tesseractapps.com.au
+Website: tesseractapps.com.au
 Phone: 1300 252 808 | Email: marketing@tesseractapps.com
 `,
   html: () => `
@@ -37,7 +62,7 @@ Phone: 1300 252 808 | Email: marketing@tesseractapps.com
       <p>If you have any questions or suggestions, feel free to reach out to us at <a href="mailto:marketing@tesseractapps.com">marketing@tesseractapps.com</a>.</p>
       <p>Welcome to the TesseractApps community!</p>
       <p>Best regards,<br/><strong>Team TesseractApps</strong></p>
-      <p>Website: <a href="https://www.tesseractapps.com.au">www.tesseractapps.com.au</a><br/>
+      <p>Website: <a href="https://tesseractapps.com.au">tesseractapps.com.au</a><br/>
       Phone: <a href="tel:1300252808">1300 252 808</a> | Email: <a href="mailto:marketing@tesseractapps.com">marketing@tesseractapps.com</a></p>
     </div>`,
 };
@@ -105,7 +130,7 @@ We look forward to demonstrating how TesseractApps can support your organisation
 
 Warm regards,
 Team TesseractApps
-Website: www.tesseractapps.com.au
+Website: tesseractapps.com.au
 Phone: 1300 252 808 | Email: sales@tesseractapps.com`,
   html: (fullName: string, date: string, time: string) => `
     <div style="font-family:Arial,sans-serif;color:#222;max-width:600px">
@@ -123,7 +148,7 @@ Phone: 1300 252 808 | Email: sales@tesseractapps.com`,
       </ul>
       <p>We look forward to demonstrating how TesseractApps can support your organisation.</p>
       <p>Warm regards,<br/><strong>Team TesseractApps</strong></p>
-      <p>Website: <a href="https://www.tesseractapps.com.au">www.tesseractapps.com.au</a><br/>
+      <p>Website: <a href="https://tesseractapps.com.au">tesseractapps.com.au</a><br/>
       Phone: <a href="tel:1300252808">1300 252 808</a> | Email: <a href="mailto:sales@tesseractapps.com">sales@tesseractapps.com</a></p>
     </div>
   `,
@@ -186,7 +211,7 @@ We're excited to connect with you soon!
 
 Warm regards,
 Team TesseractApps
-Website: www.tesseractapps.com.au
+Website: tesseractapps.com.au
 Phone: 1300 252 808 | Email: sales@tesseractapps.com
 `,
 
@@ -198,7 +223,7 @@ Phone: 1300 252 808 | Email: sales@tesseractapps.com
       <p>If you have any immediate questions, feel free to reach out to us at <a href="mailto:sales@tesseractapps.com">sales@tesseractapps.com</a> or call us at <a href="tel:1300252808">1300 252 808</a>.</p>
       <p>We're excited to connect with you soon!</p>
       <p>Warm regards,<br/><strong>Team TesseractApps</strong></p>
-      <p>Website: <a href="https://www.tesseractapps.com.au">www.tesseractapps.com.au</a><br/>
+      <p>Website: <a href="https://tesseractapps.com.au">tesseractapps.com.au</a><br/>
       Phone: <a href="tel:1300252808">1300 252 808</a> | Email: <a href="mailto:sales@tesseractapps.com">sales@tesseractapps.com</a></p>
     </div>
     `,

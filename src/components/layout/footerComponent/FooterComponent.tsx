@@ -313,7 +313,7 @@ const FooterComponent = () => {
           {/* Contact + Social */}
           <div id="footer-contact-block">
             <address className="footer-address" itemScope itemType="https://schema.org/PostalAddress">
-              <span itemProp="streetAddress">Suite 1, 1 Trevillian Quay</span>,{" "}
+              <span itemProp="streetAddress">Level 1/45 Colbee Ct</span>,{" "}
               <span itemProp="addressLocality">Phillip</span>{" "}
               <span itemProp="addressRegion">ACT</span>{" "}
               <span itemProp="postalCode">2606</span>,{" "}
