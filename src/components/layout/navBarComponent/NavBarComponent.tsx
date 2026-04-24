@@ -84,11 +84,12 @@ const NavBarComponent = ({
   const [activeLink, setActiveLink] = useState<
     "About" | "Platform" | "Capabilities" | "Solutions" | "Pricing" | "Resources" | "Contact Us" | ""
   >("");
-  const DROPDOWN_LINKS = ["Capabilities", "Solutions", "Resources"];
-  const NAV_LINKS = ["Platform", "Capabilities", "Pricing", "Solutions", "Resources", "About", "Contact Us"];
+  const DROPDOWN_LINKS = ["Capabilities", "Solutions", "Resources", "About"];
+  const NAV_LINKS = ["Platform", "Capabilities", "Pricing", "Solutions", "Resources", "About"];
   const CAP_IDX = NAV_LINKS.indexOf("Capabilities");
   const SOL_IDX = NAV_LINKS.indexOf("Solutions");
   const RES_IDX = NAV_LINKS.indexOf("Resources");
+  const ABT_IDX = NAV_LINKS.indexOf("About");
 
   // Live Sanity nav data — falls back to navData.ts while loading (no flash)
   const { links: capLinks, loading: capLoading } = useSanityCapabilityNav();
@@ -258,7 +259,7 @@ const NavBarComponent = ({
       setActiveLink("Resources");
     }
     if (currentPath == "contact-us") {
-      setActiveLink("Contact Us");
+      setActiveLink("About");
     }
     if (currentPath == "requestDemo") {
       setActiveLink("");
@@ -280,7 +281,6 @@ const NavBarComponent = ({
     Capabilities: "/capabilities",
     Solutions: "/solutions",
     About: "/about",
-    "Contact Us": "/contact-us",
   };
   const handleNavClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const name = event.currentTarget.id;
@@ -499,7 +499,7 @@ const NavBarComponent = ({
             </div>
         <div id="nav-menu-links">
             {NAV_LINKS.map((label, index) => {
-              if (label != "Pricing" && label != "About" && label != "Platform" && label != "Contact Us") {
+              if (label != "Pricing" && label != "Platform") {
                 return (
                   <div key={label} className="nav-accordion">
                     <div
@@ -606,11 +606,28 @@ const NavBarComponent = ({
                             ))}
                           </div>
                         )}
+                        {expanded == ABT_IDX &&
+                          navBarDummyData["About"].map((value, index) => (
+                            <div
+                              key={value.title + index}
+                              className="nav-inner-container"
+                              onClick={() => {
+                                if (value.href) {
+                                  appNavigate(value.href);
+                                  setToggleDrawer(false);
+                                } else {
+                                  popupLinkClickHandler(value.title);
+                                }
+                              }}
+                            >
+                              <div className="nav-title">{value.title}</div>
+                            </div>
+                          ))}
                       </div>
                     </div>
                   </div>
                 );
-              } else if (label == "Platform" || label == "About" || label == "Contact Us") {
+              } else if (label == "Platform") {
                 return (
                   <div
                     className="nav-menu-link no-dropdown"
@@ -628,7 +645,6 @@ const NavBarComponent = ({
                   <div
                     className="nav-menu-link no-dropdown"
                     key={label}
-                    id={label}
                     onClick={handleNavClick}
                   >
                     {label}
@@ -640,7 +656,7 @@ const NavBarComponent = ({
           <div id="nav-menu-footer">
             <div id="nav-menu-auth">
               {/* <button className="nav-auth-btn nav-auth-btn--primary" onClick={signupHandler}>Sign Up</button> */}
-              <button className="nav-auth-btn nav-auth-btn--secondary" onClick={loginHandler}>Sign In</button>
+              <button type="button" className="nav-auth-btn nav-auth-btn--secondary" onClick={loginHandler}>Sign In</button>
             </div>
           </div>
         </div>
@@ -674,11 +690,9 @@ const NavBarComponent = ({
               </div>
             );
           })}
-          <div id="navbar-search">
-            <Search
-              className="navbar-search-icon"
-              onClick={() => handleSearchIcon()}
-            />
+          <div id="navbar-search" onClick={() => handleSearchIcon()} role="button" aria-label="Search">
+            <Search className="navbar-search-icon" size={16} />
+            <span id="navbar-search-label">Search</span>
           </div>
 
           <div
@@ -893,12 +907,12 @@ const NavBarComponent = ({
                 }}
               />
               {searchTerm.length > 0 && (
-                <button id="search-popup-clear" onClick={() => setSearchTerm("")} aria-label="Clear search">
+                <button type="button" id="search-popup-clear" onClick={() => setSearchTerm("")} aria-label="Clear search">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
                 </button>
               )}
             </div>
-            <button id="search-popup-close" onClick={() => handleSearchIcon(false)} aria-label="Close search">
+            <button type="button" id="search-popup-close" onClick={() => handleSearchIcon(false)} aria-label="Close search">
               Cancel
             </button>
           </div>
@@ -913,6 +927,7 @@ const NavBarComponent = ({
                   <div id="search-popup-popular-list">
                     {["Rostering & Scheduling", "NDIS Claiming & Invoicing", "Participant Management", "Accounting & Financial Reporting", "Dashboards & Reporting"].map((term) => (
                       <button
+                        type="button"
                         key={term}
                         className="search-popup-chip"
                         onClick={() => {
@@ -933,6 +948,7 @@ const NavBarComponent = ({
                     <div id="search-popup-recent-list">
                       {[...searchHistory].reverse().map((item, index) => (
                         <button
+                          type="button"
                           key={item + index}
                           className="search-popup-recent-item"
                           onClick={() => {
@@ -983,6 +999,7 @@ const NavBarComponent = ({
                     const parts = item.label.split(splitRe);
                     return (
                       <button
+                        type="button"
                         className={"search-popup-result" + (searchHighlightIndex === index ? " search-popup-result--active" : "")}
                         key={item.path + index}
                         onClick={() => {
