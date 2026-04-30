@@ -71,7 +71,7 @@ const appendManagedJsonLd = (jsonText: string) => {
 const SEO = ({
     title,
     description,
-    image = "/tesseract_logo.webp",
+    image = "/og-image.jpg",
     imageAlt,
     url,
     type = "website",

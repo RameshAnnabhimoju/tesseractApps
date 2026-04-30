@@ -223,6 +223,8 @@ const FooterComponent = () => {
           <Link className="footer-text" to="/whitepapers">Whitepapers</Link>
           <Link className="footer-text" to="/help-center">FAQ</Link>
           <Link className="footer-text" to="/ndis-glossary">NDIS Glossary</Link>
+          <Link className="footer-text" to="/capabilities/learning-management">Learning Management</Link>
+          <Link className="footer-text" to="/capabilities/workflow-engine">Workflow Engine</Link>
           <Link className="footer-text" to="/sitemap">Site Map</Link>
           <a
             className="footer-text"

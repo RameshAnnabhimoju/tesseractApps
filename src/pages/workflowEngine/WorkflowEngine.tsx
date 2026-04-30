@@ -7,7 +7,7 @@ import SEO from "../../components/common/SEO";
 const ENGINE_FEATURES = [
   {
     heading: "Approval workflows",
-    body: "Define who approves what — shift changes, leave requests, incident reports, service agreements — before they progress. The platform routes and holds until approved.",
+    body: "Define who approves what - shift changes, leave requests, incident reports, service agreements - before they progress. The platform routes and holds until approved.",
     Icon: IconThumbsUp,
   },
   {
@@ -17,7 +17,7 @@ const ENGINE_FEATURES = [
   },
   {
     heading: "Onboarding task sequences",
-    body: "New worker onboarding becomes a tracked sequence — document collection, induction, system access, first shift sign-off — each step triggering the next.",
+    body: "New worker onboarding becomes a tracked sequence - document collection, induction, system access, first shift sign-off - each step triggering the next.",
     Icon: IconUserPlus,
   },
   {
@@ -46,12 +46,12 @@ const HOW_IT_RUNS = [
   {
     step: 2,
     heading: "The workflow activates",
-    body: "The platform identifies the relevant workflow, assigns tasks, and notifies the right people — based on the rules you have configured.",
+    body: "The platform identifies the relevant workflow, assigns tasks, and notifies the right people based on the rules you have configured.",
   },
   {
     step: 3,
     heading: "Approvals and actions are tracked",
-    body: "Every step — who actioned it, when, and what was decided — is recorded against the relevant record in real time.",
+    body: "Every step, who actioned it, when, and what was decided, is recorded against the relevant record in real time.",
   },
   {
     step: 4,
@@ -73,7 +73,7 @@ const TFLOW_FEATURES = [
   },
   {
     heading: "Trigger-based automation",
-    body: "Actions in one system trigger actions in another. A shift completion in TesseractApps can trigger a payroll calculation, a compliance check, and a participant billing event — without anyone intervening.",
+    body: "Actions in one system trigger actions in another. A shift completion in TesseractApps can trigger a payroll calculation, a compliance check, and a participant billing event without anyone intervening.",
     Icon: IconZap,
   },
   {
@@ -83,7 +83,7 @@ const TFLOW_FEATURES = [
   },
   {
     heading: "Human control where it matters",
-    body: "Automation handles the repetitive. Decisions that require oversight — approvals, escalations, exceptions — remain with your team. TFlow does not remove human control. It preserves it for what needs it.",
+    body: "Automation handles the repetitive. Decisions that require oversight, approvals, escalations, exceptions, remain with your team. TFlow does not remove human control. It preserves it for what needs it.",
     Icon: IconUser,
   },
 ];
@@ -118,7 +118,7 @@ const MATURITY_STAGES: MaturityStage[] = [
     stage: "Scale",
     staffRange: "60–120 staff",
     focusWord: "GOVERNANCE",
-    body: "Multi-site workflow consistency. Cross-platform automation begins — payroll, finance, and reporting connections.",
+    body: "Multi-site workflow consistency. Cross-platform automation begins, payroll, finance, and reporting connections.",
     layer: "Workflow Engine + TFlow",
     isTflow: true,
   },
@@ -135,7 +135,7 @@ const MATURITY_STAGES: MaturityStage[] = [
 const USE_CASES = [
   {
     heading: "Incident management",
-    body: "Log, escalate, notify, resolve, and close — with every action timestamped and every required step enforced.",
+    body: "Log, escalate, notify, resolve, and close, with every action timestamped and every required step enforced.",
     Icon: IconAlertTriangle,
   },
   {
@@ -145,7 +145,7 @@ const USE_CASES = [
   },
   {
     heading: "Worker onboarding",
-    body: "From offer accepted to first shift — every task in the sequence is tracked and nothing is missed.",
+    body: "From offer accepted to first shift, every task in the sequence is tracked and nothing is missed.",
     Icon: IconUserPlus,
   },
   {
@@ -160,7 +160,7 @@ const USE_CASES = [
   },
   {
     heading: "Governance reporting",
-    body: "Scheduled reporting workflows surface the data your leadership needs — without someone manually pulling it together.",
+    body: "Scheduled reporting workflows surface the data your leadership needs without someone manually pulling it together.",
     Icon: IconBarChart,
   },
 ];
@@ -372,7 +372,7 @@ const WorkflowEngine = () => {
             Operational automation that grows with your organisation.
           </h2>
           <p className="we-body-text">
-            Workflow automation in TesseractApps works at two levels — matched to where your
+            Workflow automation in TesseractApps works at two levels, matched to where your
             organisation is on the provider maturity path.
           </p>
           <div id="we-layers-grid">
@@ -387,7 +387,7 @@ const WorkflowEngine = () => {
                 </div>
               </div>
               <p className="we-layer-card-body">
-                Structures your internal operational and governance workflows — approvals,
+                Structures your internal operational and governance workflows, approvals,
                 escalations, task sequences, compliance checkpoints. Available from the Start stage.
               </p>
               <div className="we-layer-card-badge">Available from Start stage</div>
@@ -404,7 +404,7 @@ const WorkflowEngine = () => {
               </div>
               <p className="we-layer-card-body">
                 Introduces automation across connected systems for providers operating at deeper
-                maturity stages — Scale and Enterprise. Reduces manual handoffs between platforms.
+                maturity stages, Scale and Enterprise. Reduces manual handoffs between platforms.
               </p>
               <div className="we-layer-card-badge we-layer-card-badge--tflow">Scale &amp; Enterprise</div>
             </div>
@@ -426,7 +426,7 @@ const WorkflowEngine = () => {
               that depends on the right person being available.
             </p>
             <p className="we-body-text we-body-text--light">
-              The Workflow Engine puts your operational rules into the platform itself — so they run
+              The Workflow Engine puts your operational rules into the platform itself, so they run
               consistently, across every team member, every site, and every shift.
             </p>
           </div>
@@ -444,7 +444,7 @@ const WorkflowEngine = () => {
         </div>
       </section>
 
-      {/* ── How It Runs (dark — two-col stepper) ── */}
+      {/* ── How It Runs (dark - two-col stepper) ── */}
       <section id="we-how">
         <div className="we-outer">
           <div id="we-how-inner">
@@ -479,12 +479,12 @@ const WorkflowEngine = () => {
       {/* ── TFlow (white) ── */}
       <section id="we-tflow">
         <div className="we-outer">
-          <div className="we-label">TFlow — For Deeper Maturity Stages</div>
+          <div className="we-label">TFlow - For Deeper Maturity Stages</div>
           <h2 className="we-section-heading">
             Cross-platform automation for complex operational environments.
           </h2>
           <p className="we-body-text">
-            As organisations grow, operations span multiple systems — workforce management,
+            As organisations grow, operations span multiple systems, workforce management,
             finance, payroll, participant records, external reporting. TFlow connects those
             systems so data moves between them automatically, without manual re-entry.
           </p>
@@ -592,7 +592,7 @@ const WorkflowEngine = () => {
             <h2 id="we-cta-heading">Book a Provider Maturity Review.</h2>
             <p id="we-cta-sub">
               We assess your current operations, identify your maturity stage, and show you exactly
-              how the Workflow Engine — and TFlow, if relevant — maps to your existing processes.
+              how the Workflow Engine and TFlow, if relevant, maps to your existing processes.
             </p>
             <div id="we-cta-actions">
               <button type="button" className="we-btn-primary" onClick={() => navigate("/book-a-demo")}>
