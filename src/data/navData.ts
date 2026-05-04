@@ -126,9 +126,14 @@ export const navBarDummyData: {
                     href: "/capabilities/dashboards-reporting",
                 },
                 {
-                    title: "T Workflow Automation",
+                    title: "Workflow Engine",
                     subTitle: "Automation",
-                    href: "/coming-soon",
+                    href: "/capabilities/workflow-engine",
+                },
+                {
+                    title: "Learning Management",
+                    subTitle: "LMS",
+                    href: "/capabilities/learning-management",
                 },
                 {
                     title: "Salesforce Native Architecture",

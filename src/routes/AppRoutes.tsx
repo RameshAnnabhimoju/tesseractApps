@@ -1,5 +1,5 @@
 // src/routes/AppRoutes.tsx
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { useAppContext } from "../contexts/AppContext";
 
@@ -74,8 +74,10 @@ const AppRoutes = () => {
         <Route path="/signup" element={<Suspense fallback={pageSpinner}><Signup /></Suspense>} />
         <Route path="/pricing" element={<Suspense fallback={pageSpinner}><Pricing /></Suspense>} />
         <Route path="/platform" element={<Suspense fallback={pageSpinner}><Platform /></Suspense>} />
-        <Route path="/learning-management" element={<Suspense fallback={pageSpinner}><LMS /></Suspense>} />
-        <Route path="/workflow-engine" element={<Suspense fallback={pageSpinner}><WorkflowEngine /></Suspense>} />
+        <Route path="/learning-management" element={<Navigate to="/capabilities/learning-management" replace />} />
+        <Route path="/workflow-engine" element={<Navigate to="/capabilities/workflow-engine" replace />} />
+        <Route path="/capabilities/learning-management" element={<Suspense fallback={pageSpinner}><LMS /></Suspense>} />
+        <Route path="/capabilities/workflow-engine" element={<Suspense fallback={pageSpinner}><WorkflowEngine /></Suspense>} />
         <Route path="/capabilities" element={<Suspense fallback={pageSpinner}><CapabilitiesListing /></Suspense>} />
         <Route path="/solutions" element={<Suspense fallback={pageSpinner}><SolutionsListing /></Suspense>} />
         <Route path="/whitepapers" element={<Suspense fallback={pageSpinner}><Whitepapers /></Suspense>} />

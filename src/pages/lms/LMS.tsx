@@ -8,12 +8,12 @@ import wyzedLogo from "../../assets/wyzed.png";
 const FEATURES = [
   {
     heading: "Role-based learning pathways",
-    body: "Training is assigned automatically based on the worker's role in TesseractApps. Support workers, team leaders, and coordinators each receive a pathway built for their responsibilities — not a generic list of modules.",
+    body: "Training is assigned automatically based on the worker's role in TesseractApps. Support workers, team leaders, and coordinators each receive a pathway built for their responsibilities, not a generic list of modules.",
     Icon: IconUsers,
   },
   {
     heading: "Completion connected to the roster",
-    body: "Training completion status from WYZED is visible inside TesseractApps. Managers can see who is compliant before a shift is published — without switching platforms.",
+    body: "Training completion status from WYZED is visible inside TesseractApps. Managers can see who is compliant before a shift is published without switching platforms.",
     Icon: IconCalendar,
   },
   {
@@ -23,12 +23,12 @@ const FEATURES = [
   },
   {
     heading: "Your content alongside WYZED's modules",
-    body: "Upload your own BSPs, internal policies, and procedures into WYZED. They sit alongside WYZED's 86+ NDIS-mapped modules — all accessible from within TesseractApps.",
+    body: "Upload your own BSPs, internal policies, and procedures into WYZED. They sit alongside WYZED's 86+ NDIS-mapped modules, all accessible from within TesseractApps.",
     Icon: IconLayers,
   },
   {
     heading: "Certificate and expiry tracking",
-    body: "WYZED tracks expiry dates on qualifications and certifications. Renewals are flagged before they lapse — and that status feeds back into TesseractApps where rostering decisions are made.",
+    body: "WYZED tracks expiry dates on qualifications and certifications. Renewals are flagged before they lapse, and that status feeds back into TesseractApps where rostering decisions are made.",
     Icon: IconBadge,
   },
   {
@@ -42,7 +42,7 @@ const HOW_IT_WORKS = [
   {
     step: 1,
     heading: "Worker is hired in TesseractApps",
-    body: "A new worker profile is created. Their role triggers a WYZED induction pathway automatically — modules assigned, completion deadlines set, no manual setup required.",
+    body: "A new worker profile is created. Their role triggers a WYZED induction pathway automatically, modules assigned, completion deadlines set, no manual setup required.",
   },
   {
     step: 2,
@@ -69,7 +69,7 @@ const HOW_IT_WORKS = [
 const MODULE_FEATURES = [
   {
     heading: "NDIS Practice Standards alignment",
-    body: "Every module is mapped to the relevant NDIS Practice Standards and Quality Indicators. Training is not generic — it is built for the regulatory environment your organisation operates in.",
+    body: "Every module is mapped to the relevant NDIS Practice Standards and Quality Indicators. Training is not generic; it is built for the regulatory environment your organisation operates in.",
     Icon: IconShield,
   },
   {
@@ -79,7 +79,7 @@ const MODULE_FEATURES = [
   },
   {
     heading: "Behaviour Support Plans",
-    body: "BSP training can be delivered through WYZED — either from the module library or using your own uploaded content, specific to the participant.",
+    body: "BSP training can be delivered through WYZED, either from the module library or using your own uploaded content, specific to the participant.",
     Icon: IconClipboard,
   },
   {
@@ -94,7 +94,7 @@ const MODULE_FEATURES = [
   },
   {
     heading: "Mobile accessible",
-    body: "Support workers complete training on any device. Modules are accessible on mobile so learning happens when and where it suits the worker — not just at a desk.",
+    body: "Support workers complete training on any device. Modules are accessible on mobile so learning happens when and where it suits the worker, not just at a desk.",
     Icon: IconMobile,
   },
 ];
@@ -239,7 +239,7 @@ const LMS = () => {
     <div id="lms-page">
       <SEO
         title="Learning Management | Training Inside TesseractApps, Powered by WYZED"
-        description="WYZED integrated directly into TesseractApps. Role-based learning pathways, compliance tracking, and 86+ NDIS-mapped modules — connected to the roster, the role, and the worker profile."
+        description="WYZED integrated directly into TesseractApps. Role-based learning pathways, compliance tracking, and 86+ NDIS-mapped modules connected to the roster, the role, and the worker profile."
       />
 
       {/* ── Hero ── */}
@@ -264,7 +264,7 @@ const LMS = () => {
           <p id="lms-hero-sub">
             TesseractApps manages your workforce. WYZED manages your training. Together, every
             learning record, completion status, and compliance requirement sits inside the same
-            platform your team already uses — connected to the roster, the role, and the worker
+            platform your team already uses, connected to the roster, the role, and the worker
             profile.
           </p>
           <div id="lms-hero-ctas">
@@ -313,7 +313,7 @@ const LMS = () => {
               <p className="lms-body-text">
                 A new support worker joins. Their profile is set up in TesseractApps. Their induction
                 checklist lives in an email thread. Their mandatory NDIS modules are tracked in a
-                spreadsheet — or not tracked at all.
+                spreadsheet, or not tracked at all.
               </p>
               <p className="lms-body-text">
                 By the time they start their first shift, nobody knows with certainty what they have
@@ -358,7 +358,7 @@ const LMS = () => {
               <p className="lms-body-text lms-body-text--light lms-body-text--wide">
                 WYZED is a purpose-built learning management system for NDIS providers. When integrated
                 with TesseractApps, training records, completion status, and learning pathways connect
-                directly to the worker profile, the role, and the roster — without your team ever
+                directly to the worker profile, the role, and the roster, without your team ever
                 leaving the platform.
               </p>
             </div>
@@ -494,7 +494,7 @@ const LMS = () => {
               TesseractApps has made a big difference in how we run our NDIS operations. Having
               rostering, payroll, and participant management in one system saves a lot of time.
             </blockquote>
-            <div id="lms-testimonial-author">— Seed Disability Services</div>
+            <div id="lms-testimonial-author">Seed Disability Services</div>
           </div>
         </div>
       </section>
