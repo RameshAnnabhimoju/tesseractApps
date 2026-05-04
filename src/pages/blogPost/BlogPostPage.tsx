@@ -9,6 +9,7 @@ import { urlFor } from '../../sanity/lib/image'
 import { formatDate } from '../../utils/formatDate'
 import { buildBreadcrumbSchema, buildGraphSchema } from '../../utils/schemaHelpers'
 import Breadcrumb from '../../components/common/Breadcrumb'
+import BlogShareTools from '../../components/blog/BlogShareTools'
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -277,6 +278,17 @@ export default function BlogPostPage() {
                 )}
               </ul>
             </div>
+
+            {/* AI tools */}
+            {post.body && (
+              <BlogShareTools
+                title={post.title ?? ''}
+                url={postUrl}
+                body={post.body}
+                author={post.author?.name}
+                publishedAt={post.publishedAt ?? undefined}
+              />
+            )}
 
             {/* More articles */}
             {suggestedPosts.length > 0 && (

@@ -279,6 +279,7 @@ const NavBarComponent = ({
   };
   const NAV_ROUTES: Record<string, string> = {
     Capabilities: "/capabilities",
+    Pricing: "/pricing",
     Solutions: "/solutions",
     About: "/about",
   };
@@ -645,7 +646,10 @@ const NavBarComponent = ({
                   <div
                     className="nav-menu-link no-dropdown"
                     key={label}
-                    onClick={handleNavClick}
+                    onClick={() => {
+                      appNavigate(NAV_ROUTES[label] ?? `/${label.toLowerCase().replace(/ /g, "-")}`);
+                      setToggleDrawer(false);
+                    }}
                   >
                     {label}
                   </div>
