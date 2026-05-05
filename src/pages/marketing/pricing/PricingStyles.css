@@ -110,19 +110,22 @@
   padding: 13px 24px;
   border-radius: 10px;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  background: transparent;
-  color: rgba(255,255,255,0.75);
-  border: 1.5px solid rgba(255,255,255,0.2);
-  transition: color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+  background: #fff;
+  color: var(--color-secondary);
+  border: 1.5px solid #fff;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
   text-decoration: none;
   font-family: inherit;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
 .pr-btn-download:hover {
-  color: #fff;
-  border-color: rgba(255,255,255,0.45);
+  background: #f0f7ff;
+  color: var(--color-primary);
+  border-color: #f0f7ff;
   transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
 }
 
 /* ── Shared label wrapper (centering) ── */
@@ -243,15 +246,6 @@
   background: rgba(0, 42, 82, 0.06);
   opacity: 1;
   transform: translateY(-1px);
-}
-#pr-hero-ctas .pr-btn-download {
-  color: var(--color-secondary);
-  border-color: rgba(0, 42, 82, 0.25);
-}
-#pr-hero-ctas .pr-btn-download:hover {
-  color: var(--color-secondary);
-  border-color: rgba(0, 42, 82, 0.5);
-  background: rgba(0, 42, 82, 0.04);
 }
 .pr-cta-sub-note {
   font-size: 0.75rem;

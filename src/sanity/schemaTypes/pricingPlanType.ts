@@ -102,7 +102,7 @@ export const pricingPlanType = defineType({
       title: 'Commercial Terms',
       type: 'array',
       of: [{ type: 'string' }],
-      description: 'e.g. ["$39.99 per user / month", "3-year agreement", "Up to 10% flex user buffer"]',
+      description: 'e.g. ["$39.99 per user / month", "Up to 10% flex user buffer"]',
       validation: (Rule) => Rule.required().min(1),
     }),
     defineField({

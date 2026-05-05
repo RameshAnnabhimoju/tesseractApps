@@ -66,7 +66,7 @@ const FLIP_STAGES: Stage[] = [
     automationHeading: "T-Flow automation",
     automationBody:
       "Growth introduces structured automation through T-Flow automation using template-driven boards, limited stage edits, and basic triggers. This is where automation begins to save meaningful time in day-to-day workflows such as onboarding, intake routing, document handling, and follow-up actions.",
-    commercial: ["$39.99 per seat / month", "3-year agreement", "Up to 10% flex user buffer"],
+    commercial: ["$39.99 per seat / month", "Up to 10% flex user buffer"],
     supports: [
       "Operational dashboards",
       "Payroll-to-roster alignment visibility",
@@ -88,7 +88,7 @@ const FLIP_STAGES: Stage[] = [
     automationHeading: "T-Flow automation",
     automationBody:
       "At Scale, T-Flow automation expands into configurable boards, SLA rules, escalation logic, and workflow analytics. This is where process automation becomes a governance tool, not just an efficiency tool.",
-    commercial: ["$39.99 per seat / month", "3-year agreement", "Up to 15% flex user buffer"],
+    commercial: ["$39.99 per seat / month", "Up to 15% flex user buffer"],
     supports: [
       "Approval workflows",
       "Delegation controls",
@@ -111,7 +111,7 @@ const FLIP_STAGES: Stage[] = [
     automationHeading: "T-Flow automation",
     automationBody:
       "Enterprise activates TFlow for cross-module automation and gives T-Flow automation full orchestration capability across the platform. This supports deeper operational automation, financial control, and governance execution at scale.",
-    commercial: ["$39.99 per seat / month", "5-year agreement", "Up to 20% flex user buffer"],
+    commercial: ["Contact Us", "Custom pricing for large organisations"],
     supports: [
       "Native payroll",
       "Native accounting",
@@ -151,10 +151,6 @@ const PAID_COMPARISON_ROWS = [
   {
     label: "Automation focus",
     values: PAID_STAGE_ORDER.map((id) => PAID_STAGE_LOOKUP[id].automationHeading),
-  },
-  {
-    label: "Commercial terms",
-    values: PAID_STAGE_ORDER.map((id) => PAID_STAGE_LOOKUP[id].commercial),
   },
   {
     label: "What this stage supports",
@@ -343,7 +339,7 @@ const Pricing = () => {
   return (
     <div id="pr-page">
       <SEO
-        title="NDIS Software Pricing | $39.99 per seat/month | TesseractApps"
+        title="NDIS Software Pricing | Start Free | TesseractApps"
         description="Transparent NDIS software pricing with one unified platform across Growth, Scale, and Enterprise. Start stage supports early-stage providers for up to 18 months with setup only. Governance depth grows with operational maturity."
       />
 
@@ -362,15 +358,15 @@ const Pricing = () => {
             Governance depth increases as your organisation grows.
           </p>
           <div id="pr-hero-price-block">
-            <div id="pr-hero-price">$39.99</div>
+            <div id="pr-hero-price">$0</div>
             <div id="pr-hero-price-meta">
-              <span id="pr-hero-price-unit">/ seat / month</span>
-              <span id="pr-hero-price-note">Stable across Growth, Scale, and Enterprise</span>
+              <span id="pr-hero-price-unit">to start</span>
+              <span id="pr-hero-price-note">Setup fee only · No subscription during Start</span>
             </div>
           </div>
           <p id="pr-hero-start-note">
             Start is designed for early-stage providers during the first 18 months of operational
-            formation. Setup fee applies. No subscription during Start.
+            formation. Growth, Scale, and Enterprise are $39.99 per seat / month.
           </p>
           <div id="pr-hero-ctas">
             <button
@@ -541,7 +537,7 @@ const Pricing = () => {
                         <div className="pr-cmp-plan-name">{stage.label}</div>
                         <div className="pr-cmp-plan-tag">{stage.tagline}</div>
                         <div className="pr-cmp-plan-badge">{stage.badge}</div>
-                        <div className="pr-cmp-plan-range">{stage.staffRange}</div>
+                        {/* <div className="pr-cmp-plan-range">{stage.staffRange}</div> */}
                         <ul className="pr-cmp-plan-commercial">
                           {stage.commercial.map((item) => (
                             <li key={item}>{item}</li>
